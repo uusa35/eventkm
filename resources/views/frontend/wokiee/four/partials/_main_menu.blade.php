@@ -22,13 +22,20 @@
                                 </li>
                                 @include('frontend.wokiee.four.partials._categories_main_menu_element_with_images')
                                 @include('frontend.wokiee.four.partials._pages_main_menu')
-                                <li class="dropdown">
-                                    @if(app()->getLocale() === 'ar')
-                                        <a href="{{ route('frontend.language.change',['locale' => 'en']) }}">{{ trans('general.english') }}</a>
-                                    @else
-                                        <a href="{{ route('frontend.language.change',['locale' => 'ar']) }}">{{ trans('general.arabic') }}</a>
-                                    @endif
-                                </li>
+                                @if(env('ENABLE_BLOG'))
+                                    <li class="dropdown tt-megamenu-col-02 selected">
+                                        <a href="{{ route('frontend.post.index') }}">{{ trans('general.blog') }}</a>
+                                    </li>
+                                @endif
+                                @if(env('ENABLE_LANG_SWITCH'))
+                                    <li class="dropdown">
+                                        @if(app()->getLocale() === 'ar')
+                                            <a href="{{ route('frontend.language.change',['locale' => 'en']) }}">{{ trans('general.english') }}</a>
+                                        @else
+                                            <a href="{{ route('frontend.language.change',['locale' => 'ar']) }}">{{ trans('general.arabic') }}</a>
+                                        @endif
+                                    </li>
+                                @endif
                             </ul>
                         </nav>
                     </div>

@@ -103,16 +103,18 @@
                                        href="{{ $page->url ? $page->url : route('frontend.page.show.name',['id' => $page->id ,'name' => $page->title]) }}">{{ $page->title }}</a>
                                 </li>
                             @endforeach
-                            @if(app()->isLocale('en'))
-                                <li>
-                                    <a style="color : black;"
-                                       href="{{ route('frontend.language.change',['locale' => 'ar']) }}">{{ trans('general.arabic') }}</a>
-                                </li>
-                            @else
-                                <li>
-                                    <a style="color : black;"
-                                       href="{{ route('frontend.language.change',['locale' => 'en']) }}">{{ trans('general.english') }}</a>
-                                </li>
+                            @if(env('ENABLE_LANG_SWITCH'))
+                                @if(app()->isLocale('en'))
+                                    <li>
+                                        <a style="color : black;"
+                                           href="{{ route('frontend.language.change',['locale' => 'ar']) }}">{{ trans('general.arabic') }}</a>
+                                    </li>
+                                @else
+                                    <li>
+                                        <a style="color : black;"
+                                           href="{{ route('frontend.language.change',['locale' => 'en']) }}">{{ trans('general.english') }}</a>
+                                    </li>
+                                @endif
                             @endif
                         </ul>
                         <ul class="tt-social-icon row	justify-content-center" style="padding: 20px;">

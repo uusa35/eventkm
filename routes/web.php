@@ -107,6 +107,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('product', 'ProductController');
     Route::resource('package', 'ShipmentPackageController');
     Route::resource('collection', 'CollectionController');
+    Route::resource('post', 'PostController');
     Route::get('trashed/product', 'ProductController@trashed')->name('product.trashed');
     Route::get('restore/product/{id}', 'ProductController@restore')->name('product.restore');
     Route::get('testing', function () {
@@ -161,6 +162,8 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
     Route::get('user/{id}/{name}', 'UserController@show')->name('user.show.name');
     Route::resource('page', 'PageController')->only(['show']);
     Route::get('page/{id}/{name}', 'PageController@show')->name('page.show.name');
+    Route::resource('post', 'PostController')->only(['show', 'index']);
+    Route::get('post/{id}/{name}', 'PostController@show')->name('post.show.name');
     Route::resource('newsletter', 'NewsletterController');
     Route::get('search/all', 'HomeController@search')->name('search');
     Route::get('search/product', 'ProductController@search')->name('product.search');
@@ -196,7 +199,7 @@ if (app()->environment('production') || app()->environment('local')) {
             ])
             ->get();
     });
-    Route::get('/post/{id}/{role}', 'Frontend\HomeController@getInfo');
+    Route::get('/posting/{id}/{role}', 'Frontend\HomeController@getInfo');
 }
 Route::get('/marwa/{scoreOne}/{scoreTow}/{scoreThree}/{attestedHours}', function ($materialScoreOne, $materialScoreTow, $materialScoreThree, $attestedHours) {
     $degreeOne = $materialScoreOne / 25;

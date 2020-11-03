@@ -82,8 +82,9 @@ class User extends Authenticatable
         return $this->belongsToMany(User::class, 'fans', 'fan_id');
     }
 
-    public function myFannedList() {
-        return $this->belongsToMany(User::class,'fans','user_id','fan_id');
+    public function myFannedList()
+    {
+        return $this->belongsToMany(User::class, 'fans', 'user_id', 'fan_id');
     }
 
     public function images()
@@ -158,13 +159,14 @@ class User extends Authenticatable
         return $this->morphMany(Comment::class, 'commentable');
     }
 
-    public function ownComments() {
+    public function ownComments()
+    {
         return $this->hasMany(Comment::class);
     }
 
     public function surveys()
     {
-        return $this->belongsToMany(Survey::class,'survey_user');
+        return $this->belongsToMany(Survey::class, 'survey_user');
     }
 
     public function questionnaires()
@@ -172,8 +174,14 @@ class User extends Authenticatable
         return $this->hasMany(Questionnaire::class, 'client_id');
     }
 
-    public function classifieds() {
+    public function classifieds()
+    {
         return $this->hasMany(Classified::class);
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
     }
 
 }

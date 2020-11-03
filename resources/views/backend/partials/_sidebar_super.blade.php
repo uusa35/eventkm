@@ -207,7 +207,7 @@
 </li>
 
 {{--Settings--}}
-<li class="nav-item {{ activeItem('setting', ['policy','term','faq','page','contactus', 'aboutus','gallery','image','color','size','tag','day','role','privilege','coupon','brand','branch','slide','device','video']) }}">
+<li class="nav-item {{ activeItem('setting', ['policy','term','faq','page','contactus', 'aboutus','gallery','image','color','size','tag','day','role','privilege','coupon','brand','branch','slide','device','video','post']) }}">
     <a href="{{ route('backend.admin.setting.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-cogs"></i>
         <span class="title">{{ trans('general.app_settings') }}</span>
@@ -357,6 +357,22 @@
                 <li class="nav-item">
                     <a href="{{ route('backend.admin.page.index') }}" class="nav-link">
                         <i class="fa fa-fw fa-list-alt"></i> {{ trans('general.pages') }}
+                        <span class="arrow nav-toggle"></span>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+        <li class="nav-item ">
+            <a href="{{ route('backend.post.index') }}" class="nav-link ">
+                <i class="fa fa-fw fa-podcast"></i>
+                <span class="title">{{ trans('general.posts') }}</span>
+                <span class="arrow"></span>
+            </a>
+            <ul class="sub-menu">
+                <li class="nav-item">
+                    <a href="{{ route('backend.post.index') }}" class="nav-link">
+                        <i class="fa fa-fw fa-list-alt"></i> {{ trans('general.post') }}
                         <span class="arrow nav-toggle"></span>
                     </a>
                 </li>

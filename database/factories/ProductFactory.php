@@ -42,7 +42,7 @@ $factory->define(Product::class, function (Faker $faker) use ($fakerAr) {
         'end_sale' => $faker->dateTimeBetween('now', '1 year'),
         'check_stock' => $faker->boolean(true),
         'is_hot_deal' => $faker->boolean(true),
-        'user_id' => User::companies()->get()->random()->id,
+        'user_id' => User::active()->companies()->get()->random()->id,
         'color_id' => Color::all()->random()->id,
         'size_id' => Size::all()->random()->id,
         'shipment_package_id' => ShipmentPackage::all()->random()->id,

@@ -65,7 +65,7 @@ class ProductController extends Controller
             'shipment_package.countries'
         ])->first();
         if ($element) {
-            IncreaseElementViews::dispatch($element);
+            $this->dispatchNow(new IncreaseElementViews($element));
             // return array of ['size_id', 'color', 'att_id','qty' ] for one product
             $data = $element->product_attributes->toArray();
             $relatedItems = $element->getRelatedItems($element);

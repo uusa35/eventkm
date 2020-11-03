@@ -193,6 +193,14 @@
             <i class="icon-plus"></i> {{ trans('general.new_video') }}</a>
     </li>
 @endcan
+@can('post.create')
+    <li>
+        <a href="{{ route('backend.post.create') }}" class="tooltips"
+           data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}"
+           data-original-title="{{ trans('message.new_post') }}">
+            <i class="icon-plus"></i> {{ trans('general.new_post') }}</a>
+    </li>
+@endcan
 {{--@can('day.create')--}}
 {{--    <li>--}}
 {{--        <a href="{{ route('backend.admin.day.create') }}" class="tooltips" data-container="body"--}}

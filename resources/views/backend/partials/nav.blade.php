@@ -4,7 +4,8 @@
         <!-- BEGIN LOGO -->
         <div class="page-logo" style="display: flex; justify-content: center; align-items: center;">
             <a href="{{ route('frontend.home') }}">
-                <img src="{{ $settings->getCurrentImageAttribute('logo') }}" alt="logo" class="img-xs logo-default"/> </a>
+                <img src="{{ $settings->getCurrentImageAttribute('logo') }}" alt="logo" class="img-xs logo-default"/>
+            </a>
             <div class="menu-toggler sidebar-toggler">
                 <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
             </div>
@@ -136,32 +137,34 @@
                     {{--</li>--}}
                     <li class="dropdown dropdown-language">
                         <div class="dropdown-toggle"
-                           data-close-others="true">
+                             data-close-others="true">
                             <span class="langname">
                                 <i class="fa fa-fw fa-calendar"></i>&nbsp;
                                 {{ trans("general.today_date") .' :  '. Carbon\Carbon::today()->format('D - j F,Y') }} </span>
                         </div>
                     </li>
-                    <li class="dropdown dropdown-language"
-                        style="background-color: {{ app()->isLocale('ar') ? 'whitesmoke' : 'transparent' }}; margin-left: 10px; ">
-                        <a href="{{ route('backend.language.change','ar') }}" class="dropdown-toggle"
-                           data-close-others="true">
-                            <img alt="" src="{{ asset('images/flags/ar.png') }}">
-                            <span class="langname">
+                    @if(env('ENABLE_LANG_SWITCH'))
+                        <li class="dropdown dropdown-language"
+                            style="background-color: {{ app()->isLocale('ar') ? 'whitesmoke' : 'transparent' }}; margin-left: 10px; ">
+                            <a href="{{ route('backend.language.change','ar') }}" class="dropdown-toggle"
+                               data-close-others="true">
+                                <img alt="" src="{{ asset('images/flags/ar.png') }}">
+                                <span class="langname">
 {{--                                <i class="fa fa-fw fa-language"></i>&nbsp; --}}
-                                {{ trans('general.arabic') }} </span>
-                        </a>
-                    </li>
-                    <li class="dropdown dropdown-language"
-                        style="background-color: {{ app()->isLocale('en') ? 'whitesmoke' : 'transparent' }}; margin-left: 10px ">
-                        <a href="{{ route('backend.language.change','en') }}" class="dropdown-toggle"
-                           data-close-others="true">
-                            <img alt="" src="{{ asset('images/flags/en.png') }}">
-                            <span class="langname">
+                                    {{ trans('general.arabic') }} </span>
+                            </a>
+                        </li>
+                        <li class="dropdown dropdown-language"
+                            style="background-color: {{ app()->isLocale('en') ? 'whitesmoke' : 'transparent' }}; margin-left: 10px ">
+                            <a href="{{ route('backend.language.change','en') }}" class="dropdown-toggle"
+                               data-close-others="true">
+                                <img alt="" src="{{ asset('images/flags/en.png') }}">
+                                <span class="langname">
 {{--                                <i class="fa fa-fw fa-language"></i>&nbsp; --}}
-                                {{ trans('general.english') }} </span>
-                        </a>
-                    </li>
+                                    {{ trans('general.english') }} </span>
+                            </a>
+                        </li>
+                @endif
 
                 {{--<!-- END INBOX DROPDOWN -->--}}
                 {{--<!-- BEGIN TODO DROPDOWN -->--}}
@@ -295,7 +298,8 @@
                     <li class="dropdown dropdown-user">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                            data-close-others="true">
-                            <img alt="" class="img-xs logo-default" src="{{ auth()->user()->getCurrentImageAttribute() }}"/>
+                            <img alt="" class="img-xs logo-default"
+                                 src="{{ auth()->user()->getCurrentImageAttribute() }}"/>
                             <i class="fa fa-angle-down"></i>
                             <span class="username username-hide-on-mobile"> {{ str_limit(auth()->user()->name,30) }}</span><br>
                         </a>
@@ -316,12 +320,14 @@
                                 <a href="{{ route('backend.index') }}">
                                     <i class="icon-pencil"></i>{{ trans('general.dashboard') }}</a>
                             </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="{{ route('backend.language.change',app()->isLocale('ar') ? 'en' : 'ar') }}">
-                                    <i class="fa fa-fw fa-language"></i>{{ trans('general.switch_lang')  }}
-                                </a>
-                            </li>
+                            @if(env('ENABLE_LANG_SWITCH'))
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="{{ route('backend.language.change',app()->isLocale('ar') ? 'en' : 'ar') }}">
+                                        <i class="fa fa-fw fa-language"></i>{{ trans('general.switch_lang')  }}
+                                    </a>
+                                </li>
+                            @endif
                             <li class="divider"></li>
                             @can('isAdminOrAbove')
                                 @can('index','setting')

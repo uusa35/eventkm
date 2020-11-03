@@ -396,6 +396,24 @@
                     </ul>
                 </li>
             @endcan
+            @can('index','post')
+                <li class="nav-item ">
+                    <a href="{{ route('backend.post.index') }}" class="nav-link ">
+                        <i class="fa fa-fw fa-book"></i>
+                        <span class="title">{{ trans('general.posts') }}</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item">
+                            <a href="{{ route('backend.post.index') }}" class="nav-link">
+                                <i class="fa fa-fw fa-list-alt"></i> {{ trans('general.posts') }}
+                                <span class="arrow nav-toggle"></span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+            @endcan
         </ul>
     </li>
 @endcan

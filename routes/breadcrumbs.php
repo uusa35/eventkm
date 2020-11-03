@@ -103,9 +103,20 @@ Breadcrumbs::for('frontend.user.edit', function ($trail, $element) {
     $trail->push($element->name, route('frontend.user.show', $element->id));
 });
 
+
 Breadcrumbs::for('frontend.page.show', function ($trail, $element) {
     $trail->parent('frontend.home');
     $trail->push($element->title, route('frontend.page.show', $element->id));
+});
+
+Breadcrumbs::for('frontend.post.index', function ($trail) {
+    $trail->parent('frontend.home');
+    $trail->push(trans('general.posts'), route('frontend.post.index'));
+});
+
+Breadcrumbs::for('frontend.post.show', function ($trail, $element) {
+    $trail->parent('frontend.post.index');
+    $trail->push($element->title_en, route('frontend.post.show', $element->id));
 });
 
 Breadcrumbs::for('frontend.order.index', function ($trail) {
@@ -822,6 +833,22 @@ Breadcrumbs::for('backend.admin.page.edit', function ($trail, $element) {
 Breadcrumbs::for('backend.page.edit', function ($trail, $element) {
     $trail->parent('backend.page.index');
     $trail->push('edit page', route('backend.page.edit', $element->id));
+});
+
+
+Breadcrumbs::for('backend.post.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.index_post'), route('backend.post.index'));
+});
+
+Breadcrumbs::for('backend.post.create', function ($trail) {
+    $trail->parent('backend.post.index');
+    $trail->push(trans('general.new_post'), route('backend.post.create'));
+});
+
+Breadcrumbs::for('backend.post.edit', function ($trail, $element) {
+    $trail->parent('backend.post.index');
+    $trail->push(trans('general.edit_post'), route('backend.post.edit', $element->id));
 });
 
 Breadcrumbs::for('backend.term.create', function ($trail) {

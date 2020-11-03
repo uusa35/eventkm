@@ -23,6 +23,7 @@ use App\Policies\NotificationPolicy;
 use App\Policies\OrderPolicy;
 use App\Policies\PagePolicy;
 use App\Policies\PolicyPolicy;
+use App\Policies\PostPolicy;
 use App\Policies\PrivilegePolicy;
 use App\Policies\ProductPolicy;
 use App\Policies\PropertyPolicy;
@@ -81,6 +82,7 @@ class AuthServiceProvider extends ServiceProvider
         Gate::resource('brand', BrandPolicy::class);
         Gate::resource('coupon', CouponPolicy::class);
         Gate::resource('page', PagePolicy::class);
+        Gate::resource('post', PostPolicy::class);
         Gate::resource('term', TermPolicy::class);
         Gate::resource('policy', PolicyPolicy::class);
         Gate::resource('notification', NotificationPolicy::class);
