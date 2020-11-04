@@ -42,11 +42,11 @@ trait ModelHelpers
         return $q->has('images', '>', 0);
     }
 
-    public function scopeActiveUsers()
+    public function scopeActiveUsers($q)
     {
-        return $this->whereHas("user", function ($q) {
-            return $q->active();
-        },'>=',0);
+        return $q->whereHas("user", function ($u) {
+            return $u->active();
+        });
     }
 
     /**
