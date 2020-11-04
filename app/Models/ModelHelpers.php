@@ -45,7 +45,7 @@ trait ModelHelpers
     public function scopeActiveUsers()
     {
         return $this->whereHas("user", function ($q) {
-            return $q->where('active', true);
+            return $q->active();
         },'>=',0);
     }
 

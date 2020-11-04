@@ -52,7 +52,7 @@ class ProductController extends Controller
         if ($validator->fails()) {
             return response()->json(['message' => $validator->errors()->first()], 400);
         }
-        $elements = Product::active()->hasImage()->available()->hasStock()->hasAtLeastOneCategory()->filters($filters)->activeUsers()->orderBy('id', 'desc')->paginate(Self::TAKE_MIN);
+        $elements = Product::active()->hasImage()->available()->hasStock()->hasAtLeastOneCategory()->activeUsers()->filters($filters)->orderBy('id', 'desc')->paginate(Self::TAKE_MIN);
         if (!$elements->isEmpty()) {
             return response()->json(ProductExtraLightResource::collection($elements), 200);
         } else {
