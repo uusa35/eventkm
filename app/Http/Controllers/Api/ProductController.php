@@ -22,22 +22,22 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $query = Product::query()->active()->hasStock()->available()->hasImage()->hasAtLeastOneCategory()->serveCountries();
+        $query = Product::query()->active()->hasStock()->available()->hasImage()->hasAtLeastOneCategory()->activeUsers()->serveCountries();
         if (request()->has('on_home') && request()->on_home) {
             $query->onHome();
         }
-        if(request()->has('on_sale') && request()->on_sale) {
+        if (request()->has('on_sale') && request()->on_sale) {
             $query->onSaleOnHome();
         }
-        if(request()->has('latest') && request()->latest) {
+        if (request()->has('latest') && request()->latest) {
             $query->onNew();
         }
-        if(request()->has('best_sale') && request()->best_sale) {
+        if (request()->has('best_sale') && request()->best_sale) {
 //            $query->bestSalesProducts();
 //            $elements = Product::whereIn('id', Product::active()->available()->hasImage()->serveCountries()->hasStock()->bestSalesProducts())->hasAtLeastOneCategory()->with('brand', 'product_attributes', 'colors', 'sizes', 'color', 'size', 'images', 'favorites', 'user.country')->limit(self::TAKE_LESS)->orderBy('id', 'desc')->get();
-            $query->whereIn('id', Product::active()->available()->hasImage()->serveCountries()->hasStock()->bestSalesProducts())->hasAtLeastOneCategory()->with('brand', 'product_attributes', 'colors', 'sizes', 'color', 'size', 'images', 'favorites', 'user.country')->limit(self::TAKE_LESS)->orderBy('id', 'desc');
+            $query->whereIn('id', Product::active()->available()->hasImage()->serveCountries()->hasStock()->activeUsers()->bestSalesProducts())->hasAtLeastOneCategory()->with('brand', 'product_attributes', 'colors', 'sizes', 'color', 'size', 'images', 'favorites', 'user.country')->limit(self::TAKE_LESS)->orderBy('id', 'desc');
         }
-        if(request()->has('hot_deals') && request()->hot_deals) {
+        if (request()->has('hot_deals') && request()->hot_deals) {
             $query->onSale()->hotDeals();
 //            $elements = Product::active()->available()->onSale()->hotDeals()->hasImage()->serveCountries()->hasAtLeastOneCategory()->with('brand', 'product_attributes', 'colors', 'sizes', 'color', 'size', 'images', 'user.country', 'favorites')->limit(self::TAKE_LESS)->orderby('end_sale', 'desc')->get();
         }
@@ -52,8 +52,7 @@ class ProductController extends Controller
         if ($validator->fails()) {
             return response()->json(['message' => $validator->errors()->first()], 400);
         }
-        $elements = Product::filters($filters)->active()->hasImage()->hasStock()->hasAtLeastOneCategory()->available()
-            ->orderBy('id', 'desc')->paginate(Self::TAKE_MIN);
+        $elements = Product::active()->hasImage()->available()->hasStock()->hasAtLeastOneCategory()->filters($filters)->activeUsers()->orderBy('id', 'desc')->paginate(Self::TAKE_MIN);
         if (!$elements->isEmpty()) {
             return response()->json(ProductExtraLightResource::collection($elements), 200);
         } else {
@@ -90,12 +89,12 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $element = Product::active()->whereId($id)->with('images', 'user', 'shipment_package', 'color', 'size','videos')->with(['sizes' => function ($q) {
-            return $q->orderBy('name_en','asc')->groupBy('id');
+        $element = Product::active()->whereId($id)->with('images', 'user', 'shipment_package', 'color', 'size', 'videos')->with(['sizes' => function ($q) {
+            return $q->orderBy('name_en', 'asc')->groupBy('id');
         }])->with(['categories' => function ($q) {
             return $q->active()->limit('2');
         }])->with(['colors' => function ($q) {
-            return $q->orderBy('name_en','asc');
+            return $q->orderBy('name_en', 'asc');
         }])->first();
         if ($element) {
             IncreaseElementViews::dispatchNow($element);

@@ -27,7 +27,7 @@ class ProductController extends Controller
 
     public function index(Filters $filters)
     {
-        $products = $this->product->filters($filters)->hasProductAttribute()->hasImages()->active()->paginate(self::TAKE_MIN);
+        $products = $this->product->filters($filters)->hasProductAttribute()->hasImages()->active()->activeUsers()->paginate(self::TAKE_MIN);
         return view('frontend.modules.favorite.index', compact('products'));
     }
 
@@ -37,7 +37,7 @@ class ProductController extends Controller
         if ($validator->fails()) {
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
-        $elements = $this->product->active()->hasImage()->hasStock()->filters($filters)->with(
+        $elements = $this->product->active()->hasImage()->hasStock()->filters($filters)->activeUsers()->with(
             'brand', 'product_attributes.color', 'product_attributes.size', 'tags', 'user.country', 'images', 'favorites'
         )->with(['categories' => function ($q) {
             return $q->has('products', '>', 0);
@@ -122,7 +122,7 @@ class ProductController extends Controller
     public function getRecommendedProducts()
     {
         $product = Auth::user()->orders()->first()->order_metas()->first();
-        $products = $this->product->getWhereId($product->product_id)->first()->categories()->first()->products()->take(6)->get();
+        $products = $this->product->getWhereId($product->product_id)->activeUsers()->first()->categories()->first()->products()->take(6)->get();
         return view('frontend.modules.recommendations.index', compact('products'));
     }
 

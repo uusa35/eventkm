@@ -42,6 +42,13 @@ trait ModelHelpers
         return $q->has('images', '>', 0);
     }
 
+    public function scopeActiveUsers()
+    {
+        return $this->whereHas("user", function ($q) {
+            return $q->where('active', true);
+        });
+    }
+
     /**
      * @param $q
      * @param QueryFilters $filters

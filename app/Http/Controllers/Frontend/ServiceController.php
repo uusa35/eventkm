@@ -32,7 +32,7 @@ class ServiceController extends Controller
         if ($validator->fails()) {
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
-        $elements = $this->service->active()->hasImage()->serveCountries()->hasValidTimings()->filters($filters)->with(
+        $elements = $this->service->active()->hasImage()->serveCountries()->hasValidTimings()->filters($filters)->activeUsers()->with(
             'tags', 'user.country', 'images', 'user.areas', 'favorites'
         )->with(['categories' => function ($q) {
             return $q->has('services', '>', 0)->with('services');
@@ -58,7 +58,7 @@ class ServiceController extends Controller
         if ($validator->fails()) {
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
-        $elements = $this->service->active()->hasImage()->serveCountries()->hasValidTimings()->filters($filters)->with(
+        $elements = $this->service->active()->hasImage()->serveCountries()->hasValidTimings()->filters($filters)->activeUsers()->with(
             'tags', 'user.country', 'images', 'user.areas', 'favorites'
         )->with(['categories' => function ($q) {
             return $q->has('services', '>', 0)->with('services');

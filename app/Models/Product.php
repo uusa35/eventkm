@@ -83,7 +83,7 @@ class Product extends PrimaryModel
 
     public function favorites()
     {
-        return $this->belongsToMany(User::class, 'favorites','product_id');
+        return $this->belongsToMany(User::class, 'favorites', 'product_id');
     }
 
     public function brand()
@@ -127,6 +127,7 @@ class Product extends PrimaryModel
     {
         return $this->belongsToMany(User::class, 'product_user');
     }
+
     /**
      * MorphRelation
      * MorphOne = many hasONe relation
