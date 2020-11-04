@@ -46,7 +46,7 @@ trait ModelHelpers
     {
         return $this->whereHas("user", function ($q) {
             return $q->where('active', true);
-        });
+        },'>=',0);
     }
 
     /**

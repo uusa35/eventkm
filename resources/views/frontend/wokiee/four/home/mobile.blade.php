@@ -103,6 +103,12 @@
                                        href="{{ $page->url ? $page->url : route('frontend.page.show.name',['id' => $page->id ,'name' => $page->title]) }}">{{ $page->title }}</a>
                                 </li>
                             @endforeach
+                            @if(env('ENABLE_BLOG'))
+                                    <li>
+                                        <a style="color : black;"
+                                           href="{{ route('frontend.post.index') }}">{{ trans('general.blog') }}</a>
+                                    </li>
+                                @endif
                             @if(env('ENABLE_LANG_SWITCH'))
                                 @if(app()->isLocale('en'))
                                     <li>
