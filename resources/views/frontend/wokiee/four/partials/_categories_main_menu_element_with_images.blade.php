@@ -73,7 +73,7 @@
         @elseif(env('HOMEKEY'))
             @foreach($categories->where('is_classified',true)->where('is_parent', true)->where('on_home', true) as $cat)
                 <li class="dropdown megamenu">
-                    <a href="{{ route('frontend.product.search',['product_category_id' => $cat->id]) }}">{{ str_limit($cat->name,15,'') }}</a>
+                    <a href="{{ route('frontend.classified.search',['classified_category_id' => $cat->id]) }}">{{ str_limit($cat->name,15,'') }}</a>
                     @if($cat->children->isNotEmpty())
                         <div class="dropdown-menu">
                             <div class="row">
