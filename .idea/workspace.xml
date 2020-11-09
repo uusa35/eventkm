@@ -36,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="177" column="92" lean-forward="true" selection-start-line="177" selection-start-column="92" selection-end-line="177" selection-end-column="92" />
+              <caret line="177" column="92" selection-start-line="177" selection-start-column="92" selection-end-line="177" selection-end-column="92" />
             </state>
           </provider>
         </entry>
@@ -45,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="663">
-              <caret line="169" column="47" lean-forward="true" selection-start-line="169" selection-start-column="47" selection-end-line="169" selection-end-column="47" />
+              <caret line="169" column="42" lean-forward="true" selection-start-line="169" selection-start-column="42" selection-end-line="169" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -54,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/home/mobile.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="543">
-              <caret line="50" column="116" lean-forward="true" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="116" />
+              <caret line="50" column="116" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="116" />
             </state>
           </provider>
         </entry>
@@ -765,12 +765,12 @@
       <workItem from="1604469534054" duration="170000" />
       <workItem from="1604479626994" duration="717000" />
       <workItem from="1604502119034" duration="422000" />
-      <workItem from="1604911782070" duration="889000" />
+      <workItem from="1604911782070" duration="919000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="632235000" />
+    <option name="totallyTimeSpent" value="632265000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1129" extended-state="0" />
@@ -1191,21 +1191,21 @@
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="177" column="92" lean-forward="true" selection-start-line="177" selection-start-column="92" selection-end-line="177" selection-end-column="92" />
+          <caret line="177" column="92" selection-start-line="177" selection-start-column="92" selection-end-line="177" selection-end-column="92" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/home/mobile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="543">
-          <caret line="50" column="116" lean-forward="true" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="116" />
+          <caret line="50" column="116" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="116" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
-          <caret line="169" column="47" lean-forward="true" selection-start-line="169" selection-start-column="47" selection-end-line="169" selection-end-column="47" />
+          <caret line="169" column="42" lean-forward="true" selection-start-line="169" selection-start-column="42" selection-end-line="169" selection-end-column="42" />
         </state>
       </provider>
     </entry>

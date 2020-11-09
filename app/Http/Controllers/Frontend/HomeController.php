@@ -167,7 +167,7 @@ class HomeController extends Controller
             $Android = stripos($_SERVER['HTTP_USER_AGENT'], "Android");
 //            <a href="{{ env('APP_DEEP_LINK') }}{{ request()->type }}/{{ $element->id }}"
             $route = env('APP_DEEP_LINK') . request()->type .'/'. $element->id;
-            return redirect()->to($route, 200);
+            return redirect()->to($route);
 //    if( $iPod || $iPhone ){
 //        return redirect()->to($route);
 //    }else if($iPad){
