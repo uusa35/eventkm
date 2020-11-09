@@ -46,6 +46,7 @@
                                                             alt="{{ $element->slug }}"></h5>
                                 <h5 class="card-title">{{ $element->slug ? $element->slug : $element->name }}</h5>
                                 <p class="card-text">{{ $element->description }}</p>
+                                </br>
                                 @if(request()->has('type'))
                                     <div class="col-12">
                                         <a href="{{ env('APP_DEEP_LINK') }}{{ request()->type }}/{{ $element->id }}"
