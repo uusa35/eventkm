@@ -159,23 +159,10 @@ class HomeController extends Controller
             $element = new $className();
             $element = $element->whereId($request->id)->first();
         }
-        if (request()->has('type')) {
-            //Detect special conditions devices
-            $iPod = stripos($_SERVER['HTTP_USER_AGENT'], "iPod");
-            $iPhone = stripos($_SERVER['HTTP_USER_AGENT'], "iPhone");
-            $iPad = stripos($_SERVER['HTTP_USER_AGENT'], "iPad");
-            $Android = stripos($_SERVER['HTTP_USER_AGENT'], "Android");
-//            <a href="{{ env('APP_DEEP_LINK') }}{{ request()->type }}/{{ $element->id }}"
-            $route = env('APP_DEEP_LINK') . request()->type .'/'. $element->id;
-            return redirect()->to($route);
-//    if( $iPod || $iPhone ){
-//        return redirect()->to($route);
-//    }else if($iPad){
-//        //browser reported as an iPad -- do something here
-//    }else if($Android){
-//        //browser reported as an Android device -- do something here
-//    }
-        }
+//        if (request()->has('type')) {
+//            $route = env('APP_DEEP_LINK') . request()->type .'/'. $element->id;
+//            return redirect()->to($route);
+//        }
         return view('frontend.wokiee.four.home.mobile', compact('element'));
     }
 
