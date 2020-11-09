@@ -4409,6 +4409,19 @@
                 "spatie",
                 "user"
             ],
+<<<<<<< HEAD
+=======
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+>>>>>>> 12a2308da3ae98caaae8080af5e4fdaf2d1a63db
             "time": "2020-11-03T11:34:26+00:00"
         },
         {
@@ -6428,6 +6441,31 @@
                 "clean",
                 "php"
             ],
+<<<<<<< HEAD
+=======
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/moelleken",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/voku",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/portable-ascii",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://www.patreon.com/voku",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/voku/portable-ascii",
+                    "type": "tidelift"
+                }
+            ],
+>>>>>>> 12a2308da3ae98caaae8080af5e4fdaf2d1a63db
             "time": "2020-11-08T21:15:15+00:00"
         },
         {
@@ -6899,6 +6937,23 @@
                 "dependency",
                 "package"
             ],
+<<<<<<< HEAD
+=======
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+>>>>>>> 12a2308da3ae98caaae8080af5e4fdaf2d1a63db
             "time": "2020-11-07T10:21:17+00:00"
         },
         {
