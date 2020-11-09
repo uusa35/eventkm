@@ -205,4 +205,5 @@ return array (
   'favorite_success' => 'تم أضافه / حذف من المفضلة بنجاح',
   'order_is_complete_we_will_contact_u_soon' => 'تم استلام طلبك .. سيتم التواصل معك في اقرب وقت.',
   'max_upload' => 'اقصى حجم لرفع الصور ١٥٠ كيلو بايت',
+  'new_user_welcome' => 'مرحبا - مستخدم جديد',
 );

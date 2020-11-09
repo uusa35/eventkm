@@ -864,4 +864,7 @@ return array (
   'mobile_example' => 'Only Mobile Number (without Country Code)',
   'logo' => 'Logo',
   'comments' => 'comments',
+  'links' => 'Links',
+  'google_play' => 'Google Play',
+  'apple' => 'Apple',
 );

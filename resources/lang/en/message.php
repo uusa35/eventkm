@@ -194,4 +194,5 @@ return array (
   'order_is_complete_we_will_contact_u_soon' => 'Order is complete. we will contact you asap.',
   'order_cash_on_delivery' => 'Please Kindly Note that Cash On Delivery shall not take any effect outside Kuwait',
   'max_upload' => 'Max Upload 150KB',
+  'new_user_welcome' => 'Welcome',
 );
