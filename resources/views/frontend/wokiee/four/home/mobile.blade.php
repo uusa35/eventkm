@@ -37,7 +37,7 @@
             </div>
             <div class="row	justify-content-center" style="margin-top: 4%">
                 <div class="col-lg-12">
-                    <p class="card-text text-danger"><h3>{{ trans('message.not_installed') }}</h3></p>
+                    <p class="card-text text-danger">{{ trans('message.not_installed') }}</p>
                     @if(isset($element) && $element)
                         <div class="card">
                             <div class="card-body">
