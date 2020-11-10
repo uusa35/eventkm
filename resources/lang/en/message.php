@@ -173,7 +173,7 @@ return array (
   'index_questionnaire' => 'List of all results of available survey questions',
   'index_answer' => 'List of all answers directly related to questions available for questionnaires created',
   'index_newsletter' => 'A list of all emails shared in a postcard',
-  'not_installed' => 'The link did not work? ! .. Download the application immediately from the links below ',
+  'not_installed' => 'Download our App (Iphone & Android)',
   'this_user_does_not_exist' => 'No data for this user',
   'invalid_username_or_password' => 'The entered data is incorrect. Please check your email and password.',
   'we_received_your_order_order_shall_be_reviewed_thank_your_for_choosing_our_service' => 'The request has been received and is being processed. We will communicate with you as soon as possible. ',
