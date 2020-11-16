@@ -375,11 +375,13 @@
                                 {{--                                        <i class="fa fa-fw fa-user-circle"></i> {{ trans('general.my_profile') }}</a>--}}
                                 {{--                                </li>--}}
                             @endif
-                            <li class="divider"></li>
-                            <li>
-                                <a href="{{ route('backend.admin.activity.index') }}">
-                                    <i class="icon-new"></i> {{ trans('general.activities') }} </a>
-                            </li>
+                            @if(env('SHOW_LOG_ACTIVITY'))
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="{{ route('backend.admin.activity.index') }}">
+                                        <i class="icon-new"></i> {{ trans('general.activities') }} </a>
+                                </li>
+                            @endif
                             <li class="divider"></li>
                             <li>
                                 <a href="{{ url('/logout') }}"
