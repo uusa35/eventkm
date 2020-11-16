@@ -375,7 +375,7 @@
                                 {{--                                        <i class="fa fa-fw fa-user-circle"></i> {{ trans('general.my_profile') }}</a>--}}
                                 {{--                                </li>--}}
                             @endif
-                            @if(env('SHOW_LOG_ACTIVITY'))
+                            @if(env('SHOW_LOG_ACTIVITY') || auth()->user()->isSuper)
                                 <li class="divider"></li>
                                 <li>
                                     <a href="{{ route('backend.admin.activity.index') }}">
