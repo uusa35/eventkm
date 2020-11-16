@@ -15,7 +15,7 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        $elements = Activity::with('causer')->paginate(SElf::TAKE_MID);
+        $elements = Activity::with('causer')->orderBy('id','desc')->paginate(SElf::TAKE_MID);
         return view('backend.modules.activity.index', compact('elements'));
     }
 
