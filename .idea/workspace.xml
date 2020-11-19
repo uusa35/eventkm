@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/classified/attach.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/classified/attach.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/PropertyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/PropertyController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/PropertyController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="48" column="79" lean-forward="true" selection-start-line="48" selection-start-column="79" selection-end-line="48" selection-end-column="79" />
+            <state relative-caret-position="630">
+              <caret line="47" column="34" lean-forward="true" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -89,7 +89,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>route</find>
       <find>created_at-&gt;</find>
       <find>post.show</find>
       <find>{{ $cat-&gt;getImageThumbLinkAttribute() }}</find>
@@ -119,6 +118,7 @@
       <find>commercial.crea</find>
       <find>property.at</find>
       <find>user_id</find>
+      <find>-&gt;{</find>
     </findStrings>
     <replaceStrings>
       <replace>myexpo</replace>
@@ -184,8 +184,8 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_11_19_081519_add_cash_on_delivery_to_orders_table.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/modules/classified/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/ClassifiedController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/PropertyController.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/modules/classified/attach.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/PropertyController.php" />
       </list>
     </option>
   </component>
@@ -829,12 +829,12 @@
       <workItem from="1605546318312" duration="624000" />
       <workItem from="1605772424273" duration="381000" />
       <workItem from="1605772867140" duration="241000" />
-      <workItem from="1605779003255" duration="2900000" />
+      <workItem from="1605779003255" duration="2990000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="642764000" />
+    <option name="totallyTimeSpent" value="642854000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1121" extended-state="0" />
@@ -1265,8 +1265,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/PropertyController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="48" column="79" lean-forward="true" selection-start-line="48" selection-start-column="79" selection-end-line="48" selection-end-column="79" />
+        <state relative-caret-position="630">
+          <caret line="47" column="34" lean-forward="true" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
         </state>
       </provider>
     </entry>

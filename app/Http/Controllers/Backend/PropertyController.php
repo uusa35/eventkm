@@ -46,7 +46,7 @@ class PropertyController extends Controller
                 $element->id => [
                     'property_id' => $k,
                     'value' => $v,
-                    'category_group_id' => $request->{`category_group_id`.[$k]}
+                    'category_group_id' => $request->category_group_id[$k]
                 ]]);
         }
         return redirect()->route('backend.classified.index')->with('success', 'classified properties saved successfully');
