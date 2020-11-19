@@ -42,7 +42,7 @@ class PropertyController extends Controller
         }
         $element = Classified::whereId($request->id)->first();
         foreach ($request->properties as $k => $v) {
-            $element->properties()->create([
+            $element->properties()->syncWithoutDetaching([
                 'classified_id' => $element->id,
                 'property_id' => $k,
                 'value' => $v,
