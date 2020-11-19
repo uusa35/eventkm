@@ -61,6 +61,7 @@ class ClassifiedController extends Controller
      */
     public function store(ClassifiedStore $request)
     {
+        dd($request->all());
         $element = Classified::create($request->except(['_token', 'image', 'images', 'tags', 'areas','expired_at','categories']));
         if ($element) {
             $element->tags()->sync($request->tags);

@@ -32,6 +32,7 @@ class PropertyController extends Controller
 
     public function postAttach(Request $request)
     {
+        dd($request->all());
         $validate = validator($request->all(), [
             'id' => 'required|exists:classifieds,id',
             'properties' => 'required|array',

@@ -26,7 +26,7 @@ class AddCashOnDeliveryToOrdersTable extends Migration
     public function down()
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->boolean('cash_on_delivery')->default(0);
+            $table->dropColumn('cash_on_delivery')->default(0);
         });
     }
 }
