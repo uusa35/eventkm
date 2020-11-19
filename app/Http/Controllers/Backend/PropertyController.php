@@ -7,6 +7,7 @@ use App\Http\Requests\Backend\PropertyUpdate;
 use App\Models\Area;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\CategoryGroup;
 use App\Models\Classified;
 use App\Models\Property;
 use App\Models\Tag;
@@ -42,7 +43,7 @@ class PropertyController extends Controller
         }
         $element = Classified::whereId($request->id)->first();
         foreach ($request->properties as $k => $v) {
-            $element->properties()->sync(['property_id' => $k, 'value' => $v]);
+            $element->properties()->sync(['property_id' => $k, 'value' => $v, 'category_group_id' => CategoryGroup::first()->id]);
         }
         return redirect()->route('backend.classified.index')->with('success', 'classified properties saved successfully');
     }
