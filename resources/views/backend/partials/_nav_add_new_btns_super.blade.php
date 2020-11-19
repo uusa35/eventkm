@@ -177,14 +177,6 @@
             <i class="icon-plus"></i> {{ trans('general.new_slide_for_home_page') }}</a>
     </li>
 @endcan
-@can('commercial.create')
-    <li>
-        <a href="{{ route('backend.admin.commercial.create') }}" class="tooltips"
-           data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}"
-           data-original-title="{{ trans('message.new_commercial') }}">
-            <i class="icon-plus"></i> {{ trans('general.new_commercial') }}</a>
-    </li>
-@endcan
 @can('video.create')
     <li>
         <a href="{{ route('backend.video.create') }}" class="tooltips"
