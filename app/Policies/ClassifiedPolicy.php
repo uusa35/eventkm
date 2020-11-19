@@ -9,7 +9,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class ClassifiedPolicy
 {
     use HandlesAuthorization;
-    const MODAL = 'product';
+    const MODAL = 'classified';
 
     /**
      * Determine whether the user can view the product.

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ClassifiedController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ClassifiedController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/ClassifiedPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/ClassifiedPolicy.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/ClassifiedController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="98" column="10" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
+            <state relative-caret-position="913">
+              <caret line="98" column="8" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -55,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Policies/ClassifiedPolicy.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+            <state relative-caret-position="1206">
+              <caret line="69" column="10" lean-forward="true" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -64,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Policies/ProductPolicy.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="45" column="64" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
+            <state relative-caret-position="324">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
@@ -73,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="122" column="62" lean-forward="true" selection-start-line="122" selection-start-column="62" selection-end-line="122" selection-end-column="62" />
+            <state relative-caret-position="211">
+              <caret line="53" column="19" lean-forward="true" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -137,7 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_form.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/UserController.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/partials/forms/form_title.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/partials/sidebar.blade.php" />
@@ -187,6 +185,7 @@
         <option value="$PROJECT_DIR$/resources/views/backend/partials/nav.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/ActivityController.php" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/app/Policies/ClassifiedPolicy.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/ClassifiedController.php" />
       </list>
     </option>
@@ -850,12 +849,12 @@
       <workItem from="1605546318312" duration="624000" />
       <workItem from="1605772424273" duration="381000" />
       <workItem from="1605772867140" duration="241000" />
-      <workItem from="1605779003255" duration="150000" />
+      <workItem from="1605779003255" duration="397000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="640014000" />
+    <option name="totallyTimeSpent" value="640261000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1121" extended-state="0" />
@@ -1265,29 +1264,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Policies/ProductPolicy.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="45" column="64" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
+        <state relative-caret-position="324">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="122" column="62" lean-forward="true" selection-start-line="122" selection-start-column="62" selection-end-line="122" selection-end-column="62" />
+        <state relative-caret-position="211">
+          <caret line="53" column="19" lean-forward="true" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Policies/ClassifiedPolicy.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+        <state relative-caret-position="1206">
+          <caret line="69" column="10" lean-forward="true" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/ClassifiedController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="98" column="10" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
+        <state relative-caret-position="913">
+          <caret line="98" column="8" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="8" />
         </state>
       </provider>
     </entry>

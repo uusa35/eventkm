@@ -96,7 +96,7 @@ class ClassifiedController extends Controller
     public function edit($id)
     {
         $element = Classified::whereId($id)->with('area', 'tags', 'category')->first();
-        //$this->authorize('classified.update', $element);
+        $this->authorize('classified.update', $element);
         $categories = Category::active()->where('is_classified',true)->with(['children' => function ($q) {
             return $q->where('is_classified', true)->with(['children' => function ($q) {
                 return $q->where('is_classified', true);
