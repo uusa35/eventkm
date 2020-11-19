@@ -42,6 +42,7 @@ class PropertyController extends Controller
         }
         $element = Classified::whereId($request->id)->first();
         foreach ($request->properties as $k => $v) {
+            dd(CategoryGroup::first()->id);
             $element->properties()->sync(['property_id' => $k, 'value' => $v, 'category_group_id' => CategoryGroup::first()->id]);
         }
         return redirect()->route('backend.classified.index')->with('success', 'classified properties saved successfully');
