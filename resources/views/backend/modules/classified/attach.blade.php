@@ -68,7 +68,7 @@
                                                             <div class="col-md-4">
                                                                 <div class="form-group">
                                                                     @foreach($group->properties as $property)
-                                                                        <input type="hidden" name="category_group_id[]" value="{{ $group->id }}">
+                                                                        <input type="hidden" name="category_group_id[{{ $property->id }}]" value="{{ $group->id }}">
                                                                         <input type="radio"
                                                                                name="properties[{{ $property->id }}]"
                                                                                value="{{ $property->value  ? $property->value : $property->name}}"/>
