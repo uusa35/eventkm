@@ -75,8 +75,11 @@ function getCouponValue()
 
 function getCartNetTotal()
 {
-    $cartTotalVal = str_replace(',', '', Cart::instance('shopping')->total());
-    return (float)$cartTotalVal - (float)getCouponValue();
+    if (session()->has('coupon')) {
+        $cartTotalVal = str_replace(',', '', Cart::instance('shopping')->total());
+        return (float)$cartTotalVal - (float)getCouponValue();
+    }
+    return Cart::instance('shopping')->total();
 }
 
 
@@ -227,6 +230,7 @@ function getRequestQueryUrlWithout($element = '')
     return request()->url() . '?' . http_build_query(Arr::except(Request::query(), [$element, 'page']));
 }
 
-function isLocal() {
+function isLocal()
+{
     return env('APP_ENV') === 'local';
 }
