@@ -100,14 +100,16 @@ trait CartTrait
     public function addCouponToCart(Request $request, Coupon $coupon, $cart)
     {
         if (session()->has('coupon')) {
-            $coupon = $this->cart->content()->where('id', 'coupon')->first();
-            $this->cart->remove($coupon->rowId);
-            session()->remove('coupon');
+            $element = $this->cart->content()->where('id', 'coupon')->first();
+            if ($element) {
+                $this->cart->remove($this->cart->content()->where('type', 'coupon')->first()->rowId);
+                session()->remove('coupon');
+            }
         }
         session()->put('coupon', $coupon);
         $couponValue = $coupon->is_percentage ? ($this->cart->total() * $coupon->value) / 100 : $coupon->value;
         if ($couponValue > 0) {
-            $this->cart->add('coupon', 'coupon', 1, (float)-($couponValue), [
+            $this->cart->add('coupon', 'coupon', 1, (float)-($couponValue), 1, [
                 'type' => 'coupon',
                 'element_id' => $coupon->id,
                 'element' => $coupon
