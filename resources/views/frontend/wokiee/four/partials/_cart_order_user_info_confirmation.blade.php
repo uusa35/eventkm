@@ -101,7 +101,7 @@
                                     <tfoot>
                                     <tr>
                                         <th>{{ trans('general.total_price_in_kuwaiti_dinar') }}</th>
-                                        <td>{{ Cart::instance('shopping')->total() }} {{ trans('general.kd') }}</td>
+                                        <td>{{ getCartNetTotal() }} {{ trans('general.kd') }}</td>
                                     </tr>
                                     </tfoot>
                                 </table>
