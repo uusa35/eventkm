@@ -15,22 +15,22 @@
         @endif
         </tbody>
         <tfoot>
+        @if(in_array('country',Cart::instance('shopping')->content()->pluck('options.type')->toArray()))
+            <tr>
+                <th>{{ trans('general.total_shipment_fees') }}</th>
+                <td>{{ getClientCountry()->fixed_shipment_charge }} {{ trans('general.kd') }}</td>
+            </tr>
+        @endif
         @if(session()->has('coupon'))
             <tr>
                 <th>{{ trans('general.discount') }}</th>
                 <td>{{ session()->get('coupon')->value }} {{ trans('general.kd') }}</td>
             </tr>
         @endif
-        @if(in_array('country',Cart::instance('shopping')->content()->pluck('options.type')->toArray()))
-{{--        <tr>--}}
-{{--            <th>{{ trans('general.total_shipment_fees') }}</th>--}}
-{{--            <td>{{ getClientCountry()->fixed_shipment_charge }} {{ trans('general.kd') }}</td>--}}
-{{--        </tr>--}}
-        @endif
-{{--        <tr>--}}
-{{--            <th>{{ trans('general.total_price_in_kuwaiti_dinar') }}</th>--}}
-{{--            <td>{{ Cart::total() }} {{ trans('general.kd') }}</td>--}}
-{{--        </tr>--}}
+        <tr>
+            <th>{{ trans('general.total_price_in_kuwaiti_dinar') }}</th>
+            <td>{{ getCartNetTotal() }} {{ trans('general.kd') }}</td>
+        </tr>
         </tfoot>
     </table>
     <button type="submit" class="btn btn-lg"><span
