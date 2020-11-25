@@ -18,7 +18,7 @@ class SlideExtraLightResource extends JsonResource
             'id' => $this->id,
             'large' => $this->imageLargeLink,
             'path' => $this->path ? $this->pathLink : null,
-            'url' => $this->url,
+            'url' => $this->url ? $this->url : env('APP_URL'),
         ];
     }
 }
