@@ -17,7 +17,7 @@ class SlideExtraLightResource extends JsonResource
         return [
             'id' => $this->id,
             'large' => $this->imageLargeLink,
-            'path' => $this->pathLink,
+            'path' => $this->path ? $this->pathLink : null,
             'url' => $this->url,
         ];
     }
