@@ -41,7 +41,7 @@
                                             <div class="form-group form-md-line-input">
                                                 <input type="text" class="form-control tooltips" data-container="body" data-placement="top"
                                                        data-original-title="{{ trans('message.title_ar') }}" name="title_ar"
-                                                       placeholder="{{ trans('general.title_ar') }}">
+                                                       placeholder="{{ trans('general.title_ar') }}" value="{{ old('title_ar') }}">
                                                 <label for="form_control_1"> {{ trans('general.title_ar') }} *</label>
                                                 <span class="help-block">please enter proper title</span>
                                             </div>
@@ -50,7 +50,7 @@
                                             <div class="form-group form-md-line-input">
                                                 <input type="text" class="form-control tooltips" data-container="body" data-placement="top"
                                                        data-original-title="{{ trans('message.title_en') }}" name="title_en"
-                                                       placeholder="{{ trans('general.title_en') }}">
+                                                       placeholder="{{ trans('general.title_en') }}" value="{{ old('title_en') }}">
                                                 <label for="form_control_1">{{ trans('general.title_en') }}*</label>
                                                 <span class="help-block">please enter proper title</span>
                                             </div>
@@ -59,8 +59,8 @@
                                             <div class="form-group form-md-line-input">
                                                 <input type="text" class="form-control tooltips" data-container="body" data-placement="top"
                                                        data-original-title="{{ trans('message.caption_ar') }}" name="caption_ar"
-                                                       placeholder="{{ trans('general.caption_ar') }}">
-                                                <label for="form_control_1"> {{ trans('general.caption_ar') }} *</label>
+                                                       placeholder="{{ trans('general.caption_ar') }}" value="{{ old('caption_ar') }}">
+                                                <label for="form_control_1"> {{ trans('general.caption_ar') }} </label>
                                                 <span class="help-block">please enter proper caption</span>
                                             </div>
                                         </div>
@@ -68,8 +68,8 @@
                                             <div class="form-group form-md-line-input">
                                                 <input type="text" class="form-control tooltips" data-container="body" data-placement="top"
                                                        data-original-title="{{ trans('message.caption_en') }}" name="caption_en"
-                                                       placeholder="{{ trans('general.caption_en') }}">
-                                                <label for="form_control_1">{{ trans('general.caption_en') }}*</label>
+                                                       placeholder="{{ trans('general.caption_en') }}" value="{{ old('caption_en') }}">
+                                                <label for="form_control_1">{{ trans('general.caption_en') }}</label>
                                                 <span class="help-block">please enter proper caption</span>
                                             </div>
                                         </div>
@@ -77,8 +77,8 @@
                                             <div class="form-group form-md-line-input">
                                                 <input type="number" max="99" maxlength="2" class="form-control tooltips" data-container="body" data-placement="top"
                                                        data-original-title="{{ trans('message.sequence') }}"
-                                                       name="order" placeholder="{{ trans('general.sequence') }}">
-                                                <label for="form_control_1">{{ trans('general.sequence') }}*</label>
+                                                       name="order" placeholder="{{ trans('general.sequence') }}" value="{{ old('order') }}">
+                                                <label for="form_control_1">{{ trans('general.sequence') }}</label>
                                                 <span class="help-block">slide Order is a number</span>
                                             </div>
                                         </div>
