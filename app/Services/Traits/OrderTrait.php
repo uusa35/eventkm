@@ -47,6 +47,7 @@ trait OrderTrait
         $validate = validator($request->all(), [
             'country_id' => 'required|exists:countries,id',
             'collection_id' => 'exists:collections,id',
+            'payment_method' => 'required|min:3',
 //            'shipment_fees' => 'required|numeric'
         ]);
         if ($validate->fails()) {
@@ -64,11 +65,12 @@ trait OrderTrait
             'address' => $request->address,
             'notes' => $request->notes,
             'user_id' => $user->id,
-            'cash_on_delivery' => $request->has('cash_on_delivery') ? $request->cash_on_delivery && $country->is_local: false,
+            'cash_on_delivery' => $request->has('cash_on_delivery') ? $request->cash_on_delivery && $country->is_local : false,
             'discount' => $coupon ? ($coupon->is_percentage ? ($this->cart->subTotal() * ($coupon->value / 100)) : $coupon->value) : 0,
             'coupon_id' => $coupon ? $coupon['id'] : null,
+            'payment_method' => $request->payment_method,
 //            'shipment_fees' => $request->has('shipment_fees') ? $request->shipment_fees : 0
-        // Now it's fixed shipment fees from the country
+            // Now it's fixed shipment fees from the country
             'shipment_fees' => $this->cart->content()->where('options.type', 'country')->first()->total()
         ]);
         if ($order) {
@@ -244,7 +246,7 @@ trait OrderTrait
                 foreach ($request->cart as $item) {
                     if ($item['type'] === 'product') {
                         $product = Product::whereId($item['product_id'])->first();
-                        $productAttribute = $product->hasRealAttributes ? ProductAttribute::whereId($item['product_attribute_id'])->with('size','color')->first() : null;
+                        $productAttribute = $product->hasRealAttributes ? ProductAttribute::whereId($item['product_attribute_id'])->with('size', 'color')->first() : null;
                         $order->order_metas()->create([
                             'order_id' => $order->id,
                             'product_id' => $item['product_id'],
@@ -255,8 +257,8 @@ trait OrderTrait
                             'item_name' => $item['element']['name'],
                             'item_type' => class_basename($product),
                             'notes' => $item['notes'] ? $item['notes'] : null,
-                            'product_size' => $productAttribute  ? $productAttribute->size->name : ($product->size ? $product->size->name : null),
-                            'product_color' => $productAttribute ? $productAttribute->color->name : ($product->color ? $product->color->name: null),
+                            'product_size' => $productAttribute ? $productAttribute->size->name : ($product->size ? $product->size->name : null),
+                            'product_color' => $productAttribute ? $productAttribute->color->name : ($product->color ? $product->color->name : null),
                         ]);
                     } else if ($item['type'] === 'service') {
                         // later we should check of multi Booking !!!
@@ -283,7 +285,7 @@ trait OrderTrait
             }
             return trans('message.order_is_not_created');
         } catch (\Exception $e) {
-            return $e->getLine() . ' - '. $e->getMessage() .' - '. $e->getFile();
+            return $e->getLine() . ' - ' . $e->getMessage() . ' - ' . $e->getFile();
         }
     }
 }

@@ -63,7 +63,6 @@ class OrderController extends Controller
         if ($user && $country) {
             $order = $this->createWebOrder($request, $user, $this->cart);
             if ($order) {
-                dd($order);
                 auth()->login($user);
                 $elements = $this->cart->content();
                 return view('frontend.wokiee.four.modules.cart.show', compact('elements', 'order'))->with('success', trans('message.register_account_password_is_your_mobile'));

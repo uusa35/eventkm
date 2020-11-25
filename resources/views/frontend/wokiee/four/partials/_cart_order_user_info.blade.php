@@ -8,6 +8,7 @@
                         <form method="post"
                               action="{{ route('frontend.order.store') }}">
                             @csrf
+                            <input type="hidden" name="payment_method" value="Web - {{ $settings->payment_method }}">
                             {{--                            @if(Cart::content()->where('options.type', 'country')->first())--}}
                             {{--                                <input type="hidden" name="shipment_fees"--}}
                             {{--                                       value="{{ Cart::content()->where('options.type', 'country')->first()->price }}">--}}

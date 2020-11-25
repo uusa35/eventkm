@@ -19,7 +19,6 @@
                             >
                         @endif
                                 <input type="hidden" name="order_id" value="{{ $order->id }}">
-                                <input type="hidden" name="payment_method" value="">
                                 @csrf
                                 <div class="row">
                                     <div class="col-6">
