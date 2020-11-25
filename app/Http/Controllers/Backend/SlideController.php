@@ -53,7 +53,7 @@ class SlideController extends Controller
             'slidable_type' => 'required|alpha',
         ]);
         if ($validate->fails()) {
-            return redirect()->back()->withErrors($validate->errors());
+            return redirect()->back()->withErrors($validate->errors())->withInput();
         }
         return view('backend.modules.slide.create');
     }

@@ -87,7 +87,7 @@ class  ProductController extends Controller
             }
             return redirect()->route('backend.product.index')->with('success', trans('message.product_created_successfully'));
         }
-        return redirect()->back()->with('error', 'unknown error');
+        return redirect()->back()->with('error', 'unknown error')->withInput();
     }
 
     /**
