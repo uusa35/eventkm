@@ -53,7 +53,7 @@ class SlideController extends Controller
             'slidable_type' => 'required|alpha',
         ]);
         if ($validate->fails()) {
-            return redirect()->back()->withErrors($validate->errors())->withInput();
+            return redirect()->back()->withErrors($validate->errors());
         }
         return view('backend.modules.slide.create');
     }
@@ -84,7 +84,7 @@ class SlideController extends Controller
             $request->hasFile('path') ? $this->savePath($request, $element) : null;
             return redirect()->route('backend.slide.index', ['slidable_id' => $element->slidable_id, 'slidable_type' => request('slidable_type')])->with('success', trans('message.store_success'));
         }
-        return redirect()->back()->with('error', trans('message.store_error'));
+        return redirect()->back()->with('error', trans('message.store_error'))->withInput();
     }
 
     /**
