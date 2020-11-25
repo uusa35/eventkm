@@ -44,7 +44,7 @@ class TagController extends Controller
             'slug_en' => 'required|min:3',
         ]);
         if ($validate->fails()) {
-            return redirect()->back()->withErrors($validate);
+            return redirect()->back()->withErrors($validate)->withInput();
         }
         $element = Tag::create($request->all());
         if ($element) {

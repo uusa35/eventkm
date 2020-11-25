@@ -97,7 +97,7 @@ trait ModelHelpers
 
     public function getPathLinkAttribute()
     {
-        return asset(env('FILES') . $this->path);
+        return $this->path ? asset(env('FILES') . $this->path) : null;
     }
 
 }

@@ -62,7 +62,7 @@ class CommercialController extends Controller
             'image' => 'required|image|dimensions:width=930,height=365',
         ]);
         if ($validate->fails()) {
-            return redirect()->back()->withErrors($validate);
+            return redirect()->back()->withErrors($validate)->withInput();
         }
         $element = Commercial::create($request->except(['image', 'path', 'categories']));
         if ($element) {

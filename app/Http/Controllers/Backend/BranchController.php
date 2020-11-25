@@ -52,7 +52,7 @@ class BranchController extends Controller
             'phone' => 'required',
         ]);
         if ($validate->fails()) {
-            return redirect()->back()->withErrors($validate);
+            return redirect()->back()->withErrors($validate)->withInput();
         }
         $element = Branch::create($request->all());
         if ($element) {

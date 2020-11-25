@@ -49,7 +49,7 @@ class ShipmentPackageController extends Controller
             'charge_five' => 'nullable|numeric|min:1|max:99',
         ]);
         if ($validate->fails()) {
-            return redirect()->back()->withErrors($validate);
+            return redirect()->back()->withErrors($validate)->withInput();
         }
         $element = ShipmentPackage::create($request->all());
         if ($element) {
