@@ -1032,6 +1032,9 @@
                                                         <option value="tap" {{ $element->payment_method === 'tap' ? 'selected' : null }}>
                                                             Tap
                                                         </option>
+                                                        <option value="upayment" {{ $element->payment_method === 'upayment' ? 'selected' : null }}>
+                                                            Upayment
+                                                        </option>
                                                     </select>
                                                 </div>
                                             </div>

@@ -1,12 +1,8 @@
 <?php
 
-use App\Providers\ComposerServiceProvider;
-use Brotzka\DotenvEditor\DotenvEditorServiceProvider;
-use GoogleMaps\ServiceProvider\GoogleMapsServiceProvider;
-use Riverskies\Laravel\MobileDetect\MobileDetectServiceProvider;
-use Spatie\Geocoder\GeocoderServiceProvider;
 use Usama\MyFatoorah\MyFatoorahServiceProvider;
 use Usama\Tap\TapServiceProvider;
+use Usama\Upayment\UpaymentServiceProvider;
 
 return [
 
@@ -47,7 +43,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool)env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -185,6 +181,7 @@ return [
 
         App\Providers\ComposerServiceProvider::class,
         TapServiceProvider::class,
+        UpaymentServiceProvider::class,
         MyFatoorahServiceProvider::class,
         // missing shopping cart
 

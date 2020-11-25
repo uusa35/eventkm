@@ -59,7 +59,8 @@
         "psr-4": {
             "App\\": "app/",
             "Usama\\Tap\\": "packages/usama/tap/src",
-            "Usama\\MyFatoorah\\": "packages/usama/myfatoorah/src"
+            "Usama\\MyFatoorah\\": "packages/usama/myfatoorah/src",
+            "Usama\\Upayment\\": "packages/usama/upayment/src"
         },
         "classmap": [
             "database/seeds",
