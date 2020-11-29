@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change beforePath="$PROJECT_DIR$/app/Resources/SlideExtraLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/SlideExtraLightResource.php" afterDir="false" />
-    </list>
+    <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -932,12 +930,12 @@
       <workItem from="1606114592884" duration="5408000" />
       <workItem from="1606198991423" duration="254000" />
       <workItem from="1606314922831" duration="2176000" />
-      <workItem from="1606326772203" duration="1966000" />
+      <workItem from="1606326772203" duration="2090000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="656254000" />
+    <option name="totallyTimeSpent" value="656378000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1121" extended-state="0" />
