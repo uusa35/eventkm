@@ -3,112 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Events/MyEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Events/MyEvent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ServiceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Listeners/MyEventListener.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/broadcasting.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/broadcasting.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/backend-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/backend-rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/backend.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/backend.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/frontend-custom-ar.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/frontend-custom-ar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/frontend-custom-en.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/frontend-custom-en.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/plugins.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/plugins.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/theme-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/theme-rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/air-sticky/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/air-sticky/LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/bootstrap-datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/bootstrap-datepicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.bg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.ca.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.ca.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.cs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.da.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.da.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.de.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.de.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.el.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.el.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.es.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.es.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.fi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.fr.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.fr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.he.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.he.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.hr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.id.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.id.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.is.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.is.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.it.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.it.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.ja.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.ja.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.kr.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.kr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.lt.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.lt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.lv.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.lv.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.ms.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.ms.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.nb.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.nb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.nl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.pl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.pt.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.pt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.ro.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.ro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.rs-latin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.rs-latin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.rs.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.rs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.ru.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.ru.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.sk.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.sk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.sl.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.sl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.sv.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.sv.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.sw.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.th.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.th.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.tr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.uk.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.uk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.zh-TW.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/locales/bootstrap-datepicker.zh-TW.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap/css/bootstrap-grid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/countdown/jquery.countdown.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/countdown/jquery.countdown.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/countdown/jquery.plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/countdown/jquery.plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/elevatezoom/jquery.elevatezoom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/elevatezoom/jquery.elevatezoom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/form/contact-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/form/contact-form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/form/jquery.form-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/form/jquery.form-init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/form/jquery.form.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/form/jquery.form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/form/jquery.validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/form/jquery.validate.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/form/newsletter-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/form/newsletter-form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/instafeed/instafeed.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/instafeed/instafeed.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/isotope/imagesloaded.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/isotope/imagesloaded.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/isotope/isotope.pkgd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/isotope/isotope.pkgd.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/jquery/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/jquery/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/lazyLoad/lazyload.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/lazyLoad/lazyload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/magnific-popup/jquery.magnific-popup.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/magnific-popup/jquery.magnific-popup.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/panelmenu/panelmenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/panelmenu/panelmenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/perfect-scrollbar/perfect-scrollbar.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/perfect-scrollbar/perfect-scrollbar.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/rs-plugin/css/settings-ie8.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/rs-plugin/css/settings-ie8.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/rs-plugin/css/settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/rs-plugin/css/settings.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/rs-plugin/font/revicons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/rs-plugin/font/revicons.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/rs-plugin/js/jquery.themepunch.revolution.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/rs-plugin/js/jquery.themepunch.revolution.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/rs-plugin/js/jquery.themepunch.revolution.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/rs-plugin/js/jquery.themepunch.revolution.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/rs-plugin/js/jquery.themepunch.tools.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/rs-plugin/js/jquery.themepunch.tools.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/slick/fonts/slick.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/slick/fonts/slick.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/slick/slick.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/slick/slick.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/slick/slick.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/slick/slick.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/external/slick/slick.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/slick/slick.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/font/revicons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/font/revicons.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/backend-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/backend-custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/backend.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/backend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/datepicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/frontend-ar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/frontend-ar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/frontend-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/frontend-custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/frontend-en.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/frontend-en.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/productAttribute.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/productAttribute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/tinymce.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/tinymce.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/wokiee.demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/wokiee.demo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/product/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/scripts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -170,8 +65,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Providers/EventServiceProvider.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="342">
-                  <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+                <state relative-caret-position="594">
+                  <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -180,7 +75,7 @@
             <entry file="file://$PROJECT_DIR$/resources/assets/js/bootstrap.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="355">
-                  <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+                  <caret line="34" selection-start-line="34" selection-end-line="34" />
                 </state>
               </provider>
             </entry>
@@ -278,8 +173,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/CategoryController.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="288">
-                      <caret line="27" column="78" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="78" />
+                    <state relative-caret-position="324">
+                      <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
                     </state>
                   </provider>
                 </entry>
@@ -315,11 +210,11 @@
           </split-first>
           <split-second>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/app/Events/MyEvent.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="88">
-                      <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+                    <state relative-caret-position="178">
+                      <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
                       <folding>
                         <element signature="e#37#75#0#PHP" expanded="true" />
                       </folding>
@@ -330,17 +225,17 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/.env">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="278">
-                      <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+                    <state relative-caret-position="104">
+                      <caret line="46" column="19" lean-forward="true" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/resources/views/backend/partials/scripts.blade.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="141">
-                      <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+                    <state relative-caret-position="267">
+                      <caret line="29" column="38" lean-forward="true" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
                     </state>
                   </provider>
                 </entry>
@@ -455,10 +350,10 @@
         <option value="$PROJECT_DIR$/routes/home.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Events/MyEvent.php" />
-        <option value="$PROJECT_DIR$/resources/views/backend/partials/scripts.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/js/bootstrap.js" />
         <option value="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/CategoryController.php" />
+        <option value="$PROJECT_DIR$/resources/views/backend/partials/scripts.blade.php" />
       </list>
     </option>
   </component>
@@ -1099,12 +994,12 @@
       <workItem from="1606714103920" duration="1292000" />
       <workItem from="1606805884788" duration="1101000" />
       <workItem from="1606817219740" duration="4895000" />
-      <workItem from="1606896591620" duration="5994000" />
+      <workItem from="1606896591620" duration="6579000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="671225000" />
+    <option name="totallyTimeSpent" value="671810000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1121" extended-state="0" />
@@ -1454,13 +1349,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Listeners/MyEventListener.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -1480,25 +1368,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/partials/scripts.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Events/MyEvent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-          <folding>
-            <element signature="e#37#75#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="126">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1512,14 +1383,7 @@
     <entry file="file://$PROJECT_DIR$/resources/assets/js/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/EventServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>
@@ -1532,8 +1396,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/CategoryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="27" column="78" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="78" />
+        <state relative-caret-position="324">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/EventServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Events/MyEvent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <element signature="e#37#75#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="46" column="19" lean-forward="true" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/partials/scripts.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="29" column="38" lean-forward="true" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
         </state>
       </provider>
     </entry>

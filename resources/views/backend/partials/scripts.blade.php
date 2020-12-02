@@ -9,7 +9,6 @@
     ]); ?>
 </script>
 <script>
-    console.log('from inside scripts.blade')
     toastr.options = {
         "closeButton": true,
         "debug": false,
