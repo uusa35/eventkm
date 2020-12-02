@@ -1,6 +1,7 @@
 <script src="{{ mix('js/backend.js') }}"></script>
 <script src="{{ mix('js/tinymce.min.js') }}"></script>
 <script src="{{ mix('js/backend-custom.js') }}"></script>
+<script src="{{ mix('js/app.js') }}"></script>
 {{--<script src="{{ mix('js/datepicker.js') }}"></script>--}}
 <script type="application/javascript">
     window.Laravel = <?php echo json_encode([
@@ -8,6 +9,7 @@
     ]); ?>
 </script>
 <script>
+    console.log('from inside scripts.blade')
     toastr.options = {
         "closeButton": true,
         "debug": false,

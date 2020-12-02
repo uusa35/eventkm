@@ -12,7 +12,6 @@ use App\Models\Product;
 use App\Models\ShipmentPackage;
 use App\Models\Size;
 use App\Models\Tag;
-
 use App\Models\User;
 use App\Models\Video;
 use Carbon\Carbon;
@@ -29,13 +28,14 @@ class  ProductController extends Controller
         $this->authorize('index', 'product');
         if (auth()->user()->isAdminOrABove) {
             $elements = request()->has('type')
-                ? Product::where([request('type') => true])->with('user', 'product_attributes.size', 'product_attributes.color', 'color', 'size', 'slides')->orderBy('id', 'desc')->paginate(self::TAKE_MID)
-                : Product::with('user', 'product_attributes.size', 'product_attributes.color', 'color', 'size', 'slides')->orderBy('id','desc')->paginate(self::TAKE_MID);
+                ? Product::where([request('type') => true])->with('user', 'product_attributes.size', 'product_attributes.color', 'color', 'size', 'slides')->orderBy('id', 'desc')->paginate(self::TAKE_LESS)
+                : Product::with('user', 'product_attributes.size', 'product_attributes.color', 'color', 'size', 'slides')->orderBy('id', 'desc')->paginate(self::TAKE_LESS);
         } else {
             $elements = request()->has('type')
-                ? Product::active()->myItems()->where([request('type') => true])->with('user', 'product_attributes.size', 'product_attributes.color', 'color', 'size', 'slides')->orderBy('id', 'desc')->paginate(self::TAKE_MID)
-                : Product::active()->myItems()->with('user', 'product_attributes.size', 'product_attributes.color', 'color', 'size', 'slides')->orderBy('id', 'desc')->paginate(self::TAKE_MID);
+                ? Product::active()->myItems()->where([request('type') => true])->with('user', 'product_attributes.size', 'product_attributes.color', 'color', 'size', 'slides')->orderBy('id', 'desc')->paginate(self::TAKE_LESS)
+                : Product::active()->myItems()->with('user', 'product_attributes.size', 'product_attributes.color', 'color', 'size', 'slides')->orderBy('id', 'desc')->paginate(self::TAKE_LESS);
         }
+
         return view('backend.modules.product.index', compact('elements'));
     }
 
@@ -47,7 +47,7 @@ class  ProductController extends Controller
     public function create()
     {
         $this->authorize('product.create');
-        $categories = Category::active()->where('is_product',true)->with(['children' => function ($q) {
+        $categories = Category::active()->where('is_product', true)->with(['children' => function ($q) {
             return $q->active()->where('is_product', true)->with(['children' => function ($q) {
                 return $q->active()->where('is_product', true);
             }]);
@@ -71,7 +71,7 @@ class  ProductController extends Controller
     {
         $end_sale = $request->has('end_sale') ? Carbon::parse(str_replace('-', '', $request->end_sale))->toDateTimeString() : null;
         $start_sale = $request->has('start_sale') ? Carbon::parse(str_replace('-', '', $request->start_sale))->toDateTimeString() : null;
-        $element = Product::create($request->except(['_token', 'image', 'images', 'categories', 'tags', 'start_sale', 'end_sale','videos']));
+        $element = Product::create($request->except(['_token', 'image', 'images', 'categories', 'tags', 'start_sale', 'end_sale', 'videos']));
         if ($element) {
             $start_sale ? $element->update(['start_sale' => $start_sale]) : null;
             $end_sale ? $element->update(['end_sale' => $end_sale]) : null;
@@ -109,7 +109,7 @@ class  ProductController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::active()->where('is_product',true)->with(['children' => function ($q) {
+        $categories = Category::active()->where('is_product', true)->with(['children' => function ($q) {
             return $q->where('is_product', true)->with(['children' => function ($q) {
                 return $q->where('is_product', true);
             }]);
@@ -125,7 +125,7 @@ class  ProductController extends Controller
             'categories', 'brand', 'tags', 'user', 'product_attributes'
         ])->first();
 
-        return view('backend.modules.product.edit', compact('element', 'categories', 'tags', 'brands', 'colors', 'sizes', 'shipment_packages', 'users','videos'));
+        return view('backend.modules.product.edit', compact('element', 'categories', 'tags', 'brands', 'colors', 'sizes', 'shipment_packages', 'users', 'videos'));
     }
 
     /**
@@ -141,7 +141,7 @@ class  ProductController extends Controller
         $element = Product::whereId($id)->with('images')->first();
         $this->authorize('product.update', $element);
         if ($element) {
-            $element->update($request->except(['_token', 'image', 'images', 'categories', 'tags', 'start_sale', 'end_sale','videos']));
+            $element->update($request->except(['_token', 'image', 'images', 'categories', 'tags', 'start_sale', 'end_sale', 'videos']));
             $start_sale ? $element->update(['start_sale' => $start_sale]) : null;
             $end_sale ? $element->update(['end_sale' => $end_sale]) : null;
             $element->tags()->sync($request->tags);

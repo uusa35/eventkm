@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Events\MyEvent;
 use App\Http\Requests\Backend\ServiceStore;
 use App\Http\Requests\Backend\ServiceUpdate;
 use App\Models\Addon;

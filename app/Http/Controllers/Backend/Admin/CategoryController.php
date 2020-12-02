@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend\Admin;
 
 use App\Core\PrimaryController;
 use App\Core\Services\Image\PrimaryImageService;
+use App\Events\MyEvent;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\CategoryStore;
 use App\Models\Category;
@@ -24,6 +25,7 @@ class CategoryController extends Controller
     public function index()
     {
         $elements = Category::onlyParent()->with('children.children')->get();
+        broadcast(new MyEvent('testing pusher event from category.index', 5));
         return view('backend.modules.category.index', compact('elements'));
     }
 

@@ -113,10 +113,10 @@
                                                         <a data-toggle="modal" href="#" data-target="#basic"
                                                            data-title="Delete"
                                                            data-content="Are you sure you want to delete attribute ? "
-                                                           data-form_id="delete-{{ $attribute->id }}">
+                                                           data-form_id="delete-attribute_id-{{ $attribute->id }}">
                                                             <i class="fa fa-fw fa-recycle"></i> {{ trans('general.delete') }}
                                                         </a>
-                                                        <form method="post" id="delete-{{ $attribute->id }}"
+                                                        <form method="post" id="delete-attribute_id-{{ $attribute->id }}"
                                                               action="{{ route('backend.attribute.destroy',$attribute->id) }}">
                                                             @csrf
                                                             <input type="hidden" name="_method" value="delete"/>

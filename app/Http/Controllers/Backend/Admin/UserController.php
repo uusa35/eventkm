@@ -86,8 +86,6 @@ class UserController extends Controller
             activity()
                 ->performedOn($element)
                 ->causedBy(auth()->user());
-//                ->withProperties(['customProperty' => 'customValue'])
-//                ->log('Look, I logged something');
             return redirect()->route('backend.admin.user.index')->with('success', trans('general.user_added'));
         }
         return redirect()->route('backend.admin.user.create')->with('error', trans('general.user_not_added'));
