@@ -36,15 +36,13 @@ class CategoryController extends Controller
             }])->orderBy('order', 'asc')->get();
         }
         elseif (request()->has('type') && request()->has('on_home')) {
-//            dd(request()->type);
-            $elements = Category::where(request()->type, true)->get();
-//                ->active()->onHome()->with(['children' => function ($q) {
-//                return $q->active()->where(request()->type, true)->with(['children' => function ($q) {
-//                    return $q->active()->where(request()->type, true)->categoryGroupsWithProperties();
-//                }])->categoryGroupsWithProperties();
-//            }])->categoryGroupsWithProperties()->with(['tags' => function ($q) {
-//                return $q->active()->orderBy('order', 'asc');
-//            }])->orderBy('order', 'asc')->get();
+            $elements = Category::where(request()->type, true)->active()->onHome()->with(['children' => function ($q) {
+                return $q->active()->where(request()->type, true)->with(['children' => function ($q) {
+                    return $q->active()->where(request()->type, true)->categoryGroupsWithProperties();
+                }])->categoryGroupsWithProperties();
+            }])->categoryGroupsWithProperties()->with(['tags' => function ($q) {
+                return $q->active()->orderBy('order', 'asc');
+            }])->orderBy('order', 'asc')->get();
         } elseif (request()->has('on_home') && request()->on_home && !request()->has('type')) {
             $elements = Category::active()->onHome()->with(['children' => function ($q) {
                 return $q->active()->with(['children' => function ($q) {

@@ -26,7 +26,7 @@ class CategoryLightResource extends JsonResource
             'min' => $this->min ? (int) $this->min : 50,
             'max' => $this->max ? (int) $this->max : 10000,
             'is_real_estate' => $this->is_real_estate,
-            'is_user' => $this->is_real_estate,
+            'is_user' => $this->is_user,
             'is_product' => $this->is_product,
             'is_classified' => $this->is_classified,
             'is_service' => $this->is_service,
