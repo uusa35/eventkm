@@ -22,7 +22,7 @@ class CategoryChildLightResource extends JsonResource
             'thumb' =>$this->imageThumbLink,
             'large' =>$this->imageLargeLink,
             'is_real_estate' => $this->is_real_estate,
-            'is_user' => $this->is_real_estate,
+            'is_user' => $this->is_user,
             'is_product' => $this->is_product,
             'is_classified' => $this->is_classified,
             'is_featured' => $this->is_featured,
