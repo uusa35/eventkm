@@ -2,7 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/scripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/backend-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/backend-rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/backend.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/backend.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/frontend-custom-ar.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/frontend-custom-ar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/frontend-custom-en.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/frontend-custom-en.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/plugins.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/plugins.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/theme-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/theme-rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/backend-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/backend-custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/backend.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/backend.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/datepicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/frontend-ar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/frontend-ar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/frontend-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/frontend-custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/frontend-en.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/frontend-en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/productAttribute.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/productAttribute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/tinymce.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/tinymce.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/wokiee.demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/wokiee.demo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/js/bootstrap.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,8 +94,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/assets/js/bootstrap.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="769">
-                  <caret line="62" column="16" lean-forward="true" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+                <state relative-caret-position="787">
+                  <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
                 </state>
               </provider>
             </entry>
@@ -181,8 +202,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/CategoryController.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="252">
-                      <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+                    <state relative-caret-position="283">
+                      <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
                     </state>
                   </provider>
                 </entry>
@@ -227,11 +248,11 @@
           </split-first>
           <split-second>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/app/Events/MyEvent.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="87">
-                      <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+                    <state relative-caret-position="273">
+                      <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
                     </state>
                   </provider>
                 </entry>
@@ -245,11 +266,11 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/resources/views/backend/partials/scripts.blade.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="324">
-                      <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+                    <state relative-caret-position="73">
+                      <caret line="13" column="22" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="22" />
                     </state>
                   </provider>
                 </entry>
@@ -270,7 +291,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>if ($validate-&gt;fails()) {</find>
       <find>return redirect()-&gt;back()-&gt;withErrors($validate-&gt;errors())</find>
       <find>return redirect()-&gt;back()-&gt;withErrors($validate-&gt;errors());</find>
       <find>ESCRAPreturn redirect()-&gt;back()-&gt;withErrors($validate-&gt;errors())-&gt;withInput();</find>
@@ -300,6 +320,7 @@
       <find>BROADCAST_DRIVER</find>
       <find>broadcastAs</find>
       <find>pusher</find>
+      <find>message</find>
     </findStrings>
     <replaceStrings>
       <replace>myexpo</replace>
@@ -365,9 +386,9 @@
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Events/MyEvent.php" />
-        <option value="$PROJECT_DIR$/resources/assets/js/bootstrap.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/CategoryController.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/partials/scripts.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/CategoryController.php" />
+        <option value="$PROJECT_DIR$/resources/assets/js/bootstrap.js" />
       </list>
     </option>
   </component>
@@ -1014,12 +1035,12 @@
       <workItem from="1606805884788" duration="1101000" />
       <workItem from="1606817219740" duration="4895000" />
       <workItem from="1606896591620" duration="8489000" />
-      <workItem from="1606968762185" duration="3883000" />
+      <workItem from="1606968762185" duration="5682000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="677603000" />
+    <option name="totallyTimeSpent" value="679402000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1121" extended-state="0" />
@@ -1401,13 +1422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/EventServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1417,22 +1431,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="57" selection-start-line="57" selection-end-line="57" selection-end-column="18" />
+        <state relative-caret-position="301">
+          <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/bootstrap.js">
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="769">
-          <caret line="62" column="16" lean-forward="true" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+        <state relative-caret-position="126">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Events/MyEvent.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/partials/scripts.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        <state relative-caret-position="73">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1443,10 +1457,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/partials/scripts.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Events/MyEvent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+        <state relative-caret-position="273">
+          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="787">
+          <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
         </state>
       </provider>
     </entry>
