@@ -36,8 +36,8 @@ class CategoryController extends Controller
             }])->orderBy('order', 'asc')->get();
         }
         elseif (request()->has('type') && request()->has('on_home')) {
-            dd('here');
-            $elements = Category::where(request()->type, true)->active()->onHome()->with(['children' => function ($q) {
+//            dd('here');
+            $elements = Category::where('is_user', true)->active()->onHome()->with(['children' => function ($q) {
                 return $q->active()->where(request()->type, true)->with(['children' => function ($q) {
                     return $q->active()->where(request()->type, true)->categoryGroupsWithProperties();
                 }])->categoryGroupsWithProperties();
