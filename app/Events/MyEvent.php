@@ -17,16 +17,20 @@ class MyEvent implements ShouldBroadcast
     public function __construct($message, $id = '')
     {
         $this->message = $message;
-        $this->id= $id;
+        $this->id = $id;
     }
 
     public function broadcastOn()
     {
-        return ['my-channel'];
+        if (env('ENABLE_PUSHER')) {
+            return ['my-channel'];
+        }
     }
 
     public function broadcastAs()
     {
-        return 'my-event';
+        if (env('ENABLE_PUSHER')) {
+            return 'my-event';
+        }
     }
 }

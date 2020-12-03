@@ -23,6 +23,7 @@ class EventServiceProvider extends ServiceProvider
         CheckCartItems::class => [
             FilterCartAccordingToShipmentCountries::class,
         ],
+//        MyEvent::class => [MyEventListener::class]
     ];
 
     /**
