@@ -25,7 +25,7 @@ class CategoryController extends Controller
     public function index()
     {
         $elements = Category::onlyParent()->with('children.children')->get();
-        broadcast(new MyEvent('testing pusher event from category.index', 5));
+        event(new MyEvent('testing pusher event from category.index', 5));
         return view('backend.modules.category.index', compact('elements'));
     }
 
