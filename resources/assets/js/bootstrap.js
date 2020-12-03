@@ -57,6 +57,10 @@ window.Echo = new Echo({
 
 var channel = window.Echo.channel('my-channel');
 channel.listen('.my-event', function(data) {
-    console.log('the data from inside', data);
-    toastr.success(data.message);
+    try {
+        console.log('the data from inside', data);
+        toastr.success(data.message);
+    } catch(e) {
+        console.log('the error from inside the channel listen', e)
+    }
 });
