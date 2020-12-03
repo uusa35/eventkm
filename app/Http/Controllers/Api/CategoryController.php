@@ -35,7 +35,7 @@ class CategoryController extends Controller
                 return $q->active()->orderBy('order', 'asc');
             }])->orderBy('order', 'asc')->get();
         }
-        elseif (request()->has('type') && !request()->has('on_home')) {
+        elseif (request()->has('type') && request()->has('on_home')) {
                 // is_classified or is_product or is_service and not nessecary is_parent
             $elements = Category::where(request()->type, true)->active()->onHome()->with(['children' => function ($q) {
                 return $q->active()->where(request()->type, true)->with(['children' => function ($q) {
