@@ -749,9 +749,6 @@
                                                                     </strong>
                                                                 </span>
                                                         @endif
-                                                        {{-- <span class="help-block">
-                                                                                                                            <strong>{{ trans('message.delivery_time') }}</strong>
-                                                        </span> --}}
                                                     </div>
                                                 </div>
                                                 @if($element->barcode)
@@ -761,8 +758,28 @@
                                                 @endif
                                             </div>
                                             <div class="row">
+                                                <div class="col-md-2">
+                                                    <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
+                                                        <label for="order" class="control-label">{{ trans('general.sequence') }}</label>
+                                                        <input id="order" type="text"
+                                                               class="form-control tooltips"
+                                                               data-container="body" data-placement="top"
+                                                               data-original-title="{{ trans('message.sequence') }}"
+                                                               name="order"
+                                                               value="{{ $element->order }}"
+                                                               placeholder="{{ trans('general.sequence') }}"
+                                                               autofocus>
+                                                        @if ($errors->has('order'))
+                                                            <span class="help-block">
+                                                                    <strong>
+                                                                        {{ $errors->first('order') }}
+                                                                    </strong>
+                                                                </span>
+                                                        @endif
+                                                    </div>
+                                                </div>
                                                 @if(!$tags->isEmpty())
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label class="control-label">{{ trans('general.tags') }}</label>
                                                             <select multiple="multiple" class="multi-select"

@@ -27,7 +27,7 @@ class ProductController extends Controller
 
     public function index(Filters $filters)
     {
-        $products = $this->product->filters($filters)->hasProductAttribute()->hasImages()->active()->activeUsers()->paginate(self::TAKE_MIN);
+        $products = $this->product->filters($filters)->hasProductAttribute()->hasImages()->active()->activeUsers()->orderBy('order', 'desc')->paginate(self::TAKE_MIN);
         return view('frontend.modules.favorite.index', compact('products'));
     }
 
@@ -41,7 +41,7 @@ class ProductController extends Controller
             'brand', 'product_attributes.color', 'product_attributes.size', 'tags', 'user.country', 'images', 'favorites'
         )->with(['categories' => function ($q) {
             return $q->has('products', '>', 0);
-        }])->orderBy('id', 'desc')->paginate(Self::TAKE_MIN);
+        }])->orderBy('order', 'asc')->paginate(Self::TAKE_MIN);
         $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
         $sizes = $elements->pluck('product_attributes')->flatten()->pluck('size')->flatten()->unique('id')->sortKeysDesc();
         $colors = $elements->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();

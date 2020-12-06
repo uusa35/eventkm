@@ -124,7 +124,6 @@ class  ProductController extends Controller
         $element = Product::whereId($id)->with([
             'categories', 'brand', 'tags', 'user', 'product_attributes'
         ])->first();
-
         return view('backend.modules.product.edit', compact('element', 'categories', 'tags', 'brands', 'colors', 'sizes', 'shipment_packages', 'users', 'videos'));
     }
 
