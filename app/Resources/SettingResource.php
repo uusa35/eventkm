@@ -50,7 +50,7 @@ class SettingResource extends JsonResource
             'cash_on_delivery' => $this->cash_on_delivery,
             'payment_method' => $this->payment_method,
             'size_chart' => $this->getCurrentImageAttribute('size_chart', 'large'),
-            'multi_cart_merchant' => $this->multiCartMerchant,
+            'multiCartMerchant' => $this->multi_cart_merchant,
             'colors' => [
                 'main_theme_color' => $this->main_theme_color,
                 'main_theme_bg_color' => $this->main_theme_bg_color,
