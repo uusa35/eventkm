@@ -58,5 +58,6 @@ $factory->define(Product::class, function (Faker $faker) use ($fakerAr) {
         'brand_id' => Brand::all()->random()->id,
         'views' => $faker->randomNumber(),
         'wrap_as_gift' => $faker->boolean(true),
+        'order' => $faker->numberBetween(1, 99),
     ];
 });

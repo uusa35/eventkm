@@ -73,6 +73,7 @@ $factory->define(Setting::class, function (Faker $faker) use ($fakerAr) {
         'terms_ar' => $faker->name,
         'terms_en' => $faker->name,
         'gift_fee' => 5.00,
+        'multi_cart_merchant' => $faker->boolean(true)
 //        'shipment_service' => $faker->boolean(true),
 //        'delivery_service' => $faker->boolean(false),
 //        'delivery_service_cost' => 5,

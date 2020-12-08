@@ -1016,6 +1016,23 @@
                                     </div>
                                     @can('isSuper')
                                         <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold tooltips"
+                                                           data-container="body" data-placement="top"
+                                                           data-original-title="{{ trans('message.multi_cart_merchant') }}">{{ trans('general.multi_cart_merchant') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="multi_cart_merchant" id="optionsRadios3"
+                                                               {{ $element->multi_cart_merchant ? 'checked' : null  }}
+                                                               value="1">
+                                                        {{ trans('general.yes') }}</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="multi_cart_merchant" id="optionsRadios4"
+                                                               {{ !$element->multi_cart_merchant ? 'checked' : null  }}
+                                                               value="0">
+                                                        {{ trans('general.no') }}</label>
+                                                </div>
+                                            </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="control-label">{{ trans('general.payment_method') }}
