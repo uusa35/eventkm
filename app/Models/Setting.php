@@ -11,7 +11,8 @@ class Setting extends PrimaryModel
     protected $casts = [
         'show_commercials' => 'boolean',
         'splash_on' => 'boolean',
-        'cash_on_delivery' => 'boolean'
+        'cash_on_delivery' => 'boolean',
+        'multi_cart_merchant' => 'boolean'
     ];
 
     public function getLogoLargeAttribute()
