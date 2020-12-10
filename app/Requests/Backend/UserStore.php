@@ -45,7 +45,7 @@ class UserStore extends FormRequest
             'description_en' => 'nullable|min:3',
             'service_ar' => '',
             'service_en' => '',
-            'email' => 'required|unique:users,email',
+            'email' => 'required|min:5:max:80|unique:users,email',
             'mobile' => 'nullable',
             'phone' => 'nullable',
             'fax' => 'nullable',
