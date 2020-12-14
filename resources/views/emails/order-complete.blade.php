@@ -10,6 +10,10 @@
 # {{ trans('general.order_number') }} : {{ $order->id }}
 <strong style="float : {{ app()->getLocale() === 'ar' ? 'right' : 'left' }}; direction : {{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}"> {{ trans('general.gentlemen') }} / {{ $user->name ? $user->name : $user->slug }}</strong><br>
 <strong style="float : {{ app()->getLocale() === 'ar' ? 'right' : 'left' }}; direction : {{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}"> {{ trans('general.address') }}/ {{ $user->address }}</strong><br>
+@if($order->area)
+<strong style="float : {{ app()->getLocale() === 'ar' ? 'right' : 'left' }}; direction : {{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}"> {{ trans('general.area') }}/ {{ $order->area ? $order->area : $order->user->area }}</strong><br>
+@endif
+
 {{--<strong style="float : {{ app()->getLocale() === 'ar' ? 'right' : 'left' }}; direction : {{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}"> {{ trans('general.area') }}/ {{ $order->area }}</strong><br>--}}
 <strong style="float : {{ app()->getLocale() === 'ar' ? 'right' : 'left' }}; direction : {{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}"> {{ trans('general.mobile') }} / {{ $user->mobile }}</strong>
 <br>
@@ -60,6 +64,17 @@
 {{--| {{ $element->net_total  }}    | net total         |           |--}}
 {{--@endcomponent--}}
 <hr>
+
+
+@foreach($order->order_metas as $orderMeta)
+@if($orderMeta->notes)
+@component('mail::panel')
+<div style="font-size: small; font-weight: bold; text-align: center !important;">
+{{ trans('message.notes') }} : {{ $orderMeta->notes }}
+</div>
+@endcomponent
+@endif
+@endforeach
 
 @component('mail::panel')
 <div style="font-size: small; font-weight: bold; text-align: center !important;">
