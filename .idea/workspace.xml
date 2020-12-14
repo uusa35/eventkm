@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/emails/order-complete.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/order-complete.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/emails/order-complete.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="805">
-              <caret line="70" selection-start-line="70" selection-end-line="74" selection-end-column="13" />
+            <state relative-caret-position="804">
+              <caret line="72" column="65" selection-start-line="72" selection-start-column="65" selection-end-line="72" selection-end-column="65" />
               <folding>
                 <element signature="e#908#1039#0#HTML" expanded="true" />
                 <element signature="e#4583#4658#0#HTML" expanded="true" />
@@ -905,12 +904,12 @@
       <workItem from="1607417850076" duration="993000" />
       <workItem from="1607589986000" duration="215000" />
       <workItem from="1607592498604" duration="425000" />
-      <workItem from="1607923811991" duration="633000" />
+      <workItem from="1607923811991" duration="739000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="689021000" />
+    <option name="totallyTimeSpent" value="689127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1121" extended-state="0" />
@@ -1338,8 +1337,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/emails/order-complete.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="70" selection-start-line="70" selection-end-line="74" selection-end-column="13" />
+        <state relative-caret-position="804">
+          <caret line="72" column="65" selection-start-line="72" selection-start-column="65" selection-end-line="72" selection-end-column="65" />
           <folding>
             <element signature="e#908#1039#0#HTML" expanded="true" />
             <element signature="e#4583#4658#0#HTML" expanded="true" />

@@ -67,10 +67,10 @@
 
 
 @foreach($order->order_metas as $orderMeta)
-@if($orderMeta->notes)
+@if($orderMeta->notes && $orderMeta->isProductType)
 @component('mail::panel')
 <div style="font-size: small; font-weight: bold; text-align: center !important;">
-{{ trans('message.notes') }} : {{ $orderMeta->notes }}
+{{ trans('general.notes') }} : {{ $orderMeta->product->name }} / {{ $orderMeta->notes }}
 </div>
 @endcomponent
 @endif
