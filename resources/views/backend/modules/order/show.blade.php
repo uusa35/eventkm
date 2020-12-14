@@ -118,7 +118,7 @@
                                             <td colspan="12">
                                                 <div class="col-12">
                                                     <div class="alert alert-dark alert-info">
-                                                        @if($orderMeta->isProductType)
+                                                        @if($item->isProductType)
                                                             <p>
                                                                 {{ trans('general.notes') }}
                                                                 : {{ $item->product->name }} /{{ $item->notes }}
