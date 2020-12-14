@@ -113,14 +113,21 @@
                                             {{ trans('general.kd') }}
                                         </td>
                                     </tr>
-                                    @if($item->notes && $orderMeta->isProductType)
+                                    @if($item->notes)
                                         <tr>
                                             <td colspan="12">
                                                 <div class="col-12">
                                                     <div class="alert alert-dark alert-info">
-                                                        <p>
-                                                            {{ trans('general.notes') }} : {{ $item->product->name }} /{{ $item->notes }}
-                                                        </p>
+                                                        @if($orderMeta->isProductType)
+                                                            <p>
+                                                                {{ trans('general.notes') }}
+                                                                : {{ $item->product->name }} /{{ $item->notes }}
+                                                            </p>
+                                                        @else
+                                                            <p>
+                                                                {{ trans('general.notes') }} : {{ $item->notes }}
+                                                            </p>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </td>
