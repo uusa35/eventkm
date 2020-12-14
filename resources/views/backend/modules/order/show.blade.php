@@ -121,7 +121,7 @@
                                                         @if($item->isProductType)
                                                             <p>
                                                                 {{ trans('general.notes') }}
-                                                                : {{ $item->product->name }} /{{ $item->notes }}
+                                                                : {{ $item->product->name }} / {{ $item->notes }}
                                                             </p>
                                                         @else
                                                             <p>
