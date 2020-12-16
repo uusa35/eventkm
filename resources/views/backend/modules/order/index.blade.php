@@ -149,20 +149,21 @@
                                                 <th>{{ trans('general.company') }}</th>
                                                 @foreach($element->order_metas as $meta)
                                                     <tr>
+                                                        {{ dd($meta->product->size) }}
                                                         @if($meta->product && $meta->product_id)
                                                             @if(!is_null($meta->product->product_attributes) && $meta->product->has_attributes)
                                                                 <td>
                                                                     <a href="{{ route('frontend.product.show', $meta->product->id) }}">{{ $meta->product->name }}</a>
                                                                 </td>
 
-                                                                <td>{{ $meta->product_attribute && $meta->product_attribute->size ? $meta->product->size->name_ar : 'N/A'}}</td>
+                                                                <td>{{ $meta->product_attribute && $meta->product_attribute->size ? $meta->product->size->name : 'N/A'}}</td>
                                                                 <td>{{ $meta->qty }}</td>
                                                                 <td>{{ $meta->product->user  ? $meta->product->user->name : 'N/A'}}</td>
                                                             @else
                                                                 <td>
                                                                     <a href="{{ route('frontend.product.show', $meta->product->id) }}">{{ $meta->product->name }}</a>
                                                                 </td>
-                                                                <td>{{ $meta->product->size && $meta->product->show_attribute ? $meta->product->size->name_ar : 'N/A'}}</td>
+                                                                <td>{{ $meta->product->size && $meta->product->show_attribute ? $meta->product->size->name : 'N/A'}}</td>
                                                                 <td>{{ $meta->qty }}</td>
                                                                 <td>{{ $meta->product->user  ? $meta->product->user->name : 'N/A'}}</td>
                                                             @endif
