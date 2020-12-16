@@ -3,7 +3,7 @@
 namespace Usama\Upayment;
 
 use App\Http\Controllers\Controller;
-use App\Jobs\sendSuccessOrderEmail;
+use App\Jobs\OrderSuccessProcessJob;
 use App\Models\Coupon;
 use App\Models\Setting;
 use App\Models\Order;
@@ -89,7 +89,7 @@ class UPaymentController extends Controller
             session()->forget('coupon');
         }
         $contactus = Setting::first();
-        dispatch(new sendSuccessOrderEmail($order, $order->user, $contactus))->delay(now()->addSeconds(30));
+        dispatch(new OrderSuccessProcessJob($order, $order->user, $contactus))->delay(now()->addSeconds(30));
         $this->clearCart();
         $markdown = new Markdown(view(), config('mail.markdown'));
         return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);

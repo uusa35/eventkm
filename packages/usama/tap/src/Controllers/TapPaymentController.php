@@ -3,7 +3,7 @@
 namespace Usama\Tap;
 
 use App\Http\Controllers\Controller;
-use App\Jobs\sendSuccessOrderEmail;
+use App\Jobs\OrderSuccessProcessJob;
 use App\Models\Ad;
 use App\Models\Coupon;
 use App\Models\Setting;
@@ -103,7 +103,7 @@ class TapPaymentController extends Controller
         $contactus = Setting::first();
         $this->clearCart();
         $markdown = new Markdown(view(), config('mail.markdown'));
-        dispatch(new sendSuccessOrderEmail($order, $order->user, $contactus))->delay(now()->addSeconds(10));
+        dispatch(new OrderSuccessProcessJob($order, $order->user, $contactus))->delay(now()->addSeconds(10));
         return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
     }
 

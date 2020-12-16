@@ -288,4 +288,8 @@ trait OrderTrait
             return $e->getLine() . ' - ' . $e->getMessage() . ' - ' . $e->getFile();
         }
     }
+
+    public function createOrderForMirsal(Order $order, User $user) {
+
+    }
 }
