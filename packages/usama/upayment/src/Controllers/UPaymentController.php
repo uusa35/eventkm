@@ -89,15 +89,15 @@ class UPaymentController extends Controller
             session()->forget('coupon');
         }
         $contactus = Setting::first();
-        dispatch(new OrderSuccessProcessJob($order, $order->user, $contactus))->delay(now()->addSeconds(30));
         $this->clearCart();
         $markdown = new Markdown(view(), config('mail.markdown'));
+//        OrderSuccessProcessJob::dispatchNow($order, $order->user, $contactus);
+        OrderSuccessProcessJob::dispatch($order, $order->user, $contactus)->delay(now()->addSeconds(15));
         return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
     }
 
     public function error(Request $request)
     {
-        dd($request->all());
         // once the result is success .. get the deal from refrence then delete all other free deals related to such ad.
         $validate = validator($request->all(), [
             'PaymentID' => 'required'

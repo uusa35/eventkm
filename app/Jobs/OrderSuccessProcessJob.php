@@ -14,12 +14,16 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
 
+
+
 class OrderSuccessProcessJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels, OrderTrait;
     public $user;
     public $order;
     public $contactus;
+    public $emailsList;
+
     /**
      * Create a new job instance.
      *
@@ -39,14 +43,24 @@ class OrderSuccessProcessJob implements ShouldQueue
      */
     public function handle()
     {
-        if (env('ORDER_MAILS')) {
+        $this->emailsList = [$this->contactus->email, $this->order->email];
+        if (env('ORDER_MAILS') && env('MAIL_ENABLED')) {
             foreach (explode(',', env('ORDER_MAILS')) as $mail) {
-                Mail::to($mail)->send(new OrderComplete($this->order, $this->user));
+                array_push($this->emailsList, $mail);
             }
         }
-        if(env('MIRSAL_ENABLED')) {
+        if (env('INVOICE_DISTRIBUTION')) {
+            $this->order->order_metas->each(function ($orderMeta) {
+                if ($orderMeta->isProductType) {
+                    array_push($this->emailsList, $orderMeta->product->user->email);
+                } else {
+                    array_push($this->emailsList, $orderMeta->service->user->email);
+                }
+            });
+        }
+        if (env('MIRSAL_ENABLED')) {
             $this->createOrderForMirsal($this->order, $this->user);
         }
-        return Mail::to($this->order->email)->cc($this->contactus->email)->send(new OrderComplete($this->order, $this->user));
+        return Mail::to($this->emailsList)->send(new OrderComplete($this->order, $this->user));
     }
 }

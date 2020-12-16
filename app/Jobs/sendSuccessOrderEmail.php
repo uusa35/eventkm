@@ -19,6 +19,7 @@ class sendSuccessOrderEmail implements ShouldQueue
     public $user;
     public $order;
     public $contactus;
+    public $emailsList;
 
     /**
      * Create a new job instance.
@@ -39,11 +40,13 @@ class sendSuccessOrderEmail implements ShouldQueue
      */
     public function handle()
     {
-        if (env('ORDER_MAILS')) {
+        $this->emailsList = [$this->order->email, $this->contactus->email];
+        if (env('ORDER_MAILS') && env('ORDER_MAILS')) {
             foreach (explode(',', env('ORDER_MAILS')) as $mail) {
-                Mail::to($mail)->send(new OrderComplete($this->order, $this->user));
+                array_push($this->emailsList, $mail);
+//                Mail::to($mail)->send(new OrderComplete($this->order, $this->user));
             }
         }
-        return Mail::to($this->order->email)->cc($this->contactus->email)->send(new OrderComplete($this->order, $this->user));
+        return Mail::to($this->emailsList)->send(new OrderComplete($this->order, $this->user));
     }
 }

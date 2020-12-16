@@ -289,7 +289,55 @@ trait OrderTrait
         }
     }
 
-    public function createOrderForMirsal(Order $order, User $user) {
-
+    public function createOrderForMirsal(Order $order, User $user)
+    {
+        $url = 'http://api.mirsalapp.com/rest/order/create';
+        $access_key = 'G9Y5UGKLUZ8M';
+        $access_secret = 'EUNKJXH8A7CQHBKN';
+        $prog_lang = 'other';
+        $sender = $order->order_metas->first()->product->user;
+        $data = [
+            'content' => '',
+            'cost' => $order->net_price,
+            'payment_method' => $order->payment_method,
+            'default_sender ' => $sender->name,
+            'sender_name' => $sender->name,
+            'sender_phone' => $sender->mobile,
+            'sender_governorate' => $sender->area,
+            'sender_area' => $sender->area,
+            'sender_block' => $sender->block,
+            'sender_street' => $sender->street,
+            'sender_apartment' => $sender->apartment,
+            'sender_avenue' => $sender->address,
+            'sender_unit' => $sender->building,
+            'sender_floor' => $sender->floor,
+            'sender_note' => $sender->description,
+            'sender_location' => '',
+            'receiver_name' => $user->name,
+            'receiver_phone' => $order->mobile,
+            'receiver_governorate' => $order->area,
+            'receiver_area' => $order->area,
+            'receiver_block' => $order->address,
+            'receiver_street' => $order->address,
+            'receiver_apartment' => $order->address,
+            'receiver_avenue' => '',
+            'receiver_unit' => '',
+            'receiver_floor' => $order->address,
+            'receiver_note' => $order->notes,
+            'receiver_location' => '',
+            'pickup_date' => Carbon::now()->addMinutes(10)->format('Y M d, h:s a'),
+            'pickup_time' => Carbon::now()->addMinutes(10)->format('Y M d, h:s a'),
+            'image' => $sender->imageThumbLink
+        ];
+        $enc_method = 'AES-256-CBC';
+        $key = 'EUNKJXH8A7CQHBKN';
+        $enc_iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($enc_method));
+        $requestData  = openssl_encrypt(json_encode($data), $enc_method, $key, 0, $enc_iv) . "::" . bin2hex($enc_iv);
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, ['request_data' => $requestData, 'access_key' => $access_key, 'prog_lang' => $prog_lang]);
+        $response = curl_exec($ch);
+        curl_close($ch);
     }
 }

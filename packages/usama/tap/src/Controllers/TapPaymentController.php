@@ -4,6 +4,7 @@ namespace Usama\Tap;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\OrderSuccessProcessJob;
+use App\Jobs\sendSuccessOrderEmail;
 use App\Models\Ad;
 use App\Models\Coupon;
 use App\Models\Setting;
@@ -57,7 +58,7 @@ class TapPaymentController extends Controller
                 return redirect()->to($paymentUrl);
             }
             //            abort(404, 'Payment Url Failed');
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             abort(404, $e->getMessage());
         }
     }
@@ -72,10 +73,10 @@ class TapPaymentController extends Controller
             throw new \Exception($validate->errors()->first());
         }
         $order = Order::where(['reference_id' => $request->ref])->with([
-            'order_metas.product',
+            'order_metas.product.user',
             'user', 'order_metas.product_attribute.size',
             'order_metas.product_attribute.color',
-            'order_metas.service'
+            'order_metas.service.user'
         ])->first();
         $order->order_metas->each(function ($orderMeta) use ($order) {
             if ($orderMeta->isProductType) {
@@ -103,7 +104,8 @@ class TapPaymentController extends Controller
         $contactus = Setting::first();
         $this->clearCart();
         $markdown = new Markdown(view(), config('mail.markdown'));
-        dispatch(new OrderSuccessProcessJob($order, $order->user, $contactus))->delay(now()->addSeconds(10));
+//        OrderSuccessProcessJob::dispatchNow($order, $order->user, $contactus);
+        OrderSuccessProcessJob::dispatch($order, $order->user, $contactus)->delay(now()->addSeconds(15));
         return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
     }
 
