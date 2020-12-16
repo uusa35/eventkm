@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,11 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="777">
-              <caret line="218" column="100" selection-start-line="218" selection-start-column="100" selection-end-line="218" selection-end-column="100" />
-              <folding>
-                <element signature="e#10206#13906#0#HTML" />
-              </folding>
+            <state relative-caret-position="444">
+              <caret line="164" column="157" selection-start-line="164" selection-start-column="157" selection-end-line="164" selection-end-column="157" />
             </state>
           </provider>
         </entry>
@@ -868,12 +864,12 @@
       <workItem from="1607589986000" duration="215000" />
       <workItem from="1607592498604" duration="425000" />
       <workItem from="1607923811991" duration="1414000" />
-      <workItem from="1608093786249" duration="901000" />
+      <workItem from="1608093786249" duration="1050000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="690703000" />
+    <option name="totallyTimeSpent" value="690852000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1121" extended-state="0" />
@@ -1301,11 +1297,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="218" column="100" selection-start-line="218" selection-start-column="100" selection-end-line="218" selection-end-column="100" />
-          <folding>
-            <element signature="e#10206#13906#0#HTML" />
-          </folding>
+        <state relative-caret-position="444">
+          <caret line="164" column="157" selection-start-line="164" selection-start-column="157" selection-end-line="164" selection-end-column="157" />
         </state>
       </provider>
     </entry>
