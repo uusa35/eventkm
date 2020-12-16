@@ -130,7 +130,7 @@ class ProductController extends Controller
     {
         // attribute_id, colorId, Qty
         $colorList = $this->product->colorsFromSize($id, $sizeId);
-        dd($colorList);
+        return $colorList;
     }
 
     public function getClearSearch()

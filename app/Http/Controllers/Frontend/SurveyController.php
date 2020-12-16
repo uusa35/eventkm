@@ -92,7 +92,6 @@ class SurveyController extends Controller
                 }
             }
         } catch (\Exception $e) {
-            dd($e->getMessage());
             return redirect()->route('frontend.home')->with('error', 'Unknown Error while saving questionnaire');
         }
     }

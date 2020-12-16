@@ -26,7 +26,6 @@ class SlideController extends Controller
         if ($elements->isNotEmpty()) {
             return response()->json(SlideLightResource::collection($elements), 200);
         }
-        dd($elements);
         return response()->json(['message' => trans('message.no_slides')], 400);
     }
 

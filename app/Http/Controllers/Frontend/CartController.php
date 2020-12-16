@@ -87,7 +87,6 @@ class CartController extends Controller
             return redirect()->back()->with('error', trans('message.product_is_not_added_to_cart_successfully'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error',$e->getMessage());
-//            dd($e->getMessage());
         }
     }
 

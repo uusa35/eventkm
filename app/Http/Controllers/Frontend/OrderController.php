@@ -97,7 +97,6 @@ class OrderController extends Controller
         $order = Order::whereId($id)->with('order_metas.product', 'order_metas.product_attribute.color', 'order_metas.product_attribute.size', 'services')->first();
         $markdown = new Markdown(view(), config('mail.markdown'));
         $final =  $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
-//        dd(html_entity_decode($final));
 //        $pdf = PDF::loadView('emails.order-complete', ['order' => $order, 'user' => $order->user])->setPaper('a4', 'landscape');
         $pdf = PDF::loadHTML($final)->setPaper('a4','portrait');
         return $pdf->save('invoice.pdf','storage/public/uploads/files','UTF-8')->stream('download.pdf');
