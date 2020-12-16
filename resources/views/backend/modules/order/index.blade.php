@@ -142,60 +142,46 @@
                                 <td>
                                     @if($element->order_metas->isNotEmpty())
                                         <div class="btn-group-vertical btn-group-solid">
-                                            @foreach($element->order_metas as $meta)
-                                                @if($meta->product && $meta->product_id)
-                                                    @if(!is_null($meta->product->product_attributes) && $meta->product->has_attributes)
-                                                        <button type="button"
-                                                                class="btn blue">
-                                                            {{ trans('general.name') }} : {{ $meta->product->id }}
-                                                            - {{ $meta->product->name}}
-                                                        </button>
-                                                        @if($meta->product_attribute && $meta->product_attribute->size)
-                                                            <button class="btn yellow">
-                                                                {{ trans('general.size') }}
-                                                                : {{ $meta->product_attribute->size->name_ar }}
+                                            <table class="table table-striped">
+                                                <th>{{ trans('general.name') }}</th>
+                                                <th>{{ trans('general.size') }}</th>
+                                                <th>{{ trans('general.quantity') }}</th>
+                                                <th>{{ trans('general.company') }}</th>
+                                                @foreach($element->order_metas as $meta)
+                                                    <tr>
+                                                        @if($meta->product && $meta->product_id)
+                                                            @if(!is_null($meta->product->product_attributes) && $meta->product->has_attributes)
+                                                                <td>
+                                                                    <a href="{{ route('frontend.product.show', $meta->product->id) }}">{{ $meta->product->name }}</a>
+                                                                </td>
+
+                                                                <td>{{ $meta->product_attribute && $meta->product_attribute->size ? $meta->product->size->name : 'N/A'}}</td>
+                                                                <td>{{ $meta->qty }}</td>
+                                                                <td>{{ $meta->product->user  ? $meta->product->user->name : 'N/A'}}</td>
+                                                            @else
+                                                                <td>
+                                                                    <a href="{{ route('frontend.product.show', $meta->product->id) }}">{{ $meta->product->name }}</a>
+                                                                </td>
+                                                                <td>{{ $meta->product->size && $meta->product->show_attribute ? $meta->product->size->name : 'N/A'}}</td>
+                                                                <td>{{ $meta->qty }}</td>
+                                                                <td>{{ $meta->product->user  ? $meta->product->user->name : 'N/A'}}</td>
+                                                            @endif
+                                                        @elseif($meta->service && $meta->service_id)
+                                                            <button type="button"
+                                                                    class="btn yellow">
+                                                                {{ $meta->service->name }} <br> {{ $meta->timing->day }}
+                                                                <br> {{ $meta->timing->start }}
+                                                                <br> {{ $meta->timing->end }}
+                                                            </button>
+                                                        @else
+                                                            <button type="button"
+                                                                    class="btn blue-steel">
+                                                                No Preview Product / Service Maybe Deleted
                                                             </button>
                                                         @endif
-                                                        <button class="btn blue-steel">
-                                                            {{ trans('general.quantity') }} : {{ $meta->qty }}
-                                                        </button>
-                                                    @else
-                                                        <button type="button"
-                                                                class="btn blue-steel">
-                                                            {{ trans('general.id') }} : {{ $meta->product->id }}
-                                                            - {{ $meta->product->name}}
-                                                        </button>
-                                                        @if($meta->product->size && $meta->product->show_attribute)
-                                                            <button class="btn gold">
-                                                                {{ trans('general.size') }}
-                                                                : {{ $meta->product->size->name_ar }}
-                                                            </button>
-                                                            <button class="btn green">
-                                                                {{ trans('general.quantity') }} : {{ $meta->qty }}
-                                                            </button>
-                                                        @endif
-                                                    @endif
-                                                    @if($meta->product->user)
-                                                        <button type="button"
-                                                                class="btn blue">
-                                                            {{ trans('general.company') }} :
-                                                            - {{ $meta->product->user->slug}}
-                                                        </button>
-                                                    @endif
-                                                @elseif($meta->service && $meta->service_id)
-                                                    <button type="button"
-                                                            class="btn yellow">
-                                                        {{ $meta->service->name }} <br> {{ $meta->timing->day }}
-                                                        <br> {{ $meta->timing->start }} <br> {{ $meta->timing->end }}
-                                                    </button>
-                                                @else
-                                                    <button type="button"
-                                                            class="btn blue-steel">
-                                                        No Preview Product / Service Maybe Deleted
-                                                    </button>
-                                                @endif
-                                                <hr>
-                                            @endforeach
+                                                    </tr>
+                                                @endforeach
+                                            </table>
                                         </div>
                                     @endif
                                 </td>
@@ -230,7 +216,7 @@
                                         @endif
                                     </div>
                                 </td>
-                                <td>{{ $element->address }}</td>
+                                <td>{{ $element->address }} / {{ $element->area ? $element->area : '' }}</td>
                                 <td><span class="btn btn-info">{{ $element->mobile }}</span></td>
                                 <td>{{ $element->country }}</td>
                                 <td>{{ $element->email }}</td>
@@ -258,11 +244,11 @@
                                                             <i class="fa fa-fw fa-paper-plane"></i> {{ trans('general.see_invoice') }}
                                                         </a>
                                                     </li>
-{{--                                                    <li>--}}
-{{--                                                        <a href="{{ route('frontend.invoice.pdf',['id' => $element->id]) }}">--}}
-{{--                                                            <i class="fa fa-fw fa-paper-plane"></i> {{ trans('general.see_invoice_in_pdf') }}--}}
-{{--                                                        </a>--}}
-{{--                                                    </li>--}}
+                                                    {{--                                                    <li>--}}
+                                                    {{--                                                        <a href="{{ route('frontend.invoice.pdf',['id' => $element->id]) }}">--}}
+                                                    {{--                                                            <i class="fa fa-fw fa-paper-plane"></i> {{ trans('general.see_invoice_in_pdf') }}--}}
+                                                    {{--                                                        </a>--}}
+                                                    {{--                                                    </li>--}}
                                                     <li>
                                                         <a href="{{ route('backend.admin.order.status',['id' => $element->id,'status' => 'received']) }}">
                                                             <i class="fa fa-fw fa-hand-paper-o"></i> {{ trans('general.order_received') }}
