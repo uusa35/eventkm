@@ -21,7 +21,6 @@ trait MyFatoorahTrait
             $info = curl_getinfo($curl);
             curl_close($curl);
             $json = json_decode($result, true);
-            dd($json);
             if (isset($json['access_token']) && !empty($json['access_token'])) {
                 $access_token = $json['access_token'];
             } else {
