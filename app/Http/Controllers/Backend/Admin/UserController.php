@@ -232,7 +232,7 @@ class UserController extends Controller
     }
 
     public function trashed() {
-        $elements = User::onlyTrashed()->get();
+        $elements = User::onlyTrashed()->paginate(Self::TAKE_MID);
         return view('backend.modules.user.index', compact('elements'));
     }
 
