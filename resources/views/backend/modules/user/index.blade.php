@@ -59,7 +59,7 @@
                                 <td>{{ $element->phone }}</td>
                                 <td>{{ $element->address }}</td>
                                 {{--                                <td>{{ $element->area }}</td>--}}
-                                <td>{{ $element->country ? $element->country->slug : 'N/A'}}</td>
+                                <td>{{ $element->country->slug ?? 'N/A'}}</td>
                                 <td>
                                     @if($element->role)
                                         <button class="btn red {{ activeLabel(!$element->active) }}">{{ activeText($element->active, $element->role->slug) }}</button>
@@ -158,6 +158,7 @@
                         @endforeach
                         </tbody>
                     </table>
+                    {{ $elements->render() }}
                 </div>
             </div>
         </div>

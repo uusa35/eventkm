@@ -293,11 +293,11 @@ trait OrderTrait
     {
         $url = 'http://api.mirsalapp.com/rest/order/create';
         $access_key = 'G9Y5UGKLUZ8M';
-        $access_secret = 'EUNKJXH8A7CQHBKN';
+        $access_key = 'EUNKJXH8A7CQHBKN';
         $prog_lang = 'other';
         $sender = $order->order_metas->first()->product->user;
         $data = [
-            'content' => '',
+            'content' => 'Order Id : '. $order->id,
             'cost' => $order->net_price,
             'payment_method' => $order->payment_method,
             'default_sender ' => $sender->name,
@@ -338,6 +338,7 @@ trait OrderTrait
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($ch, CURLOPT_POSTFIELDS, ['request_data' => $requestData, 'access_key' => $access_key, 'prog_lang' => $prog_lang]);
         $response = curl_exec($ch);
+        dd($response);
         curl_close($ch);
     }
 }

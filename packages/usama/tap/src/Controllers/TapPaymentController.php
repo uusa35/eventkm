@@ -104,8 +104,8 @@ class TapPaymentController extends Controller
         $contactus = Setting::first();
         $this->clearCart();
         $markdown = new Markdown(view(), config('mail.markdown'));
-//        OrderSuccessProcessJob::dispatchNow($order, $order->user, $contactus);
-        OrderSuccessProcessJob::dispatch($order, $order->user, $contactus)->delay(now()->addSeconds(15));
+        OrderSuccessProcessJob::dispatchNow($order, $order->user, $contactus);
+//        OrderSuccessProcessJob::dispatch($order, $order->user, $contactus)->delay(now()->addSeconds(15));
         return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
     }
 

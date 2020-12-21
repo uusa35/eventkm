@@ -155,16 +155,16 @@
                                                                     <a href="{{ route('frontend.product.show', $meta->product->id) }}">{{ $meta->product->name }}</a>
                                                                 </td>
 
-                                                                <td>{{ $meta->product_attribute && $meta->product_attribute->size ? $meta->product_attribute->size->name : 'N/A'}}</td>
+                                                                <td>{{ $meta->product_attribute->size->name ?? 'N/A'}}</td>
                                                                 <td>{{ $meta->qty }}</td>
-                                                                <td>{{ $meta->product->user  ? $meta->product->user->name : 'N/A'}}</td>
+                                                                <td>{{ $meta->product->user->name ?? 'N/A'}}</td>
                                                             @else
                                                                 <td>
                                                                     <a href="{{ route('frontend.product.show', $meta->product->id) }}">{{ $meta->product->name }}</a>
                                                                 </td>
-                                                                <td>{{ $meta->product->size && $meta->product->show_attribute ? $meta->product->size->name : 'N/A'}}</td>
+                                                                <td>{{ $meta->product->size->name ?? 'N/A'}}</td>
                                                                 <td>{{ $meta->qty }}</td>
-                                                                <td>{{ $meta->product->user  ? $meta->product->user->name : 'N/A'}}</td>
+                                                                <td>{{ $meta->product->user->name ?? 'N/A'}}</td>
                                                             @endif
                                                         @elseif($meta->service && $meta->service_id)
                                                             <button type="button"
@@ -197,10 +197,10 @@
                                     <div class="btn-group-vertical btn-group-solid">
                                         <button type="button"
                                                 class="btn blue">{{ trans('general.shipment_reference') }}
-                                            : {{ $element->shipment_reference ? $element->shipment_reference : 'N/A' }}</button>
+                                            : {{ $element->shipment_reference ?? 'N/A' }}</button>
                                         <button type="button"
                                                 class="btn grey">{{ trans('general.shipment') }}
-                                            : {{ $element->shipment_fees ? $element->shipment_fees : '0' }} {{ trans('general.kd') }}</button>
+                                            : {{  $element->shipment_fees ?? '0' }} {{ trans('general.kd') }}</button>
                                     </div>
                                 </td>
                                 <td>{{ $element->reference_id}}</td>
@@ -216,7 +216,7 @@
                                         @endif
                                     </div>
                                 </td>
-                                <td>{{ $element->address }} / {{ $element->area ? $element->area : '' }}</td>
+                                <td>{{ $element->address }} / {{ $element->area ?? '' }}</td>
                                 <td><span class="btn btn-info">{{ $element->mobile }}</span></td>
                                 <td>{{ $element->country }}</td>
                                 <td>{{ $element->email }}</td>
