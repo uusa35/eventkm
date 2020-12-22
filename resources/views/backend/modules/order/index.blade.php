@@ -144,6 +144,7 @@
                                         <div class="btn-group-vertical btn-group-solid">
                                             <table class="table table-striped">
                                                 <th>{{ trans('general.name') }}</th>
+                                                <th>{{ trans('general.color') }}</th>
                                                 <th>{{ trans('general.size') }}</th>
                                                 <th>{{ trans('general.quantity') }}</th>
                                                 <th>{{ trans('general.company') }}</th>
@@ -155,14 +156,16 @@
                                                                     <a href="{{ route('frontend.product.show', $meta->product->id) }}">{{ $meta->product->name }}</a>
                                                                 </td>
 
-                                                                <td>{{ $meta->product_attribute->size->name ?? 'N/A'}}</td>
+                                                                <td>{{ $meta->product_color ?? 'N/A'}}</td>
+                                                                <td>{{ $meta->product_size ?? 'N/A'}}</td>
                                                                 <td>{{ $meta->qty }}</td>
                                                                 <td>{{ $meta->product->user->name ?? 'N/A'}}</td>
                                                             @else
                                                                 <td>
                                                                     <a href="{{ route('frontend.product.show', $meta->product->id) }}">{{ $meta->product->name }}</a>
                                                                 </td>
-                                                                <td>{{ $meta->product->size->name ?? 'N/A'}}</td>
+                                                                <td>{{ $meta->product_color ?? 'N/A'}}</td>
+                                                                <td>{{ $meta->product_size ?? 'N/A'}}</td>
                                                                 <td>{{ $meta->qty }}</td>
                                                                 <td>{{ $meta->product->user->name ?? 'N/A'}}</td>
                                                             @endif

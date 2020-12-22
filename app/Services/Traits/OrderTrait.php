@@ -292,8 +292,8 @@ trait OrderTrait
     public function createOrderForMirsal(Order $order, User $user)
     {
         $url = 'http://api.mirsalapp.com/rest/order/create';
-        $access_key = 'G9Y5UGKLUZ8M';
-        $access_key = 'EUNKJXH8A7CQHBKN';
+        $access_key = 'JL279DRMHIM9';
+        $access_secret = 'AW3CFP5UUHT1AQDG';
         $prog_lang = 'other';
         $sender = $order->order_metas->first()->product->user;
         $data = [
@@ -330,9 +330,8 @@ trait OrderTrait
             'image' => $sender->imageThumbLink
         ];
         $enc_method = 'AES-256-CBC';
-        $key = 'EUNKJXH8A7CQHBKN';
         $enc_iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($enc_method));
-        $requestData  = openssl_encrypt(json_encode($data), $enc_method, $key, 0, $enc_iv) . "::" . bin2hex($enc_iv);
+        $requestData  = openssl_encrypt(json_encode($data), $enc_method, $access_secret, 0, $enc_iv) . "::" . bin2hex($enc_iv);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");

@@ -140,8 +140,8 @@
                                         <td class="center"><img class="img-xs"
                                                                 src="{{ $item->product->imageThumbLink }}"
                                                                 alt=""></td>
-                                        <td class="left strong">{{ $item->product->color ? $item->product->color->name : 'N/A'}}</td>
-                                        <td class="left strong">{{ $item->product->size ? $item->product->size->name : 'N/A' }}</td>
+                                        <td class="left strong">{{ $item->product_color ?? 'N/A'}}</td>
+                                        <td class="left strong">{{ $item->product_size ?? 'N/A' }}</td>
                                         <td class="left"><a
                                                     href="{{ !env('ABATI') ? route('frontend.product.show',$item->product_id) : '#'}}">{{ $item->product->name }}</a>
                                         </td>
