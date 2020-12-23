@@ -99,7 +99,7 @@
                                                                 src="{{ $item->product->getCurrentImageAttribute() }}"
                                                                 alt=""></td>
                                         <td class="left strong">{{ $item->color_name ?? trans('general.not_available') }}</td>
-                                        <td class="left strong">{{ $item->size_name ?? trans('general.not_available }}</td>
+                                        <td class="left strong">{{ $item->size_name ?? trans('general.not_available') }}</td>
                                         <td class="left"><a
                                                     href="{{ !env('ABATI') ? route('frontend.product.show',$item->product_id) : '#'}}">{{ $item->product->name }}</a>
                                         </td>
