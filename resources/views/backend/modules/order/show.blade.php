@@ -91,7 +91,7 @@
                         <tbody>
                         @foreach($element->order_metas as $item)
                             @if($item->isProductType)
-                                @if($item->product->product_attributes->isNotEmpty() && $item->product->has_attributes)
+                                @if($item->product_attribute_id && $item->product->has_attributes)
                                     <tr>
                                         <td class="center">{{ $item->product_id }}</td>
                                         <td class="center">{{ $item->product->sku }}</td>

@@ -44,8 +44,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="93" column="119" lean-forward="true" selection-start-line="93" selection-start-column="119" selection-end-line="93" selection-end-column="119" />
+            <state relative-caret-position="318">
+              <caret line="93" column="98" lean-forward="true" selection-start-line="93" selection-start-column="98" selection-end-line="93" selection-end-column="98" />
+              <folding>
+                <element signature="e#5721#7469#0#HTML" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,7 +65,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ORDER_MAILS</find>
       <find>MIRS</find>
       <find>dd</find>
       <find>dd(</find>
@@ -92,6 +94,7 @@
       <find>barco</find>
       <find>colorName</find>
       <find>ABATI</find>
+      <find>attri</find>
     </findStrings>
     <replaceStrings>
       <replace>myexpo</replace>
@@ -807,12 +810,12 @@
       <workItem from="1608620060156" duration="2892000" />
       <workItem from="1608703845358" duration="1716000" />
       <workItem from="1608707101572" duration="13000" />
-      <workItem from="1608710636657" duration="406000" />
+      <workItem from="1608710636657" duration="507000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="709961000" />
+    <option name="totallyTimeSpent" value="710062000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1121" extended-state="0" />
@@ -1188,13 +1191,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_07_03_152828_create_order_metas_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="46" column="52" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_12_132811_create_orders_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="412">
@@ -1247,10 +1243,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_07_03_152828_create_order_metas_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="37" column="49" lean-forward="true" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/order/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="93" column="119" lean-forward="true" selection-start-line="93" selection-start-column="119" selection-end-line="93" selection-end-column="119" />
+        <state relative-caret-position="318">
+          <caret line="93" column="98" lean-forward="true" selection-start-line="93" selection-start-column="98" selection-end-line="93" selection-end-column="98" />
+          <folding>
+            <element signature="e#5721#7469#0#HTML" />
+          </folding>
         </state>
       </provider>
     </entry>
