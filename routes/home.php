@@ -1,5 +1,4 @@
 <?php
-dd(env('ABATI'));
 if (env('ABATI')) {
     Route::get('/', 'HomeController@getMobileLayout')->name('index');
     Route::get('/home', 'HomeController@getMobileLayout')->name('home');
