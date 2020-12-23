@@ -90,7 +90,7 @@
                         </thead>
                         <tbody>
                         @foreach($element->order_metas as $item)
-                            @if($item->isProductType && $item->product_id)
+                            @if($item->isProductType && $item->product)
                                 @if($item->product_attribute_id && $item->product->has_attributes)
                                     <tr>
                                         <td class="center">{{ $item->product_id }}</td>
@@ -153,7 +153,7 @@
                                         </td>
                                     </tr>
                                 @endif
-                            @elseif($item->isServiceType && $item->service_id)
+                            @elseif($item->isServiceType && $item->service)
                                 <tr>
                                     <td class="center">{{ $item->service_id }}</td>
                                     <td class="center">{{ $item->service->sku }}</td>
