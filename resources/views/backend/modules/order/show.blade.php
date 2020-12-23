@@ -153,7 +153,7 @@
                                         </td>
                                     </tr>
                                 @endif
-                            @elseif($item->isServiceType)
+                            @elseif($item->isServiceType && $item->service_id)
                                 <tr>
                                     <td class="center">{{ $item->service_id }}</td>
                                     <td class="center">{{ $item->service->sku }}</td>
@@ -173,6 +173,10 @@
                                     </td>
                                 </tr>
                             @elseif($element->isQuestionnaireType)
+                            @else
+                                <tr>
+                                    <div class="alert alert-danger">Product/Service is deleted.</div>
+                                </tr>
                             @endif
                         @endforeach
                         </tbody>
