@@ -145,6 +145,7 @@
                                         <td class="left"><a
                                                     href="{{ !env('ABATI') ? route('frontend.product.show',$item->product_id) : '#'}}">{{ $item->product->name }}</a>
                                         </td>
+                                        <td class="right">{{ $item->product->weight }} KG</td>
                                         <td class="right">{{ $item->price }} {{ trans('general.kd') }}</td>
                                         <td class="right">{{ $item->qty }}</td>
                                         <td class="right">{{ $item->product->weight }} KG</td>
