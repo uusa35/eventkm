@@ -90,7 +90,7 @@
                         </thead>
                         <tbody>
                         @foreach($element->order_metas as $item)
-                            @if($item->isProductType)
+                            @if($item->isProductType && $item->product_id)
                                 @if($item->product_attribute_id && $item->product->has_attributes)
                                     <tr>
                                         <td class="center">{{ $item->product_id }}</td>
