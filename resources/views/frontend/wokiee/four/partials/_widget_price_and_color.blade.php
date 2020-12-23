@@ -34,7 +34,7 @@
             @endforeach
         </ul>
     </div>
-@elseif($element->show_attribute)
+@elseif($element->show_attribute && $element->color)
     <div class="tt-option-block">
         <ul class="tt-options-swatch">
             <li><a class="options-color" style="background-color: {{ $element->color->code }};"

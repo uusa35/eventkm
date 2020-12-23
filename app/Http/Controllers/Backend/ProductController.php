@@ -165,17 +165,18 @@ class  ProductController extends Controller
      */
     public function destroy($id)
     {
-        $element = Product::whereId($id)->first();
+        $element = Product::whereId($id)->with('product_attributes')->first();
         $this->authorize('product.delete', $element);
-//        $element->categories()->detach($element->categories->pluck('id')->toArray());
-//        $element->tags()->detach($element->tags->pluck('id')->toArray());;
-        $orders = Order::where('is_paid', true)->where(function ($q) use ($id) {
-            return $q->order_metas()->where('product_id', $id);
+        $orders = Order::where('paid', true)->whereHas('order_metas', function ($q) use ($id) {
+            return $q->where('product_id', $id);
         }, '>', 0)->get();
         if ($element->delete() && $orders->isEmpty()) {
+            $element->categories()->detach($element->categories->pluck('id')->toArray());
+            $element->tags()->detach($element->tags->pluck('id')->toArray());;
+            $element->product_attributes()->delete();
             return redirect()->back()->with('success', trans('message.success_product_delete'));
         }
-        return redirect()->back()->with('error', trans('message.failure_product_delete'));
+        return redirect()->back()->with('error', trans('message.failure_product_delete') . ' might be some orders relying on.');
     }
 
     public function trashed()
