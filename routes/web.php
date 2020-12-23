@@ -119,6 +119,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
 });
 
 Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['country']], function () {
+    dd(env('ABATI'));
     if (env('ABATI')) {
         Route::get('/', 'HomeController@getMobileLayout')->name('index');
         Route::get('/home', 'HomeController@getMobileLayout')->name('home');
