@@ -57,7 +57,7 @@ trait OrderTrait
         $country = Country::whereId($request->country_id)->first();
         $order = Order::create([
             'price' => $this->cart->total(),
-            'net_price' => $this->cart->total(),
+            'net_price' => getCartNetTotal(),
             'mobile' => $request->mobile,
             'country' => $country->name,
             'area' => $request->area ? $request->area : null,
