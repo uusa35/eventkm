@@ -175,7 +175,9 @@
                             @elseif($element->isQuestionnaireType)
                             @else
                                 <tr>
-                                    <div class="alert alert-danger">Product/Service is deleted.</div>
+                                    <td>
+                                        <div class="alert alert-danger">Product/Service is deleted.</div>
+                                    </td>
                                 </tr>
                             @endif
                         @endforeach
