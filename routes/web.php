@@ -119,7 +119,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
 });
 
 Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['country']], function () {
-    include('home.php');
+    include 'home.php';
     Route::group(['middleware' => ['auth']], function () {
         Route::get('favorite', 'FavoriteController@index')->name('favorite.index');
         Route::get('favorite/add/product/{id}', 'FavoriteController@addProduct')->name('favorite.product.add');
