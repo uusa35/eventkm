@@ -33,7 +33,6 @@ trait MyFatoorahTrait
             }
             if (isset($json['access_token']) && !empty($json['access_token'])) {
                 $elements = $this->createPaymentUrl($order, $user, $access_token);
-                dd($elements);
                 $referenceId = $elements[0];
                 $paymentUrl = $elements[1];
                 if (!empty($referenceId) && strlen($referenceId) > 10) {
