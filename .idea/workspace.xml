@@ -81,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/packages/usama/myfatoorah/src/Controllers/MyFatoorahTrait.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="485">
-              <caret line="101" column="49" selection-start-line="101" selection-start-column="49" selection-end-line="101" selection-end-column="49" />
+              <caret line="101" column="38" selection-start-line="101" selection-start-column="38" selection-end-line="101" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -900,12 +900,12 @@
       <workItem from="1608710636657" duration="5487000" />
       <workItem from="1608730723226" duration="2350000" />
       <workItem from="1608802821286" duration="2010000" />
-      <workItem from="1608815644588" duration="198000" />
+      <workItem from="1608815644588" duration="235000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="719600000" />
+    <option name="totallyTimeSpent" value="719637000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1121" extended-state="0" />
@@ -1342,7 +1342,7 @@
     <entry file="file://$PROJECT_DIR$/packages/usama/myfatoorah/src/Controllers/MyFatoorahTrait.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="485">
-          <caret line="101" column="49" selection-start-line="101" selection-start-column="49" selection-end-line="101" selection-end-column="49" />
+          <caret line="101" column="38" selection-start-line="101" selection-start-column="38" selection-end-line="101" selection-end-column="38" />
         </state>
       </provider>
     </entry>
