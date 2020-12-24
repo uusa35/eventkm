@@ -337,7 +337,7 @@ trait OrderTrait
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($ch, CURLOPT_POSTFIELDS, ['request_data' => $requestData, 'access_key' => $access_key, 'prog_lang' => $prog_lang]);
         $response = curl_exec($ch);
-        dd($response);
+//        dd($response);
         curl_close($ch);
     }
 }

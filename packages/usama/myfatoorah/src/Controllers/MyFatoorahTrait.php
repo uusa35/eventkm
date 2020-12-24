@@ -35,7 +35,7 @@ trait MyFatoorahTrait
                 $elements = $this->createPaymentUrl($order, $user, $access_token);
                 $referenceId = $elements[0];
                 $paymentUrl = $elements[1];
-                if (!empty($referenceId)) {
+                if (!empty($referenceId) && strlen($referenceId) > 10) {
                     if (empty($order->reference_id) && $order->order_metas->count() > 0) {
                         $order->update(['reference_id' => $referenceId]);
                     } elseif ($order->order_metas->count() > 0) {
@@ -50,11 +50,10 @@ trait MyFatoorahTrait
                         $newOrder->update(['reference_id' => $referenceId]);
                     }
                 }
-                dd($paymentUrl);
                 return $paymentUrl;
             } else {
                 //print_r($json);
-                dd("Error: " . $json['error'] . "<br>Description: " . $json['error_description']);
+                print_r("Error: " . $json['error'] . "<br>Description: " . $json['error_description']);
             }
         } catch (\Exception $e) {
             throw new \Exception($e->getMessage());

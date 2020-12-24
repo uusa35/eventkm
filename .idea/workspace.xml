@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Traits/OrderTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Traits/OrderTrait.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/usama/myfatoorah/src/Controllers/MyFatoorahTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/myfatoorah/src/Controllers/MyFatoorahTrait.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,45 +33,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2682">
-              <caret line="163" column="40" selection-start-line="163" selection-start-column="40" selection-end-line="163" selection-end-column="40" />
-              <folding>
-                <element signature="e#48#84#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/ProductAttributeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2322">
-              <caret line="136" column="22" selection-start-line="136" selection-start-column="22" selection-end-line="136" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_12_132811_create_orders_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Policies/ProductPolicy.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="954">
-              <caret line="55" column="38" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_widget_price_and_color.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -120,8 +81,47 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/packages/usama/myfatoorah/src/Controllers/MyFatoorahTrait.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="56" column="98" lean-forward="true" selection-start-line="56" selection-start-column="98" selection-end-line="56" selection-end-column="98" />
+            <state relative-caret-position="717">
+              <caret line="51" column="17" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/usama/myfatoorah/src/Controllers/MyFatoorahPaymentController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+              <folding>
+                <element signature="e#36#72#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Services/Traits/OrderTrait.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="703">
+              <caret line="334" column="26" selection-start-line="334" selection-start-column="26" selection-end-line="334" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/usama/myfatoorah/src/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="101" column="57" selection-start-line="101" selection-start-column="57" selection-end-line="101" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -138,7 +138,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>autoload</find>
       <find>&quot;Database\\Factories\\&quot;: &quot;database/factories/&quot;,</find>
       <find>guzzlehttp/guzzle</find>
       <find>guzz</find>
@@ -168,6 +167,7 @@
       <find>product_att</find>
       <find>code</find>
       <find>pagin</find>
+      <find>dd(</find>
     </findStrings>
     <replaceStrings>
       <replace>myexpo</replace>
@@ -211,12 +211,10 @@
         <option value="$PROJECT_DIR$/app/Jobs/sendSuccessOrderEmail.php" />
         <option value="$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapTrait.php" />
         <option value="$PROJECT_DIR$/app/Jobs/OrderSuccessProcessJob.php" />
-        <option value="$PROJECT_DIR$/packages/usama/myfatoorah/src/Controllers/MyFatoorahPaymentController.php" />
         <option value="$PROJECT_DIR$/packages/usama/upayment/src/Controllers/UPaymentController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/OrderController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/SurveyController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/SlideController.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapPaymentController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/UserController.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php" />
@@ -225,7 +223,6 @@
         <option value="$PROJECT_DIR$/routes/home.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/CartController.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/cart/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Services/Traits/OrderTrait.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/modules/user/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/modules/order/show.blade.php" />
@@ -236,6 +233,9 @@
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_pagination.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/ServiceController.php" />
+        <option value="$PROJECT_DIR$/app/Services/Traits/OrderTrait.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/packages/usama/myfatoorah/src/Controllers/MyFatoorahPaymentController.php" />
         <option value="$PROJECT_DIR$/packages/usama/myfatoorah/src/Controllers/MyFatoorahTrait.php" />
       </list>
     </option>
@@ -900,12 +900,12 @@
       <workItem from="1608707101572" duration="13000" />
       <workItem from="1608710636657" duration="5487000" />
       <workItem from="1608730723226" duration="2350000" />
-      <workItem from="1608802821286" duration="18000" />
+      <workItem from="1608802821286" duration="1674000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="717410000" />
+    <option name="totallyTimeSpent" value="719066000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1121" extended-state="0" />
@@ -978,13 +978,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/UserResource.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -1019,16 +1012,6 @@
           <caret line="83" column="89" selection-start-line="83" selection-start-column="89" selection-end-line="83" selection-end-column="89" />
           <folding>
             <element signature="e#34#70#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/usama/myfatoorah/src/Controllers/MyFatoorahPaymentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="913">
-          <caret line="92" column="22" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
-          <folding>
-            <element signature="e#36#72#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1075,13 +1058,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="44" column="87" selection-start-line="44" selection-start-column="87" selection-end-line="44" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="57" column="19" lean-forward="true" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1200,13 +1176,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2484">
           <caret line="138" column="89" selection-start-line="138" selection-start-column="89" selection-end-line="138" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/Traits/OrderTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1339,10 +1308,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/Traits/OrderTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="334" column="26" selection-start-line="334" selection-start-column="26" selection-end-line="334" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/usama/myfatoorah/src/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="101" column="57" selection-start-line="101" selection-start-column="57" selection-end-line="101" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/usama/myfatoorah/src/Controllers/MyFatoorahPaymentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+          <folding>
+            <element signature="e#36#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/packages/usama/myfatoorah/src/Controllers/MyFatoorahTrait.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="56" column="98" lean-forward="true" selection-start-line="56" selection-start-column="98" selection-end-line="56" selection-end-column="98" />
+        <state relative-caret-position="717">
+          <caret line="51" column="17" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
         </state>
       </provider>
     </entry>
