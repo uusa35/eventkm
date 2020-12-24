@@ -50,10 +50,11 @@ trait MyFatoorahTrait
                         $newOrder->update(['reference_id' => $referenceId]);
                     }
                 }
+                dd($paymentUrl);
                 return $paymentUrl;
             } else {
                 //print_r($json);
-                print_r("Error: " . $json['error'] . "<br>Description: " . $json['error_description']);
+                dd("Error: " . $json['error'] . "<br>Description: " . $json['error_description']);
             }
         } catch (\Exception $e) {
             throw new \Exception($e->getMessage());
