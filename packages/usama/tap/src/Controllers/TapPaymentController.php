@@ -78,21 +78,24 @@ class TapPaymentController extends Controller
             'order_metas.product_attribute.color',
             'order_metas.service.user'
         ])->first();
-        $order->order_metas->each(function ($orderMeta) use ($order) {
-            if ($orderMeta->isProductType) {
-                if ($orderMeta->product->has_attributes && $orderMeta->product->check_stock && $orderMeta->product_attribute->qty > 0) {
-                    if ($orderMeta->product->hasRealAttributes) {
-                        $decrement = (int)$orderMeta->product_attribute->qty - (int)$orderMeta->qty > 0 ? (int)$orderMeta->product_attribute->qty - (int)$orderMeta->qty : 0;
-                        $orderMeta->product->check_stock && $orderMeta->product_attribute->qty > 0 ? $orderMeta->product_attribute->update(['qty' => $decrement]) : null;
-                    } else {
-                        $decrement = (int)$orderMeta->product->qty - (int)$orderMeta->qty > 0 ? (int)$orderMeta->product->qty - (int)$orderMeta->qty : 0;
-                        $orderMeta->product->decrement('qty', $decrement);
+        if(!$order->paid) {
+            $order->order_metas->each(function ($orderMeta) use ($order) {
+                if ($orderMeta->isProductType) {
+                    if ($orderMeta->product->check_stock) {
+                        if ($orderMeta->product->hasRealAttributes) {
+                            $decrement = (int)$orderMeta->product_attribute->qty - (int)$orderMeta->qty > 0 ? (int)$orderMeta->product_attribute->qty - (int)$orderMeta->qty : 0;
+                            $orderMeta->product_attribute->qty > 0 ? $orderMeta->product_attribute->update(['qty' => $decrement]) : null;
+                        } else {
+                            $decrement = (int)$orderMeta->product->qty - (int)$orderMeta->qty > 0 ? (int)$orderMeta->product->qty - (int)$orderMeta->qty : 0;
+                            $orderMeta->product->update(['qty' => $decrement]);
+                        }
                     }
+                } else {
+                    dd('service');
+                    // in case you want to do something for services
                 }
-            } else {
-                // in case you want to do something for services
-            }
-        });
+            });
+        }
         $done = $order->update(['status' => 'success', 'paid' => true]);
         $coupon = $order->coupon_id ? Coupon::whereId($order->coupon_id)->first() : null;
         if ($coupon && $done) {

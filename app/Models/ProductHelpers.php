@@ -81,6 +81,6 @@ trait ProductHelpers
 
     public function getHasRealAttributesAttribute()
     {
-        return $this->has_attributes && $this->product_attributes->isNotEmpty();
+        return $this->has_attributes && $this->product_attributes()->where('qty','>=', 1)->get()->isNotEmpty();
     }
 }
