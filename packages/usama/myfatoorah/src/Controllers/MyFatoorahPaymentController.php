@@ -67,18 +67,10 @@ class MyFatoorahPaymentController extends Controller
         $referenceId = $this->getInvoiceId($request->paymentId);
         $order = Order::where(['reference_id' => $referenceId])->with('order_metas.product', 'user', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color')->first();
         $this->decreaseQty($order);
-        $done = $order->update(['status' => 'success', 'paid' => true]);
-        $coupon = $order->coupon_id ? Coupon::whereId($order->coupon_id)->first() : null;
-        if ($coupon && $done) {
-            if (!$coupon->is_permanent) {
-                $coupon->update(['consumed' => true]);
-            }
-            session()->forget('coupon');
-        }
-        $contactus = Setting::first();
-        $this->clearCart();
+        $order->update(['status' => 'success', 'paid' => true]);
         $markdown = new Markdown(view(), config('mail.markdown'));
-        OrderSuccessProcessJob::dispatchNow($order, $order->user, $contactus);
+        OrderSuccessProcessJob::dispatchNow($order, $order->user);
+        $this->clearCart();
 //        OrderSuccessProcessJob::dispatch($order, $order->user, $contactus)->delay(now()->addSeconds(15));
         return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
     }

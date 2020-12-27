@@ -79,19 +79,11 @@ class TapPaymentController extends Controller
             'order_metas.service.user'
         ])->first();
         $this->decreaseQty($order);
-        $done = $order->update(['status' => 'success', 'paid' => true]);
-        $coupon = $order->coupon_id ? Coupon::whereId($order->coupon_id)->first() : null;
-        if ($coupon && $done) {
-            if (!$coupon->is_permanent) {
-                $coupon->update(['consumed' => true]);
-            }
-            session()->forget('coupon');
-        }
-        $contactus = Setting::first();
-        $this->clearCart();
+        $order->update(['status' => 'success', 'paid' => true]);
         $markdown = new Markdown(view(), config('mail.markdown'));
-        OrderSuccessProcessJob::dispatchNow($order, $order->user, $contactus);
-//        OrderSuccessProcessJob::dispatch($order, $order->user, $contactus)->delay(now()->addSeconds(15));
+//        OrderSuccessProcessJob::dispatchNow($order, $order->user);
+        OrderSuccessProcessJob::dispatch($order, $order->user)->delay(now()->addSeconds(15));
+        $this->clearCart();
         return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
     }
 

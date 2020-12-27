@@ -316,57 +316,63 @@ trait OrderTrait
 
     public function createOrderForMirsal(Order $order, User $user)
     {
-        $url = 'https://api.mirsalapp.com/rest/order/create';
-        $access_key = 'JL279DRMHIM9';
-        $access_secret = 'AW3CFP5UUHT1AQDG';
-        $prog_lang = 'other';
-        $sender = $order->order_metas->first()->product->user;
-        $data = [
-            'content' => 'Order Id : ' . $order->id,
-            'cost' => $order->net_price,
-            'payment_method' => $order->payment_method,
-            'default_sender ' => $sender->name,
-            'sender_name' => $sender->name,
-            'sender_phone' => $sender->mobile,
-            'sender_governorate' => 'A241',
-            'sender_area' => 'FH242',
-            'sender_block' => $sender->block,
-            'sender_street' => $sender->street,
-            'sender_apartment' => $sender->apartment,
-            'sender_avenue' => $sender->address,
-            'sender_unit' => $sender->building,
-            'sender_floor' => $sender->floor,
-            'sender_note' => $sender->description,
-            'sender_location' => '',
-            'receiver_name' => $user->name,
-            'receiver_phone' => $order->mobile,
-            'receiver_governorate' => $order->area,
-            'receiver_area' => $order->area,
-            'receiver_block' => $order->address,
-            'receiver_street' => $order->address,
-            'receiver_apartment' => $order->address,
-            'receiver_avenue' => '',
-            'receiver_unit' => '',
-            'receiver_floor' => $order->address,
-            'receiver_note' => $order->notes,
-            'receiver_location' => '',
-            'pickup_date' => Carbon::now()->addMinutes(10)->format('Y M d, h:s a'),
-            'pickup_time' => Carbon::now()->addMinutes(10)->format('Y M d, h:s a'),
-            'image' => ''
-        ];
-        $enc_method = 'AES-256-CBC';
-        $enc_iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($enc_method));
-        $requestData = openssl_encrypt(json_encode($data), $enc_method, $access_secret, 0, $enc_iv) . "::" . bin2hex($enc_iv);
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, ['request_data' => $requestData, 'access_key' => $access_key, 'prog_lang' => $prog_lang]);
-        $response = curl_exec($ch);
-        $res = collect(json_decode($response));
-        if ($res['status'] === "201" && $order->paid && !$order->shipment_reference) {
-            $order->update(['shipment_reference' => 'Mirsal - ' . $res['data']->transaction_id]);
+        try {
+            if (env('MIRSAL_ENABLED') && !$order->shipment_reference && $order->paid) {
+                $url = 'https://api.mirsalapp.com/rest/order/create';
+                $access_key = 'JL279DRMHIM9';
+                $access_secret = 'AW3CFP5UUHT1AQDG';
+                $prog_lang = 'other';
+                $sender = $order->order_metas->first()->product->user;
+                $data = [
+                    'content' => 'Order Id : ' . $order->id,
+                    'cost' => $order->net_price,
+                    'payment_method' => $order->payment_method,
+                    'default_sender ' => $sender->name,
+                    'sender_name' => $sender->name,
+                    'sender_phone' => $sender->mobile,
+                    'sender_governorate' => 'A241',
+                    'sender_area' => 'FH242',
+                    'sender_block' => $sender->block,
+                    'sender_street' => $sender->street,
+                    'sender_apartment' => $sender->apartment,
+                    'sender_avenue' => $sender->address,
+                    'sender_unit' => $sender->building,
+                    'sender_floor' => $sender->floor,
+                    'sender_note' => $sender->description,
+                    'sender_location' => '',
+                    'receiver_name' => $user->name,
+                    'receiver_phone' => $order->mobile,
+                    'receiver_governorate' => $order->area,
+                    'receiver_area' => $order->area,
+                    'receiver_block' => $order->address,
+                    'receiver_street' => $order->address,
+                    'receiver_apartment' => $order->address,
+                    'receiver_avenue' => '',
+                    'receiver_unit' => '',
+                    'receiver_floor' => $order->address,
+                    'receiver_note' => $order->notes,
+                    'receiver_location' => '',
+                    'pickup_date' => Carbon::now()->addMinutes(10)->format('Y M d, h:s a'),
+                    'pickup_time' => Carbon::now()->addMinutes(10)->format('Y M d, h:s a'),
+                    'image' => ''
+                ];
+                $enc_method = 'AES-256-CBC';
+                $enc_iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($enc_method));
+                $requestData = openssl_encrypt(json_encode($data), $enc_method, $access_secret, 0, $enc_iv) . "::" . bin2hex($enc_iv);
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+                curl_setopt($ch, CURLOPT_POSTFIELDS, ['request_data' => $requestData, 'access_key' => $access_key, 'prog_lang' => $prog_lang]);
+                $response = curl_exec($ch);
+                $res = collect(json_decode($response));
+                if ($res['status'] === "201") {
+                    $order->update(['shipment_reference' => 'Mirsal - ' . $res['data']->transaction_id]);
+                }
+                curl_close($ch);
+            }
+        } catch (\Exception $e) {
+            print_r($e->getMessage() . '- Mirsal Error');
         }
-        curl_close($ch);
     }
 }
