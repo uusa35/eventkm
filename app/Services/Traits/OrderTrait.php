@@ -289,6 +289,31 @@ trait OrderTrait
         }
     }
 
+    public function decreaseQty(Order $order)
+    {
+        try {
+            if (!$order->paid) {
+                $order->order_metas->each(function ($orderMeta) use ($order) {
+                    if ($orderMeta->isProductType) {
+                        if ($orderMeta->product->check_stock) {
+                            if ($orderMeta->product->hasRealAttributes) {
+                                $decrement = (int)$orderMeta->product_attribute->qty - (int)$orderMeta->qty > 0 ? (int)$orderMeta->product_attribute->qty - (int)$orderMeta->qty : 0;
+                                $orderMeta->product_attribute->update(['qty' => $decrement]);
+                            } else {
+                                $decrement = (int)$orderMeta->product->qty - (int)$orderMeta->qty > 0 ? (int)$orderMeta->product->qty - (int)$orderMeta->qty : 0;
+                                $orderMeta->product->update(['qty' => $decrement]);
+                            }
+                        }
+                    } else {
+                        // in case you want to do something for services
+                    }
+                });
+            }
+        } catch (\Exception $e) {
+            print_r($e->getMessage() . 'Qty not updated. Fatel error');
+        }
+    }
+
     public function createOrderForMirsal(Order $order, User $user)
     {
         $url = 'https://api.mirsalapp.com/rest/order/create';
@@ -297,7 +322,7 @@ trait OrderTrait
         $prog_lang = 'other';
         $sender = $order->order_metas->first()->product->user;
         $data = [
-            'content' => 'Order Id : '. $order->id,
+            'content' => 'Order Id : ' . $order->id,
             'cost' => $order->net_price,
             'payment_method' => $order->payment_method,
             'default_sender ' => $sender->name,
@@ -331,7 +356,7 @@ trait OrderTrait
         ];
         $enc_method = 'AES-256-CBC';
         $enc_iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($enc_method));
-        $requestData  = openssl_encrypt(json_encode($data), $enc_method, $access_secret, 0, $enc_iv) . "::" . bin2hex($enc_iv);
+        $requestData = openssl_encrypt(json_encode($data), $enc_method, $access_secret, 0, $enc_iv) . "::" . bin2hex($enc_iv);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -339,8 +364,8 @@ trait OrderTrait
         curl_setopt($ch, CURLOPT_POSTFIELDS, ['request_data' => $requestData, 'access_key' => $access_key, 'prog_lang' => $prog_lang]);
         $response = curl_exec($ch);
         $res = collect(json_decode($response));
-        if($res['status'] === "201" && $order->paid && !$order->shipment_reference) {
-            $order->update(['shipment_reference' => 'Mirsal - ' .$res['data']->transaction_id]);
+        if ($res['status'] === "201" && $order->paid && !$order->shipment_reference) {
+            $order->update(['shipment_reference' => 'Mirsal - ' . $res['data']->transaction_id]);
         }
         curl_close($ch);
     }
