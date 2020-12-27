@@ -57,7 +57,6 @@ class UPaymentController extends Controller
 
     public function result(Request $request)
     {
-        dd($request->all());
         // once the result is success .. get the deal from refrence then delete all other free deals related to such ad.
         $validate = validator($request->all(), [
             'PaymentID' => 'required'

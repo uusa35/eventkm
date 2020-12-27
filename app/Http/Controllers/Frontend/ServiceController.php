@@ -36,7 +36,7 @@ class ServiceController extends Controller
             'tags', 'user.country', 'images', 'user.areas', 'favorites'
         )->with(['categories' => function ($q) {
             return $q->has('services', '>', 0)->with('services');
-        }])->orderBy('id', 'desc')->simplePaginate(self::TAKE);
+        }])->orderBy('id', 'desc')->paginate(self::TAKE);
         $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
         $categoriesList = $elements->pluck('categories')->flatten()->unique('id')->sortKeysDesc();
         $vendors = $elements->pluck('user')->unique('id')->flatten();
@@ -62,7 +62,7 @@ class ServiceController extends Controller
             'tags', 'user.country', 'images', 'user.areas', 'favorites'
         )->with(['categories' => function ($q) {
             return $q->has('services', '>', 0)->with('services');
-        }])->orderBy('id', 'desc')->simplePaginate(self::TAKE);
+        }])->orderBy('id', 'desc')->paginate(self::TAKE);
         $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
         $categoriesList = $elements->pluck('categories')->flatten()->unique('id')->sortKeysDesc();
         $vendors = $elements->pluck('user')->unique('id')->flatten();
