@@ -67,24 +67,7 @@ class UPaymentController extends Controller
         }
         $referenceId = $this->getInvoiceId($request->PaymentID);
         $order = Order::where(['reference_id' => $referenceId])->with('order_metas.product', 'user', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color')->first();
-        if(!$order->paid) {
-            $order->order_metas->each(function ($orderMeta) use ($order) {
-                if ($orderMeta->isProductType) {
-                    if ($orderMeta->product->check_stock) {
-                        if ($orderMeta->product->hasRealAttributes) {
-                            $decrement = (int)$orderMeta->product_attribute->qty - (int)$orderMeta->qty > 0 ? (int)$orderMeta->product_attribute->qty - (int)$orderMeta->qty : 0;
-                            $orderMeta->product_attribute->qty > 0 ? $orderMeta->product_attribute->update(['qty' => $decrement]) : null;
-                        } else {
-                            $decrement = (int)$orderMeta->product->qty - (int)$orderMeta->qty > 0 ? (int)$orderMeta->product->qty - (int)$orderMeta->qty : 0;
-                            $orderMeta->product->update(['qty' => $decrement]);
-                        }
-                    }
-                } else {
-                    dd('service');
-                    // in case you want to do something for services
-                }
-            });
-        }
+        $this->decreaseQty($order);
         $done = $order->update(['status' => 'success', 'paid' => true]);
         $coupon = $order->coupon_id ? Coupon::whereId($order->coupon_id)->first() : null;
         if ($coupon && $done) {
