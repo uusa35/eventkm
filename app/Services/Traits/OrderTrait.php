@@ -291,7 +291,7 @@ trait OrderTrait
 
     public function createOrderForMirsal(Order $order, User $user)
     {
-        $url = 'http://api.mirsalapp.com/rest/order/create';
+        $url = 'https://api.mirsalapp.com/rest/order/create';
         $access_key = 'JL279DRMHIM9';
         $access_secret = 'AW3CFP5UUHT1AQDG';
         $prog_lang = 'other';
@@ -303,8 +303,8 @@ trait OrderTrait
             'default_sender ' => $sender->name,
             'sender_name' => $sender->name,
             'sender_phone' => $sender->mobile,
-            'sender_governorate' => $sender->area,
-            'sender_area' => $sender->area,
+            'sender_governorate' => 'A241',
+            'sender_area' => 'FH242',
             'sender_block' => $sender->block,
             'sender_street' => $sender->street,
             'sender_apartment' => $sender->apartment,
@@ -327,17 +327,21 @@ trait OrderTrait
             'receiver_location' => '',
             'pickup_date' => Carbon::now()->addMinutes(10)->format('Y M d, h:s a'),
             'pickup_time' => Carbon::now()->addMinutes(10)->format('Y M d, h:s a'),
-            'image' => $sender->imageThumbLink
+            'image' => ''
         ];
         $enc_method = 'AES-256-CBC';
         $enc_iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($enc_method));
         $requestData  = openssl_encrypt(json_encode($data), $enc_method, $access_secret, 0, $enc_iv) . "::" . bin2hex($enc_iv);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($ch, CURLOPT_POSTFIELDS, ['request_data' => $requestData, 'access_key' => $access_key, 'prog_lang' => $prog_lang]);
         $response = curl_exec($ch);
-//        dd($response);
+        $res = collect(json_decode($response));
+        if($res['status'] === "201" && $order->paid && !$order->shipment_reference) {
+            $order->update(['shipment_reference' => 'Mirsal - ' .$res['data']->transaction_id]);
+        }
         curl_close($ch);
     }
 }

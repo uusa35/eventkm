@@ -100,7 +100,7 @@ trait MyFatoorahTrait
             $json1 = json_decode($result1, true);
             $RedirectUrl = $json1['RedirectUrl'];
             $ref_Ex = explode('/', $RedirectUrl);
-            $referenceId = $ref_Ex[5];
+            $referenceId = $ref_Ex[4];
             curl_close($soap_do);
             return [$referenceId, $RedirectUrl];
         } catch (\Exception $e) {

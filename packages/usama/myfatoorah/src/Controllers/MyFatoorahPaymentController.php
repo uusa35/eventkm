@@ -72,7 +72,7 @@ class MyFatoorahPaymentController extends Controller
                     if ($orderMeta->product->check_stock) {
                         if ($orderMeta->product->hasRealAttributes) {
                             $decrement = (int)$orderMeta->product_attribute->qty - (int)$orderMeta->qty > 0 ? (int)$orderMeta->product_attribute->qty - (int)$orderMeta->qty : 0;
-                            $orderMeta->product_attribute->qty > 0 ? $orderMeta->product_attribute->update(['qty' => $decrement]) : null;
+                            $orderMeta->product_attribute->update(['qty' => $decrement]);
                         } else {
                             $decrement = (int)$orderMeta->product->qty - (int)$orderMeta->qty > 0 ? (int)$orderMeta->product->qty - (int)$orderMeta->qty : 0;
                             $orderMeta->product->update(['qty' => $decrement]);
@@ -95,7 +95,8 @@ class MyFatoorahPaymentController extends Controller
         $contactus = Setting::first();
         $this->clearCart();
         $markdown = new Markdown(view(), config('mail.markdown'));
-        OrderSuccessProcessJob::dispatch($order, $order->user, $contactus)->delay(now()->addSeconds(15));
+        OrderSuccessProcessJob::dispatchNow($order, $order->user, $contactus);
+//        OrderSuccessProcessJob::dispatch($order, $order->user, $contactus)->delay(now()->addSeconds(15));
         return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
     }
 
