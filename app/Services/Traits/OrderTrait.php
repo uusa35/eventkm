@@ -366,6 +366,7 @@ trait OrderTrait
                 curl_setopt($ch, CURLOPT_POSTFIELDS, ['request_data' => $requestData, 'access_key' => $access_key, 'prog_lang' => $prog_lang]);
                 $response = curl_exec($ch);
                 $res = collect(json_decode($response));
+                dd($res);
                 if ($res['status'] === "201") {
                     $order->update(['shipment_reference' => 'Mirsal - ' . $res['data']->transaction_id]);
                 }
