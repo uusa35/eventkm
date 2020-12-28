@@ -333,7 +333,7 @@ trait OrderTrait
                     'sender_governorate' => 'A241',
                     'sender_area' => 'FH242',
                     'sender_block' => '00',
-                    'sender_street' => $sender->street,
+                    'sender_street' => '00000',
                     'sender_apartment' => $sender->apartment,
                     'sender_avenue' => $sender->address,
                     'sender_unit' => $sender->building,
