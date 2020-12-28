@@ -343,7 +343,7 @@ trait OrderTrait
                     'receiver_name' => $user->name,
                     'receiver_phone' => $order->mobile,
                     'receiver_governorate' => $order->area,
-                    'receiver_area' => 'FH242',
+                    'receiver_area' => 'JL244',
                     'receiver_block' => '0000',
                     'receiver_street' => '0000',
                     'receiver_apartment' => $order->address,
