@@ -70,8 +70,8 @@ class UPaymentController extends Controller
         $this->decreaseQty($order);
         $order->update(['status' => 'success', 'paid' => true]);
         $markdown = new Markdown(view(), config('mail.markdown'));
-//        OrderSuccessProcessJob::dispatchNow($order, $order->user);
-        OrderSuccessProcessJob::dispatch($order, $order->user)->delay(now()->addSeconds(15));
+        OrderSuccessProcessJob::dispatchNow($order, $order->user);
+//        OrderSuccessProcessJob::dispatch($order, $order->user)->delay(now()->addSeconds(15));
         $this->clearCart();
         return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
     }
