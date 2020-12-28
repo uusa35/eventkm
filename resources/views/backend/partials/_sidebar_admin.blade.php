@@ -424,8 +424,9 @@
             <span class="title">{{ trans('general.categories') }}</span>
             <span class="arrow"></span>
         </a>
-        @can('index','classified')
-            <ul class="sub-menu">
+        <ul class="sub-menu">
+            @can('index','classified')
+
                 <li class="nav-item {{ activeItem('group') }}">
                     <a href="{{ route('backend.admin.group.index') }}" class="nav-link nav-toggle">
                         <i class="fa fa-fw fa-shopping-bag"></i>
@@ -440,8 +441,15 @@
                         <span class="arrow"></span>
                     </a>
                 </li>
-            </ul>
-        @endcan
+            @endcan
+            <li class="nav-item {{ activeItem('category') }}">
+                <a href="{{ route('backend.admin.category.trashed') }}" class="nav-link nav-toggle">
+                    <i class="fa fa-fw fa-shopping-bag"></i>
+                    <span class="title">{{ trans('general.trashed') }}</span>
+                    <span class="arrow"></span>
+                </a>
+            </li>
+        </ul>
     </li>
 @endcan
 @can('index','country')

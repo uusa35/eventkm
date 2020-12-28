@@ -113,14 +113,14 @@ class CategoryController extends Controller
 
     public function trashed()
     {
-        $this->authorize('isSuper');
+        $this->authorize('isAdminOrAbove');
         $elements = Category::onlyTrashed()->paginate(100);
         return view('backend.modules.category.index', compact('elements'));
     }
 
     public function restore($id)
     {
-        $this->authorize('isSuper');
+        $this->authorize('isAdminOrAbove');
         $element = Category::withTrashed()->whereId($id)->first();
         $element->restore();
         return redirect()->back()->with('success', 'element restored');
