@@ -317,7 +317,7 @@ trait OrderTrait
     public function createOrderForMirsal(Order $order, User $user)
     {
         try {
-            if (env('MIRSAL_ENABLED') && !$order->shipment_reference && $order->paid) {
+//            if (env('MIRSAL_ENABLED') && !$order->shipment_reference && $order->paid) {
                 $url = env('MIRSAL_API_URL');
                 $access_key = env('MIRSAL_ACCESS_KEY');
                 $access_secret = env('MIRSAL_SECRET_KEY');
@@ -370,7 +370,7 @@ trait OrderTrait
                     $order->update(['shipment_reference' => 'Mirsal - ' . $res['data']->transaction_id]);
                 }
                 curl_close($ch);
-            }
+//            }
         } catch (\Exception $e) {
             print_r($e->getMessage() . '- Mirsal Error');
         }
