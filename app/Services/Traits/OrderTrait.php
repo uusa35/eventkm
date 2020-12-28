@@ -336,7 +336,7 @@ trait OrderTrait
                     'sender_street' => '00000',
                     'sender_apartment' => $sender->apartment,
                     'sender_avenue' => $sender->address,
-                    'sender_unit' => $sender->building,
+                    'sender_unit' => '0000',
                     'sender_floor' => $sender->floor,
                     'sender_note' => 'Sender Address :' . $sender->address . ' - '  .$sender->description,
                     'sender_location' => '',
