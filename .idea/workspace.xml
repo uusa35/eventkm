@@ -35,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="60" column="34" lean-forward="true" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+            <state relative-caret-position="464">
+              <caret line="64" column="21" lean-forward="true" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -95,8 +95,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Services/Traits/OrderTrait.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="661">
-              <caret line="368" column="25" selection-start-line="368" selection-start-column="25" selection-end-line="368" selection-end-column="25" />
+            <state relative-caret-position="430">
+              <caret line="339" column="53" lean-forward="true" selection-start-line="339" selection-start-column="53" selection-end-line="339" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -113,7 +113,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ABATI</find>
       <find>attri</find>
       <find>ontend.home</find>
       <find>orderMe</find>
@@ -143,6 +142,7 @@
       <find>simplePaginate</find>
       <find>MIRS</find>
       <find>$elements-&gt;render()</find>
+      <find>block</find>
     </findStrings>
     <replaceStrings>
       <replace>myexpo</replace>
@@ -887,12 +887,12 @@
       <workItem from="1609044427121" duration="2614000" />
       <workItem from="1609057649140" duration="1148000" />
       <workItem from="1609084491779" duration="813000" />
-      <workItem from="1609146456546" duration="1931000" />
+      <workItem from="1609146456546" duration="2156000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="729829000" />
+    <option name="totallyTimeSpent" value="730054000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1121" extended-state="0" />
@@ -1298,13 +1298,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="60" column="34" lean-forward="true" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Jobs/OrderSuccessProcessJob.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="751">
@@ -1315,10 +1308,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="64" column="21" lean-forward="true" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/Traits/OrderTrait.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="368" column="25" selection-start-line="368" selection-start-column="25" selection-end-line="368" selection-end-column="25" />
+        <state relative-caret-position="430">
+          <caret line="339" column="53" lean-forward="true" selection-start-line="339" selection-start-column="53" selection-end-line="339" selection-end-column="53" />
         </state>
       </provider>
     </entry>
