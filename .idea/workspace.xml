@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Traits/OrderTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Traits/OrderTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/upayment/src/Controllers/UPaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/upayment/src/Controllers/UPaymentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/upayment/src/Controllers/UpaymentTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/upayment/src/Controllers/UpaymentTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/activity/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/activity/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/answer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/answer/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/comment/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/comment/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/order/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/product/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/question/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/question/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/questionnaire/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/questionnaire/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/survey/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/survey/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/user/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,17 +43,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="61" column="14" selection-start-line="61" selection-end-line="61" selection-end-column="14" />
+            <state relative-caret-position="356">
+              <caret line="58" column="19" lean-forward="true" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Services/Traits/OrderTrait.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/user/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="320" column="42" selection-start-line="320" selection-start-column="42" selection-end-line="320" selection-end-column="42" />
+            <state relative-caret-position="679">
+              <caret line="157" column="35" lean-forward="true" selection-start-line="157" selection-start-column="35" selection-end-line="157" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -66,7 +79,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>colorName</find>
       <find>ABATI</find>
       <find>attri</find>
       <find>ontend.home</find>
@@ -96,6 +108,7 @@
       <find>shipment_reference</find>
       <find>simplePaginate</find>
       <find>MIRS</find>
+      <find>$elements-&gt;render()</find>
     </findStrings>
     <replaceStrings>
       <replace>myexpo</replace>
@@ -106,6 +119,7 @@
       <replace>ESCRAP</replace>
       <replace>ESCRAPreturn redirect()-&gt;back()-&gt;withErrors($validate-&gt;errors())-&gt;withInput();</replace>
       <replace>'is_user' =&gt; $this-&gt;is_user,</replace>
+      <replace>$elements-&gt;render('pagination::bootstrap-4')</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -114,7 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/backend/partials/scripts.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/js/bootstrap.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/CategoryController.php" />
         <option value="$PROJECT_DIR$/app/Resources/CategoryLightResource.php" />
@@ -146,7 +159,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/CartController.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/cart/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
-        <option value="$PROJECT_DIR$/resources/views/backend/modules/user/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/modules/order/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/emails/order-complete.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductAttributeController.php" />
@@ -165,6 +177,8 @@
         <option value="$PROJECT_DIR$/packages/usama/upayment/src/Controllers/UpaymentTrait.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Services/Traits/OrderTrait.php" />
+        <option value="$PROJECT_DIR$/resources/views/backend/modules/user/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/backend/modules/question/index.blade.php" />
       </list>
     </option>
   </component>
@@ -839,12 +853,12 @@
       <workItem from="1609044427121" duration="2614000" />
       <workItem from="1609057649140" duration="1148000" />
       <workItem from="1609084491779" duration="813000" />
-      <workItem from="1609146456546" duration="895000" />
+      <workItem from="1609146456546" duration="1211000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="728793000" />
+    <option name="totallyTimeSpent" value="729109000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1121" extended-state="0" />
@@ -1022,20 +1036,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1260">
           <caret line="75" column="40" selection-start-line="75" selection-start-column="40" selection-end-line="75" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
-          <caret line="69" column="7" selection-start-line="69" selection-start-column="7" selection-end-line="69" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/user/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1062">
-          <caret line="59" column="64" selection-start-line="59" selection-start-column="64" selection-end-line="59" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -1222,13 +1222,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_pagination.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/product/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -1260,17 +1253,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="61" column="14" selection-start-line="61" selection-end-line="61" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/Traits/OrderTrait.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
-          <caret line="320" column="42" selection-start-line="320" selection-start-column="42" selection-end-line="320" selection-end-column="42" />
+          <caret line="320" column="45" lean-forward="true" selection-start-line="320" selection-start-column="45" selection-end-line="320" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="58" column="19" lean-forward="true" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_pagination.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="37" lean-forward="true" selection-start-column="37" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/user/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="157" column="35" lean-forward="true" selection-start-line="157" selection-start-column="35" selection-end-line="157" selection-end-column="35" />
         </state>
       </provider>
     </entry>

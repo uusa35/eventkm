@@ -62,7 +62,7 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $elements->render() }}
+                    {{ $elements->render('pagination::bootstrap-4') }}
                 </div>
             </div>
         </div>

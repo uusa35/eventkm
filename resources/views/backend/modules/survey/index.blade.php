@@ -115,7 +115,7 @@
                         </tbody>
                     </table>
                     @if($elements->render())
-                        {{ $elements->render() }}
+                        {{ $elements->render('pagination::bootstrap-4') }}
                     @endif
                 </div>
             </div>
