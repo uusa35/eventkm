@@ -317,12 +317,12 @@ trait OrderTrait
     public function createOrderForMirsal(Order $order, User $user)
     {
         try {
-            if (env('MIRSAL_ENABLED') && !$order->shipment_reference && $order->paid) {
+            $sender = $order->order_metas->first()->product->user;
+            if (env('MIRSAL_ENABLED') && !$order->shipment_reference && $order->paid && $sender->country->is_local) {
                 $url = env('MIRSAL_API_URL');
                 $access_key = env('MIRSAL_ACCESS_KEY');
                 $access_secret = env('MIRSAL_SECRET_KEY');
                 $prog_lang = 'other';
-                $sender = $order->order_metas->first()->product->user;
                 $data = [
                     'content' => 'Order Id : ' . $order->id,
                     'cost' => $order->net_price,
