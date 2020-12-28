@@ -96,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/app/Services/Traits/OrderTrait.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="466">
-              <caret line="345" column="45" selection-start-line="345" selection-start-column="45" selection-end-line="345" selection-end-column="45" />
+              <caret line="345" column="47" lean-forward="true" selection-start-line="345" selection-start-column="47" selection-end-line="345" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -887,12 +887,12 @@
       <workItem from="1609044427121" duration="2614000" />
       <workItem from="1609057649140" duration="1148000" />
       <workItem from="1609084491779" duration="813000" />
-      <workItem from="1609146456546" duration="2382000" />
+      <workItem from="1609146456546" duration="2410000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="730280000" />
+    <option name="totallyTimeSpent" value="730308000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1121" extended-state="0" />
@@ -1318,7 +1318,7 @@
     <entry file="file://$PROJECT_DIR$/app/Services/Traits/OrderTrait.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
-          <caret line="345" column="45" selection-start-line="345" selection-start-column="45" selection-end-line="345" selection-end-column="45" />
+          <caret line="345" column="47" lean-forward="true" selection-start-line="345" selection-start-column="47" selection-end-line="345" selection-end-column="47" />
         </state>
       </provider>
     </entry>
