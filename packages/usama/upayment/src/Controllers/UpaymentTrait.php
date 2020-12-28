@@ -24,9 +24,8 @@ trait UpaymentTrait
             if (isset($res['status']) && !empty($res['status']) && $res['status'] === 'success') {
                 $parts = parse_url($res['paymentURL']);
                 parse_str($parts['query'], $output);
-                $referenceId = $output['sess_id'];
+                $referenceId = $output['ref'];
                 $paymentUrl = $res['paymentURL'];
-
                 if (empty($order->reference_id) && $order->order_metas->count() > 0) {
                     $order->update(['reference_id' => $referenceId]);
                 } elseif ($order->order_metas->count() > 0) {
@@ -40,7 +39,6 @@ trait UpaymentTrait
                     }
                     $newOrder->update(['reference_id' => $referenceId]);
                 }
-//                dd($res);
                 return $paymentUrl;
 //                header('Location:' . $paymentUrl);
             } else {

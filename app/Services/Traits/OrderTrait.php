@@ -318,9 +318,9 @@ trait OrderTrait
     {
         try {
             if (env('MIRSAL_ENABLED') && !$order->shipment_reference && $order->paid) {
-                $url = 'https://api.mirsalapp.com/rest/order/create';
-                $access_key = 'JL279DRMHIM9';
-                $access_secret = 'AW3CFP5UUHT1AQDG';
+                $url = env('MIRSAL_API_URL');
+                $access_key = env('MIRSAL_ACCESS_KEY');
+                $access_secret = env('MIRSAL_SECRET_KEY');
                 $prog_lang = 'other';
                 $sender = $order->order_metas->first()->product->user;
                 $data = [
