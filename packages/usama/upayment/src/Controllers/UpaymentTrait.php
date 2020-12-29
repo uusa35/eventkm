@@ -40,7 +40,6 @@ trait UpaymentTrait
                     $newOrder->update(['reference_id' => $referenceId]);
                 }
                 return $paymentUrl;
-//                header('Location:' . $paymentUrl);
             } else {
                 throw new \Exception('Upayment : ' . $res['error_msg']);
             }
@@ -72,8 +71,7 @@ trait UpaymentTrait
                 'ProductName' => $this->getProducts($order),
                 'ProductQty' => json_encode([2, 1]),
                 'ProductPrice' => json_encode([150, 1500]),
-                'reference' => 'Ref00001',
-                'notifyURL' => env('UPAYMENT_RETURN_URL')
+                'reference' => $order->id,
             ];
             return $post_string;
         } catch (\Exception $e) {

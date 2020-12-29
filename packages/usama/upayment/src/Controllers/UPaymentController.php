@@ -4,8 +4,6 @@ namespace Usama\Upayment;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\OrderSuccessProcessJob;
-use App\Models\Coupon;
-use App\Models\Setting;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -57,7 +55,6 @@ class UPaymentController extends Controller
 
     public function result(Request $request)
     {
-        dd($request->all());
         // once the result is success .. get the deal from refrence then delete all other free deals related to such ad.
         $validate = validator($request->all(), [
             'PaymentID' => 'required'
@@ -65,8 +62,8 @@ class UPaymentController extends Controller
         if ($validate->fails()) {
             throw new \Exception($validate->errors()->first());
         }
-        $referenceId = $this->getInvoiceId($request->PaymentID);
-        $order = Order::where(['reference_id' => $referenceId])->with('order_metas.product', 'user', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color')->first();
+        $referenceId = $request->OrderID;
+        $order = Order::where(['id' => $referenceId])->with('order_metas.product', 'user', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color')->first();
         $this->decreaseQty($order);
         $order->update(['status' => 'success', 'paid' => true]);
         $markdown = new Markdown(view(), config('mail.markdown'));
@@ -78,7 +75,6 @@ class UPaymentController extends Controller
 
     public function error(Request $request)
     {
-        dd($request->all());
         // once the result is success .. get the deal from refrence then delete all other free deals related to such ad.
         $validate = validator($request->all(), [
             'PaymentID' => 'required'
@@ -86,8 +82,8 @@ class UPaymentController extends Controller
         if ($validate->fails()) {
             throw new Excption($validate->errors()->first());
         }
-        $referenceId = $this->getInvoiceId($request->PaymentID);
-        $order = Order::withoutGlobalScopes()->where(['reference_id' => $referenceId])->first();
+        $referenceId = $request->OrderID;
+        $order = Order::withoutGlobalScopes()->where(['id' => $referenceId])->first();
         if ($order) {
             $order->update(['status' => 'failed']);
         }
