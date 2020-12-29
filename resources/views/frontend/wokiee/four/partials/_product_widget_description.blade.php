@@ -2,7 +2,7 @@
     <div class="tt-row">
         <ul class="tt-add-info">
             <li>
-                <a href="{{ route('frontend.product.search',['user_id' => $element->user_id]) }}">{{ str_limit($element->user->slug,25,'..') }}</a>
+                <a href="{{ route('frontend.product.search',['user_id' => $element->user_id]) }}">{{ str_limit($element->user->slug,15,'..') }}</a>
             </li>
 {{--            @if($element->brand)--}}
 {{--                <li>--}}
@@ -13,7 +13,7 @@
         {{--@include('frontend.wokiee.four.partials._rating')--}}
     </div>
     <h2 class="tt-title">
-        <a href="{{ route('frontend.product.show.name',['id' => $element->id , 'name' => $element->name]) }}">{{ str_limit($element->name,25,'..') }}</a>
+        <a href="{{ route('frontend.product.show.name',['id' => $element->id , 'name' => $element->name]) }}">{{ str_limit($element->name,15,'..') }}</a>
     </h2>
     @include('frontend.wokiee.four.partials._widget_price_and_color')
     <div class="tt-product-inside-hover text-center">

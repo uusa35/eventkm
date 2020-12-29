@@ -76,22 +76,27 @@
                                     </span>
                                         @endif
                                     </div>
-                                    <div class="form-group">
-                                        <label for="role">{{ trans('general.register_type') }} *</label>
-                                        <select name="role_id" id="role" style="width: 100%; height: 40px;" required>
-                                            <option value="">{{ trans('general.choose_register_type') }}</option>
-                                            @foreach($roles as $role)
-                                                <option value="{{ $role->id }}">{{ $role->slug}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                                    @if(env('EVENTKM'))
+                                        <input type="hidden" name="role_id" value="{{ $roles->first()->id }}">
+                                    @else
+                                        <div class="form-group">
+                                            <label for="role">{{ trans('general.register_type') }} *</label>
+                                            <select name="role_id" id="role" style="width: 100%; height: 40px;"
+                                                    required>
+                                                <option value="">{{ trans('general.choose_register_type') }}</option>
+                                                @foreach($roles as $role)
+                                                    <option value="{{ $role->id }}">{{ $role->slug}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    @endif
                                     <div class="row">
                                         <div class="col-auto">
                                             <div class="form-group">
                                                 <button class="btn btn-border"
                                                         type="submit">{{ trans('general.register') }}</button>
-{{--                                                <a class="btn btn-border"--}}
-{{--                                                   href="auth/google">{{ trans('general.register_with_google') }}</a>--}}
+                                                {{--                                                <a class="btn btn-border"--}}
+                                                {{--                                                   href="auth/google">{{ trans('general.register_with_google') }}</a>--}}
                                             </div>
                                         </div>
                                         <div class="col-auto align-self-center">

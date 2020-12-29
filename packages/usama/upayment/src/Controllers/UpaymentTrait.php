@@ -61,7 +61,7 @@ trait UpaymentTrait
                 'order_id' => $order->id, // MIN 30 characters with strong unique function (like hashing function with time)
                 'total_price' => $order->net_price,
                 'CurrencyCode' => env('UPAYMENT_CURRENCY_CODE'),
-                'name' => $user->name,
+                'CstName' => $user->name,
                 'CstEmail' => $user->email,
                 'CstMobile' => str_limit($user->mobile, 10, ''),
                 'success_url' => env('UPAYMENT_RETURN_URL'),
@@ -72,7 +72,8 @@ trait UpaymentTrait
                 'ProductName' => $this->getProducts($order),
                 'ProductQty' => json_encode([2, 1]),
                 'ProductPrice' => json_encode([150, 1500]),
-                'reference' => 'Ref00001'
+                'reference' => 'Ref00001',
+                'notifyURL' => env('UPAYMENT_RETURN_URL')
             ];
             return $post_string;
         } catch (\Exception $e) {

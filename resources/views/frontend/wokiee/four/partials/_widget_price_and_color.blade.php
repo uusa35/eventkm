@@ -1,8 +1,9 @@
+<div style="min-height: 8rem;">
 <div class="tt-row text-center">
     <div class="tt-price col-lg-12">
         @if($element->isOnSale)
-            <span class="new-price pull-left">{{ $element->convertedSalePrice}}<span>{{ $currency->symbol }}</span></span>
-            <span class="old-price d-md-block pull-right">{{ $element->convertedPrice }}<span>{{ $currency->symbol }}</span></span>
+            <span class="new-price">{{ $element->convertedSalePrice}}<span>{{ $currency->symbol }}</span></span>
+{{--            <span class="old-price d-md-block pull-right small">{{ $element->convertedPrice }}<span>{{ $currency->symbol }}</span></span>--}}
         @else
             <span class="sale-price">{{ $element->convertedPrice }}<span>{{ $currency->symbol }}</span></span>
         @endif
@@ -42,3 +43,5 @@
         </ul>
     </div>
 @endif
+</div>
+
