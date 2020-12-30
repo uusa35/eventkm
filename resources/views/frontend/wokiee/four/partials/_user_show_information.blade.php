@@ -76,7 +76,9 @@
                                 class="ml-1"></span><span>{{ trans('general.whatsapp') }} : </span>
                         <span class="ml-2"></span></td>
                     <td>
-                        {{ $element->whatsapp }}
+                        <a href="https://api.whatsapp.com/send?phone={{ $element->whatsapp }}&text={{ env('APP_NAME') }}">
+                            {{ $element->whatsapp }}
+                        </a>
                     </td>
                 </tr>
             @endif
@@ -118,16 +120,6 @@
                     </td>
                     <td>
                         {{ $element->individuals }}
-                    </td>
-                </tr>
-            @endif
-            @if(!is_null($element->mobile))
-                <tr>
-                    <td class="td-fixed-element td-sm">
-                        <span><i class="fa fa-fw fa-lg icon-f-93"></i> <span class="ml-2"></span>{{ trans('general.mobile') }}:</span>
-                    </td>
-                    <td>
-                        {{ $element->mobile }}
                     </td>
                 </tr>
             @endif
