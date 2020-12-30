@@ -5,7 +5,7 @@
                 <tr>
                     <td class="td-fixed-element"><i class="icon-f-02 fa fa-fw fa-lg"></i><span
                                 class="ml-1"></span><span>{{ trans('general.sku') }} : </span>
-                        </td>
+                    </td>
                     <td>
                         {{ $element->sku }}
                     </td>
@@ -96,7 +96,21 @@
                         <span><i class="fa fa-fw fa-lg icon-f-93"></i> {{ trans('general.mobile') }}:</span>
                     </td>
                     <td>
-                        {{ $element->user->mobile }}
+                        <a href="tel:{{ $element->user->fullMobile }}">
+                            {{ $element->user->fullMobile }}
+                        </a>
+                    </td>
+                </tr>
+            @endif
+            @if(!is_null($element->user->whatsapp))
+                <tr>
+                    <td class="td-fixed-element">
+                        <span><i class="fa fa-fw fa-lg icon-f-93"></i> {{ trans('general.whatsapp') }}:</span>
+                    </td>
+                    <td>
+                        <a href="https://api.whatsapp.com/send?phone={{ $element->user->whatsapp }}&text={{ request()->url() }}">
+                            {{ $element->user->whatsapp }}
+                        </a>
                     </td>
                 </tr>
             @endif
@@ -106,7 +120,9 @@
                         <span><i class="fa fa-fw fa-lg icon-h-35"></i> {{ trans('general.phone') }}:</span>
                     </td>
                     <td>
-                        {{ $element->user->phone }}
+                        <a href="tel:{{ $element->user->phone }}">
+                            {{ $element->user->phone }}
+                        </a>
                     </td>
                 </tr>
             @endif
@@ -122,7 +138,9 @@
             @endif
             @if($element->categories->isNotEmpty())
                 <tr>
-                    <td class="td-fixed-element"><span><i class="fa fa-fw icon-f-90 fa-lg"></i></span></span>{{ trans('general.categories') }}:
+                    <td class="td-fixed-element"><span><i
+                                    class="fa fa-fw icon-f-90 fa-lg"></i></span></span>{{ trans('general.categories') }}
+                        :
                     </td>
                     <td>
                         @foreach($element->categories as $cat)
@@ -192,7 +210,7 @@
                         <tr>
                             <td class="td-fixed-element"><i class="icon-f-02 fa fa-fw fa-lg"></i><span
                                         class="ml-1"></span><span>{{ trans('general.size') }} : </span>
-                                </td>
+                            </td>
                             <td>
                                 {{ $element->size->name }}
                             </td>
@@ -202,7 +220,7 @@
                         <tr>
                             <td class="td-fixed-element"><i class="icon-f-02 fa fa-fw fa-lg"></i><span
                                         class="ml-1"></span><span>{{ trans('general.color') }} : </span>
-                                </td>
+                            </td>
                             <td>
                                 <span style="color : {{ $element->color->code }}">{{ $element->color->name }}</span>
                             </td>
@@ -222,7 +240,7 @@
             @if($element->notes)
                 <tr>
                     <td class="td-fixed-element"><i class="icon-f-07 fa fa-fw fa-lg"></i><span>{{ trans('general.notes') }} : </span>
-                        </td>
+                    </td>
                     <td>
                         {{ $element->notes }}
                     </td>
