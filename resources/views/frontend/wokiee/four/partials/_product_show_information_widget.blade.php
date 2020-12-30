@@ -11,7 +11,7 @@
                     </td>
                 </tr>
             @endif
-            @if($element->user && !is_null($element->user) && !env('HTB') && !env('HOMEKEY'))
+            @if($element->user && !is_null($element->user) && env('SHOW_COMPANY'))
                 <tr>
                     <td class="td-fixed-element">
                         <i class="fa fa-fw icon-e-39 fa-lg"></i>
@@ -23,7 +23,7 @@
                     </td>
                 </tr>
             @endif
-            @if($element->user->country && !env('HTB'))
+            @if($element->user->country && env('SHOW_COMPANY'))
                 <tr>
                     <span style="min-width: 130px;">
                     <td class="td-fixed-element">

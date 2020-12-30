@@ -1,17 +1,19 @@
 <div class="tt-description text-center">
-    <div class="tt-row">
-        <ul class="tt-add-info">
-            <li>
-                <a href="{{ route('frontend.product.search',['user_id' => $element->user_id]) }}">{{ str_limit($element->user->slug,15,'..') }}</a>
-            </li>
-{{--            @if($element->brand)--}}
-{{--                <li>--}}
-{{--                    <a href="{{ route('frontend.product.search', ['brand_id' => $element->brand->id]) }}">{{ $element->brand->slug }}</a>--}}
-{{--                </li>--}}
-{{--            @endif--}}
-        </ul>
-        {{--@include('frontend.wokiee.four.partials._rating')--}}
-    </div>
+    @if(env('SHOW_COMPANY'))
+        <div class="tt-row">
+            <ul class="tt-add-info">
+                <li>
+                    <a href="{{ route('frontend.product.search',['user_id' => $element->user_id]) }}">{{ str_limit($element->user->slug,15,'..') }}</a>
+                </li>
+                {{--            @if($element->brand)--}}
+                {{--                <li>--}}
+                {{--                    <a href="{{ route('frontend.product.search', ['brand_id' => $element->brand->id]) }}">{{ $element->brand->slug }}</a>--}}
+                {{--                </li>--}}
+                {{--            @endif--}}
+            </ul>
+            {{--@include('frontend.wokiee.four.partials._rating')--}}
+        </div>
+    @endif
     <h2 class="tt-title">
         <a href="{{ route('frontend.product.show.name',['id' => $element->id , 'name' => $element->name]) }}">{{ str_limit($element->name,15,'..') }}</a>
     </h2>
