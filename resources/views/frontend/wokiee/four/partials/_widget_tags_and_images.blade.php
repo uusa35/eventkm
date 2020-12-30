@@ -10,12 +10,12 @@
 {{--    @if($element->on_new)--}}
 {{--        <span class="tt-label-new">{{ trans('general.new') }}</span>--}}
 {{--    @endif--}}
-{{--    @if($element->exclusive)--}}
-{{--        <span class="tt-label-our-stock">{{ trans('general.exclusive') }}</span>--}}
-{{--    @endif--}}
-{{--    @if($element->isOnSale)--}}
-{{--        <span class="tt-label-sale">{{ trans('general.on_sale') }}</span>--}}
-{{--    @endif--}}
+    @if($element->exclusive)
+        <span class="tt-label-our-stock">{{ trans('general.exclusive') }}</span>
+    @endif
+    @if($element->isOnSale)
+        <span class="tt-label-sale">{{ trans('general.on_sale') }}</span>
+    @endif
 {{--    @if($element->is_available)--}}
 {{--        <span class="tt-label-new"--}}
 {{--              style="background-color: #978d2f;">{{ trans('general.available_for_booking') }}</span>--}}
