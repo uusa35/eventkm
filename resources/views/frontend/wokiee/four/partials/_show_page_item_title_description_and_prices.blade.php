@@ -6,7 +6,7 @@
         @if($element->isOnSale)
             <span class="new-price">{{ $element->convertedSalePrice}}
                 {{ $currency->symbol }}</span>
-            <span class="old-price pull-left" style="color : red !important;">
+            <span class="old-price {{ app()->getLocale() === 'ar' ? 'pull-left' : 'pull-right' }}" style="color : red !important;">
                 {{ $element->convertedPrice }}
                 <span>{{ $currency->symbol }}</span>
             </span>
