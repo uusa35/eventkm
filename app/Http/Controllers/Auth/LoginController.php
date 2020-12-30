@@ -36,7 +36,7 @@ class LoginController extends Controller
 
     protected function redirectTo()
     {
-        if (auth()->user()->isAdminOrAbove || auth()->user()->isCompany) {
+        if (auth()->user()->isAdminOrAbove || auth()->user()->is_company) {
             return '/backend';
         }
         return '/home';

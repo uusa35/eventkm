@@ -184,7 +184,7 @@ class HomeController extends Controller
             }
             if ($element) {
                 Auth::loginUsingId($element->id);
-                return redirect()->route('backend.home');
+                return $element->is_client ? redirect()->route('frontend.home') : redirect()->route('backend.home');
             }
         }
         return redirect()->route('backend.home')->with(['error' => 'no users']);

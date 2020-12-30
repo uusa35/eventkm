@@ -21,19 +21,21 @@
                                 </a>
                             </li>
                         @endif
-{{--                        @if(env('HOMEKEY') && auth()->user()->isClient)--}}
+                        {{--                        @if(env('HOMEKEY') && auth()->user()->isClient)--}}
                         @if(env('HOMEKEY'))
-                        <li><a href="{{ route('frontend.classified.choose') }}">
-                                <i class="icon-f-81 fa fa-fw fa-lg"></i>
-                                {{ trans('general.create_classified') }}
-                            </a>
-                        </li>
+                            <li><a href="{{ route('frontend.classified.choose') }}">
+                                    <i class="icon-f-81 fa fa-fw fa-lg"></i>
+                                    {{ trans('general.create_classified') }}
+                                </a>
+                            </li>
                         @endif
-                        <li><a href="{{ route('backend.home') }}">
-                                <i class="icon-f-81 fa fa-fw fa-lg"></i>
-                                {{ trans('general.control_panel') }}
-                            </a>
-                        </li>
+                        @if(!auth()->user()->is_client)
+                            <li><a href="{{ route('backend.home') }}">
+                                    <i class="icon-f-81 fa fa-fw fa-lg"></i>
+                                    {{ trans('general.control_panel') }}
+                                </a>
+                            </li>
+                        @endif
                         <li><a href="{{ route('frontend.user.edit', auth()->id()) }}">
                                 <i class="icon-f-81 fa fa-fw fa-lg"></i>
                                 {{ trans('general.personal_information') }}
