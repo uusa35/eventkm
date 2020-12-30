@@ -88,7 +88,9 @@
                                 class="ml-1"></span><span>{{ trans('general.mobile') }} : </span>
                         <span class="ml-2"></span></td>
                     <td>
-                        {{ $element->mobile }}
+                        <a href="tel:{{ $element->fullMobile }}">
+                            {{ $element->fullMobile }}
+                        </a>
                     </td>
                 </tr>
             @endif
