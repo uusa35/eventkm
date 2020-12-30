@@ -85,11 +85,23 @@
                                                     required>
                                                 <option value="">{{ trans('general.choose_register_type') }}</option>
                                                 @foreach($roles as $role)
-                                                    <option value="{{ $role->id }}">{{ $role->slug}}</option>
+                                                    <option value="{{ $role->id }}" {{ $role->is_client ? 'selected' : '' }}>{{ $role->slug}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     @endif
+                                    <div class="form-group">
+                                        <label for="role">{{ trans('general.captcha') }} *</label>
+                                        <div class="col-12 text-center mb-3">
+                                            {!! captcha_img('test') !!} </p>
+                                        </div>
+                                        <input type="text" name="captcha" class="form-control {{ $errors->has('captcha') ? ' is-invalid' : '' }}" required autofocus>
+                                        @if ($errors->has('captcha'))
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('captcha') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
                                     <div class="row">
                                         <div class="col-auto">
                                             <div class="form-group">

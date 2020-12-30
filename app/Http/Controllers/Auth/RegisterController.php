@@ -56,6 +56,7 @@ class RegisterController extends Controller
             'mobile' => 'string|max:10|min:5',
             'country_id' => ['required', 'integer', 'exists:countries,id'],
             'role_id' => ['required', 'integer', 'exists:roles,id'],
+            'captcha' => 'required|captcha'
         ]);
     }
 
@@ -79,5 +80,12 @@ class RegisterController extends Controller
             'role_id' => $data['role_id'] ? $data['role_id'] : $role->id,
             'api_token' => rand(9999999, 99999999999).str_random(5),
         ]);
+    }
+
+    public function messages()
+    {
+        return [
+            'validation.captcha' => 'Captcha is not correct.',
+        ];
     }
 }
