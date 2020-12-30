@@ -126,7 +126,6 @@
       <path value="$PROJECT_DIR$/vendor/spatie/geocoder" />
       <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/vendor/yandex/translate-api" />
-      <path value="$PROJECT_DIR$/vendor/brotzka/laravel-dotenv-editor" />
       <path value="$PROJECT_DIR$/vendor/pusher/pusher-php-server" />
       <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
@@ -166,6 +165,7 @@
       <path value="$PROJECT_DIR$/vendor/milon/barcode" />
       <path value="$PROJECT_DIR$/vendor/jbroadway/urlify" />
       <path value="$PROJECT_DIR$/vendor/voku/stop-words" />
+      <path value="$PROJECT_DIR$/vendor/brotzka/laravel-dotenv-editor" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

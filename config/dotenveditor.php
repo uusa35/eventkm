@@ -41,7 +41,7 @@ return [
     /* This is my custom view, do not using */
 //    'template'        => 'adminlte::page',
     'template'        => 'backend.layouts.app',
-    'overview'        => 'dotenv-editor::overview-adminlte',
+    'overview'        => 'dotenv-editor::overview',
 
     // Config route group
     'route'           => [
