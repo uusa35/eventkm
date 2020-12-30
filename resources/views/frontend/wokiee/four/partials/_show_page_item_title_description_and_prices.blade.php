@@ -4,9 +4,12 @@
     </div>
     <div class="tt-price">
         @if($element->isOnSale)
-            <span class="new-price" style="color : red">{{ $element->convertedSalePrice}}
+            <span class="new-price">{{ $element->convertedSalePrice}}
                 {{ $currency->symbol }}</span>
-            <span class="old-price pull-left small">{{ $element->convertedPrice }}<span>{{ $currency->symbol }}</span></span>
+            <span class="old-price pull-left" style="color : red !important;">
+                {{ $element->convertedPrice }}
+                <span>{{ $currency->symbol }}</span>
+            </span>
         @else
             <span class="new-price">{{ $element->convertedPrice }}
                 {{ $currency->symbol }}</span>
