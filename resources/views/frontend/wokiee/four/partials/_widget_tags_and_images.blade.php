@@ -11,10 +11,10 @@
 {{--        <span class="tt-label-new">{{ trans('general.new') }}</span>--}}
 {{--    @endif--}}
     @if($element->exclusive)
-        <span class="tt-label-our-stock">{{ trans('general.exclusive') }}</span>
+        <span class="tt-label-our-stock pull-right">{{ trans('general.exclusive') }}</span>
     @endif
     @if($element->isOnSale)
-        <span class="tt-label-sale">{{ trans('general.on_sale') }}</span>
+        <span class="tt-label-new pull-right">{{ trans('general.on_sale') }}</span>
     @endif
 {{--    @if($element->is_available)--}}
 {{--        <span class="tt-label-new"--}}
@@ -29,7 +29,7 @@
 {{--    @if($element->user)--}}
 {{--        <span class="tt-label-new">{{ $element->user->country->slug }}</span>--}}
 {{--    @endif--}}
-    @if(!$element->hasStock && $element->delivery_time)
-        <span class="tt-label-sale">{{ trans('general.out_of_stock') }}</span>
+    @if(!$element->hasStock)
+        <span class="tt-label-sale pull-right">{{ trans('general.out_of_stock') }}</span>
     @endif
 </span>
