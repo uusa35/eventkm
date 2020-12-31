@@ -26,6 +26,7 @@
                             <th>{{ trans('general.active') }}</th>
                             <th class="none">{{ trans('general.access_dashboard') }}</th>
                             <th class="none">{{ trans('general.categories') }}</th>
+                            <th class="none">{{ trans('general.created_at') }}</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
                         </thead>
@@ -44,6 +45,7 @@
                             <th>{{ trans('general.active') }}</th>
                             <th class="none">{{ trans('general.access_dashboard') }}</th>
                             <th class="none">{{ trans('general.categories') }}</th>
+                            <th class="none">{{ trans('general.created_at') }}</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
                         </tfoot>
@@ -56,7 +58,7 @@
                                 <td><img src="{{ $element->getCurrentImageAttribute() }}" alt="" class="img-xs"/></td>
                                 <td>{{ $element->email  }}</td>
                                 <td>{{ $element->fullMobile }}</td>
-                                <td>{{ $element->phone }}</td>
+                                <td>{{ $element->phone ?? 'N/A' }}</td>
                                 <td>{{ $element->address }}</td>
                                 {{--                                <td>{{ $element->area }}</td>--}}
                                 <td>{{ $element->country ? $element->country->slug : 'N/A'}}</td>
@@ -82,6 +84,7 @@
                                         <button class="btn-sm btn-danger">N/A</button>
                                     @endif
                                 </td>
+                                <td>{{ $element->created_at }}</td>
                                 <td>
                                     <div class="btn-group">
                                         <button type="button" class="btn green btn-xs btn-outline dropdown-toggle"
