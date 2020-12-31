@@ -1,7 +1,14 @@
 <div class="tt-filters-options desctop-no-sidebar">
-    {{--<div class="tt-btn-toggle">--}}
-    {{--<a href="#">{{ trans('general.filter') }}</a>--}}
-    {{--</div>--}}
+{{--    <div class="tt-btn-toggle">--}}
+{{--    <a href="#">{{ trans('general.filter') }}</a>--}}
+{{--    </div>--}}
+{{--    <div class="tt-quantity">--}}
+{{--        <a href="#" class="tt-col-one" data-value="tt-col-one"></a>--}}
+{{--        <a href="#" class="tt-col-two" data-value="tt-col-two"></a>--}}
+{{--        <a href="#" class="tt-col-three" data-value="tt-col-three"></a>--}}
+{{--        <a href="#" class="tt-col-four" data-value="tt-col-four"></a>--}}
+{{--        <a href="#" class="tt-col-six" data-value="tt-col-six"></a>--}}
+{{--    </div>--}}
     <div class="tt-sort">
         <select id="sort">
             <option value="" selected>{{ trans('general.sort_by') }}</option>

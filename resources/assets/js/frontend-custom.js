@@ -95,5 +95,4 @@ $(document).ready(function() {
             $(`#max-qty-${productId}`).attr('placeholder', newQty);
         }
     })
-
 });
