@@ -23,7 +23,7 @@ class CategoryController extends Controller
         if (env('MALLR')) {
             $elements = Category::active()->onlyProducts()->paginate(self::TAKE_MIN);
         } elseif (env('EVENTKM')) {
-            $elements = Category::active()->onlyForServices()->paginate(self::TAKE_MIN);
+            $elements = Category::active()->onlyForServices()->paginate(self::TAKE);
             $services = Service::active()->hasImage()->serveCountries()->hasValidTimings()->with(
                 'tags', 'user.country', 'images', 'user.areas', 'favorites'
             )->with(['categories' => function ($q) {
