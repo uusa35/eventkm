@@ -28,12 +28,12 @@ class UserController extends Controller
     {
         $this->authorize('user.view', auth()->user());
         if (request()->has('role_id')) {
-            $elements = User::where('role_id', request('role_id'))->with('country', 'slides', 'role','categories')->paginate(Self::TAKE);
+            $elements = User::where('role_id', request('role_id'))->with('country', 'slides', 'role','categories')->orderBy('id','desc')->paginate(Self::TAKE);
         } else {
             if (auth()->user()->isSuper) {
-                $elements = User::with('country', 'slides', 'role', 'categories')->paginate(Self::TAKE);
+                $elements = User::with('country', 'slides', 'role', 'categories')->orderBy('id','desc')->paginate(Self::TAKE);
             } else {
-                $elements = User::where('id', '!=', 1)->with('country', 'slides', 'role','categories')->paginate(Self::TAKE);
+                $elements = User::where('id', '!=', 1)->with('country', 'slides', 'role','categories')->orderBy('id','desc')->paginate(Self::TAKE);
             }
 
         }
