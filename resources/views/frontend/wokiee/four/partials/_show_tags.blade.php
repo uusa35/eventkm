@@ -9,7 +9,7 @@
         @if($element->isOnSale)
             <div class="tt-label tt-label-sale" style="padding: 5px;">{{ trans('general.on_sale') }}</div>
         @endif
-        @if($element->canOrder && $element->hasStock)
+        @if($element->hasStock)
             <span class="tt-label tt-label-new"
                   style="background-color: #978d2f; padding: 5px;">{{ trans('general.available') }}</span>
         @else
