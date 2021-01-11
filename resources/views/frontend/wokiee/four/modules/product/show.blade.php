@@ -53,7 +53,7 @@
                         @include('frontend.wokiee.four.partials._shipment_and_size_chart_btns')
                         @if($element->canOrder)
                             <div class="tt-swatches-container">
-                                @if($element->hasRealAttributes)
+                                @if($element->hasRealAttributes && $element->hasStock)
                                     <div id="productAttributeApp"></div>
                                 @endif
                                 {{--                                @if($element->has_attributes && $element->product_attributes->isNotEmpty())--}}
