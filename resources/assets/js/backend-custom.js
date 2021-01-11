@@ -52,7 +52,7 @@ $(document).ready(function() {
         "bFilter": true,
         "bInfo": true,
         "bAutoWidth": true,
-        "pageLength": 100,
+        "pageLength": 500,
         language: {
             aria: {
                 sortAscending: ": activate to sort column ascending",
