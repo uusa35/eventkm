@@ -31,7 +31,7 @@
     <favorites_list name="mallr" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.69254184">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
           <file pinned="false" current-in-tab="false">
@@ -76,8 +76,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/product/show.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="322">
-                  <caret line="55" column="86" lean-forward="true" selection-start-line="55" selection-start-column="86" selection-end-line="55" selection-end-column="86" />
+                <state relative-caret-position="286">
+                  <caret line="53" column="69" lean-forward="true" selection-start-line="53" selection-start-column="69" selection-end-line="53" selection-end-column="69" />
                 </state>
               </provider>
             </entry>
@@ -915,12 +915,12 @@
       <workItem from="1609601593905" duration="55000" />
       <workItem from="1609694898721" duration="2097000" />
       <workItem from="1610018265408" duration="189000" />
-      <workItem from="1610356814892" duration="817000" />
+      <workItem from="1610356814892" duration="870000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="752953000" />
+    <option name="totallyTimeSpent" value="753006000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1121" extended-state="0" />
@@ -1335,8 +1335,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/product/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="55" column="86" lean-forward="true" selection-start-line="55" selection-start-column="86" selection-end-line="55" selection-end-column="86" />
+        <state relative-caret-position="286">
+          <caret line="53" column="69" lean-forward="true" selection-start-line="53" selection-start-column="69" selection-end-line="53" selection-end-column="69" />
         </state>
       </provider>
     </entry>
