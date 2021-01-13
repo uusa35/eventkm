@@ -63,6 +63,13 @@ function activeText($element, $text = 'Active')
 }
 
 
+function getCouponIsPercentage()
+{
+    if (session()->has('coupon')) {
+        return Cart::instance('shopping')->content()->where('id', 'coupon')->first()->options->element->is_percentage;
+        }
+}
+
 function getCouponValue()
 {
     $coupon = session()->has('coupon') ? session()->get('coupon') : null;

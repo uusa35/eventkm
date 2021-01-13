@@ -24,7 +24,7 @@
         @if(session()->has('coupon'))
             <tr>
                 <th>{{ trans('general.discount') }}</th>
-                <td>{{ session()->get('coupon')->value }} {{ trans('general.kd') }}</td>
+                <td>{{ session()->get('coupon')->value }} {{ getCouponIsPercentage() ? '%' : trans('general.kd') }}</td>
             </tr>
         @endif
         <tr>
