@@ -10,7 +10,7 @@
                 @include('backend.partials.forms.form_title',['title' => trans('general.index_user')])
                 <div class="portlet-body">
                     @include('backend.partials._admin_instructions',['title' => trans('general.users') ,'message' => trans('message.index_user')])
-                    <table id="{{ env('EVENTKM') ? 'dataTableAll' : 'dataTable' }}" class="table table-striped table-bordered table-hover" cellspacing="0">
+                    <table id="dataTableAll" class="table table-striped table-bordered table-hover" cellspacing="0">
                         <thead>
                         <tr>
                             <th class="all">{{ trans('general.id') }}</th>
