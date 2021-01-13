@@ -42,7 +42,7 @@ $(document).ready(function() {
         lengthMenu: [[5, 10, 15, 20, -1], [5, 10, 15, 20, "All"]],
         dom: "<'row' <'col-md-12'B>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>"
     });
-    $('#dataTableLong').DataTable({
+    $('#dataTableAll').DataTable({
         "order": [[0, "desc"]],
         "bPaginate": true,
         "scrollY":        "1500px",

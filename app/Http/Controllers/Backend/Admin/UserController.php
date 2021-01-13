@@ -28,16 +28,15 @@ class UserController extends Controller
     {
         $this->authorize('user.view', auth()->user());
         if (request()->has('role_id')) {
-            $elements = User::where('role_id', request('role_id'))->with('country', 'slides', 'role','categories')->orderBy('id','desc')->get();
+            $elements = User::where('role_id', request('role_id'))->with('country', 'slides', 'role','categories')->orderBy('id','desc')->paginate(env('EVENTKM') ? Self::TAKE_ALL : SELF::TAKE);
         } else {
             if (auth()->user()->isSuper) {
-                $elements = User::with('country', 'slides', 'role', 'categories')->orderBy('id','desc')->get();
+                $elements = User::with('country', 'slides', 'role', 'categories')->orderBy('id','desc')->paginate(env('EVENTKM') ? Self::TAKE_ALL : SELF::TAKE);
             } else {
-                $elements = User::where('id', '!=', 1)->with('country', 'slides', 'role','categories')->orderBy('id','desc')->get();
+                $elements = User::where('id', '!=', 1)->with('country', 'slides', 'role','categories')->orderBy('id','desc')->paginate(env('EVENTKM') ? Self::TAKE_ALL : SELF::TAKE);
             }
 
         }
-
         return view('backend.modules.user.index', compact('elements'));
     }
 
