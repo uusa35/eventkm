@@ -262,6 +262,10 @@
         /*text-transform: uppercase !important;*/
     }
     @endif
+    .tt-promo-box.tt-one-child .tt-description .tt-description-wrapper {
+        padding: 3px 20px 3px !important;
+        opacity: 0.4;
+    }
 </style>
 
 @if(env('EVENTKM'))

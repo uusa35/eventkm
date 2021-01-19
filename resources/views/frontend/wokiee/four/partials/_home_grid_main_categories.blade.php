@@ -42,14 +42,12 @@
                        class="tt-promo-box tt-one-child">
                         <img src="{{ asset(env('IMG_LOADER')) }}" data-src="{{ $cat->getImageThumbLinkAttribute() }}"
                              alt="{{ $cat->name }}">
-                        @if(!env('NASHKW'))
-                            <div class="tt-description">
-                                <div class="tt-description-wrapper">
-                                    <div class="tt-background"></div>
-                                    <div class="tt-title-small">{!! $cat->name !!}</div>
-                                </div>
+                        <div class="tt-description">
+                            <div class="tt-description-wrapper">
+                                <div class="tt-background"></div>
+                                <div class="tt-title-small">{!! $cat->name !!}</div>
                             </div>
-                        @endif
+                        </div>
                     </a>
                 </div>
             @endif
