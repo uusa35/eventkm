@@ -53,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/product/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="457" column="150" selection-start-line="457" selection-start-column="150" selection-end-line="457" selection-end-column="150" />
+            <state relative-caret-position="574">
+              <caret line="477" column="104" lean-forward="true" selection-start-line="477" selection-start-column="104" selection-end-line="477" selection-end-column="104" />
             </state>
           </provider>
         </entry>
@@ -98,8 +98,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mobile</find>
-      <find>dashboard</find>
       <find>posting</find>
       <find>sale</find>
       <find>address</find>
@@ -121,13 +119,15 @@
       <find>nash</find>
       <find>.tt-background</find>
       <find>.tt-promo-box.tt-one-child .tt-description .tt-description-wrapper</find>
-      <find>quant</find>
       <find>weigh</find>
       <find>رقما</find>
       <find>غير صحيحة</find>
       <find>quan</find>
       <find>quantity</find>
       <find>order</find>
+      <find>quant</find>
+      <find>weight</find>
+      <find>order&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>myexpo</replace>
@@ -939,12 +939,12 @@
       <workItem from="1610522877709" duration="1008000" />
       <workItem from="1610555039534" duration="1686000" />
       <workItem from="1611055791963" duration="730000" />
-      <workItem from="1611170328093" duration="897000" />
+      <workItem from="1611170328093" duration="1091000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="758249000" />
+    <option name="totallyTimeSpent" value="758443000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1121" extended-state="0" />
@@ -1372,8 +1372,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/product/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="457" column="150" selection-start-line="457" selection-start-column="150" selection-end-line="457" selection-end-column="150" />
+        <state relative-caret-position="574">
+          <caret line="477" column="104" lean-forward="true" selection-start-line="477" selection-start-column="104" selection-end-line="477" selection-end-column="104" />
         </state>
       </provider>
     </entry>

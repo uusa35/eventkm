@@ -148,6 +148,11 @@
                                                                    name="weight" value="{{ old('weight',1) }}"
                                                                    placeholder="{{ trans('general.weight') }}" required
                                                                    autofocus>
+                                                            <span class="help-block text-danger">
+                                                                    <small>
+                                                                    يرجى وضع الرقم باللغة الانجليزية فقط
+                                                                    </small>
+                                                                    </span>
                                                             @if ($errors->has('weight'))
                                                                 <span class="help-block">
                                                                 <strong>
@@ -356,7 +361,6 @@
                                                         <div class="form-group{{ $errors->has('quantity') ? ' has-error' : '' }}">
                                                             <label for="quantity"
                                                                    class="control-label">{{ trans('general.quantity') }}
-                                                                <span class="help-block text-danger">يرجى وضع رقم الكمية باللغة الانجليزية فقط </span>
                                                             </label>
                                                             <input id="quantity" type="text"
                                                                    class="form-control tooltips"
@@ -367,6 +371,11 @@
                                                                    placeholder="{{ trans('general.quantity') }}"
                                                                    autofocus
                                                                    required>
+                                                            <span class="help-block text-danger">
+                                                                    <small>
+                                                                    يرجى وضع رقم الكمية باللغة الانجليزية فقط
+                                                                    </small>
+                                                                    </span>
                                                             @if ($errors->has('quantity'))
                                                                 <span class="help-block">
                                             <strong>
@@ -455,7 +464,6 @@
                                                         <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
                                                             <label for="order"
                                                                    class="control-label">{{ trans('general.sequence') }}
-                                                                <span class="help-block text-danger">يرجى وضع رقم الكمية باللغة الانجليزية فقط </span>
                                                             </label>
                                                             <input id="order" type="text"
                                                                    class="form-control tooltips"
@@ -465,6 +473,11 @@
                                                                    value="{{ old('order') }}"
                                                                    placeholder="{{ trans('general.sequence') }}"
                                                                    autofocus>
+                                                            <span class="help-block text-danger">
+                                                                    <small>
+                                                                    يرجى وضع الرقم باللغة الانجليزية فقط
+                                                                    </small>
+                                                                    </span>
                                                             @if ($errors->has('order'))
                                                                 <span class="help-block">
                                                                     <strong>
