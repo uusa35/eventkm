@@ -361,7 +361,7 @@
                                                                    data-container="body" data-placement="top"
                                                                    data-original-title="{{ trans('message.quantity') }}"
                                                                    name="qty" maxlength="5"
-                                                                   value="{{ old('quantity') }}"
+                                                                   value="{{ old('quantity') ? old('quantity') : 1 }}"
                                                                    placeholder="{{ trans('general.quantity') }}"
                                                                    autofocus
                                                                    required>
