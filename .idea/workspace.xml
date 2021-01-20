@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/product/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/product/edit.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/product/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
-              <caret line="477" column="104" lean-forward="true" selection-start-line="477" selection-start-column="104" selection-end-line="477" selection-end-column="104" />
+            <state relative-caret-position="610">
+              <caret line="479" column="75" lean-forward="true" selection-start-line="479" selection-start-column="75" selection-end-line="479" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -86,6 +86,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/product/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="610">
+              <caret line="391" column="75" selection-start-line="391" selection-start-column="75" selection-end-line="391" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -98,8 +107,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>posting</find>
-      <find>sale</find>
       <find>address</find>
       <find>tt-quantity</find>
       <find>main.js</find>
@@ -128,6 +135,8 @@
       <find>quant</find>
       <find>weight</find>
       <find>order&quot;</find>
+      <find>weig</find>
+      <find>quantit</find>
     </findStrings>
     <replaceStrings>
       <replace>myexpo</replace>
@@ -147,7 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2014_05_10_131051_create_countries_table.php" />
         <option value="$PROJECT_DIR$/app/Services/Traits/OrderTrait.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/partials/_sidebar_admin.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/CategoryController.php" />
@@ -198,6 +206,7 @@
         <option value="$PROJECT_DIR$/app/Requests/Backend/ProductStore.php" />
         <option value="$PROJECT_DIR$/app/Requests/Backend/ProductUpdate.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/modules/product/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/backend/modules/product/edit.blade.php" />
       </list>
     </option>
   </component>
@@ -939,12 +948,12 @@
       <workItem from="1610522877709" duration="1008000" />
       <workItem from="1610555039534" duration="1686000" />
       <workItem from="1611055791963" duration="730000" />
-      <workItem from="1611170328093" duration="1091000" />
+      <workItem from="1611170328093" duration="1173000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="758443000" />
+    <option name="totallyTimeSpent" value="758525000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1121" extended-state="0" />
@@ -1017,13 +1026,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="49" column="65" selection-start-line="49" selection-start-column="65" selection-end-line="49" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/js/frontend-custom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
@@ -1372,8 +1374,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/product/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="477" column="104" lean-forward="true" selection-start-line="477" selection-start-column="104" selection-end-line="477" selection-end-column="104" />
+        <state relative-caret-position="610">
+          <caret line="479" column="75" lean-forward="true" selection-start-line="479" selection-start-column="75" selection-end-line="479" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/modules/product/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="391" column="75" selection-start-line="391" selection-start-column="75" selection-end-line="391" selection-end-column="75" />
         </state>
       </provider>
     </entry>

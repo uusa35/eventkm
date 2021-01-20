@@ -186,6 +186,11 @@
                                                                    name="weight" value="{{ $element->weight }}"
                                                                    placeholder="{{ trans('general.weight') }}" required
                                                                    autofocus>
+                                                            <span class="help-block text-danger">
+                                                                    <small>
+                                                                    يرجى وضع الرقم باللغة الانجليزية فقط
+                                                                    </small>
+                                                                    </span>
                                                             @if ($errors->has('weight'))
                                                                 <span class="help-block">
                                                 <strong>
@@ -380,6 +385,11 @@
                                                         <span class="help-block text-info small">
                                                             {{ trans('message.qty_without_attributes') }}
                                                         </span>
+                                                        <span class="help-block text-danger">
+                                                                    <small>
+                                                                    يرجى وضع الرقم باللغة الانجليزية فقط
+                                                                    </small>
+                                                                    </span>
                                                         @if ($errors->has('quantity'))
                                                             <span class="help-block">
                                             <strong>
@@ -760,7 +770,8 @@
                                             <div class="row">
                                                 <div class="col-md-2">
                                                     <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
-                                                        <label for="order" class="control-label">{{ trans('general.sequence') }}</label>
+                                                        <label for="order"
+                                                               class="control-label">{{ trans('general.sequence') }}</label>
                                                         <input id="order" type="text"
                                                                class="form-control tooltips"
                                                                data-container="body" data-placement="top"
@@ -769,6 +780,11 @@
                                                                value="{{ $element->order }}"
                                                                placeholder="{{ trans('general.sequence') }}"
                                                                autofocus>
+                                                        <span class="help-block text-danger">
+                                                                    <small>
+                                                                    يرجى وضع الرقم باللغة الانجليزية فقط
+                                                                    </small>
+                                                                    </span>
                                                         @if ($errors->has('order'))
                                                             <span class="help-block">
                                                                     <strong>
