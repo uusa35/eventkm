@@ -355,7 +355,9 @@
                                                     <div class="col-md-3">
                                                         <div class="form-group{{ $errors->has('quantity') ? ' has-error' : '' }}">
                                                             <label for="quantity"
-                                                                   class="control-label">{{ trans('general.quantity') }}</label>
+                                                                   class="control-label">{{ trans('general.quantity') }}
+                                                                <span class="help-block text-danger">يرجى وضع رقم الكمية باللغة الانجليزية فقط </span>
+                                                            </label>
                                                             <input id="quantity" type="text"
                                                                    class="form-control tooltips"
                                                                    data-container="body" data-placement="top"
@@ -453,6 +455,7 @@
                                                         <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
                                                             <label for="order"
                                                                    class="control-label">{{ trans('general.sequence') }}
+                                                                <span class="help-block text-danger">يرجى وضع رقم الكمية باللغة الانجليزية فقط </span>
                                                             </label>
                                                             <input id="order" type="text"
                                                                    class="form-control tooltips"
