@@ -75,7 +75,9 @@
                         @endauth
 
                         <div class="tt-wrapper">
-                            @include('frontend.wokiee.four.partials._product_show_information_widget')
+                            @if(!env('BITS'))
+                                @include('frontend.wokiee.four.partials._product_show_information_widget')
+                            @endif
                             @desktop
                             <div class="sharethis-inline-share-buttons"></div>
                             @enddesktop
