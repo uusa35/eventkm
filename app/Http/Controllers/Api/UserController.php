@@ -37,7 +37,7 @@ class UserController extends Controller
         if (request()->has('category_id')) {
             $elements = $this->element->active()->companies()->notAdmins()->hasProducts()->whereHas('categories', function ($q) {
                 return $q->where(['category_id' => request()->category_id]);
-            })->paginate(self::TAKE_MIN);
+            })->paginate(env('EXPO') ? self::TAKE : self::TAKE_MIN);
         } elseif (request()->has('type')) {
             $elements = $this->element->active()->whereHas('role', function ($q) {
                 return $q->where(request()->type, true);
@@ -45,7 +45,7 @@ class UserController extends Controller
             if (request()->has('on_home')) {
                 $elements = $elements->where('on_home', request()->on_home);
             }
-            $elements = $elements->notAdmins()->hasProducts()->paginate(self::TAKE_MIN);
+            $elements = $elements->notAdmins()->hasProducts()->paginate(env('EXPO') ? SELF::TAKE : self::TAKE_MIN);
         }
         if (isset($elements) && $elements->isNotEmpty()) {
             return response()->json(UserLightResource::collection($elements), 200);
@@ -59,7 +59,7 @@ class UserController extends Controller
         if ($validator->fails()) {
             return response()->json(['message' => $validator->errors()->first()], 400);
         }
-        $elements = $this->element->filters($filters)->active()->notAdmins()->hasProducts()->orderBy('id', 'desc')->paginate(Self::TAKE_MIN);
+        $elements = $this->element->filters($filters)->active()->notAdmins()->hasProducts()->orderBy('id', 'desc')->paginate(env('EXPO') ? self::TAKE : self::TAKE_MIN);
         if (!$elements->isEmpty()) {
             return response()->json(UserExtraLightResource::collection($elements), 200);
         } else {
@@ -170,7 +170,7 @@ class UserController extends Controller
             if ($updated) {
                 if (!$element->api_token) {
                     $element->update([
-                        'api_token' => rand(9999999, 99999999999).str_random(5),
+                        'api_token' => rand(9999999, 99999999999) . str_random(5),
                     ]);
                 }
                 $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1000', '1000'], true) : null;
