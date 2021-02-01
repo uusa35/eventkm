@@ -16,9 +16,11 @@
         </a>
     </div>
 @endif
-@include('frontend.wokiee.four.partials._search_side_bar_prices')
-@include('frontend.wokiee.four.partials._search_side_bar_vendors')
-@include('frontend.wokiee.four.partials._search_side_bar_areas')
+@if(!env('BITS'))
+    @include('frontend.wokiee.four.partials._search_side_bar_prices')
+    @include('frontend.wokiee.four.partials._search_side_bar_vendors')
+    @include('frontend.wokiee.four.partials._search_side_bar_areas')
+@endif
 @if(isset($products) && $products->isNotEmpty())
     @include('frontend.wokiee.four.partials._search_side_bar_sizes')
     @include('frontend.wokiee.four.partials._search_side_bar_colors')
