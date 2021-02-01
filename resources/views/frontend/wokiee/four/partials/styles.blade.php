@@ -212,7 +212,7 @@
     h1, h2, h3, .tt-dropdown-toggle, .countdown-selection .theme-color, .tt-countdown, .tt-countdown_box, .tt-product-single-info > a, .tt-price, .old-price,
     .form-check-label, .card-header, label, label:not(.error), .card-text,
     .money, header .tt-multi-obj ul li.active a, .product-information-buttons a, .tt-services-block .tt-col-icon,
-    .tt-title, .tt-collapse-title, .tt-block-title, .tt-block-title .tt-title a, .tt-title-small {
+    .tt-title, h1 .tt-title, .tt-collapse-title, .tt-block-title, .tt-block-title .tt-title a, .tt-title-small {
         color: {{ $settings->header_one_theme_color }}              !important;
     }
 
