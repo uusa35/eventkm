@@ -19,6 +19,13 @@
 <div class="tt-wrapper">
     {{ $element->description }}
 </div>
+@if($element->notes_en && env('BITS'))
+<div class="tt-wrapper">
+    <h6 class="text-left">Additional Information :</h6>
+    {{ $element->notes_en }}
+    <hr>
+</div>
+@endif
 @if($element->barcode)
     <div class="col-lg-5 col-xs-12" style="margin-left: auto; margin-right: auto;">
         {!!DNS2D::getBarcodeHTML($element->barcode, env('BARCODE_TYPE'),2,1)!!}
