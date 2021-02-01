@@ -2,14 +2,16 @@
     <div class="tt-table-responsive">
         <table class="tt-table-shop-01">
             {{--<table class="table table-responsive">--}}
-            <tr>
-                <td class="td-fixed-element td-sm"><i class="fa-tag fa fa-fw fa-lg"></i><span
-                            class="ml-1"></span><span>{{ trans('general.sku') }} : </span>
-                    <span class="ml-2"></span></td>
-                <td>
-                    {{ $element->id }}
-                </td>
-            </tr>
+            @if(!env('EVENTKM'))
+                <tr>
+                    <td class="td-fixed-element td-sm"><i class="fa-tag fa fa-fw fa-lg"></i><span
+                                class="ml-1"></span><span>{{ trans('general.sku') }} : </span>
+                        <span class="ml-2"></span></td>
+                    <td>
+                        {{ $element->id }}
+                    </td>
+                </tr>
+            @endif
             @if($element->role->slug)
                 <tr>
                     <td class="td-fixed-element td-sm"><i class="icon-f-02 fa fa-fw fa-lg"></i><span
@@ -20,7 +22,7 @@
                     </td>
                 </tr>
             @endif
-            @if($element->country)
+            @if($element->country && !env('EVENTKM'))
                 <tr>
                     <td class="td-fixed-element td-sm"><i class="fa-globe fa fa-fw fa-lg"></i><span
                                 class="ml-1"></span><span>{{ trans('general.country') }} : </span>
