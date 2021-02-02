@@ -9,7 +9,7 @@
                                         </span>
         </a>
     @endif
-    @if(strlen(trans('general.shipping')) > 60 )
+    @if(trans()->has('general.shipping')))
         <a data-toggle="modal" data-target="#modalProductInfo-02" href="#">
                                         <span>
                                             <i class="fa fa-fw fa-lg icon-f-48"></i>
