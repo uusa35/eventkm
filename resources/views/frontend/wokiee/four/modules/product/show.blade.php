@@ -63,7 +63,7 @@
                             </div>
                             @include('frontend.wokiee.four.partials._product_show_add_to_cart_btn')
                         @endif
-                        @auth
+                        @if(auth()->check() && env('ENABLE_FAV'))
                             <div class="tt-wrapper mb-5">
                                 <div class="tt-row-btn">
                                     <a class="btn btn-small col-lg-12 {{ $element->isFavorited ? 'active' : null }}"
@@ -72,7 +72,7 @@
                                     {{--<li><a class="btn-link" href="#"><i class="icon-n-08"></i>ADD TO COMPARE</a></li>--}}
                                 </div>
                             </div>
-                        @endauth
+                        @endif
 
                         <div class="tt-wrapper">
                             @if(!env('BITS'))

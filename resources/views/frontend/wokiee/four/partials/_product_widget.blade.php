@@ -1,13 +1,13 @@
 <div class="tt-product thumbprod-center" style="padding: 10px;">
     <div class="tt-image-box">
         @include('frontend.wokiee.four.partials._quick_view_product_btn')
-        @auth
+        @if(auth()->check() && env('ENABLE_FAV'))
             <a href="{{ route('frontend.favorite.product.add', $element->id) }}"
                class="tt-btn-wishlist {{ $element->isFavorited ? 'active' : null }}"
                data-tooltip="{{ trans('general.add_to_wish_list') }}"
                data-tposition="{{ app()->isLocale('ar') ? 'right' : 'left' }}"
             ></a>
-        @endauth
+        @endif
         @if(env('COMPARE_PRODUCT'))
             <a href="{{ route('frontend.product.compare.add', $element->id) }}" class="tt-btn-compare"
                data-tooltip="{{ trans('general.add_to_compare') }}"
