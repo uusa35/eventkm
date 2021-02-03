@@ -95,7 +95,7 @@
                                 <td>{{ $element->created_at }}</td>
                                 <td>{!! $element->barcode ? DNS2D::getBarcodeHTML($element->barcode, env('BARCODE_TYPE'),2,1) : '<label class="label label-warning"><b>N/A</b></label>' !!}</td>
                                 <td>
-                                    <span class="label {{ activeLabel($element->active) }}">{{ $element->totalAvailableQty }} {{ trans('general.pieces') }}</span>
+                                    <span class="label label-default">{{ $element->totalAvailableQty }} {{ trans('general.pieces') }}</span>
                                 </td>
                                 <td>
                                     @if($element->product_attributes->isNotEmpty())
