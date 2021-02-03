@@ -46,11 +46,13 @@
                                 {{ trans('general.history_orders') }}
                             </a>
                         </li>
-                        <li><a href="{{ route('frontend.favorite.index') }}">
-                                <i class="icon-h-13 fa fa-fw fa-lg"></i>
-                                {{ trans('general.wish_list') }}
-                            </a>
-                        </li>
+                        @if(env('ENABLE_FAV'))
+                            <li><a href="{{ route('frontend.favorite.index') }}">
+                                    <i class="icon-h-13 fa fa-fw fa-lg"></i>
+                                    {{ trans('general.wish_list') }}
+                                </a>
+                            </li>
+                        @endif
                         <li>
                             <a href="{{ url('/logout') }}" class="dropdown-toggle"
                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">

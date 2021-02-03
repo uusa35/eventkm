@@ -94,10 +94,12 @@
                                                 {{ trans('general.history_orders') }}
                                             </a>
                                         </li>
-                                        <li><a href="{{ route('frontend.favorite.index') }}">
-                                                {{ trans('general.wish_list') }}
-                                            </a>
-                                        </li>
+                                        @if(env('ENABLE_FAV'))
+                                            <li><a href="{{ route('frontend.favorite.index') }}">
+                                                    {{ trans('general.wish_list') }}
+                                                </a>
+                                            </li>
+                                        @endif
                                         <li>
                                             <a href="{{ url('/logout') }}" class="dropdown-toggle"
                                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
@@ -142,7 +144,8 @@
                                         @endif
                                         @if($settings->instagram && env('EVENTKM'))
                                             <p><i class="fa fa-fw fa-instagram"></i><a
-                                                        href="{{ $settings->instagram }}"> {{ $settings->company }}</a></p>
+                                                        href="{{ $settings->instagram }}"> {{ $settings->company }}</a>
+                                            </p>
                                         @endif
                                         @if($settings->whatsapp)
                                             <p><i class="fa fa-fw fa-whatsapp"></i> <a
