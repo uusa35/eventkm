@@ -29,6 +29,7 @@
                             <th class="none">{{ trans('general.company') }}</th>
                             <th class="none">{{ trans('general.created_at') }}</th>
                             <th class="none">{{ trans('general.barcode') }}</th>
+                            <th class="none">{{ trans('general.quantity') }}</th>
                             <th>{{ trans('general.attributes') }} x/clr/qty</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
@@ -48,6 +49,7 @@
                             <th class="none">{{ trans('general.company') }}</th>
                             <th class="none">{{ trans('general.created_at') }}</th>
                             <th class="none">{{ trans('general.barcode') }}</th>
+                            <th class="none">{{ trans('general.quantity') }}</th>
                             <th>{{ trans('general.attributes') }} x/clr/qty</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
@@ -93,6 +95,9 @@
                                 <td>{{ $element->created_at }}</td>
                                 <td>{!! $element->barcode ? DNS2D::getBarcodeHTML($element->barcode, env('BARCODE_TYPE'),2,1) : '<label class="label label-warning"><b>N/A</b></label>' !!}</td>
                                 <td>
+                                    <span class="label {{ activeLabel($element->active) }}">{{ $element->totalAvailableQty }} {{ trans('general.pieces') }}</span>
+                                </td>
+                                <td>
                                     @if($element->product_attributes->isNotEmpty())
                                         @foreach($element->product_attributes as $attribute)
                                             <div class="btn-group">
@@ -116,7 +121,8 @@
                                                            data-form_id="delete-attribute_id-{{ $attribute->id }}">
                                                             <i class="fa fa-fw fa-recycle"></i> {{ trans('general.delete') }}
                                                         </a>
-                                                        <form method="post" id="delete-attribute_id-{{ $attribute->id }}"
+                                                        <form method="post"
+                                                              id="delete-attribute_id-{{ $attribute->id }}"
                                                               action="{{ route('backend.attribute.destroy',$attribute->id) }}">
                                                             @csrf
                                                             <input type="hidden" name="_method" value="delete"/>
@@ -231,7 +237,7 @@
                         @endforeach
                         </tbody>
                     </table>
-{{--                    {{ $elements->render('pagination::bootstrap-4') }}--}}
+                    {{--                    {{ $elements->render('pagination::bootstrap-4') }}--}}
                     {{ $elements->appends($_GET)->links('pagination::bootstrap-4') }}
                 </div>
             </div>
