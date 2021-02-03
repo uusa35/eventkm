@@ -33,8 +33,8 @@
         </div>
         {{--</div>--}}
         {{--</div>--}}
-        @if(!request()->has('categories') || !request()->has('service_category_id') && env('EVENTKM') && isset($categoriesList) && isset($vendors))
-            @include('frontend.wokiee.four.partials._search_modal_categories')
-        @endif
+{{--        @if(!request()->has('categories') || !request()->has('service_category_id') && env('EVENTKM') && isset($categoriesList) && isset($vendors))--}}
+{{--            @include('frontend.wokiee.four.partials._search_modal_categories')--}}
+{{--        @endif--}}
     </div>
 @endsection

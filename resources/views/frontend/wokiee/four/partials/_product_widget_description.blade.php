@@ -14,11 +14,9 @@
             {{--@include('frontend.wokiee.four.partials._rating')--}}
         </div>
     @endif
-    @if(!env('EVENTKM'))
-        <h2 class="tt-title">
-            <a href="{{ route('frontend.product.show.name',['id' => $element->id , 'name' => $element->name]) }}">{{ str_limit($element->name,15,'..') }}</a>
-        </h2>
-    @endif
+    <h2 class="tt-title">
+        <a href="{{ route('frontend.product.show.name',['id' => $element->id , 'name' => $element->name]) }}">{{ str_limit($element->name,15,'..') }}</a>
+    </h2>
     @include('frontend.wokiee.four.partials._widget_price_and_color')
     <div class="tt-product-inside-hover text-center">
         <div class="tt-row-btn">
