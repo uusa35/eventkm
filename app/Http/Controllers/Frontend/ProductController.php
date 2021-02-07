@@ -39,14 +39,14 @@ class ProductController extends Controller
         }
         $elements = $this->product->active()->hasImage()->hasStock()->filters($filters)->activeUsers()->with(
             'brand', 'product_attributes.color', 'product_attributes.size', 'tags', 'user.country', 'images', 'favorites'
-        )->with(['categories' => function ($q) {
+        )->with(['categories.children' => function ($q) {
             return $q->has('products', '>', 0);
         }])->orderBy('order', 'asc')->paginate(Self::TAKE_MIN);
         $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
         $sizes = $elements->pluck('product_attributes')->flatten()->pluck('size')->flatten()->unique('id')->sortKeysDesc();
         $colors = $elements->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();
         $brands = $elements->pluck('brand')->flatten()->unique('id')->sortKeysDesc();
-        $categoriesList = $elements->flatten()->pluck('categories')->flatten()->unique('id');
+        $categoriesList = $elements->pluck('categories')->flatten()->unique('id');
         $vendors = $elements->pluck('user')->unique('id')->flatten();
         if (!$elements->isEmpty()) {
             return view('frontend.wokiee.four.modules.product.index', compact(
