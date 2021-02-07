@@ -2,7 +2,7 @@
     <div class="tt-collapse open">
         <h3 class="tt-collapse-title">{{ trans('general.filter_by_product_categories') }}</h3>
         <div class="tt-collapse-content">
-            @foreach($categoriesList as $category)
+            @foreach($categoriesList as $k => $category)
                 <ul class="tt-filter-list">
                     <li>
                         <a class="{{ request('product_category_id') == $category->id ? 'text-warning' : null }}"
