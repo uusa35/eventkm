@@ -3,8 +3,8 @@
         <h3 class="tt-collapse-title">{{ trans('general.filter_by_product_categories') }}</h3>
         <div class="tt-collapse-content">
             @foreach($categoriesList as $category)
-                @if($category->isParent)
-                    <ul class="tt-filter-list">
+                <ul class="tt-filter-list">
+                    @if($category->isParent)
                         <li>
                             <a class="{{ request('product_category_id') == $category->id ? 'text-warning' : null }}"
                                href="{!! request()->fullUrlWithQuery(['product_category_id' => $category->id]) !!}">{{ $category->name }}</a>
@@ -29,8 +29,8 @@
                                 <hr style="padding: 0; padding-bottom: 1rem; margin: 0">
                             </li>
                         @endif
-                    </ul>
-                @endif
+                    @endif
+                </ul>
             @endforeach
         </div>
     </div>
