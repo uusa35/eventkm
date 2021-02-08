@@ -46,8 +46,7 @@ class ProductController extends Controller
         $sizes = $elements->pluck('product_attributes')->flatten()->pluck('size')->flatten()->unique('id')->sortKeysDesc();
         $colors = $elements->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();
         $brands = $elements->pluck('brand')->flatten()->unique('id')->sortKeysDesc();
-        $categoriesList = $elements->pluck('categories')->unique('id');
-        $categoriesList = $categoriesList->flatten();
+        $categoriesList = $elements->pluck('categories')->flatten()->unique('id');
         $vendors = $elements->pluck('user')->unique('id')->flatten();
         if (!$elements->isEmpty()) {
             return view('frontend.wokiee.four.modules.product.index', compact(
