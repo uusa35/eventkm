@@ -22,10 +22,11 @@
                             @endforeach
                             <li>
                                 <a href="{{ getRequestQueryUrlWithout('product_category_id') }}"
-                                   class="btn-link-02">
+                                   class="btn-link-02" style="color : darkred !important;">
                                     <i class="fa fa-fw fa-lg "></i>
                                     {{ trans('general.clear') }}
                                 </a>
+                                <hr style="padding: 0; padding-bottom: 1rem; margin: 0">
                             </li>
                         @endif
                     </ul>
