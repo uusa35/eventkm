@@ -21,7 +21,7 @@
         </div>
         <div class="tt-option-block">
             <ul class="tt-options-swatch js-change-img">
-                @foreach($element->product_attributes->pluck('size')->unique('id')->take(2) as $size)
+                @foreach($element->product_attributes->pluck('size')->unique('id')->take(3) as $size)
                     <li>
                         <a href="{{ route('frontend.product.show.name', ['id' => $element->id, 'name' => $element->name]) }}"
                            class="options-color-img"
