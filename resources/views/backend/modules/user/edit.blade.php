@@ -130,9 +130,15 @@
                                                                         data-original-title="{{ trans('message.role_id') }}"
                                                                         name="role_id" required>
                                                                     <option>{{ trans('general.choose_role') }}</option>
-                                                                    @foreach($roles as $role)
-                                                                        <option value="{{ $role->id }}" {{ $element->role_id === $role->id ? 'selected' : null }}>{{ $role->slug_en }}</option>
-                                                                    @endforeach
+                                                                    @if(auth()->user()->isSuper)
+                                                                        @foreach($roles as $role)
+                                                                            <option value="{{ $role->id }}" {{ $element->role_id === $role->id ? 'selected' : null }}>{{ $role->slug_en }}</option>
+                                                                        @endforeach
+                                                                    @else
+                                                                        @foreach($roles->where('is_admin', false) as $role)
+                                                                            <option value="{{ $role->id }}" {{ $element->role_id === $role->id ? 'selected' : null }}>{{ $role->slug_en }}</option>
+                                                                        @endforeach
+                                                                    @endif
                                                                 </select>
                                                             </div>
                                                         </div>

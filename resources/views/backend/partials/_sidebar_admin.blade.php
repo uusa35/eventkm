@@ -182,7 +182,7 @@
             <span class="arrow open"></span>
         </a>
         <ul class="sub-menu">
-            @foreach($roles->where('active', true)->where('is_super', false) as $role)
+            @foreach($roles->where('active', true)->where('is_super', false)->where('is_admin', false) as $role)
                 <li class="nav-item {{ activeItem('user') }}">
                     <a href="{{ route('backend.admin.user.index',['role_id' => $role->id]) }}"
                        class="nav-link nav-toggle">
