@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/packages/usama/myfatoorah/src" isTestSource="false" packagePrefix="Usama\MyFatoorah\" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/alexpechkarev/geometry-library" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/alexpechkarev/google-maps" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/almasaeed2010/adminlte" />

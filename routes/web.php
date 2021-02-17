@@ -111,11 +111,11 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('post', 'PostController');
     Route::get('trashed/product', 'ProductController@trashed')->name('product.trashed');
     Route::get('restore/product/{id}', 'ProductController@restore')->name('product.restore');
-    Route::get('testing', function () {
-        $order = Order::first();
-        return Notification::send(User::first(), new OrderPaid($order));
-
-    });
+//    Route::get('testing', function () {
+//        $order = Order::first();
+//        return Notification::send(User::first(), new OrderPaid($order));
+//
+//    });
 });
 
 Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['country']], function () {
@@ -186,33 +186,20 @@ Route::get('auth/google/callback', 'Auth\LoginController@handleProviderCallback'
 Route::get('webview', function () {
     return view('webview');
 });
-
-
 // for development purpose only
 if (app()->environment('production') || app()->environment('local')) {
 
     // for develoment mode only
-    Route::get("testing", function (Request $request) {
-        $responseAr = \GoogleMaps::load('geocoding')
-            ->setParam([
-                'latlng' => $request->lat . ',' . $request->long,
-                'language' => 'ar'
-            ])
-            ->get();
-    });
+//    Route::get("testing", function (Request $request) {
+//        $responseAr = \GoogleMaps::load('geocoding')
+//            ->setParam([
+//                'latlng' => $request->lat . ',' . $request->long,
+//                'language' => 'ar'
+//            ])
+//            ->get();
+//    });
     Route::get('/posting/{id}/{role}', 'Frontend\HomeController@getInfo');
 }
-Route::get('/marwa/{scoreOne}/{scoreTow}/{scoreThree}/{attestedHours}', function ($materialScoreOne, $materialScoreTow, $materialScoreThree, $attestedHours) {
-    $degreeOne = $materialScoreOne / 25;
-    $degreeTow = $materialScoreTow / 25;
-    $degreeThree = $materialScoreThree / 25;
-    $pointOne = $degreeOne * $attestedHours;
-    $pointTow = $degreeTow * $attestedHours;
-    $pointThree = $degreeThree * $attestedHours;
-    $semesterRate = ($pointOne + $pointTow + $pointThree) / 3;
-    $collectiveRate = $semesterRate / 3;
-    return response()->json(['Grade Point Average (GPA)' => round($collectiveRate, 2)], 200);
-});
 
 Route::get('/{notFound}', function () {
     abort('404', trans('message.not_found'));
