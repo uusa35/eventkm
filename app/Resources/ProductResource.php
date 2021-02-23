@@ -72,7 +72,7 @@ class ProductResource extends JsonResource
             'size' => new SizeLightResource($this->whenLoaded('size')),
             'sizes' => SizeLightResource::collection($this->whenLoaded('sizes')),
             'categories' => CategoryExtraLightResource::collection($this->whenLoaded('categories')),
-            'brands' => BrandLightResource::collection($this->whenLoaded('brands')),
+            'brand' => BrandLightResource::make($this->whenLoaded('brand')),
             'images' => ImageLightResource::collection($this->whenLoaded('images')),
             'slides' => SlideExtraLightResource::collection($this->whenLoaded('slides')),
             'tags' => TagLightResource::collection($this->whenLoaded('tags')),
