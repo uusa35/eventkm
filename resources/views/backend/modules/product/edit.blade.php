@@ -211,7 +211,7 @@
                                                                         data-original-title="{{ trans('message.owner') }}">
                                                                     <option value="">{{ trans('general.choose_user') }}</option>
                                                                     @foreach($users as $user)
-                                                                        <option value="{{ $user->id }}" {{ $element->user_id === $user->id ? 'selected' : null  }}>{{ $user->slug }}</option>
+                                                                        <option value="{{ $user->id }}" {{ $element->user_id === $user->id ? 'selected' : null  }}>{{ $user->slug }} - {{ $user->id }}</option>
                                                                     @endforeach
                                                                 </select>
                                                             </div>

@@ -48,7 +48,8 @@
                                          class="img-responsive img-xs">
                                 </td>
                                 <td>
-                                    <span class="label {{ activeLabel($element->active) }}">{{ activeText($element->active) }}</span>
+                                    <span
+                                        class="label {{ activeLabel($element->active) }}">{{ activeText($element->active) }}</span>
                                 </td>
                                 <td>{{ $element->created_at->diffForHumans() }}</td>
                                 <td>
@@ -65,32 +66,41 @@
                                                 data-toggle="dropdown"> {{ trans('general.actions') }}
                                             <i class="fa fa-angle-down"></i>
                                         </button>
+
                                         <ul class="dropdown-menu pull-right" role="menu">
-                                            <li>
-                                                <a href="{{ route('backend.slide.edit',$element->id) }}">
-                                                    <i class="fa fa-fw fa-user"></i>{{ trans('general.edit') }}</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('backend.activate',['model' => 'slide','id' => $element->id]) }}">
-                                                    <i class="fa fa-fw fa-check-circle"></i> {{ trans('general.toggle_active') }}
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a data-toggle="modal" href="#" data-target="#basic"
-                                                   data-title="Delete"
-                                                   data-content="Are you sure you want to delete slide ? "
-                                                   data-form_id="delete-{{ $element->id }}">
-                                                    <i class="fa fa-fw fa-recycle"></i> {{ trans('general.delete') }}
-                                                </a>
-                                                <form method="post" id="delete-{{ $element->id }}"
-                                                      action="{{ route('backend.slide.destroy',$element->id) }}">
-                                                    @csrf
-                                                    <input type="hidden" name="_method" value="delete"/>
-                                                    <button type="submit" class="btn btn-del hidden">
-                                                        <i class="fa fa-fw fa-times-circle"></i> {{ trans('general.delete') }}
-                                                    </button>
-                                                </form>
-                                            </li>
+                                            @if(!$element->trashed())
+                                                <li>
+                                                    <a href="{{ route('backend.slide.edit',$element->id) }}">
+                                                        <i class="fa fa-fw fa-user"></i>{{ trans('general.edit') }}</a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ route('backend.activate',['model' => 'slide','id' => $element->id]) }}">
+                                                        <i class="fa fa-fw fa-check-circle"></i> {{ trans('general.toggle_active') }}
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a data-toggle="modal" href="#" data-target="#basic"
+                                                       data-title="Delete"
+                                                       data-content="Are you sure you want to delete slide ? "
+                                                       data-form_id="delete-{{ $element->id }}">
+                                                        <i class="fa fa-fw fa-recycle"></i> {{ trans('general.delete') }}
+                                                    </a>
+                                                    <form method="post" id="delete-{{ $element->id }}"
+                                                          action="{{ route('backend.slide.destroy',$element->id) }}">
+                                                        @csrf
+                                                        <input type="hidden" name="_method" value="delete"/>
+                                                        <button type="submit" class="btn btn-del hidden">
+                                                            <i class="fa fa-fw fa-times-circle"></i> {{ trans('general.delete') }}
+                                                        </button>
+                                                    </form>
+                                                </li>
+                                            @else
+                                                <li>
+                                                    <a href="{{ route('backend.slide.restore',$element->id) }}">
+                                                        <i class="fa fa-fw fa-window-restore"></i> {{ trans('general.restore') }}
+                                                    </a>
+                                                </li>
+                                            @endif
                                         </ul>
                                     </div>
                                 </td>

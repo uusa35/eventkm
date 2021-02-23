@@ -89,7 +89,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $element = Product::active()->whereId($id)->with('images', 'user', 'shipment_package', 'color', 'size', 'videos')->with(['sizes' => function ($q) {
+        $element = Product::active()->whereId($id)->with('images', 'user', 'shipment_package', 'color', 'size', 'videos','brand')->with(['sizes' => function ($q) {
             return $q->orderBy('name_en', 'asc')->groupBy('id');
         }])->with(['categories' => function ($q) {
             return $q->active()->limit('2');

@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 class Slide extends PrimaryModel
 {
-    use ModelHelpers;
+    use ModelHelpers, SoftDeletes;
     protected $guarded = [''];
     protected $localeStrings = ['caption', 'title'];
 

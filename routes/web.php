@@ -100,6 +100,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::post('property/attach', 'PropertyController@postAttach')->name('property.attach');
     Route::get('property/dettach', 'PropertyController@detach')->name('property.detach');
     Route::resource('slide', 'SlideController');
+    Route::get('trashed/slide', 'SlideController@trashed')->name('slide.trashed');
+    Route::get('restore/slide/{id}', 'SlideController@restore')->name('slide.restore');
     Route::resource('video', 'VideoController');
     Route::resource('branch', 'BranchController');
     Route::resource('order', 'OrderController')->except(['destroy']);

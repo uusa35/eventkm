@@ -151,4 +151,19 @@ class SlideController extends Controller
         }
         return redirect()->route('backend.home')->with('error', trans('message.delete_error'));
     }
+
+    public function trashed()
+    {
+        $this->authorize('isSuper');
+        $elements = Slide::onlyTrashed()->paginate(100);
+        return view('backend.modules.slide.index', compact('elements'));
+    }
+
+    public function restore($id)
+    {
+        $this->authorize('isSuper');
+        $element = Slide::onlyTrashed()->whereId($id)->first();
+        $element->restore();
+        return redirect()->back()->with('success', 'slide restored');
+    }
 }

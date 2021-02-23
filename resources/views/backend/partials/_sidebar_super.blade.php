@@ -588,6 +588,15 @@
         <span class="title">{{ trans('general.slides') }}</span>
         <span class="arrow"></span>
     </a>
+    <ul class="sub-menu">
+        <li class="nav-item ">
+            <a href="{{ route('backend.slide.trashed') }}" class="nav-link ">
+                <i class="fa fa-fw fa-plus-square"></i>
+                <span class="title">{{ trans('general.trashed') }}</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+    </ul>
 </li>
 <li class="nav-item {{ activeItem('video') }}">
     <a href="{{ route('backend.video.index') }}" class="nav-link ">
