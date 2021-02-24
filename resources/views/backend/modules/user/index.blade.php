@@ -127,6 +127,18 @@
                                                             </a>
                                                         </li>
                                                     @endif
+                                                    @if($element->addresses->isNotEmpty())
+                                                        <li>
+                                                            <a href="{{ route('backend.admin.address.index',['user_id' => $element->id]) }}">
+                                                                <i class="fa fa-fw fa-address-book"></i> {{ trans('general.list_of_addresss') }}
+                                                            </a>
+                                                        </li>
+                                                    @endif
+                                                    <li>
+                                                        <a href="{{ route('backend.admin.address.create',['user_id' => $element->id]) }}">
+                                                            <i class="fa fa-fw fa-edit"></i> {{ trans('general.new_address') }}
+                                                        </a>
+                                                    </li>
                                                 @endcan
                                                 <li>
                                                     <a data-toggle="modal" href="#" data-target="#basic"

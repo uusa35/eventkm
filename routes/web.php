@@ -28,6 +28,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::get('export/translations', ['as' => 'export.translation', 'uses' => 'HomeController@exportTranslations']);
         Route::get('clear/image', 'HomeController@clearImage')->name('image.clear');
         Route::resource('country', 'CountryController');
+        Route::resource('address', 'AddressController');
         Route::resource('currency', 'CurrencyController');
         Route::resource('category', 'CategoryController');
         Route::get('trashed/category', 'CategoryController@trashed')->name('category.trashed');

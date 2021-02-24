@@ -699,6 +699,21 @@ Breadcrumbs::for('backend.admin.country.edit', function ($trail, $element) {
     $trail->parent('backend.admin.country.index');
     $trail->push('edit country', route('backend.admin.country.edit', $element->id));
 });
+
+Breadcrumbs::for('backend.admin.address.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.countries'), route('backend.admin.address.index'));
+});
+Breadcrumbs::for('backend.admin.address.create', function ($trail) {
+    $trail->parent('backend.admin.address.index');
+    $trail->push(trans('general.new_address'), route('backend.admin.address.create'));
+});
+
+Breadcrumbs::for('backend.admin.address.edit', function ($trail, $element) {
+    $trail->parent('backend.admin.address.index');
+    $trail->push('edit address', route('backend.admin.address.edit', $element->id));
+});
+
 Breadcrumbs::for('backend.admin.tag.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push(trans('general.index_tag'), route('backend.admin.tag.index'));

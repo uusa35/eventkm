@@ -12,6 +12,11 @@ class Area extends PrimaryModel
         return $this->belongsTo(Country::class);
     }
 
+    public function governate()
+    {
+        return $this->belongsTo(Governate::class);
+    }
+
     public function branches()
     {
         return $this->hasMany(Branch::class);
@@ -22,12 +27,18 @@ class Area extends PrimaryModel
         return $this->belongsToMany(User::class);
     }
 
-    public function services() {
-        return $this->belongsToMany(Service::class,'area_service');
+    public function services()
+    {
+        return $this->belongsToMany(Service::class, 'area_service');
     }
 
     public function classifieds()
     {
         return $this->hasMany(Classified::class);
+    }
+
+    public function addresses()
+    {
+        return $this->hasMany(Address::class);
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use Database\Seeders\AddressesTableSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -55,5 +56,6 @@ class DatabaseSeeder extends Seeder
         $this->call(QuotesTableSeeder::class);
         $this->call(RatingsTableSeeder::class);
         $this->call(FansTableSeeder::class);
+        $this->call(AddressesTableSeeder::class);
     }
 }

@@ -31,7 +31,8 @@ class CreatePostsTable extends Migration
             $table->string('views')->nullable();
             $table->boolean('active')->default(1);
 
-            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('user_id')->unsigned()->index();
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnUpdate()->cascadeOnDelete();
 
             $table->timestamps();
         });

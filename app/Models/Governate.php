@@ -24,4 +24,8 @@ class Governate extends PrimaryModel
     public function users() {
         return $this->hasMany(User::class);
     }
+
+    public function addresses() {
+        return $this->hasMany(Address::class);
+    }
 }
