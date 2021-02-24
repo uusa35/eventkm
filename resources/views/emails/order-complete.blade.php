@@ -30,7 +30,7 @@
 @elseif($orderMeta->product && $orderMeta->product->size && $orderMeta->product->color)
 | {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $orderMeta->product->size->name }} | {{ $orderMeta->product->color->name }} | {{ str_limit($orderMeta->product->sku,10,'') }}| {{ str_limit($orderMeta->product->name,8,'') }} |
 @else
-| {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ 'N/A' }} | {{ 'N/A' }} | {{ str_limit($orderMeta->product->sku,10,'') }}| {{ str_limit($orderMeta->product->name,8,'') }} |
+| {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $meta->product_size ?? 'N/A'}} | {{ $meta->product_color ?? 'N/A'}} | {{ str_limit($orderMeta->product->sku,10,'') }}| {{ str_limit($orderMeta->product->name,8,'') }} |
 @endif
 @elseif($orderMeta->isServiceType && $orderMeta->service)
 | {{ $orderMeta->price }}| {{ str_limit($orderMeta->notes,20) }}| {{ $orderMeta->service_date }} | {{ $orderMeta->service_time }} | {{ $orderMeta->service->id }}|{{ str_limit($orderMeta->service->name,10,'') }}|
