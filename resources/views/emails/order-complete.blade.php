@@ -26,9 +26,11 @@
 @foreach($order->order_metas as $orderMeta)
 @if($orderMeta->isProductType && $orderMeta->product)
 @if($orderMeta->product && $orderMeta->product->has_attributes)
-| {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $orderMeta->product_attribute->size->name ?? 'N/A' }}| {{ $orderMeta->product_attribute->color->name ?? 'N/A' }}| {{ str_limit($orderMeta->product->sku,10,'') }}| {{ str_limit($orderMeta->product->name,8,'') }}|
+| {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $orderMeta->product_attribute->size->name ? $orderMeta->product_attribute->size->name:  'N/A' }}| {{ $orderMeta->product_attribute->color->name ? $orderMeta->product_attribute->color->name : 'N/A' }}| {{ str_limit($orderMeta->product->sku,10,'') }}| {{ str_limit($orderMeta->product->name,8,'') }}|
+@elseif($orderMeta->product && $orderMeta->product->size && $orderMeta->product->color)
+| {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $orderMeta->product->size->name }} | {{ $orderMeta->product->color->name }} | {{ str_limit($orderMeta->product->sku,10,'') }}| {{ str_limit($orderMeta->product->name,8,'') }} |
 @else
-| {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $orderMeta->product_size ?? 'N/A'}} | {{ $orderMeta->product_color ?? 'N/A'}} | {{ str_limit($orderMeta->product->sku,10,'') }}| {{ str_limit($orderMeta->product->name,8,'') }} |
+| {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $orderMeta->product_size ? $orderMeta->product_size : 'N/A'}} | {{ $orderMeta->product_color ? $orderMeta->product_color :  'N/A'}} | {{ str_limit($orderMeta->product->sku,10,'') }}| {{ str_limit($orderMeta->product->name,8,'') }} |
 @endif
 @elseif($orderMeta->isServiceType && $orderMeta->service)
 | {{ $orderMeta->price }}| {{ str_limit($orderMeta->notes,20) }}| {{ $orderMeta->service_date }} | {{ $orderMeta->service_time }} | {{ $orderMeta->service->id }}|{{ str_limit($orderMeta->service->name,10,'') }}|
