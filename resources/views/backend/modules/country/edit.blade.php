@@ -187,7 +187,7 @@
                                             <div class="form-group">
                                                 <label class="control-label">{{ trans('general.fixed_shipment_charge') }}
                                                     *</label>
-                                                <input type="number" id="fixed_shipment_charge"
+                                                <input type="text" id="fixed_shipment_charge"
                                                        name="fixed_shipment_charge"
                                                        class="form-control"
                                                        value="{{ $element->fixed_shipment_charge }}"

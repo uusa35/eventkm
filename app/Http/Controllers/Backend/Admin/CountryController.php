@@ -92,6 +92,7 @@ class CountryController extends Controller
             'calling_code' => 'required|unique:countries,calling_code,' . $id,
             'country_code' => 'required|alpha|unique:countries,country_code,' . $id,
             'order' => 'numeric|max:99|min:1',
+            'fixed_shipment_charge' => 'required|between:0,99.99',
             'image' => 'image',
             'packages' => 'array'
         ]);

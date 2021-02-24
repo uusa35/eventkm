@@ -95,6 +95,6 @@
 
 <div style="text-align: center; width: 100%; float: left; font-weight: bolder;">
 مع تحيات,<br>
-{{ env('APP_NAME') }}
+{{ $settings->company_en }}
 </div>
 @endcomponent
