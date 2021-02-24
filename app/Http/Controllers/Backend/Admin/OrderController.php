@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Models\User;
 use App\Services\Search\Filters;
 use App\Services\Search\OrderFilters;
+use App\Services\Traits\OrderTrait;
 use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
+    use OrderTrait;
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +31,7 @@ class OrderController extends Controller
             return $q->where('is_company', true)->orWhere('is_designer', true);
         })->whereHas('products', function ($q) {
             return $q->active();
-        },'>',0)->get();
+        }, '>', 0)->get();
         if (request()->has('status')) {
             $elements = $elements->where('status', request()->status)
                 ->with('order_metas.product.product_attributes', 'order_metas.product.user', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color', 'order_metas.service')
@@ -132,7 +134,13 @@ class OrderController extends Controller
     public function changeStatus(Request $request)
     {
 
-        $status = Order::whereId($request->id)->first()->update(['status' => $request->status]);
+        $element = Order::findOrFail($request->id);
+        $element->update(['status' => $request->status]);
+        if ($request->status === 'completed' && !$element->paid && $element->cash_on_delivery) {
+            $this->decreaseQty($element);
+            $element->update(['status' => 'success', 'paid' => true]);
+            return redirect()->back()->with('success', 'Order (Cash On Delivery) is Paid and Status is Success.');
+        }
         return redirect()->back()->with('success', 'status changed successfully');
     }
 
@@ -144,7 +152,6 @@ class OrderController extends Controller
             'status' => 'shipped',
             'track_id' => ($request->trackId != '' ? $request->trackId : null)
         ]);
-
         $email = new OrderShipped($order);
         Mail::to($order->user->email)->send($email);
 
