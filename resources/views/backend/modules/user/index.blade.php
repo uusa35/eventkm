@@ -64,14 +64,17 @@
                                 <td>{{ $element->country ? $element->country->slug : 'N/A'}}</td>
                                 <td>
                                     @if($element->role)
-                                        <button class="btn red {{ activeLabel(!$element->active) }}">{{ activeText($element->active, $element->role->slug) }}</button>
+                                        <button
+                                            class="btn red {{ activeLabel(!$element->active) }}">{{ activeText($element->active, $element->role->slug) }}</button>
                                     @endif
                                 </td>
                                 <td>
-                                    <button class="btn {{ activeBtn($element->active) }}">{{ activeText($element->active) }}</button>
+                                    <button
+                                        class="btn {{ activeBtn($element->active) }}">{{ activeText($element->active) }}</button>
                                 </td>
                                 <td>
-                                    <button class="btn {{ activeBtn($element->access_dashboard) }}">{{ activeText($element->access_dashboard) }}</button>
+                                    <button
+                                        class="btn {{ activeBtn($element->access_dashboard) }}">{{ activeText($element->access_dashboard) }}</button>
                                 </td>
                                 <td>
                                     @if($element->categories->isNotEmpty())
@@ -127,18 +130,20 @@
                                                             </a>
                                                         </li>
                                                     @endif
-                                                    @if($element->addresses->isNotEmpty())
+                                                    @if(env('ENABLE_MULTI_ADDRESS'))
+                                                        @if($element->addresses->isNotEmpty())
+                                                            <li>
+                                                                <a href="{{ route('backend.admin.address.index',['user_id' => $element->id]) }}">
+                                                                    <i class="fa fa-fw fa-address-book"></i> {{ trans('general.list_of_addresss') }}
+                                                                </a>
+                                                            </li>
+                                                        @endif
                                                         <li>
-                                                            <a href="{{ route('backend.admin.address.index',['user_id' => $element->id]) }}">
-                                                                <i class="fa fa-fw fa-address-book"></i> {{ trans('general.list_of_addresss') }}
+                                                            <a href="{{ route('backend.admin.address.create',['user_id' => $element->id]) }}">
+                                                                <i class="fa fa-fw fa-edit"></i> {{ trans('general.new_address') }}
                                                             </a>
                                                         </li>
                                                     @endif
-                                                    <li>
-                                                        <a href="{{ route('backend.admin.address.create',['user_id' => $element->id]) }}">
-                                                            <i class="fa fa-fw fa-edit"></i> {{ trans('general.new_address') }}
-                                                        </a>
-                                                    </li>
                                                 @endcan
                                                 <li>
                                                     <a data-toggle="modal" href="#" data-target="#basic"
@@ -173,7 +178,7 @@
                         @endforeach
                         </tbody>
                     </table>
-{{--                    {{ $elements->render('pagination::bootstrap-4') }}--}}
+                    {{--                    {{ $elements->render('pagination::bootstrap-4') }}--}}
                     {{ $elements->appends($_GET)->links('pagination::bootstrap-4') }}
                 </div>
             </div>
