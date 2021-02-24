@@ -82,10 +82,6 @@
 </div>
 @endcomponent
 
-@component('mail::button', ['url' => env('APP_URL'),'class' => 'button-black'])
-<strong>{{ env('APP_NAME') }}</strong>
-@endcomponent
-
 @if(auth()->check() && auth()->user()->isSuper)
 @component('mail::button', ['url' => route('backend.order.index'),'class' => 'button-black'])
 <strong>{{ trans('general.back') }}</strong>
@@ -95,6 +91,9 @@
 
 <div style="text-align: center; width: 100%; float: left; font-weight: bolder;">
 مع تحيات,<br>
-{{ $settings->company_en }}
+<br>
 </div>
+@component('mail::button', ['url' => env('APP_URL'),'class' => 'button-black'])
+<strong>{{ $settings->company_en }}</strong>
+@endcomponent
 @endcomponent
