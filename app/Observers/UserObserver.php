@@ -4,6 +4,7 @@ namespace App\Observers;
 
 
 use App\Mail\WelcomeNewUser;
+use App\Models\Address;
 use App\Models\Order;
 use App\Models\Setting;
 use App\Models\User;
@@ -28,7 +29,19 @@ class UserObserver
 //        $markdown = new Markdown(view(), config('mail.markdown'));
 //        return $markdown->render('emails.new_user', ['user' => $user, 'settings' => Setting::first()]);
 //        $user->notify(new OrderPaid());
-        if(env('MAIL_ENABLED')) {
+        $user->addresses()->create([
+            'name' => 'address_one',
+            'content' => $user->address,
+            'block' => $user->block,
+            'street' => $user->street,
+            'apartment' => $user->apartment,
+            'floor' => $user->floor,
+            'building' => $user->building,
+            'country_name' => $user->country_name,
+            'area' => $user->area,
+            'country_id' => $user->country_id,
+        ]);
+        if (env('MAIL_ENABLED')) {
             Mail::to($user->email)->send(new WelcomeNewUser($user));
         }
 
@@ -45,6 +58,36 @@ class UserObserver
         activity()->performedOn($user)
             ->causedBy(auth()->user())
             ->log(strtoupper(class_basename($user)) . ' ' . __FUNCTION__);
+        $address = Address::where(['user_id' => $user->id, 'name' => 'address_one'])->first();
+        if ($address) {
+            $address->update([
+                'name' => 'address_one',
+                'content' => $user->address,
+                'block' => $user->block,
+                'street' => $user->street,
+                'apartment' => $user->apartment,
+                'floor' => $user->floor,
+                'building' => $user->building,
+                'country_name' => $user->country_name,
+                'area' => $user->area,
+                'country_id' => $user->country_id,
+                'user_id' => $user->id,
+            ]);
+        } else {
+            Address::create([
+                'name' => 'address_one',
+                'content' => $user->address,
+                'block' => $user->block,
+                'street' => $user->street,
+                'apartment' => $user->apartment,
+                'floor' => $user->floor,
+                'building' => $user->building,
+                'country_name' => $user->country_name,
+                'area' => $user->area,
+                'country_id' => $user->country_id,
+                'user_id' => $user->id,
+            ]);
+        }
     }
 
     /**

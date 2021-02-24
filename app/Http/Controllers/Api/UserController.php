@@ -8,6 +8,7 @@ use App\Http\Resources\UserExtraLightResource;
 use App\Http\Resources\UserLightResource;
 use App\Http\Resources\UserResource;
 use App\Jobs\IncreaseElementViews;
+use App\Models\Address;
 use App\Models\Country;
 use App\Models\Product;
 use App\Models\Role;
