@@ -27,8 +27,6 @@
 @if($orderMeta->isProductType && $orderMeta->product)
 @if($orderMeta->product && $orderMeta->product->has_attributes)
 | {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $orderMeta->product_attribute->size->name ?? 'N/A' }}| {{ $orderMeta->product_attribute->color->name ?? 'N/A' }}| {{ str_limit($orderMeta->product->sku,10,'') }}| {{ str_limit($orderMeta->product->name,8,'') }}|
-@elseif($orderMeta->product && $orderMeta->product->size && $orderMeta->product->color)
-| {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $orderMeta->product->size->name }} | {{ $orderMeta->product->color->name }} | {{ str_limit($orderMeta->product->sku,10,'') }}| {{ str_limit($orderMeta->product->name,8,'') }} |
 @else
 | {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $orderMeta->product_size ?? 'N/A'}} | {{ $orderMeta->product_color ?? 'N/A'}} | {{ str_limit($orderMeta->product->sku,10,'') }}| {{ str_limit($orderMeta->product->name,8,'') }} |
 @endif
