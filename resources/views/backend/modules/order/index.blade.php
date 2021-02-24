@@ -53,8 +53,8 @@
                                                    value="{{ old('from', \Carbon\Carbon::now()->format('m/d/Y')) }}"
                                             >
                                             <span class="input-group-btn"><button
-                                                        class="btn default date-set" type="button"><i
-                                                            class="fa fa-calendar"></i></button></span>
+                                                    class="btn default date-set" type="button"><i
+                                                        class="fa fa-calendar"></i></button></span>
                                         </div>
                                     </div>
                                 </div>
@@ -72,16 +72,16 @@
                                                    value="{{ old('to', \Carbon\Carbon::now()->format('m/d/Y')) }}"
                                             >
                                             <span class="input-group-btn"><button
-                                                        class="btn default date-set" type="button"><i
-                                                            class="fa fa-calendar"></i></button></span>
+                                                    class="btn default date-set" type="button"><i
+                                                        class="fa fa-calendar"></i></button></span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <button
-                                            type="submit"
-                                            class="btn default date-set" type="button"><i
-                                                class="fa fa-send"></i> {{ trans('general.apply') }}</button>
+                                        type="submit"
+                                        class="btn default date-set" type="button"><i
+                                            class="fa fa-send"></i> {{ trans('general.apply') }}</button>
                                 </div>
                             </form>
                         </div>
@@ -191,10 +191,12 @@
                                 <td>{{ $element->shipment_fees}} {{ trans('general.kd') }}</td>
                                 <td>{{ $element->net_price}} {{ trans('general.kd') }}</td>
                                 <td>
-                                    <span class="label label-{{ $element->discount ?  'warning' : 'danger' }}">{{ $element->discount ? $element->discount .' '. trans('general.kd') : 'N/A'}}</span>
+                                    <span
+                                        class="label label-{{ $element->discount ?  'warning' : 'danger' }}">{{ $element->discount ? $element->discount .' '. trans('general.kd') : 'N/A'}}</span>
                                 </td>
                                 <td>
-                                    <span class="label label-{{ $element->cash_on_delivery ?  'green' : 'warning' }}">{{ $element->cash_on_delivery ? trans('general.cash_on_delivery') : $element->payment_method }}</span>
+                                    <span
+                                        class="label label-{{ $element->cash_on_delivery ?  'green' : 'warning' }}">{{ $element->cash_on_delivery ? trans('general.cash_on_delivery') : $element->payment_method }}</span>
                                 </td>
                                 <td>
                                     <div class="btn-group-vertical btn-group-solid">
