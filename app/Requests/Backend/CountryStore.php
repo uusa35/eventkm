@@ -32,7 +32,7 @@ class CountryStore extends FormRequest
             'order' => 'required|numeric|max:99|min:1',
             'fixed_shipment_charge' => 'required|between:0,99.99',
             'image' => 'required|image',
-            'packages' => 'required|array'
+            'packages' => 'array'
         ];
     }
 }
