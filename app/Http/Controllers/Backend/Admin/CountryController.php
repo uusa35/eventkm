@@ -45,7 +45,7 @@ class CountryController extends Controller
     {
         $element = Country::create($request->except('flag', 'packages'));
         if ($element) {
-            $element->shipment_packages()->sync($request->packages);
+            $request->has('packages') ? $element->shipment_packages()->sync($request->packages) : null;
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['400', '250'], true) : null;
             return redirect()->route('backend.admin.country.index')->with('success', trans('general.country_saved'));
         }
@@ -94,7 +94,7 @@ class CountryController extends Controller
             'order' => 'numeric|max:99|min:1',
             'fixed_shipment_charge' => 'required|between:0,99.99',
             'image' => 'image',
-            'packages' => 'array'
+            'packages' => 'required|array'
         ]);
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate);
@@ -102,7 +102,7 @@ class CountryController extends Controller
         $element = Country::whereId($id)->first();
         if ($element) {
             $element->update($request->except('flag', 'packages'));
-            $element->shipment_packages()->sync($request->packages);
+            $request->has('packages') ? $element->shipment_packages()->sync($request->packages) : null;
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['400', '250'], true) : null;
             return redirect()->route('backend.admin.country.index')->with('success', 'country updated');
         }

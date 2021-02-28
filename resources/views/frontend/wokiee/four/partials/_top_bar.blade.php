@@ -32,7 +32,6 @@
                     </ul>
                 </div>
             </div>
-
             @if($settings && !env('EVENTKM'))
                 <div class="tt-col-right ml-auto">
                     <ul class="tt-social-icon">

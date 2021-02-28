@@ -12,6 +12,9 @@
 </head>
 
 <body>
+@if(env('GOOGLE_TRANSLATE_FEATURE'))
+<div style="position: absolute; top: 0px; left: 0px;" id="google_translate_element"></div>
+@endif
 @include('frontend.wokiee.four.partials.loader')
 
 @if(!env('MOBILE_LAYOUT'))

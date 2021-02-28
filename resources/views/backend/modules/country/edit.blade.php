@@ -89,22 +89,22 @@
                                         {{--                                                </select>--}}
                                         {{--                                            </div>--}}
                                         {{--                                        </div>--}}
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">{{ trans('general.shipment_packages') }}
-                                                    *</label>
-                                                <select name="packages[]" class="form-control  tooltips"
-                                                        data-container="body"
-                                                        data-placement="top"
-                                                        data-original-title="{{ trans('message.shipment_package') }}"
-                                                        required>
-                                                    <option>{{ trans('general.choose_shipment_package') }}</option>
-                                                    @foreach($shipmentPackages as $package)
-                                                        <option value="{{ $package->id }}" {{ $element->shipment_packages->isNotEmpty() && $element->shipment_packages->first()->id === $package->id ? 'selected' : null }}>{{ $package->slug }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                        </div>
+{{--                                        <div class="col-md-4">--}}
+{{--                                            <div class="form-group">--}}
+{{--                                                <label class="control-label">{{ trans('general.shipment_packages') }}--}}
+{{--                                                    *</label>--}}
+{{--                                                <select name="packages[]" class="form-control  tooltips"--}}
+{{--                                                        data-container="body"--}}
+{{--                                                        data-placement="top"--}}
+{{--                                                        data-original-title="{{ trans('message.shipment_package') }}"--}}
+{{--                                                        required>--}}
+{{--                                                    <option>{{ trans('general.choose_shipment_package') }}</option>--}}
+{{--                                                    @foreach($shipmentPackages as $package)--}}
+{{--                                                        <option value="{{ $package->id }}" {{ $element->shipment_packages->isNotEmpty() && $element->shipment_packages->first()->id === $package->id ? 'selected' : null }}>{{ $package->slug }}</option>--}}
+{{--                                                    @endforeach--}}
+{{--                                                </select>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
                                     {{--<div class="col-md-6">--}}
                                     {{--<div class="form-group">--}}
                                     {{--<label class="control-label">Country Background</label>--}}
