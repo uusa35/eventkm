@@ -126,7 +126,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">{{ trans('general.flag_image') }} </label>
-                                                <input id="flag" type="file" class="form-control" name="image">
+                                                <input id="flag" type="file" class="form-control" name="image" required>
                                                 <span class="help-block"> flag size is 400 X 250</span>
                                             </div>
                                         </div>
