@@ -60,7 +60,7 @@ class UserController extends Controller
         if ($validator->fails()) {
             return response()->json(['message' => $validator->errors()->first()], 400);
         }
-        $elements = $this->element->filters($filters)->active()->notAdmins()->hasProducts()->orderBy('id', 'desc')->paginate(env('EXPO') ? self::TAKE : self::TAKE_MIN);
+        $elements = $this->element->filters($filters)->active()->notAdmins()->orderBy('id', 'desc')->paginate(env('EXPO') ? self::TAKE : self::TAKE_MIN);
         if (!$elements->isEmpty()) {
             return response()->json(UserExtraLightResource::collection($elements), 200);
         } else {
