@@ -94,7 +94,7 @@ class CountryController extends Controller
             'order' => 'numeric|max:99|min:1',
             'fixed_shipment_charge' => 'required|between:0,99.99',
             'image' => 'image',
-            'packages' => 'required|array'
+            'packages' => 'array'
         ]);
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate);
