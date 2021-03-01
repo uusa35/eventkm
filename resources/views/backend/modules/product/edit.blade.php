@@ -476,7 +476,7 @@
                                                             {{ trans('message.best_fit',['width' => '300 px', 'height' => '300 px']) }}
                                                         </div>
                                                         <div class="help-block text-left">
-                                                            {{ trans('general.qr_link') . '  : ' . route('frontend.deep.linking',['id' => $element->id , 'model' => 'product']) }}
+                                                            {{ trans('general.qr_link') . '  : ' . route('frontend.deep.linking',['id' => $element->id , 'model' => 'product','type' => 'product']) }}
                                                         </div>
                                                     </div>
                                                 </div>

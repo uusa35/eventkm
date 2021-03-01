@@ -519,7 +519,7 @@
                                                                 {{ trans('message.best_fit',['width' => '300 px', 'height' => '300 px']) }}
                                                             </div>
                                                             <div class="help-block text-left small">
-                                                                {{ trans('general.qr_link') . '  : ' . url('/').'/element/linking?id=00&model=product'}}
+                                                                {{ trans('general.qr_link') . '  : ' . url('/').'/element/linking?id=00&model=product&type=product'}}
                                                             </div>
                                                         </div>
                                                     </div>

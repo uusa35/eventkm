@@ -175,6 +175,11 @@
                                                     <div class="help-block text-left small">
                                                         {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440 px']) }}
                                                     </div>
+                                                    <div class="help-block text-left small alert-info" style="padding : 20px">
+                                                        <li>
+                                                            {{ trans('general.deep_linking') . '  : ' . url('/').'/element/linking?id=00&model=service&type=service'}}
+                                                        </li>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
