@@ -277,6 +277,7 @@ class UserController extends Controller
             'address' => $request->address,
             'description_ar' => $request->description,
             'description_en' => $request->description,
+            'is_male' => $request->has('is_male') ? $request->is_male : false,
             'access_dashboard' => env('EXPO'),
         ]);
         if ($element) {

@@ -221,75 +221,93 @@
                                                         </div>
                                                     @endif
 
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label sbold tooltips"
+                                                                   data-container="body" data-placement="top"
+                                                                   data-original-title="{{ trans('message.gender') }}">{{ trans('general.gender') }}</label></br>
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="is_male" id="optionsRadios1"
+                                                                       checked value="1" {{ $element->is_male ? 'checked' : '' }}>
+                                                                {{ trans('general.male') }} </label>
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="is_male" id="optionsRadios2"
+                                                                       {{ !$element->is_male ? 'checked' : '' }}
+                                                                       value="0"> {{ trans('general.female') }}</label>
+                                                        </div>
+                                                    </div>
+
                                                     {{-- password + confirm password --}}
 
-                                                    <div class="col-md-2">
-                                                        <div class="form-group">
-                                                            <label for="form_control_1">{{ trans('general.main_image') }}</label>
-                                                            <input type="file" class="form-control tooltips"
-                                                                   data-container="body" data-placement="top"
-                                                                   data-original-title="{{ trans('message.main_image') }}"
-                                                                   name="image"
-                                                                   placeholder="{{ trans('general.main_image') }}"
-                                                            >
-                                                            <div class="help-block text-left">
-                                                                {{ trans('message.best_fit',['width' => '1000 px', 'height' => '1000 px']) }}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    @if($element->image)
+                                                    <div class="col-lg-12">
                                                         <div class="col-md-2">
-                                                            <img class="img-responsive img-sm"
-                                                                 src="{{ $element->imageThumbLink }}"
-                                                                 alt="">
-                                                            {{--                                                            <a href="{{ route("backend.admin.image.clear",['model' => 'user', 'id' => $element->id ]) }}"><i--}}
-                                                            {{--                                                                        class="fa fa-fw fa-times"></i></a>--}}
-                                                        </div>
-                                                    @endif
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="form_control_1">{{ trans('general.banner') }}</label>
-                                                            <input type="file" class="form-control tooltips"
-                                                                   data-container="body" data-placement="top"
-                                                                   data-original-title="{{ trans('message.banner') }}"
-                                                                   name="banner"
-                                                                   placeholder="{{ trans('general.banner') }}">
-                                                            <div class="help-block text-left">
-                                                                {{ trans('message.best_fit',['width' => '1080 px', 'height' => '350 px']) }}
+                                                            <div class="form-group">
+                                                                <label for="form_control_1">{{ trans('general.main_image') }}</label>
+                                                                <input type="file" class="form-control tooltips"
+                                                                       data-container="body" data-placement="top"
+                                                                       data-original-title="{{ trans('message.main_image') }}"
+                                                                       name="image"
+                                                                       placeholder="{{ trans('general.main_image') }}"
+                                                                >
+                                                                <div class="help-block text-left">
+                                                                    {{ trans('message.best_fit',['width' => '1000 px', 'height' => '1000 px']) }}
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        @if($element->banner)
-                                                            <div class="col-md-12">
-                                                                <img class="img-responsive"
-                                                                     src="{{ asset(env('THUMBNAIL').$element->banner) }}"
+                                                        @if($element->image)
+                                                            <div class="col-md-2">
+                                                                <img class="img-responsive img-sm" style="width : 60px"
+                                                                     src="{{ $element->imageThumbLink }}"
                                                                      alt="">
+                                                                {{--                                                            <a href="{{ route("backend.admin.image.clear",['model' => 'user', 'id' => $element->id ]) }}"><i--}}
+                                                                {{--                                                                        class="fa fa-fw fa-times"></i></a>--}}
                                                             </div>
-                                                            <a href="{{ route("backend.admin.image.clear",['model' => 'user', 'id' => $element->id , 'colName' => 'banner']) }}"><i
-                                                                        class="fa fa-fw fa-times"></i></a>
                                                         @endif
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group {{ $errors->has('bg') ? ' has-error' : '' }}">
-                                                            <label for="bg"
-                                                                   class="control-label">{{ trans('general.bg') }}</label>
-                                                            <input type="file"
-                                                                   class="form-control tooltips"
-                                                                   data-container="body" data-placement="top"
-                                                                   data-original-title="{{ trans('message.bg') }}"
-                                                                   name="bg">
-                                                            <div class="help-block text-left">
-                                                                {{ trans('message.best_fit',['width' => '1080 px', 'height' => '350 px']) }}
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label for="form_control_1">{{ trans('general.banner') }}</label>
+                                                                <input type="file" class="form-control tooltips"
+                                                                       data-container="body" data-placement="top"
+                                                                       data-original-title="{{ trans('message.banner') }}"
+                                                                       name="banner"
+                                                                       placeholder="{{ trans('general.banner') }}">
+                                                                <div class="help-block text-left">
+                                                                    {{ trans('message.best_fit',['width' => '1060 px', 'height' => '350 px']) }}
+                                                                </div>
                                                             </div>
+                                                            @if($element->banner)
+                                                                <div class="col-md-12">
+                                                                    <img class="img-responsive img-sm" style="width : 60px"
+                                                                         src="{{ asset(env('THUMBNAIL').$element->banner) }}"
+                                                                         alt="">
+                                                                </div>
+                                                                <a href="{{ route("backend.admin.image.clear",['model' => 'user', 'id' => $element->id , 'colName' => 'banner']) }}"><i
+                                                                        class="fa fa-fw fa-times"></i></a>
+                                                            @endif
                                                         </div>
-                                                        @if($element->bg)
-                                                            <div class="col-md-12">
-                                                                <img class="img-responsive img-sm"
-                                                                     src="{{ asset(env('THUMBNAIL').$element->bg) }}"
-                                                                     alt="">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group {{ $errors->has('bg') ? ' has-error' : '' }}">
+                                                                <label for="bg"
+                                                                       class="control-label">{{ trans('general.bg') }}</label>
+                                                                <input type="file"
+                                                                       class="form-control tooltips"
+                                                                       data-container="body" data-placement="top"
+                                                                       data-original-title="{{ trans('message.bg') }}"
+                                                                       name="bg">
+                                                                <div class="help-block text-left">
+                                                                    {{ trans('message.best_fit',['width' => '1080 px', 'height' => '350 px']) }}
+                                                                </div>
                                                             </div>
-                                                            <a href="{{ route("backend.admin.image.clear",['model' => 'user', 'id' => $element->id ,'colName' => 'bg']) }}"><i
+                                                            @if($element->bg)
+                                                                <div class="col-md-12">
+                                                                    <img class="img-responsive img-sm" style="width : 80px"
+                                                                         src="{{ asset(env('THUMBNAIL').$element->bg) }}"
+                                                                         alt="">
+                                                                </div>
+                                                                <a href="{{ route("backend.admin.image.clear",['model' => 'user', 'id' => $element->id ,'colName' => 'bg']) }}"><i
                                                                         class="fa fa-fw fa-times"></i></a>
-                                                        @endif
+                                                            @endif
+                                                        </div>
                                                     </div>
 
                                                     @can('index','survey')

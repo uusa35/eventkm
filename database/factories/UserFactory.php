@@ -69,6 +69,7 @@ $factory->define(App\Models\User::class, function (Faker $faker)  {
         'keywords' => $faker->sentence,
         'balance' => $faker->numberBetween(5, 99),
         'on_home' => $faker->boolean(true),
+        'is_male' => $faker->boolean,
         'video_url_one' => 'http://www.youtube.com/embed/GhyKqj_P2E4',
         'video_url_two' => 'http://www.youtube.com/embed/GhyKqj_P2E4',
         'video_url_three' => 'http://www.youtube.com/embed/GhyKqj_P2E4',

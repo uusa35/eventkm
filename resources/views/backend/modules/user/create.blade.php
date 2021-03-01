@@ -230,6 +230,20 @@
                                                 </div>
                                             </div>
                                         @endif
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label sbold tooltips"
+                                                       data-container="body" data-placement="top"
+                                                       data-original-title="{{ trans('message.gender') }}">{{ trans('general.gender') }}</label></br>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="is_male" id="optionsRadios1"
+                                                           checked value="1">
+                                                    {{ trans('general.male') }} </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="active" id="optionsRadios2"
+                                                           value="0"> {{ trans('general.female') }}</label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
