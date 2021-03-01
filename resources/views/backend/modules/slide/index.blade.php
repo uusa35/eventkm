@@ -20,6 +20,8 @@
                             <th>{{ trans('general.active') }}</th>
                             <th>{{ trans('general.created_at') }}</th>
                             <th>{{ trans('general.file') }}</th>
+                            <th class="none">{{ trans('general.type') }}</th>
+                            <th class="none">{{ trans('general.type_id') }}</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
                         </thead>
@@ -32,6 +34,7 @@
                             <th>{{ trans('general.active') }}</th>
                             <th>{{ trans('general.created_at') }}</th>
                             <th>{{ trans('general.file') }}</th>
+                            <th class="none">{{ trans('general.type_id') }}</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
                         </tfoot>
@@ -60,6 +63,8 @@
                                         <div class="alert alert-info">No Path</div>
                                     @endif
                                 </td>
+                                <td>{{ $element->slidable_type }}</td>
+                                <td>{{ $element->slidable_id }}</td>
                                 <td>
                                     <div class="btn-group pull-right">
                                         <button type="button" class="btn green btn-sm btn-outline dropdown-toggle"
