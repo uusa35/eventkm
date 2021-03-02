@@ -55,7 +55,7 @@
                                 </td>
                                 <td>{{ $element->code }}</td>
                                 <td>{{ $element->minimum_charge}}</td>
-                                <td>{{ $element->user->name }}</td>
+                                <td>{{ $element->user ? $element->user->name : 'N/A'}}</td>
                                 <td>
                                     <span class="label {{ activeLabel($element->active) }}">{{ activeText($element->active,$element->due_date->format('d-M-Y')) }}</span>
                                 </td>
@@ -80,7 +80,7 @@
                                             </li>
                                             <li>
                                                 <a data-toggle="modal" href="#" data-target="#basic" data-title="Delete"
-                                                   data-content="Are you sure you want to delete coupon for user : {{ $element->user->name }}? "
+                                                   data-content="Are you sure you want to delete coupon? "
                                                    data-form_id="delete-{{ $element->id }}">
                                                     <i class="fa fa-fw fa-recycle"></i> delete</a>
                                                 <form method="post" id="delete-{{ $element->id }}"
