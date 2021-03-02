@@ -20,8 +20,10 @@ class CouponController extends Controller
     public function index()
     {
 
-        $elements = Coupon::with('user')->orderBy('created_at', 'desc')->get();
-
+        $elements = Coupon::with('user')->orderBy('id', 'desc')->get();
+        if ($elements->isEmpty()) {
+            return redirect()->back()->with('error', trans('message.no_coupons'));
+        }
         return view('backend.modules.coupon.index', compact('elements'));
     }
 
@@ -39,7 +41,7 @@ class CouponController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -67,7 +69,7 @@ class CouponController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -78,7 +80,7 @@ class CouponController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -91,8 +93,8 @@ class CouponController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -120,7 +122,7 @@ class CouponController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
