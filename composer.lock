@@ -217,16 +217,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.173.18",
+            "version": "3.173.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "0ac9f1d2778034a2ef0a2bb8e098818d7b1a76e8"
+                "reference": "914c68fb45bd4d1141d6c48ca9c88e0e9f426611"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0ac9f1d2778034a2ef0a2bb8e098818d7b1a76e8",
-                "reference": "0ac9f1d2778034a2ef0a2bb8e098818d7b1a76e8",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/914c68fb45bd4d1141d6c48ca9c88e0e9f426611",
+                "reference": "914c68fb45bd4d1141d6c48ca9c88e0e9f426611",
                 "shasum": ""
             },
             "require": {
@@ -234,9 +234,9 @@
                 "ext-pcre": "*",
                 "ext-simplexml": "*",
                 "guzzlehttp/guzzle": "^5.3.3|^6.2.1|^7.0",
-                "guzzlehttp/promises": "^1.0",
-                "guzzlehttp/psr7": "^1.4.1",
-                "mtdowling/jmespath.php": "^2.5",
+                "guzzlehttp/promises": "^1.4.0",
+                "guzzlehttp/psr7": "^1.7.0",
+                "mtdowling/jmespath.php": "^2.6",
                 "php": ">=5.5"
             },
             "require-dev": {
@@ -298,7 +298,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2021-02-26T19:12:35+00:00"
+            "time": "2021-03-03T19:19:53+00:00"
         },
         {
             "name": "barryvdh/laravel-dompdf",
@@ -1850,16 +1850,16 @@
         },
         {
             "name": "google/protobuf",
-            "version": "v3.15.3",
+            "version": "v3.15.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/protocolbuffers/protobuf-php.git",
-                "reference": "f22e60e5deb972ded0115c620a99b3f1ac2f4824"
+                "reference": "fd3a29de7bd94496ac440444cfb026bd369ba06e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/f22e60e5deb972ded0115c620a99b3f1ac2f4824",
-                "reference": "f22e60e5deb972ded0115c620a99b3f1ac2f4824",
+                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/fd3a29de7bd94496ac440444cfb026bd369ba06e",
+                "reference": "fd3a29de7bd94496ac440444cfb026bd369ba06e",
                 "shasum": ""
             },
             "require": {
@@ -1887,7 +1887,7 @@
             "keywords": [
                 "proto"
             ],
-            "time": "2021-02-25T23:39:41+00:00"
+            "time": "2021-03-03T22:11:26+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -1953,16 +1953,16 @@
         },
         {
             "name": "grpc/grpc",
-            "version": "1.35.0",
+            "version": "1.36.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/grpc/grpc-php.git",
-                "reference": "cf75367acfcf154331f97d1525f9f46383b7891d"
+                "reference": "6145dd917d340b579f0b663940b17cc93172b79a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/grpc/grpc-php/zipball/cf75367acfcf154331f97d1525f9f46383b7891d",
-                "reference": "cf75367acfcf154331f97d1525f9f46383b7891d",
+                "url": "https://api.github.com/repos/grpc/grpc-php/zipball/6145dd917d340b579f0b663940b17cc93172b79a",
+                "reference": "6145dd917d340b579f0b663940b17cc93172b79a",
                 "shasum": ""
             },
             "require": {
@@ -1990,7 +1990,7 @@
             "keywords": [
                 "rpc"
             ],
-            "time": "2021-01-20T20:15:34+00:00"
+            "time": "2021-03-01T21:52:11+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2398,16 +2398,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.29.0",
+            "version": "v8.31.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "d2eba352b3b3a3c515b18c5726b373fe5026733e"
+                "reference": "2aa5c2488d25178ebc097052c7897a0e463ddc35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d2eba352b3b3a3c515b18c5726b373fe5026733e",
-                "reference": "d2eba352b3b3a3c515b18c5726b373fe5026733e",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/2aa5c2488d25178ebc097052c7897a0e463ddc35",
+                "reference": "2aa5c2488d25178ebc097052c7897a0e463ddc35",
                 "shasum": ""
             },
             "require": {
@@ -2558,7 +2558,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2021-02-23T14:27:41+00:00"
+            "time": "2021-03-04T15:22:36+00:00"
         },
         {
             "name": "laravel/helpers",
@@ -2667,16 +2667,16 @@
         },
         {
             "name": "laravel/tinker",
-            "version": "v2.6.0",
+            "version": "v2.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/tinker.git",
-                "reference": "daae1c43f1300fe88c05d83db6f3d8f76677ad88"
+                "reference": "04ad32c1a3328081097a181875733fa51f402083"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/tinker/zipball/daae1c43f1300fe88c05d83db6f3d8f76677ad88",
-                "reference": "daae1c43f1300fe88c05d83db6f3d8f76677ad88",
+                "url": "https://api.github.com/repos/laravel/tinker/zipball/04ad32c1a3328081097a181875733fa51f402083",
+                "reference": "04ad32c1a3328081097a181875733fa51f402083",
                 "shasum": ""
             },
             "require": {
@@ -2727,7 +2727,7 @@
                 "laravel",
                 "psysh"
             ],
-            "time": "2021-01-26T20:35:18+00:00"
+            "time": "2021-03-02T16:53:12+00:00"
         },
         {
             "name": "laravel/ui",
@@ -4818,28 +4818,28 @@
         },
         {
             "name": "spatie/laravel-activitylog",
-            "version": "3.16.1",
+            "version": "3.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-activitylog.git",
-                "reference": "ade270f291f4cb5883b3653919304a0b4e1cc284"
+                "reference": "bdc44862aaca39ecbd824133b80dbd7c8017ed7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-activitylog/zipball/ade270f291f4cb5883b3653919304a0b4e1cc284",
-                "reference": "ade270f291f4cb5883b3653919304a0b4e1cc284",
+                "url": "https://api.github.com/repos/spatie/laravel-activitylog/zipball/bdc44862aaca39ecbd824133b80dbd7c8017ed7f",
+                "reference": "bdc44862aaca39ecbd824133b80dbd7c8017ed7f",
                 "shasum": ""
             },
             "require": {
                 "illuminate/config": "^6.0 || ^7.0 || ^8.0",
                 "illuminate/database": "^6.0 || ^7.0 || ^8.0",
                 "illuminate/support": "^6.0 || ^7.0 || ^8.0",
-                "php": "^7.2 || ^8.0"
+                "php": "^7.3 || ^8.0"
             },
             "require-dev": {
                 "ext-json": "*",
                 "orchestra/testbench": "^4.0 || ^5.0 || ^6.0",
-                "phpunit/phpunit": "^8.0 || ^9.0"
+                "phpunit/phpunit": "^9.3"
             },
             "type": "library",
             "extra": {
@@ -4900,7 +4900,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-03T11:34:26+00:00"
+            "time": "2021-03-02T16:49:06+00:00"
         },
         {
             "name": "stichoza/google-translate-php",
@@ -8273,16 +8273,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.5.13",
+            "version": "2.5.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "5e9ef386aaad9985cee2ac23281a27568d083b7e"
+                "reference": "17097f7a83e200d90d1cf9f4d1b35c1001513a47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/5e9ef386aaad9985cee2ac23281a27568d083b7e",
-                "reference": "5e9ef386aaad9985cee2ac23281a27568d083b7e",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/17097f7a83e200d90d1cf9f4d1b35c1001513a47",
+                "reference": "17097f7a83e200d90d1cf9f4d1b35c1001513a47",
                 "shasum": ""
             },
             "require": {
@@ -8340,7 +8340,7 @@
                 "laravel",
                 "page"
             ],
-            "time": "2021-02-16T12:46:19+00:00"
+            "time": "2021-03-04T08:48:01+00:00"
         },
         {
             "name": "filp/whoops",
