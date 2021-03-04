@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_24_160632_change_fixed_shipment_charge_to_countries_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_24_160632_change_fixed_shipment_charge_to_countries_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_06_062048_add_min_to_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_06_062048_add_min_to_categories_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -907,7 +907,7 @@
       <workItem from="1614759540074" duration="4553000" />
       <workItem from="1614785169518" duration="2883000" />
       <workItem from="1614864016663" duration="892000" />
-      <workItem from="1614871868820" duration="852000" />
+      <workItem from="1614871868820" duration="928000" />
     </task>
     <servers />
   </component>

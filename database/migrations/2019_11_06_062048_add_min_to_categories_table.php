@@ -28,7 +28,7 @@ class AddMinToCategoriesTable extends Migration
     {
         Schema::table('categories', function (Blueprint $table) {
             $table->dropColumn('min');
-            $table->bigInteger('max');
+            $table->dropColumn('max');
         });
     }
 }
