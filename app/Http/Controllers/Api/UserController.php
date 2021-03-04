@@ -212,7 +212,7 @@ class UserController extends Controller
             $element = $this->element->where(['email' => $request->email])->with(['product_favorites' => function ($q) {
                 return $q->active()->hasImage()->available()->hasAtLeastOneCategory();
             }])->with(['orders' => function ($q) {
-                return $q->paid();
+                return $q->paid()->orderBy('id','desc');
             }])->with(['classified_favorites' => function ($q) {
                 return $q->active()->notExpired()->hasImage()->available()->with('items.property', 'items.categoryGroup');
             }])->with(['country', 'collections'])->with(['classifieds' => function ($q) {
@@ -233,7 +233,7 @@ class UserController extends Controller
         $element = $this->element->whereId($request->user()->id)->with(['product_favorites' => function ($q) {
             return $q->active()->hasStock()->hasImage()->available()->hasAtLeastOneCategory();
         }])->with(['orders' => function ($q) {
-            return $q->paid();
+            return $q->paid()->orderBy('id','desc');
         }])->with(['classified_favorites' => function ($q) {
             return $q->active()->notExpired()->hasImage();
         }])->with(['country', 'collections'])->with(['classifieds' => function ($q) {
@@ -287,6 +287,7 @@ class UserController extends Controller
         }
         return resopnse()->json(['message' => trans('message.register_unknwon_error')], 400);
     }
+
 
     public function googleAuthenticate(Request $request)
     {

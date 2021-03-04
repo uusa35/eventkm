@@ -195,6 +195,10 @@ trait OrderTrait
                     'mobile' => $request->mobile,
                     'address' => $request->address,
                     'area' => $request->area,
+                    'block' => $request->block,
+                    'street' => $request->street,
+                    'building' => $request->building,
+                    'apartment' => $request->apartment,
                     'country_id' => $request->country_id,
                 ]);
             } else {
@@ -204,6 +208,10 @@ trait OrderTrait
                     'mobile' => $request->mobile,
                     'address' => $request->address,
                     'area' => $request->area,
+                    'block' => $request->block,
+                    'street' => $request->street,
+                    'building' => $request->building,
+                    'apartment' => $request->apartment,
                     'country_id' => $request->country_id,
                     'password' => bcrypt($request->mobile),
                     'role_id' => Role::where('is_client', true)->first()->id
@@ -232,6 +240,10 @@ trait OrderTrait
                 'mobile' => $request->mobile,
                 'country' => $user->country->slug,
                 'area' => $request->area ? $request->area : null,
+                'block' => $request->block,
+                'street' => $request->street,
+                'building' => $request->building,
+                'apartment' => $request->apartment,
                 'email' => $request->email,
                 'address' => $request->address,
                 'notes' => $request->notes,

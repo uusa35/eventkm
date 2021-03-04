@@ -30,13 +30,17 @@
 
                 <span class="float-right"> <br><strong>{{ trans('general.weight') }} :</strong>{{ $element->order_metas->pluck('product.weight')->sum() }} KG</span>
                 @if($element->shipment_fees > 0)
-                    <span class="float-right"> <br><strong>{{ trans('general.shipment') }} :</strong>{{ $element->shipment_fees }} {{ trans('general.kd') }}</span>
+                    <span
+                        class="float-right"> <br><strong>{{ trans('general.shipment') }} :</strong>{{ $element->shipment_fees }} {{ trans('general.kd') }}</span>
                 @endif
-                <span class="float-right"> <br><strong>{{ trans('general.price') }}:</strong>{{ $element->price }} {{ trans('general.kd') }}</span>
+                <span
+                    class="float-right"> <br><strong>{{ trans('general.price') }}:</strong>{{ $element->price }} {{ trans('general.kd') }}</span>
                 @if($element->discount > 0)
-                    <span class="float-right"> <br><strong>{{ trans('general.discount') }}:</strong>{{ $element->discount }} {{ trans('general.kd') }}</span>
+                    <span
+                        class="float-right"> <br><strong>{{ trans('general.discount') }}:</strong>{{ $element->discount }} {{ trans('general.kd') }}</span>
                 @endif
-                <span class="float-right"> <br><strong>{{ trans('general.net_price') }} :</strong>{{ $element->net_price }} {{ trans('general.kd') }}</span>
+                <span
+                    class="float-right"> <br><strong>{{ trans('general.net_price') }} :</strong>{{ $element->net_price }} {{ trans('general.kd') }}</span>
             </div>
             <hr>
             <div class="card-body">
@@ -44,7 +48,7 @@
                     <div class="col-sm-6">
                         <h6 class="mb-3">{{ trans('general.from') }}:</h6>
                         <div>
-                            <strong>{{ env('APP_NAME') }}</strong>
+                            <strong>{{ $settings->company }}</strong>
                         </div>
                         <div>{{ trans('general.address') }}: {{ $settings->address }}</div>
                         <div>{{ trans('general.email') }}: {{ $settings->email }}</div>
@@ -61,9 +65,21 @@
                         <div>{{ trans('general.area') }}: {{ $element->area ? $element->area : $element->user->area }}
                             <br/></div>
                         <div>{{ trans('general.country') }}: {{ $element->country }}<br/></div>
+                        @if($element->block)
+                            <div>{{ trans('general.block') }}: {{ $element->block }}<br/></div>
+                        @endif
+                        @if($element->street)
+                            <div>{{ trans('general.street') }}: {{ $element->street }}<br/></div>
+                        @endif
+                        @if($element->building)
+                            <div>{{ trans('general.building') }}: {{ $element->building }}<br/></div>
+                        @endif
                         <div>{{ trans('general.email') }}: {{ $element->user->email }}</div>
                         <div>{{ trans('general.phone') }}: {{ $element->mobile }}</div>
                         <div>{{ trans('general.calling_code') }}: {{ $element->user->country->calling_code }}</div>
+                        @if($element->notes)
+                            <div class="alert alert-info">{{ trans("general.notes") .': '. $element->notes }}</div>
+                        @endif
                     </div>
 
                 </div>
@@ -101,7 +117,7 @@
                                         <td class="left strong">{{ $item->color_name ?? trans('general.not_available') }}</td>
                                         <td class="left strong">{{ $item->size_name ?? trans('general.not_available') }}</td>
                                         <td class="left"><a
-                                                    href="{{ !env('ABATI') ? route('frontend.product.show',$item->product_id) : '#'}}">{{ $item->product->name }}</a>
+                                                href="{{ !env('ABATI') ? route('frontend.product.show',$item->product_id) : '#'}}">{{ $item->product->name }}</a>
                                         </td>
                                         <td>
                                             <a href="{{ route('frontend.user.show', $item->product->user_id) }}">{{ $item->product->user->slug }}</a>
@@ -143,7 +159,7 @@
                                         <td class="left strong">{{ $item->product_color ?? 'N/A'}}</td>
                                         <td class="left strong">{{ $item->product_size ?? 'N/A' }}</td>
                                         <td class="left"><a
-                                                    href="{{ !env('ABATI') ? route('frontend.product.show',$item->product_id) : '#'}}">{{ $item->product->name }}</a>
+                                                href="{{ !env('ABATI') ? route('frontend.product.show',$item->product_id) : '#'}}">{{ $item->product->name }}</a>
                                         </td>
                                         <td class="right">
                                             <a href="{{ route('frontend.user.show', $item->product->user_id) }}">{{ $item->product->user->slug }}</a>
@@ -166,7 +182,7 @@
                                     <td class="left strong">{{ $item->service_date }}</td>
                                     <td class="left strong">{{ $item->service_time }}</td>
                                     <td class="left"><a
-                                                href="{{ !env('ABATI') ? route('frontend.service.show',$item->service_id)  : '#'}}">{{ $item->service->name }}</a>
+                                            href="{{ !env('ABATI') ? route('frontend.service.show',$item->service_id)  : '#'}}">{{ $item->service->name }}</a>
                                     </td>
                                     <td class="right">{{ $item->price }} {{ trans('general.kd') }}</td>
                                     <td class="right">{{ $item->notes}}</td>
