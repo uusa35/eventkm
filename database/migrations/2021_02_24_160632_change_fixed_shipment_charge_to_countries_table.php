@@ -27,7 +27,7 @@ class ChangeFixedShipmentChargeToCountriesTable extends Migration
     public function down()
     {
         Schema::table('countries', function (Blueprint $table) {
-            $table->dropColumn('sale_minimum_shipment_charge');
+            $table->dropColumn('minimum_shipment_charge');
             $table->dropColumn('fixed_shipment_charge');
         });
     }
