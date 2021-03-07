@@ -113,7 +113,7 @@
                                                                     name="country_id" required>
                                                                 <option>{{ trans('general.choose_country') }}</option>
                                                                 @foreach($countries as $country)
-                                                                    <option value="{{ $country->id }}" {{ $element->country_id === $country->id ? 'selected' : null  }}>{{ $country->slug_en }}</option>
+                                                                    <option value="{{ $country->id }}" {{ $element->country_id == $country->id ? 'selected' : null  }}>{{ $country->slug_en }}</option>
                                                                 @endforeach
                                                             </select>
                                                         </div>

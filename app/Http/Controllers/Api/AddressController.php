@@ -32,7 +32,7 @@ class AddressController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -50,17 +50,17 @@ class AddressController extends Controller
             'governate_id' => 'exists:governates,id|nullable',
             'area_id' => 'exists:areas,id|nullable',
         ]);
-        if($validate->fails()) {
-            return response()->json(['message' => $validate->errors()->first()],400);
+        if ($validate->fails()) {
+            return response()->json(['message' => $validate->errors()->first()], 400);
         }
-        $element  = $request->user()->addresses()->create($request->all());
+        $element = $request->user()->addresses()->create($request->all());
         return response()->json(AddressResource::make($element), 200);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -71,7 +71,7 @@ class AddressController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -82,8 +82,8 @@ class AddressController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -101,8 +101,8 @@ class AddressController extends Controller
             'governate_id' => 'exists:governates,id|nullable',
             'area_id' => 'exists:areas,id|nullable',
         ]);
-        if($validate->fails()) {
-            return response()->json(['message' => $validate->errors()->first()],400);
+        if ($validate->fails()) {
+            return response()->json(['message' => $validate->errors()->first()], 400);
         }
         $request->user()->addresses()->whereId($id)->update($request->all());
         $element = Address::whereId($id)->first();
@@ -112,11 +112,16 @@ class AddressController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $element = Address::whereId($id)->first();
+        if ($element) {
+            $element->delete();
+            return response()->json(['message', trans('message.address_deleted_successfully')], 200);
+        }
+        return response()->json(['message' => trans('message.address_is_not_deleted')], 400);
     }
 }

@@ -34,7 +34,7 @@ Route::group(['namespace' => 'Api'], function () {
         Route::resource('comment', 'CommentController')->only(['store']);
         Route::post('reauthenticate', 'UserController@reAuthenticate');
         Route::resource('classified', 'ClassifiedController')->only(['store', 'update', 'destroy']);
-        Route::resource('address','AddressController')->only(['store','update']);
+        Route::resource('address','AddressController')->only(['store','update','destroy']);
     });
     Route::get('location/address', 'GeoLocationController@getAddressFromLocation')->name('location.address');
     Route::get('country/ip', 'CountryController@getUserCountry');
