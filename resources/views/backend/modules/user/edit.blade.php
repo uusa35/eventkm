@@ -132,11 +132,11 @@
                                                                     <option>{{ trans('general.choose_role') }}</option>
                                                                     @if(auth()->user()->isSuper)
                                                                         @foreach($roles as $role)
-                                                                            <option value="{{ $role->id }}" {{ $element->role_id === $role->id ? 'selected' : null }}>{{ $role->slug_en }}</option>
+                                                                            <option value="{{ $role->id }}" {{ $element->role_id == $role->id ? 'selected' : null }}>{{ $role->slug_en }}</option>
                                                                         @endforeach
                                                                     @else
                                                                         @foreach($roles->where('is_admin', false) as $role)
-                                                                            <option value="{{ $role->id }}" {{ $element->role_id === $role->id ? 'selected' : null }}>{{ $role->slug_en }}</option>
+                                                                            <option value="{{ $role->id }}" {{ $element->role_id == $role->id ? 'selected' : null }}>{{ $role->slug_en }}</option>
                                                                         @endforeach
                                                                     @endif
                                                                 </select>
