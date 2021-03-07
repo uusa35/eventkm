@@ -111,7 +111,7 @@ Route::get('attribute/qty', function () {
 });
 
 // homekey special routes
-Route::resource('homekey/category', 'Api\Homekey\CategoryController')->only(['index', 'show']);
+//Route::resource('homekey/category', 'Api\Homekey\CategoryController')->only(['index', 'show']);
 Route::post('attributes', function () {
     $product = Product::whereId(request()->product_id)->with('product_attributes.color', 'product_attributes.size')->first();
     if ($product && $product->hasRealAttributes) {
