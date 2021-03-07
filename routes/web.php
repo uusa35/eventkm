@@ -134,7 +134,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
         Route::resource('survey', 'SurveyController')->only(['show', 'store']);
         Route::resource('classified', 'ClassifiedController')->only(['create', 'store', 'edit', 'update', 'delete']);
         Route::get('classified/category/choose', 'ClassifiedController@chooseCategory')->name('classified.choose');
-        Route::get('property/attach', 'PropertyController@getAttach')->name('property.attach');
+//        Route::get('property/attach', 'PropertyController@getAttach')->name('property.attach');
     });
     Route::resource('product', 'ProductController');
     Route::get('product/{id}/{name}', 'ProductController@show')->name('product.show.name');
