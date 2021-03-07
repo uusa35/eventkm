@@ -22,14 +22,14 @@
                                 <h3 class="form-section">{{ trans('general.edit_product') }}</h3>
                                 <div class="mt-element-step">
                                     <div class="row step-default">
-                                        <div class="col-md-6 bg-success mt-step-col {{ Route::currentRouteName() === 'backend.product.edit' ? 'active' : null  }}">
+                                        <div class="col-md-6 bg-success mt-step-col {{ Route::currentRouteName() == 'backend.product.edit' ? 'active' : null  }}">
                                             <div class="mt-step-number bg-white font-grey">1</div>
                                             <div class="mt-step-title uppercase font-grey-cascade">
                                                 {{ trans('general.new_product') }}</div>
                                             <div class="mt-step-content font-grey-cascade">
                                                 {{ trans('message.new_product') }}</div>
                                         </div>
-                                        <div class="col-md-6 bg-grey mt-step-col {{ Route::currentRouteName() === 'backend.attribute.edit' ? 'active' : null  }}">
+                                        <div class="col-md-6 bg-grey mt-step-col {{ Route::currentRouteName() == 'backend.attribute.edit' ? 'active' : null  }}">
                                             <div class="mt-step-number bg-white font-grey">2</div>
                                             <div class="mt-step-title uppercase font-grey-cascade">
                                                 {{ trans('general.add_attribute') }}</div>
@@ -211,7 +211,7 @@
                                                                         data-original-title="{{ trans('message.owner') }}">
                                                                     <option value="">{{ trans('general.choose_user') }}</option>
                                                                     @foreach($users as $user)
-                                                                        <option value="{{ $user->id }}" {{ $element->user_id === $user->id ? 'selected' : null  }}>{{ $user->slug }} - {{ $user->id }}</option>
+                                                                        <option value="{{ $user->id }}" {{ $element->user_id == $user->id ? 'selected' : null  }}>{{ $user->slug }} - {{ $user->id }}</option>
                                                                     @endforeach
                                                                 </select>
                                                             </div>
@@ -347,7 +347,7 @@
                                                                 data-original-title="{{ trans('message.color') }}">
                                                             <option value="">{{ trans('general.choose_color') }}</option>
                                                             @foreach($colors as $color)
-                                                                <option value="{{ $color->id }}" {{ $element->color_id === $color->id ? 'selected' : null  }}>{{ $color->name }}</option>
+                                                                <option value="{{ $color->id }}" {{ $element->color_id == $color->id ? 'selected' : null  }}>{{ $color->name }}</option>
                                                             @endforeach
                                                         </select>
                                                         {{-- <span class="help-block">
@@ -365,7 +365,7 @@
                                                                 data-original-title="{{ trans('message.size') }}">
                                                             <option value="">{{ trans('general.choose_size') }}</option>
                                                             @foreach($sizes as $size)
-                                                                <option value="{{ $size->id }}" {{ $element->size_id === $size->id ? 'selected' : null  }}>{{ $size->name }}</option>
+                                                                <option value="{{ $size->id }}" {{ $element->size_id == $size->id ? 'selected' : null  }}>{{ $size->name }}</option>
                                                             @endforeach
                                                         </select>
                                                         {{-- <span class="help-block">
@@ -611,7 +611,7 @@
                                                                 data-original-title="{{ trans('message.brand') }}">
                                                             <option value="">{{ trans('general.choose_brand') }}</option>
                                                             @foreach($brands as $brand)
-                                                                <option value="{{ $brand->id }}" {{ $element->brand_id && $element->brand->id === $brand->id ? 'selected' : null  }}>{{ $brand->slug }}</option>
+                                                                <option value="{{ $brand->id }}" {{ $element->brand_id && $element->brand->id == $brand->id ? 'selected' : null  }}>{{ $brand->slug }}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>
@@ -628,7 +628,7 @@
                                                         >
                                                             <option value="">{{ trans('choose_product_package_grade') }}</option>
                                                             @foreach($shipment_packages as $shipment_package)
-                                                                <option value="{{ $shipment_package->id }}" {{ $element->shipment_package_id && $element->shipment_package_id === $shipment_package->id ? 'selected' : null  }}>
+                                                                <option value="{{ $shipment_package->id }}" {{ $element->shipment_package_id && $element->shipment_package_id == $shipment_package->id ? 'selected' : null  }}>
                                                                     {{ $shipment_package->slug_en }}</option>
                                                             @endforeach
                                                         </select>
