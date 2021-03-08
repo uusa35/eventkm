@@ -17,6 +17,7 @@ use App\Policies\CouponPolicy;
 use App\Policies\CurrencyPolicy;
 use App\Policies\DayPolicy;
 use App\Policies\DevicePolicy;
+use App\Policies\ExcelPolicy;
 use App\Policies\ImagePolicy;
 use App\Policies\ItemPolicy;
 use App\Policies\NotificationPolicy;
@@ -96,6 +97,7 @@ class AuthServiceProvider extends ServiceProvider
         Gate::resource('addon', AddonPolicy::class);
         Gate::resource('item', ItemPolicy::class);
         Gate::resource('comment', CommentPolicy::class);
+        Gate::resource('excel', ExcelPolicy::class);
 
         Gate::define('superOne', function () {
             return auth()->user()->isSuper && auth()->id() === 1;

@@ -13,44 +13,51 @@ trait NotificationHelper
 {
     function notify($headings, $descritpion, $url = null, Request $request)
     {
-        $fields = array(
-            'app_id' => env('ONE_SIGNAL_APP_ID'),
-            'included_segments' => array('Active Users'),
+        try {
+            $fields = array(
+                'app_id' => env('ONE_SIGNAL_APP_ID'),
+                'included_segments' => array('Active Users'),
 //            'include_player_ids' => ['d4c0adab-45e1-45c1-ba7e-d85af28d85a9'],
-            'headings' => [
-                'en' => strip_tags($headings),
-                'ar' => strip_tags($headings),
-            ],
+                'headings' => [
+                    'en' => strip_tags($headings),
+                    'ar' => strip_tags($headings),
+                ],
 //            'subtitle' => [
 //                'en' => trans('message.notification_message', ['appName' => env('APP_NAME')]),
 //                'ar' => trans('message.notification_message', ['appName' => env('APP_NAME')]),
 //            ],
-            'app_url' => $url,
+                'app_url' => $url,
 //            http://abatiapp.com/element/linking?model=user&id=6&type=designer (latest)
 //            'web_url' => 'http://abati.ideasowners.net/element/linking?is_product=1&id=8',
 //            'web_url' => $url,
-            'data' => $request ? ['model' => $request->notificationable_type, 'id' => $request->notificationable_id] : [],
-            'contents' => [
-                'en' => strip_tags($descritpion),
-                'ar' => strip_tags($descritpion)
-            ],
-        );
+                'data' => $request ? ['model' => $request->notificationable_type, 'id' => $request->notificationable_id] : [],
+                'contents' => [
+                    'en' => strip_tags($descritpion),
+                    'ar' => strip_tags($descritpion)
+                ],
+            );
 
-        $fields = json_encode($fields);
+            $fields = json_encode($fields);
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8',
-            'Authorization: Basic ' . env('ONE_SIGNAL_REST_ID')));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        curl_setopt($ch, CURLOPT_HEADER, FALSE);
-        curl_setopt($ch, CURLOPT_POST, TRUE);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8',
+                'Authorization: Basic ' . env('ONE_SIGNAL_REST_ID')));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+            curl_setopt($ch, CURLOPT_HEADER, FALSE);
+            curl_setopt($ch, CURLOPT_POST, TRUE);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
 
-        $response = curl_exec($ch);
-        curl_close($ch);
-        return $response;
+            $response = curl_exec($ch);
+            if(json_decode($response)->errors && !app()->environment('production')) {
+                dd(json_decode($response)->errors);
+            }
+            curl_close($ch);
+            return $response;
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }
 
     }
 

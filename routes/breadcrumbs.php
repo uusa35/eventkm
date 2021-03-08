@@ -585,6 +585,10 @@ Breadcrumbs::for('backend.video.edit', function ($trail, $element) {
     $trail->push(trans("general.edit_video"), route('backend.video.edit', $element->id));
 });
 
+Breadcrumbs::for('backend.excel.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.index_excel'), route('backend.excel.index'));
+});
 
 Breadcrumbs::for('backend.admin.survey.index', function ($trail) {
     $trail->parent('backend.home');

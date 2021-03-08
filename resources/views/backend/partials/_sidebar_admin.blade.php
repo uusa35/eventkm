@@ -114,7 +114,8 @@
                 <li class="nav-item {{ activeItem('addon') }}">
                     <a href="{{ route('backend.admin.addon.trashed') }}" class="nav-link nav-toggle">
                         <i class="fa fa-fw fa-table"></i>
-                        <span class="title">{{ trans('general.trashed') .' '. trans('general.addons') .' '. trans('general.services') }}</span>
+                        <span
+                            class="title">{{ trans('general.trashed') .' '. trans('general.addons') .' '. trans('general.services') }}</span>
                         <span class="arrow"></span>
                     </a>
                 </li>
@@ -125,7 +126,8 @@
         <li class="nav-item {{ activeItem('item') }}">
             <a href="{{ route('backend.admin.item.index') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-table"></i>
-                <span class="title">{{ trans('general.list') .' '. trans('general.items') .' '. trans('general.services')}}</span>
+                <span
+                    class="title">{{ trans('general.list') .' '. trans('general.items') .' '. trans('general.services')}}</span>
                 <span class="arrow"></span>
             </a>
             <ul class="sub-menu">
@@ -138,7 +140,8 @@
                 <li class="nav-item {{ activeItem('item') }}">
                     <a href="{{ route('backend.admin.item.trashed') }}" class="nav-link nav-toggle">
                         <i class="fa fa-fw fa-table"></i>
-                        <span class="title">{{ trans('general.trashed') .' '. trans('general.items') .' '. trans('general.services') }}</span>
+                        <span
+                            class="title">{{ trans('general.trashed') .' '. trans('general.items') .' '. trans('general.services') }}</span>
                         <span class="arrow"></span>
                     </a>
                 </li>
@@ -665,6 +668,15 @@
         </a>
     </li>
 @endcan
+@can('index','excel')
+    <li class="nav-item {{ activeItem('excel') }}">
+        <a href="{{ route('backend.excel.index') }}" class="nav-link ">
+            <i class="fa fa-fw fa-file-excel-o"></i>
+            <span class="title">{{ trans('general.export_to_excel') }}</span>
+            <span class="arrow"></span>
+        </a>
+    </li>
+@endif
 
 
 

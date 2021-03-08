@@ -605,3 +605,10 @@
         <span class="arrow"></span>
     </a>
 </li>
+<li class="nav-item {{ activeItem('excel') }}">
+    <a href="{{ route('backend.excel.index') }}" class="nav-link ">
+        <i class="fa fa-fw fa-file-excel-o"></i>
+        <span class="title">{{ trans('general.export_to_excel') }}</span>
+        <span class="arrow"></span>
+    </a>
+</li>
