@@ -75,8 +75,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('item', 'ItemController');
         Route::get('trashed/item', 'ItemController@trashed')->name('item.trashed');
         Route::get('restore/item/{id}', 'ItemController@restore')->name('item.restore');
+        Route::resource('product', 'ProductController');
         Route::get('search/product', 'ProductController@search')->name('product.search');
-        Route::get('search/order', 'OrderController@search')->name('order.search');
     });
     // Backend :: companies // Designers accordingly
     Route::get('/', 'HomeController@index')->name('index');
@@ -99,9 +99,9 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('classified', 'ClassifiedController');
     Route::get('trashed/classified', 'ClassifiedController@trashed')->name('classified.trashed');
     Route::get('restore/classified/{id}', 'ClassifiedController@restore')->name('classified.restore');
-//    Route::get('property/attach', 'PropertyController@getAttach')->name('property.attach');
-//    Route::post('property/attach', 'PropertyController@postAttach')->name('property.attach');
-//    Route::get('property/dettach', 'PropertyController@detach')->name('property.detach');
+    Route::get('property/attach', 'PropertyController@getAttach')->name('property.attach');
+    Route::post('property/attach', 'PropertyController@postAttach')->name('property.attach');
+    Route::get('property/dettach', 'PropertyController@detach')->name('property.detach');
     Route::resource('slide', 'SlideController');
     Route::get('trashed/slide', 'SlideController@trashed')->name('slide.trashed');
     Route::get('restore/slide/{id}', 'SlideController@restore')->name('slide.restore');
@@ -110,16 +110,10 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('order', 'OrderController')->except(['destroy']);
     Route::resource('image', 'ImageController')->only(['index', 'destroy']);
     Route::resource('tag', 'TagController');
-    Route::resource('product', 'ProductController');
     Route::resource('package', 'ShipmentPackageController');
     Route::resource('collection', 'CollectionController');
     Route::resource('post', 'PostController');
     Route::resource('excel','ExcelController');
-//    Route::get('testing', function () {
-//        $order = Order::first();
-//        return Notification::send(User::first(), new OrderPaid($order));
-//
-//    });
 });
 
 Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['country']], function () {
@@ -135,7 +129,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
         Route::resource('survey', 'SurveyController')->only(['show', 'store']);
         Route::resource('classified', 'ClassifiedController')->only(['create', 'store', 'edit', 'update', 'delete']);
         Route::get('classified/category/choose', 'ClassifiedController@chooseCategory')->name('classified.choose');
-//        Route::get('property/attach', 'PropertyController@getAttach')->name('property.attach');
+        Route::get('property/attach', 'PropertyController@getAttach')->name('property.attach');
     });
     Route::resource('product', 'ProductController');
     Route::get('product/{id}/{name}', 'ProductController@show')->name('product.show.name');
@@ -152,7 +146,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
     Route::get('cart/remove/{id}', 'CartController@removeItem')->name('cart.remove');
     Route::get('cart/clear', 'CartController@clearCart')->name('cart.clear');
     Route::post('cart/coupon', 'CartController@applyCoupon')->name('cart.coupon');
-//    Route::get('cart/checkout', 'CartController@getCheckout')->name('cart.checkout');
+    Route::get('cart/checkout', 'CartController@getCheckout')->name('cart.checkout');
     Route::post('cart/checkout', 'CartController@postCheckout')->name('cart.checkout');
     Route::post('cart/store', 'CartController@checkout')->name('cart.store');
     Route::resource('cart', 'CartController')->only(['index', 'show']);
