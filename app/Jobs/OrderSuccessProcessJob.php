@@ -66,7 +66,9 @@ class OrderSuccessProcessJob implements ShouldQueue
                 }
                 session()->forget('coupon');
             }
-            $this->createOrderForMirsal($this->order, $this->user);
+            if(env('MIRSAL_ENABLED')) {
+                $this->createOrderForMirsal($this->order, $this->user);
+            }
             return Mail::to($this->emailsList)->send(new OrderComplete($this->order, $this->user));
         }
     }

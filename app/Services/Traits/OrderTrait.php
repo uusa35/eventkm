@@ -65,7 +65,7 @@ trait OrderTrait
             'address' => $request->address,
             'notes' => $request->notes,
             'user_id' => $user->id,
-            'cash_on_delivery' => $request->has('cash_on_delivery') ? $request->cash_on_delivery && $country->is_local : false,
+            'cash_on_delivery' => $request->has('cash_on_delivery') ? $request->cash_on_delivery : false,
             'discount' => $coupon ? ($coupon->is_percentage ? ($this->cart->subTotal() * ($coupon->value / 100)) : $coupon->value) : 0,
             'coupon_id' => $coupon ? $coupon['id'] : null,
             'payment_method' => $request->payment_method,

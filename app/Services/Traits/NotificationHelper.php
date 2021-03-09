@@ -50,9 +50,9 @@ trait NotificationHelper
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
 
             $response = curl_exec($ch);
-            if(json_decode($response)->errors && !app()->environment('production')) {
-                dd(json_decode($response)->errors);
-            }
+//            if(json_decode($response)->errors && !app()->environment('production')) {
+//                dd(json_decode($response)->errors);
+//            }
             curl_close($ch);
             return $response;
         } catch (\Exception $e) {

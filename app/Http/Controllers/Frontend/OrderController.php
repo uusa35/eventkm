@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\CheckCartItems;
+use App\Jobs\OrderSuccessProcessJob;
 use App\Jobs\sendSuccessOrderEmail;
 use App\Models\Country;
 use App\Models\Order;
@@ -93,13 +94,14 @@ class OrderController extends Controller
         return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
     }
 
-    public function pdfInvoice($id) {
+    public function pdfInvoice($id)
+    {
         $order = Order::whereId($id)->with('order_metas.product', 'order_metas.product_attribute.color', 'order_metas.product_attribute.size', 'services')->first();
         $markdown = new Markdown(view(), config('mail.markdown'));
-        $final =  $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
+        $final = $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
 //        $pdf = PDF::loadView('emails.order-complete', ['order' => $order, 'user' => $order->user])->setPaper('a4', 'landscape');
-        $pdf = PDF::loadHTML($final)->setPaper('a4','portrait');
-        return $pdf->save('invoice.pdf','storage/public/uploads/files','UTF-8')->stream('download.pdf');
+        $pdf = PDF::loadHTML($final)->setPaper('a4', 'portrait');
+        return $pdf->save('invoice.pdf', 'storage/public/uploads/files', 'UTF-8')->stream('download.pdf');
     }
 
     /**
@@ -141,9 +143,17 @@ class OrderController extends Controller
         $order = Order::whereId($request->id)->first();
         if ($order->cash_on_delivery) {
             $contactus = Setting::first();
-            dispatch(new sendSuccessOrderEmail($order, $order->user, $contactus))->delay(now()->addSeconds(10));
-            session()->forget('cart');
-            return redirect()->route('frontend.home')->with('success', trans('message.we_received_your_order_order_shall_be_reviewed_thank_your_for_choosing_our_service'));
+            if (env('BITS')) {
+                $order->update(['paid' => true]);
+                $this->decreaseQty($order);
+                OrderSuccessProcessJob::dispatch($order, $order->user)->delay(now()->addSeconds(15));
+                $markdown = new Markdown(view(), config('mail.markdown'));
+                return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
+            } else {
+                dispatch(new sendSuccessOrderEmail($order, $order->user, $contactus))->delay(now()->addSeconds(10));
+                session()->forget('cart');
+                return redirect()->route('frontend.home')->with('success', trans('message.we_received_your_order_order_shall_be_reviewed_thank_your_for_choosing_our_service'));
+            }
         }
         return redirect()->route('frontend.home')->with('error', 'Order is not complete');
     }
