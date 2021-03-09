@@ -32,8 +32,7 @@ class ExcelController extends Controller
                     break;
             }
         }
-        $roles = Role::where('is_admin', false)->get();
-        return view('backend.modules.excel.index', compact('roles'));
+        return view('backend.modules.excel.index');
     }
 
     public function download(Request $request)
