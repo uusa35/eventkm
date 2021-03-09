@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Mail;
 class OrderController extends Controller
 {
     use OrderTrait;
+
     /**
      * Display a listing of the resource.
      *
@@ -56,16 +57,25 @@ class OrderController extends Controller
         return view('backend.modules.order.index', compact('elements', 'companies'));
     }
 
-    public function search(OrderFilters $filters)
+    public function search(Request $request)
     {
-        $companies = User::active()->whereHas('role', function ($q) {
-            return $q->where('is_company', true)->orWhere('is_designer', true);
-        })->get();
-        $elements = Order::filters($filters)->orderBy('id', 'desc')->paginate(Self::TAKE_MIN);
-        if ($elements->isEmpty()) {
-            return redirect()->route('backend.admin.order.index')->with('error', trans('message.no_items_found'));
+        $validator = validator(request()->all(), ['search' => 'nullable']);
+        if ($validator->fails()) {
+            return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
-        return view('backend.modules.order.index', compact('elements', 'companies'));
+        $elements = Order::with('order_metas.product.product_attributes', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color', 'order_metas.service')
+            ->where('id', 'like', "{$request->search}")
+            ->orWhere('email', 'like', "%{$request->search}%")
+            ->orWhere('notes', 'like', "%{$request->search}%")
+            ->orWhere('payment_method', 'like', "%{$request->search}%")
+//            ->orWhere('reference_id', 'like', "%{$request->search}%")
+            ->orderBy('created_at', 'desc')
+            ->paginate(parent::TAKE);
+        if (!$elements->isEmpty()) {
+            return view('backend.modules.order.index', compact('elements'));
+        } else {
+            return redirect()->back()->with('error', trans('message.no_items_found'));
+        }
     }
 
     /**

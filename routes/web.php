@@ -75,6 +75,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('item', 'ItemController');
         Route::get('trashed/item', 'ItemController@trashed')->name('item.trashed');
         Route::get('restore/item/{id}', 'ItemController@restore')->name('item.restore');
+        Route::get('search/product', 'ProductController@search')->name('product.search');
+        Route::get('search/order', 'OrderController@search')->name('order.search');
     });
     // Backend :: companies // Designers accordingly
     Route::get('/', 'HomeController@index')->name('index');

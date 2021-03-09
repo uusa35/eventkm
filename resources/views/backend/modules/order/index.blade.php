@@ -37,55 +37,48 @@
                         <div class="col-lg-12">
                             @include('backend.partials._admin_instructions',['title' => trans('general.orders') ,'message' => trans('message.index_order')])
                         </div>
-                        <div class="col-lg-8 hidden">
-                            <form action="">
-                                <div class="col-lg-3">
-                                    <div class="form-group{{ $errors->has('from') ? ' has-error' : '' }}">
-                                        <label for="start_sale"
-                                               class="control-label">{{ trans('general.from') }}</label>
-                                        <div class="input-group date date-picker">
-                                            <input type="text" readonly
-                                                   {{--                                               style="direction: rtl !important;"--}}
-                                                   class="form-control tooltips" data-container="body"
-                                                   data-placement="bottom right"
-                                                   data-original-title="{{ trans('message.from') }}"
-                                                   name="from"
-                                                   value="{{ old('from', \Carbon\Carbon::now()->format('m/d/Y')) }}"
-                                            >
-                                            <span class="input-group-btn"><button
-                                                    class="btn default date-set" type="button"><i
-                                                        class="fa fa-calendar"></i></button></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="form-group{{ $errors->has('to') ? ' has-error' : '' }}">
-                                        <label for="start_sale"
-                                               class="control-label">{{ trans('general.to') }}</label>
-                                        <div class="input-group date date-picker">
-                                            <input type="text" readonly
-                                                   {{--                                               style="direction: rtl !important;"--}}
-                                                   class="form-control tooltips" data-container="body"
-                                                   data-placement="bottom right"
-                                                   data-original-title="{{ trans('message.to') }}"
-                                                   name="to"
-                                                   value="{{ old('to', \Carbon\Carbon::now()->format('m/d/Y')) }}"
-                                            >
-                                            <span class="input-group-btn"><button
-                                                    class="btn default date-set" type="button"><i
-                                                        class="fa fa-calendar"></i></button></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <button
-                                        type="submit"
-                                        class="btn default date-set" type="button"><i
-                                            class="fa fa-send"></i> {{ trans('general.apply') }}</button>
-                                </div>
-                            </form>
-                        </div>
                     </div>
+                    @can('isAdminOrAbove')
+                        <div class="portlet box green col-lg-6 col-lg-push-3">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-gift"></i>{{ trans('general.general_search') }}</div>
+                            </div>
+                            <div class="portlet-body form">
+                                <!-- BEGIN FORM-->
+                                <form action="{{ route('backend.admin.order.search') }}" class="form-horizontal">
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">{{ trans("general.search") }}</label>
+                                            <div class="col-md-7">
+                                                <div class="input-group">
+                                                                    <span class="input-group-addon">
+                                                                        <i class="fa fa-search-plus"></i>
+                                                                    </span>
+                                                    <input type="text" name="search" class="form-control"
+                                                           value="{{ request()->search }}"
+                                                           placeholder="{{ trans('general.search') }}">
+                                                </div>
+                                                <span
+                                                    class="help-block"> {{ trans('message.general_search') }} - (id)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-offset-3 col-md-9">
+                                                <button type="submit"
+                                                        class="btn  green">{{ trans('general.search') }}</button>
+                                                <a href="{{ route('backend.admin.order.index') }}"
+                                                   class="btn  red">{{ trans('general.remove') }}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- END FORM-->
+                            </div>
+                        </div>
+                    @endcan
                     <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0"
                            width="100%">
                         <thead>

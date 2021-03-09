@@ -12,6 +12,46 @@
                 @include('backend.partials.forms.form_title',['title' => trans('general.index_product')])
                 <div class="portlet-body">
                     @include('backend.partials._admin_instructions',['title' => trans('general.products') ,'message' => trans('message.index_product')])
+                    @can('isAdminOrAbove')
+                    <div class="portlet box green col-lg-6 col-lg-push-3">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-gift"></i>{{ trans('general.general_search') }}</div>
+                        </div>
+                            <div class="portlet-body form">
+                                <!-- BEGIN FORM-->
+                                <form action="{{ route('backend.admin.product.search') }}" class="form-horizontal">
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">{{ trans("general.search") }}</label>
+                                            <div class="col-md-7">
+                                                <div class="input-group">
+                                                                    <span class="input-group-addon">
+                                                                        <i class="fa fa-search-plus"></i>
+                                                                    </span>
+                                                    <input type="text" name="search" class="form-control"
+                                                           value="{{ request()->search }}"
+                                                           placeholder="{{ trans('general.search') }}">
+                                                </div>
+                                                <span class="help-block"> {{ trans('message.general_search') }} - (SKU/Name/Description)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-offset-3 col-md-9">
+                                                <button type="submit"
+                                                        class="btn  green">{{ trans('general.search') }}</button>
+                                                <a href="{{ route('backend.admin.product.index') }}"
+                                                   class="btn  red">{{ trans('general.remove') }}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- END FORM-->
+                            </div>
+                    </div>
+                    @endcan
                     <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0"
                            width="100%">
                         <thead>
@@ -76,7 +116,8 @@
                                     {{ $element->price }}
                                 </td>
                                 <td>
-                                    <label class="label {{ $element->isOnSale ? 'label-success' : 'label-warning'}}"><b>{{ $element->isOnSale ? 'Yes' : 'No'}}</b></label>
+                                    <label
+                                        class="label {{ $element->isOnSale ? 'label-success' : 'label-warning'}}"><b>{{ $element->isOnSale ? 'Yes' : 'No'}}</b></label>
                                 </td>
                                 <td>
                                     {!! $element->sale_price ? $element->sale_price : '<label class="label label-warning"><b>N/A</b></label>'!!}
@@ -89,13 +130,15 @@
                                 </td>
                                 <td>{{ !is_null($element->end_sale) ? $element->end_sale->format('Y-m-d') : null }}</td>
                                 <td>
-                                    <span class="label {{ activeLabel($element->active) }}">{{ activeText($element->active) }}</span>
+                                    <span
+                                        class="label {{ activeLabel($element->active) }}">{{ activeText($element->active) }}</span>
                                 </td>
                                 <td>{{ $element->user ?  str_limit($element->user->slug,20) : '<label class="label label-warning"><b>N/A</b></label>' }}</td>
                                 <td>{{ $element->created_at }}</td>
                                 <td>{!! $element->barcode ? DNS2D::getBarcodeHTML($element->barcode, env('BARCODE_TYPE'),2,1) : '<label class="label label-warning"><b>N/A</b></label>' !!}</td>
                                 <td>
-                                    <span class="label label-default">{{ $element->totalAvailableQty }} {{ trans('general.pieces') }}</span>
+                                    <span
+                                        class="label label-default">{{ $element->totalAvailableQty }} {{ trans('general.pieces') }}</span>
                                 </td>
                                 <td>
                                     @if($element->product_attributes->isNotEmpty())

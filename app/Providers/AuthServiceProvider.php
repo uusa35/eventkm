@@ -97,7 +97,6 @@ class AuthServiceProvider extends ServiceProvider
         Gate::resource('addon', AddonPolicy::class);
         Gate::resource('item', ItemPolicy::class);
         Gate::resource('comment', CommentPolicy::class);
-        Gate::resource('excel', ExcelPolicy::class);
 
         Gate::define('superOne', function () {
             return auth()->user()->isSuper && auth()->id() === 1;

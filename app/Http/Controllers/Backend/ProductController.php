@@ -15,6 +15,7 @@ use App\Models\Size;
 use App\Models\Tag;
 use App\Models\User;
 use App\Models\Video;
+use App\Services\Search\Filters;
 use Carbon\Carbon;
 
 class  ProductController extends Controller
@@ -36,8 +37,21 @@ class  ProductController extends Controller
                 ? Product::active()->myItems()->where([request('type') => true])->with('user', 'product_attributes.size', 'product_attributes.color', 'color', 'size', 'slides')->orderBy('id', 'desc')->paginate(self::TAKE_LESS)
                 : Product::active()->myItems()->with('user', 'product_attributes.size', 'product_attributes.color', 'color', 'size', 'slides')->orderBy('id', 'desc')->paginate(self::TAKE_LESS);
         }
-
         return view('backend.modules.product.index', compact('elements'));
+    }
+
+    public function search(Filters $filters)
+    {
+        $validator = validator(request()->all(), ['search' => 'nullable']);
+        if ($validator->fails()) {
+            return redirect()->route('frontend.home')->withErrors($validator->messages());
+        }
+        $elements = Product::with('user', 'product_attributes.size', 'product_attributes.color', 'color', 'size', 'slides')->filters($filters)->orderBy('id', 'desc')->paginate(self::TAKE_LESS);
+        if (!$elements->isEmpty()) {
+            return view('backend.modules.product.index', compact('elements'));
+        } else {
+            return redirect()->back()->with('error', trans('message.no_items_found'));
+        }
     }
 
     /**

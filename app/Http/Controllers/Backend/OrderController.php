@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Backend;
 
 use App\Mail\OrderShipped;
 use App\Models\Order;
+use App\Services\Search\Filters;
 use Carbon\Carbon;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Mail\Markdown;
 use Illuminate\Support\Facades\Mail;
 

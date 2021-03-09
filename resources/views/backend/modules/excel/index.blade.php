@@ -11,19 +11,32 @@
                 <div class="portlet-body">
                     @include('backend.partials._admin_instructions',['title' => trans('general.excel') ,'message' => trans('message.index_excel')])
                     <div class="tiles padding-tb-20">
-                    <a href="{{ route('backend.excel.index') }}">
-                        <div class="tile bg-blue-steel bg-font-blue-steel tooltips"
-                             data-container="body" data-placement="bottom"
-                             data-original-title="{{ trans('message.users') }}"
-                        >
-                            <div class="tile-body">
-                                <i class="fa fa-product-hunt"></i>
+                        <a href="{{ route('backend.excel.index', ['type' => 'paid_orders'])}}">
+                            <div class="tile bg-red  tooltips"
+                                 data-container="body" data-placement="bottom"
+                                 data-original-title="{{ trans('message.total_paid_orders') }}"
+                            >
+                                <div class="tile-body">
+                                    <i class="fa fa-file-excel-o"></i>
+                                </div>
+                                <div class="tile-object text-center">
+                                    {{ trans('general.total_paid_orders') }}
+                                </div>
                             </div>
-                            <div class="tile-object text-center">
-                                {{ trans('general.users') }}
+                        </a>
+                        <a href="{{ route('backend.excel.index', ['type' => 'cash_on_deliver_orders'])}}">
+                            <div class="tile bg-red  tooltips"
+                                 data-container="body" data-placement="bottom"
+                                 data-original-title="{{ trans('message.cash_on_delivery') }}"
+                            >
+                                <div class="tile-body">
+                                    <i class="fa fa-file-excel-o"></i>
+                                </div>
+                                <div class="tile-object text-center">
+                                    {{ trans('general.all') }} {{ trans('general.orders') }} {{ trans('general.cash_on_delivery') }}
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
                     </div>
                 </div>
             </div>
