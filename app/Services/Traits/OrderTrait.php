@@ -239,7 +239,7 @@ trait OrderTrait
                 'net_price' => $request->net_price,
                 'mobile' => $request->mobile,
                 'country' => $user->country->slug,
-                'area' => $request->area ? $request->area : null,
+                'area' => $request->has('area') ? $request->area : 'N/A',
                 'block' => $request->block,
                 'street' => $request->street,
                 'building' => $request->building,
