@@ -148,6 +148,7 @@ class OrderController extends Controller
                 $this->decreaseQty($order);
                 OrderSuccessProcessJob::dispatch($order, $order->user)->delay(now()->addSeconds(15));
                 $markdown = new Markdown(view(), config('mail.markdown'));
+                session()->forget('cart');
                 return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
             } else {
                 dispatch(new sendSuccessOrderEmail($order, $order->user, $contactus))->delay(now()->addSeconds(10));
