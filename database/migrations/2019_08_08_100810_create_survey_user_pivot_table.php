@@ -13,12 +13,11 @@ class CreateSurveyUserPivotTable extends Migration
     public function up()
     {
         Schema::create('survey_user', function (Blueprint $table) {
-            $table->foreignId('survey_id')->references('id')->on('surveys')->onDelete('cascade');
-            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
-//            $table->integer('survey_id')->unsigned()->index()->nullable();
-//            $table->foreign('survey_id')->references('id')->on('surveys')->onDelete('cascade');
-//            $table->integer('user_id')->unsigned()->index()->nullable();
-//            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            Schema::disableForeignKeyConstraints();
+            $table->integer('survey_id')->unsigned()->index()->nullable();
+            $table->foreign('survey_id')->references('id')->on('surveys')->onDelete('cascade');
+            $table->integer('user_id')->unsigned()->index()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->primary(['survey_id', 'user_id']);
         });
     }
