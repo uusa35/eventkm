@@ -4,6 +4,7 @@ namespace App\Exports;
 
 use App\Http\Resources\OrderResource;
 use App\Models\Order;
+use Illuminate\Support\Str;
 use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\WithHeadings;
@@ -77,7 +78,7 @@ class OrderExport implements FromCollection, WithHeadings, WithMapping
             $element->mobile,
             $element->phone,
             $element->notes,
-            parse_str($element->reference_id),
+            (string) $element->reference_id,
             $element->payment_method,
             $element->cash_on_delivery ? 'Yes' : "No",
         ];
