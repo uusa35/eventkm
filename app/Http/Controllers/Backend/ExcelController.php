@@ -21,11 +21,11 @@ class ExcelController extends Controller
         if ($request->has('type')) {
             switch ($request->type) {
                 case 'paid_orders':
-                    Excel::download(new OrderExport(['paid' => true]), 'orders.xlsx');
+                    return Excel::download(new OrderExport(['paid' => true]), 'orders.xlsx');
 //                    Excel::store(new OrderExport(['paid' => true]), storage_path('uploads/files/orders.xlsx'));
                     break;
                 case 'cash_on_deliver_orders':
-                    Excel::download(new OrderExport(['cash_on_delivery' => true]), 'orders.xlsx');
+                    return Excel::download(new OrderExport(['cash_on_delivery' => true]), 'orders.xlsx');
                     break;
                 case 2:
                     echo "i equals 2";
