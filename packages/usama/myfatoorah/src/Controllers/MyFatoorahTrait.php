@@ -35,7 +35,7 @@ trait MyFatoorahTrait
                 $elements = $this->createPaymentUrl($order, $user, $access_token);
                 $referenceId = $elements[0];
                 $paymentUrl = $elements[1];
-                if (!empty($referenceId) && strlen($referenceId) > 10) {
+                if (!empty($referenceId) && strlen($referenceId) > 3) {
                     if (empty($order->reference_id) && $order->order_metas->count() > 0) {
                         $order->update(['reference_id' => $referenceId]);
                     } elseif ($order->order_metas->count() > 0) {
@@ -100,7 +100,7 @@ trait MyFatoorahTrait
             $json1 = json_decode($result1, true);
             $RedirectUrl = $json1['RedirectUrl'];
             $ref_Ex = explode('/', $RedirectUrl);
-            $referenceId = $ref_Ex[4];
+            $referenceId = $json1['Id'];
             curl_close($soap_do);
             return [$referenceId, $RedirectUrl];
         } catch (\Exception $e) {
@@ -180,7 +180,7 @@ trait MyFatoorahTrait
         $file_contents = htmlspecialchars(curl_exec($soap_do1));
         curl_close($soap_do1);
         $getRecorById = json_decode($result_in, true);
-        return $getRecorById['InvoiceId'];
+        return $getRecorById['OrderId'];
     }
 
     public function clearCart()

@@ -11,7 +11,7 @@ Route::group(['middleware' => 'api'], function () {
 
 
 Route::group(['middleware' => ['web', 'auth']], function () {
-    Route::post('myfatoorah/payment', 'Usama\MyFatoorah\MyFatoorahPaymentController@makePaymenmyfatoorah/paymentt')->name('myfatoorah.web.payment.create');
+    Route::post('myfatoorah/payment', 'Usama\MyFatoorah\MyFatoorahPaymentController@makePayment')->name('myfatoorah.web.payment.create');
 });
 Route::group(['middleware' => ['web']], function () {
     Route::get('myfatoorah/result', 'Usama\MyFatoorah\MyFatoorahPaymentController@result')->name('myfatoorah.web.payment.result');
