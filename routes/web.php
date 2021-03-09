@@ -114,8 +114,6 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('package', 'ShipmentPackageController');
     Route::resource('collection', 'CollectionController');
     Route::resource('post', 'PostController');
-    Route::get('trashed/product', 'ProductController@trashed')->name('product.trashed');
-    Route::get('restore/product/{id}', 'ProductController@restore')->name('product.restore');
     Route::resource('excel','ExcelController');
 //    Route::get('testing', function () {
 //        $order = Order::first();
