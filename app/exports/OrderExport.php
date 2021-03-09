@@ -78,7 +78,7 @@ class OrderExport implements FromCollection, WithHeadings, WithMapping
             $element->mobile,
             $element->phone,
             $element->notes,
-            (string) $element->reference_id,
+            (string)str_limit($element->reference_id, 15),
             $element->payment_method,
             $element->cash_on_delivery ? 'Yes' : "No",
         ];
