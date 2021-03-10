@@ -100,7 +100,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::get('trashed/classified', 'ClassifiedController@trashed')->name('classified.trashed');
     Route::get('restore/classified/{id}', 'ClassifiedController@restore')->name('classified.restore');
     Route::get('property/attach', 'PropertyController@getAttach')->name('property.attach');
-    Route::post('property/attach', 'PropertyController@postAttach')->name('property.attach');
+    Route::post('property/attach', 'PropertyController@postAttach')->name('property.attach.post');
     Route::get('property/dettach', 'PropertyController@detach')->name('property.detach');
     Route::resource('slide', 'SlideController');
     Route::get('trashed/slide', 'SlideController@trashed')->name('slide.trashed');

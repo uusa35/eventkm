@@ -11,7 +11,7 @@
             @include('backend.partials._admin_instructions',['title' => trans('general.property') ,'message' =>
             trans('message.attach_property')])
             <div class="portlet-body form">
-                <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.property.attach') }}"
+                <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.property.attach.post') }}"
                       enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="id" value="{{ $element->id }}">
