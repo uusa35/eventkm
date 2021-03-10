@@ -13,15 +13,17 @@
 
 <body>
 @if(env('GOOGLE_TRANSLATE_FEATURE'))
-<div style="position: absolute; top: 0px; left: 0px;" id="google_translate_element"></div>
+    <div style="position: absolute; top: 0px; left: 0px;" id="google_translate_element"></div>
 @endif
 @include('frontend.wokiee.four.partials.loader')
 
-@if(!env('MOBILE_LAYOUT'))
+
 @section('header')
-    @include('frontend.wokiee.four.partials.header')
+    @if(!env('MOBILE_LAYOUT'))
+        @include('frontend.wokiee.four.partials.header')
+    @endif
 @show
-@endif
+
 @section('content')
 @section('breadcrumbs')
 @show
@@ -32,7 +34,9 @@
 @show
 
 @section('footer')
-    @include('frontend.wokiee.four.partials.footer')
+    @if(!env('MOBILE_LAYOUT'))
+        @include('frontend.wokiee.four.partials.footer')
+    @endif
 @show
 @if(!env('MOBILE_LAYOUT'))
 @section('models')

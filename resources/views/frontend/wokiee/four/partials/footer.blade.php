@@ -1,4 +1,4 @@
-@if(!env('MOBILE_LAYOUT'))
+
     <footer>
         @if(!env('EVENTKM'))
             {{--<footer class="nomargin">--}}
@@ -199,7 +199,6 @@
             </div>
         </div>
     </footer>
-@endif
 <a href="#" class="tt-back-to-top">{{ trans('general.back_to_top') }}</a>
 @if($settings->whatsapp)
     <a href="https://api.whatsapp.com/send?phone={{ $settings->whatsapp }}&text={{ env('APP_NAME') }}"
