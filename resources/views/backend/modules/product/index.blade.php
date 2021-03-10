@@ -42,7 +42,7 @@
                                             <div class="col-md-offset-3 col-md-9">
                                                 <button type="submit"
                                                         class="btn  green">{{ trans('general.search') }}</button>
-                                                <a href="{{ route('backend.admin.product.index') }}"
+                                                <a href="{{ route('backend.product.index') }}"
                                                    class="btn  red">{{ trans('general.remove') }}</a>
                                             </div>
                                         </div>

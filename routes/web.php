@@ -20,7 +20,6 @@ use Illuminate\Support\Facades\Notification;
 Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth', 'onlyActiveUsers', 'country', 'dashboard']], function () {
     // Backend :: super + admin
     Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['admin']], function () {
-        Route::resource('product', 'ProductController');
         Route::get('search/product', 'ProductController@search')->name('product.search');
         Route::resource('activity', 'ActivityController');
         Route::resource('role', 'RoleController');
