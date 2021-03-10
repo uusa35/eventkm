@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Notification;
 Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth', 'onlyActiveUsers', 'country', 'dashboard']], function () {
     // Backend :: super + admin
     Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['admin']], function () {
+        Route::resource('product', 'ProductController');
+        Route::get('search/product', 'ProductController@search')->name('product.search');
         Route::resource('activity', 'ActivityController');
         Route::resource('role', 'RoleController');
         Route::resource('privilege', 'PrivilegeController');
@@ -75,8 +77,6 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('item', 'ItemController');
         Route::get('trashed/item', 'ItemController@trashed')->name('item.trashed');
         Route::get('restore/item/{id}', 'ItemController@restore')->name('item.restore');
-        Route::resource('product', 'ProductController');
-        Route::get('search/product', 'ProductController@search')->name('product.search');
     });
     // Backend :: companies // Designers accordingly
     Route::get('/', 'HomeController@index')->name('index');
