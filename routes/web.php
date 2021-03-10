@@ -147,7 +147,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
     Route::get('cart/clear', 'CartController@clearCart')->name('cart.clear');
     Route::post('cart/coupon', 'CartController@applyCoupon')->name('cart.coupon');
     Route::get('cart/checkout', 'CartController@getCheckout')->name('cart.checkout');
-    Route::post('cart/checkout', 'CartController@postCheckout')->name('cart.checkout');
+    Route::post('cart/checkout', 'CartController@postCheckout')->name('cart.checkout.post');
     Route::post('cart/store', 'CartController@checkout')->name('cart.store');
     Route::resource('cart', 'CartController')->only(['index', 'show']);
     // checkout.review is order.show
