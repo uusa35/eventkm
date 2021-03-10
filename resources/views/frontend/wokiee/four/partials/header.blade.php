@@ -1,14 +1,16 @@
 <header>
-    @include('frontend.wokiee.four.partials._top_bar')
+@include('frontend.wokiee.four.partials._top_bar')
 
 {{--    @include('frontend.wokiee.four.partials._mobile_categories_menu')--}}
 
-    @include('frontend.wokiee.four.partials._mobile_menu')
+@include('frontend.wokiee.four.partials._mobile_menu')
 
-    @include('frontend.wokiee.four.partials._mobile_header')
+@include('frontend.wokiee.four.partials._mobile_header')
 
+@if(!env('MOBILE_LAYOUT'))
     @include('frontend.wokiee.four.partials._main_menu')
-    <!-- /tt-desktop-header -->
+@endif
+<!-- /tt-desktop-header -->
     <!-- stuck nav -->
     <div class="tt-stuck-nav">
         <div class="container">
