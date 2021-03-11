@@ -219,7 +219,7 @@ class UserController extends Controller
                 return $q->active()->notExpired()->hasImage()->available()->with('items.property', 'items.categoryGroup');
             }])->with(['myFannedList' => function ($q) {
                 return $q->active()->companies();
-            }])->with('addresses')->first();
+            }])->with('addresses','role')->first();
             if ($element) {
                 $request->has('player_id') ? $element->update(['player_id' => $request->player_id]) : null;
                 return response()->json(new UserResource($element), 200);
@@ -240,7 +240,7 @@ class UserController extends Controller
             return $q->active()->notExpired()->hasImage()->available()->with('items.property', 'items.categoryGroup');
         }])->with(['myFannedList' => function ($q) {
             return $q->active()->companies();
-        }])->with('addresses')->first();
+        }])->with('addresses','role')->first();
         if ($element) {
             $request->has('player_id') ? $element->update(['player_id' => $request->player_id]) : null;
             return response()->json(new UserResource($element), 200);
