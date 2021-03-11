@@ -88,6 +88,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('product', 'ProductController');
     Route::get('product/trashed', 'ProductController@trashed')->name('product.trashed');
     Route::get('product/restore/{id}', 'ProductController@restore')->name('product.restore');
+    Route::get('search/product', 'ProductController@search')->name('product.search');
     Route::resource('attribute', 'ProductAttributeController');
     Route::get('trashed/attribute', 'ProductAttributeController@trashed')->name('attribute.trashed');
     Route::resource('service', 'ServiceController');
@@ -112,7 +113,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('collection', 'CollectionController');
     Route::resource('post', 'PostController');
     Route::resource('excel','ExcelController');
-    Route::get('search/product', 'ProductController@search')->name('product.search')
+
 });
 
 Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['country']], function () {
