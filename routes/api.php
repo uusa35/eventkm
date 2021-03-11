@@ -89,22 +89,10 @@ Route::get('colors', function () {
     ])->with('color')->get()->pluck('color')->unique()->pluck('id')->toArray();
 });
 
-Route::get('qty', function () {
-    $elements = ProductAttribute::where([
-        'product_id' => request()->product_id,
-        'size_id' => request()->size_id,
-    ])->select('id', 'color_id', 'qty')->get();
-    return response()->json($elements, 200);
-});
+Route::get('qty', 'Api\ProductController@getQty');
 
 // getList of colors according to size for ProductShowScreen
-Route::get('color/list', function () {
-    dd('here');
-    $colorIds = ProductAttribute::where(['product_id' => request()->product_id, 'size_id' => request()->size_id])->get()->pluck('color_id')->toArray();
-    $colors = Color::active()->whereIn('id', $colorIds)->orderBy('name_en', 'asc')->groupBy('id')->get();
-    dd($colors);
-    return response()->json(ColorLightResource::collection($colors), 200);
-});
+Route::get('color/list', 'Api\ProductController@getColorList');
 
 // get ProductAttribute according to size and color selected in ProductShowScrren
 Route::get('attribute/qty', function () {

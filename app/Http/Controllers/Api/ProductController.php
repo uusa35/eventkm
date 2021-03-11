@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Resources\ColorLightResource;
 use App\Http\Resources\ProductCartResource;
 use App\Http\Resources\ProductExtraLightResource;
 use App\Http\Resources\ProductLightResource;
 use App\Http\Resources\ProductResource;
 use App\Jobs\IncreaseElementViews;
+use App\Models\Color;
 use App\Models\Product;
+use App\Models\ProductAttribute;
 use App\Models\User;
 use App\Services\Search\Filters;
 use Illuminate\Http\Request;
@@ -147,5 +150,19 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getQty() {
+        $elements = ProductAttribute::where([
+            'product_id' => request()->product_id,
+            'size_id' => request()->size_id,
+        ])->select('id', 'color_id', 'qty')->get();
+        return response()->json($elements, 200);
+    }
+
+    public function getColorList() {
+        $colorIds = ProductAttribute::where(['product_id' => request()->product_id, 'size_id' => request()->size_id])->get()->pluck('color_id')->toArray();
+        $colors = Color::active()->whereIn('id', $colorIds)->orderBy('name_en', 'asc')->groupBy('id')->get();
+        return response()->json(ColorLightResource::collection($colors), 200);
     }
 }
