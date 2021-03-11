@@ -20,7 +20,7 @@
                         </div>
                             <div class="portlet-body form">
                                 <!-- BEGIN FORM-->
-                                <form action="{{ route('backend.admin.product.search') }}" class="form-horizontal">
+                                <form action="{{ route('backend.product.search') }}" class="form-horizontal">
                                     <div class="form-body">
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">{{ trans("general.search") }}</label>
