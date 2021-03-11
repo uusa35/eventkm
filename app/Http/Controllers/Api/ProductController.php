@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Resources\ColorLightResource;
+use App\Http\Resources\ProductAttributeLightResource;
 use App\Http\Resources\ProductCartResource;
 use App\Http\Resources\ProductExtraLightResource;
 use App\Http\Resources\ProductLightResource;
@@ -160,9 +161,30 @@ class ProductController extends Controller
         return response()->json($elements, 200);
     }
 
+    public function getColors() {
+        return ProductAttribute::where([
+            'product_id' => request()->product_id,
+            'size_id' => request()->size_id,
+        ])->with('color')->get()->pluck('color')->unique()->pluck('id')->toArray();
+    }
+
     public function getColorList() {
         $colorIds = ProductAttribute::where(['product_id' => request()->product_id, 'size_id' => request()->size_id])->get()->pluck('color_id')->toArray();
         $colors = Color::active()->whereIn('id', $colorIds)->orderBy('name_en', 'asc')->groupBy('id')->get();
         return response()->json(ColorLightResource::collection($colors), 200);
+    }
+
+    public function getAttributeQty() {
+        $productAttribute = ProductAttribute::where(['product_id' => request()->product_id, 'size_id' => request()->size_id, 'color_id' => request()->color_id])->first();
+        return response()->json(new ProductAttributeLightResource($productAttribute), 200);
+    }
+
+    public function getAttributes() {
+        $product = Product::whereId(request()->product_id)->with('product_attributes.color', 'product_attributes.size')->first();
+        if ($product && $product->hasRealAttributes) {
+            $attributes = ProductAttribute::where('product_id', request()->product_id)->with('color', 'size')->get();
+            return response()->json(ProductAttributeLightResource::collection($attributes), 200);
+        }
+        return response()->json(['message' => 'no_attributes'], 200);
     }
 }

@@ -82,12 +82,7 @@ Route::resource('order', 'Api\OrderController')->only(['store']);
 //    return response()->json($productAttribute, 200);
 //});
 
-Route::get('colors', function () {
-    return ProductAttribute::where([
-        'product_id' => request()->product_id,
-        'size_id' => request()->size_id,
-    ])->with('color')->get()->pluck('color')->unique()->pluck('id')->toArray();
-});
+Route::get('colors', 'Api\ProductController@getColors');
 
 Route::get('qty', 'Api\ProductController@getQty');
 
@@ -95,20 +90,10 @@ Route::get('qty', 'Api\ProductController@getQty');
 Route::get('color/list', 'Api\ProductController@getColorList');
 
 // get ProductAttribute according to size and color selected in ProductShowScrren
-Route::get('attribute/qty', function () {
-    $productAttribute = ProductAttribute::where(['product_id' => request()->product_id, 'size_id' => request()->size_id, 'color_id' => request()->color_id])->first();
-    return response()->json(new ProductAttributeLightResource($productAttribute), 200);
-});
+Route::get('attribute/qty', 'Api\ProductController@getAttributeQty');
 
 // homekey special routes
 //Route::resource('homekey/category', 'Api\Homekey\CategoryController')->only(['index', 'show']);
-Route::post('attributes', function () {
-    $product = Product::whereId(request()->product_id)->with('product_attributes.color', 'product_attributes.size')->first();
-    if ($product && $product->hasRealAttributes) {
-        $attributes = ProductAttribute::where('product_id', request()->product_id)->with('color', 'size')->get();
-        return response()->json(ProductAttributeLightResource::collection($attributes), 200);
-    }
-    return response()->json(['message' => 'no_attributes'], 200);
-});
+Route::post('attributes', 'Api\ProductController@getAttributes');
 
 
