@@ -99,6 +99,7 @@ Route::get('qty', function () {
 
 // getList of colors according to size for ProductShowScreen
 Route::get('color/list', function () {
+    dd('here');
     $colorIds = ProductAttribute::where(['product_id' => request()->product_id, 'size_id' => request()->size_id])->get()->pluck('color_id')->toArray();
     $colors = Color::active()->whereIn('id', $colorIds)->orderBy('name_en', 'asc')->groupBy('id')->get();
     dd($colors);
