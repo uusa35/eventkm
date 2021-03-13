@@ -155,7 +155,6 @@ class UserController extends Controller
                 'mobile' => 'required|min:5|max:20',
                 'country_id' => 'required|exists:countries,id',
                 'address' => 'max:500|nullable',
-                'description' => 'max:1000|nullable'
             ]);
             if ($validate->fails()) {
                 return response()->json(['message' => $validate->errors()->first()], 400);
