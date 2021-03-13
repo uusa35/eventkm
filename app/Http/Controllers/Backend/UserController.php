@@ -12,6 +12,7 @@ use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Nexmo\Laravel\Facade\Nexmo;
 
 class UserController extends Controller
 {

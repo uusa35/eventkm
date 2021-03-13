@@ -34,7 +34,7 @@ Route::group(['namespace' => 'Api'], function () {
         Route::resource('comment', 'CommentController')->only(['store']);
         Route::post('reauthenticate', 'UserController@reAuthenticate');
         Route::resource('classified', 'ClassifiedController')->only(['store', 'update', 'destroy']);
-        Route::resource('address','AddressController')->only(['store','update','destroy']);
+        Route::resource('address', 'AddressController')->only(['store', 'update', 'destroy']);
     });
     Route::get('location/address', 'GeoLocationController@getAddressFromLocation')->name('location.address');
     Route::get('country/ip', 'CountryController@getUserCountry');
@@ -75,6 +75,7 @@ Route::group(['namespace' => 'Api'], function () {
         return response()->json(['message' => $request->message, 'id' => $request->id], 200);
 
     });
+    Route::get('mobile/code/{code}', 'UserController@verifyMobileCode');
 });
 Route::resource('order', 'Api\OrderController')->only(['store']);
 //Route::get('size', function () {

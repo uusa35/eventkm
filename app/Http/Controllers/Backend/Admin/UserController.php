@@ -14,6 +14,7 @@ use App\Services\Traits\ImageHelpers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Nexmo\Laravel\Facade\Nexmo;
 
 class UserController extends Controller
 {
@@ -39,7 +40,6 @@ class UserController extends Controller
         }
         return view('backend.modules.user.index', compact('elements'));
     }
-
 
     /**
      * Show the form for creating a new resource.

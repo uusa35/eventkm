@@ -11,47 +11,44 @@ use App\Models\User;
 use App\Notifications\OrderPaid;
 use Illuminate\Mail\Markdown;
 use Illuminate\Support\Facades\Mail;
+use Nexmo\Laravel\Facade\Nexmo;
 
 class UserObserver
 {
     /**
      * Handle the user "created" event.
      *
-     * @param \App\User $user
+     * @param \App\User $element
      * @return void
      */
-    public function created(User $user)
+    public function created(User $element)
     {
         activity()
-            ->performedOn($user)
+            ->performedOn($element)
             ->causedBy(auth()->user())
-            ->log(strtoupper(class_basename($user)) . ' ' . __FUNCTION__);
-//        $markdown = new Markdown(view(), config('mail.markdown'));
-//        return $markdown->render('emails.new_user', ['user' => $user, 'settings' => Setting::first()]);
-//        $user->notify(new OrderPaid());
-        $user->addresses()->create([
+            ->log(strtoupper(class_basename($element)) . ' ' . __FUNCTION__);
+        $element->addresses()->create([
             'name' => 'address_one',
-            'content' => $user->address,
-            'block' => $user->block,
-            'street' => $user->street,
-            'apartment' => $user->apartment,
-            'floor' => $user->floor,
-            'building' => $user->building,
-            'country_name' => $user->country_name,
-            'area' => $user->area,
-            'country_id' => $user->country_id,
+            'content' => $element->address,
+            'block' => $element->block,
+            'street' => $element->street,
+            'apartment' => $element->apartment,
+            'floor' => $element->floor,
+            'building' => $element->building,
+            'country_name' => $element->country_name,
+            'area' => $element->area,
+            'country_id' => $element->country_id,
         ]);
         if (env('MAIL_ENABLED')) {
-            Mail::to($user->email)->send(new WelcomeNewUser($user));
+            Mail::to($element->email)->send(new WelcomeNewUser($element));
         }
-        if(env('SMS_ENABLED')) {
-            $basic  = new \Nexmo\Client\Credentials\Basic('d941ec2e', 'JtfpG03IS5PDDKYz');
-            $client = new \Nexmo\Client($basic);
-
-            $message = $client->message()->send([
+        if (env('SMS_ENABLED') && env('NEXMO_KEY') && $element->mobile) {
+            $code = random_int(1111, 9999);
+            $element->update(['mobile_code' => $code]);
+            Nexmo::message()->send([
                 'to' => '96565772444',
-                'from' => 'Vonage APIs',
-                'text' => 'Hello from Vonage SMS API'
+                'from' => env('APP_NAME'),
+                'text' => 'Welcome to .' .env('APP_NAME'). ' your verification code is '. $code
             ]);
         }
 
@@ -60,42 +57,42 @@ class UserObserver
     /**
      * Handle the user "updated" event.
      *
-     * @param \App\User $user
+     * @param \App\User $element
      * @return void
      */
-    public function updated(User $user)
+    public function updated(User $element)
     {
-        activity()->performedOn($user)
+        activity()->performedOn($element)
             ->causedBy(auth()->user())
-            ->log(strtoupper(class_basename($user)) . ' ' . __FUNCTION__);
-        $address = Address::where(['user_id' => $user->id, 'name' => 'address_one'])->first();
+            ->log(strtoupper(class_basename($element)) . ' ' . __FUNCTION__);
+        $address = Address::where(['user_id' => $element->id, 'name' => 'address_one'])->first();
         if ($address) {
             $address->update([
                 'name' => 'address_one',
-                'content' => $user->address,
-                'block' => $user->block,
-                'street' => $user->street,
-                'apartment' => $user->apartment,
-                'floor' => $user->floor,
-                'building' => $user->building,
-                'country_name' => $user->country_name,
-                'area' => $user->area,
-                'country_id' => $user->country_id,
-                'user_id' => $user->id,
+                'content' => $element->address,
+                'block' => $element->block,
+                'street' => $element->street,
+                'apartment' => $element->apartment,
+                'floor' => $element->floor,
+                'building' => $element->building,
+                'country_name' => $element->country_name,
+                'area' => $element->area,
+                'country_id' => $element->country_id,
+                'user_id' => $element->id,
             ]);
         } else {
             Address::create([
                 'name' => 'address_one',
-                'content' => $user->address,
-                'block' => $user->block,
-                'street' => $user->street,
-                'apartment' => $user->apartment,
-                'floor' => $user->floor,
-                'building' => $user->building,
-                'country_name' => $user->country_name,
-                'area' => $user->area,
-                'country_id' => $user->country_id,
-                'user_id' => $user->id,
+                'content' => $element->address,
+                'block' => $element->block,
+                'street' => $element->street,
+                'apartment' => $element->apartment,
+                'floor' => $element->floor,
+                'building' => $element->building,
+                'country_name' => $element->country_name,
+                'area' => $element->area,
+                'country_id' => $element->country_id,
+                'user_id' => $element->id,
             ]);
         }
     }

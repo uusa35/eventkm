@@ -60,7 +60,7 @@ class UserController extends Controller
         if ($validator->fails()) {
             return response()->json(['message' => $validator->errors()->first()], 400);
         }
-        if(request()->has('is_celebrity')) {
+        if (request()->has('is_celebrity')) {
             $elements = $this->element->filters($filters)->active()->notAdmins()->orderBy('id', 'desc')->paginate(env('EXPO') ? self::TAKE : self::TAKE_MIN);
         } else {
             $elements = $this->element->filters($filters)->active()->notAdmins()->hasProducts()->orderBy('id', 'desc')->paginate(env('EXPO') ? self::TAKE : self::TAKE_MIN);
@@ -209,17 +209,7 @@ class UserController extends Controller
         }
         $authenticate = auth()->attempt($request->only('email', 'password'));
         if ($authenticate) {
-            $element = $this->element->where(['email' => $request->email])->with(['product_favorites' => function ($q) {
-                return $q->active()->hasImage()->available()->hasAtLeastOneCategory();
-            }])->with(['orders' => function ($q) {
-                return $q->paid()->orderBy('id','desc');
-            }])->with(['classified_favorites' => function ($q) {
-                return $q->active()->notExpired()->hasImage()->available()->with('items.property', 'items.categoryGroup');
-            }])->with(['country', 'collections'])->with(['classifieds' => function ($q) {
-                return $q->active()->notExpired()->hasImage()->available()->with('items.property', 'items.categoryGroup');
-            }])->with(['myFannedList' => function ($q) {
-                return $q->active()->companies();
-            }])->with('addresses','role')->first();
+            $element = $this->getAuthenticatedUser('email', $request->email);
             if ($element) {
                 $request->has('player_id') ? $element->update(['player_id' => $request->player_id]) : null;
                 return response()->json(new UserResource($element), 200);
@@ -230,17 +220,7 @@ class UserController extends Controller
 
     public function reAuthenticate(Request $request)
     {
-        $element = $this->element->whereId($request->user()->id)->with(['product_favorites' => function ($q) {
-            return $q->active()->hasStock()->hasImage()->available()->hasAtLeastOneCategory();
-        }])->with(['orders' => function ($q) {
-            return $q->paid()->orderBy('id','desc');
-        }])->with(['classified_favorites' => function ($q) {
-            return $q->active()->notExpired()->hasImage();
-        }])->with(['country', 'collections'])->with(['classifieds' => function ($q) {
-            return $q->active()->notExpired()->hasImage()->available()->with('items.property', 'items.categoryGroup');
-        }])->with(['myFannedList' => function ($q) {
-            return $q->active()->companies();
-        }])->with('addresses','role')->first();
+        $element = $this->getAuthenticatedUser('id', $request->user()->id);
         if ($element) {
             $request->has('player_id') ? $element->update(['player_id' => $request->player_id]) : null;
             return response()->json(new UserResource($element), 200);
@@ -319,5 +299,37 @@ class UserController extends Controller
         } catch (\Exception $e) {
             return response()->json(['message' => trans('message.register_unknwon_error')], 400);
         }
+    }
+
+    public function verifyMobileCode(Request $request)
+    {
+        $validate = validator($request->all(), [
+            'name' => 'required|min:3|max:200',
+            'email' => 'required|email',
+        ]);
+        if ($validate->fails()) {
+            return response()->json(['message' => $validate->errors()->first()], 400);
+        }
+        $element = $this->getAuthenticatedUser('mobile_code', $request->code);
+        if ($element) {
+            $element->update(['mobile_verified' => true]);
+            return response()->json(new UserResource($element), 200);
+        }
+        return response()->json(['message' => trans('message.invalid_username_or_password')], 400);
+    }
+
+    public function getAuthenticatedUser($colName, $value)
+    {
+        return $this->element->where([$colName => $value])->with(['product_favorites' => function ($q) {
+            return $q->active()->hasStock()->hasImage()->available()->hasAtLeastOneCategory();
+        }])->with(['orders' => function ($q) {
+            return $q->paid()->orderBy('id', 'desc');
+        }])->with(['classified_favorites' => function ($q) {
+            return $q->active()->notExpired()->hasImage();
+        }])->with(['country', 'collections'])->with(['classifieds' => function ($q) {
+            return $q->active()->notExpired()->hasImage()->available()->with('items.property', 'items.categoryGroup');
+        }])->with(['myFannedList' => function ($q) {
+            return $q->active()->companies();
+        }])->with('addresses', 'role')->first();
     }
 }
