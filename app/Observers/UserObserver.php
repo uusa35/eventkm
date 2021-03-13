@@ -44,6 +44,16 @@ class UserObserver
         if (env('MAIL_ENABLED')) {
             Mail::to($user->email)->send(new WelcomeNewUser($user));
         }
+        if(env('SMS_ENABLED')) {
+            $basic  = new \Nexmo\Client\Credentials\Basic('d941ec2e', 'JtfpG03IS5PDDKYz');
+            $client = new \Nexmo\Client($basic);
+
+            $message = $client->message()->send([
+                'to' => '96565772444',
+                'from' => 'Vonage APIs',
+                'text' => 'Hello from Vonage SMS API'
+            ]);
+        }
 
     }
 
