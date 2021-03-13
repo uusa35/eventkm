@@ -65,6 +65,7 @@ class UserResource extends JsonResource
             'isFanned' => auth('api')->user() ? in_array(auth('api')->user()->id,$this->fans->pluck('id')->toArray()) : false,
             'totalFans' => $this->totalFans > 0 ? $this->totalFans : 1,
             'views' => (integer) $this->views,
+            'mobile_verified' => $this->mobile_verified,
             'videoGroup'=> [
                 'video_url_one' => $this->video_url_one,
                 'video_url_two' => $this->video_url_two,

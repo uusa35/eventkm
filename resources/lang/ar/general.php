@@ -1075,5 +1075,5 @@ return array (
   'links' => 'روابط',
   'google_play' => 'جوجل بلاي',
   'apple' => 'أبل',
-    "welcome_ur_code_is" => "مرحبا، كود التفعيل الخاص بك  :code"
+    "invalid_verification_code" => "الكود الذي ادخلته غير صحيح"
 );

@@ -75,7 +75,7 @@ Route::group(['namespace' => 'Api'], function () {
         return response()->json(['message' => $request->message, 'id' => $request->id], 200);
 
     });
-    Route::get('mobile/code/{code}', 'UserController@verifyMobileCode');
+    Route::get('mobile/code', 'UserController@verifyMobileCode');
 });
 Route::resource('order', 'Api\OrderController')->only(['store']);
 //Route::get('size', function () {

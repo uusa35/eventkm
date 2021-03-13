@@ -620,11 +620,11 @@ return array (
   'services' => 'Services',
   'users' => 'Users',
   'coupons' => 'coupons',
-  'BACKEND' => 
+  'BACKEND' =>
   array (
-    'ADMIN' => 
+    'ADMIN' =>
     array (
-      'QUESTIONNAIRE' => 
+      'QUESTIONNAIRE' =>
       array (
         'INDEX' => 'Questionnaires',
       ),
@@ -867,4 +867,5 @@ return array (
   'links' => 'Links',
   'google_play' => 'Google Play',
   'apple' => 'Apple',
+    "invalid_verification_code" => "Verification Code is not correct."
 );

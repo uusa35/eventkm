@@ -304,8 +304,7 @@ class UserController extends Controller
     public function verifyMobileCode(Request $request)
     {
         $validate = validator($request->all(), [
-            'name' => 'required|min:3|max:200',
-            'email' => 'required|email',
+            'code' => 'required|min:4',
         ]);
         if ($validate->fails()) {
             return response()->json(['message' => $validate->errors()->first()], 400);
@@ -315,7 +314,7 @@ class UserController extends Controller
             $element->update(['mobile_verified' => true]);
             return response()->json(new UserResource($element), 200);
         }
-        return response()->json(['message' => trans('message.invalid_username_or_password')], 400);
+        return response()->json(['message' => trans('general.invalid_verification_code')], 400);
     }
 
     public function getAuthenticatedUser($colName, $value)
