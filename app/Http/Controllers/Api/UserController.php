@@ -178,6 +178,7 @@ class UserController extends Controller
                     ]);
                 }
                 $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1000', '1000'], true) : null;
+                $element = $this->getAuthenticatedUser('id', $id);
                 return response()->json(new UserResource($element), 200);
             }
             return response()->json(['message' => trans('message.user_not_updated_successfully')], 400);
