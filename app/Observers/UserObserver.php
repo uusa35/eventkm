@@ -46,7 +46,7 @@ class UserObserver
             $code = random_int(1111, 9999);
             $element->update(['mobile_code' => $code]);
             Nexmo::message()->send([
-                'to' => '96565772444',
+                'to' => $element->fullMobile,
                 'from' => env('APP_NAME'),
                 'text' => 'Welcome to ' .env('APP_NAME'). ' your verification code is : '. $code .' - '
             ]);
