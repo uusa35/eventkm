@@ -74,6 +74,7 @@ class SettingResource extends JsonResource
                 'menu_theme_bg' => $this->menu_theme_bg,
             ],
             'images' => ImageLightResource::collection($this->whenLoaded('images')),
+            'mobileVerification' => env('SMS_ENABLED')
         ];
     }
 }
