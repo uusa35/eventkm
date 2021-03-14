@@ -13,6 +13,7 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('posts');
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title_ar')->nullable();
