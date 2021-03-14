@@ -88,6 +88,7 @@ class ProductController extends Controller
                 'name' => 'required|min:3|max:200',
                 'sku' => 'required|min:2',
                 'price' => 'required|min:2',
+                'qty' => 'required|digits_between:1,20',
                 'description' => 'required|min:3|max:200',
             'categories' => 'array',
             ]);
@@ -107,7 +108,7 @@ class ProductController extends Controller
                 'color_id' => Color::first()->id,
                 'has_attributes' => false,
                 'show_attributes' => true,
-                'qty' => 1,
+                'qty' => $request->qty,
                 'active' => true
             ]);
             if ($element) {
