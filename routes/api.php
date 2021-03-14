@@ -44,7 +44,7 @@ Route::group(['namespace' => 'Api'], function () {
     Route::get('google/authenticate', 'UserController@googleAuthenticate');
     Route::post('register', 'UserController@register');
     Route::resource('category', 'CategoryController')->only(['index', 'show']);
-    Route::resource('product', 'ProductController')->only(['index', 'show']);
+    Route::resource('product', 'ProductController')->only(['index', 'show','store','update']);
     Route::resource('collection', 'CollectionController')->only(['index', 'show']);
     Route::resource('classified', 'ClassifiedController');
     Route::resource('service', 'ServiceController')->only(['index', 'show']);

@@ -12,6 +12,7 @@ use App\Jobs\IncreaseElementViews;
 use App\Models\Color;
 use App\Models\Product;
 use App\Models\ProductAttribute;
+use App\Models\Size;
 use App\Models\User;
 use App\Services\Search\Filters;
 use Illuminate\Http\Request;
@@ -82,7 +83,38 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = validator($request->all(), [
+            'name' => 'required|min:3|max:200',
+            'sku' => 'required|min:2',
+            'price' => 'required|min:2',
+            'description' => 'required|min:3|max:200',
+            'user_id' => 'required|exists:users,id'
+        ]);
+        if ($validate->fails()) {
+            return response()->json(['message' => $validate->errors()->first()], 400);
+        }
+        $element = Product::create([
+            'name_ar' => $request->name,
+            'name_en' => $request->name,
+            'skue' => $request->sku,
+            'price' => $request->price,
+            'sale_price' => $request->sale_price,
+            'user_id' => $request->user()->id,
+            'country_id' => $request->country_id,
+            'description_ar' => $request->description,
+            'description_en' => $request->description,
+            'size_id' => Size::first()->id,
+            'color_id' => Color::first()->id,
+            'has_attributes' => false,
+            'show_attributes' => true,
+            'active' => true
+        ]);
+        if ($element) {
+            $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1080', '1440'], true) : null;
+            $request->has('images') ? $this->saveGallery($element, $request, 'images', ['1080', '1440'], true) : null;
+            return response()->json(new ProductResource($element), 200);
+        }
+        return resopnse()->json(['message' => trans('message.item_not_created')], 400);
     }
 
     /**
