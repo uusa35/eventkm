@@ -108,7 +108,7 @@ class ProductController extends Controller
                 'size_id' => Size::first()->id,
                 'color_id' => Color::first()->id,
                 'has_attributes' => false,
-                'show_attribute' => true,
+                'show_attribute' => false,
                 'is_available' => true,
                 'qty' => $request->qty,
                 'active' => true
