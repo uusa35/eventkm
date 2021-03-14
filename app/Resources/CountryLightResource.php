@@ -21,7 +21,7 @@ class CountryLightResource extends JsonResource
             'country_code' => $this->country_code,
             'thumb' => $this->imageThumbLink,
             'currency_symbol' => $this->currency_symbol,
-            'fixed_shipment_charge' => $this->fixed_shipment_charge,
+            'fixed_shipment_charge' => (float) $this->fixed_shipment_charge,
             'is_local' => $this->is_local,
             'currency' => CurrencyLightResource::make($this->whenLoaded('currency')),
             'areas' => AreaLightResource::collection($this->whenLoaded('areas'))
