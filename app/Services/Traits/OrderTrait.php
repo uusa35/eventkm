@@ -255,6 +255,7 @@ trait OrderTrait
                 'cash_on_delivery' => $request->cash_on_delivery,
             ]);
             if ($order) {
+                $settings = Setting::first();
                 foreach ($request->cart as $item) {
                     if ($item['type'] === 'product') {
                         $product = Product::whereId($item['product_id'])->first();
@@ -265,12 +266,13 @@ trait OrderTrait
                             'product_attribute_id' => $product->hasRealAttributes ? $item['product_attribute_id'] : null,
                             'collection_id' => $request->collection_id,
                             'qty' => $item['qty'],
-                            'price' => $item['element']['finalPrice'],
+                            'price' => $item['wrapGift'] ? (float) $item['element']['finalPrice'] + (float) $settings->gift_fee : (float) $item['element']['finalPrice'],
                             'item_name' => $item['element']['name'],
                             'item_type' => class_basename($product),
                             'notes' => $item['notes'] ? $item['notes'] : null,
                             'product_size' => $productAttribute ? $productAttribute->size->name : ($product->size ? $product->size->name : null),
                             'product_color' => $productAttribute ? $productAttribute->color->name : ($product->color ? $product->color->name : null),
+                            'wrap_as_gift' => $item['wrapGift']
                         ]);
                     } else if ($item['type'] === 'service') {
                         // later we should check of multi Booking !!!

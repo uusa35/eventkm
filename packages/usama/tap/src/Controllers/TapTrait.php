@@ -125,17 +125,17 @@ trait TapTrait
                 ]);
             }
         }
-        if ($order->shipment_fees > 0) {
+        if ($order->shipment_fees) {
             array_push($productsList, [
                 'CurrencyCode' => env('TAP_CURRENCY_CODE'),
                 'ImgUrl' => asset('images/shipment.png'),
                 'Quantity' => 1,
-                'TotalPrice' => $order->shipment_fees,
+                'TotalPrice' => (float) round($order->shipment_fees,2),
                 'UnitID' => $order->id,
                 'UnitName' => 'Shipping Cost',
-                'UnitPrice' => $order->shipment_fees,
+                'UnitPrice' => (float) $order->shipment_fees,
                 'UnitDesc' => 'Shipping Cost',
-                'VndID' => '',
+                'VndID' => $order->user_id,
             ]);
         }
         if ($order->discount > 0) {
