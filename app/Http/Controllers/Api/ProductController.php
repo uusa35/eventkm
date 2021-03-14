@@ -100,14 +100,16 @@ class ProductController extends Controller
                 'name_en' => $request->name,
                 'sku' => $request->sku,
                 'price' => $request->price,
-                'sale_price' => $request->sale_price,
+                'sale_price' => $request->price,
                 'user_id' => $request->user()->id,
+                'weight' => 0.5,
                 'description_ar' => $request->description,
                 'description_en' => $request->description,
                 'size_id' => Size::first()->id,
                 'color_id' => Color::first()->id,
                 'has_attributes' => false,
-                'show_attributes' => true,
+                'show_attribute' => true,
+                'is_available' => true,
                 'qty' => $request->qty,
                 'active' => true
             ]);
