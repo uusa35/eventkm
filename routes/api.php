@@ -35,6 +35,7 @@ Route::group(['namespace' => 'Api'], function () {
         Route::post('reauthenticate', 'UserController@reAuthenticate');
         Route::resource('classified', 'ClassifiedController')->only(['store', 'update', 'destroy']);
         Route::resource('address', 'AddressController')->only(['store', 'update', 'destroy']);
+        Route::resource('product', 'ProductController')->only(['store', 'update']);
     });
     Route::get('location/address', 'GeoLocationController@getAddressFromLocation')->name('location.address');
     Route::get('country/ip', 'CountryController@getUserCountry');
@@ -44,7 +45,7 @@ Route::group(['namespace' => 'Api'], function () {
     Route::get('google/authenticate', 'UserController@googleAuthenticate');
     Route::post('register', 'UserController@register');
     Route::resource('category', 'CategoryController')->only(['index', 'show']);
-    Route::resource('product', 'ProductController')->only(['index', 'show','store','update']);
+    Route::resource('product', 'ProductController')->only(['index', 'show']);
     Route::resource('collection', 'CollectionController')->only(['index', 'show']);
     Route::resource('classified', 'ClassifiedController');
     Route::resource('service', 'ServiceController')->only(['index', 'show']);
