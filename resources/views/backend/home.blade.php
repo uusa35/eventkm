@@ -144,12 +144,12 @@
                                         <i class="fa fa-users"></i>
                                     </div>
                                     <div class="tile-object text-center">
-                                        {{ trans('general.all_users') }}
+                                        {!! trans('general.all')  . trans('general.users') !!}
                                     </div>
                                 </div>
                             </a>
                             @if($roles->isNotEmpty())
-                                @foreach($roles->where('active', true) as $r)
+                                @foreach($roles->where('active', true)->where('is_admin', false) as $r)
                                     <a href="{{ route('backend.admin.user.index',['role_id' => $r->id]) }}">
                                         <div class="tile  tooltips"
                                              style="background-color: {{ $r->color }} !important;"
