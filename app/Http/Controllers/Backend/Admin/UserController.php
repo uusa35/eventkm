@@ -34,7 +34,9 @@ class UserController extends Controller
             if (auth()->user()->isSuper) {
                 $elements = User::with('country', 'slides', 'role', 'categories')->orderBy('id', 'desc')->paginate(env('EVENTKM') ? Self::TAKE_ALL : SELF::TAKE);
             } else {
-                $elements = User::where(['is_admin' => false, 'is_super' => false])->with('country', 'slides', 'role', 'categories')->orderBy('id', 'desc')->paginate(env('EVENTKM') ? Self::TAKE_ALL : SELF::TAKE);
+                $elements = User::whereHas('role', function ($q) {
+                    return $q->where(['is_admin' => false, 'is_super' => false]);
+                })->with('country', 'slides', 'role', 'categories')->orderBy('id', 'desc')->paginate(env('EVENTKM') ? Self::TAKE_ALL : SELF::TAKE);
             }
         }
         return view('backend.modules.user.index', compact('elements'));
