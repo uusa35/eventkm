@@ -29,14 +29,13 @@ class UserController extends Controller
     {
         $this->authorize('user.view', auth()->user());
         if (request()->has('role_id')) {
-            $elements = User::where('role_id', request('role_id'))->with('country', 'slides', 'role','categories')->orderBy('id','desc')->paginate(env('EVENTKM') ? Self::TAKE_ALL : SELF::TAKE);
+            $elements = User::where('role_id', request('role_id'))->with('country', 'slides', 'role', 'categories')->orderBy('id', 'desc')->paginate(env('EVENTKM') ? Self::TAKE_ALL : SELF::TAKE);
         } else {
             if (auth()->user()->isSuper) {
-                $elements = User::with('country', 'slides', 'role', 'categories')->orderBy('id','desc')->paginate(env('EVENTKM') ? Self::TAKE_ALL : SELF::TAKE);
+                $elements = User::with('country', 'slides', 'role', 'categories')->orderBy('id', 'desc')->paginate(env('EVENTKM') ? Self::TAKE_ALL : SELF::TAKE);
             } else {
-                $elements = User::where('id', '!=', 1)->with('country', 'slides', 'role','categories')->orderBy('id','desc')->paginate(env('EVENTKM') ? Self::TAKE_ALL : SELF::TAKE);
+                $elements = User::where(['is_admin' => false, 'is_super' => false])->with('country', 'slides', 'role', 'categories')->orderBy('id', 'desc')->paginate(env('EVENTKM') ? Self::TAKE_ALL : SELF::TAKE);
             }
-
         }
         return view('backend.modules.user.index', compact('elements'));
     }
@@ -51,7 +50,7 @@ class UserController extends Controller
         $this->authorize('user.create');
         $countries = Country::active()->get();
         $roles = Role::active()->get();
-        $categories = Category::active()->where('is_user',true)->with(['children' => function ($q) {
+        $categories = Category::active()->where('is_user', true)->with(['children' => function ($q) {
             return $q->where('is_user', true)->with(['children' => function ($q) {
                 return $q->where('is_user', true);
             }]);
@@ -69,7 +68,7 @@ class UserController extends Controller
      */
     public function store(UserStore $request)
     {
-        $element = User::create($request->except('image', 'bg', 'banner', 'path', 'categories', 'images', 'products', 'surveys','current_password'));
+        $element = User::create($request->except('image', 'bg', 'banner', 'path', 'categories', 'images', 'products', 'surveys', 'current_password'));
         $country = request()->has('country_id') ? Country::whereId(request('country_id'))->first() : null;
         if ($element) {
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1000', '1000'], true) : null;
@@ -115,7 +114,7 @@ class UserController extends Controller
         $this->authorize('user.update', $element);
         $countries = Country::active()->get();
         $roles = Role::active()->get();
-        $categories = Category::active()->where('is_user',true)->with(['children' => function ($q) {
+        $categories = Category::active()->where('is_user', true)->with(['children' => function ($q) {
             return $q->where('is_user', true)->with(['children' => function ($q) {
                 return $q->where('is_user', true);
             }]);
@@ -169,12 +168,12 @@ class UserController extends Controller
             $element->update(['active' => false]);
             if (!$element->role->is_admin) {
                 if ($element->delete()) {
-                    return redirect()->route('backend.admin.user.index', ['role_id' => $roleId])->with('success','user deleted');
+                    return redirect()->route('backend.admin.user.index', ['role_id' => $roleId])->with('success', 'user deleted');
                 }
             } elseif (auth()->user()->isSuper) {
                 $deleted = $element->products->isEmpty() && $element->services->isEmpty() && $element->orders->isEmpty() ? $element->delete() : null;
                 if ($deleted) {
-                    return redirect()->route('backend.admin.user.index', ['role_id' => $roleId])->with('success',trans('general.user_deleted'));
+                    return redirect()->route('backend.admin.user.index', ['role_id' => $roleId])->with('success', trans('general.user_deleted'));
                 }
             }
         }
@@ -230,7 +229,8 @@ class UserController extends Controller
         $this->notify(request('title'), request('message'), request('ids'));
     }
 
-    public function trashed() {
+    public function trashed()
+    {
         $elements = User::onlyTrashed()->paginate(Self::TAKE_MID);
         return view('backend.modules.user.index', compact('elements'));
     }
