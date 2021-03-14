@@ -88,7 +88,7 @@ class ProductController extends Controller
             'sku' => 'required|min:2',
             'price' => 'required|min:2',
             'description' => 'required|min:3|max:200',
-            'categories' => 'required|array',
+            'categories' => 'array',
             'user_id' => 'required|exists:users,id'
         ]);
         if ($validate->fails()) {
