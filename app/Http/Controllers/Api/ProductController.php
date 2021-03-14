@@ -97,7 +97,7 @@ class ProductController extends Controller
             $element = Product::create([
                 'name_ar' => $request->name,
                 'name_en' => $request->name,
-                'skue' => $request->sku,
+                'sku' => $request->sku,
                 'price' => $request->price,
                 'sale_price' => $request->sale_price,
                 'user_id' => $request->user()->id,
@@ -107,6 +107,7 @@ class ProductController extends Controller
                 'color_id' => Color::first()->id,
                 'has_attributes' => false,
                 'show_attributes' => true,
+                'qty' => 1,
                 'active' => true
             ]);
             if ($element) {
