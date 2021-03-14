@@ -48,7 +48,7 @@ class UserObserver
             Nexmo::message()->send([
                 'to' => '96565772444',
                 'from' => env('APP_NAME'),
-                'text' => 'Welcome to .' .env('APP_NAME'). ' your verification code is '. $code .'  '
+                'text' => 'Welcome to ' .env('APP_NAME'). ' your verification code is : '. $code .' - '
             ]);
         }
 
