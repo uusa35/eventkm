@@ -83,7 +83,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->user());
         try {
             $validate = validator($request->all(), [
                 'name' => 'required|min:3|max:200',
