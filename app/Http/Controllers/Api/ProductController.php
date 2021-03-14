@@ -101,7 +101,6 @@ class ProductController extends Controller
                 'price' => $request->price,
                 'sale_price' => $request->sale_price,
                 'user_id' => $request->user()->id,
-                'country_id' => $request->country_id,
                 'description_ar' => $request->description,
                 'description_en' => $request->description,
                 'size_id' => Size::first()->id,
