@@ -68,7 +68,7 @@
                             <th>{{ trans('general.active') }}</th>
                             <th class="none">{{ trans('general.company') }}</th>
                             <th class="none">{{ trans('general.created_at') }}</th>
-                            <th class="none">{{ trans('general.barcode') }}</th>
+{{--                            <th class="none">{{ trans('general.barcode') }}</th>--}}
                             <th class="none">{{ trans('general.quantity') }}</th>
                             <th>{{ trans('general.attributes') }} x/clr/qty</th>
                             <th>{{ trans('general.actions') }}</th>
@@ -88,7 +88,7 @@
                             <th>{{ trans('general.active') }}</th>
                             <th class="none">{{ trans('general.company') }}</th>
                             <th class="none">{{ trans('general.created_at') }}</th>
-                            <th class="none">{{ trans('general.barcode') }}</th>
+{{--                            <th class="none">{{ trans('general.barcode') }}</th>--}}
                             <th class="none">{{ trans('general.quantity') }}</th>
                             <th>{{ trans('general.attributes') }} x/clr/qty</th>
                             <th>{{ trans('general.actions') }}</th>
@@ -135,7 +135,7 @@
                                 </td>
                                 <td>{{ $element->user ?  str_limit($element->user->slug,20) : '<label class="label label-warning"><b>N/A</b></label>' }}</td>
                                 <td>{{ $element->created_at }}</td>
-                                <td>{!! $element->barcode ? DNS2D::getBarcodeHTML($element->barcode, env('BARCODE_TYPE'),2,1) : '<label class="label label-warning"><b>N/A</b></label>' !!}</td>
+{{--                                <td>{!! $element->barcode ? DNS2D::getBarcodeHTML($element->barcode, "PDF417",2,1) : '<label class="label label-warning"><b>N/A</b></label>' !!}</td>--}}
                                 <td>
                                     <span
                                         class="label label-default">{{ $element->totalAvailableQty }} {{ trans('general.pieces') }}</span>

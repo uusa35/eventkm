@@ -19,7 +19,7 @@
                                 </div>
                                 <div class="tt-description">
                                     <h2 class="tt-title"><a
-                                                href="{{ route('frontend.classified.create', ['classified_category_id' => $element->id]) }}">{{ $element->title }}</a>
+                                            href="{{ route('frontend.classified.create', ['classified_category_id' => $element->id]) }}">{{ $element->title }}</a>
                                     </h2>
                                     {{--                                    <div class="tt-price">--}}
                                     {{--                                        $14--}}

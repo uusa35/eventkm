@@ -763,7 +763,7 @@
                                                 </div>
                                                 @if($element->barcode)
                                                     <div class="col-md-2">
-                                                        {!! DNS2D::getBarcodeHTML($element->barcode, env('BARCODE_TYPE'),2,1); !!}
+                                                        {!! DNS2D::getBarcodeHTML($element->barcode, 'PDF417',2,1); !!}
                                                     </div>
                                                 @endif
                                             </div>

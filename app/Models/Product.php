@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasEvents;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Product extends PrimaryModel
 {
-    use ProductHelpers, SellingModelHelpers, ModelHelpers, SoftDeletes;
+    use ProductHelpers, SellingModelHelpers, ModelHelpers, SoftDeletes, HasEvents, LogsActivity;
     protected $localeStrings = ['name', 'description', 'notes'];
     protected $guarded = [''];
     protected $appends = ['UId'];

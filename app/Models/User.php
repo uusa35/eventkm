@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use App\Services\Traits\LocaleTrait;
+use Illuminate\Database\Eloquent\Concerns\HasEvents;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable, ModelHelpers, UserHelpers, SoftDeletes, LocaleTrait;
+    use Notifiable, ModelHelpers, UserHelpers, SoftDeletes, LocaleTrait, HasEvents;
 
     /**
      * The attributes that are mass assignable.

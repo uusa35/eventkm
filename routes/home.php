@@ -1,5 +1,6 @@
 <?php
 if (env('MOBILE_LAYOUT')) {
+    dd('here');
     Route::get('/', 'HomeController@getMobileLayout')->name('index');
     Route::get('/home', 'HomeController@getMobileLayout')->name('home');
 } elseif (env('MALLR')) {
@@ -30,6 +31,9 @@ if (env('MOBILE_LAYOUT')) {
     Route::get('/', 'HomeController@getMallrHome')->name('index');
     Route::get('/home', 'HomeController@getMallrHome')->name('home');
 } elseif (env('HUDA')) {
+    Route::get('/', 'HomeController@getMallrHome')->name('index');
+    Route::get('/home', 'HomeController@getMallrHome')->name('home');
+} else {
     Route::get('/', 'HomeController@getMallrHome')->name('index');
     Route::get('/home', 'HomeController@getMallrHome')->name('home');
 }
