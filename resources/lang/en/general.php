@@ -867,5 +867,6 @@ return array (
   'links' => 'Links',
   'google_play' => 'Google Play',
   'apple' => 'Apple',
-    "invalid_verification_code" => "Verification Code is not correct."
+    "invalid_verification_code" => "Verification Code is not correct.",
+    "english_letters_only" => "Only English Numbers and Letters"
 );

@@ -46,6 +46,9 @@
                                                 </strong>
                                             </span>
                                             @endif
+                                            <div class="help-block text-left">
+                                                {{ trans('general.english_letters_only') }}
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">

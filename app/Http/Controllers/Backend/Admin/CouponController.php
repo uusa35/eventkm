@@ -48,7 +48,7 @@ class CouponController extends Controller
     {
         $validate = validator($request->all(), [
             'is_percentage' => 'required|boolean',
-            'code' => 'required|min:5',
+            'code' => 'required|min:5|regex:/^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/',
             'value' => 'required|numeric|between:1,99',
             'minimum_charge' => 'required|numeric|between:1,999',
             'user_id' => 'required|exists:users,id',
@@ -101,7 +101,7 @@ class CouponController extends Controller
     {
         $validate = validator($request->all(), [
             'is_percentage' => 'required|boolean',
-            'code' => 'required|min:5',
+            'code' => 'required|min:5|regex:/^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/',
             'value' => 'required|numeric|between:1,99',
             'minimum_charge' => 'required|numeric|between:1,999',
             'user_id' => 'required|exists:users,id',

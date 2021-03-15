@@ -1075,5 +1075,6 @@ return array (
   'links' => 'روابط',
   'google_play' => 'جوجل بلاي',
   'apple' => 'أبل',
-    "invalid_verification_code" => "الكود الذي ادخلته غير صحيح"
+    "invalid_verification_code" => "الكود الذي ادخلته غير صحيح",
+    "english_letters_only" => "فقط يقبل حروف وارقام انجليزية"
 );
