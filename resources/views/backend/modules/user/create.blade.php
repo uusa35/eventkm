@@ -240,7 +240,7 @@
                                                            checked value="1">
                                                     {{ trans('general.male') }} </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="active" id="optionsRadios2"
+                                                    <input type="radio" name="is_male" id="optionsRadios2"
                                                            value="0"> {{ trans('general.female') }}</label>
                                             </div>
                                         </div>
