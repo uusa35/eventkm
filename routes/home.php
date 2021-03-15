@@ -1,6 +1,5 @@
 <?php
 if (env('MOBILE_LAYOUT')) {
-    dd('here');
     Route::get('/', 'HomeController@getMobileLayout')->name('index');
     Route::get('/home', 'HomeController@getMobileLayout')->name('home');
 } elseif (env('MALLR')) {
