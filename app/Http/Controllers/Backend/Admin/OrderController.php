@@ -107,7 +107,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $element = Order::whereId($id)->with('order_metas.product.product_attributes', 'order_metas.product.user', 'user.country')->first();
+        $element = Order::whereId($id)->with('order_metas.product.product_attributes', 'order_metas.product.user', 'user.country','coupon')->first();
         if ($element->order_metas->first()->isQuestionnaireType) {
             $markdown = new Markdown(view(), config('mail.markdown'));
             return $markdown->render('emails.order-complete', ['order' => $element, 'user' => $element->user]);
