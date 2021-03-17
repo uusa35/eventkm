@@ -197,6 +197,21 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="file"
+                                                       class="control-label required">{{ trans('general.more_images') }}
+                                                </label>
+                                                <input class="form-control tooltips" data-container="body"
+                                                       data-placement="top"
+                                                       data-original-title="{{ trans('message.more_iamges') }}"
+                                                       name="images[]" placeholder="images" type="file"
+                                                       multiple/>
+                                                <div class="help-block text-left small">
+                                                    {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440 px']) }}
+                                                </div>
+                                            </div>
+                                        </div>
                                         @if(!$categories->isEmpty())
                                             <div class="col-md-4">
                                                 <div class="form-group">
@@ -540,21 +555,6 @@
                                                 </div>
                                             </div>
                                         @endif
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="file"
-                                                       class="control-label">{{ trans('general.more_images') }}
-                                                </label>
-                                                <input class="form-control tooltips" data-container="body"
-                                                       data-placement="top"
-                                                       data-original-title="{{ trans('message.more_iamges') }}"
-                                                       name="images[]" placeholder="images" type="file"
-                                                       multiple/>
-                                                <div class="help-block text-left small">
-                                                    {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440 px']) }}
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="form_control_1">{{ trans('general.qr') }}</label>
