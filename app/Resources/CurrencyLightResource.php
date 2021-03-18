@@ -19,7 +19,7 @@ class CurrencyLightResource extends JsonResource
             'name' => $this->name,
             'name_en' => $this->name_en,
             'currency_symbol' => $this->currency_symbol,
-            'symbol' => $this->currency_symbol_en,
+            'currency_symbol_en' => $this->currency_symbol_en,
             'exchange_rate' => $this->exchange_rate,
         ];
     }
