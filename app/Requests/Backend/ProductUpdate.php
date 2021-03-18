@@ -52,7 +52,7 @@ class ProductUpdate extends FormRequest
             'qty' => ['required', 'numeric', 'min:1', 'max:999', 'regex:/^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/'],
 //            'weight' => ['required','numeric','min:0.1','max:10','regex:/^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/'],
             'weight' => ['required','between:0.1,10'],
-            'order' => ['numeric','min:1','max:9999','regex:/^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/'],
+            'order' => ['numeric','min:1','max:9999','regex:/^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/', 'nullable'],
             'on_sale' => 'boolean',
             'on_sale_on_homepage' => 'boolean',
             'on_homepage' => 'boolean',
