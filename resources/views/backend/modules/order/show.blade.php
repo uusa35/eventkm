@@ -34,7 +34,7 @@
                         class="float-right"> <br><strong>{{ trans('general.shipment') }} : </strong>{{ $element->shipment_fees }} {{ trans('general.kd') }}</span>
                 @endif
                 <span
-                    class="float-right"> <br><strong>{{ trans('general.price') }} :</strong> {{ (float) ($element->price - $element->shipment_fees) }} {{ trans('general.kd') }}</span>
+                    class="float-right"> <br><strong>{{ trans('general.price') }} :</strong> {{ $element->price }} {{ trans('general.kd') }}</span>
                 @if($element->discount > 0)
                     <span
                         class="float-right"> <br><strong>{{ trans('general.discount') }} :</strong> {{ $element->discount }} {{ trans('general.kd') }}</span>
@@ -217,7 +217,7 @@
                             <td class="left">
                                 <strong>{{ trans('general.total') }}</strong>
                             </td>
-                            <td class="right">{{ (float) ($element->price - $element->shipment_fees) }} {{ trans('general.kd') }}</td>
+                            <td class="right">{{ $element->price }} {{ trans('general.kd') }}</td>
                         </tr>
                         @if($element->discount > 0)
                             <tr>
