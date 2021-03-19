@@ -10,15 +10,17 @@ use App\Models\Currency;
 use App\Models\Product;
 use App\Models\Service;
 use App\Models\User;
+use App\Services\CartTrait;
 use App\Services\Search\Filters;
 use App\Services\Traits\HomePageTrait;
+use Gloudemans\Shoppingcart\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use \Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
-    use HomePageTrait;
+    use HomePageTrait, CartTrait;
     public $product;
     public $service;
 
@@ -67,6 +69,7 @@ class HomeController extends Controller
         $currency = Currency::where('currency_symbol_en', strtoupper(request('currency')))->with('country')->first();
         session()->put('currency', $currency);
         session()->put('country', $currency->country);
+        $this->addCountryToCart($currency->country);
         return redirect()->back();
     }
 
