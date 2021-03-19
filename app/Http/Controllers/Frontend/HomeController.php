@@ -21,6 +21,7 @@ use \Illuminate\Support\Str;
 class HomeController extends Controller
 {
     use HomePageTrait, CartTrait;
+
     public $product;
     public $service;
 
@@ -70,6 +71,9 @@ class HomeController extends Controller
         session()->put('currency', $currency);
         session()->put('country', $currency->country);
         $this->addCountryToCart($currency->country);
+        if (str_contains(url()->previous(), 'cart') || str_contains(url()->previous('order'))) {
+            return redirect()->route('frontend.home');
+        }
         return redirect()->back();
     }
 
