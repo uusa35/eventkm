@@ -124,6 +124,6 @@ trait CartTrait
     }
 
     public function getTotalItemsOnly() {
-        return \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->where('options.type', 'product')->count();
+        return \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content()->where('options.type', 'product')->count();
     }
 }
