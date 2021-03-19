@@ -18,7 +18,7 @@
         @if(in_array('country',Cart::instance('shopping')->content()->pluck('options.type')->toArray()))
             <tr>
                 <th>{{ trans('general.total_shipment_fees') }}</th>
-                <td>{{ getClientCountry()->fixed_shipment_charge }} {{ trans('general.kd') }}</td>
+                <td>{{ Cart::instance('shopping')->content()->where('options.type','country')->price }} {{ trans('general.kd') }}</td>
             </tr>
         @endif
         @if(session()->has('coupon'))
