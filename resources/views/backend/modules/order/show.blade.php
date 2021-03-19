@@ -217,7 +217,7 @@
                             <td class="left">
                                 <strong>{{ trans('general.total') }}</strong>
                             </td>
-                            <td class="right">{{ $element->price }} {{ trans('general.kd') }}</td>
+                            <td class="right">{{ (float) ($element->price - $element->shipment_fees) }} {{ trans('general.kd') }}</td>
                         </tr>
                         @if($element->discount > 0)
                             <tr>
