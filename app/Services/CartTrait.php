@@ -51,15 +51,15 @@ trait CartTrait
     {
         $element = \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content()->where('options.type', 'country')->first();
         if ($element) {
-            $this->cart->remove($element->rowId);
+            \Gloudemans\Shoppingcart\Facades\Cart::remove($element->rowId);
         }
         $settings = Setting::first();
         if ($settings->shipment_fixed_rate) {
-            Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), $country->is_local ? 1 :$this->getTotalItemsOnly(), (double)$country->fixed_shipment_charge, 1, ['type' => 'country', 'country_id' => $country->id]);
+            \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), $country->is_local ? 1 :$this->getTotalItemsOnly(), (double)$country->fixed_shipment_charge, 1, ['type' => 'country', 'country_id' => $country->id]);
         } else {
             $shipmentPackage = $country->shipment_packages()->first();
-            $totalWeight = Cart::instance('shopping')->content()->sum('weight');
-            Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)$shipmentPackage->getFinalPrice($totalWeight), 1, ['type' => 'country', 'country_id' => $country->id]);
+            $totalWeight = \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content()->sum('weight');
+            \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)$shipmentPackage->getFinalPrice($totalWeight), 1, ['type' => 'country', 'country_id' => $country->id]);
         }
     }
 
@@ -120,10 +120,10 @@ trait CartTrait
     }
 
     public function getTotalPriceOfProductsOnly() {
-        return Cart::instance('shopping')->content()->where('options.type', 'product')->sum('price');
+        return \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content()->where('options.type', 'product')->sum('price');
     }
 
     public function getTotalItemsOnly() {
-        return Cart::instance('shopping')->where('options.type', 'product')->count();
+        return \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->where('options.type', 'product')->count();
     }
 }
