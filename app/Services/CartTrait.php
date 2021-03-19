@@ -50,12 +50,12 @@ trait CartTrait
     public function addCountryToCart($country, $cart)
     {
         $element = $this->cart->content()->where('options.type', 'country')->first();
-        if ($element) {
-            $this->cart->remove($element->rowId);
-        }
+//        if ($element) {
+//            $this->cart->remove($element->rowId);
+//        }
         $settings = Setting::first();
         if ($settings->shipment_fixed_rate) {
-            $this->cart->add($country->calling_code, trans('shipment_package_fee'), $country->is_local ? 1 : $this->getTotalItemsOnly($cart), (double) $country->fixed_shipment_charge, 1, ['type' => 'country', 'country_id' => $country->id]);
+            $this->cart->add($country->calling_code, trans('shipment_package_fee'), $country->is_local ? 1 :$this->getTotalItemsOnly($cart), (double)$country->fixed_shipment_charge, 1, ['type' => 'country', 'country_id' => $country->id]);
         } else {
             $shipmentPackage = $country->shipment_packages()->first();
             $totalWeight = $this->cart->content()->sum('weight');
