@@ -69,8 +69,6 @@ trait OrderTrait
             'discount' => $coupon ? ($coupon->is_percentage ? ($this->cart->subTotal() * ($coupon->value / 100)) : $coupon->value) : 0,
             'coupon_id' => $coupon ? $coupon['id'] : null,
             'payment_method' => $request->payment_method,
-//            'shipment_fees' => $request->has('shipment_fees') ? $request->shipment_fees : 0
-            // Now it's fixed shipment fees from the country
             'shipment_fees' => $this->cart->content()->where('options.type', 'country')->first()->total()
         ]);
         if ($order) {
