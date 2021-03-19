@@ -55,6 +55,7 @@ trait CartTrait
         }
         $settings = Setting::first();
         if ($settings->shipment_fixed_rate) {
+            dd($this->getTotalItemsOnly($cart));
             $this->cart->add($country->calling_code, trans('shipment_package_fee'), $country->is_local ? 1 : $this->getTotalItemsOnly($cart), (double)$country->fixed_shipment_charge, ['type' => 'country', 'country_id' => $country->id]);
         } else {
             $shipmentPackage = $country->shipment_packages()->first();
