@@ -105,7 +105,7 @@
                                         @if(session()->get('coupon'))
                                             <tr>
                                                 <th>{{ trans('general.discount') }} {{ $currency->name }}</th>
-                                                <td>{{ getConvertedPrice(session()->get('coupon')->value) }} {{ $currency->symbol }}</td>
+                                                <td>{{ session()->get('coupon')->value }} {{ getCouponIsPercentage() ? '%' : trans('general.kd') }}</td>
                                             </tr>
                                         @endif
                                         @if(!$currency->country->is_local)
