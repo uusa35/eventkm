@@ -17,32 +17,32 @@
             <span class="card-header">
                 <h3>{{ trans('general.invoice_no') }} : {{ $element->id }}</h3>
                 <strong>{{ trans("general.date") }} : {{ $element->created_at->format('F j, Y') }}</strong>
-                <span class="float-right"> <br><strong>{{ trans('general.status') }}:</strong> {{ strtoupper($element->status) }}</span>
+                <span class="float-right"> <br><strong>{{ trans('general.status') }} : </strong> {{ strtoupper($element->status) }}</span>
                 @if($element->cash_on_delivery)
-                    <span class="float-right"> <br><strong>{{ trans('general.payment_method') }}:</strong> {{ strtoupper(trans('general.cash_on_delivery')) }}</span>
+                    <span class="float-right"> <br><strong>{{ trans('general.payment_method') }} : </strong> {{ strtoupper(trans('general.cash_on_delivery')) }}</span>
                 @endif
                 @if($element->payment_method)
-                    <span class="float-right"> <br><strong>{{ trans('general.payment') }}:</strong> {{ strtoupper($element->payment_method) }}</span>
+                    <span class="float-right"> <br><strong>{{ trans('general.payment') }} : </strong> {{ strtoupper($element->payment_method) }}</span>
                 @endif
                 @if($element->shipment_reference)
-                    <span class="float-right"> <br><strong>{{ trans('general.shipment_reference') }}:</strong> {{ strtoupper($element->shipment_reference) }}</span>
+                    <span class="float-right"> <br><strong>{{ trans('general.shipment_reference') }}: </strong> {{ strtoupper($element->shipment_reference) }}</span>
                 @endif
 
-                <span class="float-right"> <br><strong>{{ trans('general.weight') }} :</strong>{{ $element->order_metas->pluck('product.weight')->sum() }} KG</span>
+                <span class="float-right"> <br><strong>{{ trans('general.weight') }} : </strong>{{ $element->order_metas->pluck('product.weight')->sum() }} KG</span>
                 @if($element->shipment_fees > 0)
                     <span
-                        class="float-right"> <br><strong>{{ trans('general.shipment') }} :</strong>{{ $element->shipment_fees }} {{ trans('general.kd') }}</span>
+                        class="float-right"> <br><strong>{{ trans('general.shipment') }} : </strong>{{ $element->shipment_fees }} {{ trans('general.kd') }}</span>
                 @endif
                 <span
-                    class="float-right"> <br><strong>{{ trans('general.price') }}:</strong>{{ (float) ($element->price - $element->shipment_fees) }} {{ trans('general.kd') }}</span>
+                    class="float-right"> <br><strong>{{ trans('general.price') }} :</strong> {{ (float) ($element->price - $element->shipment_fees) }} {{ trans('general.kd') }}</span>
                 @if($element->discount > 0)
                     <span
-                        class="float-right"> <br><strong>{{ trans('general.discount') }}:</strong> {{ $element->discount }} {{ trans('general.kd') }}</span>
+                        class="float-right"> <br><strong>{{ trans('general.discount') }} :</strong> {{ $element->discount }} {{ trans('general.kd') }}</span>
                     <span
-                        class="float-right"><br><strong>{{ trans('general.code') }} {{ trans('general.discount') }}:</strong> <strong>{{ $element->coupon->code }}</strong></span>
+                        class="float-right"><br><strong>{{ trans('general.code') }} {{ trans('general.discount') }} : </strong> <strong>{{ $element->coupon->code }}</strong></span>
                 @endif
                 <span
-                    class="float-right"> <br><strong>{{ trans('general.net_price') }} :</strong>{{ $element->net_price }} {{ trans('general.kd') }}</span>
+                    class="float-right"> <br><strong>{{ trans('general.net_price') }} : </strong>{{ $element->net_price }} {{ trans('general.kd') }}</span>
         </div>
         <hr>
         <div class="card-body">
