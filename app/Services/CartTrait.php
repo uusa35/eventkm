@@ -118,4 +118,8 @@ trait CartTrait
         }
         return false;
     }
+
+    public function getTotalPriceOfProductsOnly($cart) {
+        return $cart->content()->where('options.type', 'product')->sum('price');
+    }
 }

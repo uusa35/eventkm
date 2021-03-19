@@ -26,8 +26,8 @@
     <hr>
 </div>
 @endif
-@if($element->barcode)
-    <div class="col-lg-5 col-xs-12" style="margin-left: auto; margin-right: auto;">
-        {!!DNS2D::getBarcodeHTML($element->barcode, env('BARCODE_TYPE'),2,1)!!}
-    </div>
-@endif
+{{--@if($element->barcode)--}}
+{{--    <div class="col-lg-5 col-xs-12" style="margin-left: auto; margin-right: auto;">--}}
+{{--        {!!DNS2D::getBarcodeHTML($element->barcode, env('BARCODE_TYPE'),2,1)!!}--}}
+{{--    </div>--}}
+{{--@endif--}}

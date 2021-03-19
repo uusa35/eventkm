@@ -56,7 +56,7 @@ trait OrderTrait
         $coupon = session()->has('coupon') ? session('coupon') : false;
         $country = Country::whereId($request->country_id)->first();
         $order = Order::create([
-            'price' => $this->cart->total(),
+            'price' => $this->getTotalPriceOfProductsOnly($this->cart),
             'net_price' => getCartNetTotal(),
             'mobile' => $request->mobile,
             'country' => $country->name,
