@@ -16,7 +16,6 @@
         </tbody>
         <tfoot>
         @if(in_array('country',Cart::instance('shopping')->content()->pluck('options.type')->toArray()))
-            {{ dd(Cart::instance('shopping')->content()->where('options.type','country')->first()) }}
             <tr>
                 <th>{{ trans('general.total_shipment_fees') }}</th>
                 <td>{{ Cart::instance('shopping')->content()->where('options.type','country')->first()->price }} {{ session()->get('country')->currency_symbol }}</td>
