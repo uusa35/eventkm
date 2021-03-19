@@ -55,7 +55,7 @@ trait CartTrait
         }
         $settings = Setting::first();
         if ($settings->shipment_fixed_rate) {
-            $this->cart->add($country->calling_code, trans('shipment_package_fee'), $this->cart->count() < 1 || $country->is_local ? 1 : $this->cart->count(), (double)$country->fixed_shipment_charge, 1, ['type' => 'country', 'country_id' => $country->id]);
+            $this->cart->add($country->calling_code, trans('shipment_package_fee'), $this->cart->count() < 1 || $country->is_local ? 1 : $this->getTotalItemsOnly($cart), (double)$country->fixed_shipment_charge, 1, ['type' => 'country', 'country_id' => $country->id]);
         } else {
             $shipmentPackage = $country->shipment_packages()->first();
             $totalWeight = $this->cart->content()->sum('weight');
@@ -121,5 +121,9 @@ trait CartTrait
 
     public function getTotalPriceOfProductsOnly($cart) {
         return $cart->content()->where('options.type', 'product')->sum('price');
+    }
+
+    public function getTotalItemsOnly($cart) {
+        return $cart->content()->where('options.type', 'product')->count();
     }
 }
