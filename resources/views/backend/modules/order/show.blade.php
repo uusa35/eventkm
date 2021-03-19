@@ -16,7 +16,8 @@
         <div class="card">
             <span class="card-header">
                 <h3>{{ trans('general.invoice_no') }} : {{ $element->id }}</h3>
-                <strong>{{ trans("general.date") }} : {{ $element->created_at->format('F j, Y') }}</strong>
+                <span class="float-right"> <br><strong>{{ trans("general.date") }} : {{ $element->created_at->format('F j, Y') }}</strong></span>
+                <span class="float-right"> <br><strong>{{ trans("general.time") }} : {{ $element->created_at->format('g:i A') }}</strong></span>
                 <span class="float-right"> <br><strong>{{ trans('general.status') }} : </strong> {{ strtoupper($element->status) }}</span>
                 @if($element->cash_on_delivery)
                     <span class="float-right"> <br><strong>{{ trans('general.payment_method') }} : </strong> {{ strtoupper(trans('general.cash_on_delivery')) }}</span>
