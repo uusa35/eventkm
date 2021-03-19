@@ -52,7 +52,7 @@ class ProductStore extends FormRequest
             'price' => 'required|numeric|min:0.5|max:999',
             'qty' => ['required', 'numeric', 'min:1', 'max:999', 'regex:/^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/'],
             'weight' => ['required','between:0.1,10'],
-            'order' => ['numeric','min:1','max:9999','regex:/^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/','nullable],
+            'order' => ['numeric','min:1','max:9999','regex:/^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/','nullable'],
             'on_sale' => 'boolean',
             'on_sale_on_homepage' => 'boolean',
             'on_homepage' => 'boolean',
