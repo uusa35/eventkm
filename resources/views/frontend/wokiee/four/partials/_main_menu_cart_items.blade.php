@@ -51,7 +51,7 @@
     @if(Cart::instance('shopping')->content()->where('options.type', 'country')->first())
         <div class="tt-cart-total-row">
             <div class="tt-cart-total-title">{{ trans('general.shipment_fees') }}:</div>
-            <div class="tt-cart-total-price">{{ Cart::instance('shopping')->content()->where('options.type', 'country')->first()->total }} {{ $currency->symbol }}</div>
+            <div class="tt-cart-total-price">{{ Cart::instance('shopping')->content()->where('options.type', 'country')->first()->total }} {{ trans('general.kd') }}</div>
         </div>
     @endif
     <div class="tt-cart-total-row">
