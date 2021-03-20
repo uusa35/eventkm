@@ -332,7 +332,7 @@ class UserController extends Controller
         }])->with('addresses', 'role')->first();
     }
 
-    public function resendVerificationCode(Request $request)
+    public function reSendVerificationCode(Request $request)
     {
         $element = $request->user();
         if ($element) {
