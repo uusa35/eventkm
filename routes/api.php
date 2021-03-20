@@ -29,7 +29,7 @@ Route::group(['namespace' => 'Api'], function () {
     Route::group(['middleware' => 'auth:api'], function () {
         Route::resource('favorite', 'FavoriteController')->only(['index', 'store']);
         Route::resource('user', 'UserController')->only(['update']);
-        Route::post('mobile/resend/code','UserController@reSendVerificationCode');
+        Route::post('mobile/resend/code','UserController@resendVerificationCode');
         Route::resource('fan', 'FanController')->only(['store']);
         Route::resource('rating', 'RatingController');
         Route::resource('comment', 'CommentController')->only(['store']);

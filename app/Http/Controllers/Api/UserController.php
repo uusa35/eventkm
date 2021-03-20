@@ -15,12 +15,14 @@ use App\Models\Role;
 use App\Models\User;
 use App\Services\Search\Filters;
 use App\Services\Search\UserFilters;
+use App\Services\Traits\NotificationHelper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    use NotificationHelper;
     public $element;
 
     public function __construct(User $user)
@@ -332,7 +334,7 @@ class UserController extends Controller
         }])->with('addresses', 'role')->first();
     }
 
-    public function reSendVerificationCode(Request $request)
+    public function resendVerificationCode(Request $request)
     {
         $element = $request->user();
         if ($element) {
