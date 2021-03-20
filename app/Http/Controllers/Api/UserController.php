@@ -332,13 +332,17 @@ class UserController extends Controller
         }])->with('addresses', 'role')->first();
     }
 
-    public function resendVerificationCode(Request $request) {
+    public function resendVerificationCode(Request $request)
+    {
         $element = $request->user();
-        $code = random_int(1111, 9999);
-        if(strlen($element->code) < 4) {
-            $element->update(['mobile_code' => $code]);
+        if ($element) {
+            $code = random_int(1111, 9999);
+            if (strlen($element->code) < 4) {
+                $element->update(['mobile_code' => $code]);
+            }
+            $this->sendVerificationCode($element->fullMobile, $code);
+            return response()->json(['message' => trans('general.mobile_verification_code_is_sent_successfully')], 200);
         }
-        $this->sendVerificationCode($element->fullMobile, $code);
-        return redirect()->response(['message' => trans('general.mobile_verification_code_is_sent_successfully')]);
+        return response()->json(['message' => 'User does not exist'], 400);
     }
 }
