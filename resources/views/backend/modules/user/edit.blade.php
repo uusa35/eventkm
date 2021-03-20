@@ -895,9 +895,11 @@
                                                                         </strong>
                                                                         </span>
                                                                     @endif
-                                                                    <br>
-                                                                    <a class="btn btn-warning"
-                                                                       href="{{ route('backend.admin.user.mobile.resend', ['fullMobile' => $element->fullMobile,'code' => $element->mobile_code, 'user_id' => $element->id]) }}">{{ trans('general.resend') }} {{ trans('general.code') }}</a>
+                                                                    @if(!$element->mobile_verified)
+                                                                        <br>
+                                                                        <a class="btn btn-warning"
+                                                                           href="{{ route('backend.admin.user.mobile.resend', ['fullMobile' => $element->fullMobile,'code' => $element->mobile_code, 'user_id' => $element->id]) }}">{{ trans('general.resend') }} {{ trans('general.code') }}</a>
+                                                                    @endif
                                                                 </div>
                                                             </div>
                                                         @endif
