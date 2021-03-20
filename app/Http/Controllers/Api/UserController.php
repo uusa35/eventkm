@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     use NotificationHelper;
+
     public $element;
 
     public function __construct(User $user)
@@ -339,11 +340,9 @@ class UserController extends Controller
         $element = $request->user();
         if ($element) {
             $code = random_int(1111, 9999);
-            if (strlen($element->code) < 4) {
-                $element->update(['mobile_code' => $code]);
-            }
+            $element->update(['mobile_code' => $code]);
             $this->sendVerificationCode($element->fullMobile, $code);
-            return response()->json(['message' => trans('general.mobile_verification_code_is_sent_successfully')], 200);
+            return response()->json(UserLightResource::make($element), 200);
         }
         return response()->json(['message' => 'User does not exist'], 400);
     }
