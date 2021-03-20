@@ -25,7 +25,8 @@
                                 @csrf
                                 @method('put')
                                 @if(!$element->api_token)
-                                    <input type="hidden" name="api_token" value="{{ rand(9999999, 99999999999).str_random(5) }}"/>
+                                    <input type="hidden" name="api_token"
+                                           value="{{ rand(9999999, 99999999999).str_random(5) }}"/>
                                 @endif
                                 <div class="form-body">
                                     <h3 class="form-section">{{ trans('general.edit_user') }}</h3>
@@ -40,7 +41,8 @@
                                             <div class="form-body">
                                                 <div class="row">
                                                     <div class="col-md-4">
-                                                        <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
                                                             <label for="name_ar"
                                                                    class="control-label">{{ trans('general.name') }}
                                                                 *</label>
@@ -61,7 +63,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group {{ $errors->has('slug_ar') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group {{ $errors->has('slug_ar') ? ' has-error' : '' }}">
                                                             <label for="slug_ar"
                                                                    class="control-label">{{ trans('general.slug_ar') }}
                                                                 *</label>
@@ -82,7 +85,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group {{ $errors->has('slug_en') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group {{ $errors->has('slug_en') ? ' has-error' : '' }}">
                                                             <label for="slug_en"
                                                                    class="control-label">{{ trans('general.slug_en') }}
                                                                 *</label>
@@ -113,7 +117,8 @@
                                                                     name="country_id" required>
                                                                 <option>{{ trans('general.choose_country') }}</option>
                                                                 @foreach($countries as $country)
-                                                                    <option value="{{ $country->id }}" {{ $element->country_id == $country->id ? 'selected' : null  }}>{{ $country->slug_en }}</option>
+                                                                    <option
+                                                                        value="{{ $country->id }}" {{ $element->country_id == $country->id ? 'selected' : null  }}>{{ $country->slug_en }}</option>
                                                                 @endforeach
                                                             </select>
                                                         </div>
@@ -132,11 +137,13 @@
                                                                     <option>{{ trans('general.choose_role') }}</option>
                                                                     @if(auth()->user()->isSuper)
                                                                         @foreach($roles as $role)
-                                                                            <option value="{{ $role->id }}" {{ $element->role_id == $role->id ? 'selected' : null }}>{{ $role->slug_en }}</option>
+                                                                            <option
+                                                                                value="{{ $role->id }}" {{ $element->role_id == $role->id ? 'selected' : null }}>{{ $role->slug_en }}</option>
                                                                         @endforeach
                                                                     @else
                                                                         @foreach($roles->where('is_admin', false) as $role)
-                                                                            <option value="{{ $role->id }}" {{ $element->role_id == $role->id ? 'selected' : null }}>{{ $role->slug_en }}</option>
+                                                                            <option
+                                                                                value="{{ $role->id }}" {{ $element->role_id == $role->id ? 'selected' : null }}>{{ $role->slug_en }}</option>
                                                                         @endforeach
                                                                     @endif
                                                                 </select>
@@ -147,7 +154,8 @@
                                                     {{-- email + mobile --}}
 
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                                             <label for="email"
                                                                    class="control-label">{{ trans('general.email') }}
                                                                 *</label>
@@ -170,7 +178,8 @@
                                                     @if(!$categories->isEmpty())
                                                         <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label class="control-label">{{ trans('general.categories') }}
+                                                                <label
+                                                                    class="control-label">{{ trans('general.categories') }}
                                                                     *</label>
                                                                 <select multiple="multiple" class="multi-select"
                                                                         id="my_multi_select1" name="categories[]">
@@ -187,9 +196,10 @@
                                                                                     {{ $child->name }}</option>
                                                                                 @if(!$child->children->isEmpty())
                                                                                     @foreach($child->children as $subChild)
-                                                                                        <option value="{{ $subChild->id }}"
-                                                                                                {{ in_array($subChild->id,$element->categories->pluck('id')->unique()->flatten()->toArray()) ? 'selected' : null }}
-                                                                                                style="padding-left: 35px">
+                                                                                        <option
+                                                                                            value="{{ $subChild->id }}"
+                                                                                            {{ in_array($subChild->id,$element->categories->pluck('id')->unique()->flatten()->toArray()) ? 'selected' : null }}
+                                                                                            style="padding-left: 35px">
                                                                                             {{ $subChild->name }}</option>
                                                                                     @endforeach
                                                                                 @endif
@@ -207,12 +217,14 @@
                                                     @if(!$products->isEmpty())
                                                         <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label class="control-label">{{ trans('general.products') }}
+                                                                <label
+                                                                    class="control-label">{{ trans('general.products') }}
                                                                     *</label>
                                                                 <select multiple="multiple" class="multi-select"
                                                                         id="my_multi_select2" name="products[]">
                                                                     @foreach($products as $product)
-                                                                        <option value="{{ $product->id }}" {{ in_array($product->id,$element->productGroup->pluck('id')->unique()->flatten()->toArray()) ? 'selected' : null }}>
+                                                                        <option
+                                                                            value="{{ $product->id }}" {{ in_array($product->id,$element->productGroup->pluck('id')->unique()->flatten()->toArray()) ? 'selected' : null }}>
                                                                             {{ $product->name }} - SKU
                                                                             : {{ $product->sku }}</option>
                                                                     @endforeach
@@ -228,7 +240,8 @@
                                                                    data-original-title="{{ trans('message.gender') }}">{{ trans('general.gender') }}</label></br>
                                                             <label class="radio-inline">
                                                                 <input type="radio" name="is_male" id="optionsRadios1"
-                                                                       checked value="1" {{ $element->is_male ? 'checked' : '' }}>
+                                                                       checked
+                                                                       value="1" {{ $element->is_male ? 'checked' : '' }}>
                                                                 {{ trans('general.male') }} </label>
                                                             <label class="radio-inline">
                                                                 <input type="radio" name="is_male" id="optionsRadios2"
@@ -242,7 +255,8 @@
                                                     <div class="col-lg-12">
                                                         <div class="col-md-2">
                                                             <div class="form-group">
-                                                                <label for="form_control_1">{{ trans('general.main_image') }}</label>
+                                                                <label
+                                                                    for="form_control_1">{{ trans('general.main_image') }}</label>
                                                                 <input type="file" class="form-control tooltips"
                                                                        data-container="body" data-placement="top"
                                                                        data-original-title="{{ trans('message.main_image') }}"
@@ -268,7 +282,8 @@
                                                                 <label for="file"
                                                                        class="control-label">{{ trans('general.more_images') }}</label>
 
-                                                                <input class="form-control tooltips" data-container="body"
+                                                                <input class="form-control tooltips"
+                                                                       data-container="body"
                                                                        data-placement="top"
                                                                        data-original-title="{{ trans('message.more_iamges') }}"
                                                                        name="images[]" placeholder="images" type="file"
@@ -280,7 +295,8 @@
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="form_control_1">{{ trans('general.banner') }}</label>
+                                                                <label
+                                                                    for="form_control_1">{{ trans('general.banner') }}</label>
                                                                 <input type="file" class="form-control tooltips"
                                                                        data-container="body" data-placement="top"
                                                                        data-original-title="{{ trans('message.banner') }}"
@@ -292,7 +308,8 @@
                                                             </div>
                                                             @if($element->banner)
                                                                 <div class="col-md-12">
-                                                                    <img class="img-responsive img-sm" style="width : 60px"
+                                                                    <img class="img-responsive img-sm"
+                                                                         style="width : 60px"
                                                                          src="{{ asset(env('THUMBNAIL').$element->banner) }}"
                                                                          alt="">
                                                                 </div>
@@ -301,7 +318,8 @@
                                                             @endif
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <div class="form-group {{ $errors->has('bg') ? ' has-error' : '' }}">
+                                                            <div
+                                                                class="form-group {{ $errors->has('bg') ? ' has-error' : '' }}">
                                                                 <label for="bg"
                                                                        class="control-label">{{ trans('general.bg') }}</label>
                                                                 <input type="file"
@@ -315,7 +333,8 @@
                                                             </div>
                                                             @if($element->bg)
                                                                 <div class="col-md-12">
-                                                                    <img class="img-responsive img-sm" style="width : 80px"
+                                                                    <img class="img-responsive img-sm"
+                                                                         style="width : 80px"
                                                                          src="{{ asset(env('THUMBNAIL').$element->bg) }}"
                                                                          alt="">
                                                                 </div>
@@ -337,7 +356,8 @@
                                                                     <select multiple="multiple" class="multi-select"
                                                                             id="my_multi_select3" name="surveys[]">
                                                                         @foreach($element->surveys as $survey)
-                                                                            <option value="{{ $survey->id }}" {{ in_array($survey->id,$element->surveys->pluck('id')->unique()->flatten()->toArray()) ? 'selected' : null }}>
+                                                                            <option
+                                                                                value="{{ $survey->id }}" {{ in_array($survey->id,$element->surveys->pluck('id')->unique()->flatten()->toArray()) ? 'selected' : null }}>
                                                                                 {{ $survey->name }} </option>
                                                                         @endforeach
                                                                     </select>
@@ -383,7 +403,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group {{ $errors->has('service_en') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group {{ $errors->has('service_en') ? ' has-error' : '' }}">
                                                             <label for="service_en"
                                                                    class="control-label">{{ trans('general.service_en') }}
                                                             </label>
@@ -404,7 +425,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group {{ $errors->has('service_ar') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group {{ $errors->has('service_ar') ? ' has-error' : '' }}">
                                                             <label for="service_ar"
                                                                    class="control-label">{{ trans('general.service_ar') }}
                                                             </label>
@@ -426,7 +448,8 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="form_control_1">{{ trans('general.qr') }}</label>
+                                                            <label
+                                                                for="form_control_1">{{ trans('general.qr') }}</label>
                                                             <input type="file" class="form-control tooltips"
                                                                    data-container="body" data-placement="top"
                                                                    data-original-title="{{ trans('message.qr') }}"
@@ -437,7 +460,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
                                                             <label for="mobile"
                                                                    class="control-label">{{ trans('general.mobile') }}</label>
                                                             <input id="mobile" type="text" class="form-control tooltips"
@@ -456,7 +480,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                                                             <label for="phone"
                                                                    class="control-label">{{ trans('general.phone') }}</label>
                                                             <input id="phone" type="text" class="form-control tooltips"
@@ -475,7 +500,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('fax') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('fax') ? ' has-error' : '' }}">
                                                             <label for="fax"
                                                                    class="control-label">{{ trans('general.fax') }}</label>
                                                             <input id="fax" type="text" class="form-control tooltips"
@@ -493,7 +519,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
                                                             <label for="address"
                                                                    class="control-label">{{ trans('general.address') }}</label>
                                                             <input id="address" type="text"
@@ -513,7 +540,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('area') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('area') ? ' has-error' : '' }}">
                                                             <label for="area"
                                                                    class="control-label">{{ trans('general.area') }}</label>
                                                             <input id="area" type="text" class="form-control tooltips"
@@ -531,7 +559,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('block') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('block') ? ' has-error' : '' }}">
                                                             <label for="block"
                                                                    class="control-label">{{ trans('general.block') }}</label>
                                                             <input id="block" type="text" class="form-control tooltips"
@@ -550,7 +579,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('street') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('street') ? ' has-error' : '' }}">
                                                             <label for="street"
                                                                    class="control-label">{{ trans('general.street') }}</label>
                                                             <input id="street" type="text" class="form-control tooltips"
@@ -569,7 +599,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('building') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('building') ? ' has-error' : '' }}">
                                                             <label for="building"
                                                                    class="control-label">{{ trans('general.building') }}</label>
                                                             <input id="building" type="text"
@@ -589,7 +620,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('floor') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('floor') ? ' has-error' : '' }}">
                                                             <label for="floor"
                                                                    class="control-label">{{ trans('general.floor') }}</label>
                                                             <input id="floor" type="text" class="form-control tooltips"
@@ -608,7 +640,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('apartment') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('apartment') ? ' has-error' : '' }}">
                                                             <label for="apartment"
                                                                    class="control-label">{{ trans('general.apartment') }}</label>
                                                             <input id="apartment" type="text"
@@ -641,7 +674,8 @@
                                             <div class="form-body">
                                                 <div class="row">
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('policy_ar') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('policy_ar') ? ' has-error' : '' }}">
                                                             <label for="policy_ar"
                                                                    class="control-label">{{ trans('general.policy_ar') }}</label>
                                                             <input id="policy_ar" type="text"
@@ -661,7 +695,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('policy_en') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('policy_en') ? ' has-error' : '' }}">
                                                             <label for="policy_en"
                                                                    class="control-label">{{ trans('general.policy_en') }}</label>
                                                             <input id="policy_en" type="text"
@@ -681,7 +716,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('cancellation_ar') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('cancellation_ar') ? ' has-error' : '' }}">
                                                             <label for="cancellation_ar"
                                                                    class="control-label">{{ trans('general.cancellation_ar') }}</label>
                                                             <input id="cancellation_ar" type="text"
@@ -702,7 +738,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('cancellation_en') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('cancellation_en') ? ' has-error' : '' }}">
                                                             <label for="cancellation_en"
                                                                    class="control-label">{{ trans('general.cancellation_en') }}</label>
                                                             <input id="cancellation_en" type="text"
@@ -723,7 +760,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('keywords') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('keywords') ? ' has-error' : '' }}">
                                                             <label for="keywords"
                                                                    class="control-label">{{ trans('general.keywords') }}</label>
                                                             <input id="keywords" type="text"
@@ -743,7 +781,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('path') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('path') ? ' has-error' : '' }}">
                                                             <label for="path"
                                                                    class="control-label">{{ trans('general.path') }}</label>
                                                             <input id="path" type="file"
@@ -832,6 +871,36 @@
                                                                 </label>
                                                             </div>
                                                         </div>
+                                                        @if(env('SMS_ENABLED'))
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label sbold tooltips"
+                                                                           data-container="body" data-placement="top"
+                                                                           data-original-title="{{ trans('message.mobile_verified') }}">{{ trans('general.mobile_verified') }}</label></br>
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="mobile_verified"
+                                                                               {{ $element->mobile_verified ? 'checked' : null  }}
+                                                                               id="optionsRadios1" value="1">
+                                                                        {{ trans('general.yes') }} </label>
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="mobile_verified"
+                                                                               {{ !$element->mobile_verified ? 'checked' : null  }}
+                                                                               id="optionsRadios2"
+                                                                               value="0"> {{ trans('general.no') }}
+                                                                    </label>
+                                                                    @if($element->mobile_code)
+                                                                        <span class="help-block">
+                                                                        <strong>
+                                                                            {{ trans('general.mobile_verification_code') }} : {{ $element->mobile_code }}
+                                                                        </strong>
+                                                                        </span>
+                                                                    @endif
+                                                                    <br>
+                                                                    <a class="btn btn-warning"
+                                                                       href="{{ route('backend.admin.user.mobile.resend', ['fullMobile' => $element->fullMobile,'code' => $element->mobile_code, 'user_id' => $element->id]) }}">{{ trans('general.resend') }} {{ trans('general.code') }}</a>
+                                                                </div>
+                                                            </div>
+                                                        @endif
 
                                                     </div>
                                                 </div>
@@ -849,7 +918,8 @@
                                             <div class="form-body">
                                                 <div class="row">
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('website') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('website') ? ' has-error' : '' }}">
                                                             <label for="website"
                                                                    class="control-label">{{ trans('general.website') }}</label>
                                                             <input id="website" type="url"
@@ -869,7 +939,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('facebook') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('facebook') ? ' has-error' : '' }}">
                                                             <label for="facebook"
                                                                    class="control-label">{{ trans('general.facebook') }}</label>
                                                             <input id="facebook" type="url"
@@ -889,7 +960,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('instagram') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('instagram') ? ' has-error' : '' }}">
                                                             <label for="instagram"
                                                                    class="control-label">{{ trans('general.instagram') }}</label>
                                                             <input id="instagram" type="url"
@@ -909,7 +981,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('youtube') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('youtube') ? ' has-error' : '' }}">
                                                             <label for="youtube"
                                                                    class="control-label">{{ trans('general.youtube') }}</label>
                                                             <input id="youtube" type="url"
@@ -929,7 +1002,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('twitter') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('twitter') ? ' has-error' : '' }}">
                                                             <label for="twitter"
                                                                    class="control-label">{{ trans('general.twitter') }}</label>
                                                             <input id="twitter" type="url"
@@ -949,7 +1023,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('whatsapp') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('whatsapp') ? ' has-error' : '' }}">
                                                             <label for="whatsapp"
                                                                    class="control-label">{{ trans('general.whatsapp') }}
                                                                 (ex.: 65XX2XXX)</label>
@@ -970,7 +1045,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('iphone') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('iphone') ? ' has-error' : '' }}">
                                                             <label for="iphone"
                                                                    class="control-label">{{ trans('general.iphone') }}</label>
                                                             <input id="iphone" type="url"
@@ -990,7 +1066,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('android') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('android') ? ' has-error' : '' }}">
                                                             <label for="android"
                                                                    class="control-label">{{ trans('general.android') }}</label>
                                                             <input id="android" type="url"
@@ -1010,7 +1087,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('longitude') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('longitude') ? ' has-error' : '' }}">
                                                             <label for="longitude"
                                                                    class="control-label">{{ trans('general.longitude') }}</label>
                                                             <input id="longitude" type="text"
@@ -1030,7 +1108,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('latitude') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('latitude') ? ' has-error' : '' }}">
                                                             <label for="latitude"
                                                                    class="control-label">{{ trans('general.latitude') }}</label>
                                                             <input id="latitude" type="text"
@@ -1051,7 +1130,8 @@
                                                     </div>
                                                     @can('isAdminOrAbove')
                                                         <div class="col-md-4">
-                                                            <div class="form-group{{ $errors->has('balance') ? ' has-error' : '' }}">
+                                                            <div
+                                                                class="form-group{{ $errors->has('balance') ? ' has-error' : '' }}">
                                                                 <label for="balance"
                                                                        class="control-label">{{ trans('general.balance') }}</label>
                                                                 <input id="balance" type="number"
@@ -1074,7 +1154,8 @@
                                                         </div>
                                                     @endcan
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('merchant_id') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('merchant_id') ? ' has-error' : '' }}">
                                                             <label for="merchant_id"
                                                                    class="control-label">{{ trans('general.merchant_id') }}</label>
                                                             <input id="merchant_id" type="text"
@@ -1095,7 +1176,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('video_url_one') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('video_url_one') ? ' has-error' : '' }}">
                                                             <label for="video_url_one"
                                                                    class="control-label">{{ trans('general.video_url_one') }}</label>
                                                             <input id="video_url_one" type="url"
@@ -1116,7 +1198,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('video_url_two') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('video_url_two') ? ' has-error' : '' }}">
                                                             <label for="video_url_two"
                                                                    class="control-label">{{ trans('general.video_url_two') }}</label>
                                                             <input id="video_url_two" type="url"
@@ -1137,7 +1220,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('video_url_three') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('video_url_three') ? ' has-error' : '' }}">
                                                             <label for="video_url_three"
                                                                    class="control-label">{{ trans('general.video_url_three') }}</label>
                                                             <input id="video_url_three" type="url"
@@ -1158,7 +1242,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('video_url_four') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('video_url_four') ? ' has-error' : '' }}">
                                                             <label for="video_url_four"
                                                                    class="control-label">{{ trans('general.video_url_four') }}</label>
                                                             <input id="video_url_four" type="url"
@@ -1179,7 +1264,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="form-group{{ $errors->has('video_url_five') ? ' has-error' : '' }}">
+                                                        <div
+                                                            class="form-group{{ $errors->has('video_url_five') ? ' has-error' : '' }}">
                                                             <label for="video_url_five"
                                                                    class="control-label">{{ trans('general.video_url_five') }}</label>
                                                             <input id="video_url_five" type="url"

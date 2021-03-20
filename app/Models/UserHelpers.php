@@ -3,6 +3,9 @@
 namespace App\Models;
 
 
+use Nexmo\Laravel\Facade\Nexmo;
+use function PHPUnit\Framework\isNull;
+
 trait UserHelpers
 {
     public function getIsSuperAttribute()

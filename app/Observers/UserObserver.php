@@ -8,13 +8,16 @@ use App\Models\Address;
 use App\Models\Order;
 use App\Models\Setting;
 use App\Models\User;
+use App\Models\UserHelpers;
 use App\Notifications\OrderPaid;
+use App\Services\Traits\NotificationHelper;
 use Illuminate\Mail\Markdown;
 use Illuminate\Support\Facades\Mail;
-use Nexmo\Laravel\Facade\Nexmo;
+
 
 class UserObserver
 {
+    use NotificationHelper;
     /**
      * Handle the user "created" event.
      *
@@ -45,11 +48,7 @@ class UserObserver
         if (env('SMS_ENABLED') && env('NEXMO_KEY') && $element->mobile) {
             $code = random_int(1111, 9999);
             $element->update(['mobile_code' => $code]);
-            Nexmo::message()->send([
-                'to' => $element->fullMobile,
-                'from' => env('APP_NAME'),
-                'text' => 'Welcome to ' .env('APP_NAME'). ' your verification code is : '. $code .' - '
-            ]);
+            $this->sendVerificationCode($element->fullMobile, $code);
         }
 
     }

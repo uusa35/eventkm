@@ -10,7 +10,9 @@ use App\Models\Survey;
 use App\Models\User;
 use App\Models\Country;
 use App\Models\Role;
+use App\Models\UserHelpers;
 use App\Services\Traits\ImageHelpers;
+use App\Services\Traits\NotificationHelper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -18,7 +20,7 @@ use Nexmo\Laravel\Facade\Nexmo;
 
 class UserController extends Controller
 {
-    use ImageHelpers;
+    use ImageHelpers, NotificationHelper;
 
     /**
      * Display a listing of the resource.
@@ -243,5 +245,15 @@ class UserController extends Controller
         $element = User::withTrashed()->whereId($id)->first();
         $element->restore();
         return redirect()->back()->with('success', 'element restored');
+    }
+
+    public function resendVerificationCode(Request $request) {
+        if(strlen($request->code) < 4) {
+            $element = User::whereId($request->user_id)->first();
+            $code = random_int(1111, 9999);
+            $element->update(['mobile_code' => $code]);
+        }
+         $this->sendVerificationCode($request->fullMobile, $request->code);
+         return redirect()->back()->with('success', 'Mobile Verification code is send to this user');
     }
 }

@@ -38,6 +38,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('user', 'UserController');
         Route::get('trashed/user', 'UserController@trashed')->name('user.trashed');
         Route::get('restore/user/{id}', 'UserController@restore')->name('user.restore');
+        Route::get('resend/mobile', 'UserController@resendVerificationCode')->name('user.mobile.resend');
         Route::resource('color', 'ColorController');
         Route::resource('size', 'SizeController');
         Route::resource('coupon', 'CouponController');

@@ -331,4 +331,14 @@ class UserController extends Controller
             return $q->active()->companies();
         }])->with('addresses', 'role')->first();
     }
+
+    public function resendVerificationCode(Request $request) {
+        $element = $request->user();
+        $code = random_int(1111, 9999);
+        if(strlen($element->code) < 4) {
+            $element->update(['mobile_code' => $code]);
+        }
+        $this->sendVerificationCode($element->fullMobile, $code);
+        return redirect()->response(['message' => trans('general.mobile_verification_code_is_sent_successfully')]);
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Services\Traits;
 use Illuminate\Http\Request;
+use Nexmo\Laravel\Facade\Nexmo;
 
 /**
  * Created by PhpStorm.
@@ -103,5 +104,13 @@ trait NotificationHelper
         curl_close($ch);
         return $response;
 
+    }
+
+    public function sendVerificationCode($fullMobile,$code) {
+        Nexmo::message()->send([
+            'to' => $fullMobile,
+            'from' => env('APP_NAME'),
+            'text' => 'Welcome to ' .env('APP_NAME'). ' your verification code is : '. $code .' - '
+        ]);
     }
 }
