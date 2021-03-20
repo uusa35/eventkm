@@ -106,7 +106,7 @@ class AddonController extends Controller
     public function trashed()
     {
         $this->authorize('isSuper');
-        $elements = Addon::onlyTrashed()->paginate(100);
+        $elements = Addon::onlyTrashed()->paginate(Self::TAKE);
         return view('backend.modules.addon.index', compact('elements'));
     }
 

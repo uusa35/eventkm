@@ -42,15 +42,10 @@ class HomeController extends Controller
         if ($validator->fails()) {
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
-        $products = $this->product->active()->hasAttributes()->hasImage()->filters($filters)->with(
-            'brand', 'product_attributes.color', 'product_attributes.size', 'tags',
-            'favorites', 'categories.children')
-            ->orderBy('id', 'desc')->paginate(20);
-
+        $products = $this->product->active()->hasAttributes()->hasImage()->filters($filters)->with('brand', 'product_attributes.color', 'product_attributes.size', 'tags', 'favorites', 'categories.children')->orderBy('id', 'desc')->paginate(SELF::TAKE_MID);
         $services = $this->product->active()->hasImage()->filters($filters)->with(
             'tags', 'favorites', 'categories.children')
-            ->orderBy('id', 'desc')->paginate(20);
-
+            ->orderBy('id', 'desc')->paginate(Self::TAKE_MID);
         $tags = $products->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
         $sizes = $products->pluck('product_attributes')->flatten()->pluck('size')->flatten()->unique('id')->sortKeysDesc();
         $colors = $products->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();
@@ -71,7 +66,7 @@ class HomeController extends Controller
         session()->put('currency', $currency);
         session()->put('country', $currency->country);
         $this->addCountryToCart($currency->country);
-        if (str_contains(url()->previous(), 'cart') || str_contains(url()->previous(),'order')) {
+        if (str_contains(url()->previous(), 'cart') || str_contains(url()->previous(), 'order')) {
             return redirect()->route('frontend.home');
         }
         return redirect()->back();
@@ -137,10 +132,7 @@ class HomeController extends Controller
 
     public function setCountry(Request $request)
     {
-        $validator = validator($request->all(),
-            [
-                'country_id' => 'required|exists:countries,id'
-            ]);
+        $validator = validator($request->all(), ['country_id' => 'required|exists:countries,id']);
         if ($validator->fails()) {
             session()->forget('country');
             return redirect()->back()->withErrors($validator);
@@ -166,10 +158,6 @@ class HomeController extends Controller
             $element = new $className();
             $element = $element->whereId($request->id)->first();
         }
-//        if (request()->has('type')) {
-//            $route = env('APP_DEEP_LINK') . request()->type .'/'. $element->id;
-//            return redirect()->to($route);
-//        }
         return view('frontend.wokiee.four.home.mobile', compact('element'));
     }
 

@@ -101,7 +101,7 @@ class ItemController extends Controller
     public function trashed()
     {
         $this->authorize('isSuper');
-        $elements = Item::onlyTrashed()->paginate(100);
+        $elements = Item::onlyTrashed()->paginate(SELF::TAKE);
         return view('backend.modules.item.index', compact('elements'));
     }
 

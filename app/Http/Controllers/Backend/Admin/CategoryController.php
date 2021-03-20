@@ -114,7 +114,7 @@ class CategoryController extends Controller
     public function trashed()
     {
         $this->authorize('isAdminOrAbove');
-        $elements = Category::onlyTrashed()->paginate(100);
+        $elements = Category::onlyTrashed()->paginate(SELF::TAKE);
         return view('backend.modules.category.index', compact('elements'));
     }
 
