@@ -84,7 +84,6 @@ trait OrderTrait
                         'item_type' => $element->options->type,
                         'qty' => $element->qty,
                         'price' => $element->price,
-//                            'shipment_cost' => $element->options->shipment_cost,
                         'notes' => $element->options->notes ? $element->options->notes : null,
                         'product_size' => $element->options->size ? $element->options->size->name : null,
                         'product_color' => $element->options->color ? $element->options->color->name : null,

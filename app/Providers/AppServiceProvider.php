@@ -25,8 +25,8 @@ class AppServiceProvider extends ServiceProvider
     {
         if ($this->app->environment('local')) {
             //            $this->app->register(DuskServiceProvider::class);
-            $this->app->register(GeneratorsServiceProvider::class);
-            //  $this->app->register(TelTelescopeServiceProvider::class);
+//            $this->app->register(GeneratorsServiceProvider::class);
+//            $this->app->register(TelTelescopeServiceProvider::class);
         }
         Collection::macro('paginate', function (int $perPage = 15, $page = null, $options = []) {
             /** @var Collection $this */
