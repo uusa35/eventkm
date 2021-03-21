@@ -16,8 +16,10 @@
         <div class="card">
             <span class="card-header">
                 <h3>{{ trans('general.invoice_no') }} : {{ $element->id }}</h3>
-                <span class="float-right"> <br><strong>{{ trans("general.date") }} : {{ $element->created_at->format('F j, Y') }}</strong></span>
-                <span class="float-right"> <br><strong>{{ trans("general.time") }} : {{ $element->created_at->format('g:i A') }}</strong></span>
+                <span
+                    class="float-right"> <br><strong>{{ trans("general.date") }} : {{ $element->created_at->format('F j, Y') }}</strong></span>
+                <span
+                    class="float-right"> <br><strong>{{ trans("general.time") }} : {{ $element->created_at->format('g:i A') }}</strong></span>
                 <span class="float-right"> <br><strong>{{ trans('general.status') }} : </strong> {{ strtoupper($element->status) }}</span>
                 @if($element->cash_on_delivery)
                     <span class="float-right"> <br><strong>{{ trans('general.payment_method') }} : </strong> {{ strtoupper(trans('general.cash_on_delivery')) }}</span>
@@ -117,8 +119,8 @@
                                     <td class="center"><img class="img-xs"
                                                             src="{{ $item->product->getCurrentImageAttribute() }}"
                                                             alt=""></td>
-                                    <td class="left strong">{{ $item->color_name ?? trans('general.not_available') }}</td>
-                                    <td class="left strong">{{ $item->size_name ?? trans('general.not_available') }}</td>
+                                    <td class="left strong">{{ $item->color ? $item->color->name : trans('general.not_available') }}</td>
+                                    <td class="left strong">{{ $item->size ? $item->size->name :  trans('general.not_available') }}</td>
                                     <td class="left"><a
                                             href="{{ !env('ABATI') ? route('frontend.product.show',$item->product_id) : '#'}}">{{ $item->product->name }}</a>
                                     </td>
@@ -132,26 +134,28 @@
                                         {{ trans('general.kd') }}
                                     </td>
                                 </tr>
-                                @if($item->notes)
-                                    <tr>
-                                        <td colspan="12">
-                                            <div class="col-12">
-                                                <div class="alert alert-dark alert-info">
-                                                    @if($item->isProductType)
-                                                        <p>
-                                                            {{ trans('general.notes') }}
-                                                            : {{ $item->product->name }} / {{ $item->notes }}
-                                                        </p>
-                                                    @else
-                                                        <p>
-                                                            {{ trans('general.notes') }} : {{ $item->notes }}
-                                                        </p>
-                                                    @endif
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @endif
+                            @elseif($item->product && $item->product->size && $item->product->color)
+                                <tr>
+                                    <td class="center">{{ $item->product_id }}</td>
+                                    <td class="center">{{ $item->product->sku }}</td>
+                                    <td class="center"><img class="img-xs"
+                                                            src="{{ $item->product->getCurrentImageAttribute() }}"
+                                                            alt=""></td>
+                                    <td class="left strong">{{ $item->color ? $item->color->name : trans('general.not_available') }}</td>
+                                    <td class="left strong">{{ $item->size ? $item->size->name :  trans('general.not_available') }}</td>
+                                    <td class="left"><a
+                                            href="{{ !env('ABATI') ? route('frontend.product.show',$item->product_id) : '#'}}">{{ $item->product->name }}</a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('frontend.user.show', $item->product->user_id) }}">{{ $item->product->user->slug }}</a>
+                                    </td>
+                                    <td class="right">{{ $item->price }} {{ trans('general.kd') }}</td>
+                                    <td class="right">{{ $item->qty }}</td>
+                                    <td class="right">{{ $item->product->weight }} KG</td>
+                                    <td class="right">{{ number_format($item->price * $item->qty,'2','.',',') }}
+                                        {{ trans('general.kd') }}
+                                    </td>
+                                </tr>
                             @else
                                 <tr>
                                     <td class="center">{{ $item->product_id }}</td>
@@ -159,8 +163,8 @@
                                     <td class="center"><img class="img-xs"
                                                             src="{{ $item->product->imageThumbLink }}"
                                                             alt=""></td>
-                                    <td class="left strong">{{ $item->product_color ?? 'N/A'}}</td>
-                                    <td class="left strong">{{ $item->product_size ?? 'N/A' }}</td>
+                                    <td class="left strong">{{ $item->product_color ? $item->product_color :  'N/A'}}</td>
+                                    <td class="left strong">{{ $item->product_size ? $item->product_size :  'N/A' }}</td>
                                     <td class="left"><a
                                             href="{{ !env('ABATI') ? route('frontend.product.show',$item->product_id) : '#'}}">{{ $item->product->name }}</a>
                                     </td>
@@ -172,6 +176,26 @@
                                     <td class="right">{{ $item->product->weight }} KG</td>
                                     <td class="right">{{ number_format($item->price * $item->qty,'2','.',',') }}
                                         {{ trans('general.kd') }}
+                                    </td>
+                                </tr>
+                            @endif
+                            @if($item->notes)
+                                <tr>
+                                    <td colspan="12">
+                                        <div class="col-12">
+                                            <div class="alert alert-dark alert-info">
+                                                @if($item->isProductType)
+                                                    <p>
+                                                        {{ trans('general.notes') }}
+                                                        : {{ $item->product->name }} / {{ $item->notes }}
+                                                    </p>
+                                                @else
+                                                    <p>
+                                                        {{ trans('general.notes') }} : {{ $item->notes }}
+                                                    </p>
+                                                @endif
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             @endif

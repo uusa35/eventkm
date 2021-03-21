@@ -64,7 +64,7 @@ trait ImageHelpers
                         } else {
                             $imagePath = $request->$inputName->store('public/uploads/images');
                             $imagePath = str_replace('public/uploads/images/', '', $imagePath);
-                            $img = Image::make(storage_path('app/public/uploads/images/' . $imagePath))->encode('jpg',0);
+                            $img = Image::make(storage_path('app/public/uploads/images/' . $imagePath));
                             foreach ($sizes as $key => $value) {
                                 if ($value === 'large') {
                                     if ($ratio) {
