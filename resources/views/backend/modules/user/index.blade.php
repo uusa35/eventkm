@@ -81,7 +81,7 @@
                                         <div class="col-lg-12" style="margin : 30px">
                                             @foreach($element->categories->take(6) as $c)
                                                 <div class="col-lg-2">
-                                                <label  class="label label-info">{{ $c->name }}</label>
+                                                <label  class="label label-info"><strong>{{ $c->name }}</strong></label>
                                                 </div>
                                             @endforeach
                                         </div>
