@@ -1,5 +1,6 @@
 <?php
 //if (env('MOBILE_LAYOUT')) {
+dd('sthop');
     Route::get('/', 'HomeController@getMobileLayout')->name('index');
     Route::get('/home', 'HomeController@getMobileLayout')->name('home');
 //}
