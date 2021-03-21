@@ -309,7 +309,7 @@
                                                        data-original-title="{{ trans('message.banner') }}" name="banner"
                                                        placeholder="{{ trans('general.banner') }}">
                                                 <div class="help-block text-left small">
-                                                    {{ trans('message.best_fit',['width' => '1080 px', 'height' => '350 px']) }}
+                                                    {{ trans('message.best_fit',['width' => '1080 px', 'height' => '410 px']) }}
                                                 </div>
                                             </div>
                                     </div>

@@ -303,7 +303,7 @@
                                                                        name="banner"
                                                                        placeholder="{{ trans('general.banner') }}">
                                                                 <div class="help-block text-left">
-                                                                    {{ trans('message.best_fit',['width' => '1060 px', 'height' => '350 px']) }}
+                                                                    {{ trans('message.best_fit',['width' => '1060 px', 'height' => '410 px']) }}
                                                                 </div>
                                                             </div>
                                                             @if($element->banner)

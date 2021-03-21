@@ -37,7 +37,7 @@ class UserUpdate extends FormRequest
             'fax' => 'nullable',
             'whatsapp' => 'nullable',
             'image' => 'image|dimensions:min_width=1000,height:1000',
-            'banner' => 'nullable|image|dimensions:width=1080,height=350',
+            'banner' => 'nullable|image|dimensions:width=1080,height=410',
             'bg' => 'nullable|image|dimensions:width=1080,height=350',
             'address' => 'nullable|min:3',
             'area' => 'nullable|string',

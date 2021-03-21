@@ -25,7 +25,7 @@ class UserStore extends FormRequest
     {
         return [
             'image.dimensions' => trans('message.best_fit', ['width' => '1000 px', 'height' => '1000 px']),
-            'banner.dimensions' => trans('message.best_fit', ['width' => '1080 px', 'height' => '350 px']),
+            'banner.dimensions' => trans('message.best_fit', ['width' => '1080 px', 'height' => '410 px']),
             'bg.dimensions' => trans('message.best_fit', ['width' => '1080 px', 'height' => '350 px']),
         ];
     }
@@ -51,7 +51,7 @@ class UserStore extends FormRequest
             'fax' => 'nullable',
             'whatsapp' => 'nullable',
             'image' => 'required|image|dimensions:width=1000,height=1000',
-            'banner' => 'nullable|image|dimensions:width=1080,height=350',
+            'banner' => 'nullable|image|dimensions:width=1080,height=410',
             'bg' => 'nullable|image|dimensions:width=1080,height=350',
             'address' => 'nullable|min:3',
             'area' => 'nullable|string',
