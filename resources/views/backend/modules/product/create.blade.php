@@ -299,7 +299,7 @@
                                         <div class="form-body">
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label for="single"
                                                                    class="control-label">{{ trans('general.color') }}
@@ -321,7 +321,7 @@
                                                             </span> --}}
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label for="size_id"
                                                                    class="control-label">{{ trans('general.size') }}
@@ -340,6 +340,35 @@
                                                             <div class="help-block text-left small">
                                                                 {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440 px']) }}
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div
+                                                            class="form-group{{ $errors->has('quantity') ? ' has-error' : '' }}">
+                                                            <label for="quantity"
+                                                                   class="control-label">{{ trans('general.quantity') }}
+                                                            </label>
+                                                            <input id="quantity" type="text"
+                                                                   class="form-control tooltips"
+                                                                   data-container="body" data-placement="top"
+                                                                   data-original-title="{{ trans('message.quantity') }}"
+                                                                   name="qty" maxlength="5"
+                                                                   value="{{ old('quantity') ? old('quantity') : 1 }}"
+                                                                   placeholder="{{ trans('general.quantity') }}"
+                                                                   autofocus
+                                                            >
+                                                            <span class="help-block text-danger">
+                                                                    <small>
+                                                                    يرجى وضع رقم الكمية باللغة الانجليزية فقط
+                                                                    </small>
+                                                                    </span>
+                                                            @if ($errors->has('quantity'))
+                                                                <span class="help-block">
+                                                                <strong>
+                                                                    {{ $errors->first('quantity') }}
+                                                                </strong>
+                                                            </span>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -361,9 +390,6 @@
                                                                         class="btn default date-set" type="button"><i
                                                                             class="fa fa-calendar"></i></button></span>
                                                             </div>
-                                                            {{-- <span class="help-block">
-                                                                                                                                <strong>{{ trans('message.start_sale_date') }}</strong>
-                                                            </span> --}}
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
@@ -418,7 +444,7 @@
                                                     </div>
 
 
-                                                    <div class="col-md-2">
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
                                                             <label for="brand_id"
                                                                    class="control-label">{{ trans('general.brand') }}
@@ -433,35 +459,6 @@
                                                                         value="{{ $brand->id }}">{{ $brand->slug }}</option>
                                                                 @endforeach
                                                             </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <div
-                                                            class="form-group{{ $errors->has('quantity') ? ' has-error' : '' }}">
-                                                            <label for="quantity"
-                                                                   class="control-label">{{ trans('general.quantity') }}
-                                                            </label>
-                                                            <input id="quantity" type="text"
-                                                                   class="form-control tooltips"
-                                                                   data-container="body" data-placement="top"
-                                                                   data-original-title="{{ trans('message.quantity') }}"
-                                                                   name="qty" maxlength="5"
-                                                                   value="{{ old('quantity') ? old('quantity') : 1 }}"
-                                                                   placeholder="{{ trans('general.quantity') }}"
-                                                                   autofocus
-                                                                   >
-                                                            <span class="help-block text-danger">
-                                                                    <small>
-                                                                    يرجى وضع رقم الكمية باللغة الانجليزية فقط
-                                                                    </small>
-                                                                    </span>
-                                                            @if ($errors->has('quantity'))
-                                                                <span class="help-block">
-                                            <strong>
-                                                {{ $errors->first('quantity') }}
-                                            </strong>
-                                        </span>
-                                                            @endif
                                                         </div>
                                                     </div>
                                                     <div class="col-md-3">
@@ -514,7 +511,7 @@
                                                             @endif
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-2">
+                                                    <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label
                                                                 for="form_control_1">{{ trans('general.image_chart') }}</label>
