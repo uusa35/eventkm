@@ -10,6 +10,7 @@
                     <p class="text-justify">
                         {{ $message }}
                     </p>
+                        {{ dd(env('MAX_IMAGE_SIZE')) }}
                     @if(str_contains(request()->route()->getName(),'product') || str_contains(request()->route()->getName(),'service') || str_contains(request()->route()->getName(),'category'))
                         <div class="col-lg-12 margin-bottom-30">
                             <div class="alert alert-warning">
