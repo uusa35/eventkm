@@ -299,7 +299,7 @@
                                         <div class="form-body">
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="col-md-5">
+                                                    <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="single"
                                                                    class="control-label">{{ trans('general.color') }}
@@ -321,7 +321,7 @@
                                                             </span> --}}
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-5">
+                                                    <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="size_id"
                                                                    class="control-label">{{ trans('general.size') }}
@@ -337,12 +337,9 @@
                                                                         value="{{ $size->id }}">{{ $size->name }}</option>
                                                                 @endforeach
                                                             </select>
-                                                            <div class="help-block text-left small">
-                                                                {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440 px']) }}
-                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-2">
+                                                    <div class="col-md-4">
                                                         <div
                                                             class="form-group{{ $errors->has('quantity') ? ' has-error' : '' }}">
                                                             <label for="quantity"
