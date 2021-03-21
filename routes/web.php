@@ -87,7 +87,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::post('reset/password', 'UserController@postResetPassword')->name('reset');
     Route::resource('user', 'UserController')->only(['edit', 'update', 'show', 'index']);
     Route::resource('product', 'ProductController');
-    Route::get('product/trashed', 'ProductController@trashed')->name('product.trashed');
+    Route::get('trashed/product', 'ProductController@trashed')->name('product.trashed');
     Route::get('product/restore/{id}', 'ProductController@restore')->name('product.restore');
     Route::get('search/product', 'ProductController@search')->name('product.search');
     Route::resource('attribute', 'ProductAttributeController');
