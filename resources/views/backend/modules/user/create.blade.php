@@ -132,11 +132,11 @@
                                                     <option>{{ trans('general.choose_role') }}</option>
                                                     @if(auth()->user()->isSuper)
                                                         @foreach($roles as $role)
-                                                            <option value="{{ $role->id }}">{{ $role->slug_en }}</option>
+                                                            <option value="{{ $role->id }}">{{ $role->slug }}</option>
                                                         @endforeach
                                                     @else
                                                         @foreach($roles->where('is_admin', false) as $role)
-                                                            <option value="{{ $role->id }}">{{ $role->slug_en }}</option>
+                                                            <option value="{{ $role->id }}">{{ $role->slug }}</option>
                                                         @endforeach
                                                     @endif
                                                 </select>
@@ -298,44 +298,32 @@
                                                           maxlength="500">{{ old('description_en') }}</textarea>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group {{ $errors->has('service_en') ? ' has-error' : '' }}">
-                                                <label for="service_en"
-                                                       class="control-label">{{ trans('general.service_en') }}</label>
-                                                <input id="service_en" type="text" class="form-control tooltips"
-                                                       data-container="body" data-placement="top"
-                                                       data-original-title="{{ trans('message.service_en') }}"
-                                                       name="service_en" value="{{ old('service_en') }}"
-                                                       placeholder="{{ trans('general.service_en') }}"
-                                                       autofocus>
-                                                @if ($errors->has('service_en'))
-                                                    <span class="help-block">
-                                                <strong>
-                                                    {{ $errors->first('service_en') }}
-                                                </strong>
-                                            </span>
-                                                @endif
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="form_control_1">{{ trans('general.banner') }}</label>
+                                                <input type="file" class="form-control tooltips" data-container="body"
+                                                       data-placement="top"
+                                                       data-original-title="{{ trans('message.banner') }}" name="banner"
+                                                       placeholder="{{ trans('general.banner') }}">
+                                                <div class="help-block text-left small">
+                                                    {{ trans('message.best_fit',['width' => '1080 px', 'height' => '350 px']) }}
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group {{ $errors->has('service_ar') ? ' has-error' : '' }}">
-                                                <label for="service_ar"
-                                                       class="control-label">{{ trans('general.service_ar') }}</label>
-                                                <input id="service_ar" type="text" class="form-control tooltips"
-                                                       data-container="body" data-placement="top"
-                                                       data-original-title="{{ trans('message.service_ar') }}"
-                                                       name="service_ar" value="{{ old('service_ar') }}"
-                                                       placeholder="{{ trans('general.service_ar') }}"
-                                                       autofocus>
-                                                @if ($errors->has('service_ar'))
-                                                    <span class="help-block">
-                                                <strong>
-                                                    {{ $errors->first('service_ar') }}
-                                                </strong>
-                                            </span>
-                                                @endif
-                                            </div>
-                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        @if(!env('DESIGNERAAT'))
+                        <div class="portlet box blue ">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-gift"></i> {{ trans('general.more_details') }}
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div class="form-body">
+                                    <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group {{ $errors->has('service_en') ? ' has-error' : '' }}">
                                                 <label for="service_en"
@@ -568,18 +556,6 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="form_control_1">{{ trans('general.banner') }}</label>
-                                                <input type="file" class="form-control tooltips" data-container="body"
-                                                       data-placement="top"
-                                                       data-original-title="{{ trans('message.banner') }}" name="banner"
-                                                       placeholder="{{ trans('general.banner') }}">
-                                                <div class="help-block text-left small">
-                                                    {{ trans('message.best_fit',['width' => '1080 px', 'height' => '350 px']) }}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
                                             <div class="form-group {{ $errors->has('bg') ? ' has-error' : '' }}">
                                                 <label for="demo"
                                                        class="control-label">{{ trans('general.bg') }}</label>
@@ -620,9 +596,10 @@
                                             @endif
                                         @endcan
                                     </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+
 
                         <div class="portlet box blue ">
                             <div class="portlet-title">
@@ -752,7 +729,6 @@
                                 </div>
                             </div>
                         </div>
-
 
                         <div class="portlet box blue ">
                             <div class="portlet-title">
@@ -1100,6 +1076,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                         <div class="portlet box blue ">
                             <div class="portlet-title">
                                 <div class="caption">
