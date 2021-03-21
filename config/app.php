@@ -250,4 +250,5 @@ return [
         'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
     ],
 
+    'MAX_IMAGE_SIZE' => env('MAX_IMAGE_SIZE', 150)
 ];
