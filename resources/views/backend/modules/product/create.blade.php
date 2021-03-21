@@ -961,12 +961,12 @@
                                                             <label class="radio-inline">
                                                                 <input type="radio" name="is_available"
                                                                        id="optionsRadios3"
-                                                                       value="1">
+                                                                       value="1" checked>
                                                                 {{ trans('general.yes') }}</label>
                                                             <label class="radio-inline">
                                                                 <input type="radio" name="is_available"
                                                                        id="optionsRadios4"
-                                                                       checked value="0">
+                                                                        value="0">
                                                                 {{ trans('general.no') }}</label>
                                                         </div>
 
