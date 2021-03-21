@@ -208,20 +208,20 @@
                                                     </li>
                                                 @endif
                                                 @can('isAdminOrAbove')
-                                                    @can('index','slide')
-                                                        <li>
-                                                            <a href="{{ route('backend.slide.create',['slidable_id' => $element->id, 'slidable_type' => 'product']) }}">
-                                                                <i class="fa fa-fw fa-edit"></i> {{ trans('general.new_slide') }}
-                                                            </a>
-                                                        </li>
-                                                        @if($element->slides->isNotEmpty())
-                                                            <li>
-                                                                <a href="{{ route('backend.slide.index',['slidable_id' => $element->id, 'slidable_type' => 'product']) }}">
-                                                                    <i class="fa fa-fw fa-edit"></i> {{ trans('general.list_of_slides') }}
-                                                                </a>
-                                                            </li>
-                                                        @endif
-                                                    @endcan
+{{--                                                    @can('index','slide')--}}
+{{--                                                        <li>--}}
+{{--                                                            <a href="{{ route('backend.slide.create',['slidable_id' => $element->id, 'slidable_type' => 'product']) }}">--}}
+{{--                                                                <i class="fa fa-fw fa-edit"></i> {{ trans('general.new_slide') }}--}}
+{{--                                                            </a>--}}
+{{--                                                        </li>--}}
+{{--                                                        @if($element->slides->isNotEmpty())--}}
+{{--                                                            <li>--}}
+{{--                                                                <a href="{{ route('backend.slide.index',['slidable_id' => $element->id, 'slidable_type' => 'product']) }}">--}}
+{{--                                                                    <i class="fa fa-fw fa-edit"></i> {{ trans('general.list_of_slides') }}--}}
+{{--                                                                </a>--}}
+{{--                                                            </li>--}}
+{{--                                                        @endif--}}
+{{--                                                    @endcan--}}
                                                 @else
                                                     @can('slide.create')
                                                         <li>
