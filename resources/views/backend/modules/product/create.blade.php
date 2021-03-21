@@ -906,7 +906,6 @@
                                                                            checked value="0">
                                                                     {{ trans('general.no') }}</label>
                                                             </div>
-
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-group">
@@ -928,36 +927,7 @@
                                                     @else
                                                         <input type="hidden" name="active" value="1">
                                                     @endif
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label sbold tooltips"
-                                                                   data-container="body" data-placement="top"
-                                                                   data-original-title="{{ trans('message.home_delivery_availability') }}">{{ trans('general.home_delivery_available') }}</label></br>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="home_delivery_availability"
-                                                                       id="optionsRadios3" value="1">
-                                                                {{ trans('general.yes') }}</label>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="home_delivery_availability"
-                                                                       id="optionsRadios4" checked value="0">
-                                                                {{ trans('general.no') }}</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label sbold tooltips"
-                                                                   data-container="body" data-placement="top"
-                                                                   data-original-title="{{ trans('message.wrap_as_gift') }}">{{ trans('general.wrap_as_gift') }}</label></br>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="wrap_as_gift"
-                                                                       id="optionsRadios3" value="1">
-                                                                {{ trans('general.yes') }}</label>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="wrap_as_gift"
-                                                                       id="optionsRadios4" checked value="0">
-                                                                {{ trans('general.no') }}</label>
-                                                        </div>
-                                                    </div>
+
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label class="control-label sbold tooltips"
@@ -973,24 +943,7 @@
                                                                 {{ trans('general.no') }}</label>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label sbold tooltips"
-                                                                   data-container="body" data-placement="top"
-                                                                   data-original-title="{{ trans('message.exclusive') }}">{{ trans('general.exclusive') }}</label></br>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="exclusive" id="optionsRadios3"
-                                                                       value="1">
-                                                                {{ trans('general.yes') }}</label>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="exclusive" id="optionsRadios4"
-                                                                       checked value="0">
-                                                                {{ trans('general.no') }}</label>
-                                                        </div>
 
-                                                    </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label class="control-label sbold tooltips"
@@ -1005,12 +958,7 @@
                                                                        checked value="0">
                                                                 {{ trans('general.no') }}</label>
                                                         </div>
-
                                                     </div>
-
-
-                                                </div>
-                                                <div class="col-lg-12">
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label class="control-label sbold tooltips"
@@ -1029,49 +977,7 @@
                                                         </div>
 
                                                     </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label sbold tooltips"
-                                                                   data-container="body" data-placement="top"
-                                                                   data-original-title="{{ trans('message.is_hot_deal') }}">{{ trans('general.is_hot_deal') }}</label></br>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="is_hot_deal"
-                                                                       id="optionsRadios7"
-                                                                       value="1">
-                                                                {{ trans('general.yes') }}</label>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="is_hot_deal"
-                                                                       id="optionsRadios8"
-                                                                       checked value="0">
-                                                                {{ trans('general.no') }}</label>
-                                                        </div>
 
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label sbold tooltips"
-                                                                   data-container="body" data-placement="top"
-                                                                   data-original-title="{{ trans('message.check_stock') }}">
-
-                                                                {{ trans('general.check_stock') }}</label></br>
-                                                            <label class="radio-inline" data-toggle="tooltip"
-                                                                   data-placement="bottom" data-html="true" title=" If Not whenever a successful order is made. qty will not be decreased
-                                        accordingly.">
-                                                                <input type="radio" data-toggle="tooltip"
-                                                                       data-placement="bottom" title="hello"
-                                                                       name="check_stock" id="optionsRadios5" value="1"
-                                                                       checked>
-                                                                {{ trans('general.yes') }}</label>
-                                                            <label class="radio-inline" data-toggle="tooltip"
-                                                                   data-placement="bottom" data-html="true"
-                                                                   title=" if Not Product will be added to cart without checking the current quantity.">
-                                                                <input type="radio" name="check_stock"
-                                                                       id="optionsRadios6"
-                                                                       value="0">
-                                                                {{ trans('general.no') }}</label>
-
-                                                        </div>
-                                                    </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label class="control-label sbold tooltips"
@@ -1101,44 +1007,154 @@
                                                                        id="optionsRadios4" checked value="0">
                                                                 {{ trans('general.no') }}</label>
                                                         </div>
-
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label class="control-label sbold tooltips"
-                                                                   data-container="body" data-placement="top"
-                                                                   data-original-title="{{ trans('message.direct_purchase') }}">{{ trans('general.direct_purchase') }}</label></br>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="direct_purchase"
-                                                                       id="optionsRadios3" value="1">
-                                                                {{ trans('general.yes') }}</label>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="direct_purchase"
-                                                                       id="optionsRadios4" checked value="0">
-                                                                {{ trans('general.no') }}</label>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-actions right">
-                                {{--<button type="button" class="btn default">Cancel</button>--}}
-                                <a href="{!! url()->previous() !!}"
-                                   class="btn btn-danger">{{ trans('general.cancel') }}</a>
-                                {{--<button type="submit" class="btn btn-warning">--}}
-                                {{--<i class="fa fa-check"></i> Save & Go Back--}}
-                                {{--</button>--}}
+                                @if(!env('DESIGNERAAT'))
+                                    <div class="portlet box blue ">
+                                        <div class="portlet-title">
+                                            <div class="caption">
+                                                <i class="fa fa-bullhorn"></i> {{ trans('general.more_details') }}
+                                            </div>
+                                        </div>
+                                        <div class="portlet-body form">
+                                            <div class="form-body">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label sbold tooltips"
+                                                                       data-container="body" data-placement="top"
+                                                                       data-original-title="{{ trans('message.is_hot_deal') }}">{{ trans('general.is_hot_deal') }}</label></br>
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" name="is_hot_deal"
+                                                                           id="optionsRadios7"
+                                                                           value="1">
+                                                                    {{ trans('general.yes') }}</label>
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" name="is_hot_deal"
+                                                                           id="optionsRadios8"
+                                                                           checked value="0">
+                                                                    {{ trans('general.no') }}</label>
+                                                            </div>
 
-                                <button type="submit" class="btn btn-success">
-                                    <i class="fa fa-save"></i> {{ trans('general.save_product_and_add_attributes') }}
-                                </button>
-                                <button type="submit" class="btn btn-info">
-                                    <i class="fa fa-save"></i> {{ trans("general.save_and_go_back") }}
-                                </button>
-                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label sbold tooltips"
+                                                                       data-container="body" data-placement="top"
+                                                                       data-original-title="{{ trans('message.check_stock') }}">
+
+                                                                    {{ trans('general.check_stock') }}</label></br>
+                                                                <label class="radio-inline" data-toggle="tooltip"
+                                                                       data-placement="bottom" data-html="true" title=" If Not whenever a successful order is made. qty will not be decreased
+                                        accordingly.">
+                                                                    <input type="radio" data-toggle="tooltip"
+                                                                           data-placement="bottom" title="hello"
+                                                                           name="check_stock" id="optionsRadios5"
+                                                                           value="1"
+                                                                           checked>
+                                                                    {{ trans('general.yes') }}</label>
+                                                                <label class="radio-inline" data-toggle="tooltip"
+                                                                       data-placement="bottom" data-html="true"
+                                                                       title=" if Not Product will be added to cart without checking the current quantity.">
+                                                                    <input type="radio" name="check_stock"
+                                                                           id="optionsRadios6"
+                                                                           value="0">
+                                                                    {{ trans('general.no') }}</label>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label sbold tooltips"
+                                                                       data-container="body" data-placement="top"
+                                                                       data-original-title="{{ trans('message.direct_purchase') }}">{{ trans('general.direct_purchase') }}</label></br>
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" name="direct_purchase"
+                                                                           id="optionsRadios3" value="1">
+                                                                    {{ trans('general.yes') }}</label>
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" name="direct_purchase"
+                                                                           id="optionsRadios4" checked value="0">
+                                                                    {{ trans('general.no') }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label sbold tooltips"
+                                                                       data-container="body" data-placement="top"
+                                                                       data-original-title="{{ trans('message.exclusive') }}">{{ trans('general.exclusive') }}</label></br>
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" name="exclusive"
+                                                                           id="optionsRadios3"
+                                                                           value="1">
+                                                                    {{ trans('general.yes') }}</label>
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" name="exclusive"
+                                                                           id="optionsRadios4"
+                                                                           checked value="0">
+                                                                    {{ trans('general.no') }}</label>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label sbold tooltips"
+                                                                       data-container="body" data-placement="top"
+                                                                       data-original-title="{{ trans('message.home_delivery_availability') }}">{{ trans('general.home_delivery_available') }}</label></br>
+                                                                <label class="radio-inline">
+                                                                    <input type="radio"
+                                                                           name="home_delivery_availability"
+                                                                           id="optionsRadios3" value="1">
+                                                                    {{ trans('general.yes') }}</label>
+                                                                <label class="radio-inline">
+                                                                    <input type="radio"
+                                                                           name="home_delivery_availability"
+                                                                           id="optionsRadios4" checked value="0">
+                                                                    {{ trans('general.no') }}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label class="control-label sbold tooltips"
+                                                                       data-container="body" data-placement="top"
+                                                                       data-original-title="{{ trans('message.wrap_as_gift') }}">{{ trans('general.wrap_as_gift') }}</label></br>
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" name="wrap_as_gift"
+                                                                           id="optionsRadios3" value="1">
+                                                                    {{ trans('general.yes') }}</label>
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" name="wrap_as_gift"
+                                                                           id="optionsRadios4" checked value="0">
+                                                                    {{ trans('general.no') }}</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+
+                                <div class="form-actions right">
+                                    {{--<button type="button" class="btn default">Cancel</button>--}}
+                                    <a href="{!! url()->previous() !!}"
+                                       class="btn btn-danger">{{ trans('general.cancel') }}</a>
+                                    {{--<button type="submit" class="btn btn-warning">--}}
+                                    {{--<i class="fa fa-check"></i> Save & Go Back--}}
+                                    {{--</button>--}}
+
+                                    <button type="submit" class="btn btn-success">
+                                        <i class="fa fa-save"></i> {{ trans('general.save_product_and_add_attributes') }}
+                                    </button>
+                                    <button type="submit" class="btn btn-info">
+                                        <i class="fa fa-save"></i> {{ trans("general.save_and_go_back") }}
+                                    </button>
+                                </div>
                         </form>
                     </div>
                 </div>
