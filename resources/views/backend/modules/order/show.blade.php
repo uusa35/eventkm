@@ -119,8 +119,8 @@
                                     <td class="center"><img class="img-xs"
                                                             src="{{ $item->product->getCurrentImageAttribute() }}"
                                                             alt=""></td>
-                                    <td class="left strong">{{ $item->color ? $item->color->name : trans('general.not_available') }}</td>
-                                    <td class="left strong">{{ $item->size ? $item->size->name :  trans('general.not_available') }}</td>
+                                    <td class="left strong">{{ $item->product_attribute->color ? $item->product_attribute->color->name : trans('general.not_available') }}</td>
+                                    <td class="left strong">{{ $item->product_attribute->size ? $item->product_attribute->size->name :  trans('general.not_available') }}</td>
                                     <td class="left"><a
                                             href="{{ !env('ABATI') ? route('frontend.product.show',$item->product_id) : '#'}}">{{ $item->product->name }}</a>
                                     </td>
@@ -141,8 +141,8 @@
                                     <td class="center"><img class="img-xs"
                                                             src="{{ $item->product->getCurrentImageAttribute() }}"
                                                             alt=""></td>
-                                    <td class="left strong">{{ $item->color ? $item->color->name : trans('general.not_available') }}</td>
-                                    <td class="left strong">{{ $item->size ? $item->size->name :  trans('general.not_available') }}</td>
+                                    <td class="left strong">{{ $item->product->color ? $item->product->color->name : trans('general.not_available') }}</td>
+                                    <td class="left strong">{{ $item->product->size ? $item->product->size->name :  trans('general.not_available') }}</td>
                                     <td class="left"><a
                                             href="{{ !env('ABATI') ? route('frontend.product.show',$item->product_id) : '#'}}">{{ $item->product->name }}</a>
                                     </td>
