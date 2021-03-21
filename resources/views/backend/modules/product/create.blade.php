@@ -449,7 +449,7 @@
                                                                    value="{{ old('quantity') ? old('quantity') : 1 }}"
                                                                    placeholder="{{ trans('general.quantity') }}"
                                                                    autofocus
-                                                                   required>
+                                                                   >
                                                             <span class="help-block text-danger">
                                                                     <small>
                                                                     يرجى وضع رقم الكمية باللغة الانجليزية فقط
