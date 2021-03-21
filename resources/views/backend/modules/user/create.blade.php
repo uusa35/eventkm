@@ -163,25 +163,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
-                                                <label for="mobile"
-                                                       class="control-label required">{{ trans('general.mobile') }}
-                                                    *</label>
-                                                <input id="mobile" type="text" class="form-control tooltips"
-                                                       data-container="body" data-placement="top"
-                                                       data-original-title="{{ trans('message.mobile') }}" name="mobile"
-                                                       value="{{ old('mobile') }}"
-                                                       placeholder="{{ trans('general.mobile_example') }} " autofocus>
-                                                @if ($errors->has('mobile'))
-                                                    <span class="help-block">
-                                                <strong>
-                                                    {{ $errors->first('mobile') }}
-                                                </strong>
-                                            </span>
-                                                @endif
-                                            </div>
-                                        </div>
+
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="form_control_1"
@@ -212,51 +194,72 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        @if(!$categories->isEmpty())
+                                        <div class="col-lg-12">
+                                            @if(!$categories->isEmpty())
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label required">{{ trans('general.categories') }}
+                                                            *</label>
+                                                        <select multiple="multiple" class="multi-select"
+                                                                id="my_multi_select1" name="categories[]">
+                                                            @foreach($categories->unique() as $category)
+                                                                <option value="{{ $category->id }}"
+                                                                        style="background-color: {{ $category->isParent ? 'lightblue' : null  }}">
+                                                                    {{ $category->name }}</option>
+                                                                @if(!$category->children->isEmpty())
+                                                                    @foreach($category->children as $child)
+                                                                        <option value="{{ $child->id }}"
+                                                                                style="padding-left: 15px">
+                                                                            {{ $child->name }}</option>
+                                                                        @if(!$child->children->isEmpty())
+                                                                            @foreach($child->children as $subChild)
+                                                                                <option value="{{ $subChild->id }}"
+                                                                                        style="padding-left: 35px">
+                                                                                    {{ $subChild->name }}</option>
+                                                                            @endforeach
+                                                                        @endif
+                                                                    @endforeach
+                                                                @endif
+                                                            @endforeach
+                                                        </select>
+                                                        {{-- <span class="help-block">
+                                                                                                                                           <strong>{{ trans('message.categories_instructions') }}</strong>
+                                                        </span> --}}
+                                                    </div>
+                                                </div>
+                                            @endif
                                             <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label class="control-label required">{{ trans('general.categories') }}
-                                                        *</label>
-                                                    <select multiple="multiple" class="multi-select"
-                                                            id="my_multi_select1" name="categories[]">
-                                                        @foreach($categories->unique() as $category)
-                                                            <option value="{{ $category->id }}"
-                                                                    style="background-color: {{ $category->isParent ? 'lightblue' : null  }}">
-                                                                {{ $category->name }}</option>
-                                                            @if(!$category->children->isEmpty())
-                                                                @foreach($category->children as $child)
-                                                                    <option value="{{ $child->id }}"
-                                                                            style="padding-left: 15px">
-                                                                        {{ $child->name }}</option>
-                                                                    @if(!$child->children->isEmpty())
-                                                                        @foreach($child->children as $subChild)
-                                                                            <option value="{{ $subChild->id }}"
-                                                                                    style="padding-left: 35px">
-                                                                                {{ $subChild->name }}</option>
-                                                                        @endforeach
-                                                                    @endif
-                                                                @endforeach
-                                                            @endif
-                                                        @endforeach
-                                                    </select>
-                                                    {{-- <span class="help-block">
-                                                                                                                                       <strong>{{ trans('message.categories_instructions') }}</strong>
-                                                    </span> --}}
+                                                <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
+                                                    <label for="mobile"
+                                                           class="control-label">{{ trans('general.mobile') }}
+                                                    </label>
+                                                    <input id="mobile" type="text" class="form-control tooltips"
+                                                           data-container="body" data-placement="top"
+                                                           data-original-title="{{ trans('message.mobile') }}" name="mobile"
+                                                           value="{{ old('mobile') }}"
+                                                           placeholder="{{ trans('general.mobile_example') }} " autofocus>
+                                                    @if ($errors->has('mobile'))
+                                                        <span class="help-block">
+                                                <strong>
+                                                    {{ $errors->first('mobile') }}
+                                                </strong>
+                                            </span>
+                                                    @endif
                                                 </div>
                                             </div>
-                                        @endif
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label sbold tooltips"
-                                                       data-container="body" data-placement="top"
-                                                       data-original-title="{{ trans('message.gender') }}">{{ trans('general.gender') }}</label></br>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="is_male" id="optionsRadios1"
-                                                           checked value="1">
-                                                    {{ trans('general.male') }} </label>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="is_male" id="optionsRadios2"
-                                                           value="0"> {{ trans('general.female') }}</label>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold tooltips"
+                                                           data-container="body" data-placement="top"
+                                                           data-original-title="{{ trans('message.gender') }}">{{ trans('general.gender') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="is_male" id="optionsRadios1"
+                                                               checked value="1">
+                                                        {{ trans('general.male') }} </label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="is_male" id="optionsRadios2"
+                                                               value="0"> {{ trans('general.female') }}</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -46,7 +46,7 @@ class UserStore extends FormRequest
             'service_ar' => '',
             'service_en' => '',
             'email' => 'required|min:5:max:80|unique:users,email',
-            'mobile' => 'nullable',
+            'mobile' => ['nullable','regex:/^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/'],
             'phone' => 'nullable',
             'fax' => 'nullable',
             'whatsapp' => 'nullable',
