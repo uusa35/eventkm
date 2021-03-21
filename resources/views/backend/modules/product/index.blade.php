@@ -207,7 +207,7 @@
                                                         </a>
                                                     </li>
                                                 @endif
-                                                @can('isAdminOrAbove')
+{{--                                                @can('isAdminOrAbove')--}}
 {{--                                                    @can('index','slide')--}}
 {{--                                                        <li>--}}
 {{--                                                            <a href="{{ route('backend.slide.create',['slidable_id' => $element->id, 'slidable_type' => 'product']) }}">--}}
@@ -222,24 +222,24 @@
 {{--                                                            </li>--}}
 {{--                                                        @endif--}}
 {{--                                                    @endcan--}}
-                                                @else
-                                                    @can('slide.create')
-                                                        <li>
-                                                            <a href="{{ route('backend.slide.create',['slidable_id' => $element->id, 'slidable_type' => 'product']) }}">
-                                                                <i class="fa fa-fw fa-edit"></i> {{ trans('general.new_slide') }}
-                                                            </a>
-                                                        </li>
-                                                    @endcan
-                                                    @if($element->slides->isNotEmpty())
-                                                        @can('index','slide')
-                                                            <li>
-                                                                <a href="{{ route('backend.slide.index',['slidable_id' => $element->id, 'slidable_type' => 'product']) }}">
-                                                                    <i class="fa fa-fw fa-edit"></i> {{ trans('general.list_of_slides') }}
-                                                                </a>
-                                                            </li>
-                                                        @endcan
-                                                    @endif
-                                                @endcan
+{{--                                                @else--}}
+{{--                                                    @can('slide.create')--}}
+{{--                                                        <li>--}}
+{{--                                                            <a href="{{ route('backend.slide.create',['slidable_id' => $element->id, 'slidable_type' => 'product']) }}">--}}
+{{--                                                                <i class="fa fa-fw fa-edit"></i> {{ trans('general.new_slide') }}--}}
+{{--                                                            </a>--}}
+{{--                                                        </li>--}}
+{{--                                                    @endcan--}}
+{{--                                                    @if($element->slides->isNotEmpty())--}}
+{{--                                                        @can('index','slide')--}}
+{{--                                                            <li>--}}
+{{--                                                                <a href="{{ route('backend.slide.index',['slidable_id' => $element->id, 'slidable_type' => 'product']) }}">--}}
+{{--                                                                    <i class="fa fa-fw fa-edit"></i> {{ trans('general.list_of_slides') }}--}}
+{{--                                                                </a>--}}
+{{--                                                            </li>--}}
+{{--                                                        @endcan--}}
+{{--                                                    @endif--}}
+{{--                                                @endcan--}}
                                                 @if(!$element->trashed())
                                                     <li>
                                                         <a data-toggle="modal" href="#" data-target="#basic"
