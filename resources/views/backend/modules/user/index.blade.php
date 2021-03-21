@@ -78,9 +78,11 @@
                                 </td>
                                 <td>
                                     @if($element->categories->isNotEmpty())
-                                        <div class="col-lg-12">
-                                            @foreach($element->categories as $c)
-                                                <button type="button" class="btn green btn-xs">{{ $c->name }}</button>
+                                        <div class="col-lg-12" style="margin : 30px">
+                                            @foreach($element->categories->take(6) as $c)
+                                                <div class="col-lg-2">
+                                                <label  class="label label-info">{{ $c->name }}</label>
+                                                </div>
                                             @endforeach
                                         </div>
                                     @else

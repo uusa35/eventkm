@@ -43,6 +43,7 @@ class UserObserver
             'country_id' => $element->country_id,
         ]);
         if (env('MAIL_ENABLED')) {
+            dd($element->email);
             Mail::to($element->email)->send(new WelcomeNewUser($element));
         }
         if (env('SMS_ENABLED') && env('NEXMO_KEY') && $element->mobile) {

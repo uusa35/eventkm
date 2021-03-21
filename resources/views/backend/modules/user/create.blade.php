@@ -182,11 +182,11 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="file"
-                                                       class="control-label required">{{ trans('general.more_images') }}
+                                                       class="control-label">{{ trans('general.more_images') }}
                                                 </label>
                                                 <input class="form-control tooltips" data-container="body"
                                                        data-placement="top"
-                                                       data-original-title="{{ trans('message.more_iamges') }}"
+                                                       data-original-title="{{ trans('message.more_images') }}"
                                                        name="images[]" placeholder="images" type="file"
                                                        multiple/>
                                                 <div class="help-block text-left small">
