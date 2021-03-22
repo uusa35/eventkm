@@ -104,7 +104,10 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $element = $this->element->whereId($id)->with('role', 'images', 'slides')
+        $element = $this->element->whereId($id)->with('role', 'images')
+            ->with(['slides' => function ($q) {
+                $q->active();
+            }])
             ->with(['collections' => function ($q) {
                 return $q->active()->whereHas('products', function ($q) {
                     return $q->active()->hasImage()->available()->hasStock()->hasAtLeastOneCategory();
