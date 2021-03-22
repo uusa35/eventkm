@@ -61,6 +61,7 @@ class ProductResource extends JsonResource
             'brand_id' => $this->brand_id,
             'color_id' => $this->color_id,
             'size_id' => $this->size_id,
+            'rating' => $this->rating,
             'shipment_package_id' => $this->shipment_package_id,
             'directPurchase' => $this->direct_purchase,
             'tailorService' => $this->tailor_measurement_service,

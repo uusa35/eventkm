@@ -38,16 +38,21 @@ class RatingController extends Controller
     public function store(Request $request)
     {
         $validate = validator(request()->all(), [
-            'member_id' => 'required|exists:users,id',
+            'member_id' => 'exists:users,id',
+            'product_id' => 'exists:users,id',
             'value' => 'required|numeric'
         ]);
         if ($validate->fails()) {
             return response()->json(['message' => $validate->errors()->first()], 400);
         }
-        $element = Rating::updateOrCreate(['user_id' => $request->user()->id, 'member_id' => $request->member_id]);
+        $element = Rating::updateOrCreate([
+            'user_id' => $request->user()->id,
+            'member_id' => $request->has('member_id') ? $request->member_id : null,
+            'product_id' => $request->has('product_id') ? $request->product_id : null,
+        ]);
         $element->value = $request->value * 20;
         $element->save();
-        return response()->json(UserLightResource::make($request->user()), 200);
+        return response()->json(['message' => trans('general.rating_success')], 200);
     }
 
     /**

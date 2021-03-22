@@ -17,4 +17,12 @@ class Rating extends PrimaryModel
     {
         return $this->hasOne(User::class, 'member_id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function product()
+    {
+        return $this->hasOne(Product::class, 'product_id');
+    }
 }

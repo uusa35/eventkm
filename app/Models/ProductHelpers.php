@@ -83,4 +83,16 @@ trait ProductHelpers
     {
         return $this->has_attributes && $this->product_attributes()->where('qty','>=', 1)->get()->isNotEmpty();
     }
+
+    public function getRatingAttribute()
+    {
+        $elements = Rating::where('product_id', $this->id)->get();
+        if (!$elements->isEmpty()) {
+            $elementCount = $elements->count() * 100;
+            $elementValues = $elements->pluck('value')->sum();
+            $rating = (integer)((round($elementValues / $elementCount, 1) * 10) / 2);
+            return $rating;
+        }
+        return 1;
+    }
 }
