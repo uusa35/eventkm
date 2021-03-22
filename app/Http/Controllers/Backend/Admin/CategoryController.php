@@ -82,6 +82,7 @@ class CategoryController extends Controller
      */
     public function update(CategoryUpdate $request, $id)
     {
+        dd($request->files);
         $element = Category::whereId($id)->first();
         $updated = $element->update($request->except('image', 'tags', 'categoryGroups'));
         if ($updated) {
