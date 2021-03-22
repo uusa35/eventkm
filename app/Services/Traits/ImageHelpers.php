@@ -72,6 +72,7 @@ trait ImageHelpers
                                     $inputName => $path,
                                 ]);
                             } else {
+                                dd('there');
                                 $imagePath = $request->$inputName->store('public/uploads/images');
                                 $imagePath = str_replace('public/uploads/images/', '', $imagePath);
                                 $img = Image::make(storage_path('app/public/uploads/images/' . $imagePath));
