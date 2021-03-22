@@ -14,7 +14,7 @@
                         <div class="col-lg-12 margin-bottom-30">
                             <div class="alert alert-warning">
                                 <p class="text-center">
-                                    <h5 class="text-center">{{ trans('message.max_upload', ['max' => env('MAX_IMAGE_SIZE')]) }}</h5>
+                                    <h5 class="text-center">{{ trans('message.max_upload') }} {{ env('MAX_IMAGE_SIZE') }} {{ env('MAX_IMAGE_SIZE') > 1000 ? trans('general.mb') : trans('genera.kb') }}</h5>
                                 </p>
                             </div>
                         </div>
