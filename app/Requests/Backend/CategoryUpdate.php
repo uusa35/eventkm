@@ -44,7 +44,7 @@ class CategoryUpdate extends FormRequest
             'parent_id' => 'required|integer',
             'description_en' => 'min:3|nullable',
             'description_ar' => 'min:3|nullable',
-            'image' => "image|mimes:jpeg,png,jpg,gif|nullable|max:".env('MAX_IMAGE_SIZE').'"',
+            'image' => "image|mimes:jpeg,png,jpg,gif',
             'limited' => 'boolean|nullable',
             'order' => 'integer|nullable',
             'is_home' => 'boolean|nullable',
