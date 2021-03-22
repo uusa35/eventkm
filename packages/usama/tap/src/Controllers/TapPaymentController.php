@@ -72,13 +72,13 @@ class TapPaymentController extends Controller
         if ($validate->fails()) {
             throw new \Exception($validate->errors()->first());
         }
+        dd(Order::where(['reference_id' => $request->ref])->first());
         $order = Order::where(['reference_id' => $request->ref])->with([
             'order_metas.product.user',
             'user', 'order_metas.product_attribute.size',
             'order_metas.product_attribute.color',
             'order_metas.service.user'
         ])->first();
-        dd($request->ref);
         $this->decreaseQty($order);
         $order->update(['status' => 'success', 'paid' => true]);
         $markdown = new Markdown(view(), config('mail.markdown'));
