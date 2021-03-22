@@ -39,7 +39,7 @@ class RatingController extends Controller
     {
         $validate = validator(request()->all(), [
             'member_id' => 'exists:users,id',
-            'product_id' => 'exists:users,id',
+            'product_id' => 'exists:products,id',
             'value' => 'required|numeric'
         ]);
         if ($validate->fails()) {
