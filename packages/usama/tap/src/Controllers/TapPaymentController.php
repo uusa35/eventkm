@@ -72,7 +72,7 @@ class TapPaymentController extends Controller
         if ($validate->fails()) {
             throw new \Exception($validate->errors()->first());
         }
-        dd(Order::where(['reference_id' => '203232021125506730'])->first());
+        dd(Order::where(['id' => '15'])->first());
         $order = Order::where(['reference_id' => $request->ref])->with([
             'order_metas.product.user',
             'user', 'order_metas.product_attribute.size',
