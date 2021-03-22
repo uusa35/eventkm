@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_22_100402_add_product_id_to_ratings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_22_100402_add_product_id_to_ratings_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -836,7 +835,7 @@
       <workItem from="1616300974213" duration="1515000" />
       <workItem from="1616320032070" duration="537000" />
       <workItem from="1616331351438" duration="12244000" />
-      <workItem from="1616390138894" duration="7269000" />
+      <workItem from="1616390138894" duration="7674000" />
     </task>
     <servers />
   </component>
