@@ -56,7 +56,7 @@ trait ImageHelpers
 //                                    Storage::disk('do')->put($fullPath, $contents, 'public');
 //                                }
                                 foreach ($sizes as $k => $value) {
-                                    Storage::disk('do')->copy($path,'public/uploads/images/'.$value.'/'.$imagePath);
+                                    Storage::disk('do')->copy($path, 'public/uploads/images/' . $value . '/' . $imagePath);
                                 }
                             } catch (Exception $e) {
                                 return $e->getMessage();
@@ -83,7 +83,7 @@ trait ImageHelpers
                                         } else {
                                             $img->resize($dimensions[0], $dimensions[1]);
                                         }
-                                        $img->save(storage_path('app/public/uploads/images/' . $value . '/' . $imagePath),env('IMAGE_QUALITY'));
+                                        $img->save(storage_path('app/public/uploads/images/' . $value . '/' . $imagePath), env('IMAGE_QUALITY'));
                                     } elseif ($value === 'medium') {
                                         if ($ratio) {
                                             $img->resize($dimensions[0] / 2, null, function ($constraint) {
@@ -117,7 +117,6 @@ trait ImageHelpers
                 }
             }
         } catch (\Exception $e) {
-            dd($e->getMessage());
             return $e->getMessage();
         }
     }
@@ -200,7 +199,7 @@ trait ImageHelpers
                                 $imagePath = str_replace('public/uploads/images/', '', $path);
                                 foreach ($sizes as $k => $value) {
 //                                    $image->storePublicly('public/uploads/images/' . $value . '', 'do');
-                                    Storage::disk('do')->copy($path,'public/uploads/images/'.$value.'/'.$imagePath);
+                                    Storage::disk('do')->copy($path, 'public/uploads/images/' . $value . '/' . $imagePath);
                                 }
                             } catch (Exception $e) {
                                 return $e->getMessage();
@@ -219,7 +218,7 @@ trait ImageHelpers
                             $imagePath = str_replace('public/uploads/images/', '', $path);
                             foreach ($sizes as $k => $value) {
 //                                $request[$inputName][0]->storePublicly('public/uploads/images/' . $value . '', 'do');
-                                Storage::disk('do')->copy($path,'public/uploads/images/'.$value.'/'.$imagePath);
+                                Storage::disk('do')->copy($path, 'public/uploads/images/' . $value . '/' . $imagePath);
                             }
                         } catch (Exception $e) {
                             return $e->getMessage();
