@@ -37,6 +37,7 @@ trait ImageHelpers
                               $sizes = ['large', 'medium', 'thumbnail'])
     {
         try {
+            dd('here 1');
             foreach ($inputNames as $key => $inputName) {
                 if ($request->hasFile($inputName)) {
                     if (in_array($request->file($inputName)->extension(), ['pdf', 'ppt'], true)) {
