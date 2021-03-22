@@ -78,6 +78,7 @@ class TapPaymentController extends Controller
             'order_metas.product_attribute.color',
             'order_metas.service.user'
         ])->first();
+        dd($order);
         $this->decreaseQty($order);
         $order->update(['status' => 'success', 'paid' => true]);
         $markdown = new Markdown(view(), config('mail.markdown'));

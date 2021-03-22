@@ -66,12 +66,12 @@ trait CartTrait
     public function addProductToCart(Request $request, Product $product, $cart)
     {
         if ($product->getCanOrderAttribute($request->qty, $request->product_attribute_id)) {
-            $element = $this->cart->content()->where('id', '=', $product->UId)->first();
+            $element = $this->cart->content()->where('id', '=', $product->getUniqueIdAttribute($request->product_attribute_id))->first();
             if ($element) {
                 $this->cart->remove($element->rowId);
             }
 //            if (checkShipmentAvailability(getCurrentCountrySessionId(), $product->shipment_package->countries->pluck('id')->toArray())) {
-            $this->cart->add($product->UId, $product->name, $request->qty, (double)$product->finalPrice, $request->qty * $product->weight,
+            $this->cart->add($product->getUniqueIdAttribute($request->product_attribute_id), $product->name, $request->qty, (double)$product->finalPrice, $request->qty * $product->weight,
                 [
                     'type' => 'product',
                     'element_id' => $product->id,
