@@ -37,7 +37,6 @@ trait ImageHelpers
                               $sizes = ['large', 'medium', 'thumbnail'])
     {
         try {
-            dd('here 1');
             foreach ($inputNames as $key => $inputName) {
                 if ($request->hasFile($inputName)) {
                     if (in_array($request->file($inputName)->extension(), ['pdf', 'ppt'], true)) {
@@ -64,7 +63,6 @@ trait ImageHelpers
                             }
                         } else {
                             if (in_array($request->file($inputName)->extension(), ['gif'], true)) {
-                                dd('here');
                                 $request->$inputName->store('public/uploads/images/thumbnail');
                                 $request->$inputName->store('public/uploads/images/medium');
                                 $path = $request->$inputName->store('public/uploads/images/large');
@@ -73,7 +71,6 @@ trait ImageHelpers
                                     $inputName => $path,
                                 ]);
                             } else {
-                                dd('there');
                                 $imagePath = $request->$inputName->store('public/uploads/images');
                                 $imagePath = str_replace('public/uploads/images/', '', $imagePath);
                                 $img = Image::make(storage_path('app/public/uploads/images/' . $imagePath));
@@ -107,12 +104,12 @@ trait ImageHelpers
                                         $img->save(storage_path('app/public/uploads/images/' . $value . '/' . $imagePath));
                                     }
                                 }
+                                $model->update([
+                                    $inputName => $imagePath,
+                                ]);
+                                Storage::delete('public/uploads/images/' . $imagePath);
                             }
                         }
-                        $model->update([
-                            $inputName => $imagePath,
-                        ]);
-                        Storage::delete('public/uploads/images/' . $imagePath);
                     }
                 } else {
                     // in case there is no file
