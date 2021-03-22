@@ -10,11 +10,12 @@
                     <p class="text-justify">
                         {{ $message }}
                     </p>
+                        {{ dd(env('MAX_IMAGE_SIZE')) }}
                     @if(str_contains(request()->route()->getName(),'product') || str_contains(request()->route()->getName(),'service') || str_contains(request()->route()->getName(),'category'))
                         <div class="col-lg-12 margin-bottom-30">
                             <div class="alert alert-warning">
                                 <p class="text-center">
-                                    <h5 class="text-center">{{ trans('message.max_upload', ['max' => env('APP_CASE')]) }}</h5>
+                                    <h5 class="text-center">{{ trans('message.max_upload', ['max' => env('MAX_IMAGE_SIZE')]) }}</h5>
                                 </p>
                             </div>
                         </div>
