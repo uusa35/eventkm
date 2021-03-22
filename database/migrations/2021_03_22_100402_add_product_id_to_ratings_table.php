@@ -14,7 +14,8 @@ class AddProductIdToRatingsTable extends Migration
     public function up()
     {
         Schema::table('ratings', function (Blueprint $table) {
-            $table->foreignId('product_id')->nullable()->references('id')->on('products');
+            $table->integer('product_id')->unsigned()->index()->nullable();
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 
