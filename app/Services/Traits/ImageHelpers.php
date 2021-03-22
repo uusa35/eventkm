@@ -63,6 +63,7 @@ trait ImageHelpers
                             }
                         } else {
                             if (in_array($request->file($inputName)->extension(), ['gif'], true)) {
+                                dd('here');
                                 $request->$inputName->store('public/uploads/images/thumbnail');
                                 $request->$inputName->store('public/uploads/images/medium');
                                 $path = $request->$inputName->store('public/uploads/images/large');
@@ -117,6 +118,7 @@ trait ImageHelpers
                 }
             }
         } catch (\Exception $e) {
+            dd($e->getMessage());
             return $e->getMessage();
         }
     }
