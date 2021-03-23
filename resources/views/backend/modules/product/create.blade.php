@@ -979,11 +979,11 @@
                                                                    data-original-title="{{ trans('message.show_attribute') }}">{{ trans('general.show_attribute') }}</label></br>
                                                             <label class="radio-inline">
                                                                 <input type="radio" name="show_attribute"
-                                                                       id="optionsRadios3" value="1">
+                                                                       id="optionsRadios3" value="1" checked>
                                                                 {{ trans('general.yes') }}</label>
                                                             <label class="radio-inline">
                                                                 <input type="radio" name="show_attribute"
-                                                                       id="optionsRadios4" checked value="0">
+                                                                       id="optionsRadios4" value="0">
                                                                 {{ trans('general.no') }}</label>
                                                         </div>
                                                     </div>

@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_02_095005_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_02_095005_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/product/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -839,7 +840,8 @@
       <workItem from="1616390138894" duration="8537000" />
       <workItem from="1616446077544" duration="1055000" />
       <workItem from="1616452441519" duration="124000" />
-      <workItem from="1616472332650" duration="15045000" />
+      <workItem from="1616472332650" duration="15836000" />
+      <workItem from="1616514515244" duration="31000" />
     </task>
     <servers />
   </component>
