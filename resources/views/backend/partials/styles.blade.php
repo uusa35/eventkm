@@ -14,16 +14,20 @@
    /*        background-color: blue;*/
     /*    }*/
 
-    .page-sidebar .page-sidebar-menu > li > a, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li > a, .sub-menu > li > a {
+    .page-sidebar .page-sidebar-menu > li > a, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover
+    {
         color: {{ auth()->user()->role->color }}    !important;
         border-bottom: 0.2px solid {{ auth()->user()->role->color }}    !important;
     }
 
-    .page-sidebar .page-sidebar-menu > li.active.open > a, .page-sidebar .page-sidebar-menu > li.active > a, page-sidebar-fixed .page-sidebar:hover {
+     .page-sidebar .page-sidebar-menu > li.active > a, page-sidebar-fixed .page-sidebar:hover {
         /*background-color: darkgray !important;*/
         /*color : white !important;*/
         color: {{ auth()->user()->role->color }}    !important;
 
+    }
+     .page-sidebar-menu>li>a>i , .page-sidebar .page-sidebar-menu > li.active.open > a{
+        color : {{ $settings->btn_bg_theme_color }} !important;
     }
 
 </style>

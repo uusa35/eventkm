@@ -5,26 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change afterPath="$PROJECT_DIR$/public/css/fonts/Alhurra-2020-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/fonts/Alhurra-2020-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/fonts/Alhurra-2020-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/fonts/DroidArabicKufi-bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/fonts/DroidArabicKufi.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/DroidArabicKufi-bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/DroidArabicKufi.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/CartTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/CartTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/backend-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/backend-rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/frontend-custom-ar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/frontend-custom-en.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/css/backend-custom-ar.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/css/backend-custom-ar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/css/frontend-custom-ar.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/css/frontend-custom-ar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/message.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/message.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/product/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/product/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/styles.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/styles.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -858,7 +840,7 @@
       <workItem from="1616390138894" duration="8537000" />
       <workItem from="1616446077544" duration="1055000" />
       <workItem from="1616452441519" duration="124000" />
-      <workItem from="1616472332650" duration="9962000" />
+      <workItem from="1616472332650" duration="10453000" />
     </task>
     <servers />
   </component>
