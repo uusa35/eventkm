@@ -25,7 +25,9 @@
                                             <div class="mt-step-title uppercase font-grey-cascade">
                                                 {{ trans('general.new_product') }}</div>
                                             <div class="mt-step-content font-grey-cascade">
-                                                {{ trans('message.new_product') }}</div>
+                                                <p>
+                                                    {{ trans('message.new_product') }}
+                                                </p></div>
                                         </div>
                                         <div
                                             class="col-md-6 bg-grey mt-step-col {{ Route::currentRouteName() === 'backend.attribute.create' ? 'active' : null  }}">
@@ -33,7 +35,9 @@
                                             <div class="mt-step-title uppercase font-grey-cascade">
                                                 {{ trans('general.add_attribute') }}</div>
                                             <div
-                                                class="mt-step-content font-grey-cascade">{{ trans('message.create_product_attributes') }}
+                                                class="mt-step-content font-grey-cascade"><p>
+                                                    {{ trans('message.create_product_attributes') }}
+                                                </p>
                                             </div>
                                         </div>
                                         {{--<div class="col-md-4 bg-grey mt-step-col {{ Route::currentRouteName() === 'backend.gallery.create' ? 'active' : null  }}">--}}

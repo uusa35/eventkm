@@ -27,6 +27,9 @@ body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tf
     /*font-family: 'Tajawal', 'sans-serif' !important;*/
     font-family: 'AlHurra-normal', 'sans-serif' !important;
 }
+p, .tooltip {
+    line-height: 1.8;
+}
 
 .img-xs {
     width: 50px !important;
