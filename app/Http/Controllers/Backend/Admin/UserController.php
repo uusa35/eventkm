@@ -78,7 +78,7 @@ class UserController extends Controller
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1000', '1000'], true) : null;
             $request->has('images') ? $this->saveGallery($element, $request, 'images', ['1080', '1440'], true) : null;
             $request->hasFile('bg') ? $this->saveMimes($element, $request, ['bg'], ['1080', '1440'], true) : null;
-            $request->hasFile('banner') ? $this->saveMimes($element, $request, ['banner'], ['1080', '350'], true) : null;
+            $request->hasFile('banner') ? $this->saveMimes($element, $request, ['banner'], ['1080', '410'], true) : null;
             $request->hasFile('path') ? $this->savePath($request, $element) : null;
             $request->has('categories') ? $element->categories()->sync($request->categories) : null;
             $request->has('products') ? $element->productGroup()->sync($request->products) : null;
@@ -144,7 +144,7 @@ class UserController extends Controller
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1000', '1000'], true) : null;
             $request->has('images') ? $this->saveGallery($element, $request, 'images', ['1080', '1440'], true) : null;
             $request->hasFile('bg') ? $this->saveMimes($element, $request, ['bg'], ['1080', '1440'], true) : null;
-            $request->hasFile('banner') ? $this->saveMimes($element, $request, ['banner'], ['1080', '1440'], true) : null;
+            $request->hasFile('banner') ? $this->saveMimes($element, $request, ['banner'], ['1080', '410'], true) : null;
             $request->hasFile('path') ? $this->savePath($request, $element) : null;
             $request->has('categories') ? $element->categories()->sync($request->categories) : null;
             $element->productGroup()->sync($request->products);
