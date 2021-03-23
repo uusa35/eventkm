@@ -26,7 +26,7 @@
         color: {{ auth()->user()->role->color }}    !important;
 
     }
-     .page-sidebar-menu>li>a>i , .page-sidebar .page-sidebar-menu > li.active.open > a{
+     .page-sidebar-menu>li>a>i {
         color : {{ $settings->btn_bg_theme_color }} !important;
     }
 
