@@ -77,14 +77,11 @@
                                                                    autofocus>
                                                             @if ($errors->has('sku'))
                                                                 <span class="help-block">
-                                                <strong>
-                                                    {{ $errors->first('sku') }}
-                                                </strong>
-                                            </span>
+                                                                <strong>
+                                                                    {{ $errors->first('sku') }}
+                                                                </strong>
+                                                            </span>
                                                             @endif
-                                                            {{-- <span class="help-block">
-                                                                                                                                <strong>{{ trans('message.sku') }}</strong>
-                                                            </span> --}}
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
@@ -230,9 +227,6 @@
                                                                         @endif
                                                                     @endforeach
                                                                 </select>
-                                                                {{-- <span class="help-block">
-                                                                                                                                                    <strong>{{ trans('message.categories_instructions') }}</strong>
-                                                                </span> --}}
                                                             </div>
                                                         </div>
                                                     @endif
@@ -409,9 +403,6 @@
                                                                         class="btn default date-set" type="button"><i
                                                                             class="fa fa-calendar"></i></button></span>
                                                             </div>
-                                                            {{-- <span class="help-block">
-                                                                                                                                <strong>{{ trans('message.end_sale_date') }}</strong>
-                                                            </span> --}}
                                                         </div>
                                                     </div>
 
@@ -619,14 +610,11 @@
                                                                        autofocus>
                                                                 @if ($errors->has('notes_en'))
                                                                     <span class="help-block">
-                                            <strong>
-                                                {{ $errors->first('notes_en') }}
-                                            </strong>
-                                        </span>
+                                                                    <strong>
+                                                                        {{ $errors->first('notes_en') }}
+                                                                    </strong>
+                                                                </span>
                                                                 @endif
-                                                                {{-- <span class="help-block">
-                                                                                                                                    <strong>{{ trans('message.notes_en') }}</strong>
-                                                                </span> --}}
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
@@ -788,9 +776,6 @@
                                                                     </strong>
                                                                 </span>
                                                                 @endif
-                                                                {{-- <span class="help-block">
-                                                                                                                                    <strong>{{ trans('message.delivery_time') }}</strong>
-                                                                </span> --}}
                                                             </div>
                                                         </div>
                                                         <div class="col-md-3">
@@ -814,9 +799,6 @@
                                                                     </strong>
                                                                 </span>
                                                                 @endif
-                                                                {{-- <span class="help-block">
-                                                                                                                                    <strong>{{ trans('message.delivery_time') }}</strong>
-                                                                </span> --}}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -970,10 +952,9 @@
                                                             <label class="radio-inline">
                                                                 <input type="radio" name="is_available"
                                                                        id="optionsRadios4"
-                                                                        value="0">
+                                                                       value="0">
                                                                 {{ trans('general.no') }}</label>
                                                         </div>
-
                                                     </div>
 
                                                     <div class="col-md-4">

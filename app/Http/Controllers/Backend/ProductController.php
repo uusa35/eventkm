@@ -88,8 +88,11 @@ class  ProductController extends Controller
         $start_sale = $request->has('start_sale') ? Carbon::parse(str_replace('-', '', $request->start_sale))->toDateTimeString() : null;
         $element = Product::create($request->except(['_token', 'image', 'images', 'categories', 'tags', 'start_sale', 'end_sale', 'videos']));
         if ($element) {
-            $start_sale ? $element->update(['start_sale' => $start_sale]) : null;
-            $end_sale ? $element->update(['end_sale' => $end_sale]) : null;
+            $element->update([
+                'start_sale' => $start_sale ? $start_sale : null,
+                'end_sale' => $end_sale ? $end_sale : null,
+                'sale_price' => $request->sale_price ? $request->sale_price : $request->price
+            ]);
             $element->tags()->sync($request->tags);
             $element->videos()->sync($request->videos);
             $element->categories()->sync($request->categories);
