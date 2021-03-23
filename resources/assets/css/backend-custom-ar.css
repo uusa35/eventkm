@@ -15,9 +15,17 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'AlHurra-normal';
+    src: url('fonts/Alhurra-2020-Regular.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 
 body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tfoot, button, span, .btn, .btn-del, ul, li, .page-content, .portlet, .light, .profile-sidebar-portlet {
-    font-family: 'Tajawal', 'sans-serif' !important;
+    /*font-family: 'Tajawal', 'sans-serif' !important;*/
+    font-family: 'AlHurra-normal', 'sans-serif' !important;
 }
 
 .img-xs {

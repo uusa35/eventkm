@@ -55,7 +55,7 @@ trait CartTrait
         }
         $settings = Setting::first();
         if ($settings->shipment_fixed_rate) {
-            \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double) ($country->is_local ? $country->fixed_shipment_charge :$this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
+            \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? $country->fixed_shipment_charge : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
         } else {
             $shipmentPackage = $country->shipment_packages()->first();
             $totalWeight = \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content()->sum('weight');
@@ -63,14 +63,11 @@ trait CartTrait
         }
     }
 
-    public function addProductToCart(Request $request, Product $product, $cart)
+    public function addProductToCart(Request $request, Product $product)
     {
-        if ($product->getCanOrderAttribute($request->qty, $request->product_attribute_id)) {
-            $element = $this->cart->content()->where('id', '=', $product->getUniqueIdAttribute($request->product_attribute_id))->first();
-            if ($element) {
-                $this->cart->remove($element->rowId);
-            }
-//            if (checkShipmentAvailability(getCurrentCountrySessionId(), $product->shipment_package->countries->pluck('id')->toArray())) {
+        if ($this->checkProduct($request, $product, $this->cart)) {
+            $country = getClientCountry();
+            $this->addCountryToCart($country, $this->cart);
             $this->cart->add($product->getUniqueIdAttribute($request->product_attribute_id), $product->name, $request->qty, (double)$product->finalPrice, $request->qty * $product->weight,
                 [
                     'type' => 'product',
@@ -78,7 +75,7 @@ trait CartTrait
                     'collection_id' => $request->has('collection_id') ? $request->collection_id : null,
                     // each product * his own package Charge ==> consider different heights / weight
                     'shipment_cost' => 0,
-                    'country_destination' => getClientCountry(),
+                    'country_destination' => $country,
                     'product_attribute_id' => $request->product_attribute_id,
                     'size_id' => $request->size_id,
                     'color_id' => $request->color_id,
@@ -88,16 +85,33 @@ trait CartTrait
                     'element' => $product
                 ]
             );
-            $this->addCountryToCart(getClientCountry(), $cart);
             return true;
-//            }
-//            return false;
         }
-//        return false;
+        return false;
+    }
+
+    public function checkProduct(Request $request, Product $product)
+    {
+        if ($product->getCanOrderAttribute($request->qty, $request->product_attribute_id)) {
+            // if current product is direct_purachase make sure cart is 0
+            // if current product is not direct_purachase make sure cart does not have direct_purchase
+            $checkDirectPurchase = ($this->cart->content()->where('options.type', 'product')->count() === 0 && $product->direct_purchase) || ($this->cart->content()->where('options.element.direct_purchase', true)->count() === 0 && !$product->direct_purchase) ;
+            if ($checkDirectPurchase) {
+                $element = $this->cart->content()->where('id', '=', $product->getUniqueIdAttribute($request->product_attribute_id))->first();
+                if ($element) {
+                    $this->cart->remove($element->rowId);
+                }
+                return true;
+            } else {}
+            // i removed this because shipment is not connected now to cart (only fixed prices)
+//            if (checkShipmentAvailability(getCurrentCountrySessionId(), $product->shipment_package->countries->pluck('id')->toArray())) {
+//            }
+            throw new \Exception(trans('message.direct_purchase_product_cart'));
+        }
         throw new \Exception(trans('message.product_out_of_stock'));
     }
 
-    public function addCouponToCart(Request $request, Coupon $coupon, $cart)
+    public function addCouponToCart(Request $request, Coupon $coupon)
     {
         if (session()->has('coupon')) {
             $element = $this->cart->content()->where('id', 'coupon')->first();
@@ -119,11 +133,13 @@ trait CartTrait
         return false;
     }
 
-    public function getTotalPriceOfProductsOnly() {
+    public function getTotalPriceOfProductsOnly()
+    {
         return \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content()->where('options.type', 'product')->sum('price');
     }
 
-    public function getTotalItemsOnly() {
+    public function getTotalItemsOnly()
+    {
         return \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content()->where('options.type', 'product')->count();
     }
 }

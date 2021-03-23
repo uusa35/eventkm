@@ -5,8 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
+      <change afterPath="$PROJECT_DIR$/public/css/fonts/Alhurra-2020-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/fonts/Alhurra-2020-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/fonts/Alhurra-2020-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/fonts/DroidArabicKufi-bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/fonts/DroidArabicKufi.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/DroidArabicKufi-bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/DroidArabicKufi.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/CartTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/CartTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/backend-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/backend-rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/frontend-custom-ar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/frontend-custom-en.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/css/backend-custom-ar.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/css/backend-custom-ar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/css/frontend-custom-ar.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/css/frontend-custom-ar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ar/message.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/message.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/product/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/product/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/styles.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +78,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
@@ -266,7 +285,7 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js.eslint.nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css/fonts" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -285,18 +304,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/css/fonts" />
+      <recent name="$PROJECT_DIR$/public/fonts" />
       <recent name="$PROJECT_DIR$/resources/views/backend/modules" />
       <recent name="$PROJECT_DIR$/app/Policies" />
       <recent name="$PROJECT_DIR$/app/Models" />
-      <recent name="$PROJECT_DIR$/database/factories" />
-      <recent name="$PROJECT_DIR$/public/images/flags" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/css/fonts" />
       <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/public/img" />
       <recent name="$PROJECT_DIR$/public/img/social" />
       <recent name="$PROJECT_DIR$/public/images/samples" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -838,7 +857,8 @@
       <workItem from="1616331351438" duration="12244000" />
       <workItem from="1616390138894" duration="8537000" />
       <workItem from="1616446077544" duration="1055000" />
-      <workItem from="1616452441519" duration="43000" />
+      <workItem from="1616452441519" duration="124000" />
+      <workItem from="1616472332650" duration="9962000" />
     </task>
     <servers />
   </component>

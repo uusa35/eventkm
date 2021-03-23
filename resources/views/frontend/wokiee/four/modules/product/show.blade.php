@@ -52,6 +52,13 @@
                         @include('frontend.wokiee.four.partials._service_show_is_really_hot_element')
                         @include('frontend.wokiee.four.partials._shipment_and_size_chart_btns')
                         @if($element->canOrder && $element->hasStock)
+                            @if($element->direct_purchase)
+                                <div class="card bg-danger mb-3 mt-3">
+                                    <div class="card-header text-center">
+                                        <span class="text-white text-center">{{ trans('message.direct_purchase_product') }}</span>
+                                    </div>
+                                </div>
+                            @endif
                             <div class="tt-swatches-container">
                                 @if($element->hasRealAttributes)
                                     <div id="productAttributeApp"></div>
@@ -68,7 +75,7 @@
                                 <div class="tt-row-btn">
                                     <a class="btn btn-small col-lg-12 {{ $element->isFavorited ? 'active' : null }}"
                                        href="{{ route('frontend.favorite.product.add', $element->id) }}"><i
-                                                class="icon-n-072"></i>{{ trans('general.add_to_wish_list') }}</a>
+                                            class="icon-n-072"></i>{{ trans('general.add_to_wish_list') }}</a>
                                     {{--<li><a class="btn-link" href="#"><i class="icon-n-08"></i>ADD TO COMPARE</a></li>--}}
                                 </div>
                             </div>
