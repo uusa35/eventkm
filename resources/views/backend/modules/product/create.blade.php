@@ -992,7 +992,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                @if(!env('DESIGNERAAT'))
+                                @if(!env('DESIGNERAAT') || auth()->user()->isSuper)
                                     <div class="portlet box blue ">
                                         <div class="portlet-title">
                                             <div class="caption">
