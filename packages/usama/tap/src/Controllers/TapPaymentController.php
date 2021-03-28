@@ -5,6 +5,7 @@ namespace Usama\Tap;
 use App\Http\Controllers\Controller;
 use App\Jobs\OrderSuccessProcessJob;
 use App\Jobs\sendSuccessOrderEmail;
+use App\Mail\OrderFailed;
 use App\Models\Ad;
 use App\Models\Coupon;
 use App\Models\Setting;
@@ -15,6 +16,7 @@ use App\Models\Plan;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Markdown;
+use Illuminate\Support\Facades\Mail;
 
 /**
  * Created by PhpStorm.
@@ -69,15 +71,17 @@ class TapPaymentController extends Controller
         $validate = validator($request->all(), [
             'ref' => 'required'
         ]);
-        if ($validate->fails()) {
-            throw new \Exception($validate->errors()->first());
-        }
-        $order = Order::where(['reference_id' => $request->ref])->with([
+        $settings = Setting::first();
+        $order = Order::where(['reference_id' => $request->has('ref') ? $request->ref : 0])->with([
             'order_metas.product.user',
             'user', 'order_metas.product_attribute.size',
             'order_metas.product_attribute.color',
             'order_metas.service.user'
         ])->first();
+        if ($validate->fails() || !$order) {
+            Mail::to($settings->email)->send(new OrderFailed($order, $settings, 'Tap Result Case #1 : Order Does not exist or ref Id was not attached to request.'));
+            return abort('404', 'Your payment process is unsuccessful .. your deal is not created please try again or contact us.');
+        }
         $this->decreaseQty($order);
         $order->update(['status' => 'success', 'paid' => true]);
         $markdown = new Markdown(view(), config('mail.markdown'));
@@ -89,8 +93,17 @@ class TapPaymentController extends Controller
 
     public function error(Request $request)
     {
-        $order = Order::withoutGlobalScopes()->where(['reference_id' => $request->ref])->first();
-        $order->update(['status' => 'failed']);
-        return abort('404', 'Your payment process is unsuccessful .. your deal is not created please try again or contact us.');
+        try {
+            $order = Order::withoutGlobalScopes()->where(['reference_id' => $request->ref])->first();
+            if ($order) {
+                $order->update(['status' => 'failed']);
+            }
+            $settings = Setting::first();
+            Mail::to($settings->email)->send(new OrderFailed($order, $settings, 'Tap Error Case#1'));
+            return abort('404', 'Your payment process is unsuccessful .. your deal is not created please try again or contact us.');
+        } catch (\Exception $e) {
+            Mail::to($settings->email)->send(new OrderFailed('', $settings, 'Tap Error Case #2 : ' . $e->getMessage()));
+            return abort('404', 'Your payment process is unsuccessful .. your deal is not created please try again or contact us.');
+        }
     }
 }

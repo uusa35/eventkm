@@ -4,12 +4,14 @@ namespace Usama\MyFatoorah;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\OrderSuccessProcessJob;
+use App\Mail\OrderFailed;
 use App\Models\Coupon;
 use App\Models\Setting;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Markdown;
+use Illuminate\Support\Facades\Mail;
 
 /**
  * Created by PhpStorm.
@@ -61,11 +63,13 @@ class MyFatoorahPaymentController extends Controller
         $validate = validator($request->all(), [
             'paymentId' => 'required'
         ]);
-        if ($validate->fails()) {
-            throw new \Exception($validate->errors()->first());
-        }
-        $referenceId = $this->getInvoiceId($request->paymentId);
+        $settings = Setting::first();
+        $referenceId = $this->getInvoiceId($request->has('paymentId') ? $request->paymentId : $request->Id);
         $order = Order::where(['reference_id' => $referenceId])->with('order_metas.product', 'user', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color')->first();
+        if ($validate->fails() || !$order) {
+            Mail::to($settings->email)->send(new OrderFailed($order, $settings, 'MyFatoorah Resut Case : Order Does not exist or PaymentId does not Exist Case #1'));
+            return abort('404', 'Your payment process is unsuccessful .. your deal is not created please try again or contact us.');
+        }
         $this->decreaseQty($order);
         $order->update(['status' => 'success', 'paid' => true]);
         $markdown = new Markdown(view(), config('mail.markdown'));
@@ -78,18 +82,20 @@ class MyFatoorahPaymentController extends Controller
     public function error(Request $request)
     {
         // once the result is success .. get the deal from refrence then delete all other free deals related to such ad.
-        $validate = validator($request->all(), [
-            'paymentId' => 'required'
-        ]);
-        if ($validate->fails()) {
-            throw new Excption($validate->errors()->first());
+        try {
+            $settings = Setting::first();
+            $referenceId = $this->getInvoiceId($request->has('paymentId') ? $request->paymentId : $request->Id);
+            $order = Order::withoutGlobalScopes()->where(['reference_id' => $referenceId])->first();
+            if ($order) {
+                $order->update(['status' => 'failed']);
+            }
+            Mail::to($settings->email)->send(new OrderFailed($order, $settings, 'MyFatoorah Error Case #1'));
+            abort('404', 'Your payment process is unsuccessful .. your deal is not created please try again or contact us.');
+
+        } catch (\Exception $e) {
+            Mail::to($settings->email)->send(new OrderFailed('', $settings, 'MyFatoorah Error Case #2  : ' . $e->getMessage()));
+            abort('404', 'Your payment process is unsuccessful .. your deal is not created please try again or contact us.');
         }
-        $referenceId = $this->getInvoiceId($request->paymentId);
-        $order = Order::withoutGlobalScopes()->where(['reference_id' => $referenceId])->first();
-        if ($order) {
-            $order->update(['status' => 'failed']);
-        }
-        abort('404', 'Your payment process is unsuccessful .. your deal is not created please try again or contact us.');
     }
 
 }
