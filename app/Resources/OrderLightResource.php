@@ -25,7 +25,8 @@ class OrderLightResource extends JsonResource
             'shipped' => $this->status === 'shipped',
             'completed' => $this->status === 'completed',
             'date' => $this->created_at->format('d/m/Y'),
-            'shipment_reference' => $this->shipment_reference ? $this->shipment_reference : null
+            'shipment_reference' => $this->shipment_reference ? $this->shipment_reference : null,
+            'order_metas' => OrderMetaLightResource::collection($this->order_metas)
         ];
     }
 }

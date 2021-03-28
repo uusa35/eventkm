@@ -3,6 +3,7 @@
 namespace App\Models;
 
 
+use Carbon\Carbon;
 use Nexmo\Laravel\Facade\Nexmo;
 use function PHPUnit\Framework\isNull;
 
@@ -168,5 +169,19 @@ trait UserHelpers
     public function getTotalFansAttribute()
     {
         return $this->fans->count();
+    }
+
+    public function getStatisticsAttribute() {
+        $orders =  Order::where(['paid' => true])->whereDate('created_at' ,'>=', Carbon::now()->firstOfMonth())
+            ->with('order_metas.product.product_attributes', 'order_metas.product.user', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color', 'order_metas.service')
+            ->whereHas('order_metas.product', function ($q) {
+                return $q->where('user_id', $this->id);
+            })
+            ->orderBy('id', 'desc')->get();
+        return [
+            'orders' => $orders->count(),
+            'orders_products' => $orders->pluck('order_metas')->flatten()->pluck('product')->where('user_id', $this->id)->count(),
+//            'products_number' => $orders->pluck('order_metas')->flatten()->pluck('product')->where('user_id', $this->id)->sum('price'),
+        ];
     }
 }

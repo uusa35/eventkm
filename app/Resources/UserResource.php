@@ -98,7 +98,8 @@ class UserResource extends JsonResource
             'country' => CountryLightResource::make($this->whenLoaded('country')),
             'videos' => VideoLightResource::make($this->whenLoaded('videos')),
             'comments' => CommentExtraLightResource::collection($this->whenLoaded('comments')),
-            'addresses' => AddressResource::collection($this->whenLoaded('addresses'))
+            'addresses' => AddressResource::collection($this->whenLoaded('addresses')),
+            'statistics' =>$this->statistics
         ];
     }
 }
