@@ -9,7 +9,8 @@ Please contact us on {{ $settings->mobile  }} or whatsapp on {{ $settings->whats
 @endcomponent
 
 
-# full Url/Ref : {{ request()->has('ref') ? request()->ref : request()->fullUrl()}}
+# full Ref : {{ request()->has('ref') ? request()->ref : request()->fullUrl()}}
+# full URL  : {{ request()->fullUrl()}}
 
 @if($message)
 # Message : {{ $message }}
