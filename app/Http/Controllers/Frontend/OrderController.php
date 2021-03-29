@@ -140,12 +140,12 @@ class OrderController extends Controller
 
     public function cashOnDeliveryReceived(Request $request)
     {
-        $order = Order::whereId($request->id)->first();
+        $order = Order::whereId($request->id)->with('order_metas.product.product_attributes.size','order_metas.product.product_attributes.color','order_metas.service')->first();
         if ($order->cash_on_delivery) {
             $contactus = Setting::first();
             if (env('BITS')) {
-                $order->update(['paid' => true]);
                 $this->decreaseQty($order);
+                $order->update(['paid' => true]);
                 OrderSuccessProcessJob::dispatch($order, $order->user)->delay(now()->addSeconds(15));
                 $markdown = new Markdown(view(), config('mail.markdown'));
                 session()->forget('cart');

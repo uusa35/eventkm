@@ -10,7 +10,8 @@ class Order extends PrimaryModel
     protected $guarded = [''];
     protected $casts = [
         'shipment_fees' => 'float',
-        'discount' => 'float'
+        'discount' => 'float',
+        'paid' => 'boolean'
     ];
     use SoftDeletes, Notifiable;
 
