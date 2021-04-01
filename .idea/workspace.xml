@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258" />
+    <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
+      <change beforePath="$PROJECT_DIR$/.idea/mallrupdate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mallrupdate.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -242,6 +246,7 @@
       <path value="$PROJECT_DIR$/vendor/vonage/client-core" />
       <path value="$PROJECT_DIR$/vendor/vonage/client" />
       <path value="$PROJECT_DIR$/vendor/nexmo/laravel" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
@@ -846,6 +851,7 @@
       <workItem from="1617047607038" duration="148000" />
       <workItem from="1617084790864" duration="94000" />
       <workItem from="1617164625682" duration="287000" />
+      <workItem from="1617311935193" duration="270000" />
     </task>
     <servers />
   </component>

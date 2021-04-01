@@ -38,11 +38,11 @@ Route::group(['namespace' => 'Api'], function () {
         Route::resource('address', 'AddressController')->only(['store', 'update', 'destroy']);
         Route::resource('product', 'ProductController')->only(['store', 'update']);
     });
+    Route::post('authenticate', 'UserController@authenticate');
     Route::get('location/address', 'GeoLocationController@getAddressFromLocation')->name('location.address');
     Route::get('country/ip', 'CountryController@getUserCountry');
     Route::resource('user', 'UserController')->only(['index', 'show']);
     Route::resource('role', 'RoleController')->only(['index']);
-    Route::post('authenticate', 'UserController@authenticate');
     Route::get('google/authenticate', 'UserController@googleAuthenticate');
     Route::post('register', 'UserController@register');
     Route::resource('category', 'CategoryController')->only(['index', 'show']);

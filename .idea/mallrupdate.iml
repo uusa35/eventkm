@@ -192,6 +192,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/vonage/client-core" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/vonage/client" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nexmo/laravel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/deprecations" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
