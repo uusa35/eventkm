@@ -39,7 +39,6 @@ Route::group(['namespace' => 'Api'], function () {
         Route::resource('product', 'ProductController')->only(['store', 'update']);
     });
     Route::post('authenticate', 'UserController@authenticate');
-    Route::post('login', 'UserController@login');
     Route::get('location/address', 'GeoLocationController@getAddressFromLocation')->name('location.address');
     Route::get('country/ip', 'CountryController@getUserCountry');
     Route::resource('user', 'UserController')->only(['index', 'show']);

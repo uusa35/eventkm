@@ -224,27 +224,6 @@ class UserController extends Controller
         return response()->json(['message' => trans('message.invalid_username_or_password')], 400);
     }
 
-    public function login(Request $request)
-    {
-        $validate = validator($request->all(), [
-            'email' => 'required|email',
-            'password' => 'required',
-            'player_id' => 'nullable|string'
-        ]);
-        if ($validate->fails()) {
-            return response()->json(['message' => $validate->errors()->first()], 400);
-        }
-        $authenticate = auth()->attempt($request->only('email', 'password'));
-        if ($authenticate) {
-            $element = $this->getAuthenticatedUser('email', $request->email);
-            if ($element) {
-                $request->has('player_id') ? $element->update(['player_id' => $request->player_id]) : null;
-                return response()->json(new UserResource($element), 200);
-            }
-        }
-        return response()->json(['message' => trans('message.invalid_username_or_password')], 400);
-    }
-
     public function reAuthenticate(Request $request)
     {
         $element = $this->getAuthenticatedUser('id', $request->user()->id);
