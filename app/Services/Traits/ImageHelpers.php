@@ -58,6 +58,9 @@ trait ImageHelpers
                                 foreach ($sizes as $k => $value) {
                                     Storage::disk('do')->copy($path, 'public/uploads/images/' . $value . '/' . $imagePath);
                                 }
+                                $model->update([
+                                    $inputName => $imagePath,
+                                ]);
                             } catch (Exception $e) {
                                 return $e->getMessage();
                             }
