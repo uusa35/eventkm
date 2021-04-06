@@ -304,7 +304,7 @@ trait OrderTrait
     public function decreaseQty(Order $order)
     {
         try {
-            if (!$order->paid) {
+            if ($order->paid) {
                 $order->order_metas->each(function ($orderMeta) use ($order) {
                     if ($orderMeta->isProductType) {
                         if ($orderMeta->product->check_stock) {

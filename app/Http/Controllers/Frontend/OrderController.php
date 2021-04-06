@@ -144,12 +144,15 @@ class OrderController extends Controller
         if ($order->cash_on_delivery) {
             $contactus = Setting::first();
             if (env('BITS')) {
-                $this->decreaseQty($order);
                 $order->update(['paid' => true]);
-                OrderSuccessProcessJob::dispatch($order, $order->user)->delay(now()->addSeconds(15));
-                $markdown = new Markdown(view(), config('mail.markdown'));
-                session()->forget('cart');
-                return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
+                if($order->paid) {
+                    $this->decreaseQty($order);
+                    OrderSuccessProcessJob::dispatch($order, $order->user)->delay(now()->addSeconds(15));
+                    $markdown = new Markdown(view(), config('mail.markdown'));
+                    session()->forget('cart');
+                    return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
+                }
+                throw new \Exception('Order is not complete');
             } else {
                 dispatch(new sendSuccessOrderEmail($order, $order->user, $contactus))->delay(now()->addSeconds(10));
                 session()->forget('cart');

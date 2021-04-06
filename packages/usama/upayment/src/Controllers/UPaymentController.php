@@ -64,8 +64,8 @@ class UPaymentController extends Controller
         }
         $referenceId = $request->OrderID;
         $order = Order::where(['id' => $referenceId])->with('order_metas.product', 'user', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color')->first();
-        $this->decreaseQty($order);
         $order->update(['status' => 'success', 'paid' => true]);
+        $this->decreaseQty($order);
         $markdown = new Markdown(view(), config('mail.markdown'));
         OrderSuccessProcessJob::dispatchNow($order, $order->user);
 //        OrderSuccessProcessJob::dispatch($order, $order->user)->delay(now()->addSeconds(15));

@@ -82,8 +82,8 @@ class TapPaymentController extends Controller
             Mail::to($settings->email)->send(new OrderFailed($order, $settings, 'Tap Result Case #1 : Order Does not exist or ref Id was not attached to request.'));
             return abort('404', 'Your payment process is unsuccessful .. your deal is not created please try again or contact us.');
         }
-        $this->decreaseQty($order);
         $order->update(['status' => 'success', 'paid' => true]);
+        $this->decreaseQty($order);
         $markdown = new Markdown(view(), config('mail.markdown'));
 //        OrderSuccessProcessJob::dispatchNow($order, $order->user);
         OrderSuccessProcessJob::dispatch($order, $order->user)->delay(now()->addSeconds(15));
