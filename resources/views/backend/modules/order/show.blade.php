@@ -215,7 +215,6 @@
                                     <a href="#">{{ $item->service->user->slug }}</a>
                                 </td>
                                 <td class="right">{{ $item->price }} {{ trans('general.kd') }}</td>
-                                <td class="right">'N/A'</td>
                                 <td class="right">{{ $item->notes}}</td>
                                 <td class="right">{{ $element->address }} - {{ $element->country }}</td>
                                 <td class="right">{{ number_format($item->price * $item->qty,'2','.',',') }}
