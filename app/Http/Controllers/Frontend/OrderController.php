@@ -140,7 +140,7 @@ class OrderController extends Controller
 
     public function cashOnDeliveryReceived(Request $request)
     {
-        $order = Order::whereId($request->id)->with('order_metas.product.product_attributes.size','order_metas.product.product_attributes.color','order_metas.service')->first();
+        $order = Order::whereId($request->id)->with('order_metas.product.product_attributes.size','order_metas.product.product_attributes.color','order_metas.service','user')->first();
         if ($order->cash_on_delivery) {
             $contactus = Setting::first();
             if (env('BITS')) {
@@ -149,7 +149,7 @@ class OrderController extends Controller
                 OrderSuccessProcessJob::dispatch($order, $order->user)->delay(now()->addSeconds(15));
                 $markdown = new Markdown(view(), config('mail.markdown'));
                 session()->forget('cart');
-                return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->usecreateWebOrderr]);
+                return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
             } else {
                 dispatch(new sendSuccessOrderEmail($order, $order->user, $contactus))->delay(now()->addSeconds(10));
                 session()->forget('cart');
