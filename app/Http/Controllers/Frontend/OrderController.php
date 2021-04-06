@@ -61,7 +61,7 @@ class OrderController extends Controller
         CheckCartItems::dispatchNow($country);
         $this->addCountryToCart($country, $this->cart);
         $user = $this->createUser($request);
-        if ($user && $country) {
+        if (isset($user->id) && $country) {
             $order = $this->createWebOrder($request, $user, $this->cart);
             if ($order) {
                 auth()->login($user);
@@ -149,7 +149,7 @@ class OrderController extends Controller
                 OrderSuccessProcessJob::dispatch($order, $order->user)->delay(now()->addSeconds(15));
                 $markdown = new Markdown(view(), config('mail.markdown'));
                 session()->forget('cart');
-                return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
+                return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->usecreateWebOrderr]);
             } else {
                 dispatch(new sendSuccessOrderEmail($order, $order->user, $contactus))->delay(now()->addSeconds(10));
                 session()->forget('cart');

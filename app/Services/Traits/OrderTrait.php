@@ -128,7 +128,7 @@ trait OrderTrait
                 'role_id' => $user->role_id ? $user->role_id : Role::where('is_client', true)->first()->id
             ]);
         } else {
-            $user = User::where('email', $request->email)->first();
+            $user = User::where('email', $request->email)->orWhere(['mobile' => $request->mobile])->first();
             if ($user) {
                 $user->update([
                     'name' => $request->name,
@@ -185,7 +185,7 @@ trait OrderTrait
                     return $order;
                 }
             }
-            $user = User::where(['email' => $request->email])->first();
+            $user = User::where(['email' => $request->email])->orWhere(['mobile' => $request->mobile])->first();
             if ($user) {
                 $user->update([
                     'name' => $request->name,
@@ -216,6 +216,7 @@ trait OrderTrait
 
             }
             return $order = $this->createApiOrder($request, $user);
+            return new \Exception('User is not created successfully');
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -263,7 +264,7 @@ trait OrderTrait
                             'product_attribute_id' => $product->hasRealAttributes ? $item['product_attribute_id'] : null,
                             'collection_id' => $request->collection_id,
                             'qty' => $item['qty'],
-                            'price' => $item['wrapGift'] ? (float) $item['element']['finalPrice'] + (float) $settings->gift_fee : (float) $item['element']['finalPrice'],
+                            'price' => $item['wrapGift'] ? (float)$item['element']['finalPrice'] + (float)$settings->gift_fee : (float)$item['element']['finalPrice'],
                             'item_name' => $item['element']['name'],
                             'item_type' => class_basename($product),
                             'notes' => $item['notes'] ? $item['notes'] : null,
