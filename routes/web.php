@@ -182,6 +182,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
 Auth::routes();
 Route::get('auth/google', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/google/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('panorama/view', 'Frontend\HomeController@getPanoramaView');
 Route::get('webview', function () {
     return view('webview');
 });

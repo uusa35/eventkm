@@ -16,6 +16,7 @@ mix.js('resources/assets/js/app.js', 'public/js').version()
     .styles('../wokiee-ecommerce-html/html/css/rtl.css', 'public/css/theme-rtl.css').version();
 mix.styles(['resources/assets/css/frontend-custom-ar.css'], 'public/css/frontend-custom-ar.css').version();
 mix.styles(['resources/assets/css/frontend-custom-en.css'], 'public/css/frontend-custom-en.css').version();
+mix.styles(['resources/assets/css/frontend-custom-en.css'], 'public/css/frontend-custom-en.css').version();
 // frontend
 // wokiee
 mix.styles([
@@ -223,4 +224,9 @@ mix.copyDirectory('../wokiee-ecommerce-html/html/external/rs-plugin/images', 'pu
 mix.copyDirectory('../wokiee-ecommerce-html/html/external/rs-plugin/assets', 'public/assets');
 mix.copyDirectory('../wokiee-ecommerce-html/html/external', 'public/external');
 mix.react('resources/assets/js/productAttribute/index.js', 'public/js/productAttribute.js').version();
+// panorama
+mix.scripts([
+    './resources/assets/js/panorama.js',
+    './node_modules/panolens.js/dist/panolens.min.js',
+], 'public/js/panorama.css');
 

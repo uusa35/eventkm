@@ -184,4 +184,9 @@ class HomeController extends Controller
         }
         return redirect()->route('backend.home')->with(['error' => 'no users']);
     }
+
+    public function getPanoramaView() {
+        $element = Product::active()->with('images','user')->first();
+        return view('frontend.wokiee.four.modules.panorama',compact('element'));
+    }
 }
