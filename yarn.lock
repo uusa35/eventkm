@@ -4954,11 +4954,6 @@ pako@~1.0.5:
   resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.11.tgz#6c9599d340d54dfd3946380252a35705a6b992bf"
   integrity sha512-4hLB8Py4zZce5s4yd9XzopqwVv/yGNhV1Bl8NTmCq1763HeK2+EwVTv+leGeL13Dnh2wfbqowVPXCIO0z4taYw==
 
-panolens.js@^0.0.0:
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/panolens.js/-/panolens.js-0.0.0.tgz#53378d63813d30787f6ca26425594d4ffd5497cf"
-  integrity sha512-X2v3HdXxrI4PoQ7Y5skWe/HQi/AmNvYE3AHaLf+NfKGLaneNjrpahqJHw1XTZuDLxwGEC84W3NF1S/0IwAAnNg==
-
 parallel-transform@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/parallel-transform/-/parallel-transform-1.2.0.tgz#9049ca37d6cb2182c3b1d2c720be94d14a5814fc"

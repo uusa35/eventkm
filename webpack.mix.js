@@ -224,9 +224,3 @@ mix.copyDirectory('../wokiee-ecommerce-html/html/external/rs-plugin/images', 'pu
 mix.copyDirectory('../wokiee-ecommerce-html/html/external/rs-plugin/assets', 'public/assets');
 mix.copyDirectory('../wokiee-ecommerce-html/html/external', 'public/external');
 mix.react('resources/assets/js/productAttribute/index.js', 'public/js/productAttribute.js').version();
-// panorama
-mix.scripts([
-    './resources/assets/js/panorama.js',
-    './node_modules/panolens.js/dist/panolens.min.js',
-], 'public/js/panorama.css');
-
