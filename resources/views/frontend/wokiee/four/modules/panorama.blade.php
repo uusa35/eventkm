@@ -80,12 +80,14 @@
 <script src="https://vjs.zencdn.net/5.4.6/video.js"></script>
 <script src="https://pannellum.org/js/videojs-pannellum-plugin.js"></script>
 <script>
+
     pannellum.viewer('panoramaTour', {
         "default": {
             "firstScene": "{{ $element->id }}",
             "author": "{{ $element->name }}",
             "sceneFadeDuration": 1000,
-            "autoLoad": false,
+            "autoLoad": true,
+            "compass": true,
         },
         "scenes": {
             "{{ $element->id }}": {
@@ -95,8 +97,7 @@
                 "type": "equirectangular",
                 "panorama": 'https://demo.sirv.com/panoramas/civic.jpg',
                 "autoRotate": "-6",
-                "compass": true,
-                "showControls": true,
+                "autoLoad": true,
                 "hotSpots": [
                     {
                         "pitch": -2.1,
@@ -120,7 +121,6 @@
                         "pitch": 14.1,
                         "yaw": 1.9,
                         "type": "info",
-                        "image" : "{{ $element->imageThumb }}",
                         "text": "<div style='width: 250; height: 100'><h6>{!! $element->name !!}</h6><h6>{!! $element->finalPrice .' '. trans('general.kd')!!}</h6><img src='{!! $element->imageThumbLink !!}' style='width : 100px; height: 100px;'/></div>",
                         "URL": "{!! env('APP_URL') !!}"
                     },
@@ -133,6 +133,7 @@
                 "yaw": 117,
                 "type": "equirectangular",
                 "panorama": 'https://cdn.eso.org/images/screen/ESO_Paranal_360_Marcio_Cabral_Chile_07-CC.jpg',
+                "autoLoad": true,
                 "hotSpots": [
                     {
                         "pitch": -2.1,
@@ -160,6 +161,7 @@
                 "yaw": 5,
                 "type": "equirectangular",
                 "panorama": 'https://cdn.eso.org/images/screen/ESO_Hotel_Paranal_360_Marcio_Cabral_Chile_011-CC.jpg',
+                "autoLoad": true,
                 "hotSpots": [
                     {
                         "pitch": -0.6,
