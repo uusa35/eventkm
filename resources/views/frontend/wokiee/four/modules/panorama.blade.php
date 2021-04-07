@@ -93,7 +93,7 @@
                 "pitch": -3,
                 "yaw": 117,
                 "type": "equirectangular",
-                "panorama": 'https://demo.sirv.com/panoramas/civic.jpg',
+                "panorama": 'https://cdn.eso.org/images/screen/ESO_Paranal_360_Marcio_Cabral_Chile_07-CC.jpg',
                 "hotSpots": [
                     {
                         "pitch": -2.1,
@@ -117,8 +117,35 @@
                         "pitch": -0.6,
                         "yaw": 37.1,
                         "type": "scene",
+                        "text": "Hotel",
+                        "sceneId": "100",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    }
+                ]
+            },
+            "100": {
+                "title": "Hotel",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": 'https://cdn.eso.org/images/screen/ESO_Hotel_Paranal_360_Marcio_Cabral_Chile_011-CC.jpg',
+                "hotSpots": [
+                    {
+                        "pitch": -0.6,
+                        "yaw": 37.1,
+                        "type": "scene",
                         "text": "{{ $element->user->name }}",
                         "sceneId": {{ $element->user->id }},
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                    {
+                        "pitch": -0.10,
+                        "yaw": 10.1,
+                        "type": "scene",
+                        "text": "{{ $element->name }}",
+                        "sceneId": {{ $element->id }},
                         "targetYaw": -23,
                         "targetPitch": 2
                     }
