@@ -71,7 +71,8 @@
 </head>
 <body>
 <div class="flex-center position-ref full-height">
-    <div id="panoramaTour"></div>
+    <div id="panoramaTour">
+    </div>
 </div>
 </body>
 
@@ -84,9 +85,47 @@
             "firstScene": "{{ $element->id }}",
             "author": "{{ $element->name }}",
             "sceneFadeDuration": 1000,
-            "autoLoad": true
+            "autoLoad": true,
         },
         "scenes": {
+            "{{ $element->id }}": {
+                "title": "{{ $element->name }}",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": 'https://demo.sirv.com/panoramas/civic.jpg',
+                // "autoRotate": "-6",
+                "compass": true,
+                "showControls": true,
+                "hotSpots": [
+                    {
+                        "pitch": -2.1,
+                        "yaw": 1.9,
+                        "type": "scene",
+                        "text": "{{ $element->user->name }}",
+                        "sceneId": "{{ $element->user->id }}",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                    {
+                        "pitch": -0.6,
+                        "yaw": 10.1,
+                        "type": "scene",
+                        "text": "Hotel",
+                        "sceneId": "100",
+                        "targetYaw": -23,
+                        "targetPitch": 2
+                    },
+                    {
+                        "pitch": 14.1,
+                        "yaw": 1.5,
+                        "type": "info",
+                        "image" : "{{ $element->imageThumb }}",
+                        "text": "<div style='width: 250; height: 100'><h6>{!! $element->name !!}</h6><h6>{!! $element->finalPrice .' '. trans('general.kd')!!}</h6><img src='{!! $element->imageThumbLink !!}' style='width : 100px; height: 100px;'/></div>",
+                        "URL": "{!! env('APP_URL') !!}"
+                    },
+                ]
+            },
             "{{ $element->user->id }}": {
                 "title": "{{ $element->user->name }}",
                 "hfov": 110,
@@ -97,31 +136,22 @@
                 "hotSpots": [
                     {
                         "pitch": -2.1,
-                        "yaw": 132.9,
+                        "yaw": 20.9,
                         "type": "scene",
                         "text": "{{ $element->name }}",
                         "sceneId": "{{ $element->id }}",
                         "targetYaw": -23,
                         "targetPitch": 2
-                    }
-                ]
-            },
-            "{{ $element->id }}": {
-                "title": "{{ $element->name }}",
-                "hfov": 110,
-                "yaw": 5,
-                "type": "equirectangular",
-                "panorama": 'https://demo.sirv.com/panoramas/civic.jpg',
-                "hotSpots": [
+                    },
                     {
-                        "pitch": -0.6,
-                        "yaw": 37.1,
+                        "pitch": -0.1,
+                        "yaw": 10.1,
                         "type": "scene",
                         "text": "Hotel",
                         "sceneId": "100",
                         "targetYaw": -23,
                         "targetPitch": 2
-                    }
+                    },
                 ]
             },
             "100": {
@@ -133,7 +163,7 @@
                 "hotSpots": [
                     {
                         "pitch": -0.6,
-                        "yaw": 37.1,
+                        "yaw": 20.1,
                         "type": "scene",
                         "text": "{{ $element->user->name }}",
                         "sceneId": {{ $element->user->id }},
@@ -150,7 +180,7 @@
                         "targetPitch": 2
                     }
                 ]
-            }
+            },
         }
     });
 </script>
