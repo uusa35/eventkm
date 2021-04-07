@@ -108,8 +108,8 @@
                         "targetPitch": 2
                     },
                     {
-                        "pitch": -0.6,
-                        "yaw": 10.1,
+                        "pitch": -2.1,
+                        "yaw": 25.1,
                         "type": "scene",
                         "text": "Hotel",
                         "sceneId": "100",
@@ -118,7 +118,7 @@
                     },
                     {
                         "pitch": 14.1,
-                        "yaw": 1.5,
+                        "yaw": 1.9,
                         "type": "info",
                         "image" : "{{ $element->imageThumb }}",
                         "text": "<div style='width: 250; height: 100'><h6>{!! $element->name !!}</h6><h6>{!! $element->finalPrice .' '. trans('general.kd')!!}</h6><img src='{!! $element->imageThumbLink !!}' style='width : 100px; height: 100px;'/></div>",
