@@ -105,7 +105,6 @@
 
     header, .tt-color-scheme-01, .tt-footer-center, footer .tt-footer-custom:last-child
     .tt-color-scheme-02,
-    .tt-badge-cart,
     .tt-search-type2-rtl, .tt-background, .dot,
     .headerunderline, .stuck.tt-stuck-nav {
         background-color: {{ $settings->header_theme_bg }}                    !important;
@@ -131,7 +130,7 @@
     .tt-product:not(.tt-view) .tt-image-box .tt-btn-wishlist.active, .page-item.active .page-link, .tt-btn-compare,
     .tt-image-box .tt-btn-wishlist,
     ul.tt-options-swatch li.active a:not(.options-color):not(.options-color-img), ul.tt-options-swatch li:hover a:not(.options-color):not(.options-color-img),
-    .btn > .fa .fa-fw,
+    .btn > .fa .fa-fw, .tt-badge-cart,
     .tt-product:not(.tt-view):hover .tt-image-box .tt-btn-quickview, .tt-product:not(.tt-view):hover .tt-image-box .tt-btn-quickview:hover {
         color: {{ $settings->btn_text_theme_color }}                    !important;
         background-color: {{ $settings->btn_bg_theme_color }}                    !important;

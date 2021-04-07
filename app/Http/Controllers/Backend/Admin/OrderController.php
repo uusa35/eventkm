@@ -147,9 +147,8 @@ class OrderController extends Controller
         $element = Order::findOrFail($request->id);
         $element->update(['status' => $request->status]);
         if ($request->status === 'completed' &&  $element->cash_on_delivery) {
-            $element->update(['paid' => true]);
-            $this->decreaseQty($element);
             $element->update(['status' => 'success', 'paid' => true]);
+            $this->decreaseQty($element);
             return redirect()->back()->with('success', 'Order (Cash On Delivery) is Paid and Status is Success.');
         }
         return redirect()->back()->with('success', 'status changed successfully');
