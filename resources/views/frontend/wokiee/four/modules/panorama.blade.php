@@ -67,11 +67,39 @@
             width: 100%;
             height: 100%;
         }
+        #controls {
+            position: absolute;
+            bottom: 0;
+            z-index: 2;
+            text-align: center;
+            width: 100%;
+            padding-bottom: 3px;
+        }
+        .ctrl {
+            padding: 8px 5px;
+            width: 30px;
+            text-align: center;
+            background: rgba(200, 200, 200, 0.8);
+            display: inline-block;
+            cursor: pointer;
+        }
+        .ctrl:hover {
+            background: rgba(200, 200, 200, 1);
+        }
     </style>
 </head>
 <body>
 <div class="flex-center position-ref full-height">
     <div id="panoramaTour">
+        <div id="controls">
+            <div class="ctrl" id="pan-up">&#9650;</div>
+            <div class="ctrl" id="pan-down">&#9660;</div>
+            <div class="ctrl" id="pan-left">&#9664;</div>
+            <div class="ctrl" id="pan-right">&#9654;</div>
+            <div class="ctrl" id="zoom-in">&plus;</div>
+            <div class="ctrl" id="zoom-out">&minus;</div>
+{{--            <div class="ctrl" id="fullscreen">&#x2922;</div>--}}
+        </div>
     </div>
 </div>
 </body>
@@ -81,12 +109,14 @@
 <script src="https://pannellum.org/js/videojs-pannellum-plugin.js"></script>
 <script>
 
-    pannellum.viewer('panoramaTour', {
+    viewer = pannellum.viewer('panoramaTour', {
         "default": {
             "firstScene": "{{ $element->id }}",
             "author": "{{ $element->name }}",
             "sceneFadeDuration": 1000,
-            "preview" : "{!! $element->imageThumbLink !!}"
+            "preview" : "{!! $element->imageThumbLink !!}",
+            "autoLoad" : true,
+            "showControls" : false
         },
         "scenes": {
             "{{ $element->id }}": {
@@ -183,6 +213,28 @@
                 ]
             },
         }
+    });
+    // Make buttons work
+    document.getElementById('pan-up').addEventListener('click', function(e) {
+        viewer.setPitch(viewer.getPitch() + 10);
+    });
+    document.getElementById('pan-down').addEventListener('click', function(e) {
+        viewer.setPitch(viewer.getPitch() - 10);
+    });
+    document.getElementById('pan-left').addEventListener('click', function(e) {
+        viewer.setYaw(viewer.getYaw() - 10);
+    });
+    document.getElementById('pan-right').addEventListener('click', function(e) {
+        viewer.setYaw(viewer.getYaw() + 10);
+    });
+    document.getElementById('zoom-in').addEventListener('click', function(e) {
+        viewer.setHfov(viewer.getHfov() - 10);
+    });
+    document.getElementById('zoom-out').addEventListener('click', function(e) {
+        viewer.setHfov(viewer.getHfov() + 10);
+    });
+    document.getElementById('fullscreen').addEventListener('click', function(e) {
+        viewer.toggleFullscreen();
     });
 </script>
 </html>
