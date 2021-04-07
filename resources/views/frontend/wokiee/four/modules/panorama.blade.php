@@ -126,7 +126,7 @@
                 "yaw": 5,
                 "type": "equirectangular",
                 "panorama": 'https://demo.sirv.com/panoramas/civic.jpg',
-                "autoRotate": "-2",
+                "autoRotate": "-1",
                 "autoLoad": true,
                 "hotSpots": [
                     {
@@ -164,7 +164,7 @@
                 "type": "equirectangular",
                 "panorama": 'https://cdn.eso.org/images/screen/ESO_Paranal_360_Marcio_Cabral_Chile_07-CC.jpg',
                 "autoLoad": true,
-                "autoRotate": "-2",
+                "autoRotate": "-1",
                 "hotSpots": [
                     {
                         "pitch": -2.1,
@@ -193,7 +193,7 @@
                 "type": "equirectangular",
                 "panorama": 'https://cdn.eso.org/images/screen/ESO_Hotel_Paranal_360_Marcio_Cabral_Chile_011-CC.jpg',
                 "autoLoad": true,
-                "autoRotate": "-2",
+                "autoRotate": "-1",
                 "hotSpots": [
                     {
                         "pitch": -0.6,

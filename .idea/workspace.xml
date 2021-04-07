@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/panorama.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/panorama.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -860,7 +859,7 @@
       <workItem from="1617716044263" duration="2996000" />
       <workItem from="1617721596960" duration="352000" />
       <workItem from="1617768555687" duration="8353000" />
-      <workItem from="1617783164802" duration="1975000" />
+      <workItem from="1617783164802" duration="2030000" />
     </task>
     <servers />
   </component>
