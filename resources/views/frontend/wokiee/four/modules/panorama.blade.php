@@ -116,7 +116,8 @@
             "sceneFadeDuration": 1000,
             "preview" : "{!! $element->imageThumbLink !!}",
             "autoLoad" : true,
-            "showControls" : false
+            "showControls" : false,
+            "ignoreGPanoXMP" : true
         },
         "scenes": {
             "{{ $element->id }}": {
@@ -150,8 +151,8 @@
                         "pitch": 14.1,
                         "yaw": 1.9,
                         "type": "info",
-                        "text": "<div style='width: 250; height: 100'><h6>{!! $element->name !!}</h6><h6>{!! $element->finalPrice .' '. trans('general.kd')!!}</h6><img src='{!! $element->imageThumbLink !!}' style='width : 100px; height: 100px;'/></div>",
-                        "URL": "{!! env('APP_URL') !!}"
+                        "text": "<a href='{!! route('frontend.product.show', $element->id) !!}' style='color : white; text-decoration:none;'><div style='width: 250; height: 100'><h5>{!! $element->name !!}</h5><h5>{!! $element->finalPrice .' '. trans('general.kd')!!}</h5><img src='{!! $element->imageThumbLink !!}' style='width : 100px; height: 100px;'/></div></a>",
+                        {{--"URL": "{!! env('APP_URL') !!}"--}}
                     },
                 ]
             },
