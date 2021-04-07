@@ -114,10 +114,10 @@
             "firstScene": "{{ $element->id }}",
             "author": "{{ $element->name }}",
             "sceneFadeDuration": 1000,
-            "preview" : "{!! $element->imageThumbLink !!}",
+{{--            "preview" : "{!! $element->imageThumbLink !!}",--}}
             "autoLoad" : true,
             "showControls" : false,
-            "ignoreGPanoXMP" : true
+            // "ignoreGPanoXMP" : true
         },
         "scenes": {
             "{{ $element->id }}": {
