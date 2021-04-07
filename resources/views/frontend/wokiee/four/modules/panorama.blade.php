@@ -85,7 +85,7 @@
             "firstScene": "{{ $element->id }}",
             "author": "{{ $element->name }}",
             "sceneFadeDuration": 1000,
-            "autoLoad": true,
+            "autoLoad": false,
         },
         "scenes": {
             "{{ $element->id }}": {
@@ -94,7 +94,7 @@
                 "yaw": 5,
                 "type": "equirectangular",
                 "panorama": 'https://demo.sirv.com/panoramas/civic.jpg',
-                // "autoRotate": "-6",
+                "autoRotate": "-6",
                 "compass": true,
                 "showControls": true,
                 "hotSpots": [
