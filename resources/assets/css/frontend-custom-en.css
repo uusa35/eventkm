@@ -49,6 +49,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .date-picker-element {
     border-top-left-radius: 15px !important;
     border-bottom-left-radius: 15px !important;
