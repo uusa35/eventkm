@@ -13,7 +13,7 @@
                                 <li data-thumb="{{ $s->imgThumbLink }}" data-transition="fade"
                                     data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"
                                     data-title="Slide">
-                                    <img src="{{ $s->imageLargeLink }}" alt="slide1"
+                                    <img src="{{ $s->imageLargeLink }}" alt="{{ $s->title }}"
                                          data-bgposition="top center" data-bgfit="contain"
                                          data-bgrepeat="no-repeat">
                                     <div class="tp-caption tp-caption1 lft stb"
