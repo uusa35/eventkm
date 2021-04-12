@@ -17,7 +17,7 @@
                 {{--<div class="col-md-4 col-lg-3 col-xl-3 leftColumn aside desctop-no-sidebar">--}}
                 @if(env('DESIGNERAAT'))
                     <div class="col-lg-12">
-                        @include('frontend.wokiee.four.partials._products_slider',['elements' => $element->products,'title' => trans('general.products')])
+                        @include('frontend.wokiee.four.partials._products_slider',['elements' => $products,'title' => trans('general.products')])
                     </div>
                 @endif
                 @if(ENV('MALLR') || ENV('DAILY'))
