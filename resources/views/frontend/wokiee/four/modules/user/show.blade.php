@@ -15,6 +15,11 @@
                     @include('frontend.wokiee.four.partials._user_show_information')
                 </div>
                 {{--<div class="col-md-4 col-lg-3 col-xl-3 leftColumn aside desctop-no-sidebar">--}}
+                @if(env('DESIGNERAAT'))
+                    <div class="col-lg-12">
+                        @include('frontend.wokiee.four.partials._products_slider',['elements' => $element->products,'title' => trans('general.products')])
+                    </div>
+                @endif
                 @if(ENV('MALLR') || ENV('DAILY'))
                     <div class="col-lg-12" style="padding-top: 20px;">
                         @if(env('MALLR') && isset($element) && $element->isDesigner && isset($collections))

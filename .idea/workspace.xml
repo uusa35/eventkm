@@ -5,23 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/modules/user/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/home/designerat.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/UserHelpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserHelpers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/Traits/HomePageTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Traits/HomePageTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_22_100402_add_product_id_to_ratings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_22_100402_add_product_id_to_ratings_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/backend-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/backend-rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/backend.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/backend.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/user/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/user/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/user/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/user/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/user/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/breadcrumbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/breadcrumbs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/user/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/user/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -879,7 +865,7 @@
       <workItem from="1617871717045" duration="42000" />
       <workItem from="1618117100081" duration="1810000" />
       <workItem from="1618128928902" duration="5264000" />
-      <workItem from="1618202378828" duration="505000" />
+      <workItem from="1618202378828" duration="1168000" />
     </task>
     <servers />
   </component>
