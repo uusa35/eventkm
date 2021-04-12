@@ -155,7 +155,7 @@
                     <span>{{ $element->totalFans }} {{ trans('general.fans_no') }}</span>
                 </td>
             </tr>
-            @if($element->isDesigner)
+            @if($element->isDesigner && env('MALLR'))
                 <tr>
                     <td class="td-fixed-element td-sm">
                 <span><i class="fa fa-fw fa-product-hunt fa-lg"></i> <span class="ml-2"></span>{{ trans('general.collection_no') }}
