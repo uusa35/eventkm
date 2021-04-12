@@ -1,4 +1,4 @@
-<div class="tt-add-info">
+<div class="tt-add-info mt-5">
     <div class="tt-table-responsive">
         <table class="tt-table-shop-01">
             @if($element->sku)
