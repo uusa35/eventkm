@@ -27,7 +27,7 @@
                         <div class="col-md-3">
                             <ul class="list-unstyled profile-nav">
                                 <li>
-                                    <img src="{{ $element->imageThumbLink }}" class="img-responsive pic-bordered"
+                                    <img src="{{ $element->imageMediumLink }}" class="img-responsive pic-bordered"
                                          alt=""/>
                                     @can('isAdminOrAbove')
                                         <a href="{{ route('backend.user.edit', $element->id) }}"
