@@ -147,7 +147,7 @@
                                                             </a>
                                                         </li>
                                                     @endif
-                                                    @if(env('DIESGERAAT'))
+                                                    @if(env('DIESGERAAT') && !$element->isClient)
                                                         <li>
                                                             <a href="{{ route('backend.user.show',$element->id) }}">
                                                                 <i class="fa fa-fw fa-user-circle"></i> {{ trans('general.profile') }}
