@@ -110,10 +110,8 @@ trait HomePageTrait
     public function getDesigneratHome()
     {
         $sliders = Slide::active()->onHome()->limit(SElf::TAKE_LEAST)->get();
-        $designers = User::active()->onHome()->designers()->whereHas('collections', function ($q) {
-            return $q->whereHas('products', function ($q) {
+        $designers = User::active()->onHome()->designers()->whereHas('products', function ($q) {
                 return $q->active();
-            }, '>', 0);
         }, '>', 0)->with('role')->notAdmins()->hasProducts()->get();
         $elites = User::active()->onHome()->companies()->notAdmins()->hasProducts()->whereHas('products', function ($q) {
             return $q->active();

@@ -101,14 +101,14 @@ class UserController extends Controller
         }
         if ($element->isDesigner) {
             $productIds = $element->collections()->with('products')->get()->pluck('products')->flatten()->unique('id')->pluck('id')->toArray();
-            $products = Product::whereIn('id', $productIds)->filters($filters)->with([
+            $products = Product::active()->whereIn('id', $productIds)->filters($filters)->with([
                 'product_attributes.color', 'color',
                 'colors', 'sizes', 'size', 'user',
                 'product_attributes.size', 'images',
                 'tags', 'categories.children', 'brand',
             ])->paginate(Self::TAKE_MIN);
         } else {
-            $products = $element->products()->filters($filters)->with([
+            $products = $element->products()->active()->filters($filters)->with([
                 'product_attributes.color', 'color',
                 'colors', 'sizes', 'size', 'user',
                 'product_attributes.size', 'images',
