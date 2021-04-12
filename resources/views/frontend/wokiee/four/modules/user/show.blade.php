@@ -11,7 +11,7 @@
         <div class="container-indent">
             {{--            <div class="container container-fluid-custom-mobile-padding">--}}
             <div class="container">
-                <div class="col-lg-12 mb-5">
+                <div class="col-lg-12 mb-5 mt-4">
                     @include('frontend.wokiee.four.partials._user_show_information')
                 </div>
                 {{--<div class="col-md-4 col-lg-3 col-xl-3 leftColumn aside desctop-no-sidebar">--}}
