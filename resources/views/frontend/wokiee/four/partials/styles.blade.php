@@ -111,7 +111,7 @@
     }
 
     footer .tt-color-scheme-02, footer, .tt-footer-center, footer .tt-footer-custom:last-child, footer p , footer .tt-collapse-title, footer .tt-title , footer .tt-list,
-    footer li a, footer a, footer div , footer span, footer .tt-collapse-content  {
+    footer li a, footer a, footer div , footer span, footer .tt-collapse-content a {
         color: {{ $settings->footer_theme_color }}                    !important;
         background-color: {{ $settings->footer_bg_theme_color }}                    !important;
     }
