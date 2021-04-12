@@ -51,10 +51,10 @@
                                                 @foreach($element->order_metas as $meta)
                                                     <li>
                                                         @if($meta->product)
-
-                                                            {{ $meta->product->name_ar}}
-                                                            - {{ $meta->product_attribute->size->name_ar }}
-                                                            - {{ $meta->qty }}
+                                                                {{ $meta->product->name}}
+                                                                - {{ $meta->product_size }}
+                                                                - {{ $meta->product_color }}
+                                                                - {{ $meta->qty }}
                                                         @else
                                                             <span class="label label-warning">Product No longer exists</span>
                                                         @endif
