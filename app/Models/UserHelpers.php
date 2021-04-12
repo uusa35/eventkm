@@ -139,6 +139,21 @@ trait UserHelpers
         return asset(env('THUMBNAIL') . $this->bg);
     }
 
+    public function getBannerLargeLinkAttribute()
+    {
+        return asset(env('LARGE') . $this->banner);
+    }
+
+    public function getBannerMediumLinkAttribute()
+    {
+        return asset(env('MEDIUM') . $this->banner);
+    }
+
+    public function getBannerThumbLinkAttribute()
+    {
+        return asset(env('THUMBNAIL') . $this->banner);
+    }
+
     public function getCountryNameAttribute()
     {
         return $this->country->slug;
