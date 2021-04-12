@@ -144,7 +144,7 @@
                     </td>
                     <td>
                         @foreach($element->categories as $cat)
-                            <a class="theme-color" style="color : black;"
+                            <a class="theme-color" style="color : black !important;"
                                href="{{ route('frontend.product.search',['product_category_id' => $cat->id]) }}">
                                 {{ $cat->name }},
                             </a>
