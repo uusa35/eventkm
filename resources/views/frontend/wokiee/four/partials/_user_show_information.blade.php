@@ -84,7 +84,7 @@
                     </td>
                 </tr>
             @endif
-            @if($element->mobile)
+            @if($element->fullMobile && env('DESIGNERAAT'))
                 <tr>
                     <td class="td-fixed-element td-sm"><i class="fa-mobile-phone fa fa-fw fa-lg"></i><span
                                 class="ml-1"></span><span>{{ trans('general.mobile') }} : </span>
