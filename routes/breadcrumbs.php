@@ -769,6 +769,11 @@ Breadcrumbs::for('backend.user.edit', function ($trail, $element) {
     $trail->push(trans('general.edit_user'), route('backend.user.edit', $element->id));
 });
 
+Breadcrumbs::for('backend.user.show', function ($trail, $element) {
+    $trail->parent('backend.user.index');
+    $trail->push(trans('general.profile'), route('backend.user.show', $element->id));
+});
+
 Breadcrumbs::for('backend.slider.create', function ($trail) {
     $trail->parent('backend.slider.index');
     $trail->push('create slider', route('backend.slider.create'));

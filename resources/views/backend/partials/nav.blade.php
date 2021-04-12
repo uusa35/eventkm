@@ -367,7 +367,12 @@
                                 </li>
                                 <li>
                                     <a href="{{ route('backend.user.edit',auth()->id()) }}">
-                                        <i class="fa fa-fw fa-user-circle"></i> {{ trans('general.edit_my_profile') }}
+                                        <i class="fa fa-fw fa-edit"></i> {{ trans('general.edit_my_profile') }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('backend.user.show',auth()->id()) }}">
+                                        <i class="fa fa-fw fa-user-circle"></i> {{ trans('general.profile') }}
                                     </a>
                                 </li>
                                 {{--                                <li>--}}

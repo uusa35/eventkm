@@ -32,7 +32,11 @@ if (env('MOBILE_LAYOUT')) {
 } elseif (env('HUDA')) {
     Route::get('/', 'HomeController@getMallrHome')->name('index');
     Route::get('/home', 'HomeController@getMallrHome')->name('home');
-} else {
+} elseif (env('DESIGNERAAT')) {
+    Route::get('/', 'HomeController@getDesigneratHome')->name('index');
+    Route::get('/home', 'HomeController@getDesigneratHome')->name('home');
+}
+else {
     Route::get('/', 'HomeController@getMallrHome')->name('index');
     Route::get('/home', 'HomeController@getMallrHome')->name('home');
 }

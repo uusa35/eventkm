@@ -801,6 +801,58 @@
                                                             @endif
                                                         </div>
                                                     </div>
+                                                    @if(env('DESIGNERAAT'))
+                                                        <div class="col-md-4">
+                                                            <div
+                                                                class="form-group{{ $errors->has('fixed_amount_subscription') ? ' has-error' : '' }}">
+                                                                <label for="fixed_amount_subscription"
+                                                                       class="control-label">{{ trans('general.fixed_amount_subscription') }}
+                                                                </label>
+                                                                <input id="fixed_amount_subscription" type="text"
+                                                                       class="form-control tooltips"
+                                                                       data-container="body" data-placement="top"
+                                                                       data-original-title="{{ trans('message.fixed_amount_subscription') }}"
+                                                                       name="fixed_amount_subscription"
+                                                                       value="{{$element->fixed_amount_subscription }}"
+                                                                       placeholder="{{ trans('general.fixed_amount_subscription') }}"
+                                                                       maxlength="5" required autofocus>
+                                                                @if ($errors->has('fixed_amount_subscription'))
+                                                                    <span class="help-block">
+                                                                    <strong>
+                                                                        {{ $errors->first('fixed_amount_subscription') }}
+                                                                    </strong>
+                                                                </span>
+                                                                @endif
+                                                                <span
+                                                                    class="help-block"><strong>{{ trans('message.fixed_amount_subscription') }}</strong></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div
+                                                                class="form-group{{ $errors->has('percentage_subscription') ? ' has-error' : '' }}">
+                                                                <label for="percentage_subscription"
+                                                                       class="control-label">{{ trans('general.percentage_subscription') }}
+                                                                    *</label>
+                                                                <input id="percentage_subscription" type="text"
+                                                                       class="form-control tooltips"
+                                                                       data-container="body" data-placement="top"
+                                                                       data-original-title="{{ trans('message.percentage_subscription') }}"
+                                                                       name="percentage_subscription"
+                                                                       value="{{ $element->percentage_subscription }}"
+                                                                       placeholder="{{ trans('general.percentage_subscription') }}"
+                                                                       maxlength="5" required autofocus>
+                                                                @if ($errors->has('percentage_subscription'))
+                                                                    <span class="help-block">
+                                                                    <strong>
+                                                                        {{ $errors->first('percentage_subscription') }}
+                                                                    </strong>
+                                                                </span>
+                                                                @endif
+                                                                <span
+                                                                    class="help-block"><strong>{{ trans('message.percentage_subscription') }}</strong></span>
+                                                            </div>
+                                                        </div>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>

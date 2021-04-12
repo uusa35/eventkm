@@ -76,8 +76,8 @@ mix.styles([
     '../metronic_v4.5.6/theme/assets/global/plugins/jquery-multi-select/css/multi-select.css',
     '../metronic_v4.5.6/theme/assets/global/plugins/select2/css/select2.min.css',
     '../metronic_v4.5.6/theme/assets/global/plugins/select2/css/select2-bootstrap.min.css',
-    '../metronic_v4.5.6/theme//assets/global/plugins/bootstrap-colorpicker/css/colorpicker.css',
-    '../metronic_v4.5.6/theme//assets/global/plugins/jquery-minicolors/jquery.minicolors.css',
+    '../metronic_v4.5.6/theme/assets/global/plugins/bootstrap-colorpicker/css/colorpicker.css',
+    '../metronic_v4.5.6/theme/assets/global/plugins/jquery-minicolors/jquery.minicolors.css',
 
 
     '../metronic_v4.5.6/theme/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css',
@@ -91,6 +91,7 @@ mix.styles([
 
     '../metronic_v4.5.6/theme/assets/pages/css/portfolio.min.css',
     '../metronic_v4.5.6/theme/assets/pages/css/profile.min.css',
+    '../metronic_v4.5.6/theme/assets/pages/css/profile-2.min.css',
     '../metronic_v4.5.6/theme/assets/pages/css/pricing.min.css',
     '../metronic_v4.5.6/theme/assets/pages/css/blog.min.css',
 
@@ -123,8 +124,8 @@ mix.styles([
     '../metronic_v4.5.6/theme_rtl/assets/global/plugins/jquery-multi-select/css/multi-select-rtl.css',
     '../metronic_v4.5.6/theme_rtl/assets/global/plugins/select2/css/select2.min-rtl.css',
     '../metronic_v4.5.6/theme_rtl/assets/global/plugins/select2/css/select2-bootstrap.min.css',
-    '../metronic_v4.5.6/theme_rtl//assets/global/plugins/bootstrap-colorpicker/css/colorpicker.css',
-    '../metronic_v4.5.6/theme_rtl//assets/global/plugins/jquery-minicolors/jquery.minicolors.css',
+    '../metronic_v4.5.6/theme_rtl/assets/global/plugins/bootstrap-colorpicker/css/colorpicker.css',
+    '../metronic_v4.5.6/theme_rtl/assets/global/plugins/jquery-minicolors/jquery.minicolors.css',
 
 
     '../metronic_v4.5.6/theme_rtl/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css',
@@ -139,6 +140,7 @@ mix.styles([
 
     '../metronic_v4.5.6/theme_rtl/assets/pages/css/portfolio-rtl.min.css',
     '../metronic_v4.5.6/theme_rtl/assets/pages/css/profile-rtl.min.css',
+    '../metronic_v4.5.6/theme_rtl/assets/pages/css/profile-2-rtl.min.css',
     '../metronic_v4.5.6/theme_rtl/assets/pages/css/pricing-rtl.min.css',
     '../metronic_v4.5.6/theme_rtl/assets/pages/css/blog-rtl.min.css',
 

@@ -56,7 +56,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $element = User::whereId($id)->with('orders.order_metas.product','country','role','products')->first();
+        $this->authorize('user.update', $element);
+        return view('backend.modules.user.show', compact('element'));
     }
 
     /**

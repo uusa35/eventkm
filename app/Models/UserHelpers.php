@@ -180,6 +180,7 @@ trait UserHelpers
             ->orderBy('id', 'desc')->get();
         return [
             'orders' => $orders->count(),
+            'orders_sum' => $orders->sum('net_price'),
             'orders_products' => $orders->pluck('order_metas')->flatten()->pluck('product')->where('user_id', $this->id)->count(),
 //            'products_number' => $orders->pluck('order_metas')->flatten()->pluck('product')->where('user_id', $this->id)->sum('price'),
         ];

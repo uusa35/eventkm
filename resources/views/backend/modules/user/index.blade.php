@@ -81,7 +81,8 @@
                                         <div class="col-lg-12" style="margin : 30px">
                                             @foreach($element->categories->take(6) as $c)
                                                 <div class="col-lg-2">
-                                                <label  class="label label-info"><strong>{{ $c->name }}</strong></label>
+                                                    <label
+                                                        class="label label-info"><strong>{{ $c->name }}</strong></label>
                                                 </div>
                                             @endforeach
                                         </div>
@@ -146,24 +147,31 @@
                                                             </a>
                                                         </li>
                                                     @endif
-                                                @endcan
-                                                <li>
-                                                    <a data-toggle="modal" href="#" data-target="#basic"
-                                                       data-title="Delete"
-                                                       data-content="Are you sure you want to delete {{ $element->name  }}?
+                                                    @if(env('DIESGERAAT'))
+                                                        <li>
+                                                            <a href="{{ route('backend.user.show',$element->id) }}">
+                                                                <i class="fa fa-fw fa-user-circle"></i> {{ trans('general.profile') }}
+                                                            </a>
+                                                        </li>
+                                                    @endif
+                                                    <li>
+                                                        <a data-toggle="modal" href="#" data-target="#basic"
+                                                           data-title="Delete"
+                                                           data-content="Are you sure you want to delete {{ $element->name  }}?
                                                    </br> <h3 class='text-danger'>please note that all favorites / coupons shall be deleted accordingly.</h3>
                                                     " data-form_id="delete-{{ $element->id }}">
-                                                        <i class="fa fa-fw fa-recycle"></i> {{ trans('general.delete') }}
-                                                    </a>
-                                                    <form method="post" id="delete-{{ $element->id }}"
-                                                          action="{{ route('backend.admin.user.destroy',$element->id) }}">
-                                                        @csrf
-                                                        <input type="hidden" name="_method" value="delete"/>
-                                                        <button type="submit" class="btn btn-del hidden">
-                                                            <i class="fa fa-fw fa-times-circle"></i> {{ trans('general.delete') }}
-                                                        </button>
-                                                    </form>
-                                                </li>
+                                                            <i class="fa fa-fw fa-recycle"></i> {{ trans('general.delete') }}
+                                                        </a>
+                                                        <form method="post" id="delete-{{ $element->id }}"
+                                                              action="{{ route('backend.admin.user.destroy',$element->id) }}">
+                                                            @csrf
+                                                            <input type="hidden" name="_method" value="delete"/>
+                                                            <button type="submit" class="btn btn-del hidden">
+                                                                <i class="fa fa-fw fa-times-circle"></i> {{ trans('general.delete') }}
+                                                            </button>
+                                                        </form>
+                                                    </li>
+                                                @endcan
                                             @else
                                                 @can('isAdminOrAbove')
                                                     <li>
