@@ -4,6 +4,13 @@
     {{ Breadcrumbs::render('frontend.user.show',$element) }}
 @endsection
 
+@section('scripts')
+    @parent
+    <script type="text"
+            src="https://platform-api.sharethis.com/js/sharethis.js#property=5c6ed2597056550011c4ab2a&product=inline-share-buttons"></script>
+@endsection
+
+
 @section('body')
     <div class="container-indent nomargin">
         @include('frontend.wokiee.four.partials._user_show_header')
@@ -16,7 +23,7 @@
                     @include('frontend.wokiee.four.partials._user_show_information')
                 </div>
                 @endif
-                {{--<div class="col-md-4 col-lg-3 col-xl-3 leftColumn aside desctop-no-sidebar">--}}
+                <div class="col-md-4 col-lg-3 col-xl-3 leftColumn aside desctop-no-sidebar">
                 @if(env('DESIGNERAAT'))
                     <div class="col-lg-12 mt-5">
                         @include('frontend.wokiee.four.partials._products_slider',['elements' => $products,'title' => trans('general.products')])
@@ -58,7 +65,7 @@
                             <div class="text-center tt_product_showmore">
                                 <div class="col-lg-12">
                                     {{ $collections->withPath(request()->getUri())->links() }}
-                                    {{--                            @include('frontend.wokiee.four.partials._pagination',['elements' => $collections])--}}
+                                                                @include('frontend.wokiee.four.partials._pagination',['elements' => $collections])
                                 </div>
                             </div>
                         @endif
@@ -66,12 +73,6 @@
                 @endif
             </div>
         </div>
+            <div class="sharethis-inline-share-buttons"></div>
     </div>
-    <div class="sharethis-inline-share-buttons"></div>
-@endsection
-
-@section('scripts')
-    @parent
-    <script type="text/javascript"
-            src="https://platform-api.sharethis.com/js/sharethis.js#property=5c6ed2597056550011c4ab2a&product=inline-share-buttons"></script>
 @endsection
