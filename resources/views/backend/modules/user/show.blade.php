@@ -54,7 +54,7 @@
                                         <a href="javascript:;"
                                            style="font-size: smaller">  {{ trans('general.fixed_amount_subscription') }}
                                             <span
-                                                style="width: 110px"> {{ number_format($element->fixed_amount_subscription) }} </span>
+                                                style="width: 110px"> {{ number_format($element->fixed_amount_subscription) }} {{ trans('general.kd') }}</span>
                                         </a>
                                     </li>
                                 @endif

@@ -7,6 +7,7 @@ use App\Http\Requests\Backend\UserStore;
 use App\Http\Requests\Backend\UserUpdate;
 use App\Models\Category;
 use App\Models\Country;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\Role;
 use App\Models\User;
@@ -57,6 +58,10 @@ class UserController extends Controller
     public function show($id)
     {
         $element = User::whereId($id)->with('orders.order_metas.product','country','role','products')->first();
+//        $orders = Order::whereHas('order_metas.product', function ($q) use($id) {
+//                return $q->where('user_id' ,'=', $id);
+//        },'>=',1)->where(['paid' => true])->get()->pluck('order_metas')->flatten();
+//        dd($orders);
         $this->authorize('user.update', $element);
         return view('backend.modules.user.show', compact('element'));
     }
