@@ -290,7 +290,8 @@ trait ImageHelpers
                 } else {
                     $img->resize($dimensions[0] / 3, $dimensions[0] / 3);
                 }
-                $img->save(storage_path('app/public/uploads/images/' . $value . '/' . $imagePath));
+//                $img->save(storage_path('app/public/uploads/images/' . $value . '/' . $imagePath));
+                $img->save(storage_path('app/public/uploads/images/' . $value . '/' . $imagePath), env('IMAGE_QUALITY'));
             }
         }
         Storage::delete(public_path('storage/uploads/images/' . $imagePath));

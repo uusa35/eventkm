@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/user/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/user/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Traits/ImageHelpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Traits/ImageHelpers.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -868,7 +868,7 @@
       <workItem from="1618287780809" duration="724000" />
       <workItem from="1618383322322" duration="2202000" />
       <workItem from="1618386812373" duration="641000" />
-      <workItem from="1618427585282" duration="294000" />
+      <workItem from="1618427585282" duration="699000" />
     </task>
     <servers />
   </component>
