@@ -24,7 +24,7 @@
                         </div>
                     @endif
                     {{--                <div class="col-md-4 col-lg-3 col-xl-3 leftColumn aside desctop-no-sidebar">--}}
-                    @if(env('DESIGNERAAT'))
+                    @if(env('DESIGNERAAT') || env('EVENTKM'))
                         <div class="col-lg-12 mt-5">
                             @include('frontend.wokiee.four.partials._products_slider',['elements' => $products,'title' => trans('general.products')])
                         </div>
