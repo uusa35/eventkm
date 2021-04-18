@@ -23,7 +23,7 @@ class UserUpdate extends FormRequest
      */
     public function rules()
     {
-        $userId = request()->segment(count(request()->segments()));
+        $userId = last(request()->segments());
         return [
             'name' => 'required|min:3|max:200',
             'slug_ar' => 'required|min:3:max:200',
