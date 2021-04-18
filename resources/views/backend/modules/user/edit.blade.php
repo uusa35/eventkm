@@ -14,14 +14,11 @@
         <div class="portlet-body">
             @include('backend.partials._admin_instructions',['title' => trans('general.users') ,'message' => trans('message.admin_user_message')])
             <div class="portlet-body form">
-                @if(auth()->user()->isAdminOrAbove)
-                    <form class="horizontal-form" role="form" method="POST"
-                          action="{{ route('backend.admin.user.update', $element->id) }}" enctype="multipart/form-data">
-                        @else
+{{--                    <form class="horizontal-form" role="form" method="POST"--}}
+{{--                          action="{{ route('backend.admin.user.update', $element->id) }}" enctype="multipart/form-data">--}}
                             <form class="horizontal-form" role="form" method="POST"
-                                  action="{{ route('backend.user.update', $element->id) }}"
+                                  action="{{ auth()->user()->isAdminOrAbove ? route('backend.admin.user.update', $element->id) : route('backend.user.update', $element->id) }}"
                                   enctype="multipart/form-data">
-                                @endif
                                 @csrf
                                 @method('put')
                                 @if(!$element->api_token)

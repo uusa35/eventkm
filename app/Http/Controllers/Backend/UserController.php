@@ -110,9 +110,9 @@ class UserController extends Controller
             $request->has('products') ? $element->productGroup()->sync($request->products) : null;
             $country ? $element->update(['country_name' => $country->slug]) : null;
             $element->surveys()->sync($request->surveys);
-            return redirect()->route('backend.home')->with('success', trans('general.user_added'));
+            return redirect()->route('backend.home')->with('success', trans('general.user_updated'));
         }
-        return redirect()->route('backend.user.create')->with('error', trans('general.user_not_added'));
+        return redirect()->route('backend.user.create')->with('error', trans('general.user_is_not_updated'));
     }
 
 

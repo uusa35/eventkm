@@ -23,6 +23,7 @@ class UserUpdate extends FormRequest
      */
     public function rules()
     {
+        $userId = request()->segment(count(request()->segments()));
         return [
             'name' => 'required|min:3|max:200',
             'slug_ar' => 'required|min:3:max:200',
@@ -31,7 +32,7 @@ class UserUpdate extends FormRequest
             'description_en' => 'nullable|min:3',
             'service_ar' => '',
             'service_en' => '',
-            'email' => 'required|min:5:max:80|unique:users,email,'.request()->segment(4),
+            'email' => 'required|min:5:max:80|unique:users,email,'.$userId,
             'mobile' => 'nullable',
             'phone' => 'nullable',
             'fax' => 'nullable',
@@ -67,7 +68,7 @@ class UserUpdate extends FormRequest
             'active' => 'nullable|boolean',
             'country_id' => 'required|numeric|exists:countries,id',
             'role_id' => 'sometimes|numeric|exists:roles,id',
-            'merchant_id' => 'nullable|max:200|min:3|unique:users,merchant_id,'.request()->segment(4),
+            'merchant_id' => 'nullable|max:200|min:3|unique:users,merchant_id,'.$userId,
             'categories' => 'nullable|array'
         ];
     }
