@@ -264,7 +264,7 @@ class UserController extends Controller
             'description_ar' => $request->description,
             'description_en' => $request->description,
             'is_male' => $request->has('is_male') ? $request->is_male : false,
-            'access_dashboard' => true,
+            'access_dashboard' => false,
             'mobile_verified' => true
         ]);
         if ($element) {

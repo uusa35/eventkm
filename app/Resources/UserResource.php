@@ -99,7 +99,8 @@ class UserResource extends JsonResource
             'videos' => VideoLightResource::make($this->whenLoaded('videos')),
             'comments' => CommentExtraLightResource::collection($this->whenLoaded('comments')),
             'addresses' => AddressResource::collection($this->whenLoaded('addresses')),
-            'statistics' =>$this->statistics
+            'statistics' =>$this->statistics,
+            'access_dashboard' => $this->access_dashboard
         ];
     }
 }
