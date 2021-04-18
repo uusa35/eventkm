@@ -4,7 +4,7 @@
             @if($element->sku)
                 <tr>
                     <td class="td-fixed-element"><i class="icon-f-02 fa fa-fw fa-lg"></i><span
-                                class="ml-1"></span><span>{{ trans('general.sku') }} : </span>
+                            class="ml-1"></span><span>{{ trans('general.sku') }} : </span>
                     </td>
                     <td>
                         {{ $element->sku }}
@@ -62,7 +62,7 @@
             @if(!is_null($element->duration))
                 <tr>
                     <td class="td-fixed-element"><span><i class="fa fa-fw fa-clock-o fa-lg"></i> <span
-                                    class="ml-2"></span> {{ trans('general.duration') }}:</span>
+                                class="ml-2"></span> {{ trans('general.duration') }}:</span>
                     </td>
                     <td>
                         {{ $element->duration }} {{ trans("general.hours") }}</li>
@@ -139,7 +139,7 @@
             @if($element->categories->isNotEmpty())
                 <tr>
                     <td class="td-fixed-element"><span><i
-                                    class="fa fa-fw icon-f-90 fa-lg"></i></span></span>{{ trans('general.categories') }}
+                                class="fa fa-fw icon-f-90 fa-lg"></i></span></span>{{ trans('general.categories') }}
                         :
                     </td>
                     <td>
@@ -183,7 +183,7 @@
                 @if($element->product_attributes->pluck('color')->isNotEmpty())
                     <tr>
                         <td class="td-fixed-element"><i
-                                    class="icon-e-87 fa fa-fw fa-lg"></i>{{ trans('general.colors') }} :
+                                class="icon-e-87 fa fa-fw fa-lg"></i>{{ trans('general.colors') }} :
                         </td>
                         <td>
                             @foreach($element->product_attributes->pluck('color')->unique() as $col)
@@ -195,7 +195,7 @@
                 @if($element->product_attributes->pluck('size')->isNotEmpty() && !env('DAILY'))
                     <tr>
                         <td class="td-fixed-element"><i
-                                    class="icon-e-69 fa fa-fw fa-lg"></i>{{ trans('general.sizes') }} :
+                                class="icon-e-69 fa fa-fw fa-lg"></i>{{ trans('general.sizes') }} :
                         </td>
                         <td>
                             @foreach($element->product_attributes->pluck('size')->unique() as $size)
@@ -209,7 +209,7 @@
                     @if(!is_null($element->size) && !env('DAILY'))
                         <tr>
                             <td class="td-fixed-element"><i class="icon-f-02 fa fa-fw fa-lg"></i><span
-                                        class="ml-1"></span><span>{{ trans('general.size') }} : </span>
+                                    class="ml-1"></span><span>{{ trans('general.size') }} : </span>
                             </td>
                             <td>
                                 {{ $element->size->name }}
@@ -219,7 +219,7 @@
                     @if(!is_null($element->color))
                         <tr>
                             <td class="td-fixed-element"><i class="icon-f-02 fa fa-fw fa-lg"></i><span
-                                        class="ml-1"></span><span>{{ trans('general.color') }} : </span>
+                                    class="ml-1"></span><span>{{ trans('general.color') }} : </span>
                             </td>
                             <td>
                                 <span style="color : {{ $element->color->code }}">{{ $element->color->name }}</span>
@@ -228,15 +228,17 @@
                     @endif
                 @endif
             @endif
-            <tr>
-                <td class="td-fixed-element td-sm">
+            @if(!env('EVENTKM'))
+                <tr>
+                    <td class="td-fixed-element td-sm">
                 <span><i class="fa fa-fw fa-eye fa-lg"></i> {{ trans('general.views_no') }}
                         :</span>
-                </td>
-                <td>
-                    {{ $element->views }} {{ trans('general.viewers') }}
-                </td>
-            </tr>
+                    </td>
+                    <td>
+                        {{ $element->views }} {{ trans('general.viewers') }}
+                    </td>
+                </tr>
+            @endif
             @if($element->notes)
                 <tr>
                     <td class="td-fixed-element"><i class="icon-f-07 fa fa-fw fa-lg"></i><span>{{ trans('general.notes') }} : </span>
