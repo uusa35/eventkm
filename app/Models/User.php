@@ -21,7 +21,8 @@ class User extends Authenticatable
     protected $localeStrings = ['slug', 'description', 'service', 'policy'];
     protected $casts = [
         'on_home' => 'boolean',
-        'active' => 'boolean'
+        'active' => 'boolean',
+        'access_dashboard' => 'boolean'
     ];
 
     /**
