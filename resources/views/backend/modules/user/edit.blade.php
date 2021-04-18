@@ -798,7 +798,7 @@
                                                             @endif
                                                         </div>
                                                     </div>
-                                                    @if(env('DESIGNERAAT'))
+                                                    @if(env('DESIGNERAAT') && auth()->user()->isAdminOrAbove)
                                                         <div class="col-md-4">
                                                             <div
                                                                 class="form-group{{ $errors->has('fixed_amount_subscription') ? ' has-error' : '' }}">
