@@ -217,16 +217,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.178.3",
+            "version": "3.178.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "cfeed02f14b0fb3cba8bb75f2ae28cb8c9807369"
+                "reference": "5a268a20272c0c9171570ed57f68b629e966deab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/cfeed02f14b0fb3cba8bb75f2ae28cb8c9807369",
-                "reference": "cfeed02f14b0fb3cba8bb75f2ae28cb8c9807369",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5a268a20272c0c9171570ed57f68b629e966deab",
+                "reference": "5a268a20272c0c9171570ed57f68b629e966deab",
                 "shasum": ""
             },
             "require": {
@@ -298,7 +298,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2021-04-13T18:16:44+00:00"
+            "time": "2021-04-15T18:12:46+00:00"
         },
         {
             "name": "barryvdh/laravel-dompdf",
@@ -4487,16 +4487,16 @@
         },
         {
             "name": "paragonie/sodium_compat",
-            "version": "v1.15.2",
+            "version": "v1.15.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/sodium_compat.git",
-                "reference": "efcecfbceac1bf014b1ede38f4588931fef92586"
+                "reference": "8a93bfe047c7f699f819459de8ddda144cd636a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/sodium_compat/zipball/efcecfbceac1bf014b1ede38f4588931fef92586",
-                "reference": "efcecfbceac1bf014b1ede38f4588931fef92586",
+                "url": "https://api.github.com/repos/paragonie/sodium_compat/zipball/8a93bfe047c7f699f819459de8ddda144cd636a4",
+                "reference": "8a93bfe047c7f699f819459de8ddda144cd636a4",
                 "shasum": ""
             },
             "require": {
@@ -4565,7 +4565,7 @@
                 "secret-key cryptography",
                 "side-channel resistant"
             ],
-            "time": "2021-04-14T06:07:47+00:00"
+            "time": "2021-04-17T09:00:05+00:00"
         },
         {
             "name": "phenx/php-font-lib",
@@ -8437,16 +8437,16 @@
         },
         {
             "name": "vonage/client-core",
-            "version": "2.8.0",
+            "version": "2.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Vonage/vonage-php-sdk-core.git",
-                "reference": "799e66d4789a48b23b3ec2e2ab3a7b0405021092"
+                "reference": "5034d5e16d26d5b58c0c4a7d86646ff44bcb16a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Vonage/vonage-php-sdk-core/zipball/799e66d4789a48b23b3ec2e2ab3a7b0405021092",
-                "reference": "799e66d4789a48b23b3ec2e2ab3a7b0405021092",
+                "url": "https://api.github.com/repos/Vonage/vonage-php-sdk-core/zipball/5034d5e16d26d5b58c0c4a7d86646ff44bcb16a8",
+                "reference": "5034d5e16d26d5b58c0c4a7d86646ff44bcb16a8",
                 "shasum": ""
             },
             "require": {
@@ -8495,7 +8495,7 @@
             ],
             "description": "PHP Client for using Vonage's API.",
             "homepage": "https://developer.nexmo.com",
-            "time": "2021-03-01T14:49:11+00:00"
+            "time": "2021-04-16T19:05:24+00:00"
         },
         {
             "name": "vonage/nexmo-bridge",
