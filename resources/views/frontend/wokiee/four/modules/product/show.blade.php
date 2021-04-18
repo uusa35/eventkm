@@ -55,7 +55,8 @@
                             @if($element->direct_purchase)
                                 <div class="card bg-danger mb-3 mt-3">
                                     <div class="card-header text-center">
-                                        <span class="text-white text-center">{{ trans('message.direct_purchase_product') }}</span>
+                                        <span
+                                            class="text-white text-center">{{ trans('message.direct_purchase_product') }}</span>
                                     </div>
                                 </div>
                             @endif
@@ -105,9 +106,11 @@
 
 @section('scripts')
     @parent
-    @desktop
-    <script type="text/javascript"
-            src="https://platform-api.sharethis.com/js/sharethis.js#property=5c6ed2597056550011c4ab2a&product=inline-share-buttons"></script>
-    @enddesktop
+    @if(!env('EVENTKM'))
+        @desktop
+        <script type="text/javascript"
+                src="https://platform-api.sharethis.com/js/sharethis.js#property=5c6ed2597056550011c4ab2a&product=inline-share-buttons"></script>
+        @enddesktop
+    @endif
 @endsection
 

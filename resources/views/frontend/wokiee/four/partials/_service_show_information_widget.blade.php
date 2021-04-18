@@ -123,6 +123,7 @@
                     </td>
                 </tr>
             @endif
+            @if(!env('EVENTKM'))
             <tr>
                 <td class="td-fixed-element td-sm">
                 <span><i class="fa fa-fw fa-eye fa-lg"></i> {{ trans('general.views_no') }}
@@ -132,6 +133,7 @@
                     {{ $element->views }} {{ trans('general.viewers') }}
                 </td>
             </tr>
+            @endif
             @if($element->notes)
                 <tr>
                     <td class="td-fixed-element"><i class="icon-f-07 fa fa-fw fa-lg"></i><span
