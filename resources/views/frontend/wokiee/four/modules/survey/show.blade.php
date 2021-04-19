@@ -161,7 +161,7 @@
                                     <input
                                             type="text"
                                             name="question_id[{{ $q->id }}]"
-                                            placeholder="{{ trans('general.answer') }}"
+{{--                                            placeholder="{{ trans('general.answer') }}"--}}
                                             rows="4"
                                             cols="50"
                                             @if($q->notes)
