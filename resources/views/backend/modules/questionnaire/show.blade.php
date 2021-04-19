@@ -54,7 +54,7 @@
                                     <label class="sr-only" for="input-message">{{ $r->question->notes }}</label>
                                     <textarea
                                             disabled
-                                            name="text[{{ $r->question->id }}]" placeholder="{{ trans('general.answer') }}"
+                                            name="text[{{ $r->question->id }}]" placeholder=""
                                             rows="4"
                                             cols="50"
                                             @if($r->question->notes)
