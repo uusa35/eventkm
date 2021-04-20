@@ -2,10 +2,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="tt-promo-fullwidth-02">
-                @if($element->banner)
-                    <img src="{{ $element->BannerLargeLink }}" alt="{{ $element->description }}"
-                         style="max-height : 500px; opacity: 0.5">
-                @endif
+                    <img src="{{ $element->banner ? $element->bannerLargeLink : $element->imageThumbLink }}" alt="{{ $element->description }}"
+                         style="max-height : 500px; opacity: 0.5;">
                 <div class="tt-description">
                     <div class="tt-description-wrapper">
                         @if($element->slug)
