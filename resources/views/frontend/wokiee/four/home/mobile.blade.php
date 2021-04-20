@@ -49,10 +49,28 @@
                                 <p class="card-text">{{ $element->description }}</p>
                                 </br>
                                 @if(request()->has('type'))
-                                    <div class="col-12">
-                                        <a href="{{ env('APP_DEEP_LINK') }}{{ request()->type }}/{{ $element->id }}"
-                                           class="btn btn-primary">{{ trans('general.view_company_on_app') }}</a>
-                                    </div>
+                                    @if(env('EXPO'))
+                                        @ios
+                                        <div class="col-12">
+                                            <a href="{{ env('APP_DEEP_LINK') }}{{ request()->type }}/{{ $element->id }}"
+                                               class="btn btn-primary">{{ trans('general.view_company_on_app') }}</a>
+                                        </div>
+                                        @elseios
+                                        <div class="col-12">
+                                            <a href="{{ env('ANDROID_APP_DEEP_LINK') }}{{ request()->type }}/{{ $element->id }}"
+                                               class="btn btn-primary">{{ trans('general.view_company_on_app') }}</a>
+                                        </div>
+                                        @endios
+                                    @else
+                                        <div class="col-12">
+                                            <a href="{{ env('APP_DEEP_LINK') }}{{ request()->type }}/{{ $element->id }}"
+                                               class="btn btn-primary">{{ trans('general.view_company_on_app') }}</a>
+                                        </div>
+                                    @endif
+{{--                                    <div class="col-12">--}}
+{{--                                        <a href="{{ env('APP_DEEP_LINK') }}{{ request()->type }}/{{ $element->id }}"--}}
+{{--                                           class="btn btn-primary">{{ trans('general.view_company_on_app') }}</a>--}}
+{{--                                    </div>--}}
                                 @else
                                     <div class="col-12">
                                         <a href="{{ env('APP_DEEP_LINK') }}{{ strtolower(class_basename($element)) }}/{{ $element->id }}"
