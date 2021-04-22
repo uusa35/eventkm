@@ -97,11 +97,9 @@ trait CartTrait
             // if current product is not direct_purachase make sure cart does not have direct_purchase
             $checkDirectPurchase = ($this->cart->content()->where('options.type', 'product')->count() === 0 && $product->direct_purchase) || ($this->cart->content()->where('options.element.direct_purchase', true)->count() === 0 && !$product->direct_purchase);
             if ($this->cart->content()->where('options.type', 'product')->count() > 0) {
-                $multiVendor = Setting::first()->multi_cart_merchant;
-                if (!$multiVendor) {
-                    if(in_array($product->user_id, $this->cart->content()->pluck('options.element.user_id')->toArray())) {
+                $multiVendor = Setting::first()->multi_cart_merchant; // False
+                if(!$multiVendor && !in_array($product->user_id, $this->cart->content()->pluck('options.element.user_id')->toArray())) {
                         throw new \Exception(trans('message.this_cart_is_not_multi_vendor'));
-                    }
                 }
             }
             if ($checkDirectPurchase) {
