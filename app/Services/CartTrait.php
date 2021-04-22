@@ -95,14 +95,23 @@ trait CartTrait
         if ($product->getCanOrderAttribute($request->qty, $request->product_attribute_id)) {
             // if current product is direct_purachase make sure cart is 0
             // if current product is not direct_purachase make sure cart does not have direct_purchase
-            $checkDirectPurchase = ($this->cart->content()->where('options.type', 'product')->count() === 0 && $product->direct_purchase) || ($this->cart->content()->where('options.element.direct_purchase', true)->count() === 0 && !$product->direct_purchase) ;
+            $checkDirectPurchase = ($this->cart->content()->where('options.type', 'product')->count() === 0 && $product->direct_purchase) || ($this->cart->content()->where('options.element.direct_purchase', true)->count() === 0 && !$product->direct_purchase);
+            if ($this->cart->content()->where('options.type', 'product')->count() > 0) {
+                $multiVendor = Setting::first()->multi_cart_merchant;
+                if (!$multiVendor) {
+                    if(in_array($product->user_id, $this->cart->content()->pluck('options.element.user_id')->toArray())) {
+                        throw new \Exception(trans('message.this_cart_is_not_multi_vendor'));
+                    }
+                }
+            }
             if ($checkDirectPurchase) {
                 $element = $this->cart->content()->where('id', '=', $product->getUniqueIdAttribute($request->product_attribute_id))->first();
                 if ($element) {
                     $this->cart->remove($element->rowId);
                 }
                 return true;
-            } else {}
+            } else {
+            }
             // i removed this because shipment is not connected now to cart (only fixed prices)
 //            if (checkShipmentAvailability(getCurrentCountrySessionId(), $product->shipment_package->countries->pluck('id')->toArray())) {
 //            }
