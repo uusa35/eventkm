@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Services\Traits;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Nexmo\Laravel\Facade\Nexmo;
 
@@ -15,10 +16,11 @@ trait NotificationHelper
     function notify($headings, $descritpion, $url = null, Request $request)
     {
         try {
+            $settings = Setting::first();
             $fields = array(
                 'app_id' => env('ONE_SIGNAL_APP_ID'),
                 'included_segments' => array('Active Users'),
-//            'include_player_ids' => ['d4c0adab-45e1-45c1-ba7e-d85af28d85a9'],
+//            'include_player_ids' => ['b6c053e7-4083-4ee5-a430-7d4b6e6911fd'],
                 'headings' => [
                     'en' => strip_tags($headings),
                     'ar' => strip_tags($headings),
@@ -36,10 +38,12 @@ trait NotificationHelper
                     'en' => strip_tags($descritpion),
                     'ar' => strip_tags($descritpion)
                 ],
+                'ios_attachments' => ["id" => $settings->LogoThumb],
+                'big_picture' => $settings->LogoThumb
             );
 
+            dd($fields);
             $fields = json_encode($fields);
-
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
             curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8',

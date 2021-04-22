@@ -12,7 +12,7 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Post::class, app()->environment('production') ? 2 : 100)->create()->each(function ($p) {
+        factory(Post::class, app()->environment('production') ? 2 : 30)->create()->each(function ($p) {
             $p->comments()->create();
             $p->images()->create();
         });

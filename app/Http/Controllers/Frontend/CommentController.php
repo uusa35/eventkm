@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Jobs\IncreaseElementViews;
-use App\Models\Post;
+use App\Models\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
-class PostController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $elements = Post::active()->orderBy('order', 'asc')->with('comments', 'user')->paginate(self::TAKE_MID);
-        return view('frontend.wokiee.four.modules.post.index', compact('elements'));
+        //
     }
 
     /**
@@ -38,7 +37,24 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = validator($request->all(), [
+            'commentable_id' => 'required|numeric',
+            'commentable_type' => 'required|alpha',
+            'user_id' => 'required|exists:users,id',
+            'title' => 'required|max:200|min:5',
+            'content' => 'required|max:600|min:5'
+        ]);
+        if ($validate->fails()) {
+            return redirect()->back()->withErrors($validate->errors())->withInput();
+        }
+        $className = '\App\Models\\' . Str::title($request->commentable_type);
+        $item = new $className();
+        $item = $item->withoutGlobalScopes()->whereId($request->commentable_id)->first();
+        $element = $item->comments()->create($request->request->all());
+        if ($element) {
+            return redirect()->back()->with('success', trans("message.store_success"));
+        }
+        return redirect()->back()->with('error', trans('message.store_error'));
     }
 
     /**
@@ -49,13 +65,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $element = Post::with('images', 'user', 'comments.owner')->find($id);
-        if ($element) {
-            $comments = $element->comments()->paginate(2);
-            $this->dispatchNow(new IncreaseElementViews($element));
-            return view('frontend.wokiee.four.modules.post.show', compact('element','comments'));
-        }
-        return redirect()->back()->with('error', trans('message.post_does_not_exist'));
+        //
     }
 
     /**
@@ -89,6 +99,10 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $element = Comment::whereId($id)->first();
+        if ($element->delete()) {
+            return redirect()->back()->with('success', trans('message.item_deleted'));
+        }
+        return redirect()->back()->with('success', trans('message.item_not_deleted'));
     }
 }
