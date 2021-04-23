@@ -252,7 +252,9 @@ trait HomePageTrait
         $companies = User::active()->onHome()->companies()->notAdmins()->hasProducts()->whereHas('products', function ($q) {
             return $q->active();
         }, '>', 0)->with('role')->get();
-        $categoriesHome = Category::active()->onHome()->isFeatured()->orderBy('order', 'desc')->limit(4)->get();
+        $categoriesHome = Category::active()->onlyParent()->onHome()->whereHas('children', function ($q) {
+            return $q->active();
+        },'>',0)->orderBy('order', 'desc')->get();
         $topDoubleCommercials = Commercial::active()->double()->orderBy('order', 'desc')->limit(2)->get();
         $bottomDoubleCommercials = Commercial::active()->double()->orderBy('order', 'desc')->limit(2)->get();
         $tripleCommercials = Commercial::active()->triple()->orderBy('order', 'desc')->limit(3)->get();
