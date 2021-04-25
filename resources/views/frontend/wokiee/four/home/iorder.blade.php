@@ -17,7 +17,7 @@
     @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.new_arrivals'), 'elements' => $newProducts])
     @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.on_sale_products'), 'elements' => $onSaleProducts])
 {{--    @if(isset($categoriesHome) && $categoriesHome->isNotEmpty())--}}
-        @include('frontend.wokiee.four.partials._five_categories',['elements' => $categoriesHome])
+{{--        @include('frontend.wokiee.four.partials._five_categories',['elements' => $categoriesHome])--}}
 {{--    @endif--}}
     {{--        @if(isset($tripleCommercials) && $tripleCommercials->isNotEmpty())--}}
     {{--            @include('frontend.wokiee.four.partials._horizontal_three_categories',['elements' => $tripleCommercials])--}}
