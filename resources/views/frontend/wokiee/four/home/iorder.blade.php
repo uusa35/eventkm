@@ -3,6 +3,7 @@
 @section('body')
     @include('frontend.wokiee.four.partials.slider')
     @include('frontend.wokiee.four.partials._all_brands', ['elements' => $brands])
+    @include('frontend.wokiee.four.partials._home_grid_main_categories')
 {{--    @include('frontend.wokiee.four.partials.category._categories_slider_full_width')--}}
 {{--    @include('frontend.wokiee.four.partials.category._categories_slider_full_width', ['title' => trans('general.categories'), 'elements' => $categoriesHome])--}}
 {{--    @include('frontend.wokiee.four.partials._products_metro_collection',['element' => $bestSaleCollections->first(), 'title' => trans('general.our_selection_from_collections')])--}}
