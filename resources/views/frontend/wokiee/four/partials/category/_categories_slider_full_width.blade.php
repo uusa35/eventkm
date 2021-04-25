@@ -26,10 +26,10 @@
                                         <div class="tt-image-box"><img src="{{ $child->imageThumbLink }}" alt="">
                                         </div>
                                         <div class="tt-description">
-                                            <h2 class="tt-title">{{ $child->name }}</h2>
-                                            <ul class="tt-add-info">
-                                                <li>45 PRODUCTS</li>
-                                            </ul>
+                                            <h2 class="tt-title text-center">{{ $child->name }}</h2>
+{{--                                            <ul class="tt-add-info">--}}
+{{--                                                <li>45 PRODUCTS</li>--}}
+{{--                                            </ul>--}}
                                         </div>
                                     </a>
                                 </div>
@@ -39,10 +39,10 @@
                                             <a href="{{ route('frontend.user.search', ['user_category_id' => $subChild->id ]) }}" class="tt-collection-item">
                                                 <div class="tt-image-box"><img src="{{ $subChild->imageThumbLink }}" alt=""></div>
                                                 <div class="tt-description">
-                                                    <h2 class="tt-title">{{ $subChild->name }}</h2>
-                                                    <ul class="tt-add-info">
-                                                        <li>45 PRODUCTS</li>
-                                                    </ul>
+                                                    <h2 class="tt-title text-center">{{ $subChild->name }}</h2>
+{{--                                                    <ul class="tt-add-info">--}}
+{{--                                                        <li>45 PRODUCTS</li>--}}
+{{--                                                    </ul>--}}
                                                 </div>
                                             </a>
                                         </div>
