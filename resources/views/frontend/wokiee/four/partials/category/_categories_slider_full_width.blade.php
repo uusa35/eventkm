@@ -23,7 +23,7 @@
                                 <div class="col-2 col-md-4 col-lg-3">
                                     <a href="{{ route('frontend.user.search', ['user_category_id' => $child->id ]) }}"
                                        class="tt-collection-item">
-                                        <div class="tt-image-box"><img src="{{ $child->imageThumbLink }}" alt="">
+                                        <div class="tt-image-box"><img src="{{ $child->imageThumbLink }}" alt="" style="width : 300px; height: 300px;">
                                         </div>
                                         <div class="tt-description">
                                             <h2 class="tt-title">{{ $child->name }}</h2>
@@ -37,7 +37,7 @@
                                     @foreach($child->children as $subChild)
                                         <div class="col-2 col-md-4 col-lg-3">
                                             <a href="{{ route('frontend.user.search', ['user_category_id' => $subChild->id ]) }}" class="tt-collection-item">
-                                                <div class="tt-image-box"><img src="{{ $subChild->imageThumbLink }}" alt=""></div>
+                                                <div class="tt-image-box"><img src="{{ $subChild->imageThumbLink }}" alt="" style="width : 300px; height: 300px;"></div>
                                                 <div class="tt-description">
                                                     <h2 class="tt-title">{{ $subChild->name }}</h2>
                                                     <ul class="tt-add-info">
