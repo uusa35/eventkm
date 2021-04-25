@@ -843,11 +843,11 @@
                                                             @endif
                                                         </div>
                                                     </div>
-                                                    @if($element->barcode)
-                                                        <div class="col-md-2">
-                                                            {!! DNS2D::getBarcodeHTML($element->barcode, 'PDF417',2,1); !!}
-                                                        </div>
-                                                    @endif
+{{--                                                    @if($element->barcode)--}}
+{{--                                                        <div class="col-md-2">--}}
+{{--                                                            {!! DNS2D::getBarcodeHTML($element->barcode, 'PDF417',2,1); !!}--}}
+{{--                                                        </div>--}}
+{{--                                                    @endif--}}
                                                     <div class="col-lg-12">
                                                         @if(!$tags->isEmpty())
                                                             <div class="col-md-4">
