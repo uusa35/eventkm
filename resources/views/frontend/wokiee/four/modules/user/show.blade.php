@@ -24,9 +24,10 @@
                         </div>
                     @endif
                     {{--                <div class="col-md-4 col-lg-3 col-xl-3 leftColumn aside desctop-no-sidebar">--}}
-                    @if(env('DESIGNERAAT') || env('EVENTKM'))
+                    @if(env('DESIGNERAAT') || env('EVENTKM') || env('IORDER'))
                         <div class="col-lg-12 mt-5">
                             @include('frontend.wokiee.four.partials._products_slider',['elements' => $products,'title' => trans('general.products')])
+                            @include('frontend.wokiee.four.partials._services_slider',['elements' => $services,'title' => trans('general.services')])
                         </div>
                     @endif
                     @if(ENV('MALLR') || ENV('DAILY'))

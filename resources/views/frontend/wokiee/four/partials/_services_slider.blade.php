@@ -7,8 +7,8 @@
     <div class="container container-fluid-custom-mobile-padding">
         @if($title)
             <div class="tt-block-title">
-                <h1 class="tt-title">{{ trans('general.recent_services') }}</h1>
-                <div class="tt-description">{{ trans('message.recent_services') }}</div>
+                <h1 class="tt-title">{{ $title }}</h1>
+                <div class="tt-description">{{ isset($message) ? $message : trans('message.recent_services') }}</div>
             </div>
         @endif
         <div class="tt-carousel-products row arrow-location-tab arrow-location-tab01 tt-alignment-img tt-layout-product-item slick-animated-show-js">
