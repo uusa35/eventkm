@@ -33,25 +33,37 @@
 {{--    </div>--}}
 {{--</div>--}}
 
-<div class="container-fluid-custom">
-    <div class="row">
-        @foreach($categories->where('is_product',true)->where('on_home', true)->take(4) as $cat)
-            @if($cat->image)
-                <div class="col-6 col-sm-6 col-md-3 col-12-575width">
-                    <a href="{{ route('frontend.product.search',['product_category_id' => $cat->id]) }}"
-                       class="tt-promo-box tt-one-child">
-                        <img src="{{ asset(env('IMG_LOADER')) }}" data-src="{{ $cat->getImageThumbLinkAttribute() }}"
-                             alt="{{ $cat->name }}">
-                        <div class="tt-description">
-                            <div class="tt-description-wrapper">
-                                <div class="tt-background"></div>
-                                <div class="tt-title-small">{!! $cat->name !!}</div>
-                            </div>
-                        </div>
-                    </a>
+
+<div class="container-indent">
+    <div class="container-fluid-custom">
+        <div class="container container-fluid-custom-mobile-padding">
+            @if($title)
+                <div class="tt-block-title">
+                    <h1 class="tt-title">{{ $title }}</h1>
+                    {{--                <div class="tt-description">{{ trans('message.recent_products') }}</div>--}}
                 </div>
             @endif
-        @endforeach
+            <div class="row">
+                @foreach($categories->where('is_product',true)->where('on_home', true)->take(4) as $cat)
+                    @if($cat->image)
+                        <div class="col-6 col-sm-6 col-md-3 col-12-575width">
+                            <a href="{{ route('frontend.product.search',['product_category_id' => $cat->id]) }}"
+                               class="tt-promo-box tt-one-child">
+                                <img src="{{ asset(env('IMG_LOADER')) }}"
+                                     data-src="{{ $cat->getImageThumbLinkAttribute() }}"
+                                     alt="{{ $cat->name }}">
+                                <div class="tt-description">
+                                    <div class="tt-description-wrapper">
+                                        <div class="tt-background"></div>
+                                        <div class="tt-title-small">{!! $cat->name !!}</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+        </div>
     </div>
 </div>
 {{--<div class="container-indent1">--}}
