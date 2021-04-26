@@ -25,7 +25,7 @@ class SettingUpdate extends FormRequest
     {
         return [
             'logo.dimensions' => trans('message.best_fit', ['width' => '1024 px', 'height' => '1024 px']),
-            'app_logo.dimensions' => trans('message.best_fit', ['width' => '1024 px', 'height' => '210 px']),
+            'app_logo.dimensions' => trans('message.best_fit', ['width' => '600 px', 'height' => '210 px']),
             'menu_bg.dimensions' => trans('message.best_fit', ['width' => '1242 px', 'height' => '2688 px']),
             'main_bg.dimensions' => trans('message.best_fit', ['width' => '1242 px', 'height' => '2688 px']),
             'size_chart.dimensions' => trans('message.best_fit', ['width' => '1080 px', 'height' => '1440 px']),
