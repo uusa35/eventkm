@@ -15,6 +15,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use function PHPUnit\Framework\isNull;
 
 trait OrderTrait
 {
@@ -48,6 +49,7 @@ trait OrderTrait
             'country_id' => 'required|exists:countries,id',
             'collection_id' => 'exists:collections,id',
             'payment_method' => 'required|min:3',
+            'branch_id' => 'required_if:receive_on_branch,1|exists:branches,id'
 //            'shipment_fees' => 'required|numeric'
         ]);
         if ($validate->fails()) {
@@ -69,8 +71,10 @@ trait OrderTrait
             'discount' => $coupon ? ($coupon->is_percentage ? ($this->cart->subTotal() * ($coupon->value / 100)) : $coupon->value) : 0,
             'coupon_id' => $coupon ? $coupon['id'] : null,
             'payment_method' => $request->payment_method,
-            'shipment_fees' => $this->cart->content()->where('options.type', 'country')->first()->total()
+            'shipment_fees' => $this->cart->content()->where('options.type', 'country')->first()->total(),
+            'receive_on_branch' => $request->has('receive_on_branch') ? $request->receive_on_branch : 0
         ]);
+        $request->has('branch_id') && !is_null($request->branch_id) ? $order->update(['branch_id' => $request->branch_id]) : null;
         if ($order) {
             $this->cart->content()->each(function ($element) use ($order, $user) {
                 if ($element->options->type === 'product' || $element->options->type === 'service') {
@@ -111,7 +115,7 @@ trait OrderTrait
             'name' => 'required',
             'email' => 'required|email',
             'mobile' => 'required|numeric|min:8',
-            'address' => 'required|min:5',
+            'address' => 'required|min:2',
             'country_id' => 'required|exists:countries,id',
         ]);
         if ($validate->fails()) {

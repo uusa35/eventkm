@@ -11,7 +11,9 @@ class Order extends PrimaryModel
     protected $casts = [
         'shipment_fees' => 'float',
         'discount' => 'float',
-        'paid' => 'boolean'
+        'paid' => 'boolean',
+        'receive_on_branch' => 'boolean',
+        'multi_cart_merchant' => 'boolean'
     ];
     use SoftDeletes, Notifiable;
 

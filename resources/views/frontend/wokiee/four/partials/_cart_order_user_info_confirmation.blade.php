@@ -91,6 +91,16 @@
                                     <table class="tt-shopcart-table01">
                                         <tbody>
                                         <tr>
+                                            @if($order->receive_from_branch && $order->cash_on_delivery && $order->branch_id)
+                                            <div class="alert alert-warning">
+                                                <i class="fa fa-fw fa-info-circle fa-lg"></i>
+                                                {{ trans('message.order_has_been_made_through_cash_on_delivery_and_will_be_recived') }}
+                                                <ui>
+                                                   <li>{{ trans('general.branch_name') }} : {{ $order->branch->name }}</li>
+                                                </ui>
+                                            </div>
+                                            @endif
+{{--                                            {{ dd('stop') }}--}}
                                             <div class="alert alert-warning">
                                                 <i class="fa fa-fw fa-info-circle fa-lg"></i>
                                                 {{ trans('message.payment_will_be_in_kuwaiti_dinar_only') }}

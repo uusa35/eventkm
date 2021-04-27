@@ -4,7 +4,7 @@
             <div class="col-12">
                 <div class="tt-item">
                     {{--                    <h2 class="tt-title text-center border-bottom margin-bottom-30">{{ trans('general.personal_information') }}</h2></br>--}}
-                    <div class="skltbs-theme-light skltbs-mode-tabs skltbs-init" data-skeletabs="" id="tabContainer">
+                    <div class="skltbs-theme-light skltbs-mode-tabs skltbs-init" data-skeletabs="" >
                         <ul class="skltbs-tab-group" role="tablist">
                             <li class="skltbs-tab-item skltbs-active" role="presentation">
                                 <button class="skltbs-tab skltbs-active" id="skeletabsTab01" aria-selected="true"
@@ -206,55 +206,7 @@
                                                             </div>
                                                             <hr>
                                                         @endif
-                                                        @if($settings->receive_from_branch && !$settings->multi_cart_merchant && session()->get('country')->is_local)
-                                                            <div class="col-6">
-                                                                <div class="form-group">
-                                                                    <label
-                                                                        for="receive_from_branch">{{ trans('general.receive_from_branch') }}
-                                                                        <sup>*</sup></label>
-                                                                    <div class="form-check">
-                                                                        <input type="checkbox"
-                                                                               value="1"
-                                                                               disabled="disabled"
-                                                                               class="selectBranch form-check-input form-check-input form-control-lg"
-                                                                               style="width : 20px; height: 20px; padding-top: 20px;"
-                                                                               name="receive_from_branch">
-                                                                        <label class="form-check-label"
-                                                                               for="receive_from_branch"
-                                                                               style="padding-right: 25px;">
-                                                                            {{ trans('message.delivery_charge_will_be_before_confirmation') }}
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                                </br>
-                                                            </div>
 
-                                                            <div class="col-6 branchElements" style="display: none;">
-                                                                <div class="form-group">
-                                                                    <label
-                                                                        for="address_country">{{ trans('general.choose_branch') }}
-                                                                        <sup>*</sup></label>
-                                                                    <select name="branch_id" class="form-control" id="branchId">
-                                                                        <option
-                                                                            value="null"
-                                                                        >{{ trans('general.choose_branch') }}</option>
-                                                                        @foreach($countries->where('is_local')->first()->branches as $b)
-                                                                            <option
-                                                                                value="{{ $b->id }}"
-                                                                            >{{ $b->name }}</option>
-                                                                        @endforeach
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12 branchElements" style="display : none">
-                                                                <div class="alert alert-info">
-                                                                    <i class="fa fa-fw fa-info-circle fa-lg"></i>
-                                                                    {{ trans('message.chooose_branch') }}
-                                                                </div>
-                                                            </div>
-                                                        @else
-                                                            <input type="hidden" name="branch_id" value="null"/>
-                                                        @endif
                                                     </div>
                                                     @include('frontend.wokiee.four.partials._cart_prices')
                                                 </form>
@@ -385,17 +337,17 @@
                                                             <div class="col-6">
                                                                 <div class="form-group">
                                                                     <label
-                                                                        for="receive_from_branch">{{ trans('general.receive_from_branch') }}
+                                                                        for="receive_on_branch">{{ trans('general.receive_from_branch') }}
                                                                         <sup>*</sup></label>
                                                                     <div class="form-check">
                                                                         <input type="checkbox"
                                                                                value="1"
-                                                                               disabled="disabled"
+                                                                               checked
                                                                                class="selectBranch form-check-input form-check-input form-control-lg"
                                                                                style="width : 20px; height: 20px; padding-top: 20px;"
-                                                                               name="receive_from_branch">
+                                                                               name="receive_on_branch">
                                                                         <label class="form-check-label"
-                                                                               for="receive_from_branch"
+                                                                               for="receive_on_branch"
                                                                                style="padding-right: 25px;">
                                                                             <img
                                                                                 src="{{ asset('images/knet-visa.png') }}"
@@ -406,16 +358,16 @@
                                                                 </br>
                                                             </div>
 
-                                                            <div class="col-6 branchElements" style="display: none;">
+                                                            <div class="col-6 branchElements" style="display: inline;">
                                                                 <div class="form-group">
                                                                     <label
                                                                         for="address_country">{{ trans('general.choose_branch') }}
                                                                         <sup>*</sup></label>
-                                                                    <select name="branch_id" class="form-control" id="branchId">
+                                                                    <select name="branch_id" class="form-control" id="branchId" required>
                                                                         <option
                                                                             value="null"
                                                                         >{{ trans('general.choose_branch') }}</option>
-                                                                        @foreach($country->branches as $b)
+                                                                        @foreach($countries->where('is_local')->first()->branches as $b)
                                                                             <option
                                                                                 value="{{ $b->id }}"
                                                                             >{{ $b->name }}</option>
@@ -529,19 +481,17 @@
     @parent
     <script>
         $("input[name=cash_on_delivery]").on('click', function(e) {
-            console.log('clicked', e.target.value)
-            if (e.target.value == 1) {
-                $('.selectBranch').prop("disabled", false);
+            // if (e.target.value == 1) {
+            //     $('.selectBranch').prop("disabled", false);
 
-            } else {
-                $('.selectBranch').prop("disabled", true);
-                $('.branchElements').css({display: 'none'})
-                $('.selectBranch').prop("checked", false);
-            }
+            // } else {
+            //     $('.selectBranch').prop("disabled", true);
+            //     $('.branchElements').css({display: 'none'})
+            //     $('.selectBranch').prop("checked", false);
+            // }
             $("#branchId")[0].selectedIndex = 0;
         });
         $('.selectBranch').on('change', function(e) {
-            console.log('branchh_id', e.target.value);
             if ($(".selectBranch").is(':checked')) {
                 $('.branchElements').css({display: 'inline'})
             } else {
