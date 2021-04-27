@@ -110,7 +110,6 @@
                                                     @endif
                                                 @endif
                                             @endif
-                                            <div class="row">
                                                 <div class="col-12">
                                                     <div class="form-group">
                                                         <label for="notes">{{ trans('general.notes') }}</label>
@@ -163,7 +162,6 @@
                                                         </div>
                                                     </div>
                                                     </br>
-                                                </div>
                                                 @if(session()->get('country')->is_local && $settings->cash_on_delivery)
                                                     <div class="col-12">
                                                         <div class="alert alert-danger">
