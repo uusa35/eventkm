@@ -349,9 +349,7 @@
                                                                         <label class="form-check-label"
                                                                                for="receive_on_branch"
                                                                                style="padding-right: 25px;">
-                                                                            <img
-                                                                                src="{{ asset('images/knet-visa.png') }}"
-                                                                                style="width : 100px;">
+                                                                            {{ trans('general.receive_from_branch') }}
                                                                         </label>
                                                                     </div>
                                                                 </div>

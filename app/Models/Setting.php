@@ -12,7 +12,8 @@ class Setting extends PrimaryModel
         'show_commercials' => 'boolean',
         'splash_on' => 'boolean',
         'cash_on_delivery' => 'boolean',
-        'multi_cart_merchant' => 'boolean'
+        'multi_cart_merchant' => 'boolean',
+        'receive_from_branch' => 'boolean'
     ];
 
     public function getLogoLargeAttribute()
