@@ -1002,12 +1002,12 @@
                                                    data-container="body" data-placement="top"
                                                    data-original-title="{{ trans('message.receive_from_branch') }}">{{ trans('general.receive_from_branch') }}</label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" name="receive_from_branch" id="optionsRadios3"
+                                                <input type="radio" name="receive_from_branch" id="optionsRadios5"
                                                        {{ $element->receive_from_branch ? 'checked' : null  }}
                                                        value="1">
                                                 {{ trans('general.yes') }}</label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="receive_from_branch" id="optionsRadios4"
+                                                <input type="radio" name="receive_from_branch" id="optionsRadios6"
                                                        {{ !$element->receive_from_branch ? 'checked' : null  }}
                                                        value="0">
                                                 {{ trans('general.no') }}</label>
