@@ -84,10 +84,11 @@
                                                     <div class="form-group">
                                                         <label for="address_country">{{ trans('general.country') }}
                                                             <sup>*</sup></label>
-                                                        <select name="country_id" class="form-control" required>
+                                                        <select name="country_id" class="form-control" required id="country_id">
                                                             {{-- No Auth required as it's prevesiously done--}}
                                                             @foreach($countries as $country)
                                                                 <option
+                                                                    data-currency="{{ strtolower($country->currency_symbol_en) }}"
                                                                     value="{{ $country->id }}" {{ session()->get('country')->id === $country->id ? 'selected' : null }}
                                                                 >{{ $country->slug }}</option>
                                                             @endforeach
@@ -329,5 +330,9 @@
                 $('.branchElements').css({display: 'none'})
             }
         });
+        $("#country_id").on('change', function (e) {
+            let currency = $('#country_id').find(":selected").data('currency')
+            window.location.href = `${window.location.origin}/currency/${currency}`
+        })
     </script>
 @endsection
