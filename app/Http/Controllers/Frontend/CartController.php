@@ -27,9 +27,10 @@ class CartController extends Controller
 
     public function index()
     {
-        $country = $this->cart->content()->where('options.type', 'country')->first();
+        $country = session()->get('country');
+        $this->addCountryToCart($country);
         if ($country) {
-            $country = Country::whereId($country->options->country_id)->with('branches')->first();
+            $country = Country::whereId($country->id)->with('branches')->first();
             CheckCartItems::dispatchNow($country);
         }
         $elements = $this->cart->content();

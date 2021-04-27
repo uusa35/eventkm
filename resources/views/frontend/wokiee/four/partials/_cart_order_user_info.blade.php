@@ -173,7 +173,7 @@
                                                 </div>
                                                 <hr>
                                             @endif
-                                            @if($settings->receive_from_branch && !$settings->multi_cart_merchant && Cart::instance('shopping')->content()->where('options.type','product')->first()->options->element->user->country->is_local)
+                                            @if($settings->receive_from_branch && !$settings->multi_cart_merchant && session()->get('country')->is_local)
                                                 <div class="col-6">
                                                     <div class="form-group">
                                                         <label
@@ -196,6 +196,7 @@
                                                     </div>
                                                     </br>
                                                 </div>
+
                                                 <div class="col-6 branchElements" style="display: none;">
                                                     <div class="form-group">
                                                         <label
@@ -203,10 +204,10 @@
                                                             <sup>*</sup></label>
                                                         <select name="branch_id" class="form-control">
                                                             {{-- No Auth required as it's prevesiously done--}}
-                                                            @foreach($countries as $country)
+                                                            @foreach($country->branches as $b)
                                                                 <option
-                                                                    value="{{ $country->id }}"
-                                                                >{{ $country->slug }}</option>
+                                                                    value="{{ $b->id }}"
+                                                                >{{ $b->name }}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>
@@ -218,7 +219,7 @@
                                                     </div>
                                                 </div>
                                             @else
-                                                <input  name="branch_id" value="null" />
+                                                <input  type="hidden" name="branch_id" value="null" />
                                             @endif
                                         </div>
                                         @include('frontend.wokiee.four.partials._cart_prices')
