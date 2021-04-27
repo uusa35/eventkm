@@ -38,10 +38,9 @@
                                         : {{ $element->options->element->weight}} {{ trans('general.kg') }}</li>
                                 @endif
                                 @if($element->options->country_destination && app()->environment('local'))
-                                    <li>{{ trans('general.shipment_destination') }}
-                                        : {{ $element->options->country_destination->slug }} ---
-                                        PackageCharge : {{ $element->options->element->shipment_package->charge }} ----
-                                        ProductWeight : {{ $element->options->element->weight }}
+                                    <li>{{ getCurrentCountry()->slug }}
+{{--                                        --- PackageCharge : {{ $element->options->element->shipment_package->charge }} ------}}
+{{--                                        ProductWeight : {{ $element->options->element->weight }}--}}
                                     </li>
                                 @endif
                                 @if($element->options->day_selected)

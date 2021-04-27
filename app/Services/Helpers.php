@@ -106,11 +106,11 @@ function getCurrentCountry()
         $country = auth()->guest() ? Country::where(['is_local' => true])->first() : Country::whereId(auth()->user()->country_id)->first();
         session()->put('country', $country);
         return $country;
-
     }
     if (request()->header('country')) {
         return Country::where('country_code', request()->header('country'))->first();
     }
+    return session()->get('country');
 }
 
 function getCurrentCurrency()
