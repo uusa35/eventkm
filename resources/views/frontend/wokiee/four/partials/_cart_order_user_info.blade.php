@@ -130,7 +130,6 @@
                                                                    value="1"
                                                                    class="form-check-input form-check-input form-control-lg"
                                                                    style="width : 20px; height: 20px;"
-                                                                   checked
                                                                    name="cash_on_delivery">
                                                             <label class="form-check-label" for="exampleCheck1"
                                                                    style="padding-right: 25px; padding-top: 10px;">
@@ -150,7 +149,7 @@
                                                     <div class="form-check">
                                                         <input type="radio"
                                                                value="0"
-                                                               selected
+                                                               checked
                                                                class="form-check-input form-check-input form-control-lg"
                                                                style="width : 20px; height: 20px; padding-top: 20px;"
                                                                id="exampleCheck1" name="cash_on_delivery">
