@@ -28,6 +28,7 @@ class CartController extends Controller
     public function index()
     {
         $country = session()->get('country');
+//        dd($country);
         $this->addCountryToCart($country);
         if ($country) {
             $country = Country::whereId($country->id)->with('branches')->first();

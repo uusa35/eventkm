@@ -197,6 +197,13 @@
                         <!-- /copyright -->
                     </div>
                 </div>
+                <div class="tt-col-right">
+                    <div class="tt-col-item tt-logo-col">
+                        <a class="tt-logo tt-logo-alignment" href="{{ route('frontend.home') }}">
+                            <img src="{{ asset('images/knet-visa.png') }}" alt="" style="width: 100px;">
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
