@@ -217,16 +217,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.178.9",
+            "version": "3.178.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "89710500988a8a7d77f1282fcf6a1d0ad8297eaf"
+                "reference": "a3d2c2317e8102a48eac14ebb39401f814ad5057"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/89710500988a8a7d77f1282fcf6a1d0ad8297eaf",
-                "reference": "89710500988a8a7d77f1282fcf6a1d0ad8297eaf",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a3d2c2317e8102a48eac14ebb39401f814ad5057",
+                "reference": "a3d2c2317e8102a48eac14ebb39401f814ad5057",
                 "shasum": ""
             },
             "require": {
@@ -298,7 +298,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2021-04-23T18:28:02+00:00"
+            "time": "2021-04-26T18:15:34+00:00"
         },
         {
             "name": "barryvdh/laravel-dompdf",
@@ -2264,16 +2264,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.8.1",
+            "version": "1.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "35ea11d335fd638b5882ff1725228b3d35496ab1"
+                "reference": "dc960a912984efb74d0a90222870c72c87f10c91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/35ea11d335fd638b5882ff1725228b3d35496ab1",
-                "reference": "35ea11d335fd638b5882ff1725228b3d35496ab1",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/dc960a912984efb74d0a90222870c72c87f10c91",
+                "reference": "dc960a912984efb74d0a90222870c72c87f10c91",
                 "shasum": ""
             },
             "require": {
@@ -2331,7 +2331,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2021-03-21T16:25:00+00:00"
+            "time": "2021-04-26T09:17:50+00:00"
         },
         {
             "name": "intervention/image",
@@ -8436,16 +8436,16 @@
         },
         {
             "name": "vonage/client-core",
-            "version": "2.9.0",
+            "version": "2.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Vonage/vonage-php-sdk-core.git",
-                "reference": "a839b5caffc4653caf26a0ca7e4e8ce738017251"
+                "reference": "195a04f007ce9b10517ddc3c49b38de08048dbc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Vonage/vonage-php-sdk-core/zipball/a839b5caffc4653caf26a0ca7e4e8ce738017251",
-                "reference": "a839b5caffc4653caf26a0ca7e4e8ce738017251",
+                "url": "https://api.github.com/repos/Vonage/vonage-php-sdk-core/zipball/195a04f007ce9b10517ddc3c49b38de08048dbc6",
+                "reference": "195a04f007ce9b10517ddc3c49b38de08048dbc6",
                 "shasum": ""
             },
             "require": {
@@ -8494,7 +8494,7 @@
             ],
             "description": "PHP Client for using Vonage's API.",
             "homepage": "https://developer.nexmo.com",
-            "time": "2021-04-22T14:44:28+00:00"
+            "time": "2021-04-26T13:37:00+00:00"
         },
         {
             "name": "vonage/nexmo-bridge",

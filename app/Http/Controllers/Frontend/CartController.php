@@ -29,7 +29,7 @@ class CartController extends Controller
     {
         $country = $this->cart->content()->where('options.type', 'country')->first();
         if ($country) {
-            $country = Country::whereId($country->options->country_id)->first();
+            $country = Country::whereId($country->options->country_id)->with('branches')->first();
             CheckCartItems::dispatchNow($country);
         }
         $elements = $this->cart->content();
