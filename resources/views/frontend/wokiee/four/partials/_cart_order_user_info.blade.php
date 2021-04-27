@@ -111,7 +111,7 @@
                                                 @endif
                                             @endif
                                             <div class="row">
-                                                <div class="col-md-12">
+                                                <div class="col-12">
                                                     <div class="form-group">
                                                         <label for="notes">{{ trans('general.notes') }}</label>
                                                         <textarea name="notes" class="form-control"
@@ -149,6 +149,7 @@
                                                         <div class="form-check">
                                                             <input type="radio"
                                                                    value="0"
+                                                                   selected
                                                                    class="form-check-input form-check-input form-control-lg"
                                                                    style="width : 20px; height: 20px; padding-top: 20px;"
                                                                    id="exampleCheck1" name="cash_on_delivery">
@@ -164,7 +165,7 @@
                                                     </br>
                                                 </div>
                                                 @if(session()->get('country')->is_local && $settings->cash_on_delivery)
-                                                    <div class="col-md-12">
+                                                    <div class="col-12">
                                                         <div class="alert alert-danger">
                                                             <i class="fa fa-fw fa-info-circle fa-lg"></i>
                                                             {{ trans('message.order_cash_on_delivery') }}
