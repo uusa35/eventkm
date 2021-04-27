@@ -198,7 +198,7 @@ return array (
   'new_arrivals' => 'أحدث المنتجات المضافه',
   'our_selection_from_collections' => 'اختيارات المتسوقين الشخصيين',
   'our_personal_shoppers' => 'المتسوقين الشخصيين',
-  'some_companies' => 'الشركات المشاركة',
+  'some_companies' => 'المتاجر المشاركة',
   'on_sale_products' => 'تنزيلات',
   'hot_deals' => 'عروض خاصة',
   'already_registered' => 'مسجل بالفعل',
@@ -886,173 +886,173 @@ return array (
   'delivered' => 'تم التسليم',
   'completed' => 'تم الانتهاء',
   'google' => 'جوجل',
-  'backend' =>
+  'backend' => 
   array (
-    'admin' =>
+    'admin' => 
     array (
-      'questionnaire' =>
+      'questionnaire' => 
       array (
         'index' => 'قائمة نتائج الاستبيانات',
       ),
-      'tag' =>
+      'tag' => 
       array (
         'create' => 'كلمات مفتاحية',
         'index' => 'قائمة هاش تاج للمنتجات أو الخدمات وأخرى ..',
       ),
-      'notification' =>
+      'notification' => 
       array (
         'index' => 'قائمة الإشعارات',
       ),
-      'product' =>
+      'product' => 
       array (
         'index' => 'قائمة المنتجات',
       ),
-      'service' =>
+      'service' => 
       array (
         'index' => 'قائمة الخدمات',
       ),
-      'category' =>
+      'category' => 
       array (
         'index' => 'قائمة التصنيفات',
       ),
-      'aboutus' =>
+      'aboutus' => 
       array (
         'index' => 'قائمة نبذة عنا',
       ),
-      'answer' =>
+      'answer' => 
       array (
         'index' => 'قائمة الإجابات الخاصه بالاستبيانات',
       ),
-      'area' =>
+      'area' => 
       array (
         'index' => 'قائمة المناطق',
       ),
-      'country' =>
+      'country' => 
       array (
         'index' => 'قائمة الدول',
       ),
-      'governate' =>
+      'governate' => 
       array (
         'index' => 'قائمة محافظات',
       ),
-      'branch' =>
+      'branch' => 
       array (
         'index' => 'قائمة الفروع',
       ),
-      'brand' =>
+      'brand' => 
       array (
         'index' => 'قائمة الماركات',
       ),
-      'collection' =>
+      'collection' => 
       array (
         'index' => 'قائمة كولكشن المنتجات',
       ),
-      'color' =>
+      'color' => 
       array (
         'index' => 'قائمة الألوان',
       ),
-      'size' =>
+      'size' => 
       array (
         'index' => 'قائمة أحجام المنتجات',
       ),
-      'comment' =>
+      'comment' => 
       array (
         'index' => 'قائمة التعليقات',
       ),
-      'commercial' =>
+      'commercial' => 
       array (
         'index' => 'قائمة الإعلانات التجارية',
       ),
-      'currency' =>
+      'currency' => 
       array (
         'index' => 'قائمة العملات',
       ),
-      'day' =>
+      'day' => 
       array (
         'index' => 'قائمة أيام التوقيتات الخاصة بالخدمات',
       ),
-      'device' =>
+      'device' => 
       array (
         'index' => 'قائمة أجهزة المحمول المرتبطة بالموقع',
       ),
-      'fan' =>
+      'fan' => 
       array (
         'index' => 'قائمة المعجبين',
       ),
-      'faq' =>
+      'faq' => 
       array (
         'index' => 'قائمة الاسئلة المتكررة',
       ),
-      'favorite' =>
+      'favorite' => 
       array (
         'index' => 'قائمة المفضلة',
       ),
-      'image' =>
+      'image' => 
       array (
         'index' => 'قائمة صور الموقع',
       ),
-      'order' =>
+      'order' => 
       array (
         'index' => 'قائمة طلبات العمل',
       ),
-      'page' =>
+      'page' => 
       array (
         'index' => 'قائمة صفحات الموقع',
       ),
-      'policy' =>
+      'policy' => 
       array (
         'index' => 'قائمة سياسات',
       ),
-      'privilege' =>
+      'privilege' => 
       array (
         'index' => 'قائمة الصلاحيات',
       ),
-      'product_attribute' =>
+      'product_attribute' => 
       array (
         'index' => 'قائمة خصائص المنتج',
       ),
-      'question' =>
+      'question' => 
       array (
         'index' => 'قائمة الأسئلة الخاصة بالاستبيانات',
       ),
-      'quote' =>
+      'quote' => 
       array (
         'index' => 'قائمة الإشعارات',
       ),
-      'rating' =>
+      'rating' => 
       array (
         'index' => 'قائمة التقيمات',
       ),
-      'result' =>
+      'result' => 
       array (
         'index' => 'قائمة إجابات الخاصة بأسئلة الاستبيانات',
       ),
-      'role' =>
+      'role' => 
       array (
         'index' => 'قائمة أدوار المستخدمين',
       ),
-      'slide' =>
+      'slide' => 
       array (
         'index' => 'قائمة السلايدر',
       ),
-      'survey' =>
+      'survey' => 
       array (
         'index' => 'قائمة الاستبيانات',
       ),
-      'timing' =>
+      'timing' => 
       array (
         'index' => 'قائمة التوقيتات (خاصة بالخدمات)',
       ),
-      'user' =>
+      'user' => 
       array (
         'index' => 'قائمة المستخدمين',
       ),
-      'video' =>
+      'video' => 
       array (
         'index' => 'قائمة الفيديوهات',
         'create' => 'إنشاء فيديو جديد',
       ),
-      'term' =>
+      'term' => 
       array (
         'index' => 'قائمة البنود والأحكام',
       ),
@@ -1075,7 +1075,11 @@ return array (
   'links' => 'روابط',
   'google_play' => 'جوجل بلاي',
   'apple' => 'أبل',
-    "invalid_verification_code" => "الكود الذي ادخلته غير صحيح",
-    "english_letters_only" => "فقط يقبل حروف وارقام انجليزية",
-    "captcha" => "كود التحقيق"
+  'invalid_verification_code' => 'الكود الذي ادخلته غير صحيح',
+  'english_letters_only' => 'فقط يقبل حروف وارقام انجليزية',
+  'captcha' => 'كود التحقيق',
+  'blog' => 'المدونة',
+  'product_categories' => 'أقسام المنتجات',
+  'company_categories' => 'اقسام المتاجر',
+  'small_business' => 'المشاريع الصغيرة',
 );

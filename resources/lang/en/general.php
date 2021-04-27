@@ -620,11 +620,11 @@ return array (
   'services' => 'Services',
   'users' => 'Users',
   'coupons' => 'coupons',
-  'BACKEND' =>
+  'BACKEND' => 
   array (
-    'ADMIN' =>
+    'ADMIN' => 
     array (
-      'QUESTIONNAIRE' =>
+      'QUESTIONNAIRE' => 
       array (
         'INDEX' => 'Questionnaires',
       ),
@@ -748,7 +748,7 @@ return array (
   'like' => 'like',
   'your_balance' => 'Your Current Balance',
   'points' => 'Points',
-  'some_companies' => 'Companies Participating with us',
+  'some_companies' => 'Stores Participants',
   'main_theme_color' => 'main_theme_color',
   'main_theme_bg_color' => 'main_theme_bg_color',
   'header_one_theme_color' => 'header_one_theme_color',
@@ -867,7 +867,10 @@ return array (
   'links' => 'Links',
   'google_play' => 'Google Play',
   'apple' => 'Apple',
-    "invalid_verification_code" => "Verification Code is not correct.",
-    "english_letters_only" => "Only English Numbers and Letters",
-    "captcha" => "captcha"
+  'invalid_verification_code' => 'Verification Code is not correct.',
+  'english_letters_only' => 'Only English Numbers and Letters',
+  'captcha' => 'captcha',
+  'blog' => 'Blog',
+  'company_categories' => 'Company Sections',
+  'product_categories' => 'Product Sections',
 );
