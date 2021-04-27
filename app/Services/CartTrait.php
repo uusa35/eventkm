@@ -49,7 +49,6 @@ trait CartTrait
 
     public function addCountryToCart($country, $receiveFromBranch = false)
     {
-
         $element = \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content()->where('options.type', 'country')->first();
         if ($element) {
             \Gloudemans\Shoppingcart\Facades\Cart::remove($element->rowId);

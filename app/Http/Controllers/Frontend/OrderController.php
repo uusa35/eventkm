@@ -59,14 +59,16 @@ class OrderController extends Controller
         }
         $country = Country::whereId($request->country_id)->first();
         CheckCartItems::dispatchNow($country);
-        $this->addCountryToCart($country, $request->has('branch_id') && $request->receive_from_branch && $request->cash_on_delivery);
+        $this->addCountryToCart($country, $request->has('branch_id') && $request->receive_on_branch);
         $user = $this->createUser($request);
         if (isset($user->id) && $country) {
             $order = $this->createWebOrder($request, $user, $this->cart);
-            if ($order) {
+            if (is_subclass_of($order, 'Illuminate\Database\Eloquent\Model')) {
                 auth()->login($user);
                 $elements = $this->cart->content();
                 return view('frontend.wokiee.four.modules.cart.show', compact('elements', 'order'))->with('success', trans('message.register_account_password_is_your_mobile'));
+            } else {
+                return redirect()->route('frontend.cart.index')->with('error', trans('please_check_your_information_again'));
             }
         } else {
             return redirect()->route('frontend.cart.index')->with('error', trans('please_check_your_information_again'));
