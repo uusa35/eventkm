@@ -110,67 +110,115 @@
                                                     @endif
                                                 @endif
                                             @endif
-                                                <div class="col-12">
-                                                    <div class="form-group">
-                                                        <label for="notes">{{ trans('general.notes') }}</label>
-                                                        <textarea name="notes" class="form-control"
-                                                                  style="height: 150px;" rows="1"
-                                                                  placeholder="{{ trans('general.notes') }}">{{ old('notes') }}</textarea>
-                                                    </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label for="notes">{{ trans('general.notes') }}</label>
+                                                    <textarea name="notes" class="form-control"
+                                                              style="height: 150px;" rows="1"
+                                                              placeholder="{{ trans('general.notes') }}">{{ old('notes') }}</textarea>
                                                 </div>
-                                                @if(session()->get('country')->is_local && $settings->cash_on_delivery)
-                                                    <div class="col-6">
-                                                        <div class="form-group">
-                                                            <label
-                                                                for="cash_on_delivery">{{ trans('general.cash_on_delivery') }}
-                                                                <sup>*</sup></label>
-                                                            <div class="form-check">
-                                                                <input type="radio"
-                                                                       value="1"
-                                                                       class="form-check-input form-check-input form-control-lg"
-                                                                       style="width : 20px; height: 20px;"
-                                                                       id="exampleCheck1" name="cash_on_delivery">
-                                                                <label class="form-check-label" for="exampleCheck1"
-                                                                       style="padding-right: 25px; padding-top: 10px;">
-                                                                    <span
-                                                                        class="alert alert-info">{{ trans('message.cash_on_delivery_instruction') }}</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        </br>
-                                                    </div>
-                                                @endif
+                                            </div>
+                                            @if(session()->get('country')->is_local && $settings->cash_on_delivery)
                                                 <div class="col-6">
                                                     <div class="form-group">
                                                         <label
-                                                            for="cash_on_delivery">{{ trans('general.payment_method') }}
+                                                            for="cash_on_delivery">{{ trans('general.cash_on_delivery') }}
                                                             <sup>*</sup></label>
                                                         <div class="form-check">
                                                             <input type="radio"
+                                                                   value="1"
+                                                                   class="form-check-input form-check-input form-control-lg"
+                                                                   style="width : 20px; height: 20px;"
+                                                                   name="cash_on_delivery">
+                                                            <label class="form-check-label" for="exampleCheck1"
+                                                                   style="padding-right: 25px; padding-top: 10px;">
+                                                                    <span
+                                                                        class="alert alert-info"><small>{{ trans('message.cash_on_delivery_instruction') }}</small></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    </br>
+                                                </div>
+                                            @endif
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label
+                                                        for="cash_on_delivery">{{ trans('general.payment_method') }}
+                                                        <sup>*</sup></label>
+                                                    <div class="form-check">
+                                                        <input type="radio"
+                                                               value="0"
+                                                               selected
+                                                               class="form-check-input form-check-input form-control-lg"
+                                                               style="width : 20px; height: 20px; padding-top: 20px;"
+                                                               id="exampleCheck1" name="cash_on_delivery">
+                                                        <label class="form-check-label" for="exampleCheck1"
+                                                               style="padding-right: 25px;">
+                                                            <img
+                                                                src="{{ asset('images/knet-visa.png') }}"
+                                                                style="width : 100px;">
+                                                            {{ trans('general.by') }} -
+                                                            ({{ strtoupper($settings->payment_method) }})
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @if(session()->get('country')->is_local && $settings->cash_on_delivery)
+                                                <div class="col-12">
+                                                    <div class="alert alert-danger">
+                                                        <i class="fa fa-fw fa-info-circle fa-lg"></i>
+                                                        {{ trans('message.order_cash_on_delivery') }}
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                            @endif
+                                            @if($settings->receive_from_branch && !$settings->multi_cart_merchant && Cart::instance('shopping')->content()->where('options.type','product')->first()->options->element->user->country->is_local)
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label
+                                                            for="receive_from_branch">{{ trans('general.receive_from_branch') }}
+                                                            <sup>*</sup></label>
+                                                        <div class="form-check">
+                                                            <input type="checkbox"
                                                                    value="0"
-                                                                   selected
+                                                                   disabled="disabled"
                                                                    class="form-check-input form-check-input form-control-lg"
                                                                    style="width : 20px; height: 20px; padding-top: 20px;"
-                                                                   id="exampleCheck1" name="cash_on_delivery">
+                                                                   id="selectBranch" name="receive_from_branch">
                                                             <label class="form-check-label" for="exampleCheck1"
                                                                    style="padding-right: 25px;">
                                                                 <img
                                                                     src="{{ asset('images/knet-visa.png') }}"
                                                                     style="width : 100px;">
-{{ trans('general.by') }} - ({{ strtoupper($settings->payment_method) }})
                                                             </label>
                                                         </div>
                                                     </div>
                                                     </br>
-                                                @if(session()->get('country')->is_local && $settings->cash_on_delivery)
-                                                    <div class="col-12">
-                                                        <div class="alert alert-danger">
-                                                            <i class="fa fa-fw fa-info-circle fa-lg"></i>
-                                                            {{ trans('message.order_cash_on_delivery') }}
-                                                        </div>
+                                                </div>
+                                                <div class="col-6 branchElements" style="display: none;">
+                                                    <div class="form-group">
+                                                        <label
+                                                            for="address_country">{{ trans('general.choose_branch') }}
+                                                            <sup>*</sup></label>
+                                                        <select name="branch_id" class="form-control">
+                                                            {{-- No Auth required as it's prevesiously done--}}
+                                                            @foreach($countries as $country)
+                                                                <option
+                                                                    value="{{ $country->id }}"
+                                                                >{{ $country->slug }}</option>
+                                                            @endforeach
+                                                        </select>
                                                     </div>
-                                                @endif
-                                            </div>
+                                                </div>
+                                                <div class="col-12 branchElements" style="display : none">
+                                                    <div class="alert alert-danger">
+                                                        <i class="fa fa-fw fa-info-circle fa-lg"></i>
+                                                        {{ trans('message.chooose_branch') }}
+                                                    </div>
+                                                </div>
+                                            @else
+                                                <input  name="branch_id" value="null" />
+                                            @endif
                                         </div>
                                         @include('frontend.wokiee.four.partials._cart_prices')
                                     </form>
@@ -260,3 +308,26 @@
         </div>
     </div>
 </div>
+
+@section('scripts')
+    @parent
+    <script>
+        $("input[name=cash_on_delivery]").on('click', function(e) {
+            if (e.target.value == 1) {
+                $('#selectBranch').prop("disabled", false);
+
+            } else {
+                $('#selectBranch').prop("disabled", true);
+                $('.branchElements').css({display: 'none'})
+                $('#selectBranch').prop("checked", false);
+            }
+        });
+        $('#selectBranch').on('change', function(e) {
+            if ($("#selectBranch").is(':checked')) {
+                $('.branchElements').css({display: 'inline'})
+            } else {
+                $('.branchElements').css({display: 'none'})
+            }
+        });
+    </script>
+@endsection
