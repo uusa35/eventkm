@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
+      <change afterPath="$PROJECT_DIR$/public/images/knet-visa.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/footer.blade.php" afterDir="false" />
     </list>
@@ -885,7 +886,7 @@
       <workItem from="1619436693391" duration="5746000" />
       <workItem from="1619470066839" duration="3204000" />
       <workItem from="1619504944931" duration="11759000" />
-      <workItem from="1619525591846" duration="848000" />
+      <workItem from="1619525591846" duration="1136000" />
     </task>
     <servers />
   </component>

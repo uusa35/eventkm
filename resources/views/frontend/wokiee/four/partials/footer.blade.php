@@ -199,7 +199,7 @@
                 </div>
                 <div class="tt-col-right">
                     <div class="tt-col-item tt-logo-col">
-                            <img src="{{ asset('images/knet-visa.png') }}" alt="" style="width: 120px;">
+                            <img src="{{ asset('images/knet-visa.png') }}" alt="" style="width: 200px;">
                     </div>
                 </div>
             </div>
