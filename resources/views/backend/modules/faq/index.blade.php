@@ -16,6 +16,7 @@
                             <th>{{ trans('general.id') }}</th>
                             <th>{{ trans('general.title_ar') }}</th>
                             <th>{{ trans('general.title_en') }}</th>
+                            <th>{{ trans('general.active') }}</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
                         </thead>
@@ -24,6 +25,7 @@
                             <th>{{ trans('general.id') }}</th>
                             <th>{{ trans('general.title_ar') }}</th>
                             <th>{{ trans('general.title_en') }}</th>
+                            <th>{{ trans('general.active') }}</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
                         </tfoot>
@@ -34,6 +36,10 @@
                                 <td> {{$element->title_ar}} </td>
                                 <td> {{$element->title_en}} </td>
                                 <td>
+                                    <span
+                                        class="label {{ activeLabel($element->active) }}">{{ activeText($element->active) }}</span>
+                                </td>
+                                <td>
                                     <div class="btn-group">
                                         <button type="button" class="btn green btn-xs btn-outline dropdown-toggle"
                                                 data-toggle="dropdown"> {{ trans('general.actions') }}
@@ -43,6 +49,11 @@
                                             <li>
                                                 <a href="{{ route('backend.admin.faq.edit',$element->id) }}">
                                                     <i class="fa fa-fw fa-edit"></i> {{ trans('general.edit') }}</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ route('backend.activate',['model' => 'faq','id' => $element->id]) }}">
+                                                    <i class="fa fa-fw fa-check-circle"></i> {{ trans('general.toggle_active') }}
+                                                </a>
                                             </li>
                                             <li>
                                                 <a data-toggle="modal" href="#" data-target="#basic" data-title="Delete"

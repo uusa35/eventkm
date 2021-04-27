@@ -79,7 +79,7 @@ class FaqController extends Controller
         $element = Faq::whereId($id)->first();
         if ($element) {
             $element->update($request->all());
-            return redirect()->route('backend.faq.index')->with('success', 'Faq added');
+            return redirect()->route('backend.admin.faq.index')->with('success', 'Faq added');
         }
         return redirect()->back()->with('error', 'Faq is not saved.');
     }
@@ -94,7 +94,7 @@ class FaqController extends Controller
     {
         $element = Faq::whereId($id)->first();
         if ($element->delete()) {
-            return redirect()->route('backend.faq.index')->with('success', 'Faq deleted');
+            return redirect()->route('backend.admin.faq.index')->with('success', 'Faq deleted');
         }
         return redirect()->back()->with('error', 'Faq is not deleted.');
     }

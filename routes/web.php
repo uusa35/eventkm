@@ -178,6 +178,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
     Route::get('country/set', 'HomeController@setCountry')->name('country.set');
     Route::get('element/linking', 'HomeController@handleDeepLinking')->name('deep.linking');
     Route::resource('fan', 'FanController')->only(['create', 'index']);
+    Route::resource('faq', 'FaqController')->only(['index']);
 });
 
 Auth::routes();

@@ -10,22 +10,26 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
-mix.js('resources/assets/js/app.js', 'public/js').version()
+
+mix.js(['resources/assets/js/app.js'], 'public/js').version()
     .sass('resources/assets/sass/app.scss', 'public/css').version()
-    .styles('../wokiee-ecommerce-html/html/css/theme.css', 'public/css/theme.css').version()
+    .styles([
+        '../wokiee-ecommerce-html/html/external/css/bootstrap/bootstrap.min.css',
+        '../wokiee-ecommerce-html/html/css/theme.css'
+    ], 'public/css/theme.css').version()
     .styles('../wokiee-ecommerce-html/html/css/rtl.css', 'public/css/theme-rtl.css').version();
 mix.styles(['resources/assets/css/frontend-custom-ar.css'], 'public/css/frontend-custom-ar.css').version();
-mix.styles(['resources/assets/css/frontend-custom-en.css'], 'public/css/frontend-custom-en.css').version();
 mix.styles(['resources/assets/css/frontend-custom-en.css'], 'public/css/frontend-custom-en.css').version();
 // frontend
 // wokiee
 mix.styles([
     // 'resources/assets/css/wokiee-theme-custom.css',
+    'resources/assets/css/skeletabs.css',
     './node_modules/font-awesome/css/font-awesome.css',
     './node_modules/@chenfengyuan/datepicker/dist/datepicker.css',
     './node_modules/select2/dist/css/select2.css',
     'resources/assets/css/frontend-custom.css'
-], 'public/css/plugins.css');
+], 'public/css/plugins.css').version();
 // frontend js
 // wokiee
 mix.scripts([
@@ -51,10 +55,13 @@ mix.scripts([
     '../wokiee-ecommerce-html/html/external/form/jquery.form.js',
     '../wokiee-ecommerce-html/html/external/form/jquery.validate.min.js',
     '../wokiee-ecommerce-html/html/external/form/jquery.form-init.js',
-    './node_modules/select2/dist/js/select2.js'
+    './node_modules/select2/dist/js/select2.js',
 ], 'public/js/wokiee.demo.js').version();
 
-mix.js('resources/assets/js/frontend-custom.js', 'public/js/frontend-custom.js').version();
+mix.js([
+    'resources/assets/js/skeletabs.js',
+    'resources/assets/js/frontend-custom.js'
+], 'public/js/frontend-custom.js').version();
 mix.js('resources/assets/js/frontend-ar.js', 'public/js/frontend-ar.js').version();
 mix.js('resources/assets/js/frontend-en.js', 'public/js/frontend-en.js').version();
 // backend
