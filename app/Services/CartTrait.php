@@ -47,15 +47,16 @@ trait CartTrait
         return false;
     }
 
-    public function addCountryToCart($country)
+    public function addCountryToCart($country, $receiveFromBranch = false)
     {
+
         $element = \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content()->where('options.type', 'country')->first();
         if ($element) {
             \Gloudemans\Shoppingcart\Facades\Cart::remove($element->rowId);
         }
         $settings = Setting::first();
         if ($settings->shipment_fixed_rate) {
-            \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? $country->fixed_shipment_charge : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
+            \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $country->fixed_shipment_charge) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
         } else {
             $shipmentPackage = $country->shipment_packages()->first();
             $totalWeight = \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content()->sum('weight');
