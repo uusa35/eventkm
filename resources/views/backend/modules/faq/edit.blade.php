@@ -6,7 +6,7 @@
         @include('backend.partials.forms.form_title')
         <div class="portlet-body form">
             <form class="horizontal-form" role="form" method="POST"
-                  action="{{ route('backend.faq.update', $element->id) }}" enctype="multipart/form-data">
+                  action="{{ route('backend.admin.faq.update', $element->id) }}" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="_method" value="put">
                 <div class="form-body">
@@ -63,6 +63,26 @@
                                 <label for="description" class="control-label">content english</label>
                                 <textarea type="text" class="form-control tinymce" id="content_en" name="content_en"
                                           aria-multiline="true" maxlength="500">{{ $element->content_en }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label sbold tooltips"
+                                       data-container="body" data-placement="top"
+                                       data-original-title="{{ trans('message.active') }}">{{ trans('general.active') }}</label></br>
+                                <label class="radio-inline">
+                                    <input type="radio" name="active"
+                                           id="optionsRadios3"
+                                           {{ $element->active ? 'checked' : null  }}
+                                           value="1">
+                                    {{ trans('general.yes') }}</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="active"
+                                           id="optionsRadios4"
+                                           {{ !$element->active ? 'checked' : null  }}
+                                           value="0">
+                                    {{ trans('general.no') }}
+                                </label>
                             </div>
                         </div>
                     </div>

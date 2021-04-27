@@ -132,13 +132,14 @@
     .tt-image-box .tt-btn-wishlist,
     ul.tt-options-swatch li.active a:not(.options-color):not(.options-color-img), ul.tt-options-swatch li:hover a:not(.options-color):not(.options-color-img),
     .btn > .fa .fa-fw, .tt-badge-cart,
-    .tt-product:not(.tt-view):hover .tt-image-box .tt-btn-quickview, .tt-product:not(.tt-view):hover .tt-image-box .tt-btn-quickview:hover {
+    .tt-product:not(.tt-view):hover .tt-image-box .tt-btn-quickview, .tt-product:not(.tt-view):hover .tt-image-box .tt-btn-quickview:hover , .skltbs-theme-light .skltbs-tab.skltbs-active{
         color: {{ $settings->btn_text_theme_color }}                    !important;
         background-color: {{ $settings->btn_bg_theme_color }}                    !important;
     }
 
-    .btn.btn-border {
+    .btn,  .btn-border, .tt-cart-btn {
         border: none !important;
+        border-radius: 0px !important;
     }
 
     .tt-product:not(.tt-view) .tt-add-info li a,

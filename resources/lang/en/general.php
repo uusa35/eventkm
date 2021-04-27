@@ -869,5 +869,6 @@ return array (
   'apple' => 'Apple',
     "invalid_verification_code" => "Verification Code is not correct.",
     "english_letters_only" => "Only English Numbers and Letters",
-    "captcha" => "captcha"
+    "captcha" => "captcha",
+    "continue_as_guest" => "Continue as guest"
 );

@@ -196,5 +196,6 @@ return array (
   'max_upload' => 'Max Upload ',
   'new_user_welcome' => 'Welcome',
     "direct_purchase_product_cart" => "you are not allowed to add more products to your cart. the current cart includes a product (or current product) that has direct purchase feature.",
-    "direct_purchase_product" => "This product is subject to (Direct Purchase Feature)."
+    "direct_purchase_product" => "This product is subject to (Direct Purchase Feature).",
+    "cash_on_delivery_instruction" => "if cash on delivery activated. Please kindly note that we shall call you to confirm your order."
 );

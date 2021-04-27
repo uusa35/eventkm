@@ -6,6 +6,7 @@ use App\Models\Branch;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Color;
+use App\Models\Faq;
 use App\Models\Setting;
 use App\Models\Currency;
 use App\Models\Page;
@@ -109,7 +110,7 @@ class ViewComposers
 
     public function getPages(View $view)
     {
-        $pages = Page::active()->orderBy('order','asc')->get();
+        $pages = Page::active()->orderBy('order', 'asc')->get();
         return $view->with(compact('pages'));
     }
 
@@ -159,6 +160,11 @@ class ViewComposers
         }
         $countriesWorld = Cache::get('countriesWorld');
         return $view->with(compact('countriesWorld'));
+    }
+
+    public function getFaqs(View $view) {
+        $faqs = Faq::active()->get();
+        return $view->with(compact('faqs'));
     }
 }
 

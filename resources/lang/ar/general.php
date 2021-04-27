@@ -1077,5 +1077,7 @@ return array (
   'apple' => 'أبل',
     "invalid_verification_code" => "الكود الذي ادخلته غير صحيح",
     "english_letters_only" => "فقط يقبل حروف وارقام انجليزية",
-    "captcha" => "كود التحقيق"
+    "captcha" => "كود التحقيق",
+    "register_with_us" => "سجل معنا",
+    "continue_as_guest" => "الاستمرار كزائر"
 );

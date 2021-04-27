@@ -141,3 +141,7 @@ footer .tt-mobile-collapse .tt-collapse-title {
 header .tt-header-holder .obj-aligment-center > *, header .tt-header-holder .obj-aligment-right > * {
     text-align: left !important;
 }
+
+.skltbs-theme-dark .skltbs-tab-item, .skltbs-theme-light .skltbs-tab-item {
+    float : right !important;
+}
