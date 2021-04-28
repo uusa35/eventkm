@@ -21,6 +21,7 @@
                     @include('frontend.wokiee.four.partials._widget_tags_and_images')
                 </a>
             @endif
+        @endif
     </div>
     @include('frontend.wokiee.four.partials._category_widget_description')
 </div>
