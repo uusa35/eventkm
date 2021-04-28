@@ -4,7 +4,7 @@
             <div class="col-12">
                 <div class="tt-item">
                     {{--                    <h2 class="tt-title text-center border-bottom margin-bottom-30">{{ trans('general.personal_information') }}</h2></br>--}}
-                    <div class="skltbs-theme-light skltbs-mode-tabs skltbs-init" data-skeletabs="" >
+                    <div class="skltbs-theme-light skltbs-mode-tabs skltbs-init" data-skeletabs="">
                         <ul class="skltbs-tab-group" role="tablist">
                             <li class="skltbs-tab-item skltbs-active" role="presentation">
                                 <button class="skltbs-tab skltbs-active" id="skeletabsTab01" aria-selected="true"
@@ -30,11 +30,13 @@
                                                     aria-controls="skeletabsPanel70">
                                                 {{ trans('general.delivery') }}</button>
                                         </li>
-                                        <li class="skltbs-tab-item" role="presentation">
-                                            <button class="skltbs-tab" id="skeletabsTab80" aria-selected="false"
-                                                    role="tab" tabindex="-1" aria-controls="skeletabsPanel71">
-                                                {{ trans('general.receive_order') }}</button>
-                                        </li>
+                                        @if($settings->pickup_from_branch && !$settings->multi_cart_merchant)
+                                            <li class="skltbs-tab-item" role="presentation">
+                                                <button class="skltbs-tab" id="skeletabsTab80" aria-selected="false"
+                                                        role="tab" tabindex="-1" aria-controls="skeletabsPanel71">
+                                                    {{ trans('general.receive_order') }}</button>
+                                            </li>
+                                        @endif
                                     </ul>
                                     <div class="skltbs-panel-group">
                                         <div class="skltbs-panel skltbs-active skltbs-enter-done mb-5"
@@ -165,7 +167,7 @@
                                                                         <label class="form-check-label"
                                                                                for="cash_on_delivery"
                                                                                style="padding-right: 25px; padding-top: 10px;">
-                                                                    {{ trans('message.cash_on_delivery_instruction') }}
+                                                                            {{ trans('message.cash_on_delivery_instruction') }}
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -206,12 +208,14 @@
                                                                                 {{ trans('message.order_cash_on_delivery') }}
                                                                             </h6>
                                                                         </li>
-                                                                        <li>
-                                                                            <h6>
-                                                                                <i class="fa fa-fw fa-info-circle fa-lg"></i>
-                                                                                {{ trans('message.shipment_fees_shall_be_removed_in_confirmation_page_in_case_you_choosed_to_receive_from_branch') }}
-                                                                            </h6>
-                                                                        </li>
+                                                                        @if($settings->pickup_from_branch && !$settings->multi_cart_merchant)
+                                                                            <li>
+                                                                                <h6>
+                                                                                    <i class="fa fa-fw fa-info-circle fa-lg"></i>
+                                                                                    {{ trans('message.shipment_fees_shall_be_removed_in_confirmation_page_in_case_you_choosed_to_receive_from_branch') }}
+                                                                                </h6>
+                                                                            </li>
+                                                                        @endif
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -226,177 +230,186 @@
                                         <div class="skltbs-panel skltbs-leave-done mb-5" id="skeletabsPanel71"
                                              role="tabpanel" tabindex="0" aria-labelledby="skeletabsTab80"
                                              style="display: none;">
-                                            <div class="form-default">
-                                                <form method="post"
-                                                      action="{{ route('frontend.order.store') }}">
-                                                    @csrf
-                                                    <input type="hidden" name="payment_method"
-                                                           value="Web - {{ $settings->payment_method }}">
-                                                    {{--                            @if(Cart::content()->where('options.type', 'country')->first())--}}
-                                                    {{--                                <input type="hidden" name="shipment_fees"--}}
-                                                    {{--                                       value="{{ Cart::content()->where('options.type', 'country')->first()->price }}">--}}
-                                                    {{--                            @else--}}
-                                                    {{--                                <input type="hidden" name="shipment_fees" value="0">--}}
-                                                    {{--                            @endif--}}
-                                                    <div class="row">
-                                                        <div class="col-6">
-                                                            <div class="form-group">
-                                                                <label for="loginFirstName">{{ trans('general.name') }}
-                                                                    *</label>
-                                                                <input type="text" name="name" class="form-control"
-                                                                       id="loginFirstName"
-                                                                       pattern=".{3,}" required
-                                                                       title="3 characters minimum"
-                                                                       value="{{ auth()->guest() ? old('name') : auth()->user()->name }}"
-                                                                       required
-                                                                       placeholder="{{ trans('general.name') }}">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <div class="form-group">
-                                                                <label
-                                                                    for="loginInputEmail">{{ trans('general.email') }}
-                                                                    *</label>
-                                                                <input type="text" name="email" class="form-control"
-                                                                       id="loginInputEmail"
-                                                                       pattern=".{3,}" required
-                                                                       title="3 characters minimum"
-                                                                       value="{{ auth()->guest() ? old('email') : auth()->user()->email }}"
-                                                                       required
-                                                                       placeholder="{{ trans('general.email') }}">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <div class="form-group">
-                                                                <label for="loginLast">{{ trans('general.mobile') }}
-                                                                    *</label>
-                                                                <input type="number" pattern=".{5,}" name="mobile"
-                                                                       class="form-control"
-                                                                       id="loginLast" title="5 numbers minimum"
-                                                                       value="{{ auth()->guest() ? old('mobile') : auth()->user()->mobile }}"
-                                                                       required
-                                                                       placeholder="{{ trans('general.mobile') }}">
-                                                            </div>
-                                                        </div>
-                                                        <input type="hidden" name="address" value="N/A">
-                                                        <input type="hidden" name="country_id"
-                                                               value="{{ $countries->where('is_local')->first()->id }}">
-                                                        <div class="col-12">
-                                                            <div class="form-group">
-                                                                <label for="notes">{{ trans('general.notes') }}</label>
-                                                                <textarea name="notes" class="form-control"
-                                                                          style="height: 150px;" rows="1"
-                                                                          placeholder="{{ trans('general.notes') }}">{{ old('notes') }}</textarea>
-                                                            </div>
-                                                        </div>
-                                                        @if(session()->get('country')->is_local && $settings->cash_on_delivery)
+                                            @if($settings->pickup_from_branch && !$settings->multi_cart_merchant)
+                                                <div class="form-default">
+                                                    <form method="post"
+                                                          action="{{ route('frontend.order.store') }}">
+                                                        @csrf
+                                                        <input type="hidden" name="payment_method"
+                                                               value="Web - {{ $settings->payment_method }}">
+                                                        {{--                            @if(Cart::content()->where('options.type', 'country')->first())--}}
+                                                        {{--                                <input type="hidden" name="shipment_fees"--}}
+                                                        {{--                                       value="{{ Cart::content()->where('options.type', 'country')->first()->price }}">--}}
+                                                        {{--                            @else--}}
+                                                        {{--                                <input type="hidden" name="shipment_fees" value="0">--}}
+                                                        {{--                            @endif--}}
+                                                        <div class="row">
                                                             <div class="col-6">
                                                                 <div class="form-group">
                                                                     <label
-                                                                        for="cash_on_delivery">{{ trans('general.cash_on_delivery') }}
+                                                                        for="loginFirstName">{{ trans('general.name') }}
+                                                                        *</label>
+                                                                    <input type="text" name="name" class="form-control"
+                                                                           id="loginFirstName"
+                                                                           pattern=".{3,}" required
+                                                                           title="3 characters minimum"
+                                                                           value="{{ auth()->guest() ? old('name') : auth()->user()->name }}"
+                                                                           required
+                                                                           placeholder="{{ trans('general.name') }}">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label
+                                                                        for="loginInputEmail">{{ trans('general.email') }}
+                                                                        *</label>
+                                                                    <input type="text" name="email" class="form-control"
+                                                                           id="loginInputEmail"
+                                                                           pattern=".{3,}" required
+                                                                           title="3 characters minimum"
+                                                                           value="{{ auth()->guest() ? old('email') : auth()->user()->email }}"
+                                                                           required
+                                                                           placeholder="{{ trans('general.email') }}">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label for="loginLast">{{ trans('general.mobile') }}
+                                                                        *</label>
+                                                                    <input type="number" pattern=".{5,}" name="mobile"
+                                                                           class="form-control"
+                                                                           id="loginLast" title="5 numbers minimum"
+                                                                           value="{{ auth()->guest() ? old('mobile') : auth()->user()->mobile }}"
+                                                                           required
+                                                                           placeholder="{{ trans('general.mobile') }}">
+                                                                </div>
+                                                            </div>
+                                                            <input type="hidden" name="address" value="N/A">
+                                                            <input type="hidden" name="country_id"
+                                                                   value="{{ $countries->where('is_local')->first()->id }}">
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <label
+                                                                        for="notes">{{ trans('general.notes') }}</label>
+                                                                    <textarea name="notes" class="form-control"
+                                                                              style="height: 150px;" rows="1"
+                                                                              placeholder="{{ trans('general.notes') }}">{{ old('notes') }}</textarea>
+                                                                </div>
+                                                            </div>
+                                                            @if(session()->get('country')->is_local && $settings->cash_on_delivery)
+                                                                <div class="col-6">
+                                                                    <div class="form-group">
+                                                                        <label
+                                                                            for="cash_on_delivery">{{ trans('general.cash_on_delivery') }}
+                                                                            <sup>*</sup></label>
+                                                                        <div class="form-check">
+                                                                            <input type="radio"
+                                                                                   value="1"
+                                                                                   class="form-check-input form-check-input form-control-lg"
+                                                                                   style="width : 20px; height: 20px;"
+                                                                                   name="cash_on_delivery">
+                                                                            <label class="form-check-label"
+                                                                                   for="exampleCheck1"
+                                                                                   style="padding-right: 25px; padding-top: 10px;">
+                                                                    <span
+                                                                        class="alert alert-info"><small>{{ trans('message.cash_on_delivery_instruction') }}</small></span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    </br>
+                                                                </div>
+                                                            @endif
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label
+                                                                        for="cash_on_delivery">{{ trans('general.payment_method') }}
                                                                         <sup>*</sup></label>
                                                                     <div class="form-check">
                                                                         <input type="radio"
-                                                                               value="1"
+                                                                               value="0"
+                                                                               checked
                                                                                class="form-check-input form-check-input form-control-lg"
-                                                                               style="width : 20px; height: 20px;"
+                                                                               style="width : 20px; height: 20px; padding-top: 20px;"
                                                                                name="cash_on_delivery">
                                                                         <label class="form-check-label"
                                                                                for="exampleCheck1"
-                                                                               style="padding-right: 25px; padding-top: 10px;">
-                                                                    <span
-                                                                        class="alert alert-info"><small>{{ trans('message.cash_on_delivery_instruction') }}</small></span>
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                                </br>
-                                                            </div>
-                                                        @endif
-                                                        <div class="col-6">
-                                                            <div class="form-group">
-                                                                <label
-                                                                    for="cash_on_delivery">{{ trans('general.payment_method') }}
-                                                                    <sup>*</sup></label>
-                                                                <div class="form-check">
-                                                                    <input type="radio"
-                                                                           value="0"
-                                                                           checked
-                                                                           class="form-check-input form-check-input form-control-lg"
-                                                                           style="width : 20px; height: 20px; padding-top: 20px;"
-                                                                           name="cash_on_delivery">
-                                                                    <label class="form-check-label" for="exampleCheck1"
-                                                                           style="padding-right: 25px;">
-                                                                        <img
-                                                                            src="{{ asset('images/knet-visa.png') }}"
-                                                                            style="width : 100px;">
-                                                                        {{ trans('general.by') }} -
-                                                                        ({{ strtoupper($settings->payment_method) }})
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        @if(session()->get('country')->is_local && $settings->cash_on_delivery)
-                                                            <div class="col-12">
-                                                                <div class="alert alert-danger">
-                                                                    <i class="fa fa-fw fa-info-circle fa-lg"></i>
-                                                                    {{ trans('message.order_cash_on_delivery') }}
-                                                                </div>
-                                                            </div>
-                                                            <hr>
-                                                        @endif
-                                                        @if($settings->pickup_from_branch && !$settings->multi_cart_merchant && session()->get('country')->is_local)
-                                                            <div class="col-6">
-                                                                <div class="form-group">
-                                                                    <label
-                                                                        for="pickup_from_branch">{{ trans('general.pickup_from_branch') }}
-                                                                        <sup>*</sup></label>
-                                                                    <div class="form-check">
-                                                                        <input type="checkbox"
-                                                                               value="1"
-                                                                               checked
-                                                                               class="selectBranch form-check-input form-check-input form-control-lg"
-                                                                               style="width : 20px; height: 20px; padding-top: 20px;"
-                                                                               name="pickup_from_branch">
-                                                                        <label class="form-check-label"
-                                                                               for="pickup_from_branch"
                                                                                style="padding-right: 25px;">
-                                                                            {{ trans('general.pickup_from_branch') }}
+                                                                            <img
+                                                                                src="{{ asset('images/knet-visa.png') }}"
+                                                                                style="width : 100px;">
+                                                                            {{ trans('general.by') }} -
+                                                                            ({{ strtoupper($settings->payment_method) }}
+                                                                            )
                                                                         </label>
                                                                     </div>
                                                                 </div>
-                                                                </br>
                                                             </div>
+                                                            @if(session()->get('country')->is_local && $settings->cash_on_delivery)
+                                                                <div class="col-12">
+                                                                    <div class="alert alert-danger">
+                                                                        <i class="fa fa-fw fa-info-circle fa-lg"></i>
+                                                                        {{ trans('message.order_cash_on_delivery') }}
+                                                                    </div>
+                                                                </div>
+                                                                <hr>
+                                                            @endif
+                                                            @if($settings->pickup_from_branch && !$settings->multi_cart_merchant && session()->get('country')->is_local)
+                                                                <div class="col-6">
+                                                                    <div class="form-group">
+                                                                        <label
+                                                                            for="pickup_from_branch">{{ trans('general.pickup_from_branch') }}
+                                                                            <sup>*</sup></label>
+                                                                        <div class="form-check">
+                                                                            <input type="checkbox"
+                                                                                   value="1"
+                                                                                   checked
+                                                                                   class="selectBranch form-check-input form-check-input form-control-lg"
+                                                                                   style="width : 20px; height: 20px; padding-top: 20px;"
+                                                                                   name="pickup_from_branch">
+                                                                            <label class="form-check-label"
+                                                                                   for="pickup_from_branch"
+                                                                                   style="padding-right: 25px;">
+                                                                                {{ trans('general.pickup_from_branch') }}
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    </br>
+                                                                </div>
 
-                                                            <div class="col-6 branchElements" style="display: inline;">
-                                                                <div class="form-group">
-                                                                    <label
-                                                                        for="address_country">{{ trans('general.choose_branch') }}
-                                                                        <sup>*</sup></label>
-                                                                    <select name="branch_id" class="form-control" id="branchId" required>
-                                                                        <option
-                                                                            value="null"
-                                                                        >{{ trans('general.choose_branch') }}</option>
-                                                                        @foreach($countries->where('is_local')->first()->branches as $b)
+                                                                <div class="col-6 branchElements"
+                                                                     style="display: inline;">
+                                                                    <div class="form-group">
+                                                                        <label
+                                                                            for="address_country">{{ trans('general.choose_branch') }}
+                                                                            <sup>*</sup></label>
+                                                                        <select name="branch_id" class="form-control"
+                                                                                id="branchId" required>
                                                                             <option
-                                                                                value="{{ $b->id }}"
-                                                                            >{{ $b->name }}</option>
-                                                                        @endforeach
-                                                                    </select>
+                                                                                value="null"
+                                                                            >{{ trans('general.choose_branch') }}</option>
+                                                                            @foreach($countries->where('is_local')->first()->branches as $b)
+                                                                                <option
+                                                                                    value="{{ $b->id }}"
+                                                                                >{{ $b->name }}</option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-12 branchElements" style="display : none">
-                                                                <div class="alert alert-danger">
-                                                                    <i class="fa fa-fw fa-info-circle fa-lg"></i>
-                                                                    {{ trans('message.chooose_branch') }}
+                                                                <div class="col-12 branchElements"
+                                                                     style="display : none">
+                                                                    <div class="alert alert-danger">
+                                                                        <i class="fa fa-fw fa-info-circle fa-lg"></i>
+                                                                        {{ trans('message.chooose_branch') }}
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        @else
-                                                            <input type="hidden" name="branch_id" value="null"/>
-                                                        @endif
-                                                    </div>
-                                                    @include('frontend.wokiee.four.partials._cart_prices')
-                                                </form>
-                                            </div>
+                                                            @else
+                                                                <input type="hidden" name="branch_id" value="null"/>
+                                                            @endif
+                                                        </div>
+                                                        @include('frontend.wokiee.four.partials._cart_prices')
+                                                    </form>
+                                                </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
