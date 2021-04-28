@@ -96,5 +96,5 @@
     $(document).ready(function () {
 
     })
-    $('.skltbs-init').skeletabs({ panelHeight: 'adapt', keyboard : false , history : false , autoplay : false  });
+    // $('.skltbs-init').skeletabs({ panelHeight: 'adapt', keyboard : false , history : false , autoplay : false  });
 </script>

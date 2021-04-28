@@ -30,13 +30,17 @@
                                                     aria-controls="skeletabsPanel70">
                                                 {{ trans('general.delivery') }}</button>
                                         </li>
-                                        @if($settings->pickup_from_branch && !$settings->multi_cart_merchant)
-                                            <li class="skltbs-tab-item" role="presentation">
-                                                <button class="skltbs-tab" id="skeletabsTab80" aria-selected="false"
-                                                        role="tab" tabindex="-1" aria-controls="skeletabsPanel71">
-                                                    {{ trans('general.receive_order') }}</button>
-                                            </li>
-                                        @endif
+
+                                        <li class="skltbs-tab-item" role="presentation">
+                                            <button class="skltbs-tab" id="skeletabsTab80" aria-selected="false"
+                                                    {{ !($settings->pickup_from_branch && !$settings->multi_cart_merchant) ? 'disabled="disabled"' : '' }}
+                                                    role="tab" tabindex="-1" aria-controls="skeletabsPanel71">
+                                                @if($settings->pickup_from_branch && !$settings->multi_cart_merchant)
+                                                    {{ trans('general.receive_order') }}
+                                                @endif
+                                            </button>
+                                        </li>
+
                                     </ul>
                                     <div class="skltbs-panel-group">
                                         <div class="skltbs-panel skltbs-active skltbs-enter-done mb-5"
@@ -48,12 +52,6 @@
                                                     @csrf
                                                     <input type="hidden" name="payment_method"
                                                            value="Web - {{ $settings->payment_method }}">
-                                                    {{--                            @if(Cart::content()->where('options.type', 'country')->first())--}}
-                                                    {{--                                <input type="hidden" name="shipment_fees"--}}
-                                                    {{--                                       value="{{ Cart::content()->where('options.type', 'country')->first()->price }}">--}}
-                                                    {{--                            @else--}}
-                                                    {{--                                <input type="hidden" name="shipment_fees" value="0">--}}
-                                                    {{--                            @endif--}}
                                                     <div class="row">
                                                         <div class="col-6">
                                                             <div class="form-group">
@@ -230,8 +228,9 @@
                                         <div class="skltbs-panel skltbs-leave-done mb-5" id="skeletabsPanel71"
                                              role="tabpanel" tabindex="0" aria-labelledby="skeletabsTab80"
                                              style="display: none;">
-                                            @if($settings->pickup_from_branch && !$settings->multi_cart_merchant)
-                                                <div class="form-default">
+
+                                            <div class="form-default">
+                                                @if($settings->pickup_from_branch && !$settings->multi_cart_merchant)
                                                     <form method="post"
                                                           action="{{ route('frontend.order.store') }}">
                                                         @csrf
@@ -408,8 +407,9 @@
                                                         </div>
                                                         @include('frontend.wokiee.four.partials._cart_prices')
                                                     </form>
-                                                </div>
-                                            @endif
+                                                @endif
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
