@@ -944,16 +944,16 @@
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
                                                                data-container="body" data-placement="top"
-                                                               data-original-title="{{ trans('message.receive_from_branch') }}">{{ trans('general.receive_from_branch') }}</label></br>
+                                                               data-original-title="{{ trans('message.pickup_from_branch') }}">{{ trans('general.pickup_from_branch') }}</label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="receive_from_branch"
-                                                                   {{ $element->receive_from_branch ? 'checked' : null }}
+                                                            <input type="radio" name="pickup_from_branch"
+                                                                   {{ $element->pickup_from_branch ? 'checked' : null }}
                                                                    id="optionsRadios1"
                                                                    value="1"> {{ trans('general.yes') }}
                                                         </label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="receive_from_branch"
-                                                                   {{ !$element->receive_from_branch ? 'checked' : null  }}
+                                                            <input type="radio" name="pickup_from_branch"
+                                                                   {{ !$element->pickup_from_branch ? 'checked' : null  }}
                                                                    id="optionsRadios2"
                                                                    value="0"> {{ trans('general.no') }}
                                                         </label>

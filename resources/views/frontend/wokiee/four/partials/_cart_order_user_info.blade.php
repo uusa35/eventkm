@@ -165,8 +165,7 @@
                                                                         <label class="form-check-label"
                                                                                for="cash_on_delivery"
                                                                                style="padding-right: 25px; padding-top: 10px;">
-                                                                    <span
-                                                                        class="alert alert-info"><small>{{ trans('message.cash_on_delivery_instruction') }}</small></span>
+                                                                    {{ trans('message.cash_on_delivery_instruction') }}
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -199,9 +198,21 @@
                                                         </div>
                                                         @if(session()->get('country')->is_local && $settings->cash_on_delivery)
                                                             <div class="col-12">
-                                                                <div class="alert alert-danger">
-                                                                    <i class="fa fa-fw fa-info-circle fa-lg"></i>
-                                                                    {{ trans('message.order_cash_on_delivery') }}
+                                                                <div class="alert alert-secondary">
+                                                                    <ul style="list-style: none">
+                                                                        <li>
+                                                                            <h6>
+                                                                                <i class="fa fa-fw fa-info-circle fa-lg"></i>
+                                                                                {{ trans('message.order_cash_on_delivery') }}
+                                                                            </h6>
+                                                                        </li>
+                                                                        <li>
+                                                                            <h6>
+                                                                                <i class="fa fa-fw fa-info-circle fa-lg"></i>
+                                                                                {{ trans('message.shipment_fees_shall_be_removed_in_confirmation_page_in_case_you_choosed_to_receive_from_branch') }}
+                                                                            </h6>
+                                                                        </li>
+                                                                    </ul>
                                                                 </div>
                                                             </div>
                                                             <hr>
@@ -333,11 +344,11 @@
                                                             </div>
                                                             <hr>
                                                         @endif
-                                                        @if($settings->receive_from_branch && !$settings->multi_cart_merchant && session()->get('country')->is_local)
+                                                        @if($settings->pickup_from_branch && !$settings->multi_cart_merchant && session()->get('country')->is_local)
                                                             <div class="col-6">
                                                                 <div class="form-group">
                                                                     <label
-                                                                        for="receive_on_branch">{{ trans('general.receive_from_branch') }}
+                                                                        for="pickup_from_branch">{{ trans('general.pickup_from_branch') }}
                                                                         <sup>*</sup></label>
                                                                     <div class="form-check">
                                                                         <input type="checkbox"
@@ -345,11 +356,11 @@
                                                                                checked
                                                                                class="selectBranch form-check-input form-check-input form-control-lg"
                                                                                style="width : 20px; height: 20px; padding-top: 20px;"
-                                                                               name="receive_on_branch">
+                                                                               name="pickup_from_branch">
                                                                         <label class="form-check-label"
-                                                                               for="receive_on_branch"
+                                                                               for="pickup_from_branch"
                                                                                style="padding-right: 25px;">
-                                                                            {{ trans('general.receive_from_branch') }}
+                                                                            {{ trans('general.pickup_from_branch') }}
                                                                         </label>
                                                                     </div>
                                                                 </div>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddReceiveFromBranchToSettingsTable extends Migration
+class AddPickupFromBranchToSettingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddReceiveFromBranchToSettingsTable extends Migration
     public function up()
     {
         Schema::table('settings', function (Blueprint $table) {
-            $table->boolean('receive_from_branch')->default(0);
+            $table->boolean('pickup_from_branch')->default(0);
         });
     }
 
@@ -26,7 +26,7 @@ class AddReceiveFromBranchToSettingsTable extends Migration
     public function down()
     {
         Schema::table('settings', function (Blueprint $table) {
-            $table->dropColumn('receive_from_branch');
+            $table->dropColumn('pickup_from_branch');
         });
     }
 }

@@ -620,11 +620,11 @@ return array (
   'services' => 'Services',
   'users' => 'Users',
   'coupons' => 'coupons',
-  'BACKEND' => 
+  'BACKEND' =>
   array (
-    'ADMIN' => 
+    'ADMIN' =>
     array (
-      'QUESTIONNAIRE' => 
+      'QUESTIONNAIRE' =>
       array (
         'INDEX' => 'Questionnaires',
       ),
@@ -881,7 +881,7 @@ return array (
   'restore' => 'restore',
   'required_firleds' => 'resend',
   'reset' => 'reset',
-  'receive_from_branch' => 'Receive from branch',
+  'pickup_from_branch' => 'Receive from branch',
   'shipment_fixed_rate' => 'Shipment Fixed Rate',
   'multi_cart_merchant' => 'Multi Cart Merchant',
   'months' => 'Months',

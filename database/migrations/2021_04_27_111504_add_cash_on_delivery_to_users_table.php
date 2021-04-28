@@ -14,7 +14,7 @@ class AddCashOnDeliveryToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->boolean('receive_from_branch')->default(0);
+            $table->boolean('pickup_from_branch')->default(0);
             $table->boolean('cash_on_delivery')->default(0);
         });
     }
@@ -27,7 +27,7 @@ class AddCashOnDeliveryToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('receive_from_branch');
+            $table->dropColumn('pickup_from_branch');
             $table->dropColumn('cash_on_delivery');
         });
     }
