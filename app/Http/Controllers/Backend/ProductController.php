@@ -44,7 +44,7 @@ class  ProductController extends Controller
     {
         $validator = validator(request()->all(), ['search' => 'nullable']);
         if ($validator->fails()) {
-            return redirect()->route('frontend.home')->withErrors($validator->messages());
+            return redirect()->back()->withErrors($validator->messages());
         }
         $elements = Product::with('user', 'product_attributes.size', 'product_attributes.color', 'color', 'size', 'slides')->filters($filters)->orderBy('id', 'desc')->paginate(self::TAKE_LESS);
         if (!$elements->isEmpty()) {

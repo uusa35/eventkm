@@ -36,6 +36,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('group', 'CategoryGroupController');
         Route::resource('property', 'PropertyController');
         Route::resource('user', 'UserController');
+        Route::get('search/user', 'UserController@search')->name('user.search');
         Route::get('trashed/user', 'UserController@trashed')->name('user.trashed');
         Route::get('restore/user/{id}', 'UserController@restore')->name('user.restore');
         Route::get('resend/mobile', 'UserController@resendVerificationCode')->name('user.mobile.resend');

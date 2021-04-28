@@ -11,6 +11,8 @@ use App\Models\User;
 use App\Models\Country;
 use App\Models\Role;
 use App\Models\UserHelpers;
+use App\Services\Search\Filters;
+use App\Services\Search\UserFilters;
 use App\Services\Traits\ImageHelpers;
 use App\Services\Traits\NotificationHelper;
 use Illuminate\Http\Request;
@@ -42,6 +44,20 @@ class UserController extends Controller
             }
         }
         return view('backend.modules.user.index', compact('elements'));
+    }
+
+    public function search(UserFilters $filters)
+    {
+        $validator = validator(request()->all(), ['search' => 'nullable']);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator->messages());
+        }
+        $elements = User::with('country', 'slides', 'role', 'categories')->filters($filters)->orderBy('id', 'desc')->paginate(self::TAKE_LESS);
+        if (!$elements->isEmpty()) {
+            return view('backend.modules.user.index', compact('elements'));
+        } else {
+            return redirect()->back()->with('error', trans('message.no_items_found'));
+        }
     }
 
     /**
