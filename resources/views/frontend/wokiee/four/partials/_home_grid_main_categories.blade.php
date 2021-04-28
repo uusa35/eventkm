@@ -37,7 +37,7 @@
 <div class="container-indent">
     <div class="container-fluid-custom">
         <div class="container container-fluid-custom-mobile-padding">
-            @if($title)
+            @if(isset($title))
                 <div class="tt-block-title">
                     <h1 class="tt-title">{{ $title }}</h1>
                     {{--                <div class="tt-description">{{ trans('message.recent_products') }}</div>--}}
