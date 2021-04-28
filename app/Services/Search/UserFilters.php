@@ -33,7 +33,8 @@ class UserFilters extends QueryFilters
             ->where('slug_ar', 'like', "%{$search}%")
             ->orWhere('slug_en', 'like', "%{$search}%")
             ->orWhere('description_ar', 'like', "%{$search}%")
-            ->orWhere('description_en', 'like', "%{$search}%");
+            ->orWhere('description_en', 'like', "%{$search}%")
+            ->orWhere('email', 'like', "%{$search}%");
 //            ->orWhere('notes_ar', 'like', "%{$search}%")
 //            ->orWhere('notes_en', 'like', "%{$search}%");
     }
