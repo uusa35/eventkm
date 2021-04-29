@@ -302,8 +302,12 @@
                                                                             <label class="form-check-label"
                                                                                    for="exampleCheck1"
                                                                                    style="padding-right: 25px; padding-top: 10px;">
-                                                                    <span
-                                                                        class="alert alert-info"><small>{{ trans('message.cash_on_delivery_instruction') }}</small></span>
+                                                                                <div
+                                                                                    class="alert alert-info">
+                                                                                    <p>
+                                                                                        <small>{{ trans('message.cash_on_delivery_instruction') }}</small>
+                                                                                    </p>
+                                                                                </div>
                                                                             </label>
                                                                         </div>
                                                                     </div>
@@ -339,7 +343,7 @@
                                                                 <div class="col-md-6 col-sm-12">
                                                                     <div class="alert alert-secondary">
                                                                         <p>
-                                                                        <i class="fa fa-fw fa-info-circle fa-lg"></i>
+                                                                            <i class="fa fa-fw fa-info-circle fa-lg"></i>
                                                                             {{ trans('message.order_cash_on_delivery') }}
                                                                         </p>
                                                                     </div>
@@ -397,8 +401,8 @@
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="alert alert-primary">
-                                                                        <i class="fa fa-fw fa-info-circle fa-lg"></i>
                                                                         <p>
+                                                                            <i class="fa fa-fw fa-info-circle fa-lg"></i>
                                                                             {{ trans('message.shipment_fees_shall_be_removed_in_confirmation_page_in_case_you_choosed_to_receive_from_branch') }}
                                                                         </p>
                                                                     </div>
