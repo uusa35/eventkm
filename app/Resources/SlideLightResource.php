@@ -22,6 +22,11 @@ class SlideLightResource extends JsonResource
             'large' => $this->imageLargeLink,
             'path' => $this->path ? $this->pathLink : null,
             'url' => $this->url ? $this->url : env('APP_URL'),
+            'module' => $this->module,
+            'user_id' => $this->user_id,
+            'product_id' => $this->product_id,
+            'category_id' => $this->category_id,
+            'service_id' => $this->service_id,
         ];
     }
 }
