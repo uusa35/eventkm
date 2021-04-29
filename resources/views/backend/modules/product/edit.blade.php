@@ -973,6 +973,26 @@
                                                             {{ trans('general.no') }}</label>
                                                     </div>
                                                 </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label sbold tooltips"
+                                                                   data-container="body" data-placement="top"
+                                                                   data-original-title="{{ trans('message.show_size_chart') }}">{{ trans('general.show_size_chart') }}</label></br>
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="show_size_chart"
+                                                                       id="optionsRadios3"
+                                                                       {{ $element->show_size_chart ? 'checked' : null  }}
+                                                                       value="1">
+                                                                {{ trans('general.yes') }}</label>
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="show_size_chart"
+                                                                       id="optionsRadios4"
+                                                                       {{ !$element->show_size_chart ? 'checked' : null  }}
+                                                                       value="0">
+                                                                {{ trans('general.no') }}
+                                                            </label>
+                                                        </div>
+                                                    </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"

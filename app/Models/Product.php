@@ -29,7 +29,8 @@ class Product extends PrimaryModel
         'weight' => 'float',
         'price' => 'float',
         'wrap_as_gift' => 'boolean',
-        'direct_purchase' => 'boolean'
+        'direct_purchase' => 'boolean',
+        'show_size_chart' => 'boolean'
     ];
 
 
