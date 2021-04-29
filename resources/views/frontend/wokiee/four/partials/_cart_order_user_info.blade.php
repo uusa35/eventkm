@@ -206,14 +206,6 @@
                                                                                 {{ trans('message.order_cash_on_delivery') }}
                                                                             </h6>
                                                                         </li>
-                                                                        @if($settings->pickup_from_branch && !$settings->multi_cart_merchant)
-                                                                            <li>
-                                                                                <h6>
-                                                                                    <i class="fa fa-fw fa-info-circle fa-lg"></i>
-                                                                                    {{ trans('message.shipment_fees_shall_be_removed_in_confirmation_page_in_case_you_choosed_to_receive_from_branch') }}
-                                                                                </h6>
-                                                                            </li>
-                                                                        @endif
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -345,7 +337,7 @@
                                                             </div>
                                                             @if(session()->get('country')->is_local && $settings->cash_on_delivery)
                                                                 <div class="col-md-6 col-sm-12">
-                                                                    <div class="alert alert-danger">
+                                                                    <div class="alert alert-secondary">
                                                                         <i class="fa fa-fw fa-info-circle fa-lg"></i>
                                                                         {{ trans('message.order_cash_on_delivery') }}
                                                                     </div>
