@@ -33,7 +33,7 @@ class ProductResource extends JsonResource
             'convertedFinalPrice' => $this->convertedFinalPrice,
             'weight' => $this->weight,
             'sale_price' => (double)$this->sale_price,
-            'size_chart_image' => $this->getProductSizeChartImageAttribute(),
+            'size_chart_image' => $this->size_chart_image ? $this->getProductSizeChartImageAttribute() : null,
             'qr' => $this->getCurrentImageAttribute('qr', 'large'),
             'description' => $this->description,
             'notes' => $this->notes,
