@@ -91,7 +91,7 @@
                                     <table class="tt-shopcart-table01">
                                         <tbody>
                                         <tr>
-                                            @if($order->receive_from_branch && $order->cash_on_delivery && $order->branch_id)
+                                            @if($order->pickup_from_branch && $order->cash_on_delivery && $order->branch_id)
                                             <div class="alert alert-warning">
                                                 <i class="fa fa-fw fa-info-circle fa-lg"></i>
                                                 {{ trans('message.order_has_been_made_through_cash_on_delivery_and_will_be_recived') }}

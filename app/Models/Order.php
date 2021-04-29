@@ -12,7 +12,7 @@ class Order extends PrimaryModel
         'shipment_fees' => 'float',
         'discount' => 'float',
         'paid' => 'boolean',
-        'receive_on_branch' => 'boolean',
+        'pickup_from_branch' => 'boolean',
         'multi_cart_merchant' => 'boolean'
     ];
     use SoftDeletes, Notifiable;

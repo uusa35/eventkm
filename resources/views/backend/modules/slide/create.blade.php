@@ -13,10 +13,10 @@
             <div class="alert alert-danger">
                 <ul>
                     <li>
-                        Home Slide : width  : 1900px x height : 720px
+                        Home Slide : width : 1900px x height : 720px
                     </li>
                     <li>
-                        Intro Slide : width  : 900px x height : 1900px
+                        Intro Slide : width : 900px x height : 1900px
                     </li>
                 </ul>
             </div>
@@ -39,45 +39,60 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group form-md-line-input">
-                                                <input type="text" class="form-control tooltips" data-container="body" data-placement="top"
-                                                       data-original-title="{{ trans('message.title_ar') }}" name="title_ar"
-                                                       placeholder="{{ trans('general.title_ar') }}" value="{{ old('title_ar') }}">
+                                                <input type="text" class="form-control tooltips" data-container="body"
+                                                       data-placement="top"
+                                                       data-original-title="{{ trans('message.title_ar') }}"
+                                                       name="title_ar"
+                                                       placeholder="{{ trans('general.title_ar') }}"
+                                                       value="{{ old('title_ar') }}">
                                                 <label for="form_control_1"> {{ trans('general.title_ar') }} *</label>
                                                 <span class="help-block">please enter proper title</span>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group form-md-line-input">
-                                                <input type="text" class="form-control tooltips" data-container="body" data-placement="top"
-                                                       data-original-title="{{ trans('message.title_en') }}" name="title_en"
-                                                       placeholder="{{ trans('general.title_en') }}" value="{{ old('title_en') }}">
+                                                <input type="text" class="form-control tooltips" data-container="body"
+                                                       data-placement="top"
+                                                       data-original-title="{{ trans('message.title_en') }}"
+                                                       name="title_en"
+                                                       placeholder="{{ trans('general.title_en') }}"
+                                                       value="{{ old('title_en') }}">
                                                 <label for="form_control_1">{{ trans('general.title_en') }}*</label>
                                                 <span class="help-block">please enter proper title</span>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group form-md-line-input">
-                                                <input type="text" class="form-control tooltips" data-container="body" data-placement="top"
-                                                       data-original-title="{{ trans('message.caption_ar') }}" name="caption_ar"
-                                                       placeholder="{{ trans('general.caption_ar') }}" value="{{ old('caption_ar') }}">
+                                                <input type="text" class="form-control tooltips" data-container="body"
+                                                       data-placement="top"
+                                                       data-original-title="{{ trans('message.caption_ar') }}"
+                                                       name="caption_ar"
+                                                       placeholder="{{ trans('general.caption_ar') }}"
+                                                       value="{{ old('caption_ar') }}">
                                                 <label for="form_control_1"> {{ trans('general.caption_ar') }} </label>
                                                 <span class="help-block">please enter proper caption</span>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group form-md-line-input">
-                                                <input type="text" class="form-control tooltips" data-container="body" data-placement="top"
-                                                       data-original-title="{{ trans('message.caption_en') }}" name="caption_en"
-                                                       placeholder="{{ trans('general.caption_en') }}" value="{{ old('caption_en') }}">
+                                                <input type="text" class="form-control tooltips" data-container="body"
+                                                       data-placement="top"
+                                                       data-original-title="{{ trans('message.caption_en') }}"
+                                                       name="caption_en"
+                                                       placeholder="{{ trans('general.caption_en') }}"
+                                                       value="{{ old('caption_en') }}">
                                                 <label for="form_control_1">{{ trans('general.caption_en') }}</label>
                                                 <span class="help-block">please enter proper caption</span>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group form-md-line-input">
-                                                <input type="number" max="99" maxlength="2" class="form-control tooltips" data-container="body" data-placement="top"
+                                                <input type="number" max="99" maxlength="2"
+                                                       class="form-control tooltips" data-container="body"
+                                                       data-placement="top"
                                                        data-original-title="{{ trans('message.sequence') }}"
-                                                       name="order" placeholder="{{ trans('general.sequence') }}" value="{{ old('order') }}">
+                                                       name="order" placeholder="{{ trans('general.sequence') }}"
+                                                       value="{{ old('order') }}">
                                                 <label for="form_control_1">{{ trans('general.sequence') }}</label>
                                                 <span class="help-block">slide Order is a number</span>
                                             </div>
@@ -86,7 +101,8 @@
                                             <div class="form-group">
                                                 <label for="form_control_1">{{ trans('general.image') }}
                                                     *</label>
-                                                <input type="file" class="form-control tooltips" data-container="body" data-placement="top"
+                                                <input type="file" class="form-control tooltips" data-container="body"
+                                                       data-placement="top"
                                                        data-original-title="{{ trans('message.image') }}" name="image"
                                                        placeholder="{{ trans('general.image') }}" required>
                                                 <div class="help-block text-left">
@@ -96,9 +112,11 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="form_control_1tooltips" data-container="body" data-placement="top"
+                                                <label for="form_control_1tooltips" data-container="body"
+                                                       data-placement="top"
                                                        data-original-title="{{ trans('message.path') }}">{{ trans('general.path') }}</label>
-                                                <input type="file" class="form-control tooltips" data-container="body" data-placement="top"
+                                                <input type="file" class="form-control tooltips" data-container="body"
+                                                       data-placement="top"
                                                        data-original-title="{{ trans('message.path') }}" name="path"
                                                        placeholder="{{ trans('general.path') }}">
                                                 <div class="help-block text-left">
@@ -107,15 +125,134 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="form-group form-md-line-input tooltips" data-container="body" data-placement="top"
+                                            <div class="form-group form-md-line-input tooltips" data-container="body"
+                                                 data-placement="top"
                                                  data-original-title="{{ trans('message.url') }}">
                                                 <input type="url" class="form-control" name="url"
                                                        placeholder="{{ trans('general.url') }}">
                                                 <label for="form_control_1">{{ trans('general.url') }}</label>
-                                                <span class="help-block">full link is only allowed ('http://google.com')</span>
+                                                <span
+                                                    class="help-block">full link is only allowed ('http://google.com')</span>
                                             </div>
                                         </div>
+                                        @can('isAdminOrAbove')
+                                            @if(env('HAS_MOBILE_APP'))
+                                                <div class="col-lg-12">
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label for="single"
+                                                                   class="control-label required">{{ trans('general.connect_slide_with_element') }}
+                                                                *</label>
+                                                            <select name="module" class="form-control tooltips"
+                                                                    data-container="body" data-placement="top"
+                                                                    data-original-title="{{ trans('message.type') }}"
+                                                            >
+                                                                <option
+                                                                    value="null">{{ trans('general.type') }}</option>
+                                                                <option
+                                                                    value="product">{{ trans('general.product') }}</option>
+                                                                <option
+                                                                    value="service">{{ trans('general.service') }}</option>
+                                                                <option
+                                                                    value="user">{{ trans('general.user') }}</option>
+                                                                <option
+                                                                    value="category">{{ trans('general.category') }}</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
 
+                                                    @if($users->isNotEmpty())
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="single"
+                                                                       class="control-label required">{{ trans('general.choose_user') }}
+                                                                    *</label>
+                                                                <select name="user_id" class="form-control tooltips"
+                                                                        data-container="body" data-placement="top"
+                                                                        data-original-title="{{ trans('message.choose_user') }}"
+                                                                >
+                                                                    <option
+                                                                        value="NULL">{{ trans('general.choose_user') }}</option>
+                                                                    @foreach($users as $u)
+                                                                        <option
+                                                                            value="{{ $u->id }}">{{ $u->slug_ar }}
+                                                                            - {{ $u->slug_en }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    @endif
+
+
+                                                    @if($products->isNotEmpty())
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="single"
+                                                                       class="control-label required">{{ trans('general.choose_product') }}
+                                                                    *</label>
+                                                                <select name="product_id" class="form-control tooltips"
+                                                                        data-container="body" data-placement="top"
+                                                                        data-original-title="{{ trans('message.choose_product') }}"
+                                                                >
+                                                                    <option
+                                                                        value="null">{{ trans('general.choose_product') }}</option>
+                                                                    @foreach($products as $u)
+                                                                        <option
+                                                                            value="{{ $u->id }}">{{ $u->name_ar }}
+                                                                            - {{ $u->name_en }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    @endif
+
+
+                                                    @if($services->isNotEmpty())
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="single"
+                                                                       class="control-label required">{{ trans('general.choose_service') }}
+                                                                    *</label>
+                                                                <select name="service_id" class="form-control tooltips"
+                                                                        data-container="body" data-placement="top"
+                                                                        data-original-title="{{ trans('message.choose_service') }}"
+                                                                >
+                                                                    <option
+                                                                        value="null">{{ trans('general.choose_service') }}</option>
+                                                                    @foreach($services as $u)
+                                                                        <option
+                                                                            value="{{ $u->id }}">{{ $u->name_ar }}
+                                                                            - {{ $u->name_en }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    @endif
+
+                                                    @if($categories->isNotEmpty())
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="single"
+                                                                       class="control-label required">{{ trans('general.choose_category') }}
+                                                                    *</label>
+                                                                <select name="category_id" class="form-control tooltips"
+                                                                        data-container="body" data-placement="top"
+                                                                        data-original-title="{{ trans('message.choose_category') }}"
+                                                                >
+                                                                    <option
+                                                                        value="null">{{ trans('general.choose_category') }}</option>
+                                                                    @foreach($categories as $u)
+                                                                        <option
+                                                                            value="{{ $u->id }}">{{ $u->name_ar }}
+                                                                            - {{ $u->name_en }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    @endif
+                                                </div>
+                                            @endif
+                                        @endcan
 
                                     </div>
                                 </div>
@@ -135,7 +272,8 @@
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="md-radio-inline">
-                                                    <div class="md-radio tooltips" data-container="body" data-placement="top"
+                                                    <div class="md-radio tooltips" data-container="body"
+                                                         data-placement="top"
                                                          data-original-title="{{ trans('message.active') }}">
                                                         <input type="radio" id="radio51" name="active" value="1"
                                                                class="md-radiobtn" checked>
@@ -158,7 +296,8 @@
                                             @can('isAdminOrAbove')
                                                 <div class="col-md-4">
                                                     <div class="md-radio-inline">
-                                                        <div class="md-radio tooltips" data-container="body" data-placement="top"
+                                                        <div class="md-radio tooltips" data-container="body"
+                                                             data-placement="top"
                                                              data-original-title="{{ trans('message.on_home') }}">
                                                             <input type="radio" id="radio53" name="on_home" value="1"
                                                                    class="md-radiobtn">
@@ -183,14 +322,16 @@
                                             @can('isAdminOrAbove')
                                                 <div class="col-md-4">
                                                     <div class="md-radio-inline">
-                                                        <div class="md-radio tooltips" data-container="body" data-placement="top"
+                                                        <div class="md-radio tooltips" data-container="body"
+                                                             data-placement="top"
                                                              data-original-title="{{ trans('message.is_intro') }}">
                                                             <input type="radio" id="radio55" name="is_intro" value="1"
                                                                    class="md-radiobtn"/>
                                                             <label for="radio55">
                                                                 <span></span>
                                                                 <span class="check"></span>
-                                                                <span class="box"></span> {{ trans('general.is_intro') }}
+                                                                <span
+                                                                    class="box"></span> {{ trans('general.is_intro') }}
                                                             </label>
                                                         </div>
                                                         <div class="md-radio">

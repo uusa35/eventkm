@@ -34,6 +34,7 @@ class ProductResource extends JsonResource
             'weight' => $this->weight,
             'sale_price' => (double)$this->sale_price,
             'size_chart_image' => $this->getProductSizeChartImageAttribute(),
+            'show_size_chart' => $this->show_size_chart,
             'qr' => $this->getCurrentImageAttribute('qr', 'large'),
             'description' => $this->description,
             'notes' => $this->notes,

@@ -59,7 +59,7 @@ class OrderController extends Controller
         }
         $country = Country::whereId($request->country_id)->first();
         CheckCartItems::dispatchNow($country);
-        $this->addCountryToCart($country, $request->has('branch_id') && $request->receive_on_branch);
+        $this->addCountryToCart($country, $request->has('branch_id') && $request->pickup_from_branch);
         $user = $this->createUser($request);
         if (isset($user->id) && $country) {
             $order = $this->createWebOrder($request, $user, $this->cart);

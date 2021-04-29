@@ -10,6 +10,46 @@
                 @include('backend.partials.forms.form_title',['title' => trans('general.index_user')])
                 <div class="portlet-body">
                     @include('backend.partials._admin_instructions',['title' => trans('general.users') ,'message' => trans('message.index_user')])
+                    @can('isAdminOrAbove')
+                        <div class="portlet box green col-lg-6 col-lg-push-3">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-gift"></i>{{ trans('general.general_search') }}</div>
+                            </div>
+                            <div class="portlet-body form">
+                                <!-- BEGIN FORM-->
+                                <form action="{{ route('backend.admin.user.search') }}" class="form-horizontal">
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">{{ trans("general.search") }}</label>
+                                            <div class="col-md-7">
+                                                <div class="input-group">
+                                                                    <span class="input-group-addon">
+                                                                        <i class="fa fa-search-plus"></i>
+                                                                    </span>
+                                                    <input type="text" name="search" class="form-control"
+                                                           value="{{ request()->search }}"
+                                                           placeholder="{{ trans('general.search') }}">
+                                                </div>
+                                                <span class="help-block"> {{ trans('message.general_search') }} - (ID/Name/Description)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-offset-3 col-md-9">
+                                                <button type="submit"
+                                                        class="btn  green">{{ trans('general.search') }}</button>
+                                                <a href="{{ route('backend.admin.user.index') }}"
+                                                   class="btn  red">{{ trans('general.remove') }}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- END FORM-->
+                            </div>
+                        </div>
+                    @endcan
                     <table id="dataTableAll" class="table table-striped table-bordered table-hover" cellspacing="0">
                         <thead>
                         <tr>

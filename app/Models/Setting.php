@@ -13,7 +13,7 @@ class Setting extends PrimaryModel
         'splash_on' => 'boolean',
         'cash_on_delivery' => 'boolean',
         'multi_cart_merchant' => 'boolean',
-        'receive_from_branch' => 'boolean'
+        'pickup_from_branch' => 'boolean'
     ];
 
     public function getLogoLargeAttribute()

@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\Service;
 use App\Models\Slide;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use \Illuminate\Support\Str;
@@ -55,7 +59,11 @@ class SlideController extends Controller
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate->errors())->withInput();
         }
-        return view('backend.modules.slide.create');
+        $categories = Category::active()->get(['id', 'name_ar', 'name_en'])->flatten();
+        $users = User::active()->notAdmins()->notClients()->hasProducts()->get(['id', 'slug_ar', 'slug_en']);
+        $products = Product::active()->hasImage()->hasStock()->activeUsers()->get(['id', 'name_ar', 'name_en']);
+        $services = Service::active()->hasImage()->hasValidTimings()->activeUsers()->get(['id', 'name_ar', 'name_en']);
+        return view('backend.modules.slide.create', compact('categories', 'products', 'users', 'services'));
     }
 
     /**
@@ -69,7 +77,7 @@ class SlideController extends Controller
         $validate = validator($request->all(), [
             'slidable_id' => 'required|numeric',
             'slidable_type' => 'required|alpha',
-            'image' => "image|dimensions:max_width=1900,max_height=1900,min_height=720|max:".env('MAX_IMAGE_SIZE').'"',
+            'image' => "image|dimensions:max_width=1900,max_height=1900,min_height=720|max:" . env('MAX_IMAGE_SIZE') . '"',
 //            'image' => 'required|image|dimensions:width=1900,height=1000'
         ]);
         if ($validate->fails()) {
@@ -107,8 +115,12 @@ class SlideController extends Controller
     public function edit($id)
     {
         $element = Slide::whereId($id)->first();
+        $categories = Category::active()->get(['id', 'name_ar', 'name_en'])->flatten();
+        $users = User::active()->notAdmins()->notClients()->hasProducts()->get(['id', 'slug_ar', 'slug_en']);
+        $products = Product::active()->hasImage()->hasStock()->activeUsers()->get(['id', 'name_ar', 'name_en']);
+        $services = Service::active()->hasImage()->hasValidTimings()->activeUsers()->get(['id', 'name_ar', 'name_en']);
         $this->authorize('slide.update', $element);
-        return view('backend.modules.slide.edit', compact('element'));
+        return view('backend.modules.slide.edit', compact('element','users','products','services','categories'));
     }
 
     /**
@@ -121,12 +133,13 @@ class SlideController extends Controller
     public function update(Request $request, $id)
     {
         $validate = validator($request->all(), [
-            'image' => "image|dimensions:max_width=1900,max_height=1900,min_height=720|max:".env('MAX_IMAGE_SIZE').'"',
+            'image' => "image|dimensions:max_width=1900,max_height=1900,min_height=720|max:" . env('MAX_IMAGE_SIZE') . '"',
         ]);
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate->errors());
         }
         $element = Slide::whereId($id)->first();
+//        dd($request->request->all());
         $updated = $element->update($request->request->all());
         if ($updated) {
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], [$request->is_intro ? '900' : '1900'], true) : null;
@@ -147,7 +160,7 @@ class SlideController extends Controller
         $element = Slide::whereId($id)->first();
         if ($element) {
             $element->delete();
-            return redirect()->route('backend.slide.create',['slidable_id' => $id,'slidable_type' => $element->type])->with('success', trans('message.delete_success'));
+            return redirect()->route('backend.slide.create', ['slidable_id' => $id, 'slidable_type' => $element->type])->with('success', trans('message.delete_success'));
         }
         return redirect()->route('backend.home')->with('error', trans('message.delete_error'));
     }

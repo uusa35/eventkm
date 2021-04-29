@@ -38,7 +38,7 @@ class CreateOrdersTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->boolean('receive_on_branch')->default(0);
+            $table->boolean('pickup_from_branch')->default(0);
 
             $table->integer('branch_id')->unsigned()->nullable();
             $table->foreign('branch_id')->references('id')->on('branches')->onDelete('restrict');
