@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Notification;
 
 Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth', 'onlyActiveUsers', 'country', 'dashboard']], function () {
     // Backend :: super + admin
-    Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['admin']], function () {;
+    Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['admin']], function () {
+        ;
         Route::resource('activity', 'ActivityController');
         Route::resource('role', 'RoleController');
         Route::resource('privilege', 'PrivilegeController');
@@ -114,7 +115,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('package', 'ShipmentPackageController');
     Route::resource('collection', 'CollectionController');
     Route::resource('post', 'PostController');
-    Route::resource('excel','ExcelController');
+    Route::resource('excel', 'ExcelController');
 
 });
 
@@ -132,7 +133,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
         Route::resource('classified', 'ClassifiedController')->only(['create', 'store', 'edit', 'update', 'delete']);
         Route::get('classified/category/choose', 'ClassifiedController@chooseCategory')->name('classified.choose');
         Route::get('property/attach', 'PropertyController@getAttach')->name('property.attach');
-        Route::resource('comment', 'CommentController')->only(['store','edit','update','destroy']);
+        Route::resource('comment', 'CommentController')->only(['store', 'edit', 'update', 'destroy']);
     });
     Route::resource('product', 'ProductController');
     Route::get('product/{id}/{name}', 'ProductController@show')->name('product.show.name');
@@ -208,5 +209,5 @@ Route::get('/{notFound}', function () {
     abort('404', trans('message.not_found'));
 });
 Route::get('/frontend/excel', function () {
-   return view('excel');
+    return view('excel');
 });
