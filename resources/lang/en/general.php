@@ -620,11 +620,11 @@ return array (
   'services' => 'Services',
   'users' => 'Users',
   'coupons' => 'coupons',
-  'BACKEND' =>
+  'BACKEND' => 
   array (
-    'ADMIN' =>
+    'ADMIN' => 
     array (
-      'QUESTIONNAIRE' =>
+      'QUESTIONNAIRE' => 
       array (
         'INDEX' => 'Questionnaires',
       ),
@@ -881,7 +881,7 @@ return array (
   'restore' => 'restore',
   'required_firleds' => 'resend',
   'reset' => 'reset',
-  'pickup_from_branch' => 'Receive from branch',
+  'receive_from_branch' => 'Receive from branch',
   'shipment_fixed_rate' => 'Shipment Fixed Rate',
   'multi_cart_merchant' => 'Multi Cart Merchant',
   'months' => 'Months',
@@ -905,4 +905,8 @@ return array (
   'services_list' => 'Services List',
   'posts' => 'Posts',
   'all' => 'All',
+  'tailor_measurement_service' => 'Tailor Measurement Service',
+  'pickup_from_branch' => 'Receive from branch',
+  'show_size_chart' => 'Show Size Chart Table',
+  'shop_now' => 'show now',
 );

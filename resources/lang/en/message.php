@@ -198,4 +198,8 @@ return array (
   'direct_purchase_product_cart' => 'you are not allowed to add more products to your cart. the current cart includes a product (or current product) that has direct purchase feature.',
   'direct_purchase_product' => 'This product is subject to (Direct Purchase Feature).',
   'cash_on_delivery_instruction' => 'We shall call you. to confirm Order.',
+  'order_has_been_made_through_cash_on_delivery_and_will_be_recived' => 'Order has been created with Cash On Delivery Feature. we shall proceed  as soon as possible.',
+  'path' => 'Path',
+  'payment_method' => 'Payment Method',
+  'order' => 'Order',
 );
