@@ -396,9 +396,17 @@
                                                                 </div>
                                                                 <div class="col-12 branchElements"
                                                                      style="display : none">
-                                                                    <div class="alert alert-danger">
+                                                                    <div class="alert alert-primary">
                                                                         <i class="fa fa-fw fa-info-circle fa-lg"></i>
                                                                         {{ trans('message.chooose_branch') }}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="alert alert-primary">
+                                                                        <i class="fa fa-fw fa-info-circle fa-lg"></i>
+                                                                        <p>
+                                                                            {{ trans('message.shipment_fees_shall_be_removed_in_confirmation_page_in_case_you_choosed_to_receive_from_branch') }}
+                                                                        </p>
                                                                     </div>
                                                                 </div>
                                                             @else
