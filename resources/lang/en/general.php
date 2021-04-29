@@ -902,4 +902,7 @@ return array (
   'update' => 'update',
   'choose_branch' => 'Choose Branch',
   'total_shipment_fees' => 'Total Shipment Fees',
+  'services_list' => 'Services List',
+  'posts' => 'Posts',
+  'all' => 'All',
 );
