@@ -1119,4 +1119,5 @@ return array (
   'receive_order' => 'استلام',
   'show_size_chart' => 'إظهار جدول القياسات',
   'pickup_from_branch' => 'استلام من فرع',
+  'receive_on_branch' => 'استلام من الفرع',
 );
