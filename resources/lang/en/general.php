@@ -881,7 +881,7 @@ return array (
   'restore' => 'restore',
   'required_firleds' => 'resend',
   'reset' => 'reset',
-  'receive_from_branch' => 'Receive from branch',
+  'receive_from_branch' => 'Pickup from branch',
   'shipment_fixed_rate' => 'Shipment Fixed Rate',
   'multi_cart_merchant' => 'Multi Cart Merchant',
   'months' => 'Months',
@@ -892,7 +892,7 @@ return array (
   'compare_products' => 'Compose Products',
   'direct_purchase' => 'Direct Purchase',
   'account' => 'Account',
-  'receive_order' => 'Receive',
+  'receive_order' => 'Pickup',
   'delivery' => 'Delivery',
   'today_date' => 'Today',
   'toggle_access_dashboard' => 'Access Dashboard',
@@ -909,4 +909,5 @@ return array (
   'pickup_from_branch' => 'Receive from branch',
   'show_size_chart' => 'Show Size Chart Table',
   'shop_now' => 'show now',
+  'receive_on_branch' => 'Pickup From Branch',
 );
