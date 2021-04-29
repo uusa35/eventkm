@@ -24,8 +24,8 @@
                 @if($element->cash_on_delivery)
                     <span class="float-right"> <br><strong>{{ trans('general.payment_method') }} : </strong> {{ strtoupper(trans('general.cash_on_delivery')) }}</span>
                 @endif
-                @if($element->pickup_from_branch && $element->branch_id)
-                    <span class="float-right"> <br><strong>{{ trans('general.pickup_from_branch') }} : </strong> {{ trans('general.pickup_from_branch') }} - {{ trans('general.branch') }}  : {{ $element->branch->name }}</span>
+                @if($element->receive_on_branch && $element->branch_id)
+                    <span class="float-right"> <br><strong>{{ trans('general.receive_on_branch') }} : </strong> {{ trans('general.receive_on_branch') }} - {{ trans('general.branch') }}  : {{ $element->branch->name }}</span>
                 @endif
                 @if($element->payment_method)
                     <span class="float-right"> <br><strong>{{ trans('general.payment') }} : </strong> {{ strtoupper($element->payment_method) }}</span>

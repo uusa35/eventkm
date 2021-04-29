@@ -356,7 +356,7 @@
                                                                 <div class="col-6">
                                                                     <div class="form-group">
                                                                         <label
-                                                                            for="pickup_from_branch">{{ trans('general.pickup_from_branch') }}
+                                                                            for="receive_on_branch">{{ trans('general.receive_on_branch') }}
                                                                             <sup>*</sup></label>
                                                                         <div class="form-check">
                                                                             <input type="checkbox"
@@ -364,11 +364,11 @@
                                                                                    checked
                                                                                    class="selectBranch form-check-input form-check-input form-control-lg"
                                                                                    style="width : 20px; height: 20px; padding-top: 20px;"
-                                                                                   name="pickup_from_branch">
+                                                                                   name="receive_on_branch">
                                                                             <label class="form-check-label"
-                                                                                   for="pickup_from_branch"
+                                                                                   for="receive_on_branch"
                                                                                    style="padding-right: 25px;">
-                                                                                {{ trans('general.pickup_from_branch') }}
+                                                                                {{ trans('general.receive_on_branch') }}
                                                                             </label>
                                                                         </div>
                                                                     </div>

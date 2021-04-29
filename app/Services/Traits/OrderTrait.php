@@ -49,7 +49,7 @@ trait OrderTrait
             'country_id' => 'required|exists:countries,id',
             'collection_id' => 'exists:collections,id',
             'payment_method' => 'required|min:3',
-            'branch_id' => 'required_if:pickup_from_branch,1|exists:branches,id'
+            'branch_id' => 'required_if:receive_on_branch,1|exists:branches,id'
 //            'shipment_fees' => 'required|numeric'
         ]);
         if ($validate->fails()) {
@@ -72,7 +72,7 @@ trait OrderTrait
             'coupon_id' => $coupon ? $coupon['id'] : null,
             'payment_method' => $request->payment_method,
             'shipment_fees' => $this->cart->content()->where('options.type', 'country')->first()->total(),
-            'pickup_from_branch' => $request->has('pickup_from_branch') ? $request->pickup_from_branch : 0
+            'receive_on_branch' => $request->has('receive_on_branch') ? $request->receive_on_branch : 0
         ]);
         $request->has('branch_id') && !is_null($request->branch_id) ? $order->update(['branch_id' => $request->branch_id]) : null;
         if ($order) {
