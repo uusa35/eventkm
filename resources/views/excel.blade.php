@@ -67,6 +67,6 @@
 <body>
 <iframe
     style="overflow:hidden;height:100%;width:100%" height="100%" width="100%"
-    src="https://docs.google.com/spreadsheets/d/12FIpL41Q0wyYNmnQ38MEBaKI3OqqaW7t4xcYZAIr6Xw/edit#gid=156795077&&single=true&widget=true&headers=false&rm=minimal"></iframe>
+    src="https://docs.google.com/spreadsheets/d/12FIpL41Q0wyYNmnQ38MEBaKI3OqqaW7t4xcYZAIr6Xw/edit#/&single=true&widget=true&headers=false&rm=minimal"></iframe>
 </body>
 </html>
