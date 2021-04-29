@@ -53,7 +53,7 @@
                                                     <input type="hidden" name="payment_method"
                                                            value="Web - {{ $settings->payment_method }}">
                                                     <div class="row">
-                                                        <div class="col-6">
+                                                        <div class="col-md-6 col-sm-12">
                                                             <div class="form-group">
                                                                 <label for="loginInputName">{{ trans('general.name') }}
                                                                     *</label>
@@ -66,7 +66,7 @@
                                                                        placeholder="{{ trans('general.name') }}">
                                                             </div>
                                                         </div>
-                                                        <div class="col-6">
+                                                        <div class="col-md-6 col-sm-12">
                                                             <div class="form-group">
                                                                 <label for="loginEmail">{{ trans('general.email') }}
                                                                     *</label>
@@ -79,7 +79,7 @@
                                                                        placeholder="{{ trans('general.email') }}">
                                                             </div>
                                                         </div>
-                                                        <div class="col-6">
+                                                        <div class="col-md-6 col-sm-12">
                                                             <div class="form-group">
                                                                 <label for="loginLastName">{{ trans('general.mobile') }}
                                                                     *</label>
@@ -91,7 +91,7 @@
                                                                        placeholder="{{ trans('general.mobile') }}">
                                                             </div>
                                                         </div>
-                                                        <div class="col-6">
+                                                        <div class="col-md-6 col-sm-12">
                                                             <div class="form-group">
                                                                 <label
                                                                     for="loginInputPassword">{{ trans('general.full_address') }}
@@ -106,7 +106,7 @@
                                                             </div>
                                                         </div>
                                                         @if(getClientCountry())
-                                                            <div class="col-6">
+                                                            <div class="col-md-6 col-sm-12">
                                                                 <div class="form-group">
                                                                     <label
                                                                         for="address_country">{{ trans('general.country') }}
@@ -125,7 +125,7 @@
                                                             </div>
                                                             @if(session()->get('country')->is_local)
                                                                 @if(session()->has('area'))
-                                                                    <div class="col-6">
+                                                                    <div class="col-md-6 col-sm-12">
                                                                         <div class="form-group">
                                                                             <label
                                                                                 for="address_country">{{ trans('general.area') }}
@@ -151,7 +151,7 @@
                                                             </div>
                                                         </div>
                                                         @if(session()->get('country')->is_local && $settings->cash_on_delivery)
-                                                            <div class="col-6">
+                                                            <div class="col-md-6 col-sm-12">
                                                                 <div class="form-group">
                                                                     <label
                                                                         for="cash_on_delivery">{{ trans('general.cash_on_delivery') }}
@@ -172,7 +172,7 @@
                                                                 </br>
                                                             </div>
                                                         @endif
-                                                        <div class="col-6">
+                                                        <div class="col-md-6 col-sm-12">
                                                             <div class="form-group">
                                                                 <label
                                                                     for="cash_on_delivery">{{ trans('general.payment_method') }}
@@ -243,7 +243,7 @@
                                                         {{--                                <input type="hidden" name="shipment_fees" value="0">--}}
                                                         {{--                            @endif--}}
                                                         <div class="row">
-                                                            <div class="col-6">
+                                                            <div class="col-md-6 col-sm-12">
                                                                 <div class="form-group">
                                                                     <label
                                                                         for="loginFirstName">{{ trans('general.name') }}
@@ -257,7 +257,7 @@
                                                                            placeholder="{{ trans('general.name') }}">
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
+                                                            <div class="col-md-6 col-sm-12">
                                                                 <div class="form-group">
                                                                     <label
                                                                         for="loginInputEmail">{{ trans('general.email') }}
@@ -271,7 +271,7 @@
                                                                            placeholder="{{ trans('general.email') }}">
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
+                                                            <div class="col-md-6 col-sm-12">
                                                                 <div class="form-group">
                                                                     <label for="loginLast">{{ trans('general.mobile') }}
                                                                         *</label>
@@ -296,7 +296,7 @@
                                                                 </div>
                                                             </div>
                                                             @if(session()->get('country')->is_local && $settings->cash_on_delivery)
-                                                                <div class="col-6">
+                                                                <div class="col-md-6 col-sm-12">
                                                                     <div class="form-group">
                                                                         <label
                                                                             for="cash_on_delivery">{{ trans('general.cash_on_delivery') }}
@@ -318,7 +318,7 @@
                                                                     </br>
                                                                 </div>
                                                             @endif
-                                                            <div class="col-6">
+                                                            <div class="col-md-6 col-sm-12">
                                                                 <div class="form-group">
                                                                     <label
                                                                         for="cash_on_delivery">{{ trans('general.payment_method') }}
@@ -344,7 +344,7 @@
                                                                 </div>
                                                             </div>
                                                             @if(session()->get('country')->is_local && $settings->cash_on_delivery)
-                                                                <div class="col-12">
+                                                                <div class="col-md-6 col-sm-12">
                                                                     <div class="alert alert-danger">
                                                                         <i class="fa fa-fw fa-info-circle fa-lg"></i>
                                                                         {{ trans('message.order_cash_on_delivery') }}
@@ -353,7 +353,7 @@
                                                                 <hr>
                                                             @endif
                                                             @if($settings->pickup_from_branch && !$settings->multi_cart_merchant && session()->get('country')->is_local)
-                                                                <div class="col-6">
+                                                                <div class="col-md-6 col-sm-12">
                                                                     <div class="form-group">
                                                                         <label
                                                                             for="receive_on_branch">{{ trans('general.receive_on_branch') }}
@@ -375,7 +375,7 @@
                                                                     </br>
                                                                 </div>
 
-                                                                <div class="col-6 branchElements"
+                                                                <div class="col-md-6 col-sm-12 branchElements"
                                                                      style="display: inline;">
                                                                     <div class="form-group">
                                                                         <label
