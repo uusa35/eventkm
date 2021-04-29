@@ -338,8 +338,10 @@
                                                             @if(session()->get('country')->is_local && $settings->cash_on_delivery)
                                                                 <div class="col-md-6 col-sm-12">
                                                                     <div class="alert alert-secondary">
+                                                                        <p>
                                                                         <i class="fa fa-fw fa-info-circle fa-lg"></i>
-                                                                        {{ trans('message.order_cash_on_delivery') }}
+                                                                            {{ trans('message.order_cash_on_delivery') }}
+                                                                        </p>
                                                                     </div>
                                                                 </div>
                                                                 <hr>
