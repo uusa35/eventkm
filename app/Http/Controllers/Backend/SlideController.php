@@ -61,7 +61,7 @@ class SlideController extends Controller
         }
         $categories = Category::active()->get(['id', 'name_ar', 'name_en'])->flatten();
         $users = User::active()->notAdmins()->notClients()->hasProducts()->get(['id', 'slug_ar', 'slug_en']);
-        $products = Product::active()->hasImage()->hasStock()->activeUsers()->get(['id', 'name_ar', 'name_en']);
+        $products = Product::active()->hasImage()->hasStock()->activeUsers()->get(['id', 'name_ar', 'name_en','sku']);
         $services = Service::active()->hasImage()->hasValidTimings()->activeUsers()->get(['id', 'name_ar', 'name_en']);
         return view('backend.modules.slide.create', compact('categories', 'products', 'users', 'services'));
     }
@@ -117,7 +117,7 @@ class SlideController extends Controller
         $element = Slide::whereId($id)->first();
         $categories = Category::active()->get(['id', 'name_ar', 'name_en'])->flatten();
         $users = User::active()->notAdmins()->notClients()->hasProducts()->get(['id', 'slug_ar', 'slug_en']);
-        $products = Product::active()->hasImage()->hasStock()->activeUsers()->get(['id', 'name_ar', 'name_en']);
+        $products = Product::active()->hasImage()->hasStock()->activeUsers()->get(['id', 'name_ar', 'name_en','sku']);
         $services = Service::active()->hasImage()->hasValidTimings()->activeUsers()->get(['id', 'name_ar', 'name_en']);
         $this->authorize('slide.update', $element);
         return view('backend.modules.slide.edit', compact('element','users','products','services','categories'));

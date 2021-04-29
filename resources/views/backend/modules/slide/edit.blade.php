@@ -211,7 +211,7 @@
                                                                     @foreach($products as $u)
                                                                         <option
                                                                             value="{{ $u->id }}" {{ $element->product_id == $u->id ? 'selected' : null  }}>{{ $u->name_ar }}
-                                                                            - {{ $u->name_en }}</option>
+                                                                            - {{ $u->name_en }} - {{ $element->sku }}</option>
                                                                     @endforeach
                                                                 </select>
                                                             </div>
