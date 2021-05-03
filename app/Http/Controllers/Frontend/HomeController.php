@@ -9,6 +9,7 @@ use App\Models\Country;
 use App\Models\Currency;
 use App\Models\Product;
 use App\Models\Service;
+use App\Models\Setting;
 use App\Models\User;
 use App\Services\CartTrait;
 use App\Services\Search\Filters;
@@ -188,5 +189,15 @@ class HomeController extends Controller
     public function getPanoramaView() {
         $element = Product::active()->with('images','user')->first();
         return view('frontend.wokiee.four.modules.panorama',compact('element'));
+    }
+
+    public function getWebTerms() {
+        $element = Setting::first();
+        return view('frontend.wokiee.four.modules.setting.terms', compact('element'));
+    }
+
+    public function getWebPolicy() {
+        $element = Setting::first();
+        return view('frontend.wokiee.four.modules.setting.policy', compact('element'));
     }
 }

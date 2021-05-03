@@ -102,10 +102,21 @@
                                             </span>
                                         @endif
                                     </div>
+                                    <div class="form-group">
+                                        <input class="form-check-input" type="checkbox" name="remember"
+                                               id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                        <label class="" for="remember" style="padding-left : 20px; padding-right: 20px;">
+                                            <a href="{{ route('frontend.terms') }}">
+                                                {{ trans('general.accept_our_terms_and_conditions')}}
+                                            </a>
+                                        </label>
+                                    </div>
                                     <div class="row">
                                         <div class="col-auto">
                                             <div class="form-group">
                                                 <button class="btn btn-border"
+                                                        disabled="disabled"
+                                                        id="registerBtn"
                                                         type="submit">{{ trans('general.register') }}</button>
                                                 {{--                                                <a class="btn btn-border"--}}
                                                 {{--                                                   href="auth/google">{{ trans('general.register_with_google') }}</a>--}}
@@ -132,3 +143,16 @@
         </div>
     </div>
 @endsection
+
+@section('scripts')
+    @parent
+    <script>
+        $('#remember').on('click', function(e) {
+            if ($(this).prop("checked")) {
+                    $('#registerBtn').prop("disabled", false);
+            } else {
+                    $('#registerBtn').prop("disabled", true);
+            }
+        })
+    </script>
+    @endsection

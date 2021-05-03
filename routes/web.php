@@ -181,6 +181,8 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
     Route::get('element/linking', 'HomeController@handleDeepLinking')->name('deep.linking');
     Route::resource('fan', 'FanController')->only(['create', 'index']);
     Route::resource('faq', 'FaqController')->only(['index']);
+    Route::get('terms', 'HomeController@getWebTerms')->name('terms');
+    Route::get('policy', 'HomeController@getWebPolicy')->name('policy');
 });
 
 Auth::routes();
