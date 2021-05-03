@@ -214,4 +214,5 @@ return array (
   'cash_on_delivery_instruction' => 'سيتم التواصل معكم هاتفيا عند تفعيل خيار الدفع عن الاستلام لتأكيد طلبكم.',
   'order_has_been_made_through_cash_on_delivery_and_will_be_recived' => 'تم إنشاء طلب جديد بواسطة الدفع عند الاستلام وسيتم متابعة امر العمل في اقرب وقت',
   'shipment_fees_shall_be_removed_in_confirmation_page_in_case_you_choosed_to_receive_from_branch' => 'مصاريف الشحن يتم الغاءها في حالة طلب الاستلام من الفرع فقط للعملاء من داخل دولة الكويت',
+    "order_by_whatsapp" => "تم إنشاء طلبك بنجاح وجاري العمل على تنفيذه   :url"
 );

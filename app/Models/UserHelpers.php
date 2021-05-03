@@ -166,7 +166,7 @@ trait UserHelpers
 
     public function getFullWhatsappAttribute()
     {
-        return $this->whatsapp ? $this->country->calling_code.$this->whatsapp : null;
+        return numToEn($this->whatsapp ? $this->country->calling_code.$this->whatsapp : null);
     }
 
     public function getRatingAttribute()

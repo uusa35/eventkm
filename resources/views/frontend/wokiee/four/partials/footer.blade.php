@@ -151,7 +151,7 @@
                                     @endif
                                     @if($settings->whatsapp)
                                         <p><i class="fa fa-fw fa-whatsapp"></i> <a
-                                                href="https://api.whatsapp.com/send?phone={{ $settings->whatsapp }}&text={{ env('APP_NAME') }}">{{ $settings->whatsapp }}</a>
+                                                href="https://api.whatsapp.com/send?phone={{ $settings->fullWhatsapp }}&text={{ env('APP_NAME') }}">{{ $settings->whatsapp }}</a>
                                         </p>
                                     @endif
                                     @if($settings->latitude && $settings->longitude)
@@ -208,7 +208,7 @@
 </footer>
 <a href="#" class="tt-back-to-top">{{ trans('general.back_to_top') }}</a>
 @if($settings->whatsapp)
-    <a href="https://api.whatsapp.com/send?phone={{ $settings->whatsapp }}&text={{ env('APP_NAME') }}"
+    <a href="https://api.whatsapp.com/send?phone={{ $settings->fullWhatsapp }}&text={{ env('APP_NAME') }}"
        target="_blank"
        class="tt-bottom-left tt-btn-quickview"
        data-toggle="tooltip"

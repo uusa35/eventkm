@@ -63,10 +63,11 @@ class OrderController extends Controller
         $user = $this->createUser($request);
         if (isset($user->id) && $country) {
             $order = $this->createWebOrder($request, $user, $this->cart);
+            $owner = $order->order_metas->first()->product->user ?? null;
             if (is_subclass_of($order, 'Illuminate\Database\Eloquent\Model')) {
                 auth()->login($user);
                 $elements = $this->cart->content();
-                return view('frontend.wokiee.four.modules.cart.show', compact('elements', 'order'))->with('success', trans('message.register_account_password_is_your_mobile'));
+                return view('frontend.wokiee.four.modules.cart.show', compact('elements', 'order','owner'))->with('success', trans('message.register_account_password_is_your_mobile'));
             } else {
                 return redirect()->route('frontend.cart.index')->with('error', trans('please_check_your_information_again'));
             }
@@ -158,6 +159,9 @@ class OrderController extends Controller
             } else {
                 dispatch(new sendSuccessOrderEmail($order, $order->user, $contactus))->delay(now()->addSeconds(10));
                 session()->forget('cart');
+                if($request->has('whatsapp_url') && $request->whatsapp_url) {
+                    return redirect()->to($request->whatsapp_url);
+                }
                 return redirect()->route('frontend.home')->with('success', trans('message.we_received_your_order_order_shall_be_reviewed_thank_your_for_choosing_our_service'));
             }
         }

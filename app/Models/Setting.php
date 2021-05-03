@@ -35,4 +35,9 @@ class Setting extends PrimaryModel
     {
         return $this->morphMany(Image::class, 'imagable');
     }
+
+    public function getFullWhatsappAttribute()
+    {
+        return '965'.numToEn($this->whatsapp);
+    }
 }

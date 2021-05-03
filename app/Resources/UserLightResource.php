@@ -21,7 +21,7 @@ class UserLightResource extends JsonResource
             'thumb' => $this->getCurrentImageAttribute('image'),
             'views' => $this->views,
             'rating' => $this->rating,
-            'whatsapp' => $this->fullWhatsapp,
+            'whatsapp' => numToEn($this->fullWhatsapp),
             'has_map' => ($this->longitude && $this->latitude),
             'longitude' => (float)$this->longitude,
             'latitude' => (float)$this->latitude,
