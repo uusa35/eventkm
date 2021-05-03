@@ -75,7 +75,7 @@
                                                  src="{{ $element->getCurrentImageAttribute('app_logo') }}"
                                                  alt="">
                                             <a href="{{ route("backend.admin.image.clear",['model' => 'setting', 'id' => $element->id ,'colName' => 'app_logo']) }}"><i
-                                                        class="fa fa-fw fa-times"></i></a>
+                                                    class="fa fa-fw fa-times"></i></a>
                                         </div>
                                     @endif
                                     <div class="col-lg-5">
@@ -94,7 +94,7 @@
                                                  src="{{ asset(env('THUMBNAIL').$element->menu_bg)}}"
                                                  alt="">
                                             <a href="{{ route("backend.admin.image.clear",['model' => 'setting', 'id' => $element->id ,'colName' => 'menu_bg']) }}"><i
-                                                        class="fa fa-fw fa-times"></i></a>
+                                                    class="fa fa-fw fa-times"></i></a>
                                         </div>
                                     @endif
                                     <div class="col-lg-5">
@@ -113,7 +113,7 @@
                                                  src="{{ $element->getCurrentImageAttribute('main_bg') }}"
                                                  alt="">
                                             <a href="{{ route("backend.admin.image.clear",['model' => 'setting', 'id' => $element->id ,'colName' => 'main_bg']) }}"><i
-                                                        class="fa fa-fw fa-times"></i></a>
+                                                    class="fa fa-fw fa-times"></i></a>
                                         </div>
                                     @endif
                                     <div class="col-lg-5">
@@ -121,7 +121,8 @@
                                             <div class="form-group form-md-line-input">
                                                 <input type="file" class="form-control" name="size_chart"
                                                        placeholder="...">
-                                                <label for="form_control_1">{{ trans('general.global_size_chart') }}</label>
+                                                <label
+                                                    for="form_control_1">{{ trans('general.global_size_chart') }}</label>
                                                 <div class="help-block text-left">
                                                     {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440 px']) }}
                                                 </div>
@@ -134,7 +135,7 @@
                                                  src="{{ $element->getCurrentImageAttribute('size_chart') }}"
                                                  alt="">
                                             <a href="{{ route("backend.admin.image.clear",['model' => 'setting', 'id' => $element->id ,'colName' => 'size_chart']) }}"><i
-                                                        class="fa fa-fw fa-times"></i></a>
+                                                    class="fa fa-fw fa-times"></i></a>
                                         </div>
                                     @endif
                                     <div class="col-lg-5">
@@ -142,7 +143,8 @@
                                             <div class="form-group form-md-line-input">
                                                 <input type="file" class="form-control" name="shipment_prices"
                                                        placeholder="...">
-                                                <label for="form_control_1">{{ trans('general.fixed_shipment_fees') }}</label>
+                                                <label
+                                                    for="form_control_1">{{ trans('general.fixed_shipment_fees') }}</label>
                                                 <div class="help-block text-left">
                                                     {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1850 px']) }}
                                                 </div>
@@ -155,7 +157,7 @@
                                                  src="{{ $element->getCurrentImageAttribute('shipment_prices') }}"
                                                  alt="">
                                             <a href="{{ route("backend.admin.image.clear",['model' => 'setting', 'id' => $element->id ,'colName' => 'shipment_prices']) }}"><i
-                                                        class="fa fa-fw fa-times"></i></a>
+                                                    class="fa fa-fw fa-times"></i></a>
                                         </div>
                                     @endif
                                     <div class="col-md-3">
@@ -189,7 +191,7 @@
                                                  src="{{ $element->getCurrentImageAttribute('gift_image') }}"
                                                  alt="">
                                             <a href="{{ route("backend.admin.image.clear",['model' => 'setting', 'id' => $element->id ,'colName' => 'gift_image']) }}"><i
-                                                        class="fa fa-fw fa-times"></i></a>
+                                                    class="fa fa-fw fa-times"></i></a>
                                         </div>
                                     @endif
                                     <div class="col-md-6">
@@ -387,7 +389,8 @@
                                             <input type="text" class="form-control" name="shipment_notes_ar"
                                                    placeholder="..."
                                                    value="{{ $element->shipment_notes_ar }}">
-                                            <label for="form_control_1">{{ trans('general.shipment_notes_arabic') }}</label>
+                                            <label
+                                                for="form_control_1">{{ trans('general.shipment_notes_arabic') }}</label>
                                             <span class="help-block">Shipment Notes that shall appear on cart Ar</span>
                                         </div>
                                     </div>
@@ -398,7 +401,8 @@
                                             <input type="text" class="form-control" name="shipment_notes_en"
                                                    placeholder="..."
                                                    value="{{ $element->shipment_notes_en }}">
-                                            <label for="form_control_1">{{ trans('general.shipment_notes_english') }}</label>
+                                            <label
+                                                for="form_control_1">{{ trans('general.shipment_notes_english') }}</label>
                                             <span class="help-block">Shipment Notes that shall appear on Cart</span>
                                         </div>
                                     </div>
@@ -555,7 +559,8 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="form-group {{ $errors->has('main_theme_bg_color') ? ' has-error' : '' }}">
+                                    <div
+                                        class="form-group {{ $errors->has('main_theme_bg_color') ? ' has-error' : '' }}">
                                         <label for="main_theme_bg_color"
                                                class="control-label">{{ trans('general.main_theme_bg_color') }}*</label>
                                         <input type="text" id="hue-demo" class="form-control tooltips demo"
@@ -575,7 +580,8 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="form-group {{ $errors->has('header_one_theme_color') ? ' has-error' : '' }}">
+                                    <div
+                                        class="form-group {{ $errors->has('header_one_theme_color') ? ' has-error' : '' }}">
                                         <label for="header_one_theme_color"
                                                class="control-label">{{ trans('general.header_one_theme_color') }}
                                             *</label>
@@ -596,7 +602,8 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="form-group {{ $errors->has('header_tow_theme_color') ? ' has-error' : '' }}">
+                                    <div
+                                        class="form-group {{ $errors->has('header_tow_theme_color') ? ' has-error' : '' }}">
                                         <label for="header_tow_theme_color"
                                                class="control-label">{{ trans('general.header_tow_theme_color') }}
                                             *</label>
@@ -617,7 +624,8 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="form-group {{ $errors->has('header_three_theme_color') ? ' has-error' : '' }}">
+                                    <div
+                                        class="form-group {{ $errors->has('header_three_theme_color') ? ' has-error' : '' }}">
                                         <label for="header_three_theme_color"
                                                class="control-label">{{ trans('general.header_three_theme_color') }}
                                             *</label>
@@ -638,7 +646,8 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="form-group {{ $errors->has('header_one_theme_bg') ? ' has-error' : '' }}">
+                                    <div
+                                        class="form-group {{ $errors->has('header_one_theme_bg') ? ' has-error' : '' }}">
                                         <label for="header_one_theme_bg"
                                                class="control-label">{{ trans('general.header_one_theme_bg') }}*</label>
                                         <input type="text" id="hue-demo" class="form-control tooltips demo"
@@ -658,7 +667,8 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="form-group {{ $errors->has('header_tow_theme_bg') ? ' has-error' : '' }}">
+                                    <div
+                                        class="form-group {{ $errors->has('header_tow_theme_bg') ? ' has-error' : '' }}">
                                         <label for="header_tow_theme_bg"
                                                class="control-label">{{ trans('general.header_tow_theme_bg') }}*</label>
                                         <input type="text" id="hue-demo" class="form-control tooltips demo"
@@ -678,7 +688,8 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="form-group {{ $errors->has('header_three_theme_bg') ? ' has-error' : '' }}">
+                                    <div
+                                        class="form-group {{ $errors->has('header_three_theme_bg') ? ' has-error' : '' }}">
                                         <label for="header_three_theme_bg"
                                                class="control-label">{{ trans('general.header_three_theme_bg') }}
                                             *</label>
@@ -699,7 +710,8 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="form-group {{ $errors->has('normal_text_theme_color') ? ' has-error' : '' }}">
+                                    <div
+                                        class="form-group {{ $errors->has('normal_text_theme_color') ? ' has-error' : '' }}">
                                         <label for="normal_text_theme_color"
                                                class="control-label">{{ trans('general.normal_text_theme_color') }}
                                             *</label>
@@ -720,7 +732,8 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="form-group {{ $errors->has('btn_text_theme_color') ? ' has-error' : '' }}">
+                                    <div
+                                        class="form-group {{ $errors->has('btn_text_theme_color') ? ' has-error' : '' }}">
                                         <label for="btn_text_theme_color"
                                                class="control-label">{{ trans('general.btn_text_theme_color') }}
                                             *</label>
@@ -741,7 +754,8 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="form-group {{ $errors->has('btn_text_hover_theme_color') ? ' has-error' : '' }}">
+                                    <div
+                                        class="form-group {{ $errors->has('btn_text_hover_theme_color') ? ' has-error' : '' }}">
                                         <label for="btn_text_hover_theme_color"
                                                class="control-label">{{ trans('general.btn_text_hover_theme_color') }}
                                             *</label>
@@ -762,7 +776,8 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="form-group {{ $errors->has('btn_bg_theme_color') ? ' has-error' : '' }}">
+                                    <div
+                                        class="form-group {{ $errors->has('btn_bg_theme_color') ? ' has-error' : '' }}">
                                         <label for="btn_bg_theme_color"
                                                class="control-label">{{ trans('general.btn_bg_theme_color') }}*</label>
                                         <input type="text" id="hue-demo" class="form-control tooltips demo"
@@ -822,7 +837,8 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="form-group {{ $errors->has('header_theme_color') ? ' has-error' : '' }}">
+                                    <div
+                                        class="form-group {{ $errors->has('header_theme_color') ? ' has-error' : '' }}">
                                         <label for="header_theme_color"
                                                class="control-label">{{ trans('general.header_theme_color') }}*</label>
                                         <input type="text" id="hue-demo" class="form-control tooltips demo"
@@ -862,7 +878,8 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="form-group {{ $errors->has('footer_theme_color') ? ' has-error' : '' }}">
+                                    <div
+                                        class="form-group {{ $errors->has('footer_theme_color') ? ' has-error' : '' }}">
                                         <label for="footer_theme_color"
                                                class="control-label">{{ trans('general.footer_theme_color') }}*</label>
                                         <input type="text" id="hue-demo" class="form-control tooltips demo"
@@ -882,7 +899,8 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <div class="form-group {{ $errors->has('footer_bg_theme_color') ? ' has-error' : '' }}">
+                                    <div
+                                        class="form-group {{ $errors->has('footer_bg_theme_color') ? ' has-error' : '' }}">
                                         <label for="footer_bg_theme_color"
                                                class="control-label">{{ trans('general.footer_bg_theme_color') }}
                                             *</label>
@@ -979,71 +997,73 @@
 
                                         </div>
                                     @endcan
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label class="control-label sbold tooltips"
-                                                   data-container="body" data-placement="top"
-                                                   data-original-title="{{ trans('message.cash_on_delivery') }}">{{ trans('general.cash_on_delivery') }}</label></br>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cash_on_delivery" id="optionsRadios3"
-                                                       {{ $element->cash_on_delivery ? 'checked' : null  }}
-                                                       value="1">
-                                                {{ trans('general.yes') }}</label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cash_on_delivery" id="optionsRadios4"
-                                                       {{ !$element->cash_on_delivery ? 'checked' : null  }}
-                                                       value="0">
-                                                {{ trans('general.no') }}</label>
-                                        </div>
-                                    </div>
-                                        <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label class="control-label sbold tooltips"
-                                                   data-container="body" data-placement="top"
-                                                   data-original-title="{{ trans('message.pickup_from_branch') }}">{{ trans('general.pickup_from_branch') }}</label></br>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="pickup_from_branch" id="optionsRadios5"
-                                                       {{ $element->pickup_from_branch ? 'checked' : null  }}
-                                                       value="1">
-                                                {{ trans('general.yes') }}</label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="pickup_from_branch" id="optionsRadios6"
-                                                       {{ !$element->pickup_from_branch ? 'checked' : null  }}
-                                                       value="0">
-                                                {{ trans('general.no') }}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label class="control-label sbold tooltips"
-                                                   data-container="body" data-placement="top"
-                                                   data-original-title="{{ trans('message.shipment_fixed_rate') }}">{{ trans('general.shipment_fixed_rate') }}</label></br>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="shipment_fixed_rate" id="optionsRadios3"
-                                                       {{ $element->shipment_fixed_rate ? 'checked' : null  }}
-                                                       value="1">
-                                                {{ trans('general.yes') }}</label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="shipment_fixed_rate" id="optionsRadios4"
-                                                       {{ !$element->shipment_fixed_rate ? 'checked' : null  }}
-                                                       value="0">
-                                                {{ trans('general.no') }}</label>
-                                        </div>
-                                    </div>
                                     @can('isSuper')
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label sbold tooltips"
                                                            data-container="body" data-placement="top"
+                                                           data-original-title="{{ trans('message.cash_on_delivery') }}">{{ trans('general.cash_on_delivery') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="cash_on_delivery" id="optionsRadios3"
+                                                               {{ $element->cash_on_delivery ? 'checked' : null  }}
+                                                               value="1">
+                                                        {{ trans('general.yes') }}</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="cash_on_delivery" id="optionsRadios4"
+                                                               {{ !$element->cash_on_delivery ? 'checked' : null  }}
+                                                               value="0">
+                                                        {{ trans('general.no') }}</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold tooltips"
+                                                           data-container="body" data-placement="top"
+                                                           data-original-title="{{ trans('message.pickup_from_branch') }}">{{ trans('general.pickup_from_branch') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="pickup_from_branch" id="optionsRadios5"
+                                                               {{ $element->pickup_from_branch ? 'checked' : null  }}
+                                                               value="1">
+                                                        {{ trans('general.yes') }}</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="pickup_from_branch" id="optionsRadios6"
+                                                               {{ !$element->pickup_from_branch ? 'checked' : null  }}
+                                                               value="0">
+                                                        {{ trans('general.no') }}</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold tooltips"
+                                                           data-container="body" data-placement="top"
+                                                           data-original-title="{{ trans('message.shipment_fixed_rate') }}">{{ trans('general.shipment_fixed_rate') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="shipment_fixed_rate" id="optionsRadios3"
+                                                               {{ $element->shipment_fixed_rate ? 'checked' : null  }}
+                                                               value="1">
+                                                        {{ trans('general.yes') }}</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="shipment_fixed_rate" id="optionsRadios4"
+                                                               {{ !$element->shipment_fixed_rate ? 'checked' : null  }}
+                                                               value="0">
+                                                        {{ trans('general.no') }}</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold tooltips"
+                                                           data-container="body" data-placement="top"
                                                            data-original-title="{{ trans('message.multi_cart_merchant') }}">{{ trans('general.multi_cart_merchant') }}</label></br>
                                                     <label class="radio-inline">
-                                                        <input type="radio" name="multi_cart_merchant" id="optionsRadios3"
+                                                        <input type="radio" name="multi_cart_merchant"
+                                                               id="optionsRadios3"
                                                                {{ $element->multi_cart_merchant ? 'checked' : null  }}
                                                                value="1">
                                                         {{ trans('general.yes') }}</label>
                                                     <label class="radio-inline">
-                                                        <input type="radio" name="multi_cart_merchant" id="optionsRadios4"
+                                                        <input type="radio" name="multi_cart_merchant"
+                                                               id="optionsRadios4"
                                                                {{ !$element->multi_cart_merchant ? 'checked' : null  }}
                                                                value="0">
                                                         {{ trans('general.no') }}</label>
@@ -1059,13 +1079,16 @@
                                                             data-original-title="{{ trans('message.payment_method') }}"
                                                     >
                                                         <option>{{ trans('general.choose_payment_method') }}</option>
-                                                        <option value="myfatoorah" {{ $element->payment_method === 'myfatoorah' ? 'selected' : null }}>
+                                                        <option
+                                                            value="myfatoorah" {{ $element->payment_method === 'myfatoorah' ? 'selected' : null }}>
                                                             My Fatoorah
                                                         </option>
-                                                        <option value="tap" {{ $element->payment_method === 'tap' ? 'selected' : null }}>
+                                                        <option
+                                                            value="tap" {{ $element->payment_method === 'tap' ? 'selected' : null }}>
                                                             Tap
                                                         </option>
-                                                        <option value="upayment" {{ $element->payment_method === 'upayment' ? 'selected' : null }}>
+                                                        <option
+                                                            value="upayment" {{ $element->payment_method === 'upayment' ? 'selected' : null }}>
                                                             Upayment
                                                         </option>
                                                     </select>

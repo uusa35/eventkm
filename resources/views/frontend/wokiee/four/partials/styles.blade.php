@@ -331,4 +331,41 @@
         </style>
     @endif
 @endif
+<style>
+    .tt-login-form .tt-item {
+        border: none;
+    }
+    .accordionCustome {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+        border: 1px solid lightgray;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: {{ app()->getLocale() === 'ar' ? 'right' : 'left' }};
+    }
+
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active, .accordionCustome:hover {
+        background-color: lightgray;
+    }
+
+    /* Style the accordion panel. Note: hidden by default */
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+        border: 0.5px solid lightgray;
+        min-height: 50px;
+        text-align: {{ app()->getLocale() === 'ar' ? 'right' : 'left' }};
+
+    }
+</style>
+
 

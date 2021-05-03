@@ -2,6 +2,7 @@
     <div class="tt-login-form">
         <div class="row justify-content-center">
             <div class="col-12">
+
                 <div class="tt-item">
                     {{--                    <h2 class="tt-title text-center border-bottom margin-bottom-30">{{ trans('general.personal_information') }}</h2></br>--}}
                     <div class="skltbs-theme-light skltbs-mode-tabs skltbs-init" data-skeletabs="">
@@ -150,6 +151,9 @@
                                                                           placeholder="{{ trans('general.notes') }}">{{ old('notes') }}</textarea>
                                                             </div>
                                                         </div>
+                                                        <div class="col-12">
+                                                            <h6>{{ trans("general.payment_methods") }}</h6>
+                                                        </div>
                                                         @if(session()->get('country')->is_local && $settings->cash_on_delivery)
                                                             <div class="col-md-6 col-sm-12">
                                                                 <div class="form-group">
@@ -163,9 +167,9 @@
                                                                                style="width : 20px; height: 20px;"
                                                                                name="cash_on_delivery">
                                                                         <label class="form-check-label"
-                                                                               for="cash_on_delivery"
-                                                                               style="padding-right: 25px; padding-top: 10px;">
-                                                                            {{ trans('message.cash_on_delivery_instruction') }}
+                                                                               for="exampleCheck1"
+                                                                               style="padding-right: 25px; padding-top: 5px;">
+                                                                            <small>{{ trans('message.cash_on_delivery_instruction') }}</small>
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -175,7 +179,7 @@
                                                         <div class="col-md-6 col-sm-12">
                                                             <div class="form-group">
                                                                 <label
-                                                                    for="cash_on_delivery">{{ trans('general.payment_method') }}
+                                                                    for="cash_on_delivery">{{ trans('general.online_payment') }}
                                                                     <sup>*</sup></label>
                                                                 <div class="form-check">
                                                                     <input type="radio"
@@ -201,10 +205,8 @@
                                                                 <div class="alert alert-secondary">
                                                                     <ul style="list-style: none">
                                                                         <li>
-                                                                            <h6>
                                                                                 <i class="fa fa-fw fa-info-circle fa-lg"></i>
                                                                                 {{ trans('message.order_cash_on_delivery') }}
-                                                                            </h6>
                                                                         </li>
                                                                     </ul>
                                                                 </div>
@@ -287,6 +289,9 @@
                                                                               placeholder="{{ trans('general.notes') }}">{{ old('notes') }}</textarea>
                                                                 </div>
                                                             </div>
+                                                            <div class="col-lg-12">
+                                                                <h6>{{ trans('general.payment_methods') }}</h6>
+                                                            </div>
                                                             @if(session()->get('country')->is_local && $settings->cash_on_delivery)
                                                                 <div class="col-md-6 col-sm-12">
                                                                     <div class="form-group">
@@ -301,13 +306,8 @@
                                                                                    name="cash_on_delivery">
                                                                             <label class="form-check-label"
                                                                                    for="exampleCheck1"
-                                                                                   style="padding-right: 25px; padding-top: 10px;">
-                                                                                <div
-                                                                                    class="alert alert-info">
-                                                                                    <p>
+                                                                                   style="padding-right: 25px; padding-top: 5px;">
                                                                                         <small>{{ trans('message.cash_on_delivery_instruction') }}</small>
-                                                                                    </p>
-                                                                                </div>
                                                                             </label>
                                                                         </div>
                                                                     </div>
@@ -317,7 +317,7 @@
                                                             <div class="col-md-6 col-sm-12">
                                                                 <div class="form-group">
                                                                     <label
-                                                                        for="cash_on_delivery">{{ trans('general.payment_method') }}
+                                                                        for="cash_on_delivery">{{ trans('general.online_payment') }}
                                                                         <sup>*</sup></label>
                                                                     <div class="form-check">
                                                                         <input type="radio"
@@ -340,7 +340,7 @@
                                                                 </div>
                                                             </div>
                                                             @if(session()->get('country')->is_local && $settings->cash_on_delivery)
-                                                                <div class="col-md-6 col-sm-12">
+                                                                <div class="col-md-12 col-sm-12">
                                                                     <div class="alert alert-secondary">
                                                                         <p>
                                                                             <i class="fa fa-fw fa-info-circle fa-lg"></i>
@@ -365,8 +365,8 @@
                                                                                    name="receive_on_branch">
                                                                             <label class="form-check-label"
                                                                                    for="receive_on_branch"
-                                                                                   style="padding-right: 25px;">
-                                                                                {{ trans('general.receive_on_branch') }}
+                                                                                   style="padding-right: 25px; padding-top : 5px;">
+                                                                                {{ trans('general.confirm') }}
                                                                             </label>
                                                                         </div>
                                                                     </div>
@@ -396,7 +396,7 @@
                                                                      style="display : none">
                                                                     <div class="alert alert-primary">
                                                                         <i class="fa fa-fw fa-info-circle fa-lg"></i>
-                                                                        {{ trans('message.chooose_branch') }}
+                                                                        {{ trans('message.choose_branch') }}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-12">
@@ -423,7 +423,7 @@
                             <div class="skltbs-panel" id="skeletabsPanel02" role="tabpanel" tabindex="-1"
                                  aria-labelledby="skeletabsTab02" style="display: none;">
                                 <div class="tt-login-form">
-                                    <div class="row">
+
                                         <div class="col-12">
                                             <div class="tt-item">
                                                 <h2 class="tt-title">{{ trans('general.login') }}</h2>
@@ -493,7 +493,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
