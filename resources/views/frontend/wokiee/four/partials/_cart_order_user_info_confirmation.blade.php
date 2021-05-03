@@ -149,6 +149,7 @@
 
                                                         @if(!$settings->multi_cart_merchant && isset($owner) && !is_null($owner) && $owner->whatsapp)
                                                             <a href="{{ route('frontend.order.cash.delivery', ['id' => $order->id, 'whatsapp_url' =>  'https://api.whatsapp.com/send?phone='.$owner->fullWhatsapp.'&url='.route("frontend.invoice.show", $order->id).'&text='.trans("message.order_by_whatsapp",["url" => route("frontend.invoice.show", $order->id)])]) }}"
+                                                               __target="blank"
                                                                class="btn btn-lg col-lg-6 col-sm-12" style="background-color : #25D366 !important; margin-right : 25%; margin-left: 25%">
                                                                 <i class="fa fa-fw fa-whatsapp fa-lg" style="color: white"></i>
                                                                 &nbsp;&nbsp;&nbsp;

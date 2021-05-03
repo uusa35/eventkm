@@ -51,30 +51,35 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
-        $validate = validator($request->all(), [
-            'country_id' => 'required|exists:countries,id',
-        ]);
-        if ($validate->fails()) {
-            return redirect()->back()->with('error', trans('general.country_is_required'));
-        }
-        $country = Country::whereId($request->country_id)->first();
-        CheckCartItems::dispatchNow($country);
-        $this->addCountryToCart($country, $request->has('branch_id') && $request->receive_on_branch);
-        $user = $this->createUser($request);
-        if (isset($user->id) && $country) {
-            $order = $this->createWebOrder($request, $user, $this->cart);
-            $owner = $order->order_metas->first()->product->user ?? null;
-            if (is_subclass_of($order, 'Illuminate\Database\Eloquent\Model')) {
-                auth()->login($user);
-                $elements = $this->cart->content();
-                return view('frontend.wokiee.four.modules.cart.show', compact('elements', 'order','owner'))->with('success', trans('message.register_account_password_is_your_mobile'));
+        try {
+            $validate = validator($request->all(), [
+                'country_id' => 'required|exists:countries,id',
+            ]);
+            if ($validate->fails()) {
+                return redirect()->back()->with('error', trans('general.country_is_required'));
+            }
+            $country = Country::whereId($request->country_id)->first();
+            CheckCartItems::dispatchNow($country);
+            $this->addCountryToCart($country, $request->has('branch_id') && $request->receive_on_branch);
+            $user = $this->createUser($request);
+            if (isset($user->id) && $country) {
+                $order = $this->createWebOrder($request, $user, $this->cart);
+                $owner = $order->order_metas->first()->product->user ? $order->order_metas->first()->product->user : null;
+                if (is_subclass_of($order, 'Illuminate\Database\Eloquent\Model')) {
+                    auth()->login($user);
+                    $elements = $this->cart->content();
+                    return view('frontend.wokiee.four.modules.cart.show', compact('elements', 'order', 'owner'))->with('success', trans('message.register_account_password_is_your_mobile'));
+                } else {
+                    return redirect()->route('frontend.cart.index')->with('error', trans('please_check_your_information_again'));
+                }
             } else {
                 return redirect()->route('frontend.cart.index')->with('error', trans('please_check_your_information_again'));
             }
-        } else {
+            return redirect()->route('frontend.cart.index')->with('error', trans('please_check_your_information_again'));
+        } catch (\Exception $e) {
             return redirect()->route('frontend.cart.index')->with('error', trans('please_check_your_information_again'));
         }
-        return redirect()->route('frontend.cart.index')->with('error', trans('please_check_your_information_again'));
+
     }
 
     /**
@@ -143,12 +148,12 @@ class OrderController extends Controller
 
     public function cashOnDeliveryReceived(Request $request)
     {
-        $order = Order::whereId($request->id)->with('order_metas.product.product_attributes.size','order_metas.product.product_attributes.color','order_metas.service','user')->first();
+        $order = Order::whereId($request->id)->with('order_metas.product.product_attributes.size', 'order_metas.product.product_attributes.color', 'order_metas.service', 'user')->first();
         if ($order->cash_on_delivery) {
             $contactus = Setting::first();
             if (env('BITS')) {
                 $order->update(['paid' => true]);
-                if($order->paid) {
+                if ($order->paid) {
                     $this->decreaseQty($order);
                     OrderSuccessProcessJob::dispatch($order, $order->user)->delay(now()->addSeconds(15));
                     $markdown = new Markdown(view(), config('mail.markdown'));
@@ -159,7 +164,7 @@ class OrderController extends Controller
             } else {
                 dispatch(new sendSuccessOrderEmail($order, $order->user, $contactus))->delay(now()->addSeconds(10));
                 session()->forget('cart');
-                if($request->has('whatsapp_url') && $request->whatsapp_url) {
+                if ($request->has('whatsapp_url') && $request->whatsapp_url) {
                     return redirect()->to($request->whatsapp_url);
                 }
                 return redirect()->route('frontend.home')->with('success', trans('message.we_received_your_order_order_shall_be_reviewed_thank_your_for_choosing_our_service'));

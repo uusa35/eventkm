@@ -155,7 +155,7 @@
                                                             <h6>{{ trans("general.payment_methods") }}</h6>
                                                         </div>
                                                         @if(session()->get('country')->is_local && $settings->cash_on_delivery)
-                                                            <div class="col-md-6 col-sm-12">
+                                                            <div class="col-md-4 col-sm-12">
                                                                 <div class="form-group">
                                                                     <label
                                                                         for="cash_on_delivery">{{ trans('general.cash_on_delivery') }}
@@ -175,8 +175,30 @@
                                                                 </div>
                                                                 </br>
                                                             </div>
+                                                            <div class="col-md-4 col-sm-12">
+                                                                <div class="form-group">
+                                                                    <label
+                                                                        for="cash_on_delivery">
+                                                                        <i class="fa fa-fw fa-whatsapp fa-lg" style="color: #25D366 "></i>
+                                                                        {{ trans('general.order_by_whatsapp') }}
+                                                                    </label>
+                                                                    <div class="form-check">
+                                                                        <input type="radio"
+                                                                               value="1"
+                                                                               class="form-check-input form-check-input form-control-lg"
+                                                                               style="width : 20px; height: 20px;"
+                                                                               name="cash_on_delivery">
+                                                                        <label class="form-check-label"
+                                                                               for="exampleCheck1"
+                                                                               style="padding-right: 25px; padding-top: 5px;">
+                                                                            <small>{{ trans('general.confirm') }}</small>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                </br>
+                                                            </div>
                                                         @endif
-                                                        <div class="col-md-6 col-sm-12">
+                                                        <div class="col-md-4 col-sm-12">
                                                             <div class="form-group">
                                                                 <label
                                                                     for="cash_on_delivery">{{ trans('general.online_payment') }}
@@ -230,12 +252,6 @@
                                                         @csrf
                                                         <input type="hidden" name="payment_method"
                                                                value="Web - {{ $settings->payment_method }}">
-                                                        {{--                            @if(Cart::content()->where('options.type', 'country')->first())--}}
-                                                        {{--                                <input type="hidden" name="shipment_fees"--}}
-                                                        {{--                                       value="{{ Cart::content()->where('options.type', 'country')->first()->price }}">--}}
-                                                        {{--                            @else--}}
-                                                        {{--                                <input type="hidden" name="shipment_fees" value="0">--}}
-                                                        {{--                            @endif--}}
                                                         <div class="row">
                                                             <div class="col-md-6 col-sm-12">
                                                                 <div class="form-group">
@@ -293,7 +309,7 @@
                                                                 <h6>{{ trans('general.payment_methods') }}</h6>
                                                             </div>
                                                             @if(session()->get('country')->is_local && $settings->cash_on_delivery)
-                                                                <div class="col-md-6 col-sm-12">
+                                                                <div class="col-md-4 col-sm-12">
                                                                     <div class="form-group">
                                                                         <label
                                                                             for="cash_on_delivery">{{ trans('general.cash_on_delivery') }}
@@ -313,8 +329,30 @@
                                                                     </div>
                                                                     </br>
                                                                 </div>
+                                                                <div class="col-md-4 col-sm-12">
+                                                                    <div class="form-group">
+                                                                        <label
+                                                                            for="cash_on_delivery">
+                                                                            <i class="fa fa-fw fa-whatsapp fa-lg" style="color: #25D366 "></i>
+                                                                            {{ trans('general.order_by_whatsapp') }}
+                                                                        </label>
+                                                                        <div class="form-check">
+                                                                            <input type="radio"
+                                                                                   value="1"
+                                                                                   class="form-check-input form-check-input form-control-lg"
+                                                                                   style="width : 20px; height: 20px;"
+                                                                                   name="cash_on_delivery">
+                                                                            <label class="form-check-label"
+                                                                                   for="exampleCheck1"
+                                                                                   style="padding-right: 25px; padding-top: 5px;">
+                                                                                <small>{{ trans('general.confirm') }}</small>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    </br>
+                                                                </div>
                                                             @endif
-                                                            <div class="col-md-6 col-sm-12">
+                                                            <div class="col-md-4 col-sm-12">
                                                                 <div class="form-group">
                                                                     <label
                                                                         for="cash_on_delivery">{{ trans('general.online_payment') }}
