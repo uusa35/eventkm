@@ -84,8 +84,9 @@
                                                             <div class="form-group">
                                                                 <label for="loginLastName">{{ trans('general.mobile') }}
                                                                     *</label>
-                                                                <input type="number" pattern=".{5,}" name="mobile"
+                                                                <input type="text" pattern=".{5,}" name="mobile"
                                                                        class="form-control"
+                                                                       maxlength="11"
                                                                        id="loginLastName" title="5 numbers minimum"
                                                                        value="{{ auth()->guest() ? old('mobile') : auth()->user()->mobile }}"
                                                                        required
@@ -285,9 +286,10 @@
                                                                 <div class="form-group">
                                                                     <label for="loginLast">{{ trans('general.mobile') }}
                                                                         *</label>
-                                                                    <input type="number" pattern=".{5,}" name="mobile"
+                                                                    <input type="text" pattern=".{5,}" name="mobile"
                                                                            class="form-control"
                                                                            id="loginLast" title="5 numbers minimum"
+                                                                           maxlength="11"
                                                                            value="{{ auth()->guest() ? old('mobile') : auth()->user()->mobile }}"
                                                                            required
                                                                            placeholder="{{ trans('general.mobile') }}">
