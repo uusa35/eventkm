@@ -28,7 +28,7 @@ return array (
   'payment_information' => 'Payment Data',
   'order_review' => 'Review request',
   'password' => 'password',
-  'cash_on_delivery' => 'Payment at delivery',
+  'cash_on_delivery' => 'Payment upon receive',
   'continue' => 'Continue',
   'country' => 'Country',
   'delivery_within_4_days' => 'Delivery within 4 days',
@@ -910,4 +910,9 @@ return array (
   'show_size_chart' => 'Show Size Chart Table',
   'shop_now' => 'show now',
   'receive_on_branch' => 'Pickup From Branch',
+  'payment_methods' => 'Payment Methods',
+  'online_payment' => 'Online Payment',
+  'confirm' => 'Confirm',
+  'continue_ur_order_by_whatsapp' => 'Continue your order by Whatsapp.',
+  'order_by_whatsapp' => 'Order by Whatsapp',
 );

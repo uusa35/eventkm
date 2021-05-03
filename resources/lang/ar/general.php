@@ -161,7 +161,7 @@ return array (
   'personal_information_confirmation' => 'تأكيد المعلومات الشخصية',
   'total_price_in_kuwaiti_dinar' => 'السعر الإجمالي بالدينار الكويتي',
   'payment_confirm_go_to_payment' => 'تم التأكد من البيانات المدخلة .. الذهاب لصفحة الدفع',
-  'order_cash_on_delivery_complete' => 'تم استلام الطلب وجاريا لعمل على تنفيذه سيتم التواصل معكم في اقرب وقت ممكن',
+  'order_cash_on_delivery_complete' => 'تأكيد تنفيذ الطلب (عند التأكيد سيتم التواصل معكم لتأكيد طلبكم)',
   'choose_date_for_your_service' => 'اختر تاريخ الخدمة المطلوب',
   'find_us_on_stores' => 'حمل تطبيقنا على الاستور',
   'my_account' => 'حسابي',
@@ -1120,4 +1120,9 @@ return array (
   'show_size_chart' => 'إظهار جدول القياسات',
   'pickup_from_branch' => 'استلام من فرع',
   'receive_on_branch' => 'استلام من الفرع',
+  'payment_methods' => 'طرق الدفع',
+  'order_by_whatsapp' => 'تأكيد الطلب عن طريق الواتس اب',
+  'confirm' => 'تأكيد',
+  'online_payment' => 'الدفع اونلاين',
+  'continue_ur_order_by_whatsapp' => 'تأكيد طلبك عن طريق الواتس اب',
 );
