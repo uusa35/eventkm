@@ -17,7 +17,6 @@
                                     <i class="fa fa-gift"></i>{{ trans('general.general_search') }}</div>
                             </div>
                             <div class="portlet-body form">
-                                <!-- BEGIN FORM-->
                                 <form action="{{ route('backend.admin.user.search') }}" class="form-horizontal">
                                     <div class="form-body">
                                         <div class="form-group">
@@ -46,7 +45,6 @@
                                         </div>
                                     </div>
                                 </form>
-                                <!-- END FORM-->
                             </div>
                         </div>
                     @endcan
@@ -66,6 +64,8 @@
                             <th>{{ trans('general.active') }}</th>
                             <th class="none">{{ trans('general.access_dashboard') }}</th>
                             <th class="none">{{ trans('general.categories') }}</th>
+                            <th class="none">{{ trans('general.start_subscription') }}</th>
+                            <th class="none">{{ trans('general.end_subscription') }}</th>
                             <th class="none">{{ trans('general.created_at') }}</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
@@ -85,6 +85,8 @@
                             <th>{{ trans('general.active') }}</th>
                             <th class="none">{{ trans('general.access_dashboard') }}</th>
                             <th class="none">{{ trans('general.categories') }}</th>
+                            <th class="none">{{ trans('general.start_subscription') }}</th>
+                            <th class="none">{{ trans('general.end_subscription') }}</th>
                             <th class="none">{{ trans('general.created_at') }}</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
@@ -98,10 +100,10 @@
                                 <td><img src="{{ $element->getCurrentImageAttribute() }}" alt="" class="img-xs"/></td>
                                 <td>{{ $element->email  }}</td>
                                 <td>{{ $element->fullMobile }}</td>
-                                <td>{{ $element->phone ?? 'N/A' }}</td>
+                                <td>{{ $element->phone ? $element->phone : trans('general.n_a')}}</td>
                                 <td>{{ $element->address }}</td>
                                 {{--                                <td>{{ $element->area }}</td>--}}
-                                <td>{{ $element->country ? $element->country->slug : 'N/A'}}</td>
+                                <td>{{ $element->country ? $element->country->slug : trans('general.n_a')}}</td>
                                 <td>
                                     @if($element->role)
                                         <button
@@ -127,8 +129,16 @@
                                             @endforeach
                                         </div>
                                     @else
-                                        <button class="btn-sm btn-danger">N/A</button>
+                                        <button class="btn-sm btn-danger">{{ trans('general.n_a') }}</button>
                                     @endif
+                                </td>
+                                <td><label class="label label-info">
+                                        <strong>{{ !is_null($element->start_subscription) ? $element->start_subscription->format('d/m/Y')  : trans('general.n_a')}}</strong>
+                                    </label>
+                                </td>
+                                <td><label class="label label-info">
+                                        <strong>{{ !is_null($element->end_subscription) ? $element->end_subscription->format('d/m/Y')  : trans('general.n_a')}}</strong>
+                                    </label>
                                 </td>
                                 <td>{{ $element->created_at }}</td>
                                 <td>
@@ -141,7 +151,8 @@
                                             @if(!$element->deleted_at)
                                                 <li>
                                                     <a href="{{ route('backend.reset.password',['email' => $element->email]) }}">
-                                                        <i class="fa fa-fw fa-edit"></i> Reset Password</a>
+                                                        <i class="fa fa-fw fa-edit"></i> {{ trans('general.reset_password') }}
+                                                    </a>
                                                 </li>
                                                 @if(auth()->user()->isAdmin)
                                                     <li>

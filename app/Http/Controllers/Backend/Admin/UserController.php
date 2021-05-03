@@ -15,6 +15,7 @@ use App\Services\Search\Filters;
 use App\Services\Search\UserFilters;
 use App\Services\Traits\ImageHelpers;
 use App\Services\Traits\NotificationHelper;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -88,9 +89,15 @@ class UserController extends Controller
      */
     public function store(UserStore $request)
     {
-        $element = User::create($request->except('image', 'bg', 'banner', 'path', 'categories', 'images', 'products', 'surveys', 'current_password'));
+        $element = User::create($request->except('image', 'bg', 'banner', 'path', 'categories', 'images', 'products', 'surveys', 'current_password','start_subscription','end_subscription'));
         $country = request()->has('country_id') ? Country::whereId(request('country_id'))->first() : null;
         if ($element) {
+            $end_subscription = $request->has('end_subscription') ? Carbon::parse(str_replace('-', '', $request->end_subscription))->toDateTimeString() : null;
+            $start_subscription = $request->has('start_subscription') ? Carbon::parse(str_replace('-', '', $request->start_subscription))->toDateTimeString() : null;
+            $element->update([
+                'start_subscription' => $start_subscription ? $start_subscription : null,
+                'end_subscription' => $end_subscription ? $end_subscription : null,
+            ]);
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1000', '1000'], true) : null;
             $request->has('images') ? $this->saveGallery($element, $request, 'images', ['1080', '1440'], true) : null;
             $request->hasFile('bg') ? $this->saveMimes($element, $request, ['bg'], ['1080', '1440'], true) : null;
@@ -154,9 +161,15 @@ class UserController extends Controller
     {
         $element = User::whereId($id)->with('categories')->first();
         $this->authorize('user.update', $element);
-        $updated = $element->update($request->except('image', 'bg', 'banner', 'path', 'categories', 'images', 'products', 'surveys'));
+        $updated = $element->update($request->except('image', 'bg', 'banner', 'path', 'categories', 'images', 'products', 'surveys','start_subscription','end_subscription'));
         $country = request()->has('country_id') ? Country::whereId(request('country_id'))->first() : null;
         if ($updated) {
+            $start_subscription = $request->has('start_subscription') ? Carbon::parse(str_replace('-', '', $request->start_subscription))->toDateTimeString() : null;
+            $end_subscription = $request->has('end_subscription') ? Carbon::parse(str_replace('-', '', $request->end_subscription))->toDateTimeString() : null;
+            $element->update([
+                'start_subscription' => $start_subscription ? $start_subscription : null,
+                'end_subscription' => $end_subscription ? $end_subscription : null,
+            ]);
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1000', '1000'], true) : null;
             $request->has('images') ? $this->saveGallery($element, $request, 'images', ['1080', '1440'], true) : null;
             $request->hasFile('bg') ? $this->saveMimes($element, $request, ['bg'], ['1080', '1440'], true) : null;

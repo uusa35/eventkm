@@ -1376,6 +1376,63 @@
                                                 @endif
                                             </div>
                                         </div>
+                                        @if(!$settings->multi_merchant && env('ISTORES'))
+                                            <div class="col-md-6">
+                                                <div
+                                                    class="form-group{{ $errors->has('start_subscription') ? ' has-error' : '' }}">
+                                                    <label for="start_subscription"
+                                                           class="control-label">{{ trans('general.date') }} {{ trans('general.start_subscription') }}</label>
+                                                    <div class="input-group date form_datetime">
+                                                        <input type="text" readonly
+                                                               style="direction: ltr !important;"
+                                                               class="form-control tooltips"
+                                                               data-container="body"
+                                                               data-placement="top"
+                                                               data-original-title="{{ trans('general.date') }} {{ trans('message.start_subscription') }}"
+                                                               name="start_subscription"
+                                                               value="{{ $element->start_subscription ? $element->start_subscription : \Carbon\Carbon::now()->format('d F Y - h:i') }}"
+                                                               required>
+                                                        <span class="input-group-btn"><button
+                                                                class="btn default date-set" type="button"><i
+                                                                    class="fa fa-calendar"></i></button></span>
+                                                    </div>
+                                                    {{-- <span class="help-block">
+                                                                                                                        <strong>{{ trans('message.start_subscription') }}</strong>
+                                                    </span> --}}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label
+                                                        class="control-label">{{ trans('general.date') }} {{ trans('general.end_subscription') }}</label>
+                                                    <div class="input-group date form_datetime">
+                                                        <input type="text" class="form-control tooltips"
+                                                               data-container="body" data-placement="top"
+                                                               data-original-title="{{ trans('general.date') }} {{ trans('message.end_subscription') }}"
+                                                               readonly style="direction: ltr !important;"
+                                                               name="end_subscription"
+                                                               value="{{ $element->end_subscription ? $element->end_subscription : \Carbon\Carbon::now()->addDay(1)->format('d F Y - h:i') }}"
+                                                               required>
+                                                        <span class="input-group-btn"><button
+                                                                class="btn default date-set" type="button"><i
+                                                                    class="fa fa-calendar"></i></button></span>
+                                                    </div>
+                                                    {{-- <span class="help-block">
+                                                                                                                        <strong>{{ trans('message.end_subscription_date') }}</strong>
+                                                    </span> --}}
+                                                </div>
+                                            </div>
+                                        @endif
+                                        <div class="col-lg-12">
+                                            <div class="form-body">
+                                                <div class="form-group form-md-line-input">
+                                <textarea type="text" class="form-control" id="code" name="code"
+                                          aria-multiline="true">{{ $element->code }}</textarea>
+                                                    <label
+                                                        for="form_control_1">{{ trans('general.codes_related_to_user_page_example_google_analytics') }}</label>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="col-lg-12">
                                             @include('backend.partials.forms._btn-group')
                                         </div>

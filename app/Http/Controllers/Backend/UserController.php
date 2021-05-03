@@ -11,6 +11,7 @@ use App\Models\Order;
 use App\Models\Product;
 use App\Models\Role;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Nexmo\Laravel\Facade\Nexmo;
@@ -57,7 +58,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $element = User::whereId($id)->with('orders.order_metas.product','country','role','products')->first();
+        $element = User::whereId($id)->with('orders.order_metas.product', 'country', 'role', 'products')->first();
 //        $orders = Order::whereHas('order_metas.product', function ($q) use($id) {
 //                return $q->where('user_id' ,'=', $id);
 //        },'>=',1)->where(['paid' => true])->get()->pluck('order_metas')->flatten();
@@ -78,13 +79,13 @@ class UserController extends Controller
         $this->authorize('user.update', $element);
         $countries = Country::active()->get();
         $roles = Role::active()->get();
-        $categories = Category::active()->where('is_user',true)->with(['children' => function ($q) {
+        $categories = Category::active()->where('is_user', true)->with(['children' => function ($q) {
             return $q->where('is_user', true)->with(['children' => function ($q) {
                 return $q->where('is_user', true);
             }]);
         }])->get();
         $products = Product::active()->available()->hasImage()->serveCountries()->hasStock()->get();
-        return view('backend.modules.user.edit', compact('element', 'roles', 'countries', 'categories','products'));
+        return view('backend.modules.user.edit', compact('element', 'roles', 'countries', 'categories', 'products'));
     }
 
     /**
@@ -98,9 +99,15 @@ class UserController extends Controller
     {
         $element = User::whereId($id)->with('categories')->first();
         $this->authorize('user.update', $element);
-        $updated = $element->update($request->except('image', 'bg', 'banner', 'path', 'categories','surveys'));
+        $updated = $element->update($request->except('image', 'bg', 'banner', 'path', 'categories', 'surveys', 'start_subscription', 'end_subscription'));
         $country = request()->has('country_id') ? Country::whereId(request('country_id'))->first() : null;
         if ($updated) {
+            $end_subscription = $request->has('end_subscription') ? Carbon::parse(str_replace('-', '', $request->end_subscription))->toDateTimeString() : null;
+            $start_subscription = $request->has('start_subscription') ? Carbon::parse(str_replace('-', '', $request->start_subscription))->toDateTimeString() : null;
+            $element->update([
+                'start_subscription' => $start_subscription ? $start_subscription : null,
+                'end_subscription' => $end_subscription ? $end_subscription : null,
+            ]);
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1000', '1000'], true) : null;
             $request->has('images') ? $this->saveGallery($element, $request, 'images', ['1080', '1440'], true) : null;
             $request->hasFile('bg') ? $this->saveMimes($element, $request, ['bg'], ['1080', '1440'], true) : null;

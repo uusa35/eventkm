@@ -76,7 +76,7 @@
 
     }
 
-    @elseif(env('ESCRAP') || env('HOMEKEY') || env('EXPO') || env('HUDA') || env('DESIGNERAAT') || env('IORDER'))
+    @elseif(env('ESCRAP') || env('HOMEKEY') || env('EXPO') || env('HUDA') || env('DESIGNERAAT') || env('ISTORES'))
     body, html, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, td, thead, tfoot, span, .btn, ul, li,
     .container, .tt-title-small, .tt-description, header, footer
     .tt-collapse-title, .tt-collapse-content, .tt-collapse-block .tt-item .tt-collapse-title,

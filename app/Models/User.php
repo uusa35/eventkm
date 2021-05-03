@@ -19,6 +19,7 @@ class User extends Authenticatable
      */
     protected $guarded = [''];
     protected $localeStrings = ['slug', 'description', 'service', 'policy'];
+    protected $dates = ['created_at', 'deleted_at', 'start_subscription', 'end_subscription'];
     protected $casts = [
         'on_home' => 'boolean',
         'active' => 'boolean',

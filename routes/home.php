@@ -35,7 +35,7 @@ if (env('MOBILE_LAYOUT')) {
 } elseif (env('DESIGNERAAT')) {
     Route::get('/', 'HomeController@getDesigneratHome')->name('index');
     Route::get('/home', 'HomeController@getDesigneratHome')->name('home');
-} elseif (env('IORDER')) {
+} elseif (env('ISTORES')) {
     Route::get('/', 'HomeController@getIorderHome')->name('index');
     Route::get('/home', 'HomeController@getIorderHome')->name('home');
 } else {

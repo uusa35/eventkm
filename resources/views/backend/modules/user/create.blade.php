@@ -323,11 +323,13 @@
                                                     class="form-group{{ $errors->has('fixed_amount_subscription') ? ' has-error' : '' }}">
                                                     <label for="fixed_amount_subscription"
                                                            class="control-label">{{ trans('general.fixed_amount_subscription') }}
-                                                        </label>
-                                                    <input id="fixed_amount_subscription" type="text" class="form-control tooltips"
+                                                    </label>
+                                                    <input id="fixed_amount_subscription" type="text"
+                                                           class="form-control tooltips"
                                                            data-container="body" data-placement="top"
                                                            data-original-title="{{ trans('message.fixed_amount_subscription') }}"
-                                                           name="fixed_amount_subscription" value="{{ old('fixed_amount_subscription') }}"
+                                                           name="fixed_amount_subscription"
+                                                           value="{{ old('fixed_amount_subscription') }}"
                                                            placeholder="{{ trans('general.fixed_amount_subscription') }}"
                                                            maxlength="5" required autofocus>
                                                     @if ($errors->has('fixed_amount_subscription'))
@@ -347,10 +349,12 @@
                                                     <label for="percentage_subscription"
                                                            class="control-label">{{ trans('general.percentage_subscription') }}
                                                         *</label>
-                                                    <input id="percentage_subscription" type="text" class="form-control tooltips"
+                                                    <input id="percentage_subscription" type="text"
+                                                           class="form-control tooltips"
                                                            data-container="body" data-placement="top"
                                                            data-original-title="{{ trans('message.percentage_subscription') }}"
-                                                           name="percentage_subscription" value="{{ old('percentage_subscription') }}"
+                                                           name="percentage_subscription"
+                                                           value="{{ old('percentage_subscription') }}"
                                                            placeholder="{{ trans('general.percentage_subscription') }}"
                                                            maxlength="5" required autofocus>
                                                     @if ($errors->has('percentage_subscription'))
@@ -364,7 +368,7 @@
                                                         class="help-block"><strong>{{ trans('message.percentage_subscription') }}</strong></span>
                                                 </div>
                                             </div>
-                                            @endif
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -1158,6 +1162,59 @@
                                                             </strong>
                                                         </span>
                                                     @endif
+                                                </div>
+                                            </div>
+                                            @if(!$settings->multi_merchant && env('ISTORES'))
+                                                <div class="col-md-6">
+                                                    <div
+                                                        class="form-group{{ $errors->has('start_subscription') ? ' has-error' : '' }}">
+                                                        <label for="start_subscription"
+                                                               class="control-label">{{ trans('general.date') }} {{ trans('general.start_subscription') }}</label>
+                                                        <div class="input-group date form_datetime">
+                                                            <input type="text" readonly
+                                                                   style="direction: ltr !important;"
+                                                                   class="form-control tooltips"
+                                                                   data-container="body"
+                                                                   data-placement="top"
+                                                                   data-original-title="{{ trans('message.start_subscription_date') }}"
+                                                                   name="start_subscription"
+                                                                   value="{{ old('start_subscription', \Carbon\Carbon::now()->format('d F Y - h:i')) }}"
+                                                            >
+                                                            <span class="input-group-btn"><button
+                                                                    class="btn default date-set" type="button"><i
+                                                                        class="fa fa-calendar"></i></button></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label
+                                                            class="control-label">{{ trans("general.date") }} {{ trans('general.end_subscription') }}</label>
+                                                        <div class="input-group date form_datetime">
+                                                            <input type="text" class="form-control tooltips"
+                                                                   data-container="body" data-placement="top"
+                                                                   data-original-title="{{ trans('message.end_subscription') }}"
+                                                                   readonly style="direction: ltr !important;"
+                                                                   name="end_subscription"
+                                                                   value="{{ old('end_subscription', \Carbon\Carbon::now()->addDay(1)->format('d F Y - h:i')) }}"
+                                                            >
+                                                            <span class="input-group-btn"><button
+                                                                    class="btn default date-set" type="button"><i
+                                                                        class="fa fa-calendar"></i></button></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                            <div class="col-lg-12">
+                                                <div class="form-body">
+                                                    <div class="form-group">
+                                                        <label
+                                                            class="control-label">{{ trans('general.script_codes') }}</label>
+                                                        <textarea type="text" class="form-control" id="code" name="code"
+                                                                  aria-multiline="true"></textarea>
+                                                        <label
+                                                            for="form_control_1">{{ trans('general.codes_related_to_user_page_example_google_analytics') }}</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
