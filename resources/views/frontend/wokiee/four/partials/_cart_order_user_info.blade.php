@@ -168,7 +168,7 @@
                                                                                name="cash_on_delivery">
                                                                         <label class="form-check-label"
                                                                                for="exampleCheck1"
-                                                                               style="padding-right: 25px; padding-top: 5px;">
+                                                                               style="padding-right: 25px; padding-left: 25px;padding-top: 5px;">
                                                                             <small>{{ trans('message.cash_on_delivery_instruction') }}</small>
                                                                         </label>
                                                                     </div>
@@ -190,7 +190,7 @@
                                                                                name="cash_on_delivery">
                                                                         <label class="form-check-label"
                                                                                for="exampleCheck1"
-                                                                               style="padding-right: 25px; padding-top: 5px;">
+                                                                               style="padding-right: 25px; padding-left: 25px; padding-top: 5px;">
                                                                             <small>{{ trans('general.confirm') }}</small>
                                                                         </label>
                                                                     </div>
@@ -322,7 +322,7 @@
                                                                                    name="cash_on_delivery">
                                                                             <label class="form-check-label"
                                                                                    for="exampleCheck1"
-                                                                                   style="padding-right: 25px; padding-top: 5px;">
+                                                                                   style="padding-right: 25px; margin-left: 25px; padding-top: 5px;">
                                                                                         <small>{{ trans('message.cash_on_delivery_instruction') }}</small>
                                                                             </label>
                                                                         </div>
@@ -344,7 +344,7 @@
                                                                                    name="cash_on_delivery">
                                                                             <label class="form-check-label"
                                                                                    for="exampleCheck1"
-                                                                                   style="padding-right: 25px; padding-top: 5px;">
+                                                                                   style="padding-right: 25px; margin-left: 25px; padding-top: 5px;">
                                                                                 <small>{{ trans('general.confirm') }}</small>
                                                                             </label>
                                                                         </div>
@@ -366,7 +366,7 @@
                                                                                name="cash_on_delivery">
                                                                         <label class="form-check-label"
                                                                                for="exampleCheck1"
-                                                                               style="padding-right: 25px;">
+                                                                               style="padding-right: 25px; margin-left: 25px;">
                                                                             <img
                                                                                 src="{{ asset('images/knet-visa.png') }}"
                                                                                 style="width : 100px;">
@@ -403,7 +403,7 @@
                                                                                    name="receive_on_branch">
                                                                             <label class="form-check-label"
                                                                                    for="receive_on_branch"
-                                                                                   style="padding-right: 25px; padding-top : 5px;">
+                                                                                   style="padding-right: 25px; margin-left: 25px; padding-top : 5px;">
                                                                                 {{ trans('general.confirm') }}
                                                                             </label>
                                                                         </div>
