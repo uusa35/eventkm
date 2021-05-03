@@ -17,7 +17,7 @@
                         </h1>
                         <div class="tt-post-content">
                             <!-- slider -->
-                            <p class="text-left text-justify">
+                            <p class="text-justify">
                                 {!! $element->terms !!}
                             </p>
                         </div>
