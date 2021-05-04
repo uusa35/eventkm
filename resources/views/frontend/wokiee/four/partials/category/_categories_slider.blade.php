@@ -61,14 +61,8 @@
                                                                     <a href="{{ route('frontend.service.search', ['service_category_id' => $element->id]) }}">
                                                                         @endif
                                                                         {{ str_limit($element->name,25) }}</a>
-                                                    {{--                        @if($element->isDesigner)--}}
-                                                    {{--                            <a href="{{ route('frontend.product.search', ['designer_id' => $element->id]) }}">{{ $element->slug }}</a>--}}
-                                                    {{--                        @else--}}
-                                                    {{--                            <a href="{{ route('frontend.product.search', ['user_id' => $element->id]) }}">{{ $element->slug }}</a>--}}
-                                                    {{--                        @endif--}}
                                             </li>
                                         </ul>
-                                        {{--@include('frontend.wokiee.four.partials._rating')--}}
                                     </div>
                                     <h2 class="tt-title">
                                         @if($type === 'user')
@@ -80,14 +74,7 @@
                                         @endif
                                         {{ $element->caption }}
                                     </h2>
-                                    {{--@include('frontend.wokiee.four.partials._widget_price_and_color')--}}
                                     <div class="tt-product-inside-hover">
-                                        {{--<div class="tt-row-btn">--}}
-                                        {{--<a href="{{ route('frontend.product.show', $element->id) }}"--}}
-                                        {{--class="tt-btn-addtocart thumbprod-button-bg" data-toggle="modal"--}}
-                                        {{--data-target="#modalAddToCartProduct">{{ trans('general.view') }}</a>--}}
-                                        {{--</div>--}}
-
                                         <div class="tt-row-btn">
                                             @if($type === 'user')
                                                 <a href="{{ route('frontend.user.search', ['user_category_id' => $element->id,'name' => $element->name]) }}"
@@ -113,10 +100,6 @@
                                                data-sku="{{ $element->sku }}"
                                                data-url="{{ route('frontend.user.show.name', ['id' => $element->id, 'name' => $element->name]) }}"
                                             ></a>
-                                            @auth
-                                                <a href="#" class="tt-btn-wishlist"></a>
-                                            @endauth
-                                            {{--<a href="#" class="tt-btn-compare"></a>--}}
                                         </div>
                                     </div>
                                 </div>
