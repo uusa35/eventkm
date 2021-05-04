@@ -112,7 +112,7 @@ return array (
   'cart_error_perfumes' => 'Perfume product error',
   'my_fatorrah' => 'My bill',
   'not_active' => 'Not enabled',
-  'on_sale' => 'Comprehensive discount',
+  'on_sale' => 'On Discount',
   'on_sale_on_homepage' => 'Discount - In Home',
   'orders_and_shopping' => 'Orders and Shopping',
   'parentCategory' => 'Basic',
@@ -850,7 +850,7 @@ return array (
   'colors_or_heights' => 'Colors or Heights',
   'index_color_or_height' => 'Colors or Heights List',
   'see_invoice' => 'See Invoice',
-  'order_cash_on_delivery_complete' => 'Order is complete. we will contact you asap.',
+  'order_cash_on_delivery_complete' => 'Please Press to confirm your order. we will contact you asap.',
   'payment' => 'Payment',
   'shipment_reference' => 'Shipment Ref',
   'is_paid' => 'is Paid',
@@ -922,4 +922,5 @@ return array (
   'access_dashboard' => 'Access Dashboard',
   'image_url' => 'Image Editing Url',
   'general_search' => 'General Search in elements.',
+  'shipment_fees' => 'Shippment Fees',
 );
