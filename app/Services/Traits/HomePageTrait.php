@@ -233,7 +233,7 @@ trait HomePageTrait
         ));
     }
 
-    public function getIorderHome()
+    public function getIstoresHome()
     {
         $sliders = Slide::active()->onHome()->limit(SELF::TAKE_LESS)->get();
         $brands = Brand::active()->onHome()->orderBy('order','asc')->take(10)->get();
@@ -258,7 +258,7 @@ trait HomePageTrait
         $topDoubleCommercials = Commercial::active()->double()->orderBy('order', 'desc')->limit(2)->get();
         $bottomDoubleCommercials = Commercial::active()->double()->orderBy('order', 'desc')->limit(2)->get();
         $tripleCommercials = Commercial::active()->triple()->orderBy('order', 'desc')->limit(3)->get();
-        return view('frontend.wokiee.four.home.iorder', compact(
+        return view('frontend.wokiee.four.home.istores', compact(
             'sliders',
             'brands',
             'newProducts',
