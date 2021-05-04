@@ -103,7 +103,8 @@
                                                                     <a href="{{ route('frontend.service.search', ['service_category_id' => $element->id,'name' => $element->name]) }}"
                                                                        class="btn btn-small">
                                                                         @endif
-                                                                        {{ trans('general.view_details') }}</a>
+                                                                        {{ $element->name }}
+                                                                    </a>
                                             </div>
                                             @if($element->surveys->isNotEmpty() && auth()->check())
                                                 <div class="tt-row-btn">
