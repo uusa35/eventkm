@@ -57,7 +57,7 @@
                                         <div class="form-body">
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="col-md-4">
+                                                    <div class="col-lg-4 col-md-6">
                                                         <div
                                                             class="form-group {{ $errors->has('sku') ? ' has-error' : '' }}">
                                                             <label for="sku"
@@ -78,7 +78,7 @@
                                                             @endif
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-lg-4 col-md-6">
                                                         <div
                                                             class="form-group {{ $errors->has('name_ar') ? ' has-error' : '' }}">
                                                             <label for="name_ar"
@@ -100,7 +100,7 @@
                                                             @endif
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-lg-4 col-md-6">
                                                         <div
                                                             class="form-group{{ $errors->has('name_en') ? ' has-error' : '' }}">
                                                             <label for="name_en"
@@ -123,7 +123,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12">
-                                                        <div class="col-md-4">
+                                                        <div class="col-lg-4 col-md-6">
                                                             <div
                                                                 class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
                                                                 <label for="price"
@@ -145,7 +145,7 @@
                                                                 @endif
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-4">
+                                                        <div class="col-lg-4 col-md-6">
                                                             <div
                                                                 class="form-group{{ $errors->has('weight') ? ' has-error' : '' }}">
                                                                 <label for="weight"
@@ -175,7 +175,7 @@
                                                             </div>
                                                         </div>
                                                         @can('isAdminOrAbove')
-                                                            <div class="col-md-4">
+                                                            <div class="col-lg-4 col-md-6">
                                                                 <div class="form-group">
                                                                     <label for="single"
                                                                            class="control-label required">{{ trans('general.owner') }}
@@ -201,7 +201,7 @@
                                                 </div>
                                                 <div class="col-lg-12">
                                                     @if(!$categories->isEmpty())
-                                                        <div class="col-md-4">
+                                                        <div class="col-lg-4 col-md-6">
                                                             <div class="form-group">
                                                                 <label
                                                                     class="control-label required">{{ trans('general.categories') }}
@@ -241,7 +241,7 @@
                                                             </div>
                                                         </div>
                                                     @endif
-                                                    <div class="col-md-4">
+                                                    <div class="col-lg-4 col-md-6">
                                                         <div class="form-group">
                                                             <label for="file"
                                                                    class="control-label required">{{ trans('general.main_image') }}
@@ -317,7 +317,7 @@
                                         <div class="form-body">
 
                                             <div class="row">
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label for="single"
                                                                class="control-label">{{ trans('general.color') }}</label>
@@ -337,7 +337,7 @@
                                                         </span> --}}
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label for="size_id"
                                                                class="control-label">{{ trans('general.size') }}</label>
@@ -354,7 +354,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div
                                                         class="form-group{{ $errors->has('quantity') ? ' has-error' : '' }}">
                                                         <label for="quantity"
@@ -520,7 +520,7 @@
                                                         @endif
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label
                                                             for="form_control_1">{{ trans('general.image_chart') }}</label>
@@ -581,7 +581,7 @@
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-lg-4 col-md-6">
                                                         <div class="form-group">
                                                             <label for="file"
                                                                    class="control-label">{{ trans('general.qr') }}
@@ -850,7 +850,7 @@
 {{--                                                    @endif--}}
                                                     <div class="col-lg-12">
                                                         @if(!$tags->isEmpty())
-                                                            <div class="col-md-4">
+                                                            <div class="col-lg-4 col-md-6">
                                                                 <div class="form-group">
                                                                     <label
                                                                         class="control-label">{{ trans('general.tags') }}</label>
@@ -901,7 +901,7 @@
                                         <div class="form-body">
                                             <div class="row">
                                                 @can('isAdminOrAbove')
-                                                    <div class="col-md-4">
+                                                    <div class="col-lg-4 col-md-6">
                                                         <div class="form-group">
                                                             <label class="control-label sbold tooltips"
                                                                    data-container="body" data-placement="top"
@@ -922,7 +922,7 @@
                                                         </div>
                                                     </div>
                                                 @endcan
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
                                                                data-container="body" data-placement="top"
@@ -939,7 +939,7 @@
                                                             {{ trans('general.no') }}</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
                                                                data-container="body" data-placement="top"
@@ -956,7 +956,7 @@
                                                             {{ trans('general.no') }}</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
                                                                data-container="body" data-placement="top"
@@ -973,7 +973,7 @@
                                                             {{ trans('general.no') }}</label>
                                                     </div>
                                                 </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-lg-4 col-md-6">
                                                         <div class="form-group">
                                                             <label class="control-label sbold tooltips"
                                                                    data-container="body" data-placement="top"
@@ -993,7 +993,7 @@
                                                             </label>
                                                         </div>
                                                     </div>
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
                                                                data-container="body" data-placement="top"
@@ -1011,7 +1011,7 @@
                                                     </div>
 
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
                                                                data-container="body" data-placement="top"
@@ -1028,7 +1028,7 @@
                                                             {{ trans('general.no') }}</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
                                                                data-container="body" data-placement="top"
@@ -1047,7 +1047,7 @@
                                                             {{ trans('general.no') }}</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
                                                                data-container="body" data-placement="top"
@@ -1064,7 +1064,7 @@
                                                             {{ trans('general.no') }}</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
                                                                data-container="body" data-placement="top"
@@ -1084,7 +1084,7 @@
                                             </div>
 
                                             <div class="row">
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
                                                                data-container="body" data-placement="top"
@@ -1101,7 +1101,7 @@
                                                             {{ trans('general.no') }}</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
                                                                data-container="body" data-placement="top"
@@ -1122,7 +1122,7 @@
 
                                                 </div>
 
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
                                                                data-container="body" data-placement="top"
@@ -1148,7 +1148,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
                                                                data-container="body" data-placement="top"
@@ -1165,7 +1165,7 @@
                                                             {{ trans('general.no') }}</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
                                                                data-container="body" data-placement="top"
@@ -1182,7 +1182,7 @@
                                                             {{ trans('general.no') }}</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
                                                                data-container="body" data-placement="top"

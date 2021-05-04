@@ -37,7 +37,7 @@
                             <div class="portlet-body form">
                                 <div class="form-body">
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
                                                 <label for="name_ar"
@@ -59,7 +59,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group {{ $errors->has('slug_ar') ? ' has-error' : '' }}">
                                                 <label for="slug_ar"
@@ -81,7 +81,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group {{ $errors->has('slug_en') ? ' has-error' : '' }}">
                                                 <label for="slug_en"
@@ -103,7 +103,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div class="form-group">
                                                 <label for="single"
                                                        class="control-label">{{ trans('general.country') }}
@@ -121,7 +121,7 @@
                                             </div>
                                         </div>
                                         @can('isAdminOrAbove')
-                                            <div class="col-md-4">
+                                            <div class="col-lg-4 col-md-6">
                                                 <div class="form-group">
                                                     <label for="single"
                                                            class="control-label">{{ trans('general.role') }}
@@ -150,7 +150,7 @@
 
                                         {{-- email + mobile --}}
 
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                                 <label for="email"
@@ -173,7 +173,7 @@
                                         </div>
 
                                         @if(!$categories->isEmpty())
-                                            <div class="col-md-4">
+                                            <div class="col-lg-6 col-md-12">
                                                 <div class="form-group">
                                                     <label
                                                         class="control-label">{{ trans('general.categories') }}
@@ -212,7 +212,7 @@
                                         @endif
 
                                         @if(!$products->isEmpty())
-                                            <div class="col-md-4">
+                                            <div class="col-lg-4 col-md-6">
                                                 <div class="form-group">
                                                     <label
                                                         class="control-label">{{ trans('general.products') }}
@@ -230,7 +230,7 @@
                                             </div>
                                         @endif
 
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label sbold tooltips"
                                                        data-container="body" data-placement="top"
@@ -274,7 +274,7 @@
                                                     {{--                                                                        class="fa fa-fw fa-times"></i></a>--}}
                                                 </div>
                                             @endif
-                                            <div class="col-md-4">
+                                            <div class="col-lg-4 col-md-6">
                                                 <div class="form-group">
                                                     <label for="file"
                                                            class="control-label">{{ trans('general.more_images') }}</label>
@@ -290,7 +290,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-lg-4 col-md-6">
                                                 <div class="form-group">
                                                     <label
                                                         for="form_control_1">{{ trans('general.banner') }}</label>
@@ -314,7 +314,7 @@
                                                             class="fa fa-fw fa-times"></i></a>
                                                 @endif
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-lg-4 col-md-6">
                                                 <div
                                                     class="form-group {{ $errors->has('bg') ? ' has-error' : '' }}">
                                                     <label for="bg"
@@ -343,7 +343,7 @@
 
                                         @can('index','survey')
                                             @if(!$element->surveys->isEmpty() && env('MALLR'))
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label tooltips"
                                                                data-container="body" data-placement="top"
@@ -399,7 +399,7 @@
                                                           maxlength="500">{{ $element->description_en }}</textarea>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group {{ $errors->has('service_en') ? ' has-error' : '' }}">
                                                 <label for="service_en"
@@ -421,7 +421,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group {{ $errors->has('service_ar') ? ' has-error' : '' }}">
                                                 <label for="service_ar"
@@ -443,7 +443,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div class="form-group">
                                                 <label
                                                     for="form_control_1">{{ trans('general.qr') }}</label>
@@ -456,7 +456,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
                                                 <label for="mobile"
@@ -476,7 +476,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                                                 <label for="phone"
@@ -496,7 +496,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('fax') ? ' has-error' : '' }}">
                                                 <label for="fax"
@@ -515,7 +515,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
                                                 <label for="address"
@@ -536,7 +536,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('area') ? ' has-error' : '' }}">
                                                 <label for="area"
@@ -555,7 +555,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('block') ? ' has-error' : '' }}">
                                                 <label for="block"
@@ -575,7 +575,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('street') ? ' has-error' : '' }}">
                                                 <label for="street"
@@ -595,7 +595,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('building') ? ' has-error' : '' }}">
                                                 <label for="building"
@@ -616,7 +616,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('floor') ? ' has-error' : '' }}">
                                                 <label for="floor"
@@ -636,7 +636,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('apartment') ? ' has-error' : '' }}">
                                                 <label for="apartment"
@@ -670,7 +670,7 @@
                             <div class="portlet-body form">
                                 <div class="form-body">
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('policy_ar') ? ' has-error' : '' }}">
                                                 <label for="policy_ar"
@@ -691,7 +691,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('policy_en') ? ' has-error' : '' }}">
                                                 <label for="policy_en"
@@ -712,7 +712,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('cancellation_ar') ? ' has-error' : '' }}">
                                                 <label for="cancellation_ar"
@@ -734,7 +734,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('cancellation_en') ? ' has-error' : '' }}">
                                                 <label for="cancellation_en"
@@ -756,7 +756,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('keywords') ? ' has-error' : '' }}">
                                                 <label for="keywords"
@@ -777,7 +777,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('path') ? ' has-error' : '' }}">
                                                 <label for="path"
@@ -799,7 +799,7 @@
                                             </div>
                                         </div>
                                         @if(env('DESIGNERAAT') && auth()->user()->isAdminOrAbove)
-                                            <div class="col-md-4">
+                                            <div class="col-lg-4 col-md-6">
                                                 <div
                                                     class="form-group{{ $errors->has('fixed_amount_subscription') ? ' has-error' : '' }}">
                                                     <label for="fixed_amount_subscription"
@@ -824,7 +824,7 @@
                                                         class="help-block"><strong>{{ trans('message.fixed_amount_subscription') }}</strong></span>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-lg-4 col-md-6">
                                                 <div
                                                     class="form-group{{ $errors->has('percentage_subscription') ? ' has-error' : '' }}">
                                                     <label for="percentage_subscription"
@@ -865,7 +865,7 @@
                                 <div class="portlet-body form">
                                     <div class="form-body">
                                         <div class="row">
-                                            <div class="col-md-4">
+                                            <div class="col-lg-4 col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label sbold tooltips"
                                                            data-container="body" data-placement="top"
@@ -883,7 +883,7 @@
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-lg-4 col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label sbold tooltips"
                                                            data-container="body" data-placement="top"
@@ -901,7 +901,7 @@
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-lg-4 col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label sbold tooltips"
                                                            data-container="body" data-placement="top"
@@ -921,7 +921,7 @@
                                                 </div>
                                             </div>
                                             @if(!$settings->multi_cart_merchant && !env('DESIGNERAT'))
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
                                                                data-container="body" data-placement="top"
@@ -940,7 +940,7 @@
                                                         </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
                                                                data-container="body" data-placement="top"
@@ -961,7 +961,7 @@
                                                 </div>
                                             @endif
                                             @if(env('SMS_ENABLED'))
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
                                                                data-container="body" data-placement="top"
@@ -1008,7 +1008,7 @@
                             <div class="portlet-body form">
                                 <div class="form-body">
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('website') ? ' has-error' : '' }}">
                                                 <label for="website"
@@ -1029,7 +1029,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('facebook') ? ' has-error' : '' }}">
                                                 <label for="facebook"
@@ -1050,7 +1050,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('instagram') ? ' has-error' : '' }}">
                                                 <label for="instagram"
@@ -1071,7 +1071,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('youtube') ? ' has-error' : '' }}">
                                                 <label for="youtube"
@@ -1092,7 +1092,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('twitter') ? ' has-error' : '' }}">
                                                 <label for="twitter"
@@ -1113,7 +1113,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('whatsapp') ? ' has-error' : '' }}">
                                                 <label for="whatsapp"
@@ -1135,7 +1135,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('iphone') ? ' has-error' : '' }}">
                                                 <label for="iphone"
@@ -1156,7 +1156,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('android') ? ' has-error' : '' }}">
                                                 <label for="android"
@@ -1177,7 +1177,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('longitude') ? ' has-error' : '' }}">
                                                 <label for="longitude"
@@ -1198,7 +1198,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('latitude') ? ' has-error' : '' }}">
                                                 <label for="latitude"
@@ -1220,7 +1220,7 @@
                                             </div>
                                         </div>
                                         @can('isAdminOrAbove')
-                                            <div class="col-md-4">
+                                            <div class="col-lg-4 col-md-6">
                                                 <div
                                                     class="form-group{{ $errors->has('balance') ? ' has-error' : '' }}">
                                                     <label for="balance"
@@ -1244,7 +1244,7 @@
                                                 </div>
                                             </div>
                                         @endcan
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('merchant_id') ? ' has-error' : '' }}">
                                                 <label for="merchant_id"
@@ -1266,7 +1266,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('video_url_one') ? ' has-error' : '' }}">
                                                 <label for="video_url_one"
@@ -1288,7 +1288,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('video_url_two') ? ' has-error' : '' }}">
                                                 <label for="video_url_two"
@@ -1310,7 +1310,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('video_url_three') ? ' has-error' : '' }}">
                                                 <label for="video_url_three"
@@ -1332,7 +1332,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('video_url_four') ? ' has-error' : '' }}">
                                                 <label for="video_url_four"
@@ -1354,7 +1354,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('video_url_five') ? ' has-error' : '' }}">
                                                 <label for="video_url_five"

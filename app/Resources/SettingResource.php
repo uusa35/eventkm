@@ -51,6 +51,7 @@ class SettingResource extends JsonResource
             'payment_method' => $this->payment_method,
             'size_chart' => $this->getCurrentImageAttribute('size_chart', 'large'),
             'multiCartMerchant' => $this->multi_cart_merchant,
+            'pickupFromBranch' => $this->pickup_from_branch,
             'colors' => [
                 'main_theme_color' => $this->main_theme_color,
                 'main_theme_bg_color' => $this->main_theme_bg_color,
