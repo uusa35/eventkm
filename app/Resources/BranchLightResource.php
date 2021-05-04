@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Str;
 
 class BranchLightResource extends JsonResource
 {
@@ -14,6 +15,10 @@ class BranchLightResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'name' => ucfirst(Str::limit($this->name,30,'')),
+            'address' => ucfirst(Str::limit($this->address,100,'')),
+        ];
     }
 }
