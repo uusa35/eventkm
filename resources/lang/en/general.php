@@ -850,7 +850,7 @@ return array (
   'colors_or_heights' => 'Colors or Heights',
   'index_color_or_height' => 'Colors or Heights List',
   'see_invoice' => 'See Invoice',
-  'order_cash_on_delivery_complete' => 'Order is complete. we will contact you asap.',
+  'order_cash_on_delivery_complete' => 'Please Press to confirm your order. we will contact you asap.',
   'payment' => 'Payment',
   'shipment_reference' => 'Shipment Ref',
   'is_paid' => 'is Paid',
