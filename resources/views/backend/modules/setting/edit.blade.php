@@ -66,14 +66,12 @@
                                             </label>
                                             <input type="file" class="form-control" name="app_logo" placeholder="...">
                                             <span class="help-block">
-                                            {{ trans('message.best_fit',['width' => '600 px', 'height' => '221px']) }}
-                                        </div>
-                                        <div class="help-block text-left">
+                                                {{ trans('message.best_fit',['width' => '600 px', 'height' => '221px']) }}</span>
+                                            <span class="help-block">
                                             <a href="{{ url('http://photopea.com') }}" target="_blank"
                                                class="text-info">
                                                 {{ trans('general.image_url') }}
-                                            </a>
-                                            </span>
+                                            </a></span>
                                         </div>
                                     </div>
                                     <div class="col-md-1">
@@ -95,12 +93,12 @@
                                             <span class="help-block">
                                                 {{ trans('message.best_fit',['width' => '1242 px', 'height' => '2688px']) }}
                                     </span>
-                                            <div class="help-block text-left">
+                                            <span class="help-block text-left">
                                                 <a href="{{ url('http://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
-                                            </div>
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="col-lg-1">
@@ -123,12 +121,12 @@
                                             <span class="help-block">
                                                 {{ trans('message.best_fit',['width' => '1242 px', 'height' => '2688px']) }}
                                             </span>
-                                            <div class="help-block text-left">
+                                            <span class="help-block text-left">
                                                 <a href="{{ url('http://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
-                                            </div>
+                                            </span>
                                         </div>
                                     </div>
                                     @if($element->main_bg)
@@ -152,12 +150,12 @@
                                             <div class="help-block text-left">
                                                 {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440 px']) }}
                                             </div>
-                                            <div class="help-block text-left">
+                                            <span class="help-block text-left">
                                                 <a href="{{ url('http://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
-                                            </div>
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="col-md-1">
@@ -181,12 +179,12 @@
                                             <div class="help-block text-left">
                                                 {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1850 px']) }}
                                             </div>
-                                            <div class="help-block text-left">
+                                            <span class="help-block text-left">
                                                 <a href="{{ url('http://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
-                                            </div>
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="col-md-1">
@@ -208,12 +206,12 @@
                                             <input type="file" class="form-control" name="gift_image" placeholder="...">
                                             <span class="help-block">
                                                 {{ trans('message.best_fit',['width' => '750 px', 'height' => ' 750 px']) }}</span>
-                                            <div class="help-block text-left">
+                                            <span class="help-block text-left">
                                                 <a href="{{ url('http://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
-                                            </div>
+                                            </span>
                                         </div>
                                     </div>
                                     @if($element->gift_image)
@@ -239,12 +237,12 @@
                                             <div class="help-block text-left">
                                                 {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440 px']) }}
                                             </div>
-                                            <div class="help-block text-left">
+                                            <span class="help-block text-left">
                                                 <a href="{{ url('http://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
-                                            </div>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
