@@ -920,4 +920,5 @@ return array (
   'slug' => 'Name (Commercial)',
   'n_a' => 'Not Applicable',
   'access_dashboard' => 'Access Dashboard',
+  'image_url' => 'Image Editing Url',
 );

@@ -1127,8 +1127,9 @@ return array (
   'n_a' => 'غير مطبق',
   'receive_on_branch' => 'استلام من الفرع',
   'payment_methods' => 'طرق الدفع',
-  'order_by_whatsapp' => 'تأكيد الطلب عن طريق الواتس اب',
+  'order_by_whatsapp' => 'الدفع عن طريق الواتس',
   'confirm' => 'تأكيد',
   'online_payment' => 'الدفع اونلاين',
   'continue_ur_order_by_whatsapp' => 'تأكيد طلبك عن طريق الواتس اب',
+  'image_url' => 'رابط لتعديل الصور',
 );
