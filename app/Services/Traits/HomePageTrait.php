@@ -254,10 +254,7 @@ trait HomePageTrait
         }, '>', 0)->with('role')->get();
         $categoriesHome = Category::active()->onlyParent()->onHome()->whereHas('children', function ($q) {
             return $q->active();
-        },'>',0)->orderBy('order', 'desc')->get();
-        $topDoubleCommercials = Commercial::active()->double()->orderBy('order', 'desc')->limit(2)->get();
-        $bottomDoubleCommercials = Commercial::active()->double()->orderBy('order', 'desc')->limit(2)->get();
-        $tripleCommercials = Commercial::active()->triple()->orderBy('order', 'desc')->limit(3)->get();
+        },'>',0)->orderBy('order', 'desc')->with('children.children')->get();
         return view('frontend.wokiee.four.home.istores', compact(
             'sliders',
             'brands',
@@ -266,9 +263,6 @@ trait HomePageTrait
             'bestSalesProducts',
             'productHotDeals',
             'categoriesHome',
-            'topDoubleCommercials',
-            'bottomDoubleCommercials',
-            'tripleCommercials',
             'bestSaleCollections',
             'designers',
             'companies'
