@@ -107,7 +107,7 @@
                                         @if($element->menu_bg)
                                             <a href="{{ asset(env('THUMBNAIL').$element->menu_bg)}}">
                                                 <img class="img-responsive img-sm"
-                                                     style="max-height: 100px;"
+                                                     style="max-height: 100px; max-width : 100px;"
                                                      src="{{ asset(env('THUMBNAIL').$element->menu_bg)}}"
                                                      alt="">
                                             </a>
@@ -135,7 +135,7 @@
                                         <div class="col-lg-1">
                                             <a href="{{ $element->getCurrentImageAttribute('main_bg') }}">
                                                 <img class="img-responsive img-sm"
-                                                     style="max-height: 100px;"
+                                                     style="max-height: 100px; max-width : 100px;"
                                                      src="{{ $element->getCurrentImageAttribute('main_bg') }}"
                                                      alt="">
                                             </a>
@@ -164,7 +164,7 @@
                                         @if($element->size_chart)
                                             <a href="{{ $element->getCurrentImageAttribute('size_chart') }}">
                                                 <img class="img-responsive img-sm"
-                                                     style="max-height: 100px;"
+                                                     style="max-height: 100px; max-width : 100px;"
                                                      src="{{ $element->getCurrentImageAttribute('size_chart') }}"
                                                      alt="">
                                             </a>
@@ -193,7 +193,7 @@
                                         @if($element->shipment_prices)
                                             <a href="{{ $element->getCurrentImageAttribute('shipment_prices') }}">
                                                 <img class="img-responsive img-sm"
-                                                     style="max-height: 100px;"
+                                                     style="max-height: 100px; max-width : 100px;"
                                                      src="{{ $element->getCurrentImageAttribute('shipment_prices') }}"
                                                      alt="">
                                             </a>
