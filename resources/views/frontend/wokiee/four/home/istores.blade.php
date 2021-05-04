@@ -10,10 +10,11 @@
 {{--    @include('frontend.wokiee.four.partials._products_slider_collections',['elements' => $bestSaleCollections, 'title' => trans('general.our_selection_from_collections'), 'items' => 2])--}}
 {{--    @include('frontend.wokiee.four.partials._collection_slider_with_cover',['title' => trans('general.our_selection_from_collections'), 'elements' => $bestSaleCollections])--}}
 {{--    @include('frontend.wokiee.four.partials._users_slider',['title' => trans('general.our_personal_shoppers'), 'elements' => $designers])--}}
-    @include('frontend.wokiee.four.partials.category._categories_slider_full_width', ['elements' => $categoriesHome, 'title' => trans('general.company_categories'), 'type' => 'user'])
+{{--    @include('frontend.wokiee.four.partials.category._categories_slider_full_width', ['elements' => $categoriesHome, 'title' => trans('general.company_categories'), 'type' => 'user'])--}}
+    @include('frontend.wokiee.four.partials.category._categories_slider', ['elements' => $categoriesHome->where('is_user', true), 'title' => trans('general.company_categories'), 'type' => 'user'])
     @include('frontend.wokiee.four.partials._users_slider',['title' => trans('general.some_companies'), 'elements' => $companies])
     @include('frontend.wokiee.four.partials._users_slider',['title' => trans('general.small_business'), 'elements' => $companies])
-    @include('frontend.wokiee.four.partials._home_grid_main_categories', ['title' => trans('general.product_categories')])
+    @include('frontend.wokiee.four.partials.category._categories_slider', ['elements' => $categoriesHome->where('is_product', true), 'title' => trans('general.product_categories'), 'type' => 'product'])
     @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.new_arrivals'), 'elements' => $newProducts])
     @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.on_sale_products'), 'elements' => $onSaleProducts])
 {{--    @if(isset($categoriesHome) && $categoriesHome->isNotEmpty())--}}
