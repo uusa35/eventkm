@@ -60,7 +60,7 @@
                                                                 @else
                                                                     <a href="{{ route('frontend.service.search', ['service_category_id' => $element->id]) }}">
                                                                         @endif
-                                                                        {{ str_limit($element->slug,25) }}</a>
+                                                                        {{ str_limit($element->name,25) }}</a>
                                                     {{--                        @if($element->isDesigner)--}}
                                                     {{--                            <a href="{{ route('frontend.product.search', ['designer_id' => $element->id]) }}">{{ $element->slug }}</a>--}}
                                                     {{--                        @else--}}
@@ -78,11 +78,7 @@
                                                         @else
                                                             <a href="{{ route('frontend.service.search', ['service_category_id' => $element->id,'name' => $element->name]) }}">
                                         @endif
-                                        {{--                @if($element->isDesigner)--}}
-                                        {{--                    <a href="{{ route('frontend.product.search', ['designer_id' => $element->id]) }}">{{ str_limit($element->description,100,'...') }}</a>--}}
-                                        {{--                @else--}}
-                                        {{--                    <a href="{{ route('frontend.product.search', ['user_id' => $element->id]) }}">{{ str_limit($element->description,100,'...') }}</a>--}}
-                                        {{--                @endif--}}
+                                        {{ $element->caption }}
                                     </h2>
                                     {{--@include('frontend.wokiee.four.partials._widget_price_and_color')--}}
                                     <div class="tt-product-inside-hover">
@@ -103,8 +99,7 @@
                                                                 <a href="{{ route('frontend.service.search', ['service_category_id' => $element->id,'name' => $element->name]) }}"
                                                                    class="btn btn-small">
                                                                     @endif
-                                                {{ $element->name }}
-                                                </a>
+                                                                    {{ trans('general.view_details') }}</a>
                                         </div>
                                         <div class="tt-row-btn">
                                             <a href="#" class="tt-btn-quickview" data-toggle="modal"
