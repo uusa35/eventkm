@@ -98,6 +98,7 @@
                                     <div class="col-lg-1">
                                         @if($element->menu_bg)
                                             <img class="img-responsive img-sm"
+                                                 style="max-width: 100px;"
                                                  src="{{ asset(env('THUMBNAIL').$element->menu_bg)}}"
                                                  alt="">
                                             <a href="{{ route("backend.admin.image.clear",['model' => 'setting', 'id' => $element->id ,'colName' => 'menu_bg']) }}"><i
