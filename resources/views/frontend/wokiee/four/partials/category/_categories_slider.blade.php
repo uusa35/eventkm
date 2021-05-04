@@ -60,12 +60,12 @@
                                                                 @else
                                                                     <a href="{{ route('frontend.service.search', ['service_category_id' => $element->id]) }}">
                                                                         @endif
-                                                    {{ str_limit($element->slug,25) }}</a>
-                                                {{--                        @if($element->isDesigner)--}}
-                                                {{--                            <a href="{{ route('frontend.product.search', ['designer_id' => $element->id]) }}">{{ $element->slug }}</a>--}}
-                                                {{--                        @else--}}
-                                                {{--                            <a href="{{ route('frontend.product.search', ['user_id' => $element->id]) }}">{{ $element->slug }}</a>--}}
-                                                {{--                        @endif--}}
+                                                                        {{ str_limit($element->slug,25) }}</a>
+                                                    {{--                        @if($element->isDesigner)--}}
+                                                    {{--                            <a href="{{ route('frontend.product.search', ['designer_id' => $element->id]) }}">{{ $element->slug }}</a>--}}
+                                                    {{--                        @else--}}
+                                                    {{--                            <a href="{{ route('frontend.product.search', ['user_id' => $element->id]) }}">{{ $element->slug }}</a>--}}
+                                                    {{--                        @endif--}}
                                             </li>
                                         </ul>
                                         {{--@include('frontend.wokiee.four.partials._rating')--}}
@@ -91,42 +91,21 @@
                                         {{--class="tt-btn-addtocart thumbprod-button-bg" data-toggle="modal"--}}
                                         {{--data-target="#modalAddToCartProduct">{{ trans('general.view') }}</a>--}}
                                         {{--</div>--}}
-                                        @if($element->isDesigner)
-                                            <div class="tt-row-btn">
-                                                @if($type === 'user')
-                                                    <a href="{{ route('frontend.user.search', ['user_category_id' => $element->id,'name' => $element->name]) }}"
-                                                       class="btn btn-small">
-                                                        @elseif($type === 'product')
-                                                            <a href="{{ route('frontend.product.search', ['product_category_id' => $element->id,'name' => $element->name]) }}"
-                                                               class="btn btn-small">
-                                                                @else
-                                                                    <a href="{{ route('frontend.service.search', ['service_category_id' => $element->id,'name' => $element->name]) }}"
-                                                                       class="btn btn-small">
-                                                                        @endif
-                                                                        {{ $element->name }}
-                                                                    </a>
-                                            </div>
-                                            @if($element->surveys->isNotEmpty() && auth()->check())
-                                                <div class="tt-row-btn">
-                                                    <a href="{{ route('frontend.survey.show',[$element->surveys->first()->id,'user_id' => $element->id]) }}"
-                                                       class="btn btn-small">{{ trans('general.make_collection_order') }}</a>
-                                                </div>
-                                            @endif
-                                        @else
-                                            <div class="tt-row-btn">
-                                                @if($type === 'user')
-                                                    <a href="{{ route('frontend.user.search', ['user_category_id' => $element->id,'name' => $element->name]) }}"
-                                                       class="btn btn-small">
-                                            @elseif($type === 'product')
-                                                <a href="{{ route('frontend.product.search', ['product_category_id' => $element->id,'name' => $element->name]) }}"
+
+                                        <div class="tt-row-btn">
+                                            @if($type === 'user')
+                                                <a href="{{ route('frontend.user.search', ['user_category_id' => $element->id,'name' => $element->name]) }}"
                                                    class="btn btn-small">
-                                                    @else
-                                                    <a href="{{ route('frontend.service.search', ['service_category_id' => $element->id,'name' => $element->name]) }}"
-                                                    class="btn btn-small">
-                                                    @endif
-                                                    {{ trans('general.view_details') }}</a>
-                                            </div>
-                                        @endif
+                                                    @elseif($type === 'product')
+                                                        <a href="{{ route('frontend.product.search', ['product_category_id' => $element->id,'name' => $element->name]) }}"
+                                                           class="btn btn-small">
+                                                            @else
+                                                                <a href="{{ route('frontend.service.search', ['service_category_id' => $element->id,'name' => $element->name]) }}"
+                                                                   class="btn btn-small">
+                                                                    @endif
+                                                {{ $element->name }}
+                                                </a>
+                                        </div>
                                         <div class="tt-row-btn">
                                             <a href="#" class="tt-btn-quickview" data-toggle="modal"
                                                data-tooltip="{{ trans('general.quick_view') }}"
