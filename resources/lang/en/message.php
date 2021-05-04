@@ -203,4 +203,5 @@ return array (
   'payment_method' => 'Payment Method',
   'order' => 'Order',
   'shipment_fees_shall_be_removed_in_confirmation_page_in_case_you_choosed_to_receive_from_branch' => 'Deliver Feees shall be removed in next Step if Pickup From Branch ticked. (please kindly note that this feature is only available inside Kuwait).',
+  'general_search' => 'General Search in',
 );
