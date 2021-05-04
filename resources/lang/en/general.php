@@ -921,4 +921,5 @@ return array (
   'n_a' => 'Not Applicable',
   'access_dashboard' => 'Access Dashboard',
   'image_url' => 'Image Editing Url',
+  'general_search' => 'General Search in elements.',
 );

@@ -1082,6 +1082,7 @@ return array (
   'posts' => 'المقالات',
   'required_firleds' => 'إعادة ارسال',
   'reset' => 'إعادة تعيين',
+  'general_search' => 'البحث الشامل لجميع العناصر',
   'today_date' => 'تاريخ اليوم',
   'trashed' => 'محذوف',
   'services_list' => 'قائمة الخدمات',
