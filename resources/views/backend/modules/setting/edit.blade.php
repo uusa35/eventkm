@@ -66,21 +66,23 @@
                                             </label>
                                             <input type="file" class="form-control" name="app_logo" placeholder="...">
                                             <span class="help-block">
-                                                {{ trans('message.best_fit',['width' => '600 px', 'height' => '221px']) }}
-                                                <div class="help-block text-left">
-                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
-                                                   class="text-info">
-                                                    {{ trans('general.image_url') }}
-                                                </a>
-                                            </div>
-                                    </span>
+                                            {{ trans('message.best_fit',['width' => '600 px', 'height' => '221px']) }}
+                                        </div>
+                                        <div class="help-block text-left">
+                                            <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                               class="text-info">
+                                                {{ trans('general.image_url') }}
+                                            </a>
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="col-md-1">
                                         @if($element->app_logo)
-                                            <img class="img-responsive img-sm"
-                                                 src="{{ $element->getCurrentImageAttribute('app_logo') }}"
-                                                 alt="">
+                                            <a href="{{ $element->getCurrentImageAttribute('app_logo') }}">
+                                                <img class="img-responsive img-sm"
+                                                     src="{{ $element->getCurrentImageAttribute('app_logo') }}"
+                                                     alt="">
+                                            </a>
                                             <a href="{{ route("backend.admin.image.clear",['model' => 'setting', 'id' => $element->id ,'colName' => 'app_logo']) }}"><i
                                                     class="fa fa-fw fa-times"></i></a>
                                         @endif
@@ -89,18 +91,26 @@
                                         <div class="form-group">
                                             <label for="form_control_1">{{ trans('general.menu_bg') }}*
                                             </label>
+                                            <input type="file" class="form-control" name="menu_bg" placeholder="...">
                                             <span class="help-block">
                                                 {{ trans('message.best_fit',['width' => '1242 px', 'height' => '2688px']) }}
                                     </span>
-                                            <input type="file" class="form-control" name="menu_bg" placeholder="...">
+                                            <div class="help-block text-left">
+                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                                   class="text-info">
+                                                    {{ trans('general.image_url') }}
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-1">
                                         @if($element->menu_bg)
-                                            <img class="img-responsive img-sm"
-                                                 style="max-height: 100px;"
-                                                 src="{{ asset(env('THUMBNAIL').$element->menu_bg)}}"
-                                                 alt="">
+                                            <a href="{{ asset(env('THUMBNAIL').$element->menu_bg)}}">
+                                                <img class="img-responsive img-sm"
+                                                     style="max-height: 100px;"
+                                                     src="{{ asset(env('THUMBNAIL').$element->menu_bg)}}"
+                                                     alt="">
+                                            </a>
                                             <a href="{{ route("backend.admin.image.clear",['model' => 'setting', 'id' => $element->id ,'colName' => 'menu_bg']) }}"><i
                                                     class="fa fa-fw fa-times"></i></a>
                                         @endif
@@ -109,17 +119,26 @@
                                         <div class="form-group">
                                             <label for="form_control_1">{{ trans('general.mobile_app_home_bg') }}
                                             </label>
+                                            <input type="file" class="form-control" name="main_bg" placeholder="...">
                                             <span class="help-block">
                                                 {{ trans('message.best_fit',['width' => '1242 px', 'height' => '2688px']) }}
-                                    </span>
-                                            <input type="file" class="form-control" name="main_bg" placeholder="...">
+                                            </span>
+                                            <div class="help-block text-left">
+                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                                   class="text-info">
+                                                    {{ trans('general.image_url') }}
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                     @if($element->main_bg)
                                         <div class="col-lg-1">
-                                            <img class="img-responsive img-sm"
-                                                 src="{{ $element->getCurrentImageAttribute('main_bg') }}"
-                                                 alt="">
+                                            <a href="{{ $element->getCurrentImageAttribute('main_bg') }}">
+                                                <img class="img-responsive img-sm"
+                                                     style="max-height: 100px;"
+                                                     src="{{ $element->getCurrentImageAttribute('main_bg') }}"
+                                                     alt="">
+                                            </a>
                                             <a href="{{ route("backend.admin.image.clear",['model' => 'setting', 'id' => $element->id ,'colName' => 'main_bg']) }}"><i
                                                     class="fa fa-fw fa-times"></i></a>
                                         </div>
@@ -133,17 +152,26 @@
                                             <div class="help-block text-left">
                                                 {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440 px']) }}
                                             </div>
+                                            <div class="help-block text-left">
+                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                                   class="text-info">
+                                                    {{ trans('general.image_url') }}
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                    @if($element->size_chart)
-                                        <div class="col-md-1">
-                                            <img class="img-responsive img-sm"
-                                                 src="{{ $element->getCurrentImageAttribute('size_chart') }}"
-                                                 alt="">
+                                    <div class="col-md-1">
+                                        @if($element->size_chart)
+                                            <a href="{{ $element->getCurrentImageAttribute('size_chart') }}">
+                                                <img class="img-responsive img-sm"
+                                                     style="max-height: 100px;"
+                                                     src="{{ $element->getCurrentImageAttribute('size_chart') }}"
+                                                     alt="">
+                                            </a>
                                             <a href="{{ route("backend.admin.image.clear",['model' => 'setting', 'id' => $element->id ,'colName' => 'size_chart']) }}"><i
                                                     class="fa fa-fw fa-times"></i></a>
-                                        </div>
-                                    @endif
+                                        @endif
+                                    </div>
                                     <div class="col-lg-5">
                                         <div class="form-group">
                                             <label
@@ -153,17 +181,26 @@
                                             <div class="help-block text-left">
                                                 {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1850 px']) }}
                                             </div>
+                                            <div class="help-block text-left">
+                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                                   class="text-info">
+                                                    {{ trans('general.image_url') }}
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                    @if($element->shipment_prices)
-                                        <div class="col-md-1">
-                                            <img class="img-responsive img-sm"
-                                                 src="{{ $element->getCurrentImageAttribute('shipment_prices') }}"
-                                                 alt="">
+                                    <div class="col-md-1">
+                                        @if($element->shipment_prices)
+                                            <a href="{{ $element->getCurrentImageAttribute('shipment_prices') }}">
+                                                <img class="img-responsive img-sm"
+                                                     style="max-height: 100px;"
+                                                     src="{{ $element->getCurrentImageAttribute('shipment_prices') }}"
+                                                     alt="">
+                                            </a>
                                             <a href="{{ route("backend.admin.image.clear",['model' => 'setting', 'id' => $element->id ,'colName' => 'shipment_prices']) }}"><i
                                                     class="fa fa-fw fa-times"></i></a>
-                                        </div>
-                                    @endif
+                                        @endif
+                                    </div>
                                     <div class="col-lg-5">
                                         <div class="form-group">
                                             <label for="form_control_1">{{ trans('general.gift_image') }}
