@@ -254,6 +254,11 @@
                                                             <div class="help-block text-left">
                                                                 {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440']) }}
                                                             </div>
+                                                            <div class="help-block text-left">
+                                                                <a href="{{ url('http://photopea.com') }}" target="_blank">
+                                                                    {{ trans('general.image_url') }}
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
@@ -279,6 +284,11 @@
                                                                    multiple/>
                                                             <div class="help-block text-left">
                                                                 {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440']) }}
+                                                            </div>
+                                                            <div class="help-block text-left">
+                                                                <a href="{{ url('http://photopea.com') }}" target="_blank">
+                                                                    {{ trans('general.image_url') }}
+                                                                </a>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -246,9 +246,7 @@
                                                            value="0"> {{ trans('general.female') }}</label>
                                             </div>
                                         </div>
-
                                         {{-- password + confirm password --}}
-
                                         <div class="col-lg-12">
                                             <div class="col-md-2">
                                                 <div class="form-group">
@@ -263,6 +261,11 @@
                                                     <div class="help-block text-left">
                                                         {{ trans('message.best_fit',['width' => '1000 px', 'height' => '1000 px']) }}
                                                     </div>
+                                                    <div class="help-block text-left">
+                                                        <a href="{{ url('http://photopea.com') }}" target="_blank">
+                                                            {{ trans('general.image_url') }}
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                             @if($element->image)
@@ -270,8 +273,8 @@
                                                     <img class="img-responsive img-sm" style="width : 60px"
                                                          src="{{ $element->imageThumbLink }}"
                                                          alt="">
-                                                    {{--                                                            <a href="{{ route("backend.admin.image.clear",['model' => 'user', 'id' => $element->id ]) }}"><i--}}
-                                                    {{--                                                                        class="fa fa-fw fa-times"></i></a>--}}
+{{--                                                    <a href="{{ route("backend.admin.image.clear",['model' => 'user', 'id' => $element->id ]) }}"><i--}}
+{{--                                                            class="fa fa-fw fa-times"></i></a>--}}
                                                 </div>
                                             @endif
                                             <div class="col-lg-4 col-md-6">
@@ -287,6 +290,11 @@
                                                            multiple/>
                                                     <div class="help-block text-left">
                                                         {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440 px']) }}
+                                                    </div>
+                                                    <div class="help-block text-left">
+                                                        <a href="{{ url('http://photopea.com') }}" target="_blank">
+                                                            {{ trans('general.image_url') }}
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>

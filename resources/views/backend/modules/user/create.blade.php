@@ -178,6 +178,11 @@
                                                 <div class="help-block text-left">
                                                     {{ trans('message.best_fit',['width' => '1000 px', 'height' => '1000 px']) }}
                                                 </div>
+                                                <div class="help-block text-left">
+                                                    <a href="{{ url('http://photopea.com') }}" target="_blank">
+                                                        {{ trans('general.image_url') }}
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-6">
@@ -192,6 +197,16 @@
                                                        multiple/>
                                                 <div class="help-block text-left small">
                                                     {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440 px']) }}
+                                                </div>
+                                                <div class="help-block text-left">
+                                                    <a href="{{ url('http://photopea.com') }}" target="_blank">
+                                                        {{ trans('general.image_url') }}
+                                                    </a>
+                                                </div>
+                                                <div class="help-block text-left">
+                                                    <a href="{{ url('http://photopea.com') }}" target="_blank">
+                                                        {{ trans('general.image_url') }}
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
