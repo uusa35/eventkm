@@ -922,4 +922,5 @@ return array (
   'access_dashboard' => 'Access Dashboard',
   'image_url' => 'Image Editing Url',
   'general_search' => 'General Search in elements.',
+  'shipment_fees' => 'Shippment Fees',
 );
