@@ -68,7 +68,7 @@ return array (
   'no_items_in_cart' => 'الكارت فارغ',
   'exclusive' => 'حصري',
   'new' => 'إنشاء',
-  'on_sale' => 'شامل الخصم',
+  'on_sale' => 'يوجد خصم',
   'available' => 'متاح',
   'not_available' => 'غير متاح',
   'featured' => 'مميز',

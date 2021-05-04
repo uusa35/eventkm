@@ -112,7 +112,7 @@ return array (
   'cart_error_perfumes' => 'Perfume product error',
   'my_fatorrah' => 'My bill',
   'not_active' => 'Not enabled',
-  'on_sale' => 'Comprehensive discount',
+  'on_sale' => 'On Discount',
   'on_sale_on_homepage' => 'Discount - In Home',
   'orders_and_shopping' => 'Orders and Shopping',
   'parentCategory' => 'Basic',
