@@ -19,7 +19,11 @@ class BranchController extends Controller
     public function index()
     {
 
-        $elements = Branch::latest()->get();
+        if(auth()->user()->isAdminOrAbove) {
+            $elements = Branch::latest()->get();
+        } else {
+            $elements = Branch::where(['user_id' => auth()->id()])->get();
+        }
         return view('backend.modules.branch.index', compact('elements'));
     }
 
@@ -81,8 +85,9 @@ class BranchController extends Controller
     public function edit($id)
     {
         $element = Branch::whereId($id)->first();
+        $users = User::active()->notAdmins()->notClients()->get();
         $countries = Country::all();
-        return view('backend.modules.branch.edit', compact('element', 'countries'));
+        return view('backend.modules.branch.edit', compact('element', 'countries','users'));
     }
 
     /**

@@ -25,6 +25,7 @@ class UserExtraLightResource extends JsonResource
             'has_map' => ($this->longitude && $this->latitude),
             'longitude' => (float)$this->longitude,
             'latitude' => (float)$this->latitude,
+            'branches' => new UserExtraLightResource($this->whenLoaded('branches')),
         ];
     }
 }

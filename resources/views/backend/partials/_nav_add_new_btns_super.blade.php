@@ -193,6 +193,14 @@
             <i class="icon-plus"></i> {{ trans('general.new_post') }}</a>
     </li>
 @endcan
+@can('branch.create')
+    <li>
+        <a href="{{ route('backend.branch.create') }}" class="tooltips" data-container="body"
+           data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}"
+           data-original-title="{{ trans('message.new_branch') }}">
+            <i class="icon-plus"></i> {{ trans('general.new_branch') }}</a>
+    </li>
+@endcan
 {{--@can('day.create')--}}
 {{--    <li>--}}
 {{--        <a href="{{ route('backend.admin.day.create') }}" class="tooltips" data-container="body"--}}

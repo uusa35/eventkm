@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Policies\AddonPolicy;
 use App\Policies\AreaPolicy;
+use App\Policies\BranchPolicy;
 use App\Policies\BrandPolicy;
 use App\Policies\CategoryGroupPolicy;
 use App\Policies\CategoryPolicy;
@@ -81,6 +82,7 @@ class AuthServiceProvider extends ServiceProvider
         Gate::resource('order', OrderPolicy::class);
         Gate::resource('image', ImagePolicy::class);
         Gate::resource('brand', BrandPolicy::class);
+        Gate::resource('branch', BranchPolicy::class);
         Gate::resource('coupon', CouponPolicy::class);
         Gate::resource('page', PagePolicy::class);
         Gate::resource('post', PostPolicy::class);

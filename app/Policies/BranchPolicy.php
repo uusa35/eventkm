@@ -9,9 +9,10 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class BranchPolicy
 {
     use HandlesAuthorization;
+    const MODAL = 'branch';
 
     /**
-     * Determine whether the user can view the branch.
+     * Determine whether the user can view the brand.
      *
      * @param  \App\Models\User  $user
      * @param  \App\Branch  $branch
@@ -19,22 +20,22 @@ class BranchPolicy
      */
     public function view(User $user, Branch $branch)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first() ? $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__} : false;
     }
 
     /**
-     * Determine whether the user can create branches.
+     * Determine whether the user can create brands.
      *
      * @param  \App\Models\User  $user
      * @return mixed
      */
     public function create(User $user)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first() ? $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__} : false;
     }
 
     /**
-     * Determine whether the user can update the branch.
+     * Determine whether the user can update the brand.
      *
      * @param  \App\Models\User  $user
      * @param  \App\Branch  $branch
@@ -42,11 +43,11 @@ class BranchPolicy
      */
     public function update(User $user, Branch $branch)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first() ? $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__} : false;
     }
 
     /**
-     * Determine whether the user can delete the branch.
+     * Determine whether the user can delete the brand.
      *
      * @param  \App\Models\User  $user
      * @param  \App\Branch  $branch
@@ -54,11 +55,11 @@ class BranchPolicy
      */
     public function delete(User $user, Branch $branch)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first() ? $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__} : false;
     }
 
     /**
-     * Determine whether the user can restore the branch.
+     * Determine whether the user can restore the brand.
      *
      * @param  \App\Models\User  $user
      * @param  \App\Branch  $branch
@@ -70,7 +71,7 @@ class BranchPolicy
     }
 
     /**
-     * Determine whether the user can permanently delete the branch.
+     * Determine whether the user can permanently delete the brand.
      *
      * @param  \App\Models\User  $user
      * @param  \App\Branch  $branch
