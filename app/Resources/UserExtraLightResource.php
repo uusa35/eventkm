@@ -21,6 +21,7 @@ class UserExtraLightResource extends JsonResource
             'description' => $this->description ? ucfirst(Str::limit($this->description, 80, '')) : ucfirst(Str::limit($this->service, 80, '')),
             'thumb' => $this->getCurrentImageAttribute('image'),
             'fullMobile' => $this->fullMobile,
+            'whatsapp' => $this->fullWhatsapp,
             'rating' => $this->rating,
             'has_map' => ($this->longitude && $this->latitude),
             'longitude' => (float)$this->longitude,
