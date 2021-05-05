@@ -141,7 +141,8 @@ class ProductAttributeController extends Controller
     {
         $element = ProductAttribute::where('id', $id)->first();
         $orderMeta = OrderMeta::where('product_attribute_id', $id)->first();
-        if ($element->delete() && $orderMeta) {
+        if (!$orderMeta) {
+            $element->delete();
             return redirect()->back()->with('success', 'element deleted');
         }
         return redirect()->back()->with('error', 'not deleted - some orders are relying on such attributes - cant be deleted');
