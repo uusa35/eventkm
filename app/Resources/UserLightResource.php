@@ -30,7 +30,6 @@ class UserLightResource extends JsonResource
             'products' => ProductExtraLightResource::collection($this->whenLoaded('products')),
             'services' => ServiceLightResource::collection($this->whenLoaded('services')),
             'orders' => OrderLightResource::collection($this->whenLoaded('orders')),
-            'branches' => BranchLightResource::collection($this->whenLoaded('branches')),
             'coupons' => CouponLightResource::collection($this->whenLoaded('coupons')),
             'product_favorites' => ProductLightResource::collection($this->whenLoaded('product_favorites')),
             'service_favorites' => ServiceLightResource::collection($this->whenLoaded('service_favorites')),
@@ -41,6 +40,7 @@ class UserLightResource extends JsonResource
             'collections' => CollectionLightResource::collection($this->whenLoaded('collections')),
             'ratings' => RatingLightResource::collection($this->whenLoaded('ratings')),
             'areas' => AreaLightResource::collection($this->whenLoaded('areas')),
+            'branches' => BranchLightResource::collection($this->branches),
             'country' => new CountryLightResource($this->whenLoaded('country')),
         ];
     }
