@@ -1,4 +1,3 @@
-
 @extends('frontend.wokiee.four.layouts.app')
 
 @section('breadcrumbs')
@@ -13,13 +12,17 @@
             <div class="container">
                 <div class="row" style="padding-top: 20px;">
                     {{--<div class="col-md-4 col-lg-3 col-xl-3 leftColumn aside desctop-no-sidebar">--}}
-                    <div class="col-md-4 col-lg-3 col-xl-3 leftColumn aside">
-                        @include('frontend.wokiee.four.partials._search_side_bar',['products' => $elements])
-                    </div>
+                    @if(!env('EVENTKM'))
+                        <div class="col-md-4 col-lg-3 col-xl-3 leftColumn aside">
+                            @include('frontend.wokiee.four.partials._search_side_bar',['products' => $elements])
+                        </div>
+                    @endif
                     <div class="col-md-9">
                         <div class="content-indent">
                             </br>
-                            @include('frontend.wokiee.four.partials._search_sort_by')
+                            @if(!env('EVENTKM'))
+                                @include('frontend.wokiee.four.partials._search_sort_by')
+                            @endif
                             <div class="tt-product-listing row">
                                 @include('frontend.wokiee.four.partials._products_user_show',['products' => $elements])
                             </div>
