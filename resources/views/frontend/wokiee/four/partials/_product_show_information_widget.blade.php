@@ -105,7 +105,7 @@
             @if(!is_null($element->user->whatsapp))
                 <tr>
                     <td class="td-fixed-element">
-                        <span><i class="fa fa-fw fa-lg icon-f-93"></i> {{ trans('general.whatsapp') }}:</span>
+                        <span><i class="fa fa-fw fa-lg fa-whatsapp"></i> {{ trans('general.whatsapp') }}:</span>
                     </td>
                     <td>
                         <a href="https://api.whatsapp.com/send?phone={{ $element->user->whatsapp }}&text={{ request()->url() }}">
@@ -117,7 +117,7 @@
             @if(!is_null($element->user->phone))
                 <tr>
                     <td class="td-fixed-element">
-                        <span><i class="fa fa-fw fa-lg icon-h-35"></i> {{ trans('general.phone') }}:</span>
+                        <span><i class="fa fa-fw fa-lg fa-phone-square"></i> {{ trans('general.phone') }}:</span>
                     </td>
                     <td>
                         <a href="tel:{{ $element->user->phone }}">
