@@ -210,6 +210,3 @@ if (app()->environment('production') || app()->environment('local')) {
 Route::get('/{notFound}', function () {
     abort('404', trans('message.not_found'));
 });
-Route::get('/frontend/excel', function () {
-    return view('excel');
-});
