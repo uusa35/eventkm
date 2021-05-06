@@ -2,10 +2,6 @@
 
 @section('body')
     <div class="tt-coming-soon" style="background: white !important;">
-        <iframe
-            width="100%"
-            height="100%"
-            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQgtD_0QWP0hfjihN3tQ4_X1das8ToQSH8ZXK1YSpwz2QO5crX4XY72qrSD4zxUxbQ8AJTCaJ7s8Mau/pubhtml?widget=true&amp;headers=false"></iframe>
         <div class="container">
             <div class="row	justify-content-center" style="margin : 2%">
                 <div class="col-12 tt-coming-soon-content">
