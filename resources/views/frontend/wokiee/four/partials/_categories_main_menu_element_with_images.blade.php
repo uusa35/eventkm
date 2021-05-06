@@ -192,9 +192,9 @@
                                                 <div class="tt-description tt-point-h-l tt-point-v-t">
                                                     <div class="tt-description-wrapper">
                                                         <div class="tt-title-small tt-white-color">{{ $cat->name }}</div>
-{{--                                                        @if($cat->caption)--}}
-{{--                                                            <div class="tt-title-xlarge tt-white-color">{{ $cat->caption }}</div>--}}
-{{--                                                        @endif--}}
+                                                        @if($cat->caption)
+                                                            <div class="tt-title-xlarge tt-white-color">{{ $cat->caption }}</div>
+                                                        @endif
                                                         @if($cat->description)
                                                             <p class="tt-white-color">{{ $cat->description }}</p>
                                                             <span class="btn-underline tt-obj-bottom tt-white-color">{{ trans('general.shop_now') }}</span>
