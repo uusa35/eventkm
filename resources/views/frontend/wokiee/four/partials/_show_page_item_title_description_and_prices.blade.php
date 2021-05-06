@@ -1,4 +1,4 @@
-<div class="tt-wrapper">
+<div class="tt-wrapper" style="background-color: #FBFBFB; padding: 30px; border-radius: 10px;">
     <div class="tt-title text-center">
         {{ $element->name }}
     </div>
@@ -15,13 +15,13 @@
                 {{ $currency->symbol }}</span>
         @endif
     </div>
-</div>
-<div class="tt-wrapper">
-    {{ $element->description }}
+    <div class="tt-wrapper">
+        {{ $element->description }}
+    </div>
 </div>
 @if($element->notes_en && env('BITS'))
 <div class="tt-wrapper">
-    <h6 class="text-left">Additional Information :</h6>
+    <h6 class="text-left">{{ trans('general.additional_information') }} :</h6>
     {{ $element->notes_en }}
     <hr>
 </div>

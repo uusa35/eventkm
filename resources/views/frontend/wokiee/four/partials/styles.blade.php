@@ -132,7 +132,7 @@
     .tt-image-box .tt-btn-wishlist,
     ul.tt-options-swatch li.active a:not(.options-color):not(.options-color-img), ul.tt-options-swatch li:hover a:not(.options-color):not(.options-color-img),
     .btn > .fa .fa-fw, .tt-badge-cart,
-    .tt-product:not(.tt-view):hover .tt-image-box .tt-btn-quickview, .tt-product:not(.tt-view):hover .tt-image-box .tt-btn-quickview:hover , .skltbs-theme-light .skltbs-tab.skltbs-active{
+    .tt-product:not(.tt-view):hover .tt-image-box .tt-btn-quickview, .tt-product:not(.tt-view):hover .tt-image-box .tt-btn-quickview:hover , .skltbs-theme-light .skltbs-tab.skltbs-active , .slick-arrow:hover {
         color: {{ $settings->btn_text_theme_color }}                    !important;
         background-color: {{ $settings->btn_bg_theme_color }}                    !important;
     }
@@ -173,7 +173,7 @@
     }
 
     header .tt-color-scheme-01 {
-        background-color: {{ $settings->menu_theme_bg }}      !important;
+        background-color: #FBFBFB      !important;
         color: {{ $settings->menu_theme_color }}                  !important;
     }
 
@@ -365,6 +365,14 @@
         min-height: 50px;
         text-align: {{ app()->getLocale() === 'ar' ? 'right' : 'left' }};
 
+    }
+
+    .lightGrayBgRow {
+        background-color: #FBFBFB; padding-top : 40px; padding-bottom: 40px;
+    }
+
+    .tt-product-single-info .tt-label [class^=tt-label] {
+        border-radius: 5px !important;
     }
 </style>
 
