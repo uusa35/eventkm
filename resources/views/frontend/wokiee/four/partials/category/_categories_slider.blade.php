@@ -1,4 +1,3 @@
-{{ dd($elements->count()) }}
 @if(isset($elements) && $elements->isNotEmpty())
     <div class="container-indent">
         <div class="container container-fluid-custom-mobile-padding">
