@@ -27,7 +27,7 @@ class CategoryController extends Controller
             }])->orderBy('order', 'asc')->get();
         } elseif (request()->has('type') && !request()->has('on_home')) {
             // is_classified or is_product or is_service and not nessecary is_parent
-            $elements = Category::where(request()->type, true)->active()->onHome()
+            $elements = Category::active()->onHome()->where(request()->type, true)
                 ->whereHas('users', function ($q) {
                     return $q->active();
                 }, '>', 0)->with(['children' => function ($q) {
@@ -38,7 +38,7 @@ class CategoryController extends Controller
                     return $q->active()->orderBy('order', 'asc');
                 }])->orderBy('order', 'asc')->get();
         } elseif (request()->has('type') && request()->has('on_home')) {
-            $elements = Category::where(request()->type, true)->active()->whereHas('users', function ($q) {
+            $elements = Category::active()->where(request()->type, true)->whereHas('users', function ($q) {
                 return $q->active();
             }, '>', 0)->onHome()->with(['children' => function ($q) {
                 return $q->active()->where(request()->type, true)->with(['children' => function ($q) {
