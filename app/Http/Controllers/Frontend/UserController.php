@@ -103,7 +103,7 @@ class UserController extends Controller
             $productIds = $element->collections()->with(['products' => function ($q) {
                 return $q->active()->hasStock();
             }])->get()->pluck('products')->flatten()->unique('id')->pluck('id')->toArray();
-            $products = Product::active()->whereIn('id', $productIds)->filters($filters)->with([
+            $products = Product::whereIn('id', $productIds)->active()->hasStock()->filters($filters)->with([
                 'product_attributes.color', 'color',
                 'colors', 'sizes', 'size', 'user',
                 'product_attributes.size', 'images',
