@@ -242,19 +242,9 @@ trait HomePageTrait
         $bestSalesProducts = $this->product->whereIn('id', $this->product->active()->available()->hasImage()->serveCountries()->hasStock()->bestSalesProducts())->hasAtLeastOneCategory()->with('brand', 'product_attributes.color', 'product_attributes.size', 'color', 'size', 'images', 'user', 'favorites', 'user.country')->limit(self::TAKE_LESS)->get();;
         $productHotDeals = $this->product->active()->available()->onSale()->hotDeals()->hasImage()->serveCountries()->hasAtLeastOneCategory()->with('brand', 'product_attributes.color', 'product_attributes.size', 'color', 'size', 'images', 'user.country', 'user', 'favorites')->orderby('end_sale', 'desc')->limit(self::TAKE_LESS)->get();
         $bestSaleCollections = OrderMeta::bestSaleCollections();
-        $designers = User::active()->onHome()->designers()->whereHas('collections', function ($q) {
-            return $q->whereHas('products', function ($q) {
-                return $q->active();
-            }, '>', 0);
-        }, '>', 0)->with('role')->with(['surveys' => function ($q) {
-            return $q->where('is_order', true)->active();
-        }])->notAdmins()->hasProducts()->get();
-        $companies = User::active()->onHome()->companies()->notAdmins()->hasProducts()->whereHas('products', function ($q) {
-            return $q->active();
-        }, '>', 0)->with('role')->get();
-        $categoriesHome = Category::active()->onlyParent()->onHome()->whereHas('children', function ($q) {
-            return $q->active();
-        }, '>', 0)->orderBy('order', 'desc')->with(['children' => function ($q) {
+        $designers = User::active()->onHome()->designers()->with('role')->notAdmins()->hasProducts()->get();
+        $companies = User::active()->onHome()->companies()->notAdmins()->hasProducts()->hasProducts()->with('role')->get();
+        $categoriesHome = Category::active()->onlyParent()->onHome()->orderBy('order', 'desc')->with(['children' => function ($q) {
             return $q->active()->with(['children' => function ($q) {
                 return $q->active();
             }]);
