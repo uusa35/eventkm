@@ -1,4 +1,4 @@
-{{ dd($elements->pluck('children')->flatten()->count()) }}
+{{ dd($elements->flatten()->count()) }}
 @if(isset($elements) && $elements->isNotEmpty())
     <div class="container-indent">
         <div class="container container-fluid-custom-mobile-padding">
@@ -14,7 +14,7 @@
                 class="tt-carousel-products row arrow-location-tab arrow-location-tab01 tt-alignment-img tt-layout-product-item slick-animated-show-js"
                 data-item="{{ isset($items) ? $items : 4  }}"
             >
-                @foreach($elements->pluck('children')->flatten() as $element)
+                @foreach($elements->flatten() as $element)
                     <div class="col-lg-3 col-sm-12">
                         @if($element)
                             <div class="tt-product thumbprod-center" style="padding: 10px;">
