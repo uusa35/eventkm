@@ -1,5 +1,5 @@
 <div class="tt-wrapper product-information-buttons text-center">
-    @if($element->size_chart_image || $settings->size_chart && $element->show_size_chart)
+    @if($element->size_chart_image || $settings->size_chart && $element->show_size_chart && $element->show_size_chart)
         <a data-toggle="modal" data-target="#modalProductInfo" href="#">
                                         <span class="align-content-center">
                                             <i class="fa fa-fw fa-lg icon-e-75"></i>
