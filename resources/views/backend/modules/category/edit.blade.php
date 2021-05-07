@@ -14,8 +14,8 @@
                       action="{{ route('backend.admin.category.update', $element->id) }}" enctype="multipart/form-data">
                     @csrf
                     @method('put')
-                    <input type="hidden" name="parent_id"
-                           value="{{ request()->has('parent_id') ? request()->parent_id : $element->parent_id}}">
+{{--                    <input type="hidden" name="parent_id"--}}
+{{--                           value="{{ request()->has('parent_id') ? request()->parent_id : $element->parent_id}}">--}}
                     <div class="form-body">
                         <h3 class="form-section">{{ trans('general.edit_category') }}</h3>
                         <div class="portlet box blue ">
@@ -188,7 +188,24 @@
                                                 @endif
                                             </div>
                                         </div>
-
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="form-group">
+                                                <label for="single"
+                                                       class="control-label required">{{ trans('general.parent') }}
+                                                    *</label>
+                                                <select name="parent_id" class="form-control tooltips"
+                                                        data-container="body" data-placement="top"
+                                                        data-original-title="{{ trans('message.parent') }}">
+                                                    <option
+                                                        value="0">{{ trans('general.make_parent') }}</option>
+                                                    @foreach($categories as $category)
+                                                        <option
+                                                            value="{{ $category->id }}" {{ $element->parent_id === $category->id ? 'selected' : null  }}>{{ $category->name }}
+                                                            - {{ $category->id }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

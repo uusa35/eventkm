@@ -70,7 +70,8 @@ class CategoryController extends Controller
         $element = Category::whereId($id)->with('children', 'tags')->first();
         $tags = Tag::active()->get();
         $categoryGroups = CategoryGroup::active()->get();
-        return view('backend.modules.category.edit', compact('element', 'tags', 'categoryGroups'));
+        $categories = Category::where('id', '!=', $id)->active()->get();
+        return view('backend.modules.category.edit', compact('element', 'tags', 'categoryGroups', 'categories'));
     }
 
     /**
@@ -101,12 +102,12 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $element = Category::whereId($id)->with('products','classifieds','services')->first();
+        $element = Category::whereId($id)->with('products', 'classifieds', 'services')->first();
         // later we should check if this category is related to that modal or not !!!
 //        if($element->products->isEmpty() && $element->services->isEmpty() && $element->classifieds->isEmpty()) {
-            if ($element->delete()) {
-                return redirect()->route('backend.admin.category.index')->with('success', 'Category Removed successfully!');
-            }
+        if ($element->delete()) {
+            return redirect()->route('backend.admin.category.index')->with('success', 'Category Removed successfully!');
+        }
 //        }
         return redirect()->back()->with('error', 'Category not deleted !! please remove elements attached to it first.');
     }
