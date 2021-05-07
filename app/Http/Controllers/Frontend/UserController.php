@@ -95,7 +95,7 @@ class UserController extends Controller
         $collections = collect([]);
         IncreaseElementViews::dispatch($element);
         if (!request()->hasAny(['product_category_id', 'size_id', 'color_id'])) {
-            $services = $element->services()->filters($filters)->with(
+            $services = $element->services()->active()->hasImage()->serveCountries()->hasValidTimings()->filters($filters)->with(
                 'user', 'tags', 'categories.children', 'images'
             )->paginate(Self::TAKE);
         }
