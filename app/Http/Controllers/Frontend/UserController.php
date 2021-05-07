@@ -100,7 +100,9 @@ class UserController extends Controller
             )->paginate(Self::TAKE);
         }
         if ($element->isDesigner) {
-            $productIds = $element->collections()->with('products')->get()->pluck('products')->flatten()->unique('id')->pluck('id')->toArray();
+            $productIds = $element->collections()->with(['products' => function ($q) {
+                return $q->active()->hasStock();
+            }])->get()->pluck('products')->flatten()->unique('id')->pluck('id')->toArray();
             $products = Product::active()->whereIn('id', $productIds)->filters($filters)->with([
                 'product_attributes.color', 'color',
                 'colors', 'sizes', 'size', 'user',
@@ -108,7 +110,7 @@ class UserController extends Controller
                 'tags', 'categories.children', 'brand',
             ])->paginate(Self::TAKE_MIN);
         } else {
-            $products = $element->products()->active()->filters($filters)->with([
+            $products = $element->products()->active()->hasStock()->filters($filters)->with([
                 'product_attributes.color', 'color',
                 'colors', 'sizes', 'size', 'user',
                 'product_attributes.size', 'images',
@@ -123,7 +125,7 @@ class UserController extends Controller
         $vendors = isset($services) ? $services->pluck('user')->flatten()->unique('id') : null;
         $companies = $products->pluck('user')->flatten()->unique('id');
         if ($element->isDesigner) {
-            $collections = $element->collections->paginate(10);
+            $collections = $element->collections->paginate(SELF::TAKE_LESS);
         }
         return view('frontend.wokiee.four.modules.user.show', compact(
             'element', 'products', 'collections',
