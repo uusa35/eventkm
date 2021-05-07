@@ -1,4 +1,4 @@
-{{ dd($elements->flatten()->count()) }}
+{{ dd($elements->pluck('children')->count()) }}
 @if(isset($elements) && $elements->isNotEmpty())
     <div class="container-indent">
         <div class="container container-fluid-custom-mobile-padding">
