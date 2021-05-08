@@ -66,6 +66,7 @@ class UserResource extends JsonResource
             'totalFans' => $this->totalFans > 0 ? $this->totalFans : 1,
             'views' => (integer) $this->views,
             'mobile_verified' => $this->mobile_verified,
+            'active' => $this->active,
             'videoGroup'=> [
                 'video_url_one' => $this->video_url_one,
                 'video_url_two' => $this->video_url_two,
