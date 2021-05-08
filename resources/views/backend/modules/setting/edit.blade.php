@@ -960,7 +960,7 @@
                                                data-placement="top"
                                                data-original-title="{{ trans('message.icon_theme_bg') }}"
                                                data-control="hue" name="icon_theme_bg"
-                                               value="{{ $element->footer_theme_color}}">
+                                               value="{{ $element->icon_theme_bg}}">
                                         @if ($errors->has('icon_theme_bg'))
                                             <span class="help-block">
                                                 <strong>
