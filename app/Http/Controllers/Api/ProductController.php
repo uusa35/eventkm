@@ -92,7 +92,7 @@ class ProductController extends Controller
                 'price' => 'required|min:2',
                 'qty' => 'required|digits_between:1,20',
                 'description' => 'required|min:3|max:200',
-            'categories' => 'array',
+                'categories' => 'array',
             ]);
             if ($validate->fails()) {
                 return response()->json(['message' => $validate->errors()->first()], 400);
@@ -122,8 +122,7 @@ class ProductController extends Controller
                 return response()->json(new ProductResource($element), 200);
             }
             return resopnse()->json(['message' => trans('message.item_not_created')], 400);
-        }
-        catch(\Exception $e) {
+        } catch (\Exception $e) {
             return response()->json(['message' => $e->getMessage()], 400);
         }
     }
@@ -136,12 +135,14 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $element = Product::active()->whereId($id)->with('ratings','images', 'user.branches', 'shipment_package', 'color', 'size', 'videos','brand')->with(['sizes' => function ($q) {
+        $element = Product::active()->whereId($id)->with('ratings', 'images', 'shipment_package', 'color', 'size', 'videos', 'brand')->with(['sizes' => function ($q) {
             return $q->orderBy('name_en', 'asc')->groupBy('id');
         }])->with(['categories' => function ($q) {
             return $q->active()->limit('2');
         }])->with(['colors' => function ($q) {
             return $q->orderBy('name_en', 'asc');
+        }])->with(['user.branches' => function ($q) {
+            return $q->active();
         }])->first();
         if ($element) {
             IncreaseElementViews::dispatchNow($element);
@@ -196,7 +197,8 @@ class ProductController extends Controller
         //
     }
 
-    public function getQty() {
+    public function getQty()
+    {
         $elements = ProductAttribute::where([
             'product_id' => request()->product_id,
             'size_id' => request()->size_id,
@@ -204,25 +206,29 @@ class ProductController extends Controller
         return response()->json($elements, 200);
     }
 
-    public function getColors() {
+    public function getColors()
+    {
         return ProductAttribute::where([
             'product_id' => request()->product_id,
             'size_id' => request()->size_id,
         ])->with('color')->get()->pluck('color')->unique()->pluck('id')->toArray();
     }
 
-    public function getColorList() {
+    public function getColorList()
+    {
         $colorIds = ProductAttribute::where(['product_id' => request()->product_id, 'size_id' => request()->size_id])->get()->pluck('color_id')->toArray();
         $colors = Color::active()->whereIn('id', $colorIds)->orderBy('name_en', 'asc')->groupBy('id')->get();
         return response()->json(ColorLightResource::collection($colors), 200);
     }
 
-    public function getAttributeQty() {
+    public function getAttributeQty()
+    {
         $productAttribute = ProductAttribute::where(['product_id' => request()->product_id, 'size_id' => request()->size_id, 'color_id' => request()->color_id])->first();
         return response()->json(new ProductAttributeLightResource($productAttribute), 200);
     }
 
-    public function getAttributes() {
+    public function getAttributes()
+    {
         $product = Product::whereId(request()->product_id)->with('product_attributes.color', 'product_attributes.size')->first();
         if ($product && $product->hasRealAttributes) {
             $attributes = ProductAttribute::where('product_id', request()->product_id)->with('color', 'size')->get();
