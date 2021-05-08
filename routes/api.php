@@ -70,6 +70,7 @@ Route::group(['namespace' => 'Api'], function () {
     Route::resource('comment', 'CommentController')->only(['index']);
     Route::resource('page', 'PageController')->only(['index']);
     Route::resource('tag', 'TagController')->only(['index']);
+    Route::resource('faq', 'FaqController')->only(['index']);
     Route::resource('color', 'ColorController')->only(['index']);
     Route::resource('size', 'SizeController')->only(['index']);
     Route::post('map/event', function (Request $request) {
