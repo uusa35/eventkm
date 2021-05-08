@@ -18,7 +18,7 @@ class FaqResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'content' => $this->content
+            'content' => strip_tags($this->content)
         ];
     }
 }
