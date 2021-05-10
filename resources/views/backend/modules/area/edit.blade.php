@@ -82,7 +82,8 @@
                                             <label for="duration" class="control-label">{{ trans('general.country') }} *</label>
                                             <select class="form-control input-xlarge" name="country_id" id="country" required="required">
                                                 @foreach($countries as $country)
-                                                <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                                    <option
+                                                        value="{{ $country->id }}" {{ $element->country_id == $country->id ? 'selected' : null  }}>{{ $country->slug }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -96,7 +97,8 @@
                                                 <label for="duration" class="control-label">{{ trans('general.governate') }} *</label>
                                                 <select class="form-control input-xlarge" name="governate_id" id="governate" required="required">
                                                     @foreach($governates as $governate)
-                                                        <option value="{{ $governate->id }}">{{ $governate->name }}</option>
+                                                        <option
+                                                            value="{{ $governate->id }}" {{ $element->governate_id == $governate->id ? 'selected' : null  }}>{{ $governate->slug }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
