@@ -91,7 +91,7 @@
                                         @endif
                                     </div>
                                     <div class="col-md-6">
-                                        @if(!$governate->isEmpty())
+                                        @if(!$governates->isEmpty())
                                             <div class="form-group">
                                                 <label for="duration" class="control-label">{{ trans('general.governate') }} *</label>
                                                 <select class="form-control input-xlarge" name="governate_id" id="governate" required="required">
