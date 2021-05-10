@@ -74,7 +74,7 @@ class AreaController extends Controller
         $this->authorize('area.update', $element);
         $countries = Country::active()->get();
         $governates = Governate::active()->get();
-        return view('backend.modules.area.edit', compact('element', 'countries'));
+        return view('backend.modules.area.edit', compact('element', 'countries', 'governates'));
     }
 
     /**
