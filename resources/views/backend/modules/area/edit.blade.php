@@ -50,7 +50,6 @@
                                             @endif
                                         </div>
                                     </div>
-
                                     <div class="col-md-6">
                                         <div class="form-group {{ $errors->has('slug_en') ? ' has-error' : '' }}">
                                             <label for="slug_en" class="control-label">{{ trans('general.slug_en') }}*</label>
@@ -59,6 +58,19 @@
                                             <span class="help-block">
                                                 <strong>
                                                     {{ $errors->first('slug_en') }}
+                                                </strong>
+                                            </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group {{ $errors->has('code') ? ' has-error' : '' }}">
+                                            <label for="code" class="control-label">{{ trans('general.code') }}*</label>
+                                            <input id="code" type="text" class="form-control" name="code" value="{{ $element->code }}" placeholder="{{ trans('general.code') }}" required autofocus>
+                                            @if ($errors->has('code'))
+                                                <span class="help-block">
+                                                <strong>
+                                                    {{ $errors->first('code') }}
                                                 </strong>
                                             </span>
                                             @endif
