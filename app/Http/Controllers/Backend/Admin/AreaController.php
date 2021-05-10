@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Admin;
 
 use App\Models\Area;
+use App\Models\Governate;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Country;
@@ -30,7 +31,8 @@ class AreaController extends Controller
     {
         $this->authorize('area.create');
         $countries = Country::active()->get();
-        return view('backend.modules.area.create', compact('countries'));
+        $governates = Governate::active()->get();
+        return view('backend.modules.area.create', compact('countries', 'governates'));
     }
 
     /**
@@ -71,6 +73,7 @@ class AreaController extends Controller
         $element = Area::whereId($id)->first();
         $this->authorize('area.update', $element);
         $countries = Country::active()->get();
+        $governates = Governate::active()->get();
         return view('backend.modules.area.edit', compact('element', 'countries'));
     }
 

@@ -91,6 +91,18 @@
                                         @endif
                                     </div>
                                     <div class="col-md-6">
+                                        @if(!$governate->isEmpty())
+                                            <div class="form-group">
+                                                <label for="duration" class="control-label">{{ trans('general.governate') }} *</label>
+                                                <select class="form-control input-xlarge" name="governate_id" id="governate" required="required">
+                                                    @foreach($governate as $governate)
+                                                        <option value="{{ $governate->id }}">{{ $governate->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        @endif
+                                    </div>
+                                    <div class="col-md-6">
                                         <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
                                             <label for="order" class="control-label">{{ trans('general.order') }}*</label>
                                             <input id="order" type="text" class="form-control" name="order" value="{{ $element->order }}" placeholder="{{ trans('general.order') }}" required autofocus>
