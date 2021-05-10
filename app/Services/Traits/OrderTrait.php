@@ -335,20 +335,20 @@ trait OrderTrait
         try {
 //            $sender = $order->order_metas->first()->product->user;
             $metas = $order->order_metas()->with('product.user')->get();
-            dd($metas);
-            if (env('MIRSAL_ENABLED') && !$order->shipment_reference && $order->paid && $sender->country->is_local) {
+            if (env('MIRSAL_ENABLED') && !$order->shipment_reference && $order->paid && $order->user->country->is_local) {
                 $pickupPoints = [];
                 foreach ($metas as $meta) {
-                    array_push($pickupPoints, ['name' => $meta->product->user->name,
+                    array_push($pickupPoints, [
+                        'name' => $meta->product->user->name,
                         'phone' => $meta->product->user->fullMobile,
-                        'governorate_id' => $meta->product->user->area->name,
-                        'area_id' => $meta->product->user->area->name,
+                        'governorate_id' => $meta->product->user->area,
+                        'area_id' => $meta->product->user->area,
                         'block' => $meta->product->user->block,
                         'street' => $meta->product->user->street,
-                        'apartment' => 'test',
-                        'unit' => $meta->product->user->block,
-                        'location' => $meta->product->user->block,
-                        'note' => $meta->product->user->block,
+                        'apartment' => $meta->product->user->appartment,
+                        'unit' => 'Floor :' .$meta->product->user->floor,
+                        'location' => $meta->product->user->address,
+                        'note' => 'Product Name : ' . $meta->product->name . ' - Product SKU : ' . $meta->product->sku,
                     ]);
                 }
                 $url = env('MIRSAL_API_URL');
@@ -359,9 +359,9 @@ trait OrderTrait
                     'content' => 'Order Id : ' . $order->id,
                     'cost' => $order->net_price,
                     'payment_method' => $order->payment_method,
-                    'default_sender ' => $sender->name,
-                    'sender_name' => $sender->name,
-                    'sender_phone' => $sender->mobile,
+                    'default_sender ' => env('APP_NAME'),
+//                    'sender_name' => $sender->name,
+//                    'sender_phone' => $sender->mobile,
 //                    'sender_governorate' => 'A241',
 //                    'sender_area' => 'FH242',
 //                    'sender_block' => '00',
@@ -383,14 +383,15 @@ trait OrderTrait
                     'receiver_unit' => '',
                     'receiver_floor' => $order->address,
                     'receiver_note' => 'Receiver Address : ' . $order->address . ' - Notes :' . $order->notes,
-                    'receiver_location' => '',
-                    'pickup_date' => Carbon::now()->addMinutes(10)->format('Y M d, h:s a'),
-                    'pickup_time' => Carbon::now()->addMinutes(10)->format('Y M d, h:s a'),
+                    'receiver_location' => $order->user->country->slug,
+                    'pickup_date' => Carbon::now()->addHours(5)->format('d/m/Y'),
+                    'pickup_time' => Carbon::tomorrow()->addHours(10)->format('h:s a'),
                     'image' => '',
                     'pickup_points' => [
                         $pickupPoints
                     ],
                 ];
+                dd($data);
                 $enc_method = 'AES-256-CBC';
                 $enc_iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($enc_method));
                 $requestData = openssl_encrypt(json_encode($data), $enc_method, $access_secret, 0, $enc_iv) . "::" . bin2hex($enc_iv);
@@ -401,6 +402,7 @@ trait OrderTrait
                 curl_setopt($ch, CURLOPT_POSTFIELDS, ['request_data' => $requestData, 'access_key' => $access_key, 'prog_lang' => $prog_lang]);
                 $response = curl_exec($ch);
                 $res = collect(json_decode($response));
+                dd($res);
                 if ($res['status'] === "201") {
                     $order->update(['shipment_reference' => 'Mirsal - ' . $res['data']->transaction_id]);
                 }

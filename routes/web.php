@@ -69,6 +69,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('answer', 'AnswerController');
         Route::resource('day', 'DayController');
         Route::resource('aboutus', 'AboutusController');
+        Route::resource('governate', 'GovernateController');
         Route::resource('area', 'AreaController');
         Route::resource('device', 'DeviceController');
         // addons + items

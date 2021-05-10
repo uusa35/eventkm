@@ -93,7 +93,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group{{ $errors->has('longitude') ? ' has-error' : '' }}">
                                             <label for="longitude" class="control-label">{{ trans('general.longitude') }}*</label>
-                                            <input id="longitude" type="text" class="form-control" name="longitude" value="{{ old('longitude') }}" placeholder="{{ trans('general.longitude') }}" required autofocus>
+                                            <input id="longitude" type="text" class="form-control" name="longitude" value="{{ old('longitude') }}" placeholder="{{ trans('general.longitude') }}"  autofocus>
                                             @if ($errors->has('longitude'))
                                             <span class="help-block">
                                                 <strong>
@@ -106,7 +106,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group{{ $errors->has('latitude') ? ' has-error' : '' }}">
                                             <label for="latitude" class="control-label">{{ trans('general.latitude') }}*</label>
-                                            <input id="latitude" type="text" class="form-control" name="latitude" value="{{ old('latitude') }}" placeholder="{{ trans('general.latitude') }}" required autofocus>
+                                            <input id="latitude" type="text" class="form-control" name="latitude" value="{{ old('latitude') }}" placeholder="{{ trans('general.latitude') }}"  autofocus>
                                             @if ($errors->has('latitude'))
                                             <span class="help-block">
                                                 <strong>

@@ -1,20 +1,20 @@
 @extends('backend.layouts.app')
 @section('breadcrumbs')
-{{ Breadcrumbs::render('backend.admin.area.edit', $element) }}
+{{ Breadcrumbs::render('backend.admin.governate.edit', $element) }}
 @endsection
 
 @section('content')
 <div class="portlet box blue">
     @include('backend.partials.forms.form_title')
     <div class="portlet-body">
-        @include('backend.partials._admin_instructions',['title' => trans('general.area') ,'message' =>
-        trans('message.admin_area_message')])
+        @include('backend.partials._admin_instructions',['title' => trans('general.governate') ,'message' =>
+        trans('message.admin_governate_message')])
         <div class="portlet-body form">
-            <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.area.update', $element->id) }}" enctype="multipart/form-data">
+            <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.governate.update', $element->id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <div class="form-body">
-                    <h3 class="form-section">{{ trans('general.edit_area') }}</h3>
+                    <h3 class="form-section">{{ trans('general.edit_governate') }}</h3>
                     <div class="portlet box blue ">
                         <div class="portlet-title">
                             <div class="caption">
@@ -65,6 +65,19 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
+                                        <div class="form-group {{ $errors->has('code') ? ' has-error' : '' }}">
+                                            <label for="code" class="control-label">{{ trans('general.code') }}*</label>
+                                            <input id="code" type="text" class="form-control" name="code" value="{{ $element->code }}" placeholder="{{ trans('general.code') }}" required autofocus>
+                                            @if ($errors->has('code'))
+                                                <span class="help-block">
+                                                <strong>
+                                                    {{ $errors->first('code') }}
+                                                </strong>
+                                            </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
                                         @if(!$countries->isEmpty())
                                         <div class="form-group">
                                             <label for="duration" class="control-label">{{ trans('general.country') }} *</label>
@@ -94,7 +107,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group{{ $errors->has('longitude') ? ' has-error' : '' }}">
                                             <label for="longitude" class="control-label">{{ trans('general.longitude') }}*</label>
-                                            <input id="longitude" type="text" class="form-control" name="longitude" value="{{ $element->longitude }}" placeholder="{{ trans('general.longitude') }}" autofocus>
+                                            <input id="longitude" type="text" class="form-control" name="longitude" value="{{ $element->longitude }}" placeholder="{{ trans('general.longitude') }}"  autofocus>
                                             @if ($errors->has('longitude'))
                                             <span class="help-block">
                                                 <strong>
@@ -107,7 +120,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group{{ $errors->has('latitude') ? ' has-error' : '' }}">
                                             <label for="latitude" class="control-label">{{ trans('general.latitude') }}*</label>
-                                            <input id="latitude" type="text" class="form-control" name="latitude" value="{{ $element->latitude }}" placeholder="{{ trans('general.latitude') }}" autofocus>
+                                            <input id="latitude" type="text" class="form-control" name="latitude" value="{{ $element->latitude }}" placeholder="{{ trans('general.latitude') }}"  autofocus>
                                             @if ($errors->has('latitude'))
                                             <span class="help-block">
                                                 <strong>

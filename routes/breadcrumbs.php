@@ -433,6 +433,22 @@ Breadcrumbs::for('backend.admin.currency.index', function ($trail) {
     $trail->push(trans('general.index_currency'), route('backend.admin.currency.index'));
 });
 
+
+Breadcrumbs::for('backend.admin.governate.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.index_governate'), route('backend.admin.governate.index'));
+});
+
+Breadcrumbs::for('backend.admin.governate.create', function ($trail) {
+    $trail->parent('backend.admin.governate.index');
+    $trail->push(trans('general.new_governate'), route('backend.admin.governate.create'));
+});
+
+Breadcrumbs::for('backend.admin.governate.edit', function ($trail, $element) {
+    $trail->parent('backend.admin.governate.index');
+    $trail->push(trans('general.edit_governate'), route('backend.admin.governate.edit', $element->id));
+});
+
 Breadcrumbs::for('backend.admin.area.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push(trans('general.index_area'), route('backend.admin.area.index'));

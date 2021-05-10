@@ -19,6 +19,7 @@ use App\Policies\CurrencyPolicy;
 use App\Policies\DayPolicy;
 use App\Policies\DevicePolicy;
 use App\Policies\ExcelPolicy;
+use App\Policies\GovernatePolicy;
 use App\Policies\ImagePolicy;
 use App\Policies\ItemPolicy;
 use App\Policies\NotificationPolicy;
@@ -68,6 +69,7 @@ class AuthServiceProvider extends ServiceProvider
         Gate::resource('country', CountryPolicy::class);
         Gate::resource('currency', CurrencyPolicy::class);
         Gate::resource('area', AreaPolicy::class);
+        Gate::resource('governate', GovernatePolicy::class);
         Gate::resource('role', RolePolicy::class);
         Gate::resource('privilege', PrivilegePolicy::class);
         Gate::resource('category', CategoryPolicy::class);

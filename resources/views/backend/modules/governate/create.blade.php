@@ -1,20 +1,19 @@
 @extends('backend.layouts.app')
 @section('breadcrumbs')
-{{ Breadcrumbs::render('backend.admin.area.edit', $element) }}
+{{ Breadcrumbs::render('backend.admin.governate.create') }}
 @endsection
 
 @section('content')
 <div class="portlet box blue">
     @include('backend.partials.forms.form_title')
     <div class="portlet-body">
-        @include('backend.partials._admin_instructions',['title' => trans('general.area') ,'message' =>
-        trans('message.admin_area_message')])
+        @include('backend.partials._admin_instructions',['title' => trans('general.governate') ,'message' =>
+        trans('message.admin_governate_message')])
         <div class="portlet-body form">
-            <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.area.update', $element->id) }}" enctype="multipart/form-data">
+            <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.governate.store') }}" enctype="multipart/form-data">
                 @csrf
-                @method('put')
                 <div class="form-body">
-                    <h3 class="form-section">{{ trans('general.edit_area') }}</h3>
+                    <h3 class="form-section">{{ trans('general.create_governate') }}</h3>
                     <div class="portlet box blue ">
                         <div class="portlet-title">
                             <div class="caption">
@@ -27,7 +26,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
                                             <label for="name" class="control-label">{{ trans('general.name') }}*</label>
-                                            <input id="name" type="text" class="form-control" name="name" value="{{ $element->name }}" placeholder="{{ trans('general.name') }}" required autofocus>
+                                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="{{ trans('general.name') }}" required autofocus>
                                             @if ($errors->has('name'))
                                             <span class="help-block">
                                                 <strong>
@@ -40,7 +39,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group{{ $errors->has('slug_ar') ? ' has-error' : '' }}">
                                             <label for="slug_ar" class="control-label">{{ trans('general.slug_ar') }}*</label>
-                                            <input id="slug_ar" type="text" class="form-control" name="slug_ar" value="{{ $element->slug_ar }}" placeholder="{{ trans('general.slug_ar') }}" required autofocus>
+                                            <input id="slug_ar" type="text" class="form-control" name="slug_ar" value="{{ old('slug_ar') }}" placeholder="{{ trans('general.slug_ar') }}" required autofocus>
                                             @if ($errors->has('slug_ar'))
                                             <span class="help-block">
                                                 <strong>
@@ -54,11 +53,24 @@
                                     <div class="col-md-6">
                                         <div class="form-group {{ $errors->has('slug_en') ? ' has-error' : '' }}">
                                             <label for="slug_en" class="control-label">{{ trans('general.slug_en') }}*</label>
-                                            <input id="slug_en" type="text" class="form-control" name="slug_en" value="{{ $element->slug_en }}" placeholder="{{ trans('general.slug_en') }}" required autofocus>
+                                            <input id="slug_en" type="text" class="form-control" name="slug_en" value="{{ old('slug_en') }}" placeholder="{{ trans('general.slug_en') }}" required autofocus>
                                             @if ($errors->has('slug_en'))
                                             <span class="help-block">
                                                 <strong>
                                                     {{ $errors->first('slug_en') }}
+                                                </strong>
+                                            </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group {{ $errors->has('code') ? ' has-error' : '' }}">
+                                            <label for="code" class="control-label">{{ trans('general.code') }}*</label>
+                                            <input id="code" type="text" class="form-control" name="code" value="{{ old('code') }}" placeholder="{{ trans('general.code') }}" required autofocus>
+                                            @if ($errors->has('code'))
+                                                <span class="help-block">
+                                                <strong>
+                                                    {{ $errors->first('code') }}
                                                 </strong>
                                             </span>
                                             @endif
@@ -81,7 +93,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
                                             <label for="order" class="control-label">{{ trans('general.order') }}*</label>
-                                            <input id="order" type="text" class="form-control" name="order" value="{{ $element->order }}" placeholder="{{ trans('general.order') }}" required autofocus>
+                                            <input id="order" type="text" class="form-control" name="order" value="{{ old('order') }}" placeholder="{{ trans('general.order') }}" required autofocus>
                                             @if ($errors->has('order'))
                                             <span class="help-block">
                                                 <strong>
@@ -94,7 +106,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group{{ $errors->has('longitude') ? ' has-error' : '' }}">
                                             <label for="longitude" class="control-label">{{ trans('general.longitude') }}*</label>
-                                            <input id="longitude" type="text" class="form-control" name="longitude" value="{{ $element->longitude }}" placeholder="{{ trans('general.longitude') }}" autofocus>
+                                            <input id="longitude" type="text" class="form-control" name="longitude" value="{{ old('longitude') }}" placeholder="{{ trans('general.longitude') }}" autofocus>
                                             @if ($errors->has('longitude'))
                                             <span class="help-block">
                                                 <strong>
@@ -107,7 +119,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group{{ $errors->has('latitude') ? ' has-error' : '' }}">
                                             <label for="latitude" class="control-label">{{ trans('general.latitude') }}*</label>
-                                            <input id="latitude" type="text" class="form-control" name="latitude" value="{{ $element->latitude }}" placeholder="{{ trans('general.latitude') }}" autofocus>
+                                            <input id="latitude" type="text" class="form-control" name="latitude" value="{{ old('latitude') }}" placeholder="{{ trans('general.latitude') }}"  autofocus>
                                             @if ($errors->has('latitude'))
                                             <span class="help-block">
                                                 <strong>
