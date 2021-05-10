@@ -26,7 +26,7 @@ class CountryLightResource extends JsonResource
             'fixed_shipment_charge' => (float) round($this->fixed_shipment_charge,2),
             'is_local' => $this->is_local,
             'currency' => CurrencyLightResource::make($this->whenLoaded('currency')),
-            'areas' => AreaLightResource::collection($this->whenLoaded('areas'))
+            'governates' => GovernateLightResource::collection($this->whenLoaded('governates'))
         ];
     }
 }

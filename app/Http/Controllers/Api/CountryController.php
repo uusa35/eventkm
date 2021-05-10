@@ -18,6 +18,7 @@ class CountryController extends Controller
     public function index()
     {
         $elements = Country::active()->has('currency', '>', 0)->with('currency','governates.areas')->get();
+
         if ($elements->isNotEmpty()) {
             return response()->json(CountryLightResource::collection($elements), 200);
         }
