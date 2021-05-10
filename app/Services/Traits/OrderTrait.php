@@ -333,8 +333,24 @@ trait OrderTrait
     public function createOrderForMirsal(Order $order, User $user)
     {
         try {
-            $sender = $order->order_metas->first()->product->user;
+//            $sender = $order->order_metas->first()->product->user;
+            $metas = $order->order_metas()->with('product.user')->get();
+            dd($metas);
             if (env('MIRSAL_ENABLED') && !$order->shipment_reference && $order->paid && $sender->country->is_local) {
+                $pickupPoints = [];
+                foreach ($metas as $meta) {
+                    array_push($pickupPoints, ['name' => $meta->product->user->name,
+                        'phone' => $meta->product->user->fullMobile,
+                        'governorate_id' => $meta->product->user->area->name,
+                        'area_id' => $meta->product->user->area->name,
+                        'block' => $meta->product->user->block,
+                        'street' => $meta->product->user->street,
+                        'apartment' => 'test',
+                        'unit' => $meta->product->user->block,
+                        'location' => $meta->product->user->block,
+                        'note' => $meta->product->user->block,
+                    ]);
+                }
                 $url = env('MIRSAL_API_URL');
                 $access_key = env('MIRSAL_ACCESS_KEY');
                 $access_secret = env('MIRSAL_SECRET_KEY');
@@ -346,16 +362,16 @@ trait OrderTrait
                     'default_sender ' => $sender->name,
                     'sender_name' => $sender->name,
                     'sender_phone' => $sender->mobile,
-                    'sender_governorate' => 'A241',
-                    'sender_area' => 'FH242',
-                    'sender_block' => '00',
-                    'sender_street' => '00000',
-                    'sender_apartment' => $sender->apartment,
-                    'sender_avenue' => $sender->address,
-                    'sender_unit' => '0000',
-                    'sender_floor' => $sender->floor,
-                    'sender_note' => 'Sender Address :' . $sender->address . ' - ' . $sender->description,
-                    'sender_location' => '',
+//                    'sender_governorate' => 'A241',
+//                    'sender_area' => 'FH242',
+//                    'sender_block' => '00',
+//                    'sender_street' => '00000',
+//                    'sender_apartment' => $sender->apartment,
+//                    'sender_avenue' => $sender->address,
+//                    'sender_unit' => '0000',
+//                    'sender_floor' => $sender->floor,
+//                    'sender_note' => 'Sender Address :' . $sender->address . ' - ' . $sender->description,
+//                    'sender_location' => '',
                     'receiver_name' => $user->name,
                     'receiver_phone' => $order->mobile,
                     'receiver_governorate' => 'A242',
@@ -370,7 +386,10 @@ trait OrderTrait
                     'receiver_location' => '',
                     'pickup_date' => Carbon::now()->addMinutes(10)->format('Y M d, h:s a'),
                     'pickup_time' => Carbon::now()->addMinutes(10)->format('Y M d, h:s a'),
-                    'image' => ''
+                    'image' => '',
+                    'pickup_points' => [
+                        $pickupPoints
+                    ],
                 ];
                 $enc_method = 'AES-256-CBC';
                 $enc_iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($enc_method));

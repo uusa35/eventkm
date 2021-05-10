@@ -14,9 +14,9 @@ if (env('MOBILE_LAYOUT')) {
 } elseif (env('BITS')) {
     Route::get('/', 'HomeController@getMallrHome')->name('index');
     Route::get('/home', 'HomeController@getMallrHome')->name('home');
-} elseif (env('TOYS')) {
-    Route::get('/', 'HomeController@getMallrHome')->name('index');
-    Route::get('/home', 'HomeController@getMallrHome')->name('home');
+} elseif (env('EXPO')) {
+    Route::get('/', 'HomeController@getIstoresHome')->name('index');
+    Route::get('/home', 'HomeController@getIstoresHome')->name('home');
 } elseif (env('DAILY')) {
     Route::get('/', 'HomeController@getDailyHome')->name('index');
     Route::get('/home', 'HomeController@getDailyHome')->name('home');
