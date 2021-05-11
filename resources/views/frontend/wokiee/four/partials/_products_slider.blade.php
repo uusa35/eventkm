@@ -1,5 +1,5 @@
 @if(isset($elements) && $elements->isNotEmpty())
-    <div class="container-indent">
+    <div class="container-indent {!! isset($isGray) ? 'lightGrayBgRow' : '' !!}">
         <div class="container container-fluid-custom-mobile-padding">
             @if($title)
                 <div class="tt-block-title">

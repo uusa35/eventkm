@@ -1,4 +1,4 @@
-<div class="tt-offset-35 container-indent element-padding-bottom lightGrayBgRow">
+<div class="tt-offset-35 container-indent element-padding-bottom {!! isset($isGray) ? 'lightGrayBgRow' : '' !!}">
     <div class="container">
         <div class="row tt-services-listing">
             <div class="col-xs-12 col-md-6 col-lg-4">

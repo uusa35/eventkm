@@ -1,5 +1,5 @@
 @if($elements->where('on_home', true)->isNotEmpty())
-    <div class="container-indent lightGrayBgRow">
+    <div class="container-indent {!! isset($isGray) ? 'lightGrayBgRow' : '' !!}">
         <div class="container container-fluid-custom-mobile-padding">
             <div class="tt-block-title">
                 <h2 class="tt-title">{{ trans('general.brands') }}</h2>
