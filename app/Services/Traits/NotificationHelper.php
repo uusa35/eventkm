@@ -42,7 +42,6 @@ trait NotificationHelper
                 'big_picture' => $settings->LogoThumb
             );
 
-            dd($fields);
             $fields = json_encode($fields);
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
