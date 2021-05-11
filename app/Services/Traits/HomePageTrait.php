@@ -244,11 +244,16 @@ trait HomePageTrait
         $bestSaleCollections = OrderMeta::bestSaleCollections();
         $designers = User::active()->onHome()->designers()->with('role')->notAdmins()->hasProducts()->get();
         $companies = User::active()->onHome()->companies()->notAdmins()->hasProducts()->hasProducts()->with('role')->get();
-        $categoriesHome = Category::active()->onlyParent()->onHome()->orderBy('order', 'desc')->with(['children' => function ($q) {
-            return $q->active()->with(['children' => function ($q) {
-                return $q->active();
+        $homeCategoriesUser = Category::where(['is_user' => true ])->active()->onlyParent()->onHome()->isFeatured()->with(['children' => function ($q) {
+            return $q->where(['is_user' => true ])->active()->with(['children' => function ($q) {
+                return $q->where(['is_user' => true ])->active();
             }]);
-        }])->get();
+        }])->orderBy('order', 'desc')->get();
+        $homeCategoriesProduct = Category::where(['is_product' => true])->active()->onlyParent()->onHome()->isFeatured()->with(['children' => function ($q) {
+            return $q->active()->with(['children' => function ($q) {
+                return $q->where(['is_user' => true ])->active();
+            }]);
+        }])->orderBy('order', 'desc')->get();
         return view('frontend.wokiee.four.home.istores', compact(
             'sliders',
             'brands',
@@ -256,7 +261,8 @@ trait HomePageTrait
             'onSaleProducts',
             'bestSalesProducts',
             'productHotDeals',
-            'categoriesHome',
+            'homeCategoriesUser',
+            'homeCategoriesProduct',
             'bestSaleCollections',
             'designers',
             'companies'
