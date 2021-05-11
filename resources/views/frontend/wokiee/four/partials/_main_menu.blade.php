@@ -1,6 +1,6 @@
 <div class="tt-desktop-header headerunderline">
     <div class="container">
-        @if(env('MALLR') || env('HTB') || env('BITS') || env('NASHKW') || env('EMAKEUP') || env('HUDA') || env('ISTORES'))
+        @if(env('MALLR') || env('HTB') || env('BITS') || env('NASHKW') || env('EMAKEUP') || env('HUDA'))
             @include('frontend.wokiee.four.partials.header_logo_section_align')
         @else
             @include('frontend.wokiee.four.partials.header_logo_section_center')
