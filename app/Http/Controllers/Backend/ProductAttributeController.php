@@ -49,7 +49,9 @@ class ProductAttributeController extends Controller
     {
         $element = ProductAttribute::withTrashed()->where(['product_id' => $request->product_id, 'size_id' => $request->size_id, 'color_id' => $request->color_id])->first();
         if($element) {
-            $element->forceDelete();
+            $element->restore();
+            $element->update($request->all());
+            return redirect()->route('backend.attribute.create', ['product_id' => $element->product_id,'type' => $request->type])->with('success', 'saved successfully');
         }
         $validate = validator($request->all(),
             [
