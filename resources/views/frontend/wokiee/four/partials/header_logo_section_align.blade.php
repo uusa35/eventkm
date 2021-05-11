@@ -2,7 +2,7 @@
     <div class="col-lg-6 col-sm-12">
         <div class="tt-col-obj tt-obj-logo">
             <a class="tt-logo tt-logo-alignment" href="{{ route('frontend.home') }}">
-                <img class="text-center" src="{{ $settings->logoThumb }}"
+                <img class="text-center" src="{{ $settings->logoAppThumb }}"
                      alt="{{ $settings->company }}"></a>
         </div>
     </div>
