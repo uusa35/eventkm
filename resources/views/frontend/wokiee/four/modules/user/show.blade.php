@@ -42,7 +42,7 @@
                                     <div class="col-lg-4 mb-3">
                                         <div class="col-lg-12 mb-2">
                                             <td class="td-fixed-element td-sm"><i
-                                                    class="fa-tag fa fa-fw fa-lg"></i><span
+                                                    class="fa-dot-circle-o fa fa-fw fa-lg"></i><span
                                                     class="ml-1"></span><span>{{ trans('general.name') }} : </span>
                                                 <span class="ml-2"></span></td>
                                             <td>
@@ -57,6 +57,7 @@
                                                     <span class="ml-2"></span></td>
                                                 <td>
                                                     <a
+                                                        target="_blank"
                                                         href="https://www.google.com/maps/search/?api=1&query={{ $branch->latitude  }},{{ $branch->longitude }}">
                                                         {{ str_limit($branch->address,30,'') }}
                                                     </a>
@@ -66,7 +67,7 @@
                                         @if($branch->phone)
                                             <div class="col-lg-12 mb-2">
                                                 <td class="td-fixed-element td-sm"><i
-                                                        class="fa-tag fa fa-fw fa-lg"></i><span
+                                                        class="fa-dot-circle-o fa fa-fw fa-lg"></i><span
                                                         class="ml-1"></span><span>{{ trans('general.phone') }} : </span>
                                                     <span class="ml-2"></span></td>
                                                 <td>
