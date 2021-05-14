@@ -212,8 +212,11 @@ return array (
   'path' => 'الرابط',
   'order' => 'أمر العمل',
   'payment_method' => 'طريقة الدفع',
-  'cash_on_delivery_instruction' => 'سيتم التواصل معكم هاتفيا عند تفعيل خيار الدفع عن الاستلام لتأكيد طلبكم.',
+  'product_added_successfully_to_comparison' => 'تم اضافة المنتج للمقارنة',
+  'process_success' => 'عملية ناجحة',
+  'cash_on_delivery_instruction' => 'نقدي',
   'order_has_been_made_through_cash_on_delivery_and_will_be_recived' => 'تم إنشاء طلب جديد بواسطة الدفع عند الاستلام وسيتم متابعة امر العمل في اقرب وقت',
+  'choose_branch' => 'في حالة وجود اية استفسارات يرجى التواصل مع الفرع مباشرة',
   'shipment_fees_shall_be_removed_in_confirmation_page_in_case_you_choosed_to_receive_from_branch' => 'مصاريف الشحن يتم الغاءها في حالة طلب الاستلام من الفرع فقط للعملاء من داخل دولة الكويت',
   'order_by_whatsapp' => 'تم إنشاء طلبك بنجاح وجاري العمل على تنفيذه   :url',
 );
