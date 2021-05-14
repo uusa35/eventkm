@@ -33,6 +33,51 @@
                                 @include('frontend.wokiee.four.partials._services_slider',['elements' => $services,'title' => trans('general.services')])
                             @endif
                         </div>
+                        @if($element->branches->where('active', true )->isNotEmpty())
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h6 class="text-center">{{ trans('general.branches') }}</h6>
+                                </div>
+                                @foreach($element->branches->where('active', true) as $branch)
+                                    <div class="col-lg-4 mb-3">
+                                        <div class="col-lg-12 mb-2">
+                                            <td class="td-fixed-element td-sm"><i
+                                                    class="fa-tag fa fa-fw fa-lg"></i><span
+                                                    class="ml-1"></span><span>{{ trans('general.name') }} : </span>
+                                                <span class="ml-2"></span></td>
+                                            <td>
+                                                {{ $branch->name }}
+                                            </td>
+                                        </div>
+                                        @if($branch->address)
+                                            <div class="col-lg-12 mb-2">
+                                                <td class="td-fixed-element td-sm"><i
+                                                        class="fa-map-o fa fa-fw fa-lg"></i><span
+                                                        class="ml-1"></span><span>{{ trans('general.address') }} : </span>
+                                                    <span class="ml-2"></span></td>
+                                                <td>
+                                                    <a
+                                                        href="https://www.google.com/maps/search/?api=1&query={{ $branch->latitude  }},{{ $branch->longitude }}">
+                                                        {{ str_limit($branch->address,30,'') }}
+                                                    </a>
+                                                </td>
+                                            </div>
+                                        @endif
+                                        @if($branch->phone)
+                                            <div class="col-lg-12 mb-2">
+                                                <td class="td-fixed-element td-sm"><i
+                                                        class="fa-tag fa fa-fw fa-lg"></i><span
+                                                        class="ml-1"></span><span>{{ trans('general.phone') }} : </span>
+                                                    <span class="ml-2"></span></td>
+                                                <td>
+                                                    {{ $branch->phone }}
+                                                </td>
+                                            </div>
+                                        @endif
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endif
                     @endif
                     @if(ENV('MALLR') || ENV('DAILY'))
                         <div class="col-lg-12" style="padding-top: 20px;">

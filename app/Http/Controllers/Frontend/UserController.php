@@ -88,7 +88,7 @@ class UserController extends Controller
             'collections.products.categories.children',
             'collections.products.colors',
             'collections.products.sizes',
-            'images', 'fans'
+            'images', 'fans','branches'
         ])->first();
         $services = collect([]);
         $products = collect([]);
