@@ -653,7 +653,7 @@ Breadcrumbs::for('backend.attribute.create', function ($trail, $element) {
 
 Breadcrumbs::for('backend.attribute.edit', function ($trail, $element) {
     $trail->parent('backend.attribute.index');
-    $trail->push('edit attribute', route('backend.attribute.edit', $element->id));
+    $trail->push(trans('general.edit_product_attribute'), route('backend.attribute.edit', $element->id));
 });
 
 
