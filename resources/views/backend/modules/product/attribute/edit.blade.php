@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group{{ $errors->has('qty') ? ' has-error' : '' }}">
-                                <label for="qty" class="control-label">qty</label>
+                                <label for="qty" class="control-label">{{ trans('general.qty') }}*</label>
                                 <input id="qty"
                                        type="number"
                                        minlength="1"
@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="size_id" class="control-label">size_id *</label>
+                                <label for="size_id" class="control-label">{{ trans('general.size') }} *</label>
                                 <select class="form-control input-xlarge" name="size_id" id="size_id" required>
                                     @foreach($sizes as $size)
                                         <option value="{{ $size->id }}" {{ $element->size_id === $size->id ? 'selected' : null  }}>{{ $size->name }}</option>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="color_id" class="control-label">color_id *</label>
+                                <label for="color_id" class="control-label">{{ trans('general.color') }} *</label>
                                 <select class="form-control input-xlarge" name="color_id" id="color_id" required>
                                     @foreach($colors as $color)
                                         <option value="{{ $color->id }}" {{ $element->color_id === $color->id ? 'selected' : null  }}>{{ $color->name }}</option>
@@ -62,7 +62,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group{{ $errors->has('notes_ar') ? ' has-error' : '' }}">
-                                <label for="notes_ar" class="control-label">notes_ar arabic</label>
+                                <label for="notes_ar" class="control-label">{{ trans('general.notes_ar') }}</label>
                                 <input id="notes_ar"
                                        type="text"
                                        class="form-control"
@@ -81,7 +81,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group{{ $errors->has('notes_en') ? ' has-error' : '' }}">
-                                <label for="notes_en" class="control-label">notes_en english</label>
+                                <label for="notes_en" class="control-label">{{ trans('general.notes_en') }}</label>
                                 <input id="notes_en"
                                        type="text"
                                        class="form-control"
