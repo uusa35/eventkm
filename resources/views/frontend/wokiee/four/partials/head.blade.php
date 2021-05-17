@@ -69,7 +69,8 @@
     <link
         href="{{ $settings->logo ? $settings->getCurrentImageAttribute('logo') : $settings->getCurrentImageAttribute('app_logo') }}"
         rel="shortcut icon" type="image/jpg"/>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('images/logo.ico') }}"/>
+    <link href="{{ $settings->logoThumb }}" rel="shortcut icon" type="image/png">
     @if(env('ESCRAP'))
         <meta name="google-site-verification" content="SR81NY4elhoRSNXOc1cHIIpu80aTPeiDiipsk4CMvRo"/>
     @elseif(env('EVENTKM'))
