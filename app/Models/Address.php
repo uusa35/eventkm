@@ -14,9 +14,9 @@ class Address extends PrimaryModel
         return $this->belongsTo(Country::class);
     }
 
-    public function area()
+    public function areaName()
     {
-        return $this->belongsTo(Country::class);
+        return $this->belongsTo(Area::class,'area_id');
     }
 
     public function governate()

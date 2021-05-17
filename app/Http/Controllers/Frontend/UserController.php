@@ -166,11 +166,12 @@ class UserController extends Controller
             ],
 //            'password' => ['string', 'min:6', 'confirmed'],
             'mobile' => 'string|max:10|min:5',
+            'whatsapp' => 'string|max:10|min:5',
             'country_id' => ['required', 'integer', 'exists:countries,id'],
 //            'role_id' => ['required', 'integer', 'exists:roles,id'],
         ]);
         if ($validate->fails()) {
-            return redirect()->back()->withErrors($validate->errors()->first());
+            return redirect()->back()->with(['error' => $validate->errors()->first()]);
         }
         if ($element->update($request->all())) {
             return redirect()->back()->with('success', trans('general.user_updated'));

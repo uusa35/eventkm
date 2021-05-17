@@ -22,7 +22,7 @@ class AddressController extends Controller
         if ($validate->fails()) {
             return redirect()->back()->with(['user_id' => $request->user_id])->withErrors($validate);
         }
-        $elements = Address::whereUserId($request->user_id)->with('area', 'country','user')->get();
+        $elements = Address::whereUserId($request->user_id)->with('areaName', 'country','user')->get();
         return view('backend.modules.address.index', compact('elements'));
     }
 
@@ -48,7 +48,7 @@ class AddressController extends Controller
         $validate = validator($request->all(), [
             'user_id' => 'required|exists:users,id',
             'name' => 'required|min:2|max:100',
-            'content' => 'required|min:2|max:100',
+            'content' => 'min:2|max:100',
             'block' => 'min:1',
             'floor' => 'min:1',
             'building' => 'min:1',
@@ -88,7 +88,7 @@ class AddressController extends Controller
      */
     public function edit($id)
     {
-        $element = Address::whereId($id)->with('area','governate','country')->first();
+        $element = Address::whereId($id)->with('areaName','governate','country')->first();
         $countries = Country::active()->get();
         return view('backend.modules.address.edit', compact('element','countries'));
     }
@@ -105,7 +105,7 @@ class AddressController extends Controller
         $validate = validator($request->all(), [
             'user_id' => 'required|exists:users,id',
             'name' => 'required|min:2|max:100',
-            'content' => 'required|min:2|max:100',
+            'content' => 'min:2|max:100',
             'block' => 'min:1',
             'floor' => 'min:1',
             'building' => 'min:1',
