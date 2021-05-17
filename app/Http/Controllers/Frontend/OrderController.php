@@ -9,6 +9,7 @@ use App\Jobs\sendSuccessOrderEmail;
 use App\Models\Country;
 use App\Models\Order;
 use App\Models\Setting;
+use App\Models\User;
 use App\Services\CartTrait;
 use App\Services\Traits\OrderTrait;
 use Barryvdh\DomPDF\Facade as PDF;
@@ -33,9 +34,10 @@ class OrderController extends Controller
     public function index()
     {
         $elements = Order::where(['user_id' => auth()->user()->id, 'status' => 'success'])->with('order_metas.product', 'order_metas.service')->paginate(self::TAKE);
+        $user = User::whereId(auth()->id())->with('addresses','country','role')->first();
 //        $ids = $orders->pluck('order_metas')->flatten()->unique()->pluck('product.id')->toArray();
 //        $elements = Product::whereIn('id', $ids)->paginate(12);
-        return view('frontend.wokiee.four.modules.order.index', compact('elements'));
+        return view('frontend.wokiee.four.modules.order.index', compact('elements', 'user'));
     }
 
     /**

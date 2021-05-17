@@ -135,6 +135,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
         Route::get('classified/category/choose', 'ClassifiedController@chooseCategory')->name('classified.choose');
         Route::get('property/attach', 'PropertyController@getAttach')->name('property.attach');
         Route::resource('comment', 'CommentController')->only(['store', 'edit', 'update', 'destroy']);
+        Route::resource('address', 'AddressController');
     });
     Route::resource('product', 'ProductController');
     Route::get('product/{id}/{name}', 'ProductController@show')->name('product.show.name');
