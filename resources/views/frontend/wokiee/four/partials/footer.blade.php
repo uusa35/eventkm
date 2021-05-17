@@ -82,6 +82,11 @@
                                 @if($faqs->isNotEmpty())
                                     <li><a href="{{ route('frontend.faq.index') }}">{{ trans('general.faqs') }}</a></li>
                                 @endif
+                                @if($settings->terms && strlen($settings->terms) > 20 )
+                                    <li>
+                                        <a href="{{ route('frontend.terms') }}">{{ trans('general.terms_and_conditions') }}</a>
+                                    </li>
+                                @endif
                                 @guest
                                     <li><a href="{{ route('register') }}">{{ trans('general.register') }}</a></li>
                                 @endguest
@@ -199,7 +204,7 @@
                 </div>
                 <div class="tt-col-right">
                     <div class="tt-col-item tt-logo-col">
-                            <img src="{{ asset('images/knet-visa.png') }}" alt="" style="width: 200px;">
+                        <img src="{{ asset('images/knet-visa.png') }}" alt="" style="width: 200px;">
                     </div>
                 </div>
             </div>
