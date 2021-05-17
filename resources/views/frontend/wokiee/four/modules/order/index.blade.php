@@ -120,7 +120,7 @@
                                         <td><small>{{ $element->reference_id}}</small></td>
                                         <td>
                                             <a href="{{ route('frontend.invoice.show', $element->id) }}" target="_blank"
-                                               class="label label-{{ $element->status === 'success' ? 'success' : 'info' }}">{{ $element->status }}</a>
+                                               class="btn btn-sm btn-{{ $element->status === 'success' ? 'success' : 'info' }}">{{ $element->status }}</a>
                                         </td>
                                         <td><small>{{ $element->address }}</small></td>
                                         <td>
