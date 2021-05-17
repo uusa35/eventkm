@@ -1,5 +1,9 @@
 @section('title')
     <title>{{ $settings->company_ar .' '. $settings->company_en }}</title>
+    {{--    <link--}}
+    {{--        href="{{ $settings->logo ? $settings->getCurrentImageAttribute('logo') : $settings->getCurrentImageAttribute('app_logo') }}"--}}
+    {{--        rel="shortcut icon" type="image/jpg"/>--}}
+    <link href="{{ $settings->logoThumb }}" rel="shortcut icon" type="image/png">
     <meta name="title" content="{{ $settings->company_ar .' '. $settings->company_en }}">
     @show
 <!--[if IE]>
@@ -65,10 +69,6 @@
 
     <link rel="apple-touch-icon-precomposed" sizes="144x144"
           href="{{ $settings->logo ? $settings->getCurrentImageAttribute('logo') : $settings->getCurrentImageAttribute('app_logo') }}"/>
-{{--    <link--}}
-{{--        href="{{ $settings->logo ? $settings->getCurrentImageAttribute('logo') : $settings->getCurrentImageAttribute('app_logo') }}"--}}
-{{--        rel="shortcut icon" type="image/jpg"/>--}}
-    <link href="{{ $settings->logoThumb }}" rel="shortcut icon" type="image/png">
     @if(env('ESCRAP'))
         <meta name="google-site-verification" content="SR81NY4elhoRSNXOc1cHIIpu80aTPeiDiipsk4CMvRo"/>
     @elseif(env('EVENTKM'))
