@@ -14,7 +14,7 @@
                     <a href="{{ route('frontend.user.edit', $user->id) }}"
                        class="btn btn-border {{ pullLeft() }}">{{ trans('general.edit') }}</a>
                     <div class="tt-wrapper">
-                        <h3 class="tt-title">{{ trans("genera.account_details") }}</h3>
+                        <h3 class="tt-title">{{ trans("general.account_details") }}</h3>
                         <div class="tt-table-responsive">
                             <table class="tt-table-shop-02">
                                 <tbody>
