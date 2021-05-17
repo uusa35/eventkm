@@ -134,14 +134,9 @@ Breadcrumbs::for('frontend.address.index', function ($trail) {
     $trail->push(trans('general.addresses'), route('frontend.address.index'));
 });
 
-Breadcrumbs::for('backend.address.create', function ($trail) {
-    $trail->parent('backend.address.index');
-    $trail->push(trans('general.new_address'), route('backend.address.create'));
-});
-
 Breadcrumbs::for('frontend.address.edit', function ($trail, $element) {
     $trail->parent('frontend.address.index');
-    $trail->push(trans('general.edit'), route('backend.address.edit', $element->id));
+    $trail->push(trans('general.edit'), route('frontend.address.edit', $element->id));
 });
 
 Breadcrumbs::for('frontend.favorite.index', function ($trail) {

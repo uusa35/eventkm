@@ -60,7 +60,7 @@ class AddressController extends Controller
         $request->request->add(['user_id' => auth()->id()]);
         $element = Address::create($request->all());
         if ($element) {
-            return redirect()->back()->with('success', trans('general.process_success'));
+            return redirect()->route('frontend.address.index')->with('success', trans('general.process_success'));
         }
         return redirect()->back()->with('error', trans('general.process_failure'));
     }
@@ -114,11 +114,11 @@ class AddressController extends Controller
                 'area_id' => 'exists:areas,id|nullable',
             ]);
             if ($validate->fails()) {
-                return redirect()->back()->with(['error' => $validate->errors()->first()]);
+                return redirect()->route('frontend.address.update')->with(['error' => $validate->errors()->first()]);
             }
             $element = Address::whereId($id)->first();
             if ($element->update($request->all())) {
-                return redirect()->back()->with('success', trans('general.process_success'));
+                return redirect()->route('frontend.address.index')->with('success', trans('general.process_success'));
 
             }
             return redirect()->back()->with('error', trans('general.process_failure'));
