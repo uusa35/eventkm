@@ -130,7 +130,7 @@
                                                 <ul class="additional-links">
                                                     <li>
                                                         <a class=""
-                                                           href="{{ route('frontend.order.index') }}">{{ trans('general.return_home') }}</a>
+                                                           href="{{ route('frontend.order.index') }}">{{ trans('general.return') }}</a>
                                                     </li>
                                                 </ul>
                                             </div>
