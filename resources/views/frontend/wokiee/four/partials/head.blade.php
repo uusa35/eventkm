@@ -30,7 +30,6 @@
     <meta property="og:title" content="{{ $settings->comapny_ar . ' '. $settings->company_en }}">
     <meta property="og:description" content="{{ $settings->description }}">
     <meta property="og:image" content="{{ $settings->logoThumb }}">
-    <link href="{{ $settings->logoThumb }}" rel="shortcut icon" type="image/png">
     @if($settings->whatsapp)
         <meta itemProp="whatsapp" content="{{ $settings->whatsapp }}"/>
     @endif
@@ -66,9 +65,9 @@
 
     <link rel="apple-touch-icon-precomposed" sizes="144x144"
           href="{{ $settings->logo ? $settings->getCurrentImageAttribute('logo') : $settings->getCurrentImageAttribute('app_logo') }}"/>
-    <link
-        href="{{ $settings->logo ? $settings->getCurrentImageAttribute('logo') : $settings->getCurrentImageAttribute('app_logo') }}"
-        rel="shortcut icon" type="image/jpg"/>
+{{--    <link--}}
+{{--        href="{{ $settings->logo ? $settings->getCurrentImageAttribute('logo') : $settings->getCurrentImageAttribute('app_logo') }}"--}}
+{{--        rel="shortcut icon" type="image/jpg"/>--}}
     <link rel="shortcut icon" href="{{ asset('images/logo.ico') }}"/>
     <link href="{{ $settings->logoThumb }}" rel="shortcut icon" type="image/png">
     @if(env('ESCRAP'))
