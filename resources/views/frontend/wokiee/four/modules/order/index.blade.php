@@ -12,7 +12,7 @@
                 <div class="tt-shopping-layout">
                     <h2 class="tt-title-border">{{ trans('general.my_account') }}</h2>
                     <a href="{{ route('frontend.user.edit', $user->id) }}"
-                       class="btn btn-border pull-left">{{ trans('general.edit') }}</a>
+                       class="btn btn-border {{ pullLeft() }}">{{ trans('general.edit') }}</a>
                     <div class="tt-wrapper">
                         <h3 class="tt-title">{{ trans("genera.account_details") }}</h3>
                         <div class="tt-table-responsive">
@@ -56,7 +56,7 @@
                             </table>
                         </div>
                         <a href="{{ route('frontend.address.index') }}"
-                           class="btn btn-border pull-left">{{ trans('general.view_addresses') }}</a>
+                           class="btn btn-border {{ pullLeft() }}">{{ trans('general.view_addresses') }}</a>
                     </div>
                     <div class="tt-wrapper">
                         <h3 class="tt-title">{{ trans('general.order_history') }}</h3>
@@ -120,21 +120,21 @@
                                         <td><small>{{ $element->reference_id}}</small></td>
                                         <td>
                                             <a href="{{ route('frontend.invoice.show', $element->id) }}" target="_blank"
-                                               class="btn btn-{{ $element->status === 'success' ? 'success' : 'info' }}">{{ $element->status }}</a>
+                                               class="label label-{{ $element->status === 'success' ? 'success' : 'info' }}">{{ $element->status }}</a>
                                         </td>
                                         <td><small>{{ $element->address }}</small></td>
                                         <td>
                                             <small>
                                                 <a href="{{ route('frontend.invoice.show', $element->id) }}"
                                                    target="_blank"
-                                                   class="btn btn-border">{{ $element->mobile }}</a>
+                                                   class="label label-border">{{ $element->mobile }}</a>
                                             </small>
                                         </td>
                                         <td>
                                             <small>
                                                 <a href="{{ route('frontend.invoice.show', $element->id) }}"
                                                    target="_blank"
-                                                   class="btn btn-border">{{ $element->created_at->diffForHumans()}}</a>
+                                                   class="label label-border">{{ $element->created_at->diffForHumans()}}</a>
                                             </small>
                                         </td>
                                     </tr>
