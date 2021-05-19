@@ -99,10 +99,10 @@
                                         <div class="col-md-6">
                                             <div class="form-group {{ $errors->has('caption_ar') ? ' has-error' : '' }}">
                                                 <label for="caption_ar"
-                                                       class="control-label">{{ trans('general.caption_ar') }}*</label>
+                                                       class="control-label">{{ trans('general.caption_ar') }}</label>
                                                 <input id="caption_ar" type="text" class="form-control"
                                                        name="caption_ar" value="{{ $element->caption_ar }}"
-                                                       placeholder="{{ trans('general.caption_ar') }}" required
+                                                       placeholder="{{ trans('general.caption_ar') }}"
                                                        autofocus>
                                                 @if ($errors->has('caption_ar'))
                                                     <span class="help-block">
@@ -116,10 +116,10 @@
                                         <div class="col-md-6">
                                             <div class="form-group{{ $errors->has('caption_en') ? ' has-error' : '' }}">
                                                 <label for="caption_en"
-                                                       class="control-label">{{ trans('general.caption_en') }}*</label>
+                                                       class="control-label">{{ trans('general.caption_en') }}</label>
                                                 <input id="caption_en" type="text" class="form-control"
                                                        name="caption_en" value="{{ $element->caption_en }}"
-                                                       placeholder="{{ trans('general.caption_en') }}" required
+                                                       placeholder="{{ trans('general.caption_en') }}"
                                                        autofocus>
                                                 @if ($errors->has('caption_en'))
                                                     <span class="help-block">
