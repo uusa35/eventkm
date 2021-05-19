@@ -391,18 +391,16 @@ trait OrderTrait
                         $pickupPoints
                     ],
                 ];
-                dd($data);
-                $enc_method = 'AES-256-CBC';
-                $enc_iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($enc_method));
-                $requestData = openssl_encrypt(json_encode($data), $enc_method, $access_secret, 0, $enc_iv) . "::" . bin2hex($enc_iv);
+//                $enc_method = 'AES-256-CBC';
+//                $enc_iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($enc_method));
+//                $requestData = openssl_encrypt(json_encode($data), $enc_method, $access_secret, 0, $enc_iv) . "::" . bin2hex($enc_iv);
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, $url);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
                 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-                curl_setopt($ch, CURLOPT_POSTFIELDS, ['request_data' => $requestData, 'access_key' => $access_key, 'prog_lang' => $prog_lang]);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, ['request_data' => json_encode($data), 'access_key' => $access_key, 'prog_lang' => $prog_lang]);
                 $response = curl_exec($ch);
                 $res = collect(json_decode($response));
-                dd($res);
                 if ($res['status'] === "201") {
                     $order->update(['shipment_reference' => 'Mirsal - ' . $res['data']->transaction_id]);
                 }
