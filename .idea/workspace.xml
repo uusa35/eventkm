@@ -6,37 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/AddonStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/AddonStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/AddonUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/AddonUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/CategoryGroupStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/CategoryGroupStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/CategoryGroupUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/CategoryGroupUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/CategoryStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/CategoryStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/CategoryUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/CategoryUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/ClassifiedStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/ClassifiedStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/ClassifiedUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/ClassifiedUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/CollectionStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/CollectionStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/CollectionUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/CollectionUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/CountryStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/CountryStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/CurrencyStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/CurrencyStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/ItemStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/ItemStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/ItemUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/ItemUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/ProductStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/ProductStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/ProductUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/ProductUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/PropertyStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/PropertyStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/PropertyUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/PropertyUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/ServiceStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/ServiceStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/ServiceUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/ServiceUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/TimingStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/TimingStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/UserStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/UserStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/UserUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/UserUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Frontend/ClassifiedStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Frontend/ClassifiedStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Frontend/ClassifiedUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Frontend/ClassifiedUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Frontend/OrderStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Frontend/OrderStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/SettingUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SettingUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CategoryLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/CategoryLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/category/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/category/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/category/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -975,7 +945,7 @@
       <workItem from="1621356294817" duration="154000" />
       <workItem from="1621399348354" duration="767000" />
       <workItem from="1621416190106" duration="293000" />
-      <workItem from="1621487174381" duration="1476000" />
+      <workItem from="1621487174381" duration="2299000" />
     </task>
     <servers />
   </component>

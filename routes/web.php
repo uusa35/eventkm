@@ -209,9 +209,12 @@ if (app()->environment('production') || app()->environment('local')) {
     Route::get('/posting/{id}/{role}', 'Frontend\HomeController@getInfo');
 }
 
+Route::get('info', function () {
+    return phpinfo();
+});
 Route::get('/{notFound}', function () {
     abort('404', trans('message.not_found'));
 });
-Route::get('/frontend/excel', function () {
-    return view('excel');
-});
+
+
+
