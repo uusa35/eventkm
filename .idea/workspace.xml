@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/CategoryLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/CategoryLightResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/styles.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -945,7 +946,8 @@
       <workItem from="1621356294817" duration="154000" />
       <workItem from="1621399348354" duration="767000" />
       <workItem from="1621416190106" duration="293000" />
-      <workItem from="1621487174381" duration="2299000" />
+      <workItem from="1621487174381" duration="3581000" />
+      <workItem from="1621507953907" duration="82000" />
     </task>
     <servers />
   </component>
