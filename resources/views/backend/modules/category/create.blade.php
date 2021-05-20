@@ -164,6 +164,20 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="form_control_1tooltips" data-container="body"
+                                                       data-placement="top"
+                                                       data-original-title="{{ trans('message.path') }}">{{ trans('general.path') }}</label>
+                                                <input type="file" class="form-control tooltips" data-container="body"
+                                                       data-placement="top"
+                                                       data-original-title="{{ trans('message.path') }}" name="path"
+                                                       placeholder="{{ trans('general.path') }}">
+                                                <div class="help-block text-left">
+                                                    files shall not exceed 50 MB
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
                                             <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
                                                 <label for="order" class="control-label">{{ trans('general.sequence') }}
                                                     *</label>

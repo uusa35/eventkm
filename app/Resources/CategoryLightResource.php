@@ -22,6 +22,7 @@ class CategoryLightResource extends JsonResource
             'name' => ucfirst(Str::limit($this->name, 20, '..')),
             'thumb' => $this->getCurrentImageAttribute('image'),
             'large' => $this->getCurrentImageAttribute('image'),
+            'path' => asset(env('FILES').$this->path),
 //            'min' => $this->min ? (int) number_format($this->min,0) : 50,
             'min' => $this->min ? (int) $this->min : 50,
             'max' => $this->max ? (int) $this->max : 10000,

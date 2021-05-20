@@ -54,6 +54,7 @@ class CategoryController extends Controller
             $request->has('tags') ? $element->tags()->sync($request->tags) : null;
             $request->has('categoryGroups') ? $element->categoryGroups()->sync($request->categoryGroups) : null;
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1000', '1000'], true) : null;
+            $request->hasFile('path') ? $this->savePath($request, $element) : null;
             return redirect()->route('backend.admin.category.index')->with('success', 'category created.');
         }
         return redirect()->route('backend.admin.category.index')->with('error', 'category error.');
@@ -89,6 +90,7 @@ class CategoryController extends Controller
             $request->has('tags') ? $element->tags()->sync($request->tags) : null;
             $request->has('categoryGroups') ? $element->categoryGroups()->sync($request->categoryGroups) : null;
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1000', '1000'], true) : null;
+            $request->hasFile('path') ? $this->savePath($request, $element) : null;
             return redirect()->route('backend.admin.category.index')->with('success', 'category created.');
         }
         return redirect()->route('backend.admin.category.index')->with('error', 'category error.');
