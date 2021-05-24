@@ -332,7 +332,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        @if(env('DESIGNERAAT'))
+                                        @if(env('DESIGNERAAT') || env('ISTORES'))
                                             <div class="col-lg-4 col-md-6">
                                                 <div
                                                     class="form-group{{ $errors->has('fixed_amount_subscription') ? ' has-error' : '' }}">

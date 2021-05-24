@@ -5,115 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change afterPath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyHelpers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyTrait.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/usama/ibooky/src/IbookyServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/usama/ibooky/src/config/ibooky.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/usama/ibooky/src/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mallrupdate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mallrupdate.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.validation.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/SellingModelHelpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/SellingModelHelpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/AreaLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/AreaLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/AreaResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/AreaResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/BranchLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/BranchLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/BranchResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/BranchResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/BrandLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/BrandLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/BrandResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/BrandResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CategoryChildLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CategoryChildLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CategoryExtraLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CategoryExtraLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CategoryGroupExtraLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CategoryGroupExtraLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CategoryLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CategoryLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CategoryResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CategoryResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CategorySubChildLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CategorySubChildLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ClassifiedExtraLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ClassifiedExtraLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ClassifiedItemLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ClassifiedItemLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ClassifiedLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ClassifiedLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ClassifiedResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ClassifiedResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CollectionLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CollectionLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CollectionResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CollectionResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ColorLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ColorLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ColorResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ColorResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CommentExtraLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CommentExtraLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CommercialLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CommercialLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CommercialResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CommercialResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CountryLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CountryLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CountryResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CountryResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CouponLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CouponLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CouponResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CouponResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CurrencyLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CurrencyLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CurrencyResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CurrencyResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/DayLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/DayLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/DayResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/DayResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/DeviceResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/DeviceResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ImageLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ImageLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ImageResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ImageResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/NotificationLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/NotificationLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/NotificationResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/NotificationResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/OrderExtraLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/OrderExtraLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/OrderLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/OrderLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/OrderMetaLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/OrderMetaLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/OrderMetaResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/OrderMetaResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/OrderResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/OrderResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/PageLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/PageLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ProductAttributeLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ProductAttributeLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ProductAttributeResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ProductAttributeResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ProductCartResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ProductCartResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ProductExtraLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ProductExtraLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ProductLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ProductLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ProductResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ProductResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/PropertyExtraLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/PropertyExtraLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/RangeTimingLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/RangeTimingLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/RatingLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/RatingLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/RatingResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/RatingResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/RoleLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/RoleLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/RoleResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/RoleResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ServiceExtraLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ServiceExtraLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ServiceLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ServiceLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ServiceResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ServiceResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/SettingResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SettingResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ShipmentPackageLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ShipmentPackageLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/ShipmentPackageResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ShipmentPackageResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/SizeLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SizeLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/SizeResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SizeResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/SlideExtraLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SlideExtraLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/SlideLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SlideLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/SlideResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SlideResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/TagExtraLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/TagExtraLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/TagLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/TagLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/TagResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/TagResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/TimingLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/TimingLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/TimingResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/TimingResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/UserExtraLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/UserExtraLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/UserLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/UserLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/VideoLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/VideoLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/VideoResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/VideoResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/myfatoorah/src/Controllers/MyFatoorahPaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/myfatoorah/src/Controllers/MyFatoorahPaymentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/myfatoorah/src/Controllers/MyFatoorahTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/myfatoorah/src/Controllers/MyFatoorahTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/myfatoorah/src/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/myfatoorah/src/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/tap/src/Contracts/PaymentContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap/src/Contracts/PaymentContract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/tap/src/Contracts/TapContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap/src/Contracts/TapContract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/tap/src/Controllers/Tap.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap/src/Controllers/Tap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapPaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapPaymentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/tap/src/Requests/AddProductValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap/src/Requests/AddProductValidation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/tap/src/Requests/MakePaymentValidation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/tap/src/Services/TapInvoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap/src/Services/TapInvoice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/tap/src/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap/src/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/upayment/src/Controllers/UPaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/upayment/src/Controllers/UPaymentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/upayment/src/Controllers/UpaymentTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/upayment/src/Controllers/UpaymentTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/upayment/src/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/upayment/src/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/setting/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/setting/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_cart_order_user_info_confirmation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_cart_order_user_info_confirmation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/user/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/user/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1053,7 +946,7 @@
       <workItem from="1621487174381" duration="3581000" />
       <workItem from="1621507953907" duration="301000" />
       <workItem from="1621757582021" duration="470000" />
-      <workItem from="1621774647214" duration="16013000" />
+      <workItem from="1621774647214" duration="16693000" />
     </task>
     <servers />
   </component>
