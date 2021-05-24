@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend\Admin;
 
 use App\Models\Category;
 use App\Models\Commercial;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Core\PrimaryController;
 use App\Core\Services\Image\PrimaryImageService;
@@ -43,7 +45,8 @@ class CommercialController extends Controller
     public function create()
     {
         $categories = Category::active()->onlyParent()->with('children.children')->get();
-        return view('backend.modules.commercial.create', compact('categories'));
+        $users = User::active()->get();
+        return view('backend.modules.commercial.create', compact('categories','users'));
     }
 
     /**
@@ -64,8 +67,10 @@ class CommercialController extends Controller
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate)->withInput();
         }
-        $element = Commercial::create($request->except(['image', 'path', 'categories']));
+        $end_date = $request->has('end_date') ? Carbon::parse(str_replace('-', '', $request->end_date))->toDateTimeString() : null;
+        $element = Commercial::create($request->except(['image', 'path', 'categories','end_date']));
         if ($element) {
+            $end_date ? $element->update(['end_date' => $end_date]) : null;
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['930', '365'], true) : null;
             $request->hasFile('path') ? $this->savePath($request, $element) : null;
             $request->has('categories') ? $element->categories()->sync($request->categories) : null;
@@ -96,7 +101,8 @@ class CommercialController extends Controller
         $element = Commercial::whereId($id)->first();
         if ($element) {
             $categories = Category::active()->onlyParent()->with('children.children')->get();
-            return view('backend.modules.commercial.edit', compact('element', 'categories'));
+            $users = User::active()->get();
+            return view('backend.modules.commercial.edit', compact('element', 'categories','users'));
         }
         return redirect()->back()->with('error', trans('general.commercial_not_added'));
     }
@@ -120,9 +126,11 @@ class CommercialController extends Controller
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate);
         }
+        $end_date = $request->has('end_date') ? Carbon::parse(str_replace('-', '', $request->end_date))->toDateTimeString() : null;
         $element = Commercial::whereId($id)->first();
-        $updated = $element->update($request->except(['image', 'path', 'categories']));
+        $updated = $element->update($request->except(['image', 'path', 'categories','end_date']));
         if ($updated) {
+            $end_date ? $element->update(['end_date' => $end_date]) : null;
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['930', '365'], true) : null;
             $request->hasFile('path') ? $this->savePath($request, $element) : null;
             $request->has('categories') ? $element->categories()->sync($request->categories) : null;

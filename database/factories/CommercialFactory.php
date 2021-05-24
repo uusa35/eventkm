@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Commercial;
+use App\Models\User;
 use Faker\Generator as Faker;
 
 $factory->define(Commercial::class, function (Faker $faker) {
@@ -18,5 +19,12 @@ $factory->define(Commercial::class, function (Faker $faker) {
         'active' => $faker->boolean(true),
         'on_home' => $faker->boolean(true),
         'order' => $faker->numberBetween(1, 59),
+        'user_id' => User::active()->get()->random()->id,
+        'website' => $faker->url,
+        'facebook' => $faker->url,
+        'instagram' => $faker->url,
+        'youtube' => $faker->url,
+        'twitter' => $faker->url,
+        'whatsapp' => $faker->bankAccountNumber,
     ];
 });

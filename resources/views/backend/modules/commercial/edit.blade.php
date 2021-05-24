@@ -98,6 +98,50 @@
                                                 @endif
                                             </div>
                                         </div>
+                                        @can('isAdminOrAbove')
+                                            <div class="col-lg-4 col-md-6">
+                                                <div class="form-group">
+                                                    <label for="single"
+                                                           class="control-label required">{{ trans('general.owner') }}
+                                                        *</label>
+                                                    <select name="user_id" class="form-control tooltips"
+                                                            data-container="body" data-placement="top"
+                                                            data-original-title="{{ trans('message.owner') }}">
+                                                        <option
+                                                            value="">{{ trans('general.choose_user') }}</option>
+                                                        @foreach($users as $user)
+                                                            <option
+                                                                value="{{ $user->id }}" {{ $element->user_id == $user->id ? 'selected' : null  }}>{{ $user->slug }}
+                                                                - {{ $user->id }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        @else
+                                            <input type="hidden" name="user_id"
+                                                   value="{{ auth()->id()}}">
+                                        @endcan
+                                        <div class="col-md-6">
+                                            <div class="form-group{{ $errors->has('end_date') ? ' has-error' : '' }}">
+                                                <label for="end_date"
+                                                       class="control-label required">{{ trans('general.end_date') }}*</label>
+                                                <div class="input-group date form_datetime">
+                                                    <input type="text" readonly style="direction: ltr !important;"
+                                                           class="form-control tooltips" data-container="body"
+                                                           data-placement="top"
+                                                           data-original-title="{{ trans('message.end_date') }}"
+                                                           name="end_date"
+                                                           value="{{ $element->end_date ? $element->end_date : '01 January 2019 - 07:55' }}"
+                                                           required>
+                                                    <span class="input-group-btn"><button class="btn default date-set"
+                                                                                          type="button"><i
+                                                                class="fa fa-calendar"></i></button></span>
+                                                </div>
+                                                <span class="help-block">
+                                                <strong>{{ trans('message.end_date') }}</strong>
+                                            </span>
+                                            </div>
+                                        </div>
                                         <div class="col-md-4">
                                             <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
                                                 <label for="order" class="control-label">{{ trans('general.sequence') }}
@@ -118,7 +162,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group form-md-line-input">
                                                 <input type="file" class="form-control tooltips" data-container="body"
                                                        data-placement="top"
@@ -132,7 +176,7 @@
                                             </div>
                                         </div>
                                         @if($element->image)
-                                            <div class="col-md-3">
+                                            <div class="col-md-1">
                                                 <img class="img-responsive img-sm"
                                                      src="{{ $element->imageThumbLink }}"
                                                      alt="">
@@ -207,6 +251,204 @@
                                 </div>
                             </div>
                         </div>
+
+
+                        <div class="portlet box blue ">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-gift"></i> {{ trans('general.more_details') }}
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div class="form-body">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-6">
+                                            <div
+                                                class="form-group{{ $errors->has('whatsapp') ? ' has-error' : '' }}">
+                                                <label for="whatsapp"
+                                                       class="control-label">{{ trans('general.whatsapp') }}
+                                                    (ex.: 65XX2XXX)</label>
+                                                <input id="whatsapp" type="text" class="form-control tooltips"
+                                                       data-container="body" data-placement="top"
+                                                       data-original-title="{{ trans('message.whatsapp') }}"
+                                                       name="whatsapp"
+                                                       placeholder="{{ trans('general.mobile_example') }}"
+                                                       value="{{ $element->whatsapp }}" autofocus>
+                                                @if ($errors->has('whatsapp'))
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            {{ $errors->first('whatsapp') }}
+                                                        </strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div
+                                                class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
+                                                <label for="mobile"
+                                                       class="control-label">{{ trans('general.mobile') }}
+                                                    (ex.: 65XX2XXX)</label>
+                                                <input id="mobile" type="text" class="form-control tooltips"
+                                                       data-container="body" data-placement="top"
+                                                       data-original-title="{{ trans('message.mobile') }}"
+                                                       name="mobile"
+                                                       placeholder="{{ trans('general.mobile_example') }}"
+                                                       value="{{ $element->mobile }}" autofocus>
+                                                @if ($errors->has('mobile'))
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            {{ $errors->first('mobile') }}
+                                                        </strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div
+                                                class="form-group{{ $errors->has('website') ? ' has-error' : '' }}">
+                                                <label for="website"
+                                                       class="control-label">{{ trans('general.website') }}</label>
+                                                <input id="website" type="url" class="form-control tooltips"
+                                                       data-container="body" data-placement="top"
+                                                       data-original-title="{{ trans('message.website') }}"
+                                                       name="website"
+                                                       placeholder="{{ trans('general.website') }}"
+                                                       value="{{ $element->website }}" autofocus>
+                                                @if ($errors->has('website'))
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            {{ $errors->first('website') }}
+                                                        </strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div
+                                                class="form-group{{ $errors->has('facebook') ? ' has-error' : '' }}">
+                                                <label for="facebook"
+                                                       class="control-label">{{ trans('general.facebook') }}</label>
+                                                <input id="facebook" type="url" class="form-control tooltips"
+                                                       data-container="body" data-placement="top"
+                                                       data-original-title="{{ trans('message.facebook') }}"
+                                                       name="facebook"
+                                                       placeholder="{{ trans('general.facebook') }}"
+                                                       value="{{ $element->facebook }}" autofocus>
+                                                @if ($errors->has('facebook'))
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            {{ $errors->first('facebook') }}
+                                                        </strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div
+                                                class="form-group{{ $errors->has('instagram') ? ' has-error' : '' }}">
+                                                <label for="instagram"
+                                                       class="control-label">{{ trans('general.instagram') }}</label>
+                                                <input id="instagram" type="url" class="form-control tooltips"
+                                                       data-container="body" data-placement="top"
+                                                       data-original-title="{{ trans('message.instagram') }}"
+                                                       name="instagram"
+                                                       placeholder="{{ trans('general.instagram') }}"
+                                                       value="{{ $element->instagram }}" autofocus>
+                                                @if ($errors->has('instagram'))
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            {{ $errors->first('instagram') }}
+                                                        </strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div
+                                                class="form-group{{ $errors->has('youtube') ? ' has-error' : '' }}">
+                                                <label for="youtube"
+                                                       class="control-label">{{ trans('general.youtube') }}</label>
+                                                <input id="youtube" type="url" class="form-control tooltips"
+                                                       data-container="body" data-placement="top"
+                                                       data-original-title="{{ trans('message.youtube') }}"
+                                                       name="youtube"
+                                                       placeholder="{{ trans('general.youtube') }}"
+                                                       value="{{ $element->youtube }}" autofocus>
+                                                @if ($errors->has('youtube'))
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            {{ $errors->first('youtube') }}
+                                                        </strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div
+                                                class="form-group{{ $errors->has('twitter') ? ' has-error' : '' }}">
+                                                <label for="twitter"
+                                                       class="control-label">{{ trans('general.twitter') }}</label>
+                                                <input id="twitter" type="url" class="form-control tooltips"
+                                                       data-container="body" data-placement="top"
+                                                       data-original-title="{{ trans('message.twitter') }}"
+                                                       name="twitter"
+                                                       placeholder="{{ trans('general.twitter') }}"
+                                                       value="{{ $element->twitter }}" autofocus>
+                                                @if ($errors->has('twitter'))
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            {{ $errors->first('twitter') }}
+                                                        </strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div
+                                                class="form-group{{ $errors->has('longitude') ? ' has-error' : '' }}">
+                                                <label for="longitude"
+                                                       class="control-label">{{ trans('general.longitude') }}</label>
+                                                <input id="longitude" type="text" class="form-control tooltips"
+                                                       data-container="body" data-placement="top"
+                                                       data-original-title="{{ trans('message.longitude') }}"
+                                                       name="longitude"
+                                                       placeholder="{{ trans('general.longitude') }}"
+                                                       value="{{ $element->longitude }}" autofocus>
+                                                @if ($errors->has('longitude'))
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            {{ $errors->first('longitude') }}
+                                                        </strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div
+                                                class="form-group{{ $errors->has('latitude') ? ' has-error' : '' }}">
+                                                <label for="latitude"
+                                                       class="control-label">{{ trans('general.latitude') }}</label>
+                                                <input id="latitude" type="text" class="form-control tooltips"
+                                                       data-container="body" data-placement="top"
+                                                       data-original-title="{{ trans('message.latitude') }}"
+                                                       name="latitude"
+                                                       placeholder="{{ trans('general.latitude') }}"
+                                                       value="{{ $element->latitude }}" autofocus>
+                                                @if ($errors->has('latitude'))
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            {{ $errors->first('latitude') }}
+                                                        </strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="portlet box blue ">
                             <div class="portlet-title">
                                 <div class="caption">

@@ -65,7 +65,7 @@ class IbookyController extends Controller
                 throw new \Exception($validate->errors()->first());
             }
             $res = $this->getPaymentStatus($request->txnId);
-            dd($res);
+            dd(json_encode($res));
             $referenceId = $request->txnId;
             dd($referenceId);
             $order = Order::where(['id' => $referenceId])->with('order_metas.product', 'user', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color')->first();

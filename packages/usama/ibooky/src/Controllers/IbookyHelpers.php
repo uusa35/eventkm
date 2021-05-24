@@ -623,7 +623,7 @@ trait IbookyHelpers
             'Accept: application/json',
             'Content-Type: application/json',
         );
-//        dd($postParams);
+//        dd(json_encode($postParams));
         curl_setopt($ch, CURLOPT_URL,$requeryUrl);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -635,7 +635,7 @@ trait IbookyHelpers
         $decodeOutput = json_decode($serverOutput, true);
         curl_close ($ch);
 
-        dd($decodeOutput);
+        dd(json_encode($decodeOutput));
 
         return $decodeOutput;
     }

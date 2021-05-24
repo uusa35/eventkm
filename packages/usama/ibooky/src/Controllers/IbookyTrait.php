@@ -30,6 +30,7 @@ trait IbookyTrait
             $rndnum = rand(10000, 99999);
             $crossCat = "GEN";
             $secretKey = '1234567';
+//            'Bookeey';
             $defaultPaymentOption = 'knet';
             $selectedPaymentOption = 'knet';
             $paymentoptions = ($selectedPaymentOption == '') ? $defaultPaymentOption : $selectedPaymentOption;
@@ -114,10 +115,13 @@ trait IbookyTrait
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 //            print_r('Payment gateway url: '. $paymentGatewayUrl);
-//            dd($postParams);
+//            dd(json_encode($postParams));
             $serverOutput = curl_exec($ch);
+//            dd(json_encode($serverOutput));
             $res = json_decode($serverOutput, true);
             curl_close($ch);
+//            dd(json_encode($res));
+//            dd('stop');
 
 
 //            if (isset($decodeOutput['PayUrl'])) {
