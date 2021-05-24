@@ -1106,6 +1106,10 @@
                                                             value="upayment" {{ $element->payment_method === 'upayment' ? 'selected' : null }}>
                                                             Upayment
                                                         </option>
+                                                        <option
+                                                            value="ibooky" {{ $element->payment_method === 'ibooky' ? 'selected' : null }}>
+                                                            IBooky
+                                                        </option>
                                                     </select>
                                                 </div>
                                             </div>

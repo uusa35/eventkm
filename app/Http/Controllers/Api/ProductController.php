@@ -2,20 +2,16 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Resources\BranchLightResource;
 use App\Http\Resources\ColorLightResource;
 use App\Http\Resources\ProductAttributeLightResource;
 use App\Http\Resources\ProductCartResource;
 use App\Http\Resources\ProductExtraLightResource;
-use App\Http\Resources\ProductLightResource;
 use App\Http\Resources\ProductResource;
-use App\Http\Resources\UserLightResource;
 use App\Jobs\IncreaseElementViews;
 use App\Models\Color;
 use App\Models\Product;
 use App\Models\ProductAttribute;
 use App\Models\Size;
-use App\Models\User;
 use App\Services\Search\Filters;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

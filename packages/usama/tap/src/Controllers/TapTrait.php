@@ -1,6 +1,6 @@
 <?php
 
-namespace Usama\Tap;
+namespace Usama\Tap\Controllers;
 
 use App\Models\Order;
 use App\Models\Product;

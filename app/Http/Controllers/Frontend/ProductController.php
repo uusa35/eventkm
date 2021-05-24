@@ -7,6 +7,7 @@ use App\Jobs\IncreaseElementViews;
 use App\Models\Category;
 use App\Models\Color;
 use App\Models\Product;
+use App\Models\SellingModelHelpers;
 use App\Models\Size;
 use App\Models\User;
 use App\Services\Search\Filters;

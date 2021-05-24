@@ -1,6 +1,6 @@
 <?php
 
-namespace Usama\Upayment;
+namespace Usama\Upayment\Controllers;
 
 use App\Services\Traits\OrderTrait;
 

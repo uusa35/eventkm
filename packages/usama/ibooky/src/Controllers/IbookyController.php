@@ -1,6 +1,6 @@
 <?php
 
-namespace Usama\Upayment\Controllers;
+namespace Usama\Ibooky\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\OrderSuccessProcessJob;
@@ -15,10 +15,10 @@ use Illuminate\Mail\Markdown;
  * Date: 7/15/17
  * Time: 6:04 PM
  */
-class UPaymentController extends Controller
+class IbookyController extends Controller
 {
 
-    use UpaymentTrait;
+    use IbookyTrait, IbookyHelpers;
 
     public function makePaymentApi(Request $request)
     {
@@ -56,31 +56,40 @@ class UPaymentController extends Controller
     public function result(Request $request)
     {
         // once the result is success .. get the deal from refrence then delete all other free deals related to such ad.
-        $validate = validator($request->all(), [
-            'PaymentID' => 'required'
-        ]);
-        if ($validate->fails()) {
-            throw new \Exception($validate->errors()->first());
-        }
-        $referenceId = $request->OrderID;
-        $order = Order::where(['id' => $referenceId])->with('order_metas.product', 'user', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color')->first();
-        $order->update(['status' => 'success', 'paid' => true]);
-        $this->decreaseQty($order);
-        $markdown = new Markdown(view(), config('mail.markdown'));
-        OrderSuccessProcessJob::dispatchNow($order, $order->user);
+        try {
+            $validate = validator($request->all(), [
+                'txnId' => 'required',
+                'errorCode' => 'required'
+            ]);
+            if ($validate->fails()) {
+                throw new \Exception($validate->errors()->first());
+            }
+            $res = $this->getPaymentStatus($request->txnId);
+            dd($res);
+            $referenceId = $request->txnId;
+            dd($referenceId);
+            $order = Order::where(['id' => $referenceId])->with('order_metas.product', 'user', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color')->first();
+            $order->update(['status' => 'success', 'paid' => true]);
+            $this->decreaseQty($order);
+            $markdown = new Markdown(view(), config('mail.markdown'));
+            OrderSuccessProcessJob::dispatchNow($order, $order->user);
 //        OrderSuccessProcessJob::dispatch($order, $order->user)->delay(now()->addSeconds(15));
-        $this->clearCart();
-        return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
+            $this->clearCart();
+            return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
+        } catch (\Exception $e) {
+            throw new \Exception($e->getMessage());
+        }
+
     }
 
     public function error(Request $request)
     {
         // once the result is success .. get the deal from refrence then delete all other free deals related to such ad.
         $validate = validator($request->all(), [
-            'PaymentID' => 'required'
+            'txnId' => 'required'
         ]);
         if ($validate->fails()) {
-            throw new Excption($validate->errors()->first());
+            throw new \Exception($validate->errors()->first());
         }
         $referenceId = $request->OrderID;
         $order = Order::withoutGlobalScopes()->where(['id' => $referenceId])->first();

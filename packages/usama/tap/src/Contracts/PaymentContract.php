@@ -1,5 +1,5 @@
 <?php
-namespace Usama\Tap;
+namespace Usama\Tap\Contracts;
 /**
  * Created by PhpStorm.
  * User: usamaahmed
