@@ -17,6 +17,7 @@ class CommercialLightResource extends JsonResource
         return [
 //            'name' => $this->name,
 //            'caption' => $this->caption,
+            'id' => $this->id,
             'thumb' => $this->imageThumbLink,
             'large' => $this->imageLargeLink,
             'url' => $this->url,

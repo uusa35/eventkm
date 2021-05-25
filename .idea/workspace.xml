@@ -7,25 +7,6 @@
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Resources/CommercialLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CommercialLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/commercial/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/commercial/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/commercial/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/commercial/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/five/home.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/five/layouts/app.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/five/partials/_btn_info.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/five/partials/_horizontal_three_categories.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/five/partials/_instagram.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/five/partials/_products_slider.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/five/partials/_products_slider_hot_deal.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/five/partials/_three_main_categories.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/five/partials/_tow_main_categories.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/five/partials/footer.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/five/partials/head.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/five/partials/header.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/five/partials/loader.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/five/partials/models.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/five/partials/scripts.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/five/partials/slider.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/five/partials/styles.blade.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -965,7 +946,7 @@
       <workItem from="1621487174381" duration="3581000" />
       <workItem from="1621507953907" duration="301000" />
       <workItem from="1621757582021" duration="470000" />
-      <workItem from="1621774647214" duration="24486000" />
+      <workItem from="1621774647214" duration="25092000" />
     </task>
     <servers />
   </component>
