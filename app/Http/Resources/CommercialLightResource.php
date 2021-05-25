@@ -15,8 +15,7 @@ class CommercialLightResource extends JsonResource
     public function toArray($request)
     {
         return [
-//            'name' => $this->name,
-//            'caption' => $this->caption,
+            'name' => $this->name,
             'id' => $this->id,
             'thumb' => $this->imageThumbLink,
             'large' => $this->imageLargeLink,
