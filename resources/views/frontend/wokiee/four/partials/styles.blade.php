@@ -133,7 +133,6 @@
 
     .btn, .tt-btn-search-rtl, .tt-btn-search,
     .tt-menu-toggle.stylization-02,
-    .tt-product:not(.tt-view),
     .btn-link, .btn-link:focus,
     .btn.btn-small:hover,
     .tt-back-to-top,
