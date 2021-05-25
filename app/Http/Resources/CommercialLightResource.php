@@ -18,10 +18,12 @@ class CommercialLightResource extends JsonResource
 //            'name' => $this->name,
 //            'caption' => $this->caption,
             'thumb' => $this->imageThumbLink,
-            'medium' => $this->imageMediumLink,
+            'large' => $this->imageLargeLink,
             'url' => $this->url,
             'path' => $this->pathLink,
             'on_home' => $this->on_home,
+            'whatsapp' => $this->whatsapp,
+            'mobile' => $this->mobile,
         ];
     }
 }

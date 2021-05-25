@@ -259,7 +259,7 @@
                                                 class="form-group{{ $errors->has('whatsapp') ? ' has-error' : '' }}">
                                                 <label for="whatsapp"
                                                        class="control-label">{{ trans('general.whatsapp') }}
-                                                    (ex.: 65XX2XXX)</label>
+                                                    (ex.: 96565XX2XXX)</label>
                                                 <input id="whatsapp" type="text" class="form-control tooltips"
                                                        data-container="body" data-placement="top"
                                                        data-original-title="{{ trans('message.whatsapp') }}"
@@ -280,7 +280,7 @@
                                                 class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
                                                 <label for="mobile"
                                                        class="control-label">{{ trans('general.mobile') }}
-                                                    (ex.: 65XX2XXX)</label>
+                                                    (ex.: 96565XX2XXX)</label>
                                                 <input id="mobile" type="text" class="form-control tooltips"
                                                        data-container="body" data-placement="top"
                                                        data-original-title="{{ trans('message.mobile') }}"
