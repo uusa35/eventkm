@@ -4,7 +4,7 @@
             @if($title)
                 <div class="tt-block-title">
                     <h1 class="tt-title">
-                        {{ $title }}
+                        <a href="{{ route('frontend.category.index') }}">{{ $title }}</a>
                     </h1>
                     {{--                    <div class="tt-description">{{ trans('message.our_designers') }}</div>--}}
                 </div>
