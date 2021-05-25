@@ -119,7 +119,7 @@
                                         @else
                                             <input type="hidden" name="user_id" value="{{ auth()->id()}}">
                                         @endcan
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group{{ $errors->has('end_date') ? ' has-error' : '' }}">
                                                 <label for="end_date"
                                                        class="control-label required">{{ trans('general.end_date') }}*</label>
@@ -143,7 +143,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
                                                 <label for="order" class="control-label">{{ trans('general.sequence') }}
-                                                    *</label>
+                                                    </label>
                                                 <input id="order" type="number" class="form-control tooltips"
                                                        data-container="body" data-placement="top"
                                                        data-original-title="{{ trans('message.sequence') }}"
@@ -160,16 +160,23 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group form-md-line-input">
-                                                <input type="file" class="form-control tooltips" data-container="body"
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label for="file"
+                                                       class="control-label required">{{ trans('general.main_image') }}
+                                                    *</label>
+                                                <input class="form-control tooltips" data-container="body"
                                                        data-placement="top"
                                                        data-original-title="{{ trans('message.main_image') }}"
-                                                       name="image" placeholder="{{ trans('general.main_image') }}"
-                                                       required>
-                                                <label for="form_control_1">{{ trans('general.main_image') }} </label>
+                                                       name="image" placeholder="images" type="file"
+                                                       required/>
                                                 <div class="help-block text-left">
-                                                    {{ trans('message.best_fit',['width' => '930 px', 'height' => '365 px']) }}
+                                                    {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440 px']) }}
+                                                </div>
+                                                <div class="help-block text-left">
+                                                    <a href="{{ url('http://photopea.com') }}" target="_blank">
+                                                        {{ trans('general.image_url') }}
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -188,14 +195,15 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="form_control_1">{{ trans('general.path') }}</label>
+                                                <label for="form_control_1tooltips" data-container="body"
+                                                       data-placement="top"
+                                                       data-original-title="{{ trans('message.path') }}">{{ trans('general.path') }}</label>
                                                 <input type="file" class="form-control tooltips" data-container="body"
                                                        data-placement="top"
-                                                       data-original-title="{{ trans('message.path') }}"
-                                                       name="path" placeholder="{{ trans('general.path') }}"
-                                                >
+                                                       data-original-title="{{ trans('message.path') }}" name="path"
+                                                       placeholder="{{ trans('general.path') }}">
                                                 <div class="help-block text-left">
-                                                    {{ trans('message.pdf_path') }}
+                                                    {{ trans('message.max_upload') }} {{ env('MAX_IMAGE_SIZE') > 1000 ? str_limit(env('MAX_IMAGE_SIZE'),1,'') : env('MAX_IMAGE_SIZE') }} {{ env('MAX_IMAGE_SIZE') > 1000 ? trans('general.mb') : trans('general.kb') }}
                                                 </div>
                                             </div>
                                         </div>

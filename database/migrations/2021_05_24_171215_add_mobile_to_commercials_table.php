@@ -46,6 +46,7 @@ class AddMobileToCommercialsTable extends Migration
             $table->dropColumn('mobile');
             $table->dropColumn('longitude');
             $table->dropColumn('latitude');
+            $table->dropColumn('end_date');
             $table->dropColumn('user_id');
         });
     }

@@ -171,7 +171,7 @@
                                         </div>
                                     @endif
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="form_control_1">{{ trans('general.path') }}</label>
                                                 <input type="file" class="form-control tooltips" data-container="body"
@@ -179,7 +179,7 @@
                                                        data-original-title="{{ trans('message.path') }}" name="path"
                                                        placeholder="{{ trans('general.path') }}">
                                                 <div class="help-block text-left">
-                                                    files shall not exceed 50 MB
+                                                    {{ trans('message.max_upload') }} {{ env('MAX_IMAGE_SIZE') > 1000 ? str_limit(env('MAX_IMAGE_SIZE'),1,'') : env('MAX_IMAGE_SIZE') }} {{ env('MAX_IMAGE_SIZE') > 1000 ? trans('general.mb') : trans('general.kb') }}
                                                     @if($element->path)
                                                         <a href="{{ asset(env('FILES').$element->path) }}"
                                                            class="href">{{ trans('general.path') }}</a>
@@ -187,7 +187,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
                                                 <label for="order" class="control-label">{{ trans('general.sequence') }}
                                                     *</label>
@@ -204,7 +204,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 col-md-6">
+                                        <div class="col-lg-4 col-md-4">
                                             <div class="form-group">
                                                 <label for="single"
                                                        class="control-label required">{{ trans('general.parent') }}

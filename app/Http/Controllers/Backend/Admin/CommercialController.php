@@ -62,7 +62,7 @@ class CommercialController extends Controller
             'name_en' => 'required|min:3',
             'on_home' => 'required|boolean',
             'order' => 'numeric|min:1',
-            'image' => 'required|image|dimensions:width=930,height=365',
+            'image' => "image|dimensions:width=1080,height=1440|max:" . env('MAX_IMAGE_SIZE') . '"',
         ]);
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate)->withInput();
@@ -121,7 +121,7 @@ class CommercialController extends Controller
             'name_en' => 'required|min:3',
             'on_home' => 'required|boolean',
             'order' => 'numeric|min:1',
-            'image' => 'image|dimensions:width=930,height=365',
+            'image' => "image|nullable|dimensions:width=1080,height=1440|max:" . env('MAX_IMAGE_SIZE') . '"',
         ]);
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate);

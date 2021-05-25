@@ -121,7 +121,7 @@
                                             <input type="hidden" name="user_id"
                                                    value="{{ auth()->id()}}">
                                         @endcan
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group{{ $errors->has('end_date') ? ' has-error' : '' }}">
                                                 <label for="end_date"
                                                        class="control-label required">{{ trans('general.end_date') }}*</label>
@@ -162,28 +162,35 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group form-md-line-input">
-                                                <input type="file" class="form-control tooltips" data-container="body"
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="form-group">
+                                                <label for="file"
+                                                       class="control-label required">{{ trans('general.main_image') }}
+                                                    *</label>
+                                                <input class="form-control tooltips"
+                                                       data-container="body"
                                                        data-placement="top"
                                                        data-original-title="{{ trans('message.main_image') }}"
-                                                       name="image" placeholder="{{ trans('general.main_image') }}"
-                                                       >
-                                                <label for="form_control_1">{{ trans('general.main_image') }}</label>
+                                                       name="image" placeholder="images" type="file"/>
                                                 <div class="help-block text-left">
-                                                    {{ trans('message.best_fit',['width' => '930 px', 'height' => '365 px']) }}
+                                                    {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440']) }}
+                                                </div>
+                                                <div class="help-block text-left">
+                                                    <a href="{{ url('http://photopea.com') }}" target="_blank">
+                                                        {{ trans('general.image_url') }}
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
-                                        @if($element->image)
-                                            <div class="col-md-1">
+                                        <div class="col-md-2">
+                                            @if($element->image)
                                                 <img class="img-responsive img-sm"
                                                      src="{{ $element->imageThumbLink }}"
                                                      alt="">
-                                                <a href="{{ route("backend.admin.image.clear",['model' => 'product', 'id' => $element->id ]) }}"><i
-                                                            class="fa fa-fw fa-times"></i></a>
-                                            </div>
-                                        @endif
+                                                <a href="{{ route("backend.admin.image.clear",['model' => 'commercial', 'id' => $element->id ]) }}"><i
+                                                        class="fa fa-fw fa-times"></i></a>
+                                            @endif
+                                        </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="form_control_1">{{ trans('general.url') }}</label>
