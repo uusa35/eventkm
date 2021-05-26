@@ -41,7 +41,7 @@ class UserController extends Controller
         if (request()->has('category_id')) {
             $elements = $this->element->active()->companies()->notAdmins()->hasProducts()->whereHas('categories', function ($q) {
                 return $q->where(['category_id' => request()->category_id]);
-            })->paginate(env('EXPO') ? self::TAKE : self::TAKE_MIN);
+            })->paginate(self::TAKE_MIN);
         } elseif (request()->has('type')) {
             $elements = $this->element->active()->whereHas('role', function ($q) {
                 return $q->where(request()->type, true);
@@ -49,7 +49,7 @@ class UserController extends Controller
             if (request()->has('on_home')) {
                 $elements = $elements->where('on_home', request()->on_home);
             }
-            $elements = $elements->notAdmins()->hasProducts()->paginate(env('EXPO') ? SELF::TAKE : self::TAKE_MIN);
+            $elements = $elements->notAdmins()->hasProducts()->paginate(self::TAKE_MIN);
         }
         if (isset($elements) && $elements->isNotEmpty()) {
             return response()->json(UserLightResource::collection($elements), 200);
@@ -64,9 +64,9 @@ class UserController extends Controller
             return response()->json(['message' => $validator->errors()->first()], 400);
         }
         if (request()->has('is_celebrity')) {
-            $elements = $this->element->filters($filters)->active()->notAdmins()->orderBy('id', 'desc')->paginate(env('EXPO') ? self::TAKE : self::TAKE_MIN);
+            $elements = $this->element->filters($filters)->active()->notAdmins()->orderBy('id', 'desc')->paginate(self::TAKE_MID);
         } else {
-            $elements = $this->element->filters($filters)->active()->notAdmins()->orderBy('id', 'desc')->paginate(env('EXPO') ? self::TAKE : self::TAKE_MIN);
+            $elements = $this->element->filters($filters)->active()->notAdmins()->orderBy('id', 'desc')->paginate(self::TAKE_MID);
         }
         if (!$elements->isEmpty()) {
             return response()->json(UserExtraLightResource::collection($elements), 200);
