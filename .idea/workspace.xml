@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyHelpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyHelpers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/category/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -960,7 +959,7 @@
       <workItem from="1622018454138" duration="11374000" />
       <workItem from="1622134424902" duration="44000" />
       <workItem from="1622302512748" duration="2542000" />
-      <workItem from="1622359536403" duration="8520000" />
+      <workItem from="1622359536403" duration="10189000" />
     </task>
     <servers />
   </component>

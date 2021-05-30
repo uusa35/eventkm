@@ -63,7 +63,9 @@
                                                     <div class="btn-group">
                                                         <button type="button"
                                                                 class="btn {{ $child->active ? 'green' : 'red' }}  dropdown-toggle"
-                                                                data-toggle="dropdown"> {{ $child->id }}
+                                                                data-toggle="dropdown">
+                                                            <img src="{{ asset($child->imageThumbLink) }}" alt="" class="img-xs"/>
+                                                            {{ $child->id }}
                                                             - {{ $child->name }}
                                                             <i class="fa fa-angle-down"></i>
                                                         </button>
@@ -122,7 +124,9 @@
                                                                     <div class="btn-group">
                                                                         <button type="button"
                                                                                 class="btn {{ $sub->active ? 'green' : 'red' }} btn-outline dropdown-toggle"
-                                                                                data-toggle="dropdown"> {{ $sub->id }}
+                                                                                data-toggle="dropdown">
+                                                                            <img src="{{ asset($sub->imageThumbLink) }}" alt="" class="img-xs"/>
+                                                                            {{ $sub->id }}
                                                                             - {{ $sub->name }}
                                                                             <i class="fa fa-angle-down"></i>
                                                                         </button>
