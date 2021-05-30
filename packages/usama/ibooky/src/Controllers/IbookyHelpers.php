@@ -606,7 +606,6 @@ trait IbookyHelpers
      */
     function getPaymentStatus($orderIds){
         $requeryUrl = $this->getBookeeyPaymentRequeryUrl();
-        print_r($requeryUrl);
 
         $mid = MERCHANT_ID;
         $rndnum = rand(10000,99999);

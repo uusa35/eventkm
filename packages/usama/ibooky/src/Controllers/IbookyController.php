@@ -55,11 +55,9 @@ class IbookyController extends Controller
 
     public function result(Request $request)
     {
-        // once the result is success .. get the deal from refrence then delete all other free deals related to such ad.
         try {
             $validate = validator($request->all(), [
-                'txnId' => 'required',
-                'errorCode' => 'required'
+                'merchantTxnId' => 'required',
             ]);
             if ($validate->fails()) {
                 throw new \Exception($validate->errors()->first());

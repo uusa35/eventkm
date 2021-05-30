@@ -16,29 +16,22 @@ trait IbookyTrait
             $browser = $this->browser();
             $payerName = 'Payer Name';
             $payerPhone = 'Payer Phone';
-            $mid = 'mer2100049';
+            $mid = env('IBOOKEY_MERCHANT_ID');
             $txnRefNo = mt_rand(1000000000000000, 9999999999999999);
-//            $su = 'https://apps.bookeey.com/pgapi/api/payment/paymentstatus';
-//            $fu = 'https://apps.bookeey.com/pgapi/api/payment/paymentstatus';
             $su = route('ibooky.web.payment.result');
             $fu = route('ibooky.web.payment.error');
             $amt = '10';
-//            $orderId = $order->user_id.$order->id;
-            // $txnTime = "1545633631518";
-            // $txnTime = date("ymdHis");
             $crossCat = "GEN";
-            $secretKey = '1234567';
+            $secretKey = ENV('IBOOKEY_SECRET_KEY');
             $paymentoptions = $order->payment_method;
-//            dd($txnRefNo);
             $data = "$mid|$txnRefNo|$su|$fu|$amt|$crossCat|$secretKey|$txnRefNo";
             $order->update(['reference_id' => $txnRefNo]);
             $hashed = hash('sha512', $data);
             $paymentGatewayUrl = $this->getBookeeyPaymentGatewayUrl();
-
             $txnDtl = array(
                 array(
-                    "SubMerchUID" => $order->orderMetas()->products->first()->user->merchant_id,
-                    "Txn_AMT" => 10.0
+                    "SubMerchUID" => $order->order_metas()->first()->product()->first()->user()->first()->merchant_id,
+                    "Txn_AMT" => $order->net_price
                 )
             );
 
@@ -110,7 +103,6 @@ trait IbookyTrait
             if (isset($res['PayUrl']) && !empty($res['ErrorMessage']) && $res['ErrorMessage'] === 'Success') {
                 $parts = parse_url($res['PayUrl']);
                 parse_str($parts['query'], $output);
-                //knet tranportalId
                 $paymentUrl = $res['PayUrl'];
                 if (!empty($order->reference_id) && $order->order_metas->count() > 0) {
                     $order->update(['reference_id' => $txnRefNo]);
