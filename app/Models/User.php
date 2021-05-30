@@ -23,7 +23,8 @@ class User extends Authenticatable
     protected $casts = [
         'on_home' => 'boolean',
         'active' => 'boolean',
-        'access_dashboard' => 'boolean'
+        'access_dashboard' => 'boolean',
+        'CustomeDelivery' => 'boolean'
     ];
 
     /**

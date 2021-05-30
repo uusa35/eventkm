@@ -200,4 +200,9 @@ trait UserHelpers
 //            'products_number' => $orders->pluck('order_metas')->flatten()->pluck('product')->where('user_id', $this->id)->sum('price'),
         ];
     }
+
+    public function getCustomeDeliveryUserAttribute() {
+        $settings = Setting::first();
+        return $this->custome_delivery && $settings->global_custome_delivery && !$settings->multi_cart_merchant;
+    }
 }
