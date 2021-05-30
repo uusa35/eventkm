@@ -9,6 +9,7 @@ use App\Models\Service;
 use App\Models\Setting;
 use App\Models\Size;
 use App\Models\Timing;
+use App\Models\User;
 use Carbon\Carbon;
 use Gloudemans\Shoppingcart\Cart;
 use Illuminate\Http\Request;
@@ -55,7 +56,17 @@ trait CartTrait
         }
         $settings = Setting::first();
         if ($settings->shipment_fixed_rate) {
-            \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $country->fixed_shipment_charge) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
+            if (!$settings->multi_cart_merchant && $settings->global_custome_delivery) {
+                $product = \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content()->where('options.type', 'product')->first();
+                $user = User::whereId($product->options->element->user_id)->first();
+                if ($user->custome_delivery) {
+                    \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $user->custome_delivery_fees) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
+                } else {
+                    \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $country->fixed_shipment_charge) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
+                }
+            } else {
+                \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $country->fixed_shipment_charge) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
+            }
         } else {
             $shipmentPackage = $country->shipment_packages()->first();
             $totalWeight = \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content()->sum('weight');
@@ -98,8 +109,8 @@ trait CartTrait
             $checkDirectPurchase = ($this->cart->content()->where('options.type', 'product')->count() === 0 && $product->direct_purchase) || ($this->cart->content()->where('options.element.direct_purchase', true)->count() === 0 && !$product->direct_purchase);
             if ($this->cart->content()->where('options.type', 'product')->count() > 0) {
                 $multiVendor = Setting::first()->multi_cart_merchant; // False
-                if(!$multiVendor && !in_array($product->user_id, $this->cart->content()->pluck('options.element.user_id')->toArray())) {
-                        throw new \Exception(trans('message.this_cart_is_not_multi_vendor'));
+                if (!$multiVendor && !in_array($product->user_id, $this->cart->content()->pluck('options.element.user_id')->toArray())) {
+                    throw new \Exception(trans('message.this_cart_is_not_multi_vendor'));
                 }
             }
             if ($checkDirectPurchase) {

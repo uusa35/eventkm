@@ -1050,6 +1050,25 @@
                                                 <div class="form-group">
                                                     <label class="control-label sbold tooltips"
                                                            data-container="body" data-placement="top"
+                                                           data-original-title="{{ trans('message.global_custome_delivery') }}">{{ trans('general.global_custome_delivery') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="global_custome_delivery"
+                                                               id="optionsRadios3"
+                                                               {{ $element->global_custome_delivery ? 'checked' : null  }}
+                                                               value="1">
+                                                        {{ trans('general.yes') }}</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="global_custome_delivery"
+                                                               id="optionsRadios4"
+                                                               {{ !$element->global_custome_delivery ? 'checked' : null  }}
+                                                               value="0">
+                                                        {{ trans('general.no') }}</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold tooltips"
+                                                           data-container="body" data-placement="top"
                                                            data-original-title="{{ trans('message.shipment_fixed_rate') }}">{{ trans('general.shipment_fixed_rate') }}</label></br>
                                                     <label class="radio-inline">
                                                         <input type="radio" name="shipment_fixed_rate"

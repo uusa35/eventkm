@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change afterPath="$PROJECT_DIR$/public/images/credit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/knet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mallrupdate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mallrupdate.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2016_04_12_132811_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2016_04_12_132811_create_orders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyHelpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyHelpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_cart_order_user_info.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_cart_order_user_info.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Backend/UserUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/UserUpdate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/SettingResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SettingResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/CartTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/CartTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/setting/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/setting/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/user/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/user/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/user/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/user/edit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +261,6 @@
       <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
       <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
       <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
-      <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
       <path value="$PROJECT_DIR$/vendor/vonage/nexmo-bridge" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-diactoros" />
@@ -965,7 +964,8 @@
       <workItem from="1622016914627" duration="291000" />
       <workItem from="1622018454138" duration="11374000" />
       <workItem from="1622134424902" duration="44000" />
-      <workItem from="1622302512748" duration="1649000" />
+      <workItem from="1622302512748" duration="2542000" />
+      <workItem from="1622359536403" duration="1944000" />
     </task>
     <servers />
   </component>

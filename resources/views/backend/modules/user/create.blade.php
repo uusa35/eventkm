@@ -1246,7 +1246,7 @@
                             <div class="portlet-body form">
                                 <div class="form-body">
                                     <div class="row">
-                                        <div class="col-lg-4 col-md-6">
+                                        <div class="col-lg-3 col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label sbold tooltips"
                                                        data-container="body" data-placement="top"
@@ -1260,7 +1260,7 @@
                                                            value="0"> {{ trans('general.no') }}</label>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4 col-md-6">
+                                        <div class="col-lg-3 col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label sbold tooltips"
                                                        data-container="body" data-placement="top"
@@ -1274,6 +1274,33 @@
                                                 </label>
                                             </div>
                                         </div>
+                                        @if(auth()->user()->isSuper && !$settings->multi_cart_merchant && $settings->global_custome_delivery)
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold tooltips"
+                                                           data-container="body" data-placement="top"
+                                                           data-original-title="{{ trans('message.custome_delivery') }}">{{ trans('general.custome_delivery') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="custome_delivery"
+                                                               id="optionsRadios3"
+                                                               value="1">
+                                                        {{ trans('general.yes') }}</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="custome_delivery"
+                                                               id="optionsRadios4"
+                                                               value="0">
+                                                        {{ trans('general.no') }}</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                    <label for="form_control_1">{{ trans('general.custome_delivery_fees') }}*</label>
+                                                    <input type="text" class="form-control" name="custome_delivery_fees" placeholder="..."
+                                                           value="">
+                                                    <span class="help-block">{{ trans('general.company_custome_delivery_feesabic') }}</span>
+                                                </div>
+                                            </div>
+                                            @endcan
                                     </div>
                                 </div>
                             </div>

@@ -26,13 +26,13 @@ class UserUpdate extends FormRequest
         $userId = last(request()->segments());
         return [
             'name' => 'required|min:3|max:200',
-            'slug_ar' => 'required|min:3:max:200',
-            'slug_en' => 'required|min:3:max:200',
+            'slug_ar' => 'required|min:3|max:200',
+            'slug_en' => 'required|min:3|max:200',
             'description_ar' => 'nullable|min:3',
             'description_en' => 'nullable|min:3',
             'service_ar' => '',
             'service_en' => '',
-            'email' => 'required|min:5:max:80|unique:users,email,'.$userId,
+            'email' => 'required|min:5|max:80|unique:users,email,'.$userId,
             'mobile' => 'nullable',
             'phone' => 'nullable',
             'fax' => 'nullable',
