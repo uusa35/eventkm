@@ -16,7 +16,7 @@ trait IbookyTrait
             $browser = $this->browser();
             $payerName = 'Payer Name';
             $payerPhone = 'Payer Phone';
-            $mid = 'mer160009';
+            $mid = 'mer2100049';
             $tex = $random_pwd = mt_rand(1000000000000000, 9999999999999999);
             $txnRefNo = $tex;
 //            $su = 'https://apps.bookeey.com/pgapi/api/payment/paymentstatus';
@@ -24,42 +24,34 @@ trait IbookyTrait
             $su = route('ibooky.web.payment.result');
             $fu = route('ibooky.web.payment.error');
             $amt = '10';
-            $orderId = '1';
+//            $orderId = $order->user_id.$order->id;
             // $txnTime = "1545633631518";
             // $txnTime = date("ymdHis");
             $rndnum = rand(10000, 99999);
             $crossCat = "GEN";
             $secretKey = '1234567';
-//            'Bookeey';
-            $defaultPaymentOption = 'knet';
-            $selectedPaymentOption = 'knet';
-            $paymentoptions = ($selectedPaymentOption == '') ? $defaultPaymentOption : $selectedPaymentOption;
+            $paymentoptions = $order->payment_method;
             $data = "$mid|$txnRefNo|$su|$fu|$amt|$crossCat|$secretKey|$rndnum";
             $hashed = hash('sha512', $data);
             $paymentGatewayUrl = $this->getBookeeyPaymentGatewayUrl();
 
             $txnDtl = array(
                 array(
-                    "SubMerchUID" => "mref160005",
-                    "Txn_AMT" => 5.0
+                    "SubMerchUID" => "subm21000189",
+                    "Txn_AMT" => 10.0
                 ),
                 array(
-                    "SubMerchUID" => "mref160006",
-                    "Txn_AMT" => 5.0
-                ),
-                array(
-                    "SubMerchUID" => "mref160007",
-                    "Txn_AMT" => 5.0
+                    "SubMerchUID" => "subm21000190",
+                    "Txn_AMT" => 10.0
                 )
             );
 
-
             $txnHdr = array(
                 "PayFor" => "ECom",
-                "Txn_HDR" => $rndnum,
+                "Txn_HDR" => $order->id,
                 "PayMethod" => $paymentoptions,
                 "BKY_Txn_UID" => "",
-                "Merch_Txn_UID" => $orderId,
+                "Merch_Txn_UID" => $rndnum,
                 "hashMac" => $hashed
             );
 
@@ -114,7 +106,7 @@ trait IbookyTrait
             curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postParams));
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-//            print_r('Payment gateway url: '. $paymentGatewayUrl);
+            print_r('Payment gateway url: ' . $paymentGatewayUrl);
 //            dd(json_encode($postParams));
             $serverOutput = curl_exec($ch);
 //            dd(json_encode($serverOutput));
@@ -140,13 +132,16 @@ trait IbookyTrait
 
 //            dd($postParams);
 //            dd($res);
-
             if (isset($res['PayUrl']) && !empty($res['ErrorMessage']) && $res['ErrorMessage'] === 'Success') {
                 $parts = parse_url($res['PayUrl']);
                 parse_str($parts['query'], $output);
-                $referenceId = $output['tranportalId'];
+                //knet tranportalId
+                if ($order->payment_method === 'knet') {
+                    $referenceId = $output['tranportalId'];
+                } elseif ($order->payment_method === 'credit') {
+                    $referenceId = $output['data'];
+                }
                 $paymentUrl = $res['PayUrl'];
-//                dd($output);
                 if (empty($order->reference_id) && $order->order_metas->count() > 0) {
                     $order->update(['reference_id' => $referenceId]);
                 } elseif ($order->order_metas->count() > 0) {

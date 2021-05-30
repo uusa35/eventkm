@@ -93,14 +93,14 @@ const DESCRIPTION = "Pay with Bookeey payment";
  * Type: String
  * Possible Values: Enter the Merchant Id provided by Bookeey.
  */
-const MERCHANT_ID = "mer160009";
+const MERCHANT_ID = "mer2100049";
 
 /**
  * Secret Key
  * Type: String
  * Possible Values: Enter the Secret Key provided by Bookeey.
  */
-const SECRET_KEY = "1234567";
+const SECRET_KEY = "2161947";
 
 
 /////////////////////////////////////////
@@ -606,6 +606,7 @@ trait IbookyHelpers
      */
     function getPaymentStatus($orderIds){
         $requeryUrl = $this->getBookeeyPaymentRequeryUrl();
+        print_r($requeryUrl);
 
         $mid = MERCHANT_ID;
         $rndnum = rand(10000,99999);
@@ -615,7 +616,7 @@ trait IbookyHelpers
         $hashed = hash('sha512', $data);
 
         $postParams['Mid'] = $mid;
-        $postParams['MerchantTxnRefNo'] = $orderIds;
+        $postParams['MerchantTxnRefNo'] = [$orderIds];
         $postParams['HashMac'] = $hashed;
 
         $ch = curl_init();
@@ -623,7 +624,7 @@ trait IbookyHelpers
             'Accept: application/json',
             'Content-Type: application/json',
         );
-//        dd(json_encode($postParams));
+        dd($postParams);
         curl_setopt($ch, CURLOPT_URL,$requeryUrl);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -635,7 +636,7 @@ trait IbookyHelpers
         $decodeOutput = json_decode($serverOutput, true);
         curl_close ($ch);
 
-        dd(json_encode($decodeOutput));
+        dd($decodeOutput);
 
         return $decodeOutput;
     }

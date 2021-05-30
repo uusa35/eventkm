@@ -64,11 +64,13 @@ class IbookyController extends Controller
             if ($validate->fails()) {
                 throw new \Exception($validate->errors()->first());
             }
-            $res = $this->getPaymentStatus($request->txnId);
-            dd(json_encode($res));
-            $referenceId = $request->txnId;
-            dd($referenceId);
+
+            $res = $this->getPaymentStatus($request->merchantTxnId);
+//            dd(json_encode($res));
+            $referenceId = $request->merchantTxnId;
+//            dd($referenceId);
             $order = Order::where(['id' => $referenceId])->with('order_metas.product', 'user', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color')->first();
+            dd($order);
             $order->update(['status' => 'success', 'paid' => true]);
             $this->decreaseQty($order);
             $markdown = new Markdown(view(), config('mail.markdown'));
