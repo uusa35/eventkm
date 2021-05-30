@@ -1063,7 +1063,9 @@
                                                            data-original-title="{{ trans('message.merchant_id') }}"
                                                            name="merchant_id"
                                                            placeholder="{{ trans('general.merchant_id') }}"
-                                                           value="{{ old('merchant_id') }}" autofocus>
+                                                           value="{{ old('merchant_id') }}" autofocus
+                                                           required="{{ env('ISTORES') }}"
+                                                    >
                                                     @if ($errors->has('merchant_id'))
                                                         <span class="help-block">
                                                         <strong>

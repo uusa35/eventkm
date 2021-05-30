@@ -1264,7 +1264,9 @@
                                                        name="merchant_id"
                                                        placeholder="{{ trans('general.merchant_id') }}"
                                                        value="{{ $element->merchant_id }}"
-                                                       autofocus>
+                                                       autofocus
+                                                       required="{{ env('ISTORES') }}"
+                                                >
                                                 @if ($errors->has('merchant_id'))
                                                     <span class="help-block">
                                                         <strong>

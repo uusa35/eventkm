@@ -17,8 +17,7 @@ trait IbookyTrait
             $payerName = 'Payer Name';
             $payerPhone = 'Payer Phone';
             $mid = 'mer2100049';
-            $tex = $random_pwd = mt_rand(1000000000000000, 9999999999999999);
-            $txnRefNo = $tex;
+            $txnRefNo = mt_rand(1000000000000000, 9999999999999999);
 //            $su = 'https://apps.bookeey.com/pgapi/api/payment/paymentstatus';
 //            $fu = 'https://apps.bookeey.com/pgapi/api/payment/paymentstatus';
             $su = route('ibooky.web.payment.result');
@@ -27,21 +26,18 @@ trait IbookyTrait
 //            $orderId = $order->user_id.$order->id;
             // $txnTime = "1545633631518";
             // $txnTime = date("ymdHis");
-            $rndnum = rand(10000, 99999);
             $crossCat = "GEN";
             $secretKey = '1234567';
             $paymentoptions = $order->payment_method;
-            $data = "$mid|$txnRefNo|$su|$fu|$amt|$crossCat|$secretKey|$rndnum";
+//            dd($txnRefNo);
+            $data = "$mid|$txnRefNo|$su|$fu|$amt|$crossCat|$secretKey|$txnRefNo";
+            $order->update(['reference_id' => $txnRefNo]);
             $hashed = hash('sha512', $data);
             $paymentGatewayUrl = $this->getBookeeyPaymentGatewayUrl();
 
             $txnDtl = array(
                 array(
-                    "SubMerchUID" => "subm21000189",
-                    "Txn_AMT" => 10.0
-                ),
-                array(
-                    "SubMerchUID" => "subm21000190",
+                    "SubMerchUID" => $order->orderMetas()->products->first()->user->merchant_id,
                     "Txn_AMT" => 10.0
                 )
             );
@@ -51,7 +47,7 @@ trait IbookyTrait
                 "Txn_HDR" => $order->id,
                 "PayMethod" => $paymentoptions,
                 "BKY_Txn_UID" => "",
-                "Merch_Txn_UID" => $rndnum,
+                "Merch_Txn_UID" => $txnRefNo,
                 "hashMac" => $hashed
             );
 
@@ -106,44 +102,18 @@ trait IbookyTrait
             curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postParams));
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            print_r('Payment gateway url: ' . $paymentGatewayUrl);
-//            dd(json_encode($postParams));
             $serverOutput = curl_exec($ch);
-//            dd(json_encode($serverOutput));
             $res = json_decode($serverOutput, true);
             curl_close($ch);
-//            dd(json_encode($res));
-//            dd('stop');
-
-
-//            if (isset($decodeOutput['PayUrl'])) {
-//                if ($decodeOutput['PayUrl'] == '') {
-//                    echo "Error Message: ".$decodeOutput['ErrorMessage'];
-//                }else{
-//                    return $decodeOutput['PayUrl'];
-//                    header("Location: ".$decodeOutput['PayUrl']);
-//                }
-//            }else if(isset($decodeOutput['Message'])){
-//                echo "Error Message: ".$decodeOutput['Message'];
-//            }else{
-//                echo "Error<br>";
-//                print_r($decodeOutput);
-//            }
 
 //            dd($postParams);
-//            dd($res);
             if (isset($res['PayUrl']) && !empty($res['ErrorMessage']) && $res['ErrorMessage'] === 'Success') {
                 $parts = parse_url($res['PayUrl']);
                 parse_str($parts['query'], $output);
                 //knet tranportalId
-                if ($order->payment_method === 'knet') {
-                    $referenceId = $output['tranportalId'];
-                } elseif ($order->payment_method === 'credit') {
-                    $referenceId = $output['data'];
-                }
                 $paymentUrl = $res['PayUrl'];
-                if (empty($order->reference_id) && $order->order_metas->count() > 0) {
-                    $order->update(['reference_id' => $referenceId]);
+                if (!empty($order->reference_id) && $order->order_metas->count() > 0) {
+                    $order->update(['reference_id' => $txnRefNo]);
                 } elseif ($order->order_metas->count() > 0) {
                     $newOrder = $order->replicate();
                     $newOrder->status = 'pending';
@@ -153,7 +123,7 @@ trait IbookyTrait
                         $newOrderMeta->save();
                         $newOrderMeta->update(['order_id' => $newOrder->id]);
                     }
-                    $newOrder->update(['reference_id' => $referenceId]);
+                    $newOrder->update(['reference_id' => $txnRefNo]);
                 }
                 return $paymentUrl;
             } else {

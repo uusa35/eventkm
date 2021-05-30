@@ -66,18 +66,17 @@ class IbookyController extends Controller
             }
 
             $res = $this->getPaymentStatus($request->merchantTxnId);
-//            dd(json_encode($res));
-            $referenceId = $request->merchantTxnId;
-//            dd($referenceId);
-            $order = Order::where(['id' => $referenceId])->with('order_metas.product', 'user', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color')->first();
-            dd($order);
-            $order->update(['status' => 'success', 'paid' => true]);
-            $this->decreaseQty($order);
-            $markdown = new Markdown(view(), config('mail.markdown'));
-            OrderSuccessProcessJob::dispatchNow($order, $order->user);
-//        OrderSuccessProcessJob::dispatch($order, $order->user)->delay(now()->addSeconds(15));
-            $this->clearCart();
-            return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
+            if ($res[0]['finalStatus'] === 'success') {
+                $order = Order::where(['reference_id' => $request->merchantTxnId])->with('order_metas.product', 'user', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color')->first();
+                $order->update(['status' => 'success', 'paid' => true]);
+                $this->decreaseQty($order);
+                $markdown = new Markdown(view(), config('mail.markdown'));
+                OrderSuccessProcessJob::dispatchNow($order, $order->user);
+                $this->clearCart();
+                return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
+            } else {
+                throw new \Exception(trans('general.payment_failed'));
+            }
         } catch (\Exception $e) {
             throw new \Exception($e->getMessage());
         }

@@ -58,8 +58,8 @@ trait CartTrait
         if ($settings->shipment_fixed_rate) {
             if (!$settings->multi_cart_merchant && $settings->global_custome_delivery) {
                 $product = \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content()->where('options.type', 'product')->first();
-                $user = User::whereId($product->options->element->user_id)->first();
-                if ($user->custome_delivery) {
+                $user = $product ? User::whereId($product->options->element->user_id)->first() : null;
+                if ($user && $user->custome_delivery) {
                     \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $user->custome_delivery_fees) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
                 } else {
                     \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $country->fixed_shipment_charge) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
