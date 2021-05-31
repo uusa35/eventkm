@@ -2,7 +2,7 @@
 <div style="width : 100%; margin-right: auto; margin-left: auto; text-align: center">
 <img src="{{ $settings->getCurrentImageAttribute('logo') }}" alt="{{ $settings->company }}" style="width : 150px; margin-bottom: 20px; text-align: center;">
 </div>
-@if(env('ISTORES'))
+@if(env('ISTORES') && !$settings->multi_cart_merchant)
 <div style="width : 100%; margin-right: auto; margin-left: auto; text-align: center">
 <img src="{{ $order->order_metas->first()->product->user->imageThumbLink }}" alt="{{ $settings->company }}" style="width : 150px; margin-bottom: 20px; text-align: center;">
 </div>
