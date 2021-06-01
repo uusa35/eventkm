@@ -5,7 +5,8 @@ namespace App\Models;
 
 class Post extends PrimaryModel
 {
-    protected $guarded = [];
+    use ModelHelpers;
+    protected $guarded = [''];
     protected $localeStrings = ['title', 'slug', 'content'];
 
     public function images()

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\PostLightResource;
 use App\Http\Resources\PostResource;
 use App\Jobs\IncreaseElementViews;
 use App\Models\Post;
@@ -17,8 +18,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        $elements = Post::active()->orderBy('order', 'asc')->with('comments', 'user')->paginate(self::TAKE_MID);
-        return response()->json(PostResource::collection($elements), 200);
+        $elements = Post::active()->orderBy('order', 'asc')->with('comments', 'user')->paginate(SELF::TAKE_MID);
+        if ($elements->isNotEmpty()) {
+            return response()->json(PostLightResource::collection($elements), 200);
+        }
+        return response()->json(['message' => trans('empty')], 400);
     }
 
     /**
@@ -56,7 +60,7 @@ class PostController extends Controller
         if ($element) {
             $comments = $element->comments()->paginate(2);
             $this->dispatchNow(new IncreaseElementViews($element));
-            return response()->json(PostResource::make($element), 200);
+            return response()->json(PostLightResource::make($element), 200);
         }
         return response()->json(['message', trans('message.post_does_not_exist'), 400]);
     }
