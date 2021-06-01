@@ -73,6 +73,7 @@ Route::group(['namespace' => 'Api'], function () {
     Route::resource('faq', 'FaqController')->only(['index']);
     Route::resource('color', 'ColorController')->only(['index']);
     Route::resource('size', 'SizeController')->only(['index']);
+    Route::resource('post', 'PostController')->only(['index','show']);
     Route::post('map/event', function (Request $request) {
         event(new MyEvent($request->message, $request->id));
         return response()->json(['message' => $request->message, 'id' => $request->id], 200);

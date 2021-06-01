@@ -3,7 +3,7 @@
 <img src="{{ $settings->getCurrentImageAttribute('logo') }}" alt="{{ $settings->company }}" style="width : 150px; margin-bottom: 20px; text-align: center;">
 </div>
 @if(env('ISTORES') && !$settings->multi_cart_merchant)
-<div style="width : 100%; margin-right: auto; margin-left: auto; text-align: center">
+<div style="width : 100%; margin-right: auto; margin-left: auto; text-align: center;">
 <img src="{{ $order->order_metas->first()->product->user->imageThumbLink }}" alt="{{ $settings->company }}" style="width : 150px; margin-bottom: 20px; text-align: center;">
 </div>
 @endif
@@ -12,7 +12,7 @@
 {{ trans('general.date') }} : {{ Carbon\Carbon::today()->format('d/m/Y') }}
 </div>
 @component('mail::panel')
-@if(env('ISTORES'))
+@if(env('ISTORES') && !$settings->multi_cart_merchant)
 # {{ trans('general.order_number') }} : {{ str_replace(' ', '', $order->order_metas->first()->product->user->slug_en) }}-{{ $order->id }}
 @else
 # {{ trans('general.order_number') }} : {{ $order->id }}
