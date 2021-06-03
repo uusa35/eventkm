@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\PostCollection;
 use App\Http\Resources\PostLightResource;
 use App\Http\Resources\PostResource;
 use App\Jobs\IncreaseElementViews;
@@ -20,7 +21,7 @@ class PostController extends Controller
     {
         $elements = Post::active()->orderBy('order', 'asc')->with('comments', 'user')->paginate(SELF::TAKE_MID);
         if ($elements->isNotEmpty()) {
-            return response()->json(PostLightResource::collection($elements), 200);
+            return response()->json(new PostCollection($elements), 200);
         }
         return response()->json(['message' => trans('empty')], 400);
     }
@@ -58,7 +59,7 @@ class PostController extends Controller
             return $q->active()->with('owner');
         }])->find($id);
         if ($element) {
-            $comments = $element->comments()->paginate(2);
+            $comments = $element->comments()->paginate(SELF::TAKE_MID);
             $this->dispatchNow(new IncreaseElementViews($element));
             return response()->json(PostLightResource::make($element), 200);
         }

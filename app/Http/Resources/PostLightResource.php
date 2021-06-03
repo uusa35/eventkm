@@ -22,8 +22,8 @@ class PostLightResource extends JsonResource
             'slug' => $this-> slug,
             'keywords' => $this->keywords,
             'video_url' => $this->video_url,
-//            'user' => new UserExtraLightResource($this->whenLoaded('user')),
-//            'comment' => new CommentExtraLightResource($this->whenLoaded('comments')),
+            'user' => new UserExtraLightResource($this->whenLoaded('user')),
+            'comments' => CommentExtraLightResource::collection($this->whenLoaded('comments')),
         ];
     }
 }
