@@ -1286,7 +1286,7 @@
                                                        placeholder="{{ trans('general.merchant_id') }}"
                                                        value="{{ $element->merchant_id }}"
                                                        autofocus
-                                                       required="{{ env('ISTORES') }}"
+                                                       required="{{ !$element->role->is_client }}"
                                                 >
                                                 @if ($errors->has('merchant_id'))
                                                     <span class="help-block">

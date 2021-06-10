@@ -75,6 +75,10 @@ trait CartTrait
                             array_push($pickups, $code);
                         }
                     }
+                    $authCode = auth()->user()->localArea ? auth()->user()->localArea->code : null;
+                    if (!is_null($authCode)) {
+                        array_push($pickups, $authCode);
+                    }
                     $cost = $this->calculateDeliveryMultiPointsForMirsal($pickups);
                     $cost = $cost > 1 ? $cost : (double)$country->fixed_shipment_charge;
                     $cart->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $cost) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
@@ -189,6 +193,7 @@ trait CartTrait
                 $prog_lang = 'Other';
 //            $pickups = ['FH242', 'JL244', 'A-249'];
                 $pickups = array_values(array_unique($pickups));
+                dd($pickups);
                 $requestData = json_encode($pickups);
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, $url);
