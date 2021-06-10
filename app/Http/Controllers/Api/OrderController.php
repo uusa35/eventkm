@@ -110,29 +110,29 @@ class OrderController extends Controller
         $settings = Setting::first();
         $country = Country::whereId($request->country_id)->first();
         if ($request->receive_on_branch && $settings->receive_on_branch && $country->is_local) {
-            return response()->json(0.0, 200);
+            return response()->json(['data' => 0.0], 200);
         } else {
             if ($settings->shipment_fixed_rate) { // fixed Rate enabled
                 if (!$settings->multi_cart_merchant && $settings->global_custome_delivery && $request->has('merchant_id')) { // Signle Vendor
                     $user = User::whereId($request->merchant_id)->first();
                     if ($user && $user->custome_delivery) {
-                        return response()->json($user->custome_delivery_fees, 200);
+                        return response()->json(['data' => $user->custome_delivery_fees], 200);
                     }
-                    return response()->json((double)$country->fixed_shipment_charge, 200);
+                    return response()->json(['data' => (double)$country->fixed_shipment_charge], 200);
                 } else {
                     if (env('MIRSAL_ENABLED') && $request->has('pickups')) {
                         $cost = $this->calculateDeliveryMultiPointsForMirsal($request->pickups);
                         $cost = $cost > 1 ? $cost : (double)$country->fixed_shipment_charge;
-                        return response()->json((double)$cost, 200);
+                        return response()->json(['data' => (double)$cost], 200);
                     }
-                    return response()->json((double)$country->fixed_shipment_charge, 200);
+                    return response()->json(['data' => (double)$country->fixed_shipment_charge], 200);
 
                 }
             } else if ($request->has('total_weight')) {
                 $shipmentPackage = $country->shipment_packages()->first();
-                return response()->json((float)($request->total_weight * (double)$shipmentPackage->charge), 200);
+                return response()->json(['data' => (float)($request->total_weight * (double)$shipmentPackage->charge)], 200);
             }
-            return response()->json((double)$country->fixed_shipment_charge, 200);
+            return response()->json(['data' => (double)$country->fixed_shipment_charge], 200);
         }
         return response()->json(['message' => trans('shipment_package_fee') . trans('general.failure'), 400]);
     }

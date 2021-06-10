@@ -184,16 +184,10 @@ trait CartTrait
     {
         try {
             if (env('MIRSAL_ENABLED')) {
-                /**
-                 * Link use https://app.mirsal.co Live
-                 *      use http://api.mirsalapp.com Dev
-                 */
                 $url = 'https://app.mirsal.co/rest/order/get-shipping-cost-multi-pickup';
                 $access_key = 'JPBCMU3H747S';
                 $prog_lang = 'Other';
-//            $pickups = ['FH242', 'JL244', 'A-249'];
                 $pickups = array_values(array_unique($pickups));
-                dd($pickups);
                 $requestData = json_encode($pickups);
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, $url);
