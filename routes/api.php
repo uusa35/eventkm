@@ -74,7 +74,7 @@ Route::group(['namespace' => 'Api'], function () {
 
     });
     Route::get('mobile/code', 'UserController@verifyMobileCode');
-    Route::get('delivery/calculation', 'OrderController@calculateDeliveryChargeForApi');
+    Route::post('delivery/calculation', 'OrderController@calculateDeliveryChargeForApi');
 });
 Route::resource('order', 'Api\OrderController')->only(['store']);
 Route::get('colors', 'Api\ProductController@getColors');
