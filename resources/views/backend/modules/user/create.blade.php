@@ -495,7 +495,7 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                            @if(env('MIRSAL_ENABLED'))
+{{--                                            @if(env('MIRSAL_ENABLED'))--}}
                                                 <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label for="single"
@@ -513,28 +513,28 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                            @else
-                                                <div class="col-lg-4 col-md-6">
-                                                    <div
-                                                        class="form-group{{ $errors->has('area') ? ' has-error' : '' }}">
-                                                        <label for="area"
-                                                               class="control-label">{{ trans('general.area') }}</label>
-                                                        <input id="area" type="text" class="form-control tooltips"
-                                                               data-container="body" data-placement="top"
-                                                               data-original-title="{{ trans('message.area') }}"
-                                                               name="area"
-                                                               placeholder="{{ trans('general.area') }}"
-                                                               value="{{ old('area') }}" autofocus>
-                                                        @if ($errors->has('area'))
-                                                            <span class="help-block">
-                                                <strong>
-                                                    {{ $errors->first('area') }}
-                                                </strong>
-                                            </span>
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                            @endif
+{{--                                            @else--}}
+{{--                                                <div class="col-lg-4 col-md-6">--}}
+{{--                                                    <div--}}
+{{--                                                        class="form-group{{ $errors->has('area') ? ' has-error' : '' }}">--}}
+{{--                                                        <label for="area"--}}
+{{--                                                               class="control-label">{{ trans('general.area') }}</label>--}}
+{{--                                                        <input id="area" type="text" class="form-control tooltips"--}}
+{{--                                                               data-container="body" data-placement="top"--}}
+{{--                                                               data-original-title="{{ trans('message.area') }}"--}}
+{{--                                                               name="area"--}}
+{{--                                                               placeholder="{{ trans('general.area') }}"--}}
+{{--                                                               value="{{ old('area') }}" autofocus>--}}
+{{--                                                        @if ($errors->has('area'))--}}
+{{--                                                            <span class="help-block">--}}
+{{--                                                <strong>--}}
+{{--                                                    {{ $errors->first('area') }}--}}
+{{--                                                </strong>--}}
+{{--                                            </span>--}}
+{{--                                                        @endif--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            @endif--}}
                                             <div class="col-lg-4 col-md-6">
                                                 <div class="form-group{{ $errors->has('block') ? ' has-error' : '' }}">
                                                     <label for="block"

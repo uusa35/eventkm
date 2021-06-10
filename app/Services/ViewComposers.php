@@ -85,7 +85,9 @@ class ViewComposers
     public function getCountries(View $view)
     {
         $countries = Country::active()->with(['governates' => function ($q) {
-            return $q->with('areas')->orderby('order', 'asc');
+            return $q->with(['areas' => function ($q) {
+                return $q->active();
+            }])->orderby('order', 'asc');
         }])->get();
         return $view->with(compact('countries'));
     }

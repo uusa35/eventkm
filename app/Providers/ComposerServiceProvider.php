@@ -56,7 +56,7 @@ class ComposerServiceProvider extends ServiceProvider
             'frontend.modules.checkout.index',
             'frontend.modules.order.show',
             'auth.register',
-        ], 'App\Services\ViewComposers@getCountriesWorld');
+        ], 'App\Services\ViewComposers@getCountries');
 
 
         view()->composer([
