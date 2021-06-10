@@ -139,7 +139,7 @@ class ProductController extends Controller
             return $q->orderBy('name_en', 'asc');
         }])->with(['user.branches' => function ($q) {
             return $q->active();
-        }])->first();
+        }])->with('user.localArea')->first();
         if ($element) {
             IncreaseElementViews::dispatchNow($element);
             return response(new ProductResource($element), 200);

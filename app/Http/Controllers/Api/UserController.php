@@ -127,7 +127,7 @@ class UserController extends Controller
             }])
             ->with(['comments' => function ($q) {
                 return $q->active()->with('owner')->orderBy('created_at', 'desc');
-            }])->first();
+            }])->with('localArea')->first();
         if ($element) {
             IncreaseElementViews::dispatch($element);
             return response()->json(new UserResource($element), 200);
@@ -339,7 +339,7 @@ class UserController extends Controller
             return $q->active()->notExpired()->hasImage()->available()->with('items.property', 'items.categoryGroup');
         }])->with(['myFannedList' => function ($q) {
             return $q->active()->companies();
-        }])->with('addresses', 'role')->first();
+        }])->with('addresses', 'role')->with('localArea')->first();
     }
 
     public function resendVerificationCode(Request $request)

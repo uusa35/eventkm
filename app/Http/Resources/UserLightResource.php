@@ -39,6 +39,7 @@ class UserLightResource extends JsonResource
             'tags' => TagLightResource::collection($this->whenLoaded('tags')),
             'collections' => CollectionLightResource::collection($this->whenLoaded('collections')),
             'ratings' => RatingLightResource::collection($this->whenLoaded('ratings')),
+            'localArea' => AreaLightResource::make($this->whenLoaded('localArea')),
             'areas' => AreaLightResource::collection($this->whenLoaded('areas')),
             'branches' => BranchLightResource::collection($this->branches),
             'country' => new CountryLightResource($this->whenLoaded('country')),
