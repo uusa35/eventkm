@@ -29,6 +29,7 @@ class UserExtraLightResource extends JsonResource
             'CustomeDelivery' => $this->customeDeliveryUser,
             'CustomeDeliveryFees' => $this->custome_delivery_fees,
             'branches' => new BranchLightResource($this->whenLoaded('branches')),
+            'localArea' => AreaLightResource::make($this->whenLoaded('localArea')),
         ];
     }
 }
