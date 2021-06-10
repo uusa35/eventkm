@@ -117,7 +117,7 @@ class OrderController extends Controller
             if ($settings->shipment_fixed_rate) { // fixed Rate enabled
                 if (!$settings->multi_cart_merchant && $settings->global_custome_delivery && $request->has('merchant_id')) { // Signle Vendor
                     $user = User::whereId($request->merchant_id)->first();
-                    if ($user && $user->custome_delivery && custome_delivery_fees > 0) {
+                    if ($user && $user->custome_delivery && $user->custome_delivery_fees > 0) {
                         print_r('case 3');
                         return response()->json($user->custome_delivery_fees, 200);
                     }
