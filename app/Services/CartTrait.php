@@ -51,26 +51,35 @@ trait CartTrait
     public function addCountryToCart($country, $receiveFromBranch = false)
     {
         $element = \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content()->where('options.type', 'country')->first();
+        $cart = \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping');
         if ($element) {
             \Gloudemans\Shoppingcart\Facades\Cart::remove($element->rowId);
         }
         $settings = Setting::first();
         if ($settings->shipment_fixed_rate) {
             if (!$settings->multi_cart_merchant && $settings->global_custome_delivery) {
-                $product = \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content()->where('options.type', 'product')->first();
+
+                $product = $cart->content()->where('options.type', 'product')->first();
                 $user = $product ? User::whereId($product->options->element->user_id)->first() : null;
                 if ($user && $user->custome_delivery) {
-                    \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $user->custome_delivery_fees) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
+                    $cart->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $user->custome_delivery_fees) : $this->getTotalItemsOnly($cart) * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
                 } else {
-                    \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $country->fixed_shipment_charge) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
+                    $cart->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $country->fixed_shipment_charge) : $this->getTotalItemsOnly($cart) * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
                 }
             } else {
                 if (env('MIRSAL_ENABLED')) {
-                    $cart = \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content();
-                    $cost = $this->calculateDeliveryMultiPointsForMirsal($cart);
-                    \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $cost) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
+                    $pickups = [];
+                    foreach ($cart->content() as $item) {
+                        $code = $item->options->element->user->localArea ? $item->options->element->user->localArea->code : null;
+                        if (!is_null($code)) {
+                            array_push($pickups, $code);
+                        }
+                    }
+                    $cost = $this->calculateDeliveryMultiPointsForMirsal($pickups);
+                    $cost = $cost > 1 ? $cost : (double)$country->fixed_shipment_charge;
+                    $cart->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $cost) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
                 } else {
-                    \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $country->fixed_shipment_charge) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
+                    $cart->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $country->fixed_shipment_charge) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
                 }
             }
         } else {
@@ -162,23 +171,15 @@ trait CartTrait
         return \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content()->where('options.type', 'product')->sum('price');
     }
 
-    public function getTotalItemsOnly()
+    public function getTotalItemsOnly($cart)
     {
-        return \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content()->where('options.type', 'product')->count();
+        return $cart->content()->where('options.type', 'product')->count();
     }
 
-    public function calculateDeliveryMultiPointsForMirsal($cart)
+    public function calculateDeliveryMultiPointsForMirsal($pickups)
     {
         try {
             if (env('MIRSAL_ENABLED')) {
-                $pickups = [];
-                foreach ($cart as $item) {
-                    $code = $item->options->element->user->localArea ? $item->options->element->user->localArea->code : null;
-                    if (!is_null($code)) {
-                        array_push($pickups, $code);
-                    }
-                }
-
                 /**
                  * Link use https://app.mirsal.co Live
                  *      use http://api.mirsalapp.com Dev
@@ -187,6 +188,7 @@ trait CartTrait
                 $access_key = 'JPBCMU3H747S';
                 $prog_lang = 'Other';
 //            $pickups = ['FH242', 'JL244', 'A-249'];
+                $pickups = array_values(array_unique($pickups));
                 $requestData = json_encode($pickups);
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, $url);

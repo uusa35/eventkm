@@ -24,7 +24,8 @@ class User extends Authenticatable
         'on_home' => 'boolean',
         'active' => 'boolean',
         'access_dashboard' => 'boolean',
-        'CustomeDelivery' => 'boolean'
+        'CustomeDelivery' => 'boolean',
+        'custome_delivery' => 'boolean'
     ];
 
     /**
