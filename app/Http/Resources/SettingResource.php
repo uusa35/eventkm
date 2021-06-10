@@ -78,6 +78,8 @@ class SettingResource extends JsonResource
             'images' => ImageLightResource::collection($this->whenLoaded('images')),
             'mobileVerification' => env('SMS_ENABLED'),
             'mirsalEnabled' => env('MIRSAL_ENABLED'),
+            'androidVersion' => $this->android_version,
+            'appleVersion' => $this->apple_version,
         ];
     }
 }

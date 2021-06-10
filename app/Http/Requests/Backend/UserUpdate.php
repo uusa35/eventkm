@@ -67,6 +67,7 @@ class UserUpdate extends FormRequest
             'on_home' => 'nullable|boolean',
             'active' => 'nullable|boolean',
             'country_id' => 'required|numeric|exists:countries,id',
+            'area_id' => 'required|numeric|exists:areas,id',
             'role_id' => 'sometimes|numeric|exists:roles,id',
             'merchant_id' => 'nullable|max:200|min:3|unique:users,merchant_id,'.$userId,
             'categories' => 'nullable|array'

@@ -237,8 +237,8 @@ trait OrderTrait
                 }
             }
             $order = Order::create([
-                'price' => $request->price,
-                'net_price' => $request->net_price,
+                'price' => (float) $request->price,
+                'net_price' => (float) $request->net_price,
                 'mobile' => $request->mobile,
                 'country' => $user->country->slug,
                 'area' => $request->has('area') ? $request->area : 'N/A',
@@ -251,7 +251,7 @@ trait OrderTrait
                 'notes' => $request->notes,
                 'user_id' => $user->id,
                 'discount' => $request->discount,
-                'shipment_fees' => $request->shipment_fees,
+                'shipment_fees' => (float) $request->shipment_fees,
                 'coupon_id' => $request->has('coupon_id') ? $request->coupon_id : null,
                 'payment_method' => $request->payment_method,
                 'cash_on_delivery' => $request->cash_on_delivery,

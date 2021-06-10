@@ -1103,35 +1103,59 @@
                                                         {{ trans('general.no') }}</label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label class="control-label">{{ trans('general.payment_method') }}
-                                                        *</label>
-                                                    <select name="payment_method" class="form-control  tooltips"
-                                                            data-container="body"
-                                                            data-placement="top"
-                                                            data-original-title="{{ trans('message.payment_method') }}"
-                                                    >
-                                                        <option>{{ trans('general.choose_payment_method') }}</option>
-                                                        <option
-                                                            value="myfatoorah" {{ $element->payment_method === 'myfatoorah' ? 'selected' : null }}>
-                                                            My Fatoorah
-                                                        </option>
-                                                        <option
-                                                            value="tap" {{ $element->payment_method === 'tap' ? 'selected' : null }}>
-                                                            Tap
-                                                        </option>
-                                                        <option
-                                                            value="upayment" {{ $element->payment_method === 'upayment' ? 'selected' : null }}>
-                                                            Upayment
-                                                        </option>
-                                                        <option
-                                                            value="ibooky" {{ $element->payment_method === 'ibooky' ? 'selected' : null }}>
-                                                            IBooky
-                                                        </option>
-                                                    </select>
+                                            <div class="col-lg-12">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">{{ trans('general.payment_method') }}
+                                                            *</label>
+                                                        <select name="payment_method" class="form-control  tooltips"
+                                                                data-container="body"
+                                                                data-placement="top"
+                                                                data-original-title="{{ trans('message.payment_method') }}"
+                                                        >
+                                                            <option>{{ trans('general.choose_payment_method') }}</option>
+                                                            <option
+                                                                value="myfatoorah" {{ $element->payment_method === 'myfatoorah' ? 'selected' : null }}>
+                                                                My Fatoorah
+                                                            </option>
+                                                            <option
+                                                                value="tap" {{ $element->payment_method === 'tap' ? 'selected' : null }}>
+                                                                Tap
+                                                            </option>
+                                                            <option
+                                                                value="upayment" {{ $element->payment_method === 'upayment' ? 'selected' : null }}>
+                                                                Upayment
+                                                            </option>
+                                                            <option
+                                                                value="ibooky" {{ $element->payment_method === 'ibooky' ? 'selected' : null }}>
+                                                                IBooky
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="form-group">
+                                                        <label for="form_control_1">{{ trans('general.apple_version') }}
+                                                            *</label>
+                                                        <input type="text" class="form-control" name="apple_version"
+                                                               placeholder="..."
+                                                               value="{{ $element->apple_version }}">
+                                                        <span class="help-block">{{ trans('general.apple_version') }}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="form-group">
+                                                        <label for="form_control_1">{{ trans('general.android_version') }}
+                                                            *</label>
+                                                        <input type="text" class="form-control" name="android_version"
+                                                               placeholder="..."
+                                                               value="{{ $element->android_version }}">
+                                                        <span
+                                                            class="help-block">{{ trans('general.android_version') }}</span>
+                                                    </div>
                                                 </div>
                                             </div>
+
                                         </div>
                                     @endif
                                 </div>

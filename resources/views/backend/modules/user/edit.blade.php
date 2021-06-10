@@ -103,7 +103,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-lg-4 col-md-6">
+                                        <div class="col-lg-3 col-md-6">
                                             <div class="form-group">
                                                 <label for="single"
                                                        class="control-label">{{ trans('general.country') }}
@@ -120,8 +120,25 @@
                                                 </select>
                                             </div>
                                         </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <div class="form-group">
+                                                <label for="single"
+                                                       class="control-label required">{{ trans('general.area') }}
+                                                    *</label>
+                                                <select id="single" class="form-control tooltips select2"
+                                                        data-container="body" data-placement="top"
+                                                        data-original-title="{{ trans('message.area') }}"
+                                                        name="area_id" required>
+                                                    <option>{{ trans('general.choose_area') }}</option>
+                                                    @foreach($areas as $area)
+                                                        <option
+                                                            value="{{ $area->id }}" {{ $element->area_id === $area->id ? 'selected' : '' }}>{{ $area->slug }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
                                         @can('isAdminOrAbove')
-                                            <div class="col-lg-4 col-md-6">
+                                            <div class="col-lg-3 col-md-6">
                                                 <div class="form-group">
                                                     <label for="single"
                                                            class="control-label">{{ trans('general.role') }}
@@ -150,7 +167,7 @@
 
                                         {{-- email + mobile --}}
 
-                                        <div class="col-lg-4 col-md-6">
+                                        <div class="col-lg-3 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                                 <label for="email"
@@ -545,23 +562,7 @@
                                             </div>
                                         </div>
 {{--                                        @if(env('MIRSAL_ENABLED'))--}}
-                                            <div class="col-lg-4 col-md-6">
-                                                <div class="form-group">
-                                                    <label for="single"
-                                                           class="control-label required">{{ trans('general.area') }}
-                                                        *</label>
-                                                    <select id="single" class="form-control tooltips select2"
-                                                            data-container="body" data-placement="top"
-                                                            data-original-title="{{ trans('message.area') }}"
-                                                            name="area_id" required>
-                                                        <option>{{ trans('general.choose_area') }}</option>
-                                                        @foreach($areas as $area)
-                                                            <option
-                                                                value="{{ $area->id }}" {{ $element->area_id === $area->id ? 'selected' : '' }}>{{ $area->slug }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                            </div>
+
 {{--                                        @else--}}
 {{--                                            <div class="col-lg-4 col-md-6">--}}
 {{--                                                <div--}}
