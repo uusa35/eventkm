@@ -41,4 +41,5 @@ class Area extends PrimaryModel
     {
         return $this->hasMany(Address::class);
     }
+
 }

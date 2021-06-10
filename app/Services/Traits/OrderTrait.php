@@ -342,11 +342,11 @@ trait OrderTrait
                         'name' => $meta->product->user->name,
                         'phone' => $meta->product->user->fullMobile,
                         'governorate_id' => $meta->product->user->area,
-                        'area_id' => $meta->product->user->area,
+                        'area_id' => $meta->product->user->localArea ? $meta->product->user->localArea->code : null,
                         'block' => $meta->product->user->block,
                         'street' => $meta->product->user->street,
                         'apartment' => $meta->product->user->appartment,
-                        'unit' => 'Floor :' .$meta->product->user->floor,
+                        'unit' => 'Floor :' . $meta->product->user->floor,
                         'location' => $meta->product->user->address,
                         'note' => 'Product Name : ' . $meta->product->name . ' - Product SKU : ' . $meta->product->sku,
                     ]);
@@ -391,9 +391,6 @@ trait OrderTrait
                         $pickupPoints
                     ],
                 ];
-//                $enc_method = 'AES-256-CBC';
-//                $enc_iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($enc_method));
-//                $requestData = openssl_encrypt(json_encode($data), $enc_method, $access_secret, 0, $enc_iv) . "::" . bin2hex($enc_iv);
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, $url);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

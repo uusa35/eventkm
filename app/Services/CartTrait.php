@@ -65,7 +65,13 @@ trait CartTrait
                     \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $country->fixed_shipment_charge) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
                 }
             } else {
-                \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $country->fixed_shipment_charge) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
+                if (env('MIRSAL_ENABLED')) {
+                    $cart = \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content();
+                    $cost = $this->calculateDeliveryMultiPointsForMirsal($cart);
+                    \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $cost) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
+                } else {
+                    \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $country->fixed_shipment_charge) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
+                }
             }
         } else {
             $shipmentPackage = $country->shipment_packages()->first();
@@ -78,7 +84,6 @@ trait CartTrait
     {
         if ($this->checkProduct($request, $product, $this->cart)) {
             $country = getClientCountry();
-            $this->addCountryToCart($country, $this->cart);
             $this->cart->add($product->getUniqueIdAttribute($request->product_attribute_id), $product->name, $request->qty, (double)$product->finalPrice, $request->qty * $product->weight,
                 [
                     'type' => 'product',
@@ -96,6 +101,7 @@ trait CartTrait
                     'element' => $product
                 ]
             );
+            $this->addCountryToCart($country);
             return true;
         }
         return false;
@@ -159,5 +165,42 @@ trait CartTrait
     public function getTotalItemsOnly()
     {
         return \Gloudemans\Shoppingcart\Facades\Cart::instance('shopping')->content()->where('options.type', 'product')->count();
+    }
+
+    public function calculateDeliveryMultiPointsForMirsal($cart)
+    {
+        try {
+            if (env('MIRSAL_ENABLED')) {
+                $pickups = [];
+                foreach ($cart as $item) {
+                    $code = $item->options->element->user->localArea ? $item->options->element->user->localArea->code : null;
+                    if (!is_null($code)) {
+                        array_push($pickups, $code);
+                    }
+                }
+
+                /**
+                 * Link use https://app.mirsal.co Live
+                 *      use http://api.mirsalapp.com Dev
+                 */
+                $url = 'https://app.mirsal.co/rest/order/get-shipping-cost-multi-pickup';
+                $access_key = 'JPBCMU3H747S';
+                $prog_lang = 'Other';
+//            $pickups = ['FH242', 'JL244', 'A-249'];
+                $requestData = json_encode($pickups);
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+                curl_setopt($ch, CURLOPT_POSTFIELDS, ['pickups' => $requestData, 'access_key' => $access_key, 'prog_lang' => $prog_lang]);
+                $response = curl_exec($ch);
+                curl_close($ch);
+                $res = json_decode($response);
+                return $res->shipping_cost;
+            }
+        } catch (\Exception $e) {
+            abort('404', $e->getMessage());
+
+        }
     }
 }

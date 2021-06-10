@@ -20,7 +20,6 @@ use Illuminate\Support\Facades\Notification;
 Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth', 'onlyActiveUsers', 'country', 'dashboard']], function () {
     // Backend :: super + admin
     Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['admin']], function () {
-        ;
         Route::resource('activity', 'ActivityController');
         Route::resource('role', 'RoleController');
         Route::resource('privilege', 'PrivilegeController');
@@ -196,19 +195,8 @@ Route::get('webview', function () {
 });
 // for development purpose only
 if (app()->environment('production') || app()->environment('local')) {
-
-    // for develoment mode only
-//    Route::get("testing", function (Request $request) {
-//        $responseAr = \GoogleMaps::load('geocoding')
-//            ->setParam([
-//                'latlng' => $request->lat . ',' . $request->long,
-//                'language' => 'ar'
-//            ])
-//            ->get();
-//    });
     Route::get('/posting/{id}/{role}', 'Frontend\HomeController@getInfo');
 }
-
 Route::get('info', function () {
     return phpinfo();
 });

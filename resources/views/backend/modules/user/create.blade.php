@@ -495,24 +495,46 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                            <div class="col-lg-4 col-md-6">
-                                                <div class="form-group{{ $errors->has('area') ? ' has-error' : '' }}">
-                                                    <label for="area"
-                                                           class="control-label">{{ trans('general.area') }}</label>
-                                                    <input id="area" type="text" class="form-control tooltips"
-                                                           data-container="body" data-placement="top"
-                                                           data-original-title="{{ trans('message.area') }}" name="area"
-                                                           placeholder="{{ trans('general.area') }}"
-                                                           value="{{ old('area') }}" autofocus>
-                                                    @if ($errors->has('area'))
-                                                        <span class="help-block">
+                                            @if(env('MIRSAL_ENABLED'))
+                                                <div class="col-lg-4 col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="single"
+                                                               class="control-label required">{{ trans('general.area') }}
+                                                            *</label>
+                                                        <select id="single" class="form-control tooltips select2"
+                                                                data-container="body" data-placement="top"
+                                                                data-original-title="{{ trans('message.area') }}"
+                                                                name="area_id" required>
+                                                            <option>{{ trans('general.choose_area') }}</option>
+                                                            @foreach($areas as $area)
+                                                                <option
+                                                                    value="{{ $area->id }}">{{ $area->slug }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            @else
+                                                <div class="col-lg-4 col-md-6">
+                                                    <div
+                                                        class="form-group{{ $errors->has('area') ? ' has-error' : '' }}">
+                                                        <label for="area"
+                                                               class="control-label">{{ trans('general.area') }}</label>
+                                                        <input id="area" type="text" class="form-control tooltips"
+                                                               data-container="body" data-placement="top"
+                                                               data-original-title="{{ trans('message.area') }}"
+                                                               name="area"
+                                                               placeholder="{{ trans('general.area') }}"
+                                                               value="{{ old('area') }}" autofocus>
+                                                        @if ($errors->has('area'))
+                                                            <span class="help-block">
                                                 <strong>
                                                     {{ $errors->first('area') }}
                                                 </strong>
                                             </span>
-                                                    @endif
+                                                        @endif
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            @endif
                                             <div class="col-lg-4 col-md-6">
                                                 <div class="form-group{{ $errors->has('block') ? ' has-error' : '' }}">
                                                     <label for="block"
@@ -1296,13 +1318,17 @@
                                             </div>
                                             <div class="col-lg-3">
                                                 <div class="form-group">
-                                                    <label for="form_control_1">{{ trans('general.custome_delivery_fees') }}*</label>
-                                                    <input type="text" class="form-control" name="custome_delivery_fees" placeholder="..."
+                                                    <label
+                                                        for="form_control_1">{{ trans('general.custome_delivery_fees') }}
+                                                        *</label>
+                                                    <input type="text" class="form-control" name="custome_delivery_fees"
+                                                           placeholder="..."
                                                            value="">
-                                                    <span class="help-block">{{ trans('general.company_custome_delivery_feesabic') }}</span>
+                                                    <span
+                                                        class="help-block">{{ trans('general.company_custome_delivery_feesabic') }}</span>
                                                 </div>
                                             </div>
-                                            @endcan
+                                        @endcan
                                     </div>
                                 </div>
                             </div>

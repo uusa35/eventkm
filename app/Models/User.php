@@ -191,4 +191,8 @@ class User extends Authenticatable
     public function addresses() {
         return $this->hasMany(Address::class);
     }
+
+    public function localArea() {
+        return $this->belongsTo(Area::class,'area_id');
+    }
 }

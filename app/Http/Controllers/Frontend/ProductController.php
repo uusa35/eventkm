@@ -63,7 +63,7 @@ class ProductController extends Controller
         $element = $this->product->whereId($id)->with([
             'product_attributes.color', 'product_attributes.size',
             'images', 'tags', 'categories', 'favorites', 'brand', 'color', 'size',
-            'shipment_package.countries'
+            'shipment_package.countries','user.localArea'
         ])->first();
         if ($element) {
             $this->dispatchNow(new IncreaseElementViews($element));

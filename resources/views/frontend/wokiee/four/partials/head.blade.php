@@ -1,8 +1,5 @@
 @section('title')
     <title>{{ $settings->company_ar .' '. $settings->company_en }}</title>
-    {{--    <link--}}
-    {{--        href="{{ $settings->logo ? $settings->getCurrentImageAttribute('logo') : $settings->getCurrentImageAttribute('app_logo') }}"--}}
-    {{--        rel="shortcut icon" type="image/jpg"/>--}}
     <link href="{{ $settings->logoThumb }}" rel="shortcut icon" type="image/png">
     <meta name="title" content="{{ $settings->company_ar .' '. $settings->company_en }}">
     @show
@@ -78,14 +75,3 @@
     @elseif(env('MALLR'))
         <meta name="google-site-verification" content="jr-GtLYg64G51nUppCuaH_p0C4NkAcofU5bPIkI9jG0"/>
     @endif
-    {{--@if(env('ONE_SIGNAL_APP_ID'))--}}
-    {{--    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>--}}
-    {{--    <script>--}}
-    {{--        var OneSignal = window.OneSignal || [];--}}
-    {{--        OneSignal.push(function() {--}}
-    {{--            OneSignal.init({--}}
-    {{--                appId: `{!! env('ONE_SIGNAL_APP_ID') !!}`,--}}
-    {{--            });--}}
-    {{--        });--}}
-    {{--    </script>--}}
-    {{--@endif--}}
