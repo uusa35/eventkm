@@ -18,6 +18,7 @@ class AreaLightResource extends JsonResource
             'id' => $this->id,
             'slug' => $this->slug,
             'code' => $this->code,
+            'governate_id' => $this->governate_id,
         ];
     }
 }
