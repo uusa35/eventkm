@@ -120,7 +120,7 @@ class OrderController extends Controller
                     }
                     return response()->json((double)$country->fixed_shipment_charge, 200);
                 } else {
-                    if (env('MIRSAL_ENABLED') && $request->has('pickups')) {
+                    if (env('MIRSAL_ENABLED') && $request->has('pickups') && $country->is_local) {
                         $cost = $this->calculateDeliveryMultiPointsForMirsal($request->pickups);
                         $cost = $cost > 1 ? $cost : (double)$country->fixed_shipment_charge;
                         return response()->json((double)$cost, 200);
