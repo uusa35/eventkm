@@ -21,6 +21,7 @@ class CurrencyLightResource extends JsonResource
             'currency_symbol' => $this->currency_symbol,
             'currency_symbol_en' => $this->currency_symbol_en,
             'exchange_rate' => $this->exchange_rate,
+            'country' => CountryLightResource::make($this->whenLoaded('country')),
         ];
     }
 }
