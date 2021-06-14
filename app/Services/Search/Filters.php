@@ -148,6 +148,11 @@ class Filters extends QueryFilters
         return $this->builder->where('on_home', true);
     }
 
+    public function on_new()
+    {
+        return $this->builder->where('on_new', true);
+    }
+
     public function min()
     {
         return $this->builder->where('price', '>=' ,(double)request()->min);
