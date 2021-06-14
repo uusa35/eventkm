@@ -269,7 +269,8 @@ class UserController extends Controller
             'description_en' => $request->description,
             'is_male' => $request->has('is_male') ? $request->is_male : false,
             'access_dashboard' => false,
-            'mobile_verified' => true
+            'mobile_verified' => true,
+            'on_home' => false
         ]);
         if ($element) {
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1000', '1000'], true) : null;
