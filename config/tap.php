@@ -14,9 +14,9 @@ return [
     "autoReturn" => env('TAP_AUTO_RETURN', "Y"),
     "errorUrl" => env('TAP_ERROR_URL', "https://github.com/nosuchpage"),
     "langCode" => env('TAP_LANG_CODE', "EN"),
-    "postUrl" => env('TAP_POST_URL', "http://yourdomain.post.com"),
-    "returnUrl" => env('TAP_RETURN_URL', "http://yourdomain.return.com"),
+    "postUrl" => env('TAP_POST_URL', "https://yourdomain.post.com"),
+    "returnUrl" => env('TAP_RETURN_URL', "https://yourdomain.return.com"),
     'gatewayDefault' => "ALL",
-    'paymentUrl' => env('TAP_PAYMENT_URL','http://wwww.gotapnow.com/TapWebConnect/Tap/WebPay/PaymentRequest'),
+    'paymentUrl' => env('TAP_PAYMENT_URL','https://wwww.gotapnow.com/TapWebConnect/Tap/WebPay/PaymentRequest'),
     'order' => env('ORDER_MODEL_PATH') ? env('ORDER_MODEL_PATH') : 'App\Order'
 ];

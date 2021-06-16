@@ -176,7 +176,7 @@
                                                     {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440']) }}
                                                 </div>
                                                 <div class="help-block text-left">
-                                                    <a href="{{ url('http://photopea.com') }}" target="_blank">
+                                                    <a href="{{ url('https://photopea.com') }}" target="_blank">
                                                         {{ trans('general.image_url') }}
                                                     </a>
                                                 </div>

@@ -112,14 +112,14 @@ const SECRET_KEY = "2161947";
  * Type: String
  * Possible Values: Enter the Success Page URL as per your project.
  */
-const SUCCESS_URL = "http://localhost:9090/bookeey_library/success.php";
+const SUCCESS_URL = "https://localhost:9090/bookeey_library/success.php";
 
 /**
  * Failure URL
  * Type: String
  * Possible Values: Enter the Failure Page URL as per your project.
  */
-const FAILURE_URL = "http://localhost:9090/bookeey_library/failure.php";
+const FAILURE_URL = "https://localhost:9090/bookeey_library/failure.php";
 
 /**
  * Test Bookeey Payment Gateway URL

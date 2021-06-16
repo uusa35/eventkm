@@ -21,11 +21,11 @@ class TapInvoice implements PaymentContract
 
     /**
      * results Object :
-     *  +"PaymentURL": "http://live.gotapnow.com/webpay.aspx?ref=207172017102625563&sess=KzN5mY1hZvlblLJi%2b%2fFQGJLvMBlE7W%2fD"
+     *  +"PaymentURL": "https://live.gotapnow.com/webpay.aspx?ref=207172017102625563&sess=KzN5mY1hZvlblLJi%2b%2fFQGJLvMBlE7W%2fD"
      * +"ReferenceID": "207172017102625563"
      * +"ResponseCode": "0"
      * +"ResponseMessage": "Success"
-     * +"TapPayURL": "http://live.gotapnow.com/webpay.aspx"
+     * +"TapPayURL": "https://live.gotapnow.com/webpay.aspx"
      */
     public function storePayment()
     {

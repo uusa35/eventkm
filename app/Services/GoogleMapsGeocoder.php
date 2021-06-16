@@ -27,7 +27,7 @@ class GoogleMapsGeocoder {
     /**
      * HTTP URL of the Google Geocoding API.
      */
-    const URL_HTTP = "http://maps.googleapis.com/maps/api/geocode/";
+    const URL_HTTP = "https://maps.googleapis.com/maps/api/geocode/";
 
     /**
      * HTTPS URL of the Google Geocoding API.

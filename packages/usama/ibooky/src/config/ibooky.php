@@ -14,9 +14,9 @@ return [
     "autoReturn" => env('IBOOKY_AUTO_RETURN', "Y"),
     "errorUrl" => env('IBOOKY_ERROR_URL', "https://github.com/nosuchpage"),
     "langCode" => env('IBOOKY_LANG_CODE', "EN"),
-    "postUrl" => env('IBOOKY_POST_URL', "http://yourdomain.post.com"),
-    "returnUrl" => env('IBOOKY_RETURN_URL', "http://yourdomain.return.com"),
+    "postUrl" => env('IBOOKY_POST_URL', "https://yourdomain.post.com"),
+    "returnUrl" => env('IBOOKY_RETURN_URL', "https://yourdomain.return.com"),
     'gatewayDefault' => "ALL",
-    'paymentUrl' => env('IBOOKY_PAYMENT_URL','http://tapapi.gotapnow.com/TapWebConnect/Tap/WebPay/PaymentRequest'),
+    'paymentUrl' => env('IBOOKY_PAYMENT_URL','https://tapapi.gotapnow.com/TapWebConnect/Tap/WebPay/PaymentRequest'),
     'order' => env('ORDER_MODEL_PATH') ? env('ORDER_MODEL_PATH') : 'App\Order'
 ];

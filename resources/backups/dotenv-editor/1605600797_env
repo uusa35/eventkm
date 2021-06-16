@@ -3,7 +3,7 @@ APP_ENV=production
 APP_KEY=base64:zwbyrDAJYOx6o22SvD6vf4fSxoHAuHD30OSqlrh18sQ=
 APP_DEBUG=true
 DEBUGBAR_ENABLED=false
-APP_URL=http://abatiapp.com
+APP_URL=https://abatiapp.com
 DEFAULT_LANG=ar
 
 APP_MODE=products
@@ -74,10 +74,10 @@ TAP_PASSWORD=test
 TAP_CURRENCY_CODE=KWD
 TAP_AUTO_RETURN=Y
 TAP_LANG_CODE=EN
-TAP_POST_URL=http://abatiapp.com/tap/payment
-TAP_RETURN_URL=http://abatiapp.com/tap/result
+TAP_POST_URL=https://i-stores.store/tap/payment
+TAP_RETURN_URL=https://i-stores.store/tap/result
 TAP_PAYMENT_URL=https://www.gotapnow.com/tapwebconnect/tap/webpay/paymentrequest
-TAP_ERROR_URL=https://abatiapp.com/tap/error
+TAP_ERROR_URL=https://i-stores.store/tap/error
 
 ORDER_MAILS="driver@abatiapp.com,noor@abatiapp.com,info@abatiapp.com,orders@abatiapp.com,malhajri90@icloud.com,ahmad@abatiapp.com"
 ORDER_MODEL_PATH="App\\Models\\Order"

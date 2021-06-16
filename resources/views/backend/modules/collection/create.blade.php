@@ -170,10 +170,10 @@
                                                                     @foreach($products as $product)
                                                                         <option
                                                                                 value="{{ $product->id }}"
-                                                                                style="background-image:url('http://placehold.it/100x100');"
+                                                                                style="background-image:url('https://placehold.it/100x100');"
                                                                         >
                                                                             <div>
-                                                                                <img src="http://placehold.it/100x100"/>
+                                                                                <img src="https://placehold.it/100x100"/>
                                                                             </div>
                                                                             <div>
                                                                                 {{ $product->name }} - SKU

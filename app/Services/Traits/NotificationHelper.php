@@ -30,8 +30,8 @@ trait NotificationHelper
 //                'ar' => trans('message.notification_message', ['appName' => env('APP_NAME')]),
 //            ],
                 'app_url' => $url,
-//            http://abatiapp.com/element/linking?model=user&id=6&type=designer (latest)
-//            'web_url' => 'http://abati.ideasowners.net/element/linking?is_product=1&id=8',
+//            https://i-stores.store/element/linking?model=user&id=6&type=designer (latest)
+//            'web_url' => 'https://abati.ideasowners.net/element/linking?is_product=1&id=8',
 //            'web_url' => $url,
                 'data' => $request ? ['model' => $request->notificationable_type, 'id' => $request->notificationable_id] : [],
                 'contents' => [
@@ -81,8 +81,8 @@ trait NotificationHelper
 //                'ar' => trans('message.notification_message', ['appName' => env('APP_NAME')]),
 //            ],
             'app_url' => $url,
-//            http://abatiapp.com/element/linking?model=user&id=6&type=designer (latest)
-//            'web_url' => 'http://abati.ideasowners.net/element/linking?is_product=1&id=8',
+//            https://i-stores.store/element/linking?model=user&id=6&type=designer (latest)
+//            'web_url' => 'https://abati.ideasowners.net/element/linking?is_product=1&id=8',
 //            'web_url' => $url,
             'data' => $element ? ['element' => $element] : [],
             'contents' => [

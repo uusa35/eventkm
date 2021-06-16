@@ -9,7 +9,7 @@
             </div>
             <div class="panel-body">
                 {{ Form::open(['route' => 'backend.newsletter.campaign.send', 'method' => 'post','class' => 'form-horizontal','files' => true]) }}
-                        <!-- Text input http://getbootstrap.com/css/#forms -->
+                        <!-- Text input https://getbootstrap.com/css/#forms -->
                 <div class="form-group">
                     <div class="col-sm-6">
                         <label for="name" class="control-label">title</label>
@@ -26,7 +26,7 @@
                     </div>
                 </div>
 
-                <!-- Button http://getbootstrap.com/css/#buttons -->
+                <!-- Button https://getbootstrap.com/css/#buttons -->
                 <div class="form-group">
                     <div class="text-right col-sm-10">
                         <button type="submit" class="btn btn-primary">

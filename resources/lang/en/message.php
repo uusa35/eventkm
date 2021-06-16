@@ -110,7 +110,7 @@ return array (
   'is_triple' => 'The item can be shown in the section on ads which is divided into three sections',
   'is_double' => 'The item can be shown in the Ads section which is divided into two sections only',
   'check_stock' => 'This option allows control when ordering the product / item to check the quantity first and in the case of quantity available less than the requested quantity will be refused to add the product to the shopping cart .. In case the company / user wants to add this item or product to the shopping cart Without limitation to any quantities',
-  'url' => 'If there is an external link, please format the entire link http://www.example.com',
+  'url' => 'If there is an external link, please format the entire link https://www.example.com',
   'caption_ar' => 'You can enter a shortened word in Arabic',
   'caption_en' => 'You can enter a shortened word in English',
   'sequence' => 'Arrange the item, for example by placing order 3 The items will appear in ascending order based on the represented elements',

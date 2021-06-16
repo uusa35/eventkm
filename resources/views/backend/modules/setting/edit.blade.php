@@ -46,7 +46,7 @@
                                                 {{ trans('message.best_fit',['width' => '1024 px', 'height' => '1024px']) }}
                                             </div>
                                             <div class="help-block text-left">
-                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                                <a href="{{ url('https://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
@@ -68,7 +68,7 @@
                                             <span class="help-block">
                                                 {{ trans('message.best_fit',['width' => '600 px', 'height' => '221px']) }}</span>
                                             <span class="help-block">
-                                            <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                            <a href="{{ url('https://photopea.com') }}" target="_blank"
                                                class="text-info">
                                                 {{ trans('general.image_url') }}
                                             </a></span>
@@ -94,7 +94,7 @@
                                                 {{ trans('message.best_fit',['width' => '1242 px', 'height' => '2688px']) }}
                                     </span>
                                             <span class="help-block text-left">
-                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                                <a href="{{ url('https://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
@@ -122,7 +122,7 @@
                                                 {{ trans('message.best_fit',['width' => '1242 px', 'height' => '2688px']) }}
                                             </span>
                                             <span class="help-block text-left">
-                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                                <a href="{{ url('https://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
@@ -151,7 +151,7 @@
                                                 {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440 px']) }}
                                             </div>
                                             <span class="help-block text-left">
-                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                                <a href="{{ url('https://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
@@ -180,7 +180,7 @@
                                                 {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1850 px']) }}
                                             </div>
                                             <span class="help-block text-left">
-                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                                <a href="{{ url('https://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
@@ -207,7 +207,7 @@
                                             <span class="help-block">
                                                 {{ trans('message.best_fit',['width' => '750 px', 'height' => ' 750 px']) }}</span>
                                             <span class="help-block text-left">
-                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                                <a href="{{ url('https://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
@@ -238,7 +238,7 @@
                                                 {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440 px']) }}
                                             </div>
                                             <span class="help-block text-left">
-                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                                <a href="{{ url('https://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>

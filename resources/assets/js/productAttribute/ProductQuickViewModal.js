@@ -10,8 +10,8 @@ const ProductQuickViewModal = ({element}) => {
                             <div>
                                 <button className="tt-btn-zomm tt-top-right"><i className="icon-f-86"></i></button>
                                 <img className="zoom-product"
-                                     src="http://mallr.test/storage/uploads/images/large/products-21.jpeg"
-                                     data-zoom-image="http://mallr.test/storage/uploads/images/large/products-21.jpeg"
+                                     src="https://mallr.test/storage/uploads/images/large/products-21.jpeg"
+                                     data-zoom-image="https://mallr.test/storage/uploads/images/large/products-21.jpeg"
                                      alt=""/>
                             </div>
                         </div>
@@ -19,41 +19,41 @@ const ProductQuickViewModal = ({element}) => {
                             <ul id="smallGallery" className="arrow-location-02  slick-animated-show-js">
                                 <li>
                                     <a className="zoomGalleryActive" href="#"
-                                       data-image="http://mallr.test/storage/uploads/images/large/products-21.jpeg"
-                                       data-zoom-image="http://mallr.test/storage/uploads/images/large/products-21.jpeg">
+                                       data-image="https://mallr.test/storage/uploads/images/large/products-21.jpeg"
+                                       data-zoom-image="https://mallr.test/storage/uploads/images/large/products-21.jpeg">
                                         <span className="tt-label-location"></span>
                                         <img
-                                            src="http://mallr.test/storage/uploads/images/thumbnail/products-21.jpeg"
+                                            src="https://mallr.test/storage/uploads/images/thumbnail/products-21.jpeg"
                                             alt="" className="loading" data-was-processed="true"/>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                       data-image="http://mallr.test/storage/uploads/images/large/products-8.jpeg"
-                                       data-zoom-image="http://mallr.test/storage/uploads/images/large/products-8.jpeg"><img
-                                        src="http://mallr.test/storage/uploads/images/thumbnail/products-8.jpeg"
+                                       data-image="https://mallr.test/storage/uploads/images/large/products-8.jpeg"
+                                       data-zoom-image="https://mallr.test/storage/uploads/images/large/products-8.jpeg"><img
+                                        src="https://mallr.test/storage/uploads/images/thumbnail/products-8.jpeg"
                                         alt=""/></a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                       data-image="http://mallr.test/storage/uploads/images/large/products-8.jpeg"
-                                       data-zoom-image="http://mallr.test/storage/uploads/images/large/products-8.jpeg"><img
-                                        src="http://mallr.test/storage/uploads/images/thumbnail/products-8.jpeg"
+                                       data-image="https://mallr.test/storage/uploads/images/large/products-8.jpeg"
+                                       data-zoom-image="https://mallr.test/storage/uploads/images/large/products-8.jpeg"><img
+                                        src="https://mallr.test/storage/uploads/images/thumbnail/products-8.jpeg"
                                         alt=""/></a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                       data-image="http://mallr.test/storage/uploads/images/large/products-8.jpeg"
-                                       data-zoom-image="http://mallr.test/storage/uploads/images/large/products-8.jpeg"><img
-                                        src="http://mallr.test/storage/uploads/images/thumbnail/products-8.jpeg"
+                                       data-image="https://mallr.test/storage/uploads/images/large/products-8.jpeg"
+                                       data-zoom-image="https://mallr.test/storage/uploads/images/large/products-8.jpeg"><img
+                                        src="https://mallr.test/storage/uploads/images/thumbnail/products-8.jpeg"
                                         alt=""/></a>
                                 </li>
                                 <li>
                                     <div className="video-link-product" data-toggle="modal" data-type="youtube"
                                          data-target="#modalVideoProduct"
-                                         data-value="http://www.youtube.com/embed/GhyKqj_P2E4">
+                                         data-value="https://www.youtube.com/embed/GhyKqj_P2E4">
                                         <img
-                                            src="http://mallr.test/storage/uploads/images/thumbnail/products-21.jpeg"
+                                            src="https://mallr.test/storage/uploads/images/thumbnail/products-21.jpeg"
                                             alt="تيشيرت532"/>
                                         <div>
                                             <i className="icon-f-32"></i>
@@ -63,9 +63,9 @@ const ProductQuickViewModal = ({element}) => {
                                 <li>
                                     <div className="video-link-product" data-toggle="modal" data-type="youtube"
                                          data-target="#modalVideoProduct"
-                                         data-value="http://www.youtube.com/embed/GhyKqj_P2E4">
+                                         data-value="https://www.youtube.com/embed/GhyKqj_P2E4">
                                         <img
-                                            src="http://mallr.test/storage/uploads/images/thumbnail/products-21.jpeg"
+                                            src="https://mallr.test/storage/uploads/images/thumbnail/products-21.jpeg"
                                             alt="تيشيرت532"/>
                                         <div>
                                             <i className="icon-f-32"></i>
@@ -134,7 +134,7 @@ const ProductQuickViewModal = ({element}) => {
                             <div className="tt-product-inside-hover text-center mt-4">
                                 <div className="tt-row-btn">
 
-                                    <a href="http://mallr.test/product/43/%D8%AA%D9%8A%D8%B4%D9%8A%D8%B1%D8%AA532"
+                                    <a href="https://mallr.test/product/43/%D8%AA%D9%8A%D8%B4%D9%8A%D8%B1%D8%AA532"
                                        className="btn btn-large col-lg-12 mb-2">
                                         <i className="fa fa-fw fa-lg fa-shopping-cart"></i>
                                         أطلب الآن
@@ -156,7 +156,7 @@ const ProductQuickViewModal = ({element}) => {
                                                 </td>
                                                 <td>
                                                     <a className="theme-color"
-                                                       href="http://mallr.test/user/5/Yasmeen%20Stark">Queen jumped
+                                                       href="https://mallr.test/user/5/Yasmeen%20Stark">Queen jumped
                                                         up.</a>
                                                 </td>
                                             </tr>
@@ -222,11 +222,11 @@ const ProductQuickViewModal = ({element}) => {
                                                 </td>
                                                 <td>
                                                     <a className="theme-color"
-                                                       href="http://mallr.test/search/product?product_category_id=9">
+                                                       href="https://mallr.test/search/product?product_category_id=9">
                                                         Ms. Bulah Veum PhD,
                                                     </a>
                                                     <a className="theme-color"
-                                                       href="http://mallr.test/search/product?product_category_id=25">
+                                                       href="https://mallr.test/search/product?product_category_id=25">
                                                         Earnestine Thompson V,
                                                     </a>
                                                 </td>
@@ -237,11 +237,11 @@ const ProductQuickViewModal = ({element}) => {
                                                 </td>
                                                 <td>
                                                     <a className="theme-color"
-                                                       href="http://mallr.test/search/product?tag_id=2">
+                                                       href="https://mallr.test/search/product?tag_id=2">
                                                         adipisci,
                                                     </a>
                                                     <a className="theme-color"
-                                                       href="http://mallr.test/search/product?tag_id=19">
+                                                       href="https://mallr.test/search/product?tag_id=19">
                                                         suscipit,
                                                     </a>
                                                 </td>

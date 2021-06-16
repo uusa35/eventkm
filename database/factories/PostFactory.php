@@ -21,7 +21,7 @@ $factory->define(Post::class, function (Faker $faker) {
         'order' => $faker->numberBetween(1, 10),
         'active' => $faker->boolean,
         'user_id' => User::active()->get()->random()->id,
-        'video_url' => 'http://www.youtube.com/embed/GhyKqj_P2E4',
+        'video_url' => 'https://www.youtube.com/embed/GhyKqj_P2E4',
         'video_id' => 'KTkClkW0MZw',
         'keywords' => $faker->sentence,
         'views' => $faker->randomNumber(),

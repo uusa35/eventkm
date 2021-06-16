@@ -179,7 +179,7 @@
                                                     {{ trans('message.best_fit',['width' => '1000 px', 'height' => '1000 px']) }}
                                                 </div>
                                                 <div class="help-block text-left">
-                                                    <a href="{{ url('http://photopea.com') }}" target="_blank">
+                                                    <a href="{{ url('https://photopea.com') }}" target="_blank">
                                                         {{ trans('general.image_url') }}
                                                     </a>
                                                 </div>
@@ -199,12 +199,12 @@
                                                     {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440 px']) }}
                                                 </div>
                                                 <div class="help-block text-left">
-                                                    <a href="{{ url('http://photopea.com') }}" target="_blank">
+                                                    <a href="{{ url('https://photopea.com') }}" target="_blank">
                                                         {{ trans('general.image_url') }}
                                                     </a>
                                                 </div>
                                                 <div class="help-block text-left">
-                                                    <a href="{{ url('http://photopea.com') }}" target="_blank">
+                                                    <a href="{{ url('https://photopea.com') }}" target="_blank">
                                                         {{ trans('general.image_url') }}
                                                     </a>
                                                 </div>

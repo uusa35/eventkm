@@ -689,7 +689,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label">Website Url</label>
-                                            <input type="text" placeholder="http://www.mywebsite.com"
+                                            <input type="text" placeholder="https://www.mywebsite.com"
                                                    class="form-control"/></div>
                                         <div class="margiv-top-10">
                                             <a href="javascript:;" class="btn green"> Save Changes </a>
@@ -708,7 +708,7 @@
                                                 <div class="fileinput-new thumbnail"
                                                      style="width: 200px; height: 150px;">
                                                     <img
-                                                        src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image"
+                                                        src="https://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image"
                                                         alt=""/></div>
                                                 <div class="fileinput-preview fileinput-exists thumbnail"
                                                      style="max-width: 200px; max-height: 150px;"></div>

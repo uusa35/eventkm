@@ -132,7 +132,7 @@
                                                        placeholder="{{ trans('general.url') }}">
                                                 <label for="form_control_1">{{ trans('general.url') }}</label>
                                                 <span
-                                                    class="help-block">full link is only allowed ('http://google.com')</span>
+                                                    class="help-block">full link is only allowed ('https://google.com')</span>
                                             </div>
                                         </div>
                                         @can('isAdminOrAbove')
