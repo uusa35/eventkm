@@ -71,8 +71,8 @@ class ProductUpdate extends FormRequest
             'video_url' => 'nullable|url',
             'video_url_one' => 'nullable|url',
             'video_url_two' => 'nullable|url',
-            'color_id' => 'nullable|exists:colors,id|required_id:has_attributes,0',
-            'size_id' => 'nullable|exists:sizes,id|required_id:has_attributes,0',
+            'color_id' => 'nullable|exists:colors,id|required_unless:has_attributes,1',
+            'size_id' => 'nullable|exists:sizes,id|required_unless:has_attributes,1',
             'home_delivery_availability' => 'nullable|boolean'
         ];
     }
