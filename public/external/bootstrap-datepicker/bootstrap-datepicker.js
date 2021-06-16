@@ -1,6 +1,6 @@
 /* =========================================================
  * bootstrap-datepicker.js
- * https://www.eyecon.ro/bootstrap-datepicker
+ * http://www.eyecon.ro/bootstrap-datepicker
  * =========================================================
  * Copyright 2012 Stefan Petre
  * Improvements by Andrew Rowls
@@ -9,7 +9,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * https://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -53,7 +53,7 @@
 		} else if ('dateForceParse' in this.element.data()) {
 			this.forceParse = this.element.data('date-force-parse');
 		}
-
+		 
 
 		this.picker = $(DPGlobal.template)
 							.appendTo(this.isInline ? this.element : 'body')

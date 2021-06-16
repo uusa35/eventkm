@@ -5,70 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/CountryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/CountryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/OneSignalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/OneSignalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/GoogleMapsGeocoder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/GoogleMapsGeocoder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/TapInvoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/TapInvoice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Traits/NotificationHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Traits/NotificationHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/debugbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/debugbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/dompdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/dompdf.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/ide-helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/ide-helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/tap.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/tap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ClassifiedFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ClassifiedFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/PostFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/PostFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ProductFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ProductFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ServiceFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ServiceFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyHelpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyHelpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/ibooky/src/config/ibooky.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/ibooky/src/config/ibooky.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/myfatoorah/src/config/myfatoorah.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/myfatoorah/src/config/myfatoorah.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/tap/src/Services/TapInvoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap/src/Services/TapInvoice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/tap/src/config/tap.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap/src/config/tap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/upayment/src/config/upayment.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/upayment/src/config/upayment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/backend-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/backend-rtl.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/backend.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/backend.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/Cairo-Black.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/Cairo-Black.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/Cairo-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/Cairo-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/Cairo-ExtraLight.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/Cairo-ExtraLight.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/Cairo-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/Cairo-Light.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/Cairo-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/Cairo-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/Cairo-SemiBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/Cairo-SemiBold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/DroidArabicKufi-bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/DroidArabicKufi-bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/DroidArabicKufi.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/DroidArabicKufi.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/FrutigerLTArabic-45Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/FrutigerLTArabic-45Light.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/FrutigerLTArabic-55Roman.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/FrutigerLTArabic-55Roman.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/HelveticaNeueMEforSKYW21-Bd_web.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/HelveticaNeueMEforSKYW21-Bd_web.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/HelveticaNeueW23forSKY-Bd_T02.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/HelveticaNeueW23forSKY-Bd_T02.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/HindSiliguri-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/HindSiliguri-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/HindSiliguri-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/HindSiliguri-Light.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/HindSiliguri-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/HindSiliguri-Medium.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/HindSiliguri-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/HindSiliguri-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/HindSiliguri-SemiBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/HindSiliguri-SemiBold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/Neuton-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/Neuton-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/Neuton-ExtraBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/Neuton-ExtraBold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/Neuton-ExtraLight.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/Neuton-ExtraLight.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/Neuton-Italic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/Neuton-Italic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/Neuton-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/Neuton-Light.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/Neuton-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/Neuton-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/OFL.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/OFL.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/Simple-Line-Icons.dev.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/Simple-Line-Icons.dev.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/Simple-Line-Icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/Simple-Line-Icons.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/porto.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/porto.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/porto.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/porto.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/fonts/sst-arabic-bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/sst-arabic-bold.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/fonts/wokiee.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/fonts/wokiee.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/plugins.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/plugins.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/wokiee.demo.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/wokiee.demo.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/external/air-sticky/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/air-sticky/LICENSE.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/bootstrap-datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/bootstrap-datepicker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/external/bootstrap-datepicker/datepicker.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/external/bootstrap-datepicker/datepicker.scss" afterDir="false" />
@@ -98,28 +40,6 @@
       <change beforePath="$PROJECT_DIR$/public/font/fonts/wokiee.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/font/fonts/wokiee.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/font/revicons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/font/revicons.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/font/revicons.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/font/revicons.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/font/wokiee.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/font/wokiee.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/AR-Almarai-Font.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/AR-Almarai-Font.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/AlMohanad.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/AlMohanad.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/AntDesign.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/AntDesign.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Cairo-Black.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/Cairo-Black.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Cairo-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/Cairo-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Cairo_Black.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/Cairo_Black.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Cairo_Semi_Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/Cairo_Semi_Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/DroidArabicKufi-bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/DroidArabicKufi-bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/DroidArabicKufi.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/DroidArabicKufi.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/FontAwesome.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/FontAwesome.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Foundation.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/Foundation.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/MaterialCommunityIcons.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/MaterialCommunityIcons.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/cairo.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/cairo.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/porto.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/porto.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/porto.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/porto.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/revicons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/revicons.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/revicons.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/revicons.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/slick.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/slick.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/wokiee.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/wokiee.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/images/loader-01.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/loader-01.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/images/loader-02.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/loader-02.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/images/loader-03.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/loader-03.svg" afterDir="false" />
@@ -130,59 +50,14 @@
       <change beforePath="$PROJECT_DIR$/public/images/loader-08.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/loader-08.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/images/loader-furniture.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/loader-furniture.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/images/loader.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/loader.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/flags/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/readme.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js.LICENSE.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/backend.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/backend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/bootstrap-timepicker.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/bootstrap-timepicker.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/clockface.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/clockface.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/jquery.dd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jquery.dd.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/productAttribute.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/productAttribute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/productAttribute.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/productAttribute.js.LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/skins/ui/oxide-dark/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/skins/ui/oxide-dark/content.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/skins/ui/oxide-dark/content.inline.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/skins/ui/oxide-dark/content.inline.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/skins/ui/oxide-dark/skin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/skins/ui/oxide-dark/skin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/skins/ui/oxide-dark/skin.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/skins/ui/oxide-dark/skin.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/skins/ui/oxide/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/skins/ui/oxide/content.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/skins/ui/oxide/content.inline.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/skins/ui/oxide/content.inline.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/skins/ui/oxide/skin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/skins/ui/oxide/skin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/skins/ui/oxide/skin.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/skins/ui/oxide/skin.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/themes/silver/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/themes/silver/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/themes/silver/theme.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/themes/silver/theme.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/wokiee.demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/wokiee.demo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/svg/403.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/svg/403.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/svg/404.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/svg/404.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/svg/500.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/svg/500.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/svg/503.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/svg/503.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/css/bootstrap-datetimepicker.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/css/bootstrap-datetimepicker.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/css/bootstrap-rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/css/bootstrap-rtl.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/css/wokiee-theme-custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/css/wokiee-theme-custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/js/productAttribute/ProductQuickViewModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/js/productAttribute/ProductQuickViewModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/backups/dotenv-editor/1587908474_env" beforeDir="false" afterPath="$PROJECT_DIR$/resources/backups/dotenv-editor/1587908474_env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/backups/dotenv-editor/1605600797_env" beforeDir="false" afterPath="$PROJECT_DIR$/resources/backups/dotenv-editor/1605600797_env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/message.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/message.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/collection/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/collection/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/commercial/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/commercial/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/commercial/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/commercial/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/gallery/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/gallery/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/newsletter/campaign.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/newsletter/campaign.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/product/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/product/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/setting/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/setting/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/slide/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/slide/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/slide/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/slide/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/term/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/term/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/user/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/user/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/user/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/user/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/user/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/user/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/video/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/video/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/video/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/video/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/_images_samples.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/_images_samples.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/emails/new_user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/new_user.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_services_slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_services_slider.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/html/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/mail/html/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/scripts.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1159,7 +1034,7 @@
       <workItem from="1623738111616" duration="3936000" />
       <workItem from="1623753885656" duration="1593000" />
       <workItem from="1623764068553" duration="753000" />
-      <workItem from="1623822874381" duration="1584000" />
+      <workItem from="1623822874381" duration="2216000" />
     </task>
     <servers />
   </component>

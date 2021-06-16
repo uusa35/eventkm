@@ -1,6 +1,6 @@
 /**
  * Norwegian (bokmål) translation for bootstrap-datepicker
- * Fredrik Sundmyhr <https://github.com/fsundmyhr>
+ * Fredrik Sundmyhr <http://github.com/fsundmyhr>
  */
 ;(function($){
 	$.fn.datepicker.dates['nb'] = {

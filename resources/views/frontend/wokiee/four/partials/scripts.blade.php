@@ -92,7 +92,7 @@
         update: function(e) {
         }
     });
-    $('.areas').select2();
+    // $('.areas').select2();
     $(document).ready(function () {
 
     })

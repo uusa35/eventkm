@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright Postovoy - developers blog, https://postovoy.net
+Copyright Postovoy - developers blog, http://postovoy.net
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
