@@ -258,8 +258,6 @@
                                 </div>
                             </div>
                         </div>
-
-
                         @can('isAdminOrAbove')
                             <div class="portlet box blue ">
                                 <div class="portlet-title">
