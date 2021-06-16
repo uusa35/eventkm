@@ -74,8 +74,8 @@ class ProductStore extends FormRequest
             'video_url_three' => 'nullable|url',
             'video_url_four' => 'nullable|url',
             'video_url_five' => 'nullable|url',
-            'color_id' => 'nullable|exists:colors,id|required_id:has_attributes,1',
-            'size_id' => 'nullable|exists:sizes,id|required_id:has_attributes,1',
+            'color_id' => 'nullable|exists:colors,id|required_id:has_attributes,0',
+            'size_id' => 'nullable|exists:sizes,id|required_id:has_attributes,0',
             'home_delivery_availability' => 'nullable|boolean'
         ];
     }
