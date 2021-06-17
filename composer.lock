@@ -233,16 +233,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.184.4",
+            "version": "3.184.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "34e6b2abfb9d9d2f619c7218fb366371099e26b7"
+                "reference": "c833d965cb5f5241a04748b313953335409d0f06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/34e6b2abfb9d9d2f619c7218fb366371099e26b7",
-                "reference": "34e6b2abfb9d9d2f619c7218fb366371099e26b7",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c833d965cb5f5241a04748b313953335409d0f06",
+                "reference": "c833d965cb5f5241a04748b313953335409d0f06",
                 "shasum": ""
             },
             "require": {
@@ -299,11 +299,11 @@
             "authors": [
                 {
                     "name": "Amazon Web Services",
-                    "homepage": "https://aws.amazon.com"
+                    "homepage": "http://aws.amazon.com"
                 }
             ],
             "description": "AWS SDK for PHP - Use Amazon Web Services in your PHP project",
-            "homepage": "https://aws.amazon.com/sdkforphp",
+            "homepage": "http://aws.amazon.com/sdkforphp",
             "keywords": [
                 "amazon",
                 "aws",
@@ -317,9 +317,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.184.4"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.184.5"
             },
-            "time": "2021-06-15T18:14:30+00:00"
+            "time": "2021-06-16T18:13:45+00:00"
         },
         {
             "name": "barryvdh/laravel-dompdf",
@@ -554,7 +554,7 @@
                 {
                     "name": "Rob Gloudemans",
                     "email": "info@robgloudemans.nl",
-                    "homepage": "https://robgloudemans.nl/"
+                    "homepage": "http://robgloudemans.nl/"
                 },
                 {
                     "name": "Patrick Henninger",
@@ -1468,11 +1468,11 @@
                 {
                     "name": "Edward Z. Yang",
                     "email": "admin@htmlpurifier.org",
-                    "homepage": "https://ezyang.com"
+                    "homepage": "http://ezyang.com"
                 }
             ],
             "description": "Standards compliant HTML filter written in PHP",
-            "homepage": "https://htmlpurifier.org/",
+            "homepage": "http://htmlpurifier.org/",
             "keywords": [
                 "html"
             ],
@@ -1769,7 +1769,7 @@
                 "Apache-2.0"
             ],
             "description": "Google Auth Library for PHP",
-            "homepage": "https://github.com/google/google-auth-library-php",
+            "homepage": "http://github.com/google/google-auth-library-php",
             "keywords": [
                 "Authentication",
                 "google",
@@ -2262,7 +2262,7 @@
                 }
             ],
             "description": "Guzzle is a PHP HTTP client library",
-            "homepage": "https://guzzlephp.org/",
+            "homepage": "http://guzzlephp.org/",
             "keywords": [
                 "client",
                 "curl",
@@ -2483,11 +2483,11 @@
                 {
                     "name": "Oliver Vogel",
                     "email": "oliver@olivervogel.com",
-                    "homepage": "https://olivervogel.com/"
+                    "homepage": "http://olivervogel.com/"
                 }
             ],
             "description": "Image handling and manipulation library with support for Laravel integration",
-            "homepage": "https://image.intervention.io/",
+            "homepage": "http://image.intervention.io/",
             "keywords": [
                 "gd",
                 "image",
@@ -2543,7 +2543,7 @@
                 {
                     "name": "Johnny Broadway",
                     "email": "johnny@johnnybroadway.com",
-                    "homepage": "https://www.johnnybroadway.com/"
+                    "homepage": "http://www.johnnybroadway.com/"
                 }
             ],
             "description": "PHP port of URLify.js from the Django project. Transliterates non-ascii characters for use in URLs.",
@@ -3061,7 +3061,7 @@
                 }
             ],
             "description": "The legacy version of the Laravel Eloquent factories.",
-            "homepage": "https://laravel.com",
+            "homepage": "http://laravel.com",
             "support": {
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
@@ -4076,7 +4076,7 @@
                 {
                     "name": "Serban Ghita",
                     "email": "serbanghita@gmail.com",
-                    "homepage": "https://mobiledetect.net",
+                    "homepage": "http://mobiledetect.net",
                     "role": "Developer"
                 }
             ],
@@ -4298,7 +4298,7 @@
                 }
             ],
             "description": "PHP Enum implementation",
-            "homepage": "https://github.com/myclabs/php-enum",
+            "homepage": "http://github.com/myclabs/php-enum",
             "keywords": [
                 "enum"
             ],
@@ -4381,15 +4381,15 @@
                 {
                     "name": "Brian Nesbitt",
                     "email": "brian@nesbot.com",
-                    "homepage": "https://nesbot.com"
+                    "homepage": "http://nesbot.com"
                 },
                 {
                     "name": "kylekatarnls",
-                    "homepage": "https://github.com/kylekatarnls"
+                    "homepage": "http://github.com/kylekatarnls"
                 }
             ],
             "description": "An API extension for DateTime that supports 281 different languages.",
-            "homepage": "https://carbon.nesbot.com",
+            "homepage": "http://carbon.nesbot.com",
             "keywords": [
                 "date",
                 "datetime",
@@ -4458,19 +4458,19 @@
                 {
                     "name": "Tim Lytle",
                     "email": "tim@nexmo.com",
-                    "homepage": "https://twitter.com/tjlytle",
+                    "homepage": "http://twitter.com/tjlytle",
                     "role": "Developer"
                 },
                 {
                     "name": "Michael Heap",
                     "email": "michael.heap@nexmo.com",
-                    "homepage": "https://twitter.com/mheap",
+                    "homepage": "http://twitter.com/mheap",
                     "role": "Developer"
                 },
                 {
                     "name": "Chris Tankersley",
                     "email": "chris.tankersley@nexmo.com",
-                    "homepage": "https://twitter.com/dragonmantank",
+                    "homepage": "http://twitter.com/dragonmantank",
                     "role": "Developer"
                 }
             ],
@@ -5032,7 +5032,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "https://www.php-fig.org/"
+                    "homepage": "http://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for caching libraries",
@@ -5129,7 +5129,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "https://www.php-fig.org/"
+                    "homepage": "http://www.php-fig.org/"
                 }
             ],
             "description": "Standard interfaces for event handling.",
@@ -5180,7 +5180,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "https://www.php-fig.org/"
+                    "homepage": "http://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for HTTP clients",
@@ -5232,7 +5232,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "https://www.php-fig.org/"
+                    "homepage": "http://www.php-fig.org/"
                 }
             ],
             "description": "Common interfaces for PSR-7 HTTP message factories",
@@ -5286,7 +5286,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "https://www.php-fig.org/"
+                    "homepage": "http://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for HTTP messages",
@@ -5389,7 +5389,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "https://www.php-fig.org/"
+                    "homepage": "http://www.php-fig.org/"
                 }
             ],
             "description": "Common interfaces for simple caching",
@@ -5463,11 +5463,11 @@
                 {
                     "name": "Justin Hileman",
                     "email": "justin@justinhileman.info",
-                    "homepage": "https://justinhileman.com"
+                    "homepage": "http://justinhileman.com"
                 }
             ],
             "description": "An interactive shell for modern PHP.",
-            "homepage": "https://psysh.org",
+            "homepage": "http://psysh.org",
             "keywords": [
                 "REPL",
                 "console",
@@ -5907,7 +5907,7 @@
             "authors": [
                 {
                     "name": "Marut K",
-                    "homepage": "https://twitter.com/rezigned"
+                    "homepage": "http://twitter.com/rezigned"
                 }
             ],
             "description": "PHP URI Template (RFC 6570) supports both expansion & extraction",
@@ -5959,7 +5959,7 @@
                 }
             ],
             "description": "Parser for CSS Files written in PHP",
-            "homepage": "https://www.sabberworm.com/blog/2010/6/10/php-css-parser",
+            "homepage": "http://www.sabberworm.com/blog/2010/6/10/php-css-parser",
             "keywords": [
                 "css",
                 "parser",
@@ -6171,7 +6171,7 @@
                 }
             ],
             "description": "Free Google Translate API PHP Package",
-            "homepage": "https://github.com/Stichoza/google-translate-php",
+            "homepage": "http://github.com/Stichoza/google-translate-php",
             "keywords": [
                 "google",
                 "php",
@@ -8673,7 +8673,7 @@
             "authors": [
                 {
                     "name": "Lars Moelleken",
-                    "homepage": "https://www.moelleken.org/"
+                    "homepage": "http://www.moelleken.org/"
                 }
             ],
             "description": "Portable ASCII library - performance optimized (ascii) string functions for php.",
@@ -8744,7 +8744,7 @@
             "authors": [
                 {
                     "name": "Lars Moelleken",
-                    "homepage": "https://www.moelleken.org/"
+                    "homepage": "http://www.moelleken.org/"
                 }
             ],
             "description": "Stop-Words via PHP",
@@ -8786,7 +8786,7 @@
                 {
                     "name": "Tim Lytle",
                     "email": "tim@nexmo.com",
-                    "homepage": "https://twitter.com/tjlytle",
+                    "homepage": "http://twitter.com/tjlytle",
                     "role": "Developer"
                 },
                 {
@@ -9362,7 +9362,7 @@
                 {
                     "name": "Jordi Boggiano",
                     "email": "j.boggiano@seld.be",
-                    "homepage": "https://seld.be"
+                    "homepage": "http://seld.be"
                 }
             ],
             "description": "Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle.",
@@ -9533,7 +9533,7 @@
                 {
                     "name": "Jordi Boggiano",
                     "email": "j.boggiano@seld.be",
-                    "homepage": "https://seld.be"
+                    "homepage": "http://seld.be"
                 }
             ],
             "description": "Small utility library that handles metadata minification and expansion.",
@@ -9601,17 +9601,17 @@
                 {
                     "name": "Nils Adermann",
                     "email": "naderman@naderman.de",
-                    "homepage": "https://www.naderman.de"
+                    "homepage": "http://www.naderman.de"
                 },
                 {
                     "name": "Jordi Boggiano",
                     "email": "j.boggiano@seld.be",
-                    "homepage": "https://seld.be"
+                    "homepage": "http://seld.be"
                 },
                 {
                     "name": "Rob Bast",
                     "email": "rob.bast@gmail.com",
-                    "homepage": "https://robbast.nl"
+                    "homepage": "http://robbast.nl"
                 }
             ],
             "description": "Semver library that offers utilities, version constraint parsing and validation.",
@@ -9681,17 +9681,17 @@
                 {
                     "name": "Nils Adermann",
                     "email": "naderman@naderman.de",
-                    "homepage": "https://www.naderman.de"
+                    "homepage": "http://www.naderman.de"
                 },
                 {
                     "name": "Jordi Boggiano",
                     "email": "j.boggiano@seld.be",
-                    "homepage": "https://seld.be"
+                    "homepage": "http://seld.be"
                 },
                 {
                     "name": "Rob Bast",
                     "email": "rob.bast@gmail.com",
-                    "homepage": "https://robbast.nl"
+                    "homepage": "http://robbast.nl"
                 }
             ],
             "description": "SPDX licenses list and validation library.",
@@ -10344,7 +10344,7 @@
                 {
                     "name": "Maxime Bouroumeau-Fuseau",
                     "email": "maxime.bouroumeau@gmail.com",
-                    "homepage": "https://maximebf.com"
+                    "homepage": "http://maximebf.com"
                 },
                 {
                     "name": "Barry vd. Heuvel",
@@ -10407,12 +10407,12 @@
                 {
                     "name": "Pádraic Brady",
                     "email": "padraic.brady@gmail.com",
-                    "homepage": "https://blog.astrumfutura.com"
+                    "homepage": "http://blog.astrumfutura.com"
                 },
                 {
                     "name": "Dave Marshall",
                     "email": "dave.marshall@atstsolutions.co.uk",
-                    "homepage": "https://davedevelopment.co.uk"
+                    "homepage": "http://davedevelopment.co.uk"
                 }
             ],
             "description": "Mockery is a simple yet flexible PHP mock object framework",
@@ -10731,7 +10731,7 @@
                 }
             ],
             "description": "Common reflection classes used by phpdocumentor to reflect the code structure",
-            "homepage": "https://www.phpdoc.org",
+            "homepage": "http://www.phpdoc.org",
             "keywords": [
                 "FQSEN",
                 "phpDocumentor",
@@ -10894,7 +10894,7 @@
                 {
                     "name": "Konstantin Kudryashov",
                     "email": "ever.zet@gmail.com",
-                    "homepage": "https://everzet.com"
+                    "homepage": "http://everzet.com"
                 },
                 {
                     "name": "Marcello Duarte",
@@ -11797,7 +11797,7 @@
                 }
             ],
             "description": "Provides functionality to handle HHVM/PHP environments",
-            "homepage": "https://www.github.com/sebastianbergmann/environment",
+            "homepage": "http://www.github.com/sebastianbergmann/environment",
             "keywords": [
                 "Xdebug",
                 "environment",
@@ -11875,7 +11875,7 @@
                 }
             ],
             "description": "Provides the functionality to export PHP variables for visualization",
-            "homepage": "https://www.github.com/sebastianbergmann/exporter",
+            "homepage": "http://www.github.com/sebastianbergmann/exporter",
             "keywords": [
                 "export",
                 "exporter"
@@ -11940,7 +11940,7 @@
                 }
             ],
             "description": "Snapshotting of global state",
-            "homepage": "https://www.github.com/sebastianbergmann/global-state",
+            "homepage": "http://www.github.com/sebastianbergmann/global-state",
             "keywords": [
                 "global state"
             ],
@@ -12175,7 +12175,7 @@
                 }
             ],
             "description": "Provides functionality to recursively process PHP variables",
-            "homepage": "https://www.github.com/sebastianbergmann/recursion-context",
+            "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
             "support": {
                 "issues": "https://github.com/sebastianbergmann/recursion-context/issues",
                 "source": "https://github.com/sebastianbergmann/recursion-context/tree/4.0.4"
@@ -12389,7 +12389,7 @@
                 {
                     "name": "Jordi Boggiano",
                     "email": "j.boggiano@seld.be",
-                    "homepage": "https://seld.be"
+                    "homepage": "http://seld.be"
                 }
             ],
             "description": "JSON Linter",
