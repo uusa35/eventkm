@@ -17,6 +17,7 @@
                             <th>{{trans('general.slug')}}</th>
                             <th>{{trans('general.sequence')}}</th>
                             <th>{{trans('general.code')}}</th>
+                            <th>{{ trans('general.active') }}</th>
                             <th>{{trans('general.actions')}}</th>
                         </tr>
                     </thead>
@@ -26,6 +27,7 @@
                             <th>{{trans('general.slug')}}</th>
                             <th>{{trans('general.sequence')}}</th>
                             <th>{{trans('general.code')}}</th>
+                            <th>{{ trans('general.active') }}</th>
                             <th>{{trans('general.actions')}}</th>
                         </tr>
                     </tfoot>
@@ -36,6 +38,10 @@
                             <td> {{$element->slug}} </td>
                             <td> {{$element->order}} </td>
                             <td><button for="" class="btn-warning btn">{{$element->code}}</button> </td>
+                            <td>
+                                    <span
+                                        class="label {{ activeLabel($element->active) }}">{{ activeText($element->active) }}</span>
+                            </td>
                             <td>
                                 <div class="btn-group">
                                     <button type="button" class="btn green btn-xs btn-outline dropdown-toggle" data-toggle="dropdown"> {{trans('general.actions')}}
