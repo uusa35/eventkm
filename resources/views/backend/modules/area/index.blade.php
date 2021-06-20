@@ -14,7 +14,8 @@
                     <thead>
                         <tr>
                             <th>{{trans('general.id')}}</th>
-                            <th>{{trans('general.slug')}}</th>
+                            <th>{{trans('general.slug_ar')}}</th>
+                            <th>{{trans('general.slug_en')}}</th>
                             <th>{{trans('general.sequence')}}</th>
                             <th>{{trans('general.code')}}</th>
                             <th>{{ trans('general.active') }}</th>
@@ -24,7 +25,8 @@
                     <tfoot>
                         <tr>
                             <th>{{trans('general.id')}}</th>
-                            <th>{{trans('general.slug')}}</th>
+                            <th>{{trans('general.slug_ar')}}</th>
+                            <th>{{trans('general.slug_en')}}</th>
                             <th>{{trans('general.sequence')}}</th>
                             <th>{{trans('general.code')}}</th>
                             <th>{{ trans('general.active') }}</th>
@@ -35,7 +37,8 @@
                         @foreach($elements as $element)
                         <tr>
                             <td> {{$element->id}}</td>
-                            <td> {{$element->slug}} </td>
+                            <td> {{$element->slug_ar}} </td>
+                            <td> {{$element->slug_en}} </td>
                             <td> {{$element->order}} </td>
                             <td><button for="" class="btn-warning btn">{{$element->code}}</button> </td>
                             <td>
