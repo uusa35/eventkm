@@ -13,7 +13,7 @@ class BackupDB extends Command
      *
      * @var string
      */
-    protected $signature = 'backup:db';
+    protected $signature = 'backup:db {username} {password}';
 
     /**
      * The console command description.
@@ -39,9 +39,9 @@ class BackupDB extends Command
      */
     public function handle()
     {
-        $username = env('DB_USERNAME');
+        $username = $this->argument('username');
 
-        $password = env('DB_PASSWORD');
+        $password = $this->argument('password');
 
         $dbName = env('DB_DATABASE');
 
@@ -49,25 +49,8 @@ class BackupDB extends Command
 
         $fileName = $extention . env('APP_NAME').'-' . Carbon::now()->format('d-m-Y');
 
+        $command = 'mysqldump -e -f -u'. $username .' -p ' .' '. $dbName. ' > ' .$fileName.'.sql';
 
-        $command = `mysqldump -e -f -u$username -p$password $dbName > $fileName.sql`;
-
-        $process = new Process($command);
-
-        $process->start();
-
-        while ($process->isRunning()) {
-
-            $this->info('backup is running now ..');
-
-        }
-
-        if ($process->isSuccessful()) {
-
-            $this->info('backup is done');
-
-        } else {
-            $this->error('error occured !!' . $process->getErrorOutput());
-        }
+        exec($command);
     }
 }
