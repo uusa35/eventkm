@@ -143,6 +143,24 @@
                                             @endif
                                         </div>
                                     </div>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label sbold tooltips"
+                                                   data-container="body" data-placement="top"
+                                                   data-original-title="{{ trans('message.active') }}">{{ trans('general.active') }}</label></br>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="active" {{ $element->active ? 'checked' : null }}
+                                                       id="optionsRadios3"
+                                                       checked value="1">
+                                                {{ trans('general.yes') }}</label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="active"
+                                                       id="optionsRadios4" {{ !$element->active ? 'checked' : null }}
+                                                       value="0">
+                                                {{ trans('general.no') }}
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

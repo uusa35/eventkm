@@ -4,6 +4,7 @@ namespace App\Models;
 
 class Area extends PrimaryModel
 {
+    use ModelHelpers;
     protected $guarded = [''];
     protected $localeStrings = ['slug'];
 
