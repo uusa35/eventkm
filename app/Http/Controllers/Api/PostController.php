@@ -61,7 +61,7 @@ class PostController extends Controller
         if ($element) {
             $comments = $element->comments()->paginate(SELF::TAKE_MID);
             $this->dispatchNow(new IncreaseElementViews($element));
-            return response()->json(PostLightResource::make($element), 200);
+            return response()->json(PostResource::make($element), 200);
         }
         return response()->json(['message', trans('message.post_does_not_exist'), 400]);
     }
