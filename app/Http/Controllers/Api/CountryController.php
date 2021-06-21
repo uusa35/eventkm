@@ -100,7 +100,11 @@ class CountryController extends Controller
 
     public function getUserCountry()
     {
-        $element = Country::where('is_local', true)->with('currency', 'governates.areas')->first();
+        $element = Country::where('is_local', true)->with('currency')->with(['governates' => function ($q) {
+            return $q->with(['areas' => function ($q) {
+                return $q->active();
+            }]);
+        }])->first();
         return response()->json(new CountryLightResource($element), 200);
         if (app()->isLocal()) {
             $user_ip = array_random(['188.70.48.243', '176.17.238.199', '109.177.176.229']);
