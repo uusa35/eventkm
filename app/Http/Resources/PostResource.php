@@ -14,6 +14,17 @@ class PostResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'thumb' => $this->getCurrentImageAttribute(),
+            'large' => $this->getCurrentImageAttribute('image', 'large'),
+            'title' => $this->title,
+            'slug' => $this-> slug,
+            'content' => $this-> content,
+            'keywords' => $this->keywords,
+            'video_url' => $this->video_url,
+            'user' => new UserExtraLightResource($this->whenLoaded('user')),
+            'comments' => CommentExtraLightResource::collection($this->whenLoaded('comments')),
+        ];
     }
 }
