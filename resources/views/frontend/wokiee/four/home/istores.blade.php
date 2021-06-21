@@ -7,7 +7,7 @@
     @include('frontend.wokiee.four.partials.category._categories_slider_full_width', ['title' => trans('general.categories'), 'elements' => $homeCategoriesProduct])
 {{--    @include('frontend.wokiee.four.partials.category._categories_slider_full_width', ['title' => trans('general.company_categories'), 'elements' => $categoriesHome])--}}
 {{--    @include('frontend.wokiee.four.partials._products_metro_collection',['element' => $bestSaleCollections->first(), 'title' => trans('general.our_selection_from_collections')])--}}
-    @include('frontend.wokiee.four.partials._products_slider_collections',['groupOne' => $newProducts, 'groupTwo' => $onSaleProducts, 'groupThree' => $newProducts, 'title' => trans('general.offers'), 'items' => 3])
+{{--    @include('frontend.wokiee.four.partials._products_slider_collections',['groupOne' => $newProducts, 'groupTwo' => $onSaleProducts, 'groupThree' => $newProducts, 'title' => trans('general.offers'), 'items' => 3])--}}
 {{--    @include('frontend.wokiee.four.partials._collection_slider_with_cover',['title' => trans('general.our_selection_from_collections'), 'elements' => $bestSaleCollections])--}}
 {{--    @include('frontend.wokiee.four.partials._users_slider',['title' => trans('general.our_personal_shoppers'), 'elements' => $designers])--}}
 {{--    @include('frontend.wokiee.four.partials.category._categories_slider_full_width', ['elements' => $homeCategoriesProduct, 'title' => trans('general.company_categories'), 'type' => 'user'])--}}
