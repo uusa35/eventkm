@@ -19,6 +19,19 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'MALLR' => env('MALLR', false),
+    'HOMEKEY' => env('HOMEKEY', false),
+    'EXPO' => env('EXPO', false),
+    'BITS' => env('BITS', false),
+    'ESCRAP' => env('ESCRAP', false),
+    'ABATI' => env('ABATI', false),
+    'DAILY' => env('DAILY', false),
+    'HTB' => env('HTB', false),
+    'NASHKW' => env('NASHKW', false),
+    'EMAKEUP' => env('EMAKEUP', false),
+    'HUDA' => env('HUDA', false),
+    'DESIGNERAAT' => env('DESIGNERAAT', false),
+    'ISTORES' => env('ISTORES', false),
 
     /*
     |--------------------------------------------------------------------------
