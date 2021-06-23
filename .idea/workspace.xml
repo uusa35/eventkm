@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Backend/UserStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/UserStore.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Backend/UserUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/UserUpdate.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -997,7 +999,7 @@
       <workItem from="1624355011376" duration="1217000" />
       <workItem from="1624436433649" duration="2248000" />
       <workItem from="1624447296684" duration="528000" />
-      <workItem from="1624454194074" duration="843000" />
+      <workItem from="1624454194074" duration="1269000" />
     </task>
     <servers />
   </component>
