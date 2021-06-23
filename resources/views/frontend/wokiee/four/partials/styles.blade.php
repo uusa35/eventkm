@@ -259,7 +259,7 @@
     }
 
     header .tt-color-scheme-01 .tt-box-info ul li a, header .tt-social-icon li a {
-        color: {{ $settings->menu_theme_bg ? 'white' : $settings->menu_theme_color }}                  !important;
+        color: {{ $settings->normal_text_theme_color }}                  !important;
     }
 
     .tt-desctop-menu img {
