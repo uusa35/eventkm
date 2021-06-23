@@ -103,7 +103,73 @@
        font-family: 'Tajawal-Medium', 'sans-serif' !important;
         @endif
     @endif
+</style>
 
+@if(config('app.EVENTKM'))
+    @if(app()->getLocale() === 'en')
+        <style type="text/css">
+            body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tfoot, button, span, .btn, .btn-del, ul, li, .page-content, .portlet, .light, .profile-sidebar-portlet {
+                /*font-family: 'sst-arabic-bold', 'sans-serif' !important;*/
+                font-family: 'Poppins', 'sans-serif' !important;
+                /*text-transform: uppercase !important;*/
+            }
+
+            .tt-desctop-menu nav > ul > li.dropdown > a {
+                font-size: large !important;
+            }
+
+            .alert-danger i {
+                color: red !important;
+            }
+
+            .alert-danger {
+                color: #000000;
+                background-color: #ffffff;
+                border-color: #000000;
+            }
+
+            .page-link, .page-item.disabled .page-link {
+                border: none !important;
+                background-color: transparent !important;
+            }
+
+            .tt-product:not(.tt-view) .tt-description, .tt-footer-col {
+                background-color: black !important;
+            }
+        </style>
+    @else
+        <style type="text/css">
+            body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tfoot, button, span, .btn, .btn-del, ul, li, .page-content, .portlet, .light, .profile-sidebar-portlet {
+                font-family: 'GE SS Unique', 'sans-serif' !important;
+                text-transform: uppercase !important;
+            }
+
+            .tt-desctop-menu nav > ul > li.dropdown > a {
+                font-size: large !important;
+            }
+
+            .alert-danger i {
+                color: red !important;
+            }
+
+            .alert-danger {
+                color: #000000;
+                background-color: #ffffff;
+                border-color: #000000;
+            }
+
+            .page-link, .page-item.disabled .page-link {
+                border: none !important;
+                background-color: transparent !important;
+            }
+
+            .tt-product:not(.tt-view) .tt-description, .tt-footer-col {
+                background-color: black !important;
+            }
+        </style>
+    @endif
+@endif
+<style>
     body, .tt-show, .page-link, .page-item.active, .page-link, .page-item.disabled {
         color: {{ $settings->main_theme_color ? $settings->main_theme_color : 'white' }};
         background-color: {{ $settings->main_theme_bg_color ? $settings->main_theme_bg_color : 'white' }};
@@ -280,73 +346,6 @@
         padding: 3px 20px 3px !important;
         opacity: 0.4;
     }
-</style>
-
-@if(config('app.EVENTKM'))
-    @if(app()->getLocale() === 'en')
-        <style type="text/css">
-            body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tfoot, button, span, .btn, .btn-del, ul, li, .page-content, .portlet, .light, .profile-sidebar-portlet {
-                /*font-family: 'sst-arabic-bold', 'sans-serif' !important;*/
-                font-family: 'Poppins', 'sans-serif' !important;
-                /*text-transform: uppercase !important;*/
-            }
-
-            .tt-desctop-menu nav > ul > li.dropdown > a {
-                font-size: large !important;
-            }
-
-            .alert-danger i {
-                color: red !important;
-            }
-
-            .alert-danger {
-                color: #000000;
-                background-color: #ffffff;
-                border-color: #000000;
-            }
-
-            .page-link, .page-item.disabled .page-link {
-                border: none !important;
-                background-color: transparent !important;
-            }
-
-            .tt-product:not(.tt-view) .tt-description, .tt-footer-col {
-                background-color: black !important;
-            }
-        </style>
-    @else
-        <style type="text/css">
-            body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tfoot, button, span, .btn, .btn-del, ul, li, .page-content, .portlet, .light, .profile-sidebar-portlet {
-                font-family: 'GE SS Unique', 'sans-serif' !important;
-                text-transform: uppercase !important;
-            }
-
-            .tt-desctop-menu nav > ul > li.dropdown > a {
-                font-size: large !important;
-            }
-
-            .alert-danger i {
-                color: red !important;
-            }
-
-            .alert-danger {
-                color: #000000;
-                background-color: #ffffff;
-                border-color: #000000;
-            }
-
-            .page-link, .page-item.disabled .page-link {
-                border: none !important;
-                background-color: transparent !important;
-            }
-
-            .tt-product:not(.tt-view) .tt-description, .tt-footer-col {
-                background-color: black !important;
-            }
-        </style>
-    @endif
-@endif
-<style>
     .tt-login-form .tt-item {
         border: none;
     }
