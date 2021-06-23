@@ -132,6 +132,11 @@
     }
 
 
+    .btn {
+        color: {{ $settings->btn_text_theme_color }} !important;
+        background-color: {{ $settings->btn_bg_theme_color }}  !important;
+    }
+
     .btn, .tt-btn-search-rtl, .tt-btn-search,
     .tt-menu-toggle.stylization-02,
     .btn-link, .btn-link:focus,
