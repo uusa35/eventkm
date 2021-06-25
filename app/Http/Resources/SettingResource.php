@@ -18,6 +18,8 @@ class SettingResource extends JsonResource
     {
         return [
             'company' => $this->company,
+            'company_ar' => $this->company_ar,
+            'company_en' => $this->company_en,
             'address' => $this->address,
             'mobile' => $this->mobile,
             'phone' => $this->phone,
