@@ -40,6 +40,8 @@ class SettingResource extends JsonResource
             'latitude' => (float)$this->latitude,
             'gift_fee' => (float)$this->gift_fee,
             'description' => $this->description,
+            'description_en' => $this->description_en,
+            'description_ar' => $this->description_ar,
             'policy' => html_entity_decode($this->policy),
             'terms' => html_entity_decode($this->terms),
             'show_commercials' => $this->show_commercials,
