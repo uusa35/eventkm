@@ -118,21 +118,21 @@ class OrderController extends Controller
                     if ($user && $user->custome_delivery && $user->custome_delivery_fees > 0) {
                         return response()->json($user->custome_delivery_fees, 200);
                     }
-                    return response()->json((double)$country->fixed_shipment_charge, 200);
+                    return response()->json($country->is_local ? (double) $country->fixed_shipment_charge : (double) $country->fixed_shipment_charge * (double) $request->cart_items_no, 200);
                 } else {
                     if (env('MIRSAL_ENABLED') && $request->has('pickups') && $country->is_local) {
                         $cost = $this->calculateDeliveryMultiPointsForMirsal($request->pickups);
                         $cost = $cost > 1 ? $cost : (double)$country->fixed_shipment_charge;
                         return response()->json((double)$cost, 200);
                     }
-                    return response()->json((double)$country->fixed_shipment_charge, 200);
+                    return response()->json($country->is_local ? (double) $country->fixed_shipment_charge : (double) $country->fixed_shipment_charge * (double) $request->cart_items_no, 200);
 
                 }
             } else if ($request->has('total_weight')) {
                 $shipmentPackage = $country->shipment_packages()->first();
                 return response()->json((float)($request->total_weight * (double)$shipmentPackage->charge), 200);
             }
-            return response()->json((double)$country->fixed_shipment_charge, 200);
+            return response()->json($country->is_local ? (double) $country->fixed_shipment_charge : (double) $country->fixed_shipment_charge * (double) $request->cart_items_no, 200);
         }
         return response()->json(['message' => trans('shipment_package_fee') . trans('general.failure'), 400]);
     }
