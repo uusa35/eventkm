@@ -66,7 +66,7 @@ class UserController extends Controller
         if (request()->has('is_celebrity')) {
             $elements = $this->element->filters($filters)->active()->notAdmins()->orderBy('id', 'desc')->paginate(self::TAKE_MID);
         } else {
-            $elements = $this->element->filters($filters)->active()->notAdmins()->orderBy('id', 'desc')->paginate(self::TAKE_MID);
+            $elements = $this->element->filters($filters)->active()->notAdmins()->has('products','>',0)->orderBy('id', 'desc')->paginate(self::TAKE_MID);
         }
         if (!$elements->isEmpty()) {
             return response()->json(UserExtraLightResource::collection($elements), 200);
