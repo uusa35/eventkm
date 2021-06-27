@@ -87,6 +87,11 @@
                                         <a href="{{ route('frontend.terms') }}">{{ trans('general.terms_and_conditions') }}</a>
                                     </li>
                                 @endif
+                                    @if($settings->policy && strlen($settings->policy) > 100)
+                                        <li>
+                                            <a href="{{ route('frontend.policy') }}">{{ trans('general.our_policy') }}</a>
+                                        </li>
+                                    @endif
                                 @guest
                                     <li><a href="{{ route('register') }}">{{ trans('general.register') }}</a></li>
                                 @endguest
@@ -124,7 +129,7 @@
                             <h4 class="tt-collapse-title">
                                 {{ trans("general.about_us") }}
                             </h4>
-                            <div class="tt-collapse-content">
+                            <div class="tt-collapse-content text-white">
                                 <p>
                                     {!! trans('message.footer_about_us')  !!}
                                 </p>
