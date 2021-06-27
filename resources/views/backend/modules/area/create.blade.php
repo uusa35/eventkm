@@ -88,25 +88,25 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            @if(!$countries->isEmpty())
-                                                <div class="form-group">
-                                                    <label for="duration"
-                                                           class="control-label">{{ trans('general.country') }}
-                                                        *</label>
-                                                    <select class="form-control input-xlarge" name="country_id"
-                                                            id="country" required="required">
-                                                        @foreach($countries as $country)
-                                                            <option
-                                                                value="{{ $country->id }}">{{ $country->name }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                            @else
-                                                <span class="label label-danger">No Countries Listed, Please Create Country First -- All Countries exist already have currency.</span>
-                                            @endif
-                                        </div>
                                         @if(!request()->has('governate_id'))
+                                            <div class="col-md-6">
+                                                @if(!$countries->isEmpty())
+                                                    <div class="form-group">
+                                                        <label for="duration"
+                                                               class="control-label">{{ trans('general.country') }}
+                                                            *</label>
+                                                        <select class="form-control input-xlarge" name="country_id"
+                                                                id="country" required="required">
+                                                            @foreach($countries as $country)
+                                                                <option
+                                                                    value="{{ $country->id }}">{{ $country->name }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                @else
+                                                    <span class="label label-danger">No Countries Listed, Please Create Country First -- All Countries exist already have currency.</span>
+                                                @endif
+                                            </div>
                                             <div class="col-md-6">
                                                 @if(!$governates->isEmpty())
                                                     <div class="form-group">
@@ -126,6 +126,7 @@
                                         @else
                                             <input type="hidden" name="governate_id"
                                                    value="{{ request()->governate_id }}"/>
+                                            <input type="hidden" name="country_id" value="{{ $governate->country_id }}">
                                         @endif
                                         <div class="col-md-6">
                                             <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
