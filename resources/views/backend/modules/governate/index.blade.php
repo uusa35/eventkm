@@ -44,6 +44,10 @@
                                                 <i class="fa fa-fw fa-edit"></i> {{trans('general.edit')}}</a>
                                         </li>
                                         <li>
+                                            <a href="{{ route('backend.admin.area.create',['governate_id' => $element->id]) }}">
+                                                <i class="fa fa-fw fa-edit"></i> {{trans('general.create_area')}}</a>
+                                        </li>
+                                        <li>
                                             <a data-toggle="modal" href="#" data-target="#basic" data-title="Delete" data-content="Are you sure you want to delete term {{ $element->name }}? " data-form_id="delete-{{ $element->id }}">
                                                 <i class="fa fa-fw fa-recycle"></i> {{trans('general.delete')}}</a>
                                             <form method="post" id="delete-{{ $element->id }}" action="{{ route('backend.admin.governate.destroy',$element->id) }}">

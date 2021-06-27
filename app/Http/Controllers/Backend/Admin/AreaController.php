@@ -30,6 +30,12 @@ class AreaController extends Controller
     public function create()
     {
         $this->authorize('area.create');
+        $validate = validator(request()->all(), [
+            'governate_id' => 'required|exists:governates,id',
+        ]);
+        if ($validate->fails()) {
+            return response()->json(['message' => $validate->errors()->first()], 400);
+        }
         $countries = Country::active()->get();
         $governates = Governate::active()->get();
         return view('backend.modules.area.create', compact('countries', 'governates'));
