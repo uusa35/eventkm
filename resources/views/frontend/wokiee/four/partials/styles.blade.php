@@ -175,9 +175,9 @@
         background-color: {{ $settings->main_theme_bg_color ? $settings->main_theme_bg_color : 'white' }};
     }
 
-    p, .tt-collapse-content p, .tt-shopcart-table01 td, .tt-shopcart-table01 th {
-        color: {{ $settings->main_theme_color ? $settings->main_theme_color : 'white' }}                 !important;
-    }
+    /*p, .tt-collapse-content p, .tt-shopcart-table01 td, .tt-shopcart-table01 th {*/
+{{--        color: {{ $settings->main_theme_color ? $settings->main_theme_color : 'white' }}                 !important;--}}
+/*    }*/
 
     header, .tt-color-scheme-01, .tt-footer-center, footer .tt-footer-custom:last-child
     .tt-color-scheme-02,
