@@ -57,7 +57,7 @@
                                 </td>
                                 <td>
                                     <span
-                                        class="label {{ activeLabel($element->country_id) }}">{a{ $element->country->slug }}</span>
+                                        class="label {{ activeLabel($element->country_id) }}">{{ $element->country->slug }}</span>
                                 </td>
                                 <td>
                                     <div class="btn-group">
