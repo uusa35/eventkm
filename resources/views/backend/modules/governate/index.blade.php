@@ -35,7 +35,7 @@
                             <td> {{$element->id}}</td>
                             <td> {{$element->slug}} </td>
                             <td> {{$element->order}} </td>
-                            <td> {{$element->country->slug}} </td>a
+                            <td> {{$element->country->slug}} </td>
                             <td>
                                 <div class="btn-group">
                                     <button type="button" class="btn green btn-xs btn-outline dropdown-toggle" data-toggle="dropdown"> {{trans('general.actions')}}

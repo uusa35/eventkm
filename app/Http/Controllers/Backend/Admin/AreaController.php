@@ -18,7 +18,7 @@ class AreaController extends Controller
     public function index()
     {
         $this->authorize('index','area');
-        $elements = Area::all();
+        $elements = Area::with('governate.country')->get();
         return view('backend.modules.area.index', compact('elements'));
     }
 
