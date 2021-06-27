@@ -17,7 +17,7 @@ class GovernateController extends Controller
     public function index()
     {
         $this->authorize('index','governate');
-        $elements = Governate::all();
+        $elements = Governate::with('country')->get();
         return view('backend.modules.governate.index', compact('elements'));
     }
 

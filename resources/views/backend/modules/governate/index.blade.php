@@ -16,6 +16,7 @@
                             <th>{{trans('general.id')}}</th>
                             <th>{{trans('general.slug')}}</th>
                             <th>{{trans('general.order')}}</th>
+                            <th>{{trans('general.country')}}</th>
                             <th>{{trans('general.actions')}}</th>
                         </tr>
                     </thead>
@@ -24,6 +25,7 @@
                             <th>{{trans('general.id')}}</th>
                             <th>{{trans('general.slug')}}</th>
                             <th>{{trans('general.order')}}</th>
+                            <th>{{trans('general.country')}}</th>
                             <th>{{trans('general.actions')}}</th>
                         </tr>
                     </tfoot>
@@ -33,6 +35,7 @@
                             <td> {{$element->id}}</td>
                             <td> {{$element->slug}} </td>
                             <td> {{$element->order}} </td>
+                            <td> {{$element->country->slug}} </td>a
                             <td>
                                 <div class="btn-group">
                                     <button type="button" class="btn green btn-xs btn-outline dropdown-toggle" data-toggle="dropdown"> {{trans('general.actions')}}
