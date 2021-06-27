@@ -27,10 +27,10 @@ class AreaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $this->authorize('area.create');
-        $validate = validator(request()->all(), [
+        $validate = validator($request->all(), [
             'governate_id' => 'required|exists:governates,id',
         ]);
         if ($validate->fails()) {
