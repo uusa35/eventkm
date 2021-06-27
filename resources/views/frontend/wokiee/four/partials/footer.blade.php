@@ -129,7 +129,7 @@
                             <h4 class="tt-collapse-title">
                                 {{ trans("general.about_us") }}
                             </h4>
-                            <div class="tt-collapse-content text-white">
+                            <div class="tt-collapse-content">
                                 <p>
                                     {!! trans('message.footer_about_us')  !!}
                                 </p>
