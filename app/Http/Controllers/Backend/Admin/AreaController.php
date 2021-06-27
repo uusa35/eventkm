@@ -38,7 +38,7 @@ class AreaController extends Controller
         }
         $countries = Country::active()->get();
         $governates = Governate::active()->get();
-        $governate = Governate::whereId(requset()->governate_id)->first();
+        $governate = Governate::whereId($request->governate_id)->first();
         return view('backend.modules.area.create', compact('countries', 'governates','governate'));
     }
 
