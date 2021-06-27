@@ -89,7 +89,7 @@
                                 @endif
                                     @if($settings->policy && strlen($settings->policy) > 100)
                                         <li>
-                                            <a href="{{ route('frontend.policy') }}">{{ trans('general.our_policy') }}</a>
+                                            <a href="{{ route('frontend.policy') }}">{{ trans('general.policy') }}</a>
                                         </li>
                                     @endif
                                 @guest
