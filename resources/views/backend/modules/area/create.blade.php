@@ -106,7 +106,7 @@
                                                 <span class="label label-danger">No Countries Listed, Please Create Country First -- All Countries exist already have currency.</span>
                                             @endif
                                         </div>
-                                        @if(!requset()->has('governate_id'))
+                                        @if(!request()->has('governate_id'))
                                             <div class="col-md-6">
                                                 @if(!$governates->isEmpty())
                                                     <div class="form-group">
