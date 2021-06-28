@@ -20,6 +20,8 @@ class CategoryLightResource extends JsonResource
             'id' => $this->id,
             'isParent' => $this->isParent,
             'name' => ucfirst(Str::limit($this->name, 20, '..')),
+            'name_ar' => ucfirst(Str::limit($this->name_ar, 20, '..')),
+            'name_en' => ucfirst(Str::limit($this->name_en, 20, '..')),
             'thumb' => $this->getCurrentImageAttribute('image'),
             'large' => $this->getCurrentImageAttribute('image'),
             'path' => asset(env('FILES').$this->path),

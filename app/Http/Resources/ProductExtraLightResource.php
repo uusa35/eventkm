@@ -20,6 +20,8 @@ class ProductExtraLightResource extends JsonResource
             'id' => $this->id,
             'sku' => $this->sku,
             'name' => ucfirst(str_limit($this->name,30,'')),
+            'name_ar' => ucfirst(str_limit($this->name_ar,30,'')),
+            'name_en' => ucfirst(str_limit($this->name_en,30,'')),
             'on_new' => $this->on_new,
             'exclusive' => $this->exclusive,
             'isOnSale' => $this->isOnSale,
