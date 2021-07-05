@@ -109,7 +109,7 @@ class OrderController extends Controller
         }
         $settings = Setting::first();
         $country = Country::whereId($request->country_id)->first();
-        if ($request->receive_on_branch && $settings->receive_on_branch && $country->is_local) {
+        if ($request->receive_on_branch && $settings->pickup_from_branch && $country->is_local) {
             return response()->json(0.0, 200);
         } else {
             if ($settings->shipment_fixed_rate) { // fixed Rate enabled
