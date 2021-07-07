@@ -18,8 +18,8 @@ trait IbookyTrait
             $payerPhone = 'Payer Phone';
             $mid = env('IBOOKEY_MERCHANT_ID');
             $txnRefNo = mt_rand(1000000000000000, 9999999999999999);
-            $su = route('ibooky.web.payment.result');
-            $fu = route('ibooky.web.payment.error');
+            $su = config('ibookey.returnUrl');
+            $fu = route('ibooky.errorUrl');
             $amt = '10';
             $crossCat = "GEN";
             $secretKey = ENV('IBOOKEY_SECRET_KEY');
@@ -99,6 +99,7 @@ trait IbookyTrait
             $res = json_decode($serverOutput, true);
             curl_close($ch);
 
+            dd($res);
             if (isset($res['PayUrl']) && !empty($res['ErrorMessage']) && $res['ErrorMessage'] === 'Success') {
                 $parts = parse_url($res['PayUrl']);
                 parse_str($parts['query'], $output);

@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyHelpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyHelpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyTrait.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/usama/ibooky/src/config/ibooky.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/ibooky/src/config/ibooky.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -1020,7 +1020,7 @@
       <workItem from="1625550283507" duration="698000" />
       <workItem from="1625555015311" duration="3732000" />
       <workItem from="1625643385612" duration="650000" />
-      <workItem from="1625647598426" duration="6907000" />
+      <workItem from="1625647598426" duration="7144000" />
     </task>
     <servers />
   </component>

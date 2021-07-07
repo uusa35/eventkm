@@ -15,7 +15,7 @@ return [
     "errorUrl" => env('IBOOKY_ERROR_URL', "https://github.com/nosuchpage"),
     "langCode" => env('IBOOKY_LANG_CODE', "EN"),
     "postUrl" => env('IBOOKY_POST_URL', "https://yourdomain.post.com"),
-    "returnUrl" => env('≈', "https://yourdomain.return.com"),
+    "returnUrl" => env('IBOOKY_RETURN_URL', "https://yourdomain.return.com"),
     'gatewayDefault' => "ALL",
     'paymentUrl' => env('IBOOKY_PAYMENT_URL','https://tapapi.gotapnow.com/TapWebConnect/Tap/WebPay/PaymentRequest'),
     'order' => env('ORDER_MODEL_PATH') ? env('ORDER_MODEL_PATH') : 'App\Order'
