@@ -89,7 +89,7 @@ trait IbookyTrait
             );
 
             var_dump($paymentGatewayUrl);;
-            dd($postParams);
+//            dd($postParams);
 
             curl_setopt($ch, CURLOPT_URL, $paymentGatewayUrl);
             curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
