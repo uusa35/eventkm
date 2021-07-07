@@ -89,7 +89,7 @@ trait IbookyTrait
                 'Content-Type: application/json',
             );
 
-            var_dump($paymentGatewayUrl);
+//            var_dump($paymentGatewayUrl);
 //            dd($postParams);
 
             curl_setopt($ch, CURLOPT_URL, $paymentGatewayUrl);
@@ -103,7 +103,7 @@ trait IbookyTrait
             $res = json_decode($serverOutput, true);
             curl_close($ch);
 
-            dd($res);
+//            dd($res);
             if (isset($res['PayUrl']) && !empty($res['ErrorMessage']) && $res['ErrorMessage'] === 'Success') {
                 $parts = parse_url($res['PayUrl']);
                 parse_str($parts['query'], $output);
