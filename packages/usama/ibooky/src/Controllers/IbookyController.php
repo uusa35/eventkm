@@ -27,7 +27,6 @@ class IbookyController extends Controller
             return response()->json(['message' => $order], 400);
         }
         $user = User::whereId($order->user_id)->first();
-        return $order;
         $paymentUrl = $this->processPayment($order, $user);
         if ($paymentUrl) {
             return response()->json(['paymentUrl' => $paymentUrl], 200);
