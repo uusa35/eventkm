@@ -104,6 +104,7 @@ trait IbookyTrait
             curl_close($ch);
 
 //            dd($res);
+            return $res;
             if (isset($res['PayUrl']) && !empty($res['ErrorMessage']) && $res['ErrorMessage'] === 'Success') {
 //                $parts = parse_url($res['PayUrl']);
 //                parse_str($parts['query'], $output);
