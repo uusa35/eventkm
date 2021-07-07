@@ -30,7 +30,8 @@ trait IbookyTrait
             $paymentGatewayUrl = $this->getBookeeyPaymentGatewayUrl();
             $txnDtl = array(
                 array(
-                    "SubMerchUID" => $order->order_metas()->first()->product()->first()->user()->first()->merchant_id,
+//                    "SubMerchUID" => $order->order_metas()->first()->product()->first()->user()->first()->merchant_id,
+                    "SubMerchUID" => env('IBOOKEY_MERCHANT_ID'),
                     "Txn_AMT" => $order->net_price
                 )
             );
@@ -89,7 +90,7 @@ trait IbookyTrait
             );
 
             var_dump($paymentGatewayUrl);
-//            dd($postParams);
+            dd($postParams);
 
             curl_setopt($ch, CURLOPT_URL, $paymentGatewayUrl);
             curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
