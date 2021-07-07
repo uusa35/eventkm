@@ -88,6 +88,8 @@ trait IbookyTrait
                 'Content-Type: application/json',
             );
 
+            dd($postParams);
+
             curl_setopt($ch, CURLOPT_URL, $paymentGatewayUrl);
             curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
             curl_setopt($ch, CURLOPT_HEADER, 0);
