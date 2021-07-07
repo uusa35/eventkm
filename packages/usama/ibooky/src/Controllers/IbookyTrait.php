@@ -91,7 +91,7 @@ trait IbookyTrait
 
 //            var_dump($paymentGatewayUrl);
 //            dd($postParams);
-            return($postParams);
+//            return($postParams);
 
             curl_setopt($ch, CURLOPT_URL, $paymentGatewayUrl);
             curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
@@ -104,8 +104,8 @@ trait IbookyTrait
             $res = json_decode($serverOutput, true);
             curl_close($ch);
 
-            return($res);
-            dd($res);
+//            return($res);
+//            dd($res);
             if (isset($res['PayUrl']) && !empty($res['ErrorMessage']) && $res['ErrorMessage'] === 'Success') {
 //                $parts = parse_url($res['PayUrl']);
 //                parse_str($parts['query'], $output);
