@@ -72,7 +72,7 @@
                     <div>{{ trans('general.address') }}: {{ $element->address }}</div>
                     <div>{{ trans('general.area') }}: {{ $element->area ? $element->area : $element->user->area }}
                         <br/></div>
-                    <div>{{ trans('general.country') }}: {{ $element->country }}<br/></div>
+                    <div>{{ trans('general.shipment_country') }}: {{ $element->country }}<br/></div>
                     @if($element->block)
                         <div>{{ trans('general.block') }}: {{ $element->block }}<br/></div>
                     @endif
