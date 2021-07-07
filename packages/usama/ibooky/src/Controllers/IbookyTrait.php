@@ -105,8 +105,8 @@ trait IbookyTrait
 
 //            dd($res);
             if (isset($res['PayUrl']) && !empty($res['ErrorMessage']) && $res['ErrorMessage'] === 'Success') {
-                $parts = parse_url($res['PayUrl']);
-                parse_str($parts['query'], $output);
+//                $parts = parse_url($res['PayUrl']);
+//                parse_str($parts['query'], $output);
                 $paymentUrl = $res['PayUrl'];
                 if (!empty($order->reference_id) && $order->order_metas->count() > 0) {
                     $order->update(['reference_id' => $txnRefNo]);
