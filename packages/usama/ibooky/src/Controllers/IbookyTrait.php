@@ -103,8 +103,7 @@ trait IbookyTrait
             $res = json_decode($serverOutput, true);
             curl_close($ch);
 
-//            dd($res);
-            return $res;
+            dd($res);
             if (isset($res['PayUrl']) && !empty($res['ErrorMessage']) && $res['ErrorMessage'] === 'Success') {
 //                $parts = parse_url($res['PayUrl']);
 //                parse_str($parts['query'], $output);
