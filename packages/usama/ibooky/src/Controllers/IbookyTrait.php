@@ -91,6 +91,7 @@ trait IbookyTrait
 
 //            var_dump($paymentGatewayUrl);
 //            dd($postParams);
+            return($postParams);
 
             curl_setopt($ch, CURLOPT_URL, $paymentGatewayUrl);
             curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
