@@ -18,8 +18,8 @@ trait IbookyTrait
             $payerPhone = 'Payer Phone';
             $mid = env('IBOOKEY_MERCHANT_ID');
             $txnRefNo = mt_rand(1000000000000000, 9999999999999999);
-            $su = config('ibookey.returnUrl');
-            $fu = route('ibooky.errorUrl');
+            $su = env('IBOOKY_RETURN_URL');
+            $fu = env('IBOOKY_ERROR_URL');
             $amt = '10';
             $crossCat = "GEN";
             $secretKey = ENV('IBOOKEY_SECRET_KEY');
