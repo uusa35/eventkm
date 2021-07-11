@@ -166,6 +166,9 @@
             .tt-product:not(.tt-view) .tt-description, .tt-footer-col {
                 background-color: black !important;
             }
+            .dropdown .active {
+            background-color:  black !important;
+            }
         </style>
     @endif
 @endif
