@@ -12,6 +12,7 @@
 {{--    @include('frontend.wokiee.four.partials._users_slider',['title' => trans('general.our_personal_shoppers'), 'elements' => $designers])--}}
 {{--    @include('frontend.wokiee.four.partials.category._categories_slider_full_width', ['elements' => $homeCategoriesProduct, 'title' => trans('general.company_categories'), 'type' => 'user'])--}}
     @include('frontend.wokiee.four.partials.category._categories_slider', ['elements' => $homeCategoriesUser, 'title' => trans('general.company_categories'), 'type' => 'user','isGray' => true ])
+    @include('frontend.wokiee.four.partials.category._categories_slider', ['elements' => $homeCategoriesMarket, 'title' => trans('general.market_categories'), 'type' => 'user','isGray' => true ])
     @include('frontend.wokiee.four.partials._users_slider',['title' => trans('general.some_companies'), 'elements' => $companies])
     @include('frontend.wokiee.four.partials._users_slider',['title' => trans('general.small_business'), 'elements' => $designers, 'isGray' => true])
     @include('frontend.wokiee.four.partials.category._categories_slider', ['elements' => $homeCategoriesProduct, 'title' => trans('general.product_categories'), 'type' => 'product'])

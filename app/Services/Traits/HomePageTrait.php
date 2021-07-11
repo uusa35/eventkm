@@ -244,14 +244,19 @@ trait HomePageTrait
         $bestSaleCollections = OrderMeta::bestSaleCollections();
         $designers = User::active()->onHome()->designers()->with('role')->notAdmins()->hasProducts()->get();
         $companies = User::active()->onHome()->companies()->notAdmins()->hasProducts()->with('role')->get();
-        $homeCategoriesUser = Category::where(['is_user' => true ])->active()->onlyParent()->onHome()->isFeatured()->with(['children' => function ($q) {
-            return $q->where(['is_user' => true ])->active()->with(['children' => function ($q) {
-                return $q->where(['is_user' => true ])->active();
+        $homeCategoriesUser = Category::where(['is_user' => true])->active()->onlyParent()->onHome()->isFeatured()->with(['children' => function ($q) {
+            return $q->where(['is_user' => true])->active()->with(['children' => function ($q) {
+                return $q->where(['is_user' => true])->active();
+            }]);
+        }])->orderBy('order', 'desc')->get();
+        $homeCategoriesMarket = Category::where(['is_user' => true, 'is_product' => false])->active()->onlyParent()->onHome()->with(['children' => function ($q) {
+            return $q->where(['is_user' => true, 'is_product' => false])->active()->with(['children' => function ($q) {
+                return $q->where(['is_user' => true, 'is_product' => false])->active();
             }]);
         }])->orderBy('order', 'desc')->get();
         $homeCategoriesProduct = Category::where(['is_product' => true])->active()->onlyParent()->onHome()->isFeatured()->with(['children' => function ($q) {
             return $q->active()->with(['children' => function ($q) {
-                return $q->where(['is_user' => true ])->active();
+                return $q->where(['is_user' => true])->active();
             }]);
         }])->orderBy('order', 'desc')->get();
         return view('frontend.wokiee.four.home.istores', compact(
@@ -262,6 +267,7 @@ trait HomePageTrait
             'bestSalesProducts',
             'productHotDeals',
             'homeCategoriesUser',
+            'homeCategoriesMarket',
             'homeCategoriesProduct',
             'bestSaleCollections',
             'designers',
