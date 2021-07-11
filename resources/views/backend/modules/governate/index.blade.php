@@ -16,6 +16,7 @@
                             <th>{{trans('general.id')}}</th>
                             <th>{{trans('general.slug')}}</th>
                             <th>{{trans('general.order')}}</th>
+                            <th>{{trans('general.country')}}</th>
                             <th>{{trans('general.actions')}}</th>
                         </tr>
                     </thead>
@@ -24,6 +25,7 @@
                             <th>{{trans('general.id')}}</th>
                             <th>{{trans('general.slug')}}</th>
                             <th>{{trans('general.order')}}</th>
+                            <th>{{trans('general.country')}}</th>
                             <th>{{trans('general.actions')}}</th>
                         </tr>
                     </tfoot>
@@ -33,6 +35,7 @@
                             <td> {{$element->id}}</td>
                             <td> {{$element->slug}} </td>
                             <td> {{$element->order}} </td>
+                            <td> {{$element->country->slug}} </td>
                             <td>
                                 <div class="btn-group">
                                     <button type="button" class="btn green btn-xs btn-outline dropdown-toggle" data-toggle="dropdown"> {{trans('general.actions')}}
@@ -42,6 +45,10 @@
                                         <li>
                                             <a href="{{ route('backend.admin.governate.edit',$element->id) }}">
                                                 <i class="fa fa-fw fa-edit"></i> {{trans('general.edit')}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('backend.admin.area.create',['governate_id' => $element->id]) }}">
+                                                <i class="fa fa-fw fa-edit"></i> {{trans('general.create_area')}}</a>
                                         </li>
                                         <li>
                                             <a data-toggle="modal" href="#" data-target="#basic" data-title="Delete" data-content="Are you sure you want to delete term {{ $element->name }}? " data-form_id="delete-{{ $element->id }}">

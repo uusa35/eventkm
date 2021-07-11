@@ -41,6 +41,9 @@ class CategoryController extends Controller
         } elseif (env('HOMEKEY')) {
             $elements = Category::active()->onlyForServices()->paginate(self::TAKE);
             return view('frontend.wokiee.four.modules.category.homekey.index', compact('elements', 'categoriesList', 'vendors', 'areas', 'tags'));
+        } else {
+            $elements = Category::active()->paginate(self::TAKE);
+            return view('frontend.wokiee.four.modules.category.index', compact('elements'));
         }
 
     }

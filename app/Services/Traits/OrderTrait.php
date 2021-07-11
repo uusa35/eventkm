@@ -23,8 +23,8 @@ trait OrderTrait
     public function createQuestionnaireOrder(Questionnaire $questionnaire, User $user)
     {
         $order = Order::create([
-            'price' => $questionnaire->net_price,
-            'net_price' => $questionnaire->net_price,
+            'price' => (float) $questionnaire->net_price,
+            'net_price' => (float) $questionnaire->net_price,
             'mobile' => $questionnaire->mobile,
             'country' => $user->country->slug,
             'email' => $questionnaire->email,
@@ -33,7 +33,7 @@ trait OrderTrait
         ]);
         $orderMeta = $order->order_metas()->create([
             'qty' => 1,
-            'price' => $questionnaire->net_price,
+            'price' => (float) $questionnaire->net_price,
             'notes' => $questionnaire->notes,
             'item_name' => strtoupper(class_basename($questionnaire)),
             'item_type' => strtoupper(class_basename($questionnaire)),
@@ -58,8 +58,8 @@ trait OrderTrait
         $coupon = session()->has('coupon') ? session('coupon') : false;
         $country = Country::whereId($request->country_id)->first();
         $order = Order::create([
-            'price' => $this->getTotalPriceOfProductsOnly($this->cart),
-            'net_price' => getCartNetTotal(),
+            'price' => (float) $this->getTotalPriceOfProductsOnly($this->cart),
+            'net_price' => (float) getCartNetTotal(),
             'mobile' => $request->mobile,
             'country' => $country->name,
             'area' => $request->area ? $request->area : null,
@@ -68,10 +68,10 @@ trait OrderTrait
             'notes' => $request->notes,
             'user_id' => $user->id,
             'cash_on_delivery' => $request->has('cash_on_delivery') ? $request->cash_on_delivery : false,
-            'discount' => $coupon ? ($coupon->is_percentage ? ($this->cart->subTotal() * ($coupon->value / 100)) : $coupon->value) : 0,
+            'discount' => (float) $coupon ? ($coupon->is_percentage ? ($this->cart->subTotal() * ($coupon->value / 100)) : $coupon->value) : 0,
             'coupon_id' => $coupon ? $coupon['id'] : null,
             'payment_method' => $request->payment_method,
-            'shipment_fees' => $this->cart->content()->where('options.type', 'country')->first()->total(),
+            'shipment_fees' => (float) $this->cart->content()->where('options.type', 'country')->first()->total(),
             'receive_on_branch' => $request->has('receive_on_branch') ? $request->receive_on_branch : 0
         ]);
         $request->has('branch_id') && !is_null($request->branch_id) ? $order->update(['branch_id' => $request->branch_id]) : null;
@@ -87,7 +87,7 @@ trait OrderTrait
                         'item_name' => $element->options->element->name,
                         'item_type' => $element->options->type,
                         'qty' => $element->qty,
-                        'price' => $element->price,
+                        'price' => (float) $element->price,
                         'notes' => $element->options->notes ? $element->options->notes : null,
                         'product_size' => $element->options->size ? $element->options->size->name : null,
                         'product_color' => $element->options->color ? $element->options->color->name : null,
@@ -237,8 +237,8 @@ trait OrderTrait
                 }
             }
             $order = Order::create([
-                'price' => $request->price,
-                'net_price' => $request->net_price,
+                'price' => (float) $request->price,
+                'net_price' => (float) $request->net_price,
                 'mobile' => $request->mobile,
                 'country' => $user->country->slug,
                 'area' => $request->has('area') ? $request->area : 'N/A',
@@ -251,7 +251,7 @@ trait OrderTrait
                 'notes' => $request->notes,
                 'user_id' => $user->id,
                 'discount' => $request->discount,
-                'shipment_fees' => $request->shipment_fees,
+                'shipment_fees' => (float) $request->shipment_fees,
                 'coupon_id' => $request->has('coupon_id') ? $request->coupon_id : null,
                 'payment_method' => $request->payment_method,
                 'cash_on_delivery' => $request->cash_on_delivery,
@@ -283,7 +283,7 @@ trait OrderTrait
                             'order_id' => $order->id,
                             'service_id' => $item['service_id'],
                             'qty' => $item['qty'],
-                            'price' => $item['element']['finalPrice'],
+                            'price' => (float) $item['element']['finalPrice'],
                             'item_name' => $item['element']['name'],
                             'item_type' => $item['type'],
                             'notes' => $item['notes'] ? $item['notes'] : null,
@@ -342,11 +342,11 @@ trait OrderTrait
                         'name' => $meta->product->user->name,
                         'phone' => $meta->product->user->fullMobile,
                         'governorate_id' => $meta->product->user->area,
-                        'area_id' => $meta->product->user->area,
+                        'area_id' => $meta->product->user->localArea ? $meta->product->user->localArea->code : null,
                         'block' => $meta->product->user->block,
                         'street' => $meta->product->user->street,
                         'apartment' => $meta->product->user->appartment,
-                        'unit' => 'Floor :' .$meta->product->user->floor,
+                        'unit' => 'Floor :' . $meta->product->user->floor,
                         'location' => $meta->product->user->address,
                         'note' => 'Product Name : ' . $meta->product->name . ' - Product SKU : ' . $meta->product->sku,
                     ]);
@@ -357,7 +357,7 @@ trait OrderTrait
                 $prog_lang = 'other';
                 $data = [
                     'content' => 'Order Id : ' . $order->id,
-                    'cost' => $order->net_price,
+                    'cost' => (float) $order->net_price,
                     'payment_method' => $order->payment_method,
                     'default_sender ' => env('APP_NAME'),
 //                    'sender_name' => $sender->name,
@@ -391,9 +391,6 @@ trait OrderTrait
                         $pickupPoints
                     ],
                 ];
-//                $enc_method = 'AES-256-CBC';
-//                $enc_iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($enc_method));
-//                $requestData = openssl_encrypt(json_encode($data), $enc_method, $access_secret, 0, $enc_iv) . "::" . bin2hex($enc_iv);
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, $url);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

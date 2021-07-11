@@ -4,6 +4,7 @@ namespace App\Models;
 
 class Area extends PrimaryModel
 {
+    use ModelHelpers;
     protected $guarded = [''];
     protected $localeStrings = ['slug'];
 
@@ -41,4 +42,5 @@ class Area extends PrimaryModel
     {
         return $this->hasMany(Address::class);
     }
+
 }

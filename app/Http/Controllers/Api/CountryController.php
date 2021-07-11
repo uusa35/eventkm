@@ -17,8 +17,11 @@ class CountryController extends Controller
      */
     public function index()
     {
-        $elements = Country::active()->has('currency', '>', 0)->with('currency','governates.areas')->get();
-
+        $elements = Country::active()->has('currency', '>', 0)->with('currency')->has('governates', '>', 0)->has('governates.areas', '>', 0)->with(['governates' => function ($q) {
+            return $q->with(['areas' => function ($q) {
+                return $q->active();
+            }]);
+        }])->get();
         if ($elements->isNotEmpty()) {
             return response()->json(CountryLightResource::collection($elements), 200);
         }
@@ -54,7 +57,7 @@ class CountryController extends Controller
      */
     public function show($id)
     {
-        $element = Country::active()->whereId($id)->with('currency','areas')->first();
+        $element = Country::active()->whereId($id)->with('currency', 'areas')->first();
         if ($element) {
             return response()->json(new CountryLightResource($element), 200);
         }
@@ -97,22 +100,26 @@ class CountryController extends Controller
 
     public function getUserCountry()
     {
-        $element = Country::where('is_local', true)->with('currency','governates.areas')->first();
+        $element = Country::where('is_local', true)->with('currency')->with(['governates' => function ($q) {
+            return $q->with(['areas' => function ($q) {
+                return $q->active();
+            }]);
+        }])->first();
         return response()->json(new CountryLightResource($element), 200);
         if (app()->isLocal()) {
             $user_ip = array_random(['188.70.48.243', '176.17.238.199', '109.177.176.229']);
         } else {
             $user_ip = app()->isLocal() ? '188.70.48.243' : get_client_ip();
         }
-        $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
+        $geo = unserialize(file_get_contents("https://www.geoplugin.net/php.gp?ip=$user_ip"));
         $country = $geo["geoplugin_countryName"];
         $city = $geo["geoplugin_city"];
         $region = $geo["geoplugin_region"];
         if (request()->has('country_id')) {
-            $clientCountry = Country::where(['id' => request()->country_id, 'active' => true])->with('currency','areas')->first();
+            $clientCountry = Country::where(['id' => request()->country_id, 'active' => true])->with('currency', 'areas')->first();
             return response()->json(new CountryLightResource($clientCountry), 200);
         } else {
-            $clientCountry = $country ? Country::where('name', $country)->with('currency','areas')->first() : Country::where(['is_local', true])->with('currency','areas')->first();
+            $clientCountry = $country ? Country::where('name', $country)->with('currency', 'areas')->first() : Country::where(['is_local', true])->with('currency', 'areas')->first();
             if ($clientCountry) {
                 return response()->json(new CountryLightResource($clientCountry), 200);
             }

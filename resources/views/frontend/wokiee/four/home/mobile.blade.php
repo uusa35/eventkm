@@ -49,7 +49,7 @@
                                 <p class="card-text">{{ $element->description }}</p>
                                 </br>
                                 @if(request()->has('type'))
-                                    @if(env('EXPO'))
+                                    @if(env('EXPO') || env('ABATI'))
                                         @ios
                                         <div class="col-12">
                                             <a href="{{ env('APP_DEEP_LINK') }}{{ request()->type }}/{{ $element->id }}"

@@ -18,13 +18,13 @@
         <div class="container-indent">
             <div class="container container-fluid-custom-mobile-padding">
                 <div class="container">
-                    @if(!env('DESIGNERAAT'))
+                    @if(!config('app.DESIGNERAAT'))
                         <div class="col-lg-12 mb-5 mt-4">
                             @include('frontend.wokiee.four.partials._user_show_information')
                         </div>
                     @endif
                     {{--                <div class="col-md-4 col-lg-3 col-xl-3 leftColumn aside desctop-no-sidebar">--}}
-                    @if(env('DESIGNERAAT') || env('EVENTKM') || env('ISTORES'))
+                    @if(config('app.DESIGNERAAT') || config('app.EVENTKM') || config('app.ISTORES'))
                         <div class="col-lg-12 mt-5">
                             @if($products->isNotEmpty())
                                 @include('frontend.wokiee.four.partials._products_slider',['elements' => $products,'title' => trans('general.products')])
@@ -82,7 +82,7 @@
                     @endif
                     @if(ENV('MALLR') || ENV('DAILY'))
                         <div class="col-lg-12" style="padding-top: 20px;">
-                            @if(env('MALLR') && isset($element) && $element->isDesigner && isset($collections))
+                            @if(config('app.MALLR') && isset($element) && $element->isDesigner && isset($collections))
                                 <div class="row">
                                     <div class="col-12">
                                         <h4 class="text-lg-center">{{ trans('general.collections') }}</h4>

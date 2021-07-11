@@ -18,7 +18,7 @@ class AreaController extends Controller
     public function index()
     {
         $this->authorize('index','area');
-        $elements = Area::all();
+        $elements = Area::with('governate.country')->get();
         return view('backend.modules.area.index', compact('elements'));
     }
 
@@ -27,12 +27,19 @@ class AreaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $this->authorize('area.create');
+        $validate = validator($request->all(), [
+            'governate_id' => 'required|exists:governates,id',
+        ]);
+        if ($validate->fails()) {
+            return response()->json(['message' => $validate->errors()->first()], 400);
+        }
         $countries = Country::active()->get();
         $governates = Governate::active()->get();
-        return view('backend.modules.area.create', compact('countries', 'governates'));
+        $governate = Governate::whereId($request->governate_id)->first();
+        return view('backend.modules.area.create', compact('countries', 'governates','governate'));
     }
 
     /**

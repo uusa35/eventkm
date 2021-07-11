@@ -1,5 +1,5 @@
 <?php
-namespace Usama\Tap;
+namespace Usama\Tap\Contracts;
 use Illuminate\Http\Request;
 
 /**

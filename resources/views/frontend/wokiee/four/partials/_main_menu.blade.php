@@ -78,9 +78,9 @@
                             <i class="icon-f-39"></i>
                             <span class="tt-badge-cart">
                                 @if(Cart::instance('shopping')->content()->where('options.type', 'country')->first())
-                                    {{ Cart::instance('shopping')->count() - 1 }}
+                                    {{ (int) Cart::instance('shopping')->count() - 1 }}
                                 @else
-                                    {{ Cart::instance('shopping')->count() }}
+                                    {{ (int)Cart::instance('shopping')->count() }}
                                 @endif
                             </span>
                         </button>

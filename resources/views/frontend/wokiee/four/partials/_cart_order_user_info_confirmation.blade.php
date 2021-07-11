@@ -9,15 +9,19 @@
                             <form method="post"
                                   action="{{route('tap.web.payment.create') }}"
                             >
-                                @elseif($settings->payment_method === 'myfatoorah')
-                                    <form method="post"
-                                          action="{{route('myfatoorah.web.payment.create') }}"
-                                    >
-                                        @elseif($settings->payment_method === 'upayment')
-                                            <form method="post"
-                                                  action="{{route('upayment.web.payment.create') }}"
-                                            >
-                                                @endif
+                            @elseif($settings->payment_method === 'myfatoorah')
+                            <form method="post"
+                                  action="{{route('myfatoorah.web.payment.create') }}"
+                            >
+                            @elseif($settings->payment_method === 'upayment')
+                                <form method="post"
+                                      action="{{route('upayment.web.payment.create') }}"
+                                >
+                            @elseif($settings->payment_method === 'ibooky')
+                                <form method="post"
+                                      action="{{route('ibooky.web.payment.create') }}"
+                                >
+                            @endif
                                                 <input type="hidden" name="order_id" value="{{ $order->id }}">
                                                 @csrf
                                                 <div class="row">

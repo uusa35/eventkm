@@ -18,6 +18,7 @@ class GovernateLightResource extends JsonResource
             'id' => $this->id,
             'code' => $this->code,
             'slug' => $this->slug,
+            'country_id' => $this->country_id,
             'areas' => AreaLightResource::collection($this->whenLoaded('areas'))
         ];
     }

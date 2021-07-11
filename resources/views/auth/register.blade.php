@@ -54,16 +54,35 @@
                                         <input id="password-confirm" type="password" class="form-control"
                                                name="password_confirmation" required>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="country">{{ trans('general.country') }} *</label>
-                                        <select name="country_id" id="country" style="width: 100%; height: 40px;"
-                                                required>
-                                            <option value="">{{ trans('general.select_country') }}</option>
-                                            @foreach($countries as $country)
-                                                <option value="{{ $country->id }}">{{ $country->name}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                                    @if(env('ISTORES') || ENV('EXPO'))
+                                        @foreach($countries as $country)
+                                            @if($country->is_local)
+                                                <div class="form-group">
+                                                    <label for="country">{{ trans('general.country') }} *</label>
+                                                    <select name="country_id" id="country"
+                                                            style="width: 100%; height: 40px;"
+                                                            required>
+                                                        <option value="">{{ trans('general.select_country') }}</option>
+                                                        <option value="{{ $country->id }}">{{ $country->name}}</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="country">{{ trans('general.area') }} *</label>
+                                                    <select name="area_id" id="area"
+                                                            style="width: 100%; height: 40px;"
+                                                            required>
+                                                        <option value="">{{ trans('general.select_area') }}</option>
+                                                        @foreach($country->areas as $area)
+                                                            <option value="{{ $area->id }}">{{ $area->slug}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                    @else
+                                        <input type="hidden" name="area_id" value="1"/>
+                                    @endif
                                     <div class="form-group">
                                         <label for="name">{{ trans('general.mobile') }}*</label>
                                         {{--<div class="tt-required">* {{ trans('general.required_firleds') }}</div>--}}
@@ -83,9 +102,11 @@
                                             <label for="role">{{ trans('general.register_type') }} *</label>
                                             <select name="role_id" id="role" style="width: 100%; height: 40px;"
                                                     required>
-                                                <option value="">{{ trans('general.choose_register_type') }}</option>
+                                                <option
+                                                    value="">{{ trans('general.choose_register_type') }}</option>
                                                 @foreach($roles as $role)
-                                                    <option value="{{ $role->id }}" {{ $role->is_client ? 'selected' : '' }}>{{ $role->slug}}</option>
+                                                    <option
+                                                        value="{{ $role->id }}" {{ $role->is_client ? 'selected' : '' }}>{{ $role->slug}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -95,7 +116,9 @@
                                         <div class="col-12 text-center mb-3">
                                             {!! captcha_img('test') !!} </p>
                                         </div>
-                                        <input type="text" name="captcha" class="form-control {{ $errors->has('captcha') ? ' is-invalid' : '' }}" required autofocus>
+                                        <input type="text" name="captcha"
+                                               class="form-control {{ $errors->has('captcha') ? ' is-invalid' : '' }}"
+                                               required autofocus>
                                         @if ($errors->has('captcha'))
                                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('captcha') }}</strong>
@@ -105,7 +128,8 @@
                                     <div class="form-group">
                                         <input class="form-check-input" type="checkbox" name="remember"
                                                id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                        <label class="" for="remember" style="padding-left : 20px; padding-right: 20px;">
+                                        <label class="" for="remember"
+                                               style="padding-left : 20px; padding-right: 20px;">
                                             <a href="{{ route('frontend.terms') }}">
                                                 {{ trans('general.accept_our_terms_and_conditions')}}
                                             </a>
@@ -149,10 +173,10 @@
     <script>
         $('#remember').on('click', function(e) {
             if ($(this).prop("checked")) {
-                    $('#registerBtn').prop("disabled", false);
+                $('#registerBtn').prop("disabled", false);
             } else {
-                    $('#registerBtn').prop("disabled", true);
+                $('#registerBtn').prop("disabled", true);
             }
         })
     </script>
-    @endsection
+@endsection

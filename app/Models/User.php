@@ -23,7 +23,9 @@ class User extends Authenticatable
     protected $casts = [
         'on_home' => 'boolean',
         'active' => 'boolean',
-        'access_dashboard' => 'boolean'
+        'access_dashboard' => 'boolean',
+        'CustomeDelivery' => 'boolean',
+        'custome_delivery' => 'boolean'
     ];
 
     /**
@@ -189,5 +191,9 @@ class User extends Authenticatable
 
     public function addresses() {
         return $this->hasMany(Address::class);
+    }
+
+    public function localArea() {
+        return $this->belongsTo(Area::class,'area_id');
     }
 }

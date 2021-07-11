@@ -70,11 +70,11 @@ $factory->define(App\Models\User::class, function (Faker $faker)  {
         'balance' => $faker->numberBetween(5, 99),
         'on_home' => $faker->boolean(true),
         'is_male' => $faker->boolean,
-        'video_url_one' => 'http://www.youtube.com/embed/GhyKqj_P2E4',
-        'video_url_two' => 'http://www.youtube.com/embed/GhyKqj_P2E4',
-        'video_url_three' => 'http://www.youtube.com/embed/GhyKqj_P2E4',
-        'video_url_four' => 'http://www.youtube.com/embed/GhyKqj_P2E4',
-        'video_url_five' => 'http://www.youtube.com/embed/GhyKqj_P2E4',
+        'video_url_one' => 'https://www.youtube.com/embed/GhyKqj_P2E4',
+        'video_url_two' => 'https://www.youtube.com/embed/GhyKqj_P2E4',
+        'video_url_three' => 'https://www.youtube.com/embed/GhyKqj_P2E4',
+        'video_url_four' => 'https://www.youtube.com/embed/GhyKqj_P2E4',
+        'video_url_five' => 'https://www.youtube.com/embed/GhyKqj_P2E4',
         'player_id' => $faker->bankAccountNumber,
         'views' => $faker->numberBetween(10,999)
     ];

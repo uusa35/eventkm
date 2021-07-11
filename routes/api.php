@@ -1,13 +1,7 @@
 <?php
 
 use App\Events\MyEvent;
-use App\Http\Resources\ColorLightResource;
-use App\Http\Resources\ProductAttributeLightResource;
-use App\Http\Resources\ProductLightResource;
 use App\Http\Resources\UserResource;
-use App\Models\Color;
-use App\Models\Product;
-use App\Models\ProductAttribute;
 use Illuminate\Http\Request;
 
 
@@ -29,7 +23,7 @@ Route::group(['namespace' => 'Api'], function () {
     Route::group(['middleware' => 'auth:api'], function () {
         Route::resource('favorite', 'FavoriteController')->only(['index', 'store']);
         Route::resource('user', 'UserController')->only(['update']);
-        Route::post('mobile/resend/code','UserController@resendVerificationCode');
+        Route::post('mobile/resend/code', 'UserController@resendVerificationCode');
         Route::resource('fan', 'FanController')->only(['store']);
         Route::resource('rating', 'RatingController');
         Route::resource('comment', 'CommentController')->only(['store']);
@@ -73,21 +67,18 @@ Route::group(['namespace' => 'Api'], function () {
     Route::resource('faq', 'FaqController')->only(['index']);
     Route::resource('color', 'ColorController')->only(['index']);
     Route::resource('size', 'SizeController')->only(['index']);
+    Route::resource('post', 'PostController')->only(['index', 'show']);
+    Route::resource('currency', 'CurrencyController')->only(['index', 'show']);
     Route::post('map/event', function (Request $request) {
         event(new MyEvent($request->message, $request->id));
         return response()->json(['message' => $request->message, 'id' => $request->id], 200);
 
     });
     Route::get('mobile/code', 'UserController@verifyMobileCode');
+    Route::post('delivery/calculation', 'OrderController@calculateDeliveryChargeForApi');
 });
 Route::resource('order', 'Api\OrderController')->only(['store']);
-//Route::get('size', function () {
-//    $productAttribute = ProductAttribute::where(['product_id' => request()->product_id, 'color_id' => request()->color_id])->where('qty', '>', 0)->with('size')->get();
-//    return response()->json($productAttribute, 200);
-//});
-
 Route::get('colors', 'Api\ProductController@getColors');
-
 Route::get('qty', 'Api\ProductController@getQty');
 
 // getList of colors according to size for ProductShowScreen
@@ -99,5 +90,6 @@ Route::get('attribute/qty', 'Api\ProductController@getAttributeQty');
 // homekey special routes
 //Route::resource('homekey/category', 'Api\Homekey\CategoryController')->only(['index', 'show']);
 Route::post('attributes', 'Api\ProductController@getAttributes');
+
 
 

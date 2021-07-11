@@ -6,37 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/AddonStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/AddonStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/AddonUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/AddonUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/CategoryGroupStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/CategoryGroupStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/CategoryGroupUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/CategoryGroupUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/CategoryStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/CategoryStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/CategoryUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/CategoryUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/ClassifiedStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/ClassifiedStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/ClassifiedUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/ClassifiedUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/CollectionStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/CollectionStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/CollectionUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/CollectionUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/CountryStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/CountryStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/CurrencyStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/CurrencyStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/ItemStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/ItemStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/ItemUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/ItemUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/ProductStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/ProductStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/ProductUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/ProductUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/PropertyStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/PropertyStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/PropertyUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/PropertyUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/ServiceStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/ServiceStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/ServiceUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/ServiceUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/TimingStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/TimingStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/UserStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/UserStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Backend/UserUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/UserUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Frontend/ClassifiedStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Frontend/ClassifiedStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Frontend/ClassifiedUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Frontend/ClassifiedUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/Frontend/OrderStore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Frontend/OrderStore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Requests/SettingUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SettingUpdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/CategoryLightResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/CategoryLightResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/category/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/category/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/category/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/styles.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,14 +53,24 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/faq/index.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Resources/CountryLightResource.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/cart/index.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Api/CountryController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/assets/css/frontend-custom.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/CartController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.env" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_cart_order_user_info_confirmation.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/assets/css/frontend-custom-ar.css" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/routes/api.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Services/Traits/OrderTrait.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/ProductAttributeController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/styles.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/partials/styles.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyHelpers.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Api/CountryController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyTrait.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_cart_order_user_info.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/database/migrations/2021_02_24_045844_create_addresses_table.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/OrderController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JsBowerSettings">
     <exe-path>/usr/local/bin/bower</exe-path>
@@ -266,7 +247,6 @@
       <path value="$PROJECT_DIR$/vendor/milon/barcode" />
       <path value="$PROJECT_DIR$/vendor/jbroadway/urlify" />
       <path value="$PROJECT_DIR$/vendor/voku/stop-words" />
-      <path value="$PROJECT_DIR$/vendor/brotzka/laravel-dotenv-editor" />
       <path value="$PROJECT_DIR$/vendor/mews/captcha" />
       <path value="$PROJECT_DIR$/vendor/laravel/legacy-factories" />
       <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
@@ -278,7 +258,6 @@
       <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
       <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
       <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
-      <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
       <path value="$PROJECT_DIR$/vendor/vonage/nexmo-bridge" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-diactoros" />
@@ -286,6 +265,9 @@
       <path value="$PROJECT_DIR$/vendor/vonage/client" />
       <path value="$PROJECT_DIR$/vendor/nexmo/laravel" />
       <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/vendor/spatie/temporary-directory" />
+      <path value="$PROJECT_DIR$/vendor/spatie/db-dumper" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-backup" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
@@ -300,6 +282,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -308,7 +291,7 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js.eslint.nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/address" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -327,11 +310,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/address" />
-      <recent name="$PROJECT_DIR$/app/Policies" />
-      <recent name="$PROJECT_DIR$/resources/views/backend/modules" />
-      <recent name="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/setting" />
-      <recent name="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules" />
+      <recent name="$PROJECT_DIR$/app/Http/Resources" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/public/css" />
+      <recent name="$PROJECT_DIR$/public/js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Http" />
@@ -975,7 +958,73 @@
       <workItem from="1621356294817" duration="154000" />
       <workItem from="1621399348354" duration="767000" />
       <workItem from="1621416190106" duration="293000" />
-      <workItem from="1621487174381" duration="1476000" />
+      <workItem from="1621487174381" duration="3581000" />
+      <workItem from="1621507953907" duration="301000" />
+      <workItem from="1621757582021" duration="470000" />
+      <workItem from="1621774647214" duration="26462000" />
+      <workItem from="1622016914627" duration="291000" />
+      <workItem from="1622018454138" duration="11374000" />
+      <workItem from="1622134424902" duration="44000" />
+      <workItem from="1622302512748" duration="2542000" />
+      <workItem from="1622359536403" duration="11368000" />
+      <workItem from="1622526418462" duration="337000" />
+      <workItem from="1622526794652" duration="669000" />
+      <workItem from="1622529617363" duration="6453000" />
+      <workItem from="1623053816369" duration="1188000" />
+      <workItem from="1623132922780" duration="354000" />
+      <workItem from="1623149692911" duration="1211000" />
+      <workItem from="1623213708202" duration="540000" />
+      <workItem from="1623229404385" duration="205000" />
+      <workItem from="1623230658672" duration="3070000" />
+      <workItem from="1623241998651" duration="461000" />
+      <workItem from="1623242937302" duration="8864000" />
+      <workItem from="1623301570755" duration="19545000" />
+      <workItem from="1623491365490" duration="5164000" />
+      <workItem from="1623560781757" duration="2353000" />
+      <workItem from="1623666960868" duration="2033000" />
+      <workItem from="1623730360644" duration="16000" />
+      <workItem from="1623731950142" duration="3438000" />
+      <workItem from="1623738111616" duration="3936000" />
+      <workItem from="1623753885656" duration="1593000" />
+      <workItem from="1623764068553" duration="753000" />
+      <workItem from="1623822874381" duration="3131000" />
+      <workItem from="1624176688398" duration="555000" />
+      <workItem from="1624177934126" duration="116000" />
+      <workItem from="1624178136911" duration="2620000" />
+      <workItem from="1624193277125" duration="940000" />
+      <workItem from="1624249601876" duration="1221000" />
+      <workItem from="1624262717837" duration="917000" />
+      <workItem from="1624282789010" duration="449000" />
+      <workItem from="1624354978664" duration="6000" />
+      <workItem from="1624355011376" duration="1217000" />
+      <workItem from="1624436433649" duration="2248000" />
+      <workItem from="1624447296684" duration="528000" />
+      <workItem from="1624454194074" duration="1289000" />
+      <workItem from="1624459937269" duration="1849000" />
+      <workItem from="1624638341391" duration="18000" />
+      <workItem from="1624638653841" duration="30000" />
+      <workItem from="1624726465293" duration="2413000" />
+      <workItem from="1624769567246" duration="1595000" />
+      <workItem from="1624791122592" duration="212000" />
+      <workItem from="1624801249464" duration="740000" />
+      <workItem from="1624817119381" duration="470000" />
+      <workItem from="1624878713183" duration="317000" />
+      <workItem from="1624949900597" duration="284000" />
+      <workItem from="1624951259177" duration="260000" />
+      <workItem from="1625034749710" duration="268000" />
+      <workItem from="1625127115180" duration="89000" />
+      <workItem from="1625136207192" duration="410000" />
+      <workItem from="1625407398042" duration="2408000" />
+      <workItem from="1625459078947" duration="19000" />
+      <workItem from="1625460550379" duration="1908000" />
+      <workItem from="1625550283507" duration="698000" />
+      <workItem from="1625555015311" duration="3732000" />
+      <workItem from="1625643385612" duration="650000" />
+      <workItem from="1625647598426" duration="11535000" />
+      <workItem from="1625724595599" duration="1780000" />
+      <workItem from="1625741527263" duration="21000" />
+      <workItem from="1625750188896" duration="684000" />
+      <workItem from="1625935724413" duration="912000" />
     </task>
     <servers />
   </component>
@@ -997,6 +1046,20 @@
           <url>file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_cart_order_user_info.blade.php</url>
           <line>50</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyHelpers.php</url>
+          <line>475</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/database/migrations/2019_03_12_052107_create_country_shipmentpackage_pivot_table.php</url>
+          <line>28</line>
+          <properties>
+            <option name="className" value="\CreateCountryShipmentPackagePivotTable" />
+            <option name="methodName" value="down" />
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

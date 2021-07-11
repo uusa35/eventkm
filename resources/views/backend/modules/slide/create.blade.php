@@ -132,7 +132,7 @@
                                                        placeholder="{{ trans('general.url') }}">
                                                 <label for="form_control_1">{{ trans('general.url') }}</label>
                                                 <span
-                                                    class="help-block">full link is only allowed ('http://google.com')</span>
+                                                    class="help-block">full link is only allowed ('https://google.com')</span>
                                             </div>
                                         </div>
                                         @can('isAdminOrAbove')
@@ -258,13 +258,11 @@
                                 </div>
                             </div>
                         </div>
-
-
                         @can('isAdminOrAbove')
                             <div class="portlet box blue ">
                                 <div class="portlet-title">
                                     <div class="caption">
-                                        <i class="fa fa-gift"></i> {{ trans('general.more_details') }}
+                                        <i class="fa fa-gift"></i> {{ trans('general.slide_attributes_details') }}
                                     </div>
                                 </div>
                                 <div class="portlet-body form">
@@ -276,7 +274,7 @@
                                                          data-placement="top"
                                                          data-original-title="{{ trans('message.active') }}">
                                                         <input type="radio" id="radio51" name="active" value="1"
-                                                               class="md-radiobtn" checked>
+                                                               class="md-radiobtn" >
                                                         <label for="radio51">
                                                             <span></span>
                                                             <span class="check"></span>
@@ -285,7 +283,7 @@
                                                     </div>
                                                     <div class="md-radio">
                                                         <input type="radio" id="radio52" name="active" value="0"
-                                                               class="md-radiobtn">
+                                                               class="md-radiobtn" >
                                                         <label for="radio52">
                                                             <span></span>
                                                             <span class="check"></span>
@@ -300,7 +298,7 @@
                                                              data-placement="top"
                                                              data-original-title="{{ trans('message.on_home') }}">
                                                             <input type="radio" id="radio53" name="on_home" value="1"
-                                                                   class="md-radiobtn">
+                                                                   class="md-radiobtn" >
                                                             <label for="radio53">
                                                                 <span></span>
                                                                 <span class="check"></span>
@@ -309,7 +307,7 @@
                                                         </div>
                                                         <div class="md-radio">
                                                             <input type="radio" id="radio54" name="on_home" value="0"
-                                                                   class="md-radiobtn" checked>
+                                                                   class="md-radiobtn" >
                                                             <label for="radio54">
                                                                 <span></span>
                                                                 <span class="check"></span>
@@ -326,7 +324,7 @@
                                                              data-placement="top"
                                                              data-original-title="{{ trans('message.is_intro') }}">
                                                             <input type="radio" id="radio55" name="is_intro" value="1"
-                                                                   class="md-radiobtn"/>
+                                                                   class="md-radiobtn" >
                                                             <label for="radio55">
                                                                 <span></span>
                                                                 <span class="check"></span>
@@ -336,7 +334,7 @@
                                                         </div>
                                                         <div class="md-radio">
                                                             <input type="radio" id="radio56" name="is_intro" value="0"
-                                                                   class="md-radiobtn" checked>
+                                                                   class="md-radiobtn">
                                                             <label for="radio56">
                                                                 <span></span>
                                                                 <span class="check"></span>
@@ -349,11 +347,13 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         @else
                             <input type="hidden" name="active" value="1">
                             <input type="hidden" name="on_home " value="0">
-                        @endif
+                            <input type="hidden" name="is_intro" value="0">
+                        @endcan
                     </div>
                     @include('backend.partials.forms._btn-group')
                 </form>

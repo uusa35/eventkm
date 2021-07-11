@@ -34,12 +34,12 @@ class OneSignalController extends Notification
             ->subject("Your {$notifiable->service} account was approved!")
             ->subject("Your Usama account was approved!")
             ->body("Click here to see details.")
-            ->url('http://onesignal.com')
+            ->url('https://onesignal.com')
             ->webButton(
                 OneSignalWebButton::create('link-1')
                     ->text('Click here')
                     ->icon('https://upload.wikimedia.org/wikipedia/commons/4/4f/Laravel_logo.png')
-                    ->url('http://laravel.com')
+                    ->url('https://laravel.com')
             );
     }
 }

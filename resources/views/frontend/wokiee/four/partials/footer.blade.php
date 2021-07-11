@@ -82,11 +82,16 @@
                                 @if($faqs->isNotEmpty())
                                     <li><a href="{{ route('frontend.faq.index') }}">{{ trans('general.faqs') }}</a></li>
                                 @endif
-                                @if($settings->terms && strlen($settings->terms) > 20 )
+                                @if($settings->terms && strlen($settings->terms) > 100)
                                     <li>
                                         <a href="{{ route('frontend.terms') }}">{{ trans('general.terms_and_conditions') }}</a>
                                     </li>
                                 @endif
+                                    @if($settings->policy && strlen($settings->policy) > 100)
+                                        <li>
+                                            <a href="{{ route('frontend.policy') }}">{{ trans('general.company_policy') }}</a>
+                                        </li>
+                                    @endif
                                 @guest
                                     <li><a href="{{ route('register') }}">{{ trans('general.register') }}</a></li>
                                 @endguest

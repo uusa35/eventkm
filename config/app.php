@@ -1,5 +1,6 @@
 <?php
 
+use Usama\Ibooky\IbookyServiceProvider;
 use Usama\MyFatoorah\MyFatoorahServiceProvider;
 use Usama\Tap\TapServiceProvider;
 use Usama\Upayment\UpaymentServiceProvider;
@@ -18,6 +19,19 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'MALLR' => env('MALLR', false),
+    'HOMEKEY' => env('HOMEKEY', false),
+    'EXPO' => env('EXPO', false),
+    'BITS' => env('BITS', false),
+    'ESCRAP' => env('ESCRAP', false),
+    'ABATI' => env('ABATI', false),
+    'DAILY' => env('DAILY', false),
+    'HTB' => env('HTB', false),
+    'NASHKW' => env('NASHKW', false),
+    'EMAKEUP' => env('EMAKEUP', false),
+    'HUDA' => env('HUDA', false),
+    'DESIGNERAAT' => env('DESIGNERAAT', false),
+    'ISTORES' => env('ISTORES', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +70,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://localhost'),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -183,6 +197,7 @@ return [
         TapServiceProvider::class,
         UpaymentServiceProvider::class,
         MyFatoorahServiceProvider::class,
+        IbookyServiceProvider::class,
         // missing shopping cart
 
         Riverskies\Laravel\MobileDetect\MobileDetectServiceProvider::class,

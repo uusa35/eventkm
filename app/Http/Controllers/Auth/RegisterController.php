@@ -55,6 +55,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:6', 'confirmed'],
             'mobile' => 'string|max:10|min:5',
             'country_id' => ['required', 'integer', 'exists:countries,id'],
+            'area_id' => ['required', 'integer', 'exists:areas,id'],
             'role_id' => ['required', 'integer', 'exists:roles,id'],
             'captcha' => 'required|captcha'
         ]);
@@ -77,6 +78,7 @@ class RegisterController extends Controller
             'mobile' => $data['mobile'],
             'password' => Hash::make($data['password']),
             'country_id' => $data['country_id'],
+            'area_id' => $data['area_id'],
             'role_id' => $data['role_id'] ? $data['role_id'] : $role->id,
             'api_token' => rand(9999999, 99999999999).str_random(5),
         ]);

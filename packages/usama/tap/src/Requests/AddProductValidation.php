@@ -1,6 +1,5 @@
 <?php
-
-namespace Usama\Tap;
+namespace Usama\Tap\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

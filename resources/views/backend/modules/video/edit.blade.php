@@ -92,7 +92,7 @@
                                                        value="{{ $element->url }}"
                                                        placeholder="{{ trans('general.url') }}">
                                                 <label for="form_control_1">{{ trans('general.url') }}*</label>
-                                                <span class="help-block">full link is only allowed ('http://google.com')</span>
+                                                <span class="help-block">full link is only allowed ('https://google.com')</span>
                                             </div>
                                         </div>
                                         <div class="col-md-4">

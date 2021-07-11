@@ -40,6 +40,7 @@ class UserObserver
             'building' => $element->building,
             'country_name' => $element->country_name,
             'area' => $element->area,
+            'area_id' => $element->area_id,
             'country_id' => $element->country_id,
         ]);
         if (env('MAIL_ENABLED')) {

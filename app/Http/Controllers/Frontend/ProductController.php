@@ -7,6 +7,7 @@ use App\Jobs\IncreaseElementViews;
 use App\Models\Category;
 use App\Models\Color;
 use App\Models\Product;
+use App\Models\SellingModelHelpers;
 use App\Models\Size;
 use App\Models\User;
 use App\Services\Search\Filters;
@@ -62,7 +63,7 @@ class ProductController extends Controller
         $element = $this->product->whereId($id)->with([
             'product_attributes.color', 'product_attributes.size',
             'images', 'tags', 'categories', 'favorites', 'brand', 'color', 'size',
-            'shipment_package.countries'
+            'shipment_package.countries','user.localArea'
         ])->first();
         if ($element) {
             $this->dispatchNow(new IncreaseElementViews($element));

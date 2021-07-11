@@ -112,9 +112,7 @@ trait SellingModelHelpers
     public function getRelatedItems($item)
     {
         $categoriesId = $item->categories->pluck('id');
-        return $this->where(['user_id' => $item->user_id])->where('id', '!=', $item->id)->whereHas('categories', function ($q) use ($categoriesId) {
-            return $q->whereId($categoriesId);
-        })->active()->with('images', 'favorites')->take(10)->get();
+        return $this->where(['user_id' => $item->user_id])->where('id', '!=', $item->id)->active()->with('images', 'favorites')->take(10)->get();
     }
 
     public function getIsFavoritedAttribute()

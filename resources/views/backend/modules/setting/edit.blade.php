@@ -46,7 +46,7 @@
                                                 {{ trans('message.best_fit',['width' => '1024 px', 'height' => '1024px']) }}
                                             </div>
                                             <div class="help-block text-left">
-                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                                <a href="{{ url('https://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
@@ -68,7 +68,7 @@
                                             <span class="help-block">
                                                 {{ trans('message.best_fit',['width' => '600 px', 'height' => '221px']) }}</span>
                                             <span class="help-block">
-                                            <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                            <a href="{{ url('https://photopea.com') }}" target="_blank"
                                                class="text-info">
                                                 {{ trans('general.image_url') }}
                                             </a></span>
@@ -94,7 +94,7 @@
                                                 {{ trans('message.best_fit',['width' => '1242 px', 'height' => '2688px']) }}
                                     </span>
                                             <span class="help-block text-left">
-                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                                <a href="{{ url('https://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
@@ -122,7 +122,7 @@
                                                 {{ trans('message.best_fit',['width' => '1242 px', 'height' => '2688px']) }}
                                             </span>
                                             <span class="help-block text-left">
-                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                                <a href="{{ url('https://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
@@ -151,7 +151,7 @@
                                                 {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440 px']) }}
                                             </div>
                                             <span class="help-block text-left">
-                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                                <a href="{{ url('https://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
@@ -180,7 +180,7 @@
                                                 {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1850 px']) }}
                                             </div>
                                             <span class="help-block text-left">
-                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                                <a href="{{ url('https://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
@@ -207,7 +207,7 @@
                                             <span class="help-block">
                                                 {{ trans('message.best_fit',['width' => '750 px', 'height' => ' 750 px']) }}</span>
                                             <span class="help-block text-left">
-                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                                <a href="{{ url('https://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
@@ -238,7 +238,7 @@
                                                 {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440 px']) }}
                                             </div>
                                             <span class="help-block text-left">
-                                                <a href="{{ url('http://photopea.com') }}" target="_blank"
+                                                <a href="{{ url('https://photopea.com') }}" target="_blank"
                                                    class="text-info">
                                                     {{ trans('general.image_url') }}
                                                 </a>
@@ -1050,6 +1050,25 @@
                                                 <div class="form-group">
                                                     <label class="control-label sbold tooltips"
                                                            data-container="body" data-placement="top"
+                                                           data-original-title="{{ trans('message.global_custome_delivery') }}">{{ trans('general.global_custome_delivery') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="global_custome_delivery"
+                                                               id="optionsRadios3"
+                                                               {{ $element->global_custome_delivery ? 'checked' : null  }}
+                                                               value="1">
+                                                        {{ trans('general.yes') }}</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="global_custome_delivery"
+                                                               id="optionsRadios4"
+                                                               {{ !$element->global_custome_delivery ? 'checked' : null  }}
+                                                               value="0">
+                                                        {{ trans('general.no') }}</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold tooltips"
+                                                           data-container="body" data-placement="top"
                                                            data-original-title="{{ trans('message.shipment_fixed_rate') }}">{{ trans('general.shipment_fixed_rate') }}</label></br>
                                                     <label class="radio-inline">
                                                         <input type="radio" name="shipment_fixed_rate"
@@ -1084,31 +1103,59 @@
                                                         {{ trans('general.no') }}</label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label class="control-label">{{ trans('general.payment_method') }}
-                                                        *</label>
-                                                    <select name="payment_method" class="form-control  tooltips"
-                                                            data-container="body"
-                                                            data-placement="top"
-                                                            data-original-title="{{ trans('message.payment_method') }}"
-                                                    >
-                                                        <option>{{ trans('general.choose_payment_method') }}</option>
-                                                        <option
-                                                            value="myfatoorah" {{ $element->payment_method === 'myfatoorah' ? 'selected' : null }}>
-                                                            My Fatoorah
-                                                        </option>
-                                                        <option
-                                                            value="tap" {{ $element->payment_method === 'tap' ? 'selected' : null }}>
-                                                            Tap
-                                                        </option>
-                                                        <option
-                                                            value="upayment" {{ $element->payment_method === 'upayment' ? 'selected' : null }}>
-                                                            Upayment
-                                                        </option>
-                                                    </select>
+                                            <div class="col-lg-12">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">{{ trans('general.payment_method') }}
+                                                            *</label>
+                                                        <select name="payment_method" class="form-control  tooltips"
+                                                                data-container="body"
+                                                                data-placement="top"
+                                                                data-original-title="{{ trans('message.payment_method') }}"
+                                                        >
+                                                            <option>{{ trans('general.choose_payment_method') }}</option>
+                                                            <option
+                                                                value="myfatoorah" {{ $element->payment_method === 'myfatoorah' ? 'selected' : null }}>
+                                                                My Fatoorah
+                                                            </option>
+                                                            <option
+                                                                value="tap" {{ $element->payment_method === 'tap' ? 'selected' : null }}>
+                                                                Tap
+                                                            </option>
+                                                            <option
+                                                                value="upayment" {{ $element->payment_method === 'upayment' ? 'selected' : null }}>
+                                                                Upayment
+                                                            </option>
+                                                            <option
+                                                                value="ibooky" {{ $element->payment_method === 'ibooky' ? 'selected' : null }}>
+                                                                IBooky
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="form-group">
+                                                        <label for="form_control_1">{{ trans('general.apple_version') }}
+                                                            *</label>
+                                                        <input type="text" class="form-control" name="apple_version"
+                                                               placeholder="..."
+                                                               value="{{ $element->apple_version }}">
+                                                        <span class="help-block">{{ trans('general.apple_version') }}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="form-group">
+                                                        <label for="form_control_1">{{ trans('general.android_version') }}
+                                                            *</label>
+                                                        <input type="text" class="form-control" name="android_version"
+                                                               placeholder="..."
+                                                               value="{{ $element->android_version }}">
+                                                        <span
+                                                            class="help-block">{{ trans('general.android_version') }}</span>
+                                                    </div>
                                                 </div>
                                             </div>
+
                                         </div>
                                     @endif
                                 </div>

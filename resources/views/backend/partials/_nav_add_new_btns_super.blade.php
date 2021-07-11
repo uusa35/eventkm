@@ -19,6 +19,12 @@
            data-original-title="{{ trans('message.new_country') }}">
             <i class="icon-plus"></i> {{ trans('general.new_country') }}</a>
     </li>
+    <li>
+        <a href="{{ route('backend.admin.governate.create') }}" class="tooltips" data-container="body"
+           data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}"
+           data-original-title="{{ trans('message.new_governate') }}">
+            <i class="icon-plus"></i> {{ trans('general.new_governate') }}</a>
+    </li>
 @endcan
 @can('currency.create')
     <li>

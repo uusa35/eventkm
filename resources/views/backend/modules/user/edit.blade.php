@@ -103,7 +103,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-lg-4 col-md-6">
+                                        <div class="col-lg-3 col-md-6">
                                             <div class="form-group">
                                                 <label for="single"
                                                        class="control-label">{{ trans('general.country') }}
@@ -120,8 +120,25 @@
                                                 </select>
                                             </div>
                                         </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <div class="form-group">
+                                                <label for="single"
+                                                       class="control-label required">{{ trans('general.area') }}
+                                                    *</label>
+                                                <select id="single" class="form-control tooltips select2"
+                                                        data-container="body" data-placement="top"
+                                                        data-original-title="{{ trans('message.area') }}"
+                                                        name="area_id" required>
+                                                    <option>{{ trans('general.choose_area') }}</option>
+                                                    @foreach($areas as $area)
+                                                        <option
+                                                            value="{{ $area->id }}" {{ $element->area_id === $area->id ? 'selected' : '' }}>{{ $area->slug }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
                                         @can('isAdminOrAbove')
-                                            <div class="col-lg-4 col-md-6">
+                                            <div class="col-lg-3 col-md-6">
                                                 <div class="form-group">
                                                     <label for="single"
                                                            class="control-label">{{ trans('general.role') }}
@@ -150,7 +167,7 @@
 
                                         {{-- email + mobile --}}
 
-                                        <div class="col-lg-4 col-md-6">
+                                        <div class="col-lg-3 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                                 <label for="email"
@@ -262,7 +279,7 @@
                                                         {{ trans('message.best_fit',['width' => '1000 px', 'height' => '1000 px']) }}
                                                     </div>
                                                     <div class="help-block text-left">
-                                                        <a href="{{ url('http://photopea.com') }}" target="_blank">
+                                                        <a href="{{ url('https://photopea.com') }}" target="_blank">
                                                             {{ trans('general.image_url') }}
                                                         </a>
                                                     </div>
@@ -273,8 +290,8 @@
                                                     <img class="img-responsive img-sm" style="width : 60px"
                                                          src="{{ $element->imageThumbLink }}"
                                                          alt="">
-{{--                                                    <a href="{{ route("backend.admin.image.clear",['model' => 'user', 'id' => $element->id ]) }}"><i--}}
-{{--                                                            class="fa fa-fw fa-times"></i></a>--}}
+                                                    {{--                                                    <a href="{{ route("backend.admin.image.clear",['model' => 'user', 'id' => $element->id ]) }}"><i--}}
+                                                    {{--                                                            class="fa fa-fw fa-times"></i></a>--}}
                                                 </div>
                                             @endif
                                             <div class="col-lg-4 col-md-6">
@@ -292,7 +309,7 @@
                                                         {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440 px']) }}
                                                     </div>
                                                     <div class="help-block text-left">
-                                                        <a href="{{ url('http://photopea.com') }}" target="_blank">
+                                                        <a href="{{ url('https://photopea.com') }}" target="_blank">
                                                             {{ trans('general.image_url') }}
                                                         </a>
                                                     </div>
@@ -544,25 +561,30 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-lg-4 col-md-6">
-                                            <div
-                                                class="form-group{{ $errors->has('area') ? ' has-error' : '' }}">
-                                                <label for="area"
-                                                       class="control-label">{{ trans('general.area') }}</label>
-                                                <input id="area" type="text" class="form-control tooltips"
-                                                       data-container="body" data-placement="top"
-                                                       data-original-title="{{ trans('message.area') }}"
-                                                       name="area" placeholder="{{ trans('general.area') }}"
-                                                       value="{{ $element->area }}" autofocus>
-                                                @if ($errors->has('area'))
-                                                    <span class="help-block">
-                                                <strong>
-                                                    {{ $errors->first('area') }}
-                                                </strong>
-                                            </span>
-                                                @endif
-                                            </div>
-                                        </div>
+{{--                                        @if(env('MIRSAL_ENABLED'))--}}
+
+{{--                                        @else--}}
+{{--                                            <div class="col-lg-4 col-md-6">--}}
+{{--                                                <div--}}
+{{--                                                    class="form-group{{ $errors->has('area') ? ' has-error' : '' }}">--}}
+{{--                                                    <label for="area"--}}
+{{--                                                           class="control-label">{{ trans('general.area') }}</label>--}}
+{{--                                                    <input id="area" type="text" class="form-control tooltips"--}}
+{{--                                                           data-container="body" data-placement="top"--}}
+{{--                                                           data-original-title="{{ trans('message.area') }}"--}}
+{{--                                                           name="area"--}}
+{{--                                                           placeholder="{{ trans('general.area') }}"--}}
+{{--                                                           value="{{ $element->area }}" autofocus>--}}
+{{--                                                    @if ($errors->has('area'))--}}
+{{--                                                        <span class="help-block">--}}
+{{--                                                <strong>--}}
+{{--                                                    {{ $errors->first('area') }}--}}
+{{--                                                </strong>--}}
+{{--                                            </span>--}}
+{{--                                                    @endif--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        @endif--}}
                                         <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('block') ? ' has-error' : '' }}">
@@ -806,7 +828,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        @if(env('DESIGNERAAT') && auth()->user()->isAdminOrAbove)
+                                        @if(env('DESIGNERAAT') && auth()->user()->isAdminOrAbove || env('ISTORES'))
                                             <div class="col-lg-4 col-md-6">
                                                 <div
                                                     class="form-group{{ $errors->has('fixed_amount_subscription') ? ' has-error' : '' }}">
@@ -1264,7 +1286,9 @@
                                                        name="merchant_id"
                                                        placeholder="{{ trans('general.merchant_id') }}"
                                                        value="{{ $element->merchant_id }}"
-                                                       autofocus>
+                                                       autofocus
+                                                       required="{{ !$element->role->is_client }}"
+                                                >
                                                 @if ($errors->has('merchant_id'))
                                                     <span class="help-block">
                                                         <strong>
@@ -1384,7 +1408,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        @if(!$settings->multi_merchant && env('ISTORES'))
+                                        @if(!$settings->multi_cart_merchant && env('ISTORES'))
                                             <div class="col-md-6">
                                                 <div
                                                     class="form-group{{ $errors->has('start_subscription') ? ' has-error' : '' }}">
@@ -1409,6 +1433,39 @@
                                                     </span> --}}
                                                 </div>
                                             </div>
+                                            @if(auth()->user()->isSuper && !$settings->multi_cart_merchant && $settings->global_custome_delivery)
+                                                <div class="col-lg-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label sbold tooltips"
+                                                               data-container="body" data-placement="top"
+                                                               data-original-title="{{ trans('message.custome_delivery') }}">{{ trans('general.custome_delivery') }}</label></br>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="custome_delivery"
+                                                                   id="optionsRadios3"
+                                                                   {{ $element->custome_delivery ? 'checked' : null  }}
+                                                                   value="1">
+                                                            {{ trans('general.yes') }}</label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="custome_delivery"
+                                                                   id="optionsRadios4"
+                                                                   {{ !$element->custome_delivery ? 'checked' : null  }}
+                                                                   value="0">
+                                                            {{ trans('general.no') }}</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="form-group">
+                                                        <label
+                                                            for="form_control_1">{{ trans('general.custome_delivery_fees') }}
+                                                            *</label>
+                                                        <input type="text" class="form-control"
+                                                               name="custome_delivery_fees" placeholder="..."
+                                                               value="{{ $element->custome_delivery_fees }}">
+                                                        <span
+                                                            class="help-block">{{ trans('general.company_custome_delivery_feesabic') }}</span>
+                                                    </div>
+                                                </div>
+                                            @endcan
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label

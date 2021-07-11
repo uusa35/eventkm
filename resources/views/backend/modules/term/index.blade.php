@@ -15,7 +15,7 @@
                         Roles are very important for the application.
                     </p>
                     <p> Some Information about roles.
-                        <a class="btn red btn-outline" href="http://datatables.net/" target="_blank">the official
+                        <a class="btn red btn-outline" href="https://datatables.net/" target="_blank">the official
                             documentation</a>
                     </p>
                 </div>

@@ -1,364 +1,364 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+      xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="https://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
 <url>
-  <loc>http://abatiapp.com/</loc>
+  <loc>https://i-stores.store/</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/register</loc>
+  <loc>https://i-stores.store/register</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/login</loc>
+  <loc>https://i-stores.store/login</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/home</loc>
+  <loc>https://i-stores.store/home</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/cart</loc>
+  <loc>https://i-stores.store/cart</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/23/Shaikha%20Daraa</loc>
+  <loc>https://i-stores.store/product/23/Shaikha%20Daraa</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?user_id=3</loc>
+  <loc>https://i-stores.store/search/product?user_id=3</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?brand_id=1</loc>
+  <loc>https://i-stores.store/search/product?brand_id=1</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/11/Black%20Jakar%20Collar</loc>
+  <loc>https://i-stores.store/product/11/Black%20Jakar%20Collar</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/10/Danteel%20Abaya</loc>
+  <loc>https://i-stores.store/product/10/Danteel%20Abaya</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/2/Velvet%20Jacket</loc>
+  <loc>https://i-stores.store/product/2/Velvet%20Jacket</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/8/Model%2031%20Zipper</loc>
+  <loc>https://i-stores.store/product/8/Model%2031%20Zipper</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/password/reset</loc>
+  <loc>https://i-stores.store/password/reset</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product</loc>
+  <loc>https://i-stores.store/search/product</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=18&amp;size_id=11</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=18&amp;size_id=11</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=18&amp;size_id=10</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=18&amp;size_id=10</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=18&amp;size_id=9</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=18&amp;size_id=9</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=18&amp;size_id=8</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=18&amp;size_id=8</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=18&amp;size_id=7</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=18&amp;size_id=7</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=18&amp;size_id=2</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=18&amp;size_id=2</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=18&amp;size_id=3</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=18&amp;size_id=3</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=18&amp;size_id=5</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=18&amp;size_id=5</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=18&amp;size_id=6</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=18&amp;size_id=6</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=18&amp;size_id=1</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=18&amp;size_id=1</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=18&amp;size_id=4</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=18&amp;size_id=4</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=18&amp;color_id=4</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=18&amp;color_id=4</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/24/Model%209</loc>
+  <loc>https://i-stores.store/product/24/Model%209</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/20/Kloosh%20Abaya</loc>
+  <loc>https://i-stores.store/product/20/Kloosh%20Abaya</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/15/Black%20Cardigan%20Set</loc>
+  <loc>https://i-stores.store/product/15/Black%20Cardigan%20Set</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/14/Layered%20top&amp;%20skirt%20Set</loc>
+  <loc>https://i-stores.store/product/14/Layered%20top&amp;%20skirt%20Set</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/13/Model%2062%20BLACK</loc>
+  <loc>https://i-stores.store/product/13/Model%2062%20BLACK</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/12/Set%20Of%20Three</loc>
+  <loc>https://i-stores.store/product/12/Set%20Of%20Three</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=19&amp;min=0&amp;max=100</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=19&amp;min=0&amp;max=100</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/26/Jacket%20with%20Shaila</loc>
+  <loc>https://i-stores.store/product/26/Jacket%20with%20Shaila</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/25/Middle%20Line%20Jacket</loc>
+  <loc>https://i-stores.store/product/25/Middle%20Line%20Jacket</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/21/Ribbon%20Jacket</loc>
+  <loc>https://i-stores.store/product/21/Ribbon%20Jacket</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/19/Danteel%20Collar%20Jacket</loc>
+  <loc>https://i-stores.store/product/19/Danteel%20Collar%20Jacket</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/18/Feather%20Jacket%20%28%20Bronze%20%29</loc>
+  <loc>https://i-stores.store/product/18/Feather%20Jacket%20%28%20Bronze%20%29</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/17/Black%20Jakar%203</loc>
+  <loc>https://i-stores.store/product/17/Black%20Jakar%203</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=20&amp;min=0&amp;max=100</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=20&amp;min=0&amp;max=100</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=20&amp;user_id=3</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=20&amp;user_id=3</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=20&amp;size_id=4</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=20&amp;size_id=4</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=20&amp;size_id=11</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=20&amp;size_id=11</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=20&amp;size_id=10</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=20&amp;size_id=10</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=20&amp;size_id=8</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=20&amp;size_id=8</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=20&amp;size_id=3</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=20&amp;size_id=3</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=20&amp;size_id=7</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=20&amp;size_id=7</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=20&amp;size_id=5</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=20&amp;size_id=5</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=20&amp;size_id=9</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=20&amp;size_id=9</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=20&amp;size_id=6</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=20&amp;size_id=6</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=20&amp;size_id=2</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=20&amp;size_id=2</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=20&amp;color_id=4</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=20&amp;color_id=4</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/22/Reema%20Daraa</loc>
+  <loc>https://i-stores.store/product/22/Reema%20Daraa</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=21&amp;min=0&amp;max=100</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=21&amp;min=0&amp;max=100</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=21&amp;user_id=3</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=21&amp;user_id=3</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=21&amp;size_id=4</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=21&amp;size_id=4</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=21&amp;size_id=11</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=21&amp;size_id=11</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=21&amp;size_id=10</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=21&amp;size_id=10</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=21&amp;size_id=8</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=21&amp;size_id=8</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=21&amp;size_id=6</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=21&amp;size_id=6</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=21&amp;size_id=3</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=21&amp;size_id=3</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=21&amp;size_id=7</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=21&amp;size_id=7</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=21&amp;size_id=5</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=21&amp;size_id=5</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=21&amp;size_id=2</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=21&amp;size_id=2</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=21&amp;size_id=13</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=21&amp;size_id=13</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=21&amp;color_id=4</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=21&amp;color_id=4</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/27/Shaila%203</loc>
+  <loc>https://i-stores.store/product/27/Shaila%203</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=22&amp;min=0&amp;max=100</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=22&amp;min=0&amp;max=100</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=24&amp;size_id=2</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=24&amp;size_id=2</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=24&amp;size_id=3</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=24&amp;size_id=3</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?product_category_id=24&amp;color_id=4</loc>
+  <loc>https://i-stores.store/search/product?product_category_id=24&amp;color_id=4</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
@@ -366,127 +366,127 @@
 
 
 <url>
-  <loc>http://abatiapp.com/user/3/Dailydress</loc>
+  <loc>https://i-stores.store/user/3/Dailydress</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?user_id=3&amp;min=0&amp;max=100</loc>
+  <loc>https://i-stores.store/search/product?user_id=3&amp;min=0&amp;max=100</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?</loc>
+  <loc>https://i-stores.store/search/product?</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?user_id=3&amp;size_id=11</loc>
+  <loc>https://i-stores.store/search/product?user_id=3&amp;size_id=11</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/27/%D9%85%D9%84%D9%81%D8%B9</loc>
+  <loc>https://i-stores.store/product/27/%D9%85%D9%84%D9%81%D8%B9</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/24/%D9%85%D9%88%D8%AF%D9%8A%D9%84%209</loc>
+  <loc>https://i-stores.store/product/24/%D9%85%D9%88%D8%AF%D9%8A%D9%84%209</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/15/%D8%B7%D9%82%D9%85%20%D9%83%D8%A7%D8%B1%D8%AF%D9%8A%D8%BA%D8%A7%D9%86%20%D9%88%20%D9%81%D8%B3%D8%AA%D8%A7%D9%86%20%D8%AD%D9%81%D8%B1</loc>
+  <loc>https://i-stores.store/product/15/%D8%B7%D9%82%D9%85%20%D9%83%D8%A7%D8%B1%D8%AF%D9%8A%D8%BA%D8%A7%D9%86%20%D9%88%20%D9%81%D8%B3%D8%AA%D8%A7%D9%86%20%D8%AD%D9%81%D8%B1</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?user_id=3&amp;page=2</loc>
+  <loc>https://i-stores.store/search/product?user_id=3&amp;page=2</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?brand_id=1&amp;min=0&amp;max=100</loc>
+  <loc>https://i-stores.store/search/product?brand_id=1&amp;min=0&amp;max=100</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?brand_id=1&amp;user_id=3</loc>
+  <loc>https://i-stores.store/search/product?brand_id=1&amp;user_id=3</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?brand_id=1&amp;size_id=8</loc>
+  <loc>https://i-stores.store/search/product?brand_id=1&amp;size_id=8</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?brand_id=1&amp;size_id=2</loc>
+  <loc>https://i-stores.store/search/product?brand_id=1&amp;size_id=2</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/14/%D8%B7%D9%82%D9%85%20%D9%85%D9%86%20%D9%82%D8%B7%D8%B9%D8%AA%D9%8A%D9%86%20%D9%82%D9%85%D9%8A%D8%B5%20%D8%B7%D9%88%D9%8A%D9%84%20%D9%88%20%D8%AA%D9%86%D9%88%D8%B1%D8%A9</loc>
+  <loc>https://i-stores.store/product/14/%D8%B7%D9%82%D9%85%20%D9%85%D9%86%20%D9%82%D8%B7%D8%B9%D8%AA%D9%8A%D9%86%20%D9%82%D9%85%D9%8A%D8%B5%20%D8%B7%D9%88%D9%8A%D9%84%20%D9%88%20%D8%AA%D9%86%D9%88%D8%B1%D8%A9</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?brand_id=1&amp;page=2</loc>
+  <loc>https://i-stores.store/search/product?brand_id=1&amp;page=2</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?min=0&amp;max=100</loc>
+  <loc>https://i-stores.store/search/product?min=0&amp;max=100</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?size_id=11</loc>
+  <loc>https://i-stores.store/search/product?size_id=11</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?size_id=10</loc>
+  <loc>https://i-stores.store/search/product?size_id=10</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?size_id=3</loc>
+  <loc>https://i-stores.store/search/product?size_id=3</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?size_id=9</loc>
+  <loc>https://i-stores.store/search/product?size_id=9</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?size_id=8</loc>
+  <loc>https://i-stores.store/search/product?size_id=8</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?size_id=2</loc>
+  <loc>https://i-stores.store/search/product?size_id=2</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?color_id=7</loc>
+  <loc>https://i-stores.store/search/product?color_id=7</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/search/product?page=2</loc>
+  <loc>https://i-stores.store/search/product?page=2</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/13/%D9%85%D9%88%D8%AF%D9%8A%D9%84%2062</loc>
+  <loc>https://i-stores.store/product/13/%D9%85%D9%88%D8%AF%D9%8A%D9%84%2062</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://abatiapp.com/product/12/%D8%B7%D9%82%D9%85%20%D9%85%D9%86%20%D8%AB%D9%84%D8%A7%D8%AB%D8%A9%20%D9%82%D8%B7%D8%B9</loc>
+  <loc>https://i-stores.store/product/12/%D8%B7%D9%82%D9%85%20%D9%85%D9%86%20%D8%AB%D9%84%D8%A7%D8%AB%D8%A9%20%D9%82%D8%B7%D8%B9</loc>
   <lastmod>2020-05-05T07:38:45+00:00</lastmod>
   <priority>0.51</priority>
 </url>

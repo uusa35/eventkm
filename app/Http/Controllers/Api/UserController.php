@@ -41,7 +41,7 @@ class UserController extends Controller
         if (request()->has('category_id')) {
             $elements = $this->element->active()->companies()->notAdmins()->hasProducts()->whereHas('categories', function ($q) {
                 return $q->where(['category_id' => request()->category_id]);
-            })->paginate(env('EXPO') ? self::TAKE : self::TAKE_MIN);
+            })->paginate(self::TAKE_MIN);
         } elseif (request()->has('type')) {
             $elements = $this->element->active()->whereHas('role', function ($q) {
                 return $q->where(request()->type, true);
@@ -49,7 +49,7 @@ class UserController extends Controller
             if (request()->has('on_home')) {
                 $elements = $elements->where('on_home', request()->on_home);
             }
-            $elements = $elements->notAdmins()->hasProducts()->paginate(env('EXPO') ? SELF::TAKE : self::TAKE_MIN);
+            $elements = $elements->notAdmins()->hasProducts()->paginate(self::TAKE_MIN);
         }
         if (isset($elements) && $elements->isNotEmpty()) {
             return response()->json(UserLightResource::collection($elements), 200);
@@ -64,9 +64,9 @@ class UserController extends Controller
             return response()->json(['message' => $validator->errors()->first()], 400);
         }
         if (request()->has('is_celebrity')) {
-            $elements = $this->element->filters($filters)->active()->notAdmins()->orderBy('id', 'desc')->paginate(env('EXPO') ? self::TAKE : self::TAKE_MIN);
+            $elements = $this->element->filters($filters)->active()->notAdmins()->orderBy('id', 'desc')->paginate(self::TAKE_MID);
         } else {
-            $elements = $this->element->filters($filters)->active()->notAdmins()->hasProducts()->orderBy('id', 'desc')->paginate(env('EXPO') ? self::TAKE : self::TAKE_MIN);
+            $elements = $this->element->filters($filters)->active()->notAdmins()->has('products','>',0)->orderBy('id', 'desc')->paginate(self::TAKE_MID);
         }
         if (!$elements->isEmpty()) {
             return response()->json(UserExtraLightResource::collection($elements), 200);
@@ -127,7 +127,7 @@ class UserController extends Controller
             }])
             ->with(['comments' => function ($q) {
                 return $q->active()->with('owner')->orderBy('created_at', 'desc');
-            }])->first();
+            }])->with('localArea')->first();
         if ($element) {
             IncreaseElementViews::dispatch($element);
             return response()->json(new UserResource($element), 200);
@@ -246,7 +246,8 @@ class UserController extends Controller
             'address' => 'max:500|nullable',
             'country_id' => 'required|exists:countries,id',
             'description' => 'min:4|max:1000|nullable',
-            'role_id' => 'exists:roles,id'
+            'role_id' => 'exists:roles,id',
+            'area_id' => 'exists:areas,id'
         ]);
         if ($validate->fails()) {
             return response()->json(['message' => $validate->errors()->first()], 400);
@@ -260,6 +261,7 @@ class UserController extends Controller
             'mobile' => $request->mobile,
             'player_id' => $request->has('player_id') ? $request->player_id : null,
             'country_id' => $request->country_id,
+            'area_id' => $request->area_id,
             'role_id' => $request->role_id ? $request->role_id : Role::where('is_client', true)->first()->id,
             'api_token' => rand(9999999, 99999999999),
             'address' => $request->address,
@@ -267,7 +269,8 @@ class UserController extends Controller
             'description_en' => $request->description,
             'is_male' => $request->has('is_male') ? $request->is_male : false,
             'access_dashboard' => false,
-            'mobile_verified' => true
+            'mobile_verified' => true,
+            'on_home' => false
         ]);
         if ($element) {
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1000', '1000'], true) : null;
@@ -339,7 +342,7 @@ class UserController extends Controller
             return $q->active()->notExpired()->hasImage()->available()->with('items.property', 'items.categoryGroup');
         }])->with(['myFannedList' => function ($q) {
             return $q->active()->companies();
-        }])->with('addresses', 'role')->first();
+        }])->with('addresses', 'role')->with('localArea')->first();
     }
 
     public function resendVerificationCode(Request $request)

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\UserStore;
 use App\Http\Requests\Backend\UserUpdate;
+use App\Models\Area;
 use App\Models\Category;
 use App\Models\Country;
 use App\Models\Order;
@@ -85,7 +86,8 @@ class UserController extends Controller
             }]);
         }])->get();
         $products = Product::active()->available()->hasImage()->serveCountries()->hasStock()->get();
-        return view('backend.modules.user.edit', compact('element', 'roles', 'countries', 'categories', 'products'));
+        $areas = Area::active()->get();
+        return view('backend.modules.user.edit', compact('element', 'roles', 'countries', 'categories', 'products','areas'));
     }
 
     /**

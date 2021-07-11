@@ -2,7 +2,7 @@
 <div class="element-item {{ $loop->index === 1 ? 'double-size hidden-xs' : null  }}">
     <div class="tt-product-design02 thumbprod-center">
         <div class="tt-image-box">
-            <a href="{{ route('frontend.product.search',['collection_id' => $collection_id]) }}">
+            <a href="{{ route('frontend.product.show', $element->id) }}">
                 <span class="tt-img"><img src="{{ $element->imageThumbLink }}" alt="{{ $element->name }}"></span>
             </a>
             @if($element->isReallyHot && $double)

@@ -38,7 +38,7 @@
         flex: 0 0 77.5%;
     }
 
-    @if(env('MALLR') || env('ABATI'))
+    @if(config('app.MALLR') || config('app.ABATI'))
 
     body, html, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, td, thead, tfoot, span, .btn, ul, li,
     .container, .tt-title-small, .tt-description, header, footer
@@ -53,13 +53,10 @@
        font-family: 'skynews', 'sans-serif' !important;
         @else
        font-family: 'Tajawal-Medium', 'sans-serif' !important;
-    @endif
-
-
-
+        @endif
     }
 
-    @elseif(env('DAILY') || env('HTB'))
+    @elseif(config('app.DAILY') || config('app.HTB'))
     body, html, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, td, thead, tfoot, span, .btn, ul, li,
     .container, .tt-title-small, .tt-description, header, footer
     .tt-collapse-title, .tt-collapse-content, .tt-collapse-block .tt-item .tt-collapse-title,
@@ -76,7 +73,7 @@
 
     }
 
-    @elseif(env('ESCRAP') || env('HOMEKEY') || env('EXPO') || env('HUDA') || env('DESIGNERAAT') || env('ISTORES'))
+    @elseif(config('app.ESCRAP') || config('app.HOMEKEY') || config('app.EXPO') || config('app.HUDA') || config('app.DESIGNERAAT') || config('app.ISTORES'))
     body, html, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, td, thead, tfoot, span, .btn, ul, li,
     .container, .tt-title-small, .tt-description, header, footer
     .tt-collapse-title, .tt-collapse-content, .tt-collapse-block .tt-item .tt-collapse-title,
@@ -92,16 +89,98 @@
 
     }
 
+    @else
+    body, html, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, td, thead, tfoot, span, .btn, ul, li,
+    .container, .tt-title-small, .tt-description, header, footer
+    .tt-collapse-title, .tt-collapse-content, .tt-collapse-block .tt-item .tt-collapse-title,
+    .tt-label, .tt-label-sale, tt-label-new, tt-label tt-label-our-fatured,
+    .tt-product-single-info .tt-label [class^=tt-label], .tt-collapse-title,
+    .tt-collapse-content, .tt-title-options, .form-group, .form, .tt-table-03, select, option, .form-default select.form-control:not([size]):not([multiple])
+    .form-default .form-group, label, label:not(.error), .tt-cart-total-title, .tt-cart-total-price, .tt-title-large, .tt-title {
+        @if(app()->isLocale('ar'))
+       font-family: 'GE SS Unique', 'sans-serif' !important;
+        @else
+       font-family: 'Tajawal-Medium', 'sans-serif' !important;
+        @endif
     @endif
+</style>
 
+@if(config('app.EVENTKM'))
+    @if(app()->getLocale() === 'en')
+        <style type="text/css">
+            body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tfoot, button, span, .btn, .btn-del, ul, li, .page-content, .portlet, .light, .profile-sidebar-portlet {
+                /*font-family: 'sst-arabic-bold', 'sans-serif' !important;*/
+                font-family: 'Poppins', 'sans-serif' !important;
+                /*text-transform: uppercase !important;*/
+            }
+
+            .tt-desctop-menu nav > ul > li.dropdown > a {
+                font-size: large !important;
+            }
+
+            .alert-danger i {
+                color: red !important;
+            }
+
+            .alert-danger {
+                color: #000000;
+                background-color: #ffffff;
+                border-color: #000000;
+            }
+
+            .page-link, .page-item.disabled .page-link {
+                border: none !important;
+                background-color: transparent !important;
+            }
+
+            .tt-product:not(.tt-view) .tt-description, .tt-footer-col {
+                background-color: black !important;
+            }
+        </style>
+    @else
+        <style type="text/css">
+            body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tfoot, button, span, .btn, .btn-del, ul, li, .page-content, .portlet, .light, .profile-sidebar-portlet {
+                font-family: 'GE SS Unique', 'sans-serif' !important;
+                text-transform: uppercase !important;
+            }
+
+            .tt-desctop-menu nav > ul > li.dropdown > a {
+                font-size: large !important;
+            }
+
+            .alert-danger i {
+                color: red !important;
+            }
+
+            .alert-danger {
+                color: #000000;
+                background-color: #ffffff;
+                border-color: #000000;
+            }
+
+            .page-link, .page-item.disabled .page-link {
+                border: none !important;
+                background-color: transparent !important;
+            }
+
+            .tt-product:not(.tt-view) .tt-description, .tt-footer-col {
+                background-color: black !important;
+            }
+            .dropdown .active {
+            background-color:  black !important;
+            }
+        </style>
+    @endif
+@endif
+<style>
     body, .tt-show, .page-link, .page-item.active, .page-link, .page-item.disabled {
         color: {{ $settings->main_theme_color ? $settings->main_theme_color : 'white' }};
         background-color: {{ $settings->main_theme_bg_color ? $settings->main_theme_bg_color : 'white' }};
     }
 
-    p, .tt-collapse-content p, .tt-shopcart-table01 td, .tt-shopcart-table01 th, {
-        color: {{ $settings->main_theme_color ? $settings->main_theme_color : 'white' }}                 !important;
-    }
+    /*p, .tt-collapse-content p, .tt-shopcart-table01 td, .tt-shopcart-table01 th {*/
+{{--        color: {{ $settings->main_theme_color ? $settings->main_theme_color : 'white' }}                 !important;--}}
+/*    }*/
 
     header, .tt-color-scheme-01, .tt-footer-center, footer .tt-footer-custom:last-child
     .tt-color-scheme-02,
@@ -111,7 +190,7 @@
     }
 
     footer .tt-color-scheme-02, footer, .tt-footer-center, footer .tt-footer-custom:last-child, footer p , footer .tt-collapse-title, footer .tt-title , footer .tt-list,
-    footer li a, footer a, footer div , footer span, footer .tt-collapse-content a {
+    footer li a, footer a, footer div , footer span, footer .tt-collapse-content a , footer .tt-collapse-content , footer address , footer p , footer i {
         color: {{ $settings->footer_theme_color }}                    !important;
         background-color: {{ $settings->footer_bg_theme_color }}                    !important;
     }
@@ -121,9 +200,14 @@
         color: {{ $settings->footer_theme_color }}                    !important;
     }
 
+
+    .btn {
+        color: {{ $settings->btn_text_theme_color }} !important;
+        background-color: {{ $settings->btn_bg_theme_color }}  !important;
+    }
+
     .btn, .tt-btn-search-rtl, .tt-btn-search,
     .tt-menu-toggle.stylization-02,
-    .tt-product:not(.tt-view) .tt-image-box,
     .btn-link, .btn-link:focus,
     .btn.btn-small:hover,
     .tt-back-to-top,
@@ -133,8 +217,8 @@
     ul.tt-options-swatch li.active a:not(.options-color):not(.options-color-img), ul.tt-options-swatch li:hover a:not(.options-color):not(.options-color-img),
     .btn > .fa .fa-fw, .tt-badge-cart,
     .tt-product:not(.tt-view):hover .tt-image-box .tt-btn-quickview, .tt-product:not(.tt-view):hover .tt-image-box .tt-btn-quickview:hover , .skltbs-theme-light .skltbs-tab.skltbs-active , .slick-arrow:hover {
-        color: {{ $settings->btn_text_theme_color }}                    !important;
-        background-color: {{ $settings->btn_bg_theme_color }}                    !important;
+        color: {{ $settings->btn_text_theme_color }} !important;
+        background-color: {{ $settings->btn_bg_theme_color }}  !important;
     }
 
     .btn,  .btn-border, .tt-cart-btn {
@@ -178,7 +262,7 @@
     }
 
     header .tt-color-scheme-01 .tt-box-info ul li a, header .tt-social-icon li a {
-        color: {{ $settings->menu_theme_bg ? 'white' : $settings->menu_theme_color }}                  !important;
+        color: {{ $settings->normal_text_theme_color }}                  !important;
     }
 
     .tt-desctop-menu img {
@@ -252,7 +336,7 @@
         display: none !important;
     }
 
-    @if(env('NASHKW') || env('BITS') || ENV('EMAKEUP'))
+    @if(config('app.NASHKW') || config('app.BITS') || ENV('EMAKEUP'))
 
     body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tfoot, button, span, .btn, .btn-del, ul, li, .page-content, .portlet, .light, .profile-sidebar-portlet {
         font-family: 'skynews', 'sans-serif' !important;
@@ -265,73 +349,6 @@
         padding: 3px 20px 3px !important;
         opacity: 0.4;
     }
-</style>
-
-@if(env('EVENTKM'))
-    @if(app()->getLocale() === 'en')
-        <style type="text/css">
-            body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tfoot, button, span, .btn, .btn-del, ul, li, .page-content, .portlet, .light, .profile-sidebar-portlet {
-                /*font-family: 'sst-arabic-bold', 'sans-serif' !important;*/
-                font-family: 'Poppins', 'sans-serif' !important;
-                /*text-transform: uppercase !important;*/
-            }
-
-            .tt-desctop-menu nav > ul > li.dropdown > a {
-                font-size: large !important;
-            }
-
-            .alert-danger i {
-                color: red !important;
-            }
-
-            .alert-danger {
-                color: #000000;
-                background-color: #ffffff;
-                border-color: #000000;
-            }
-
-            .page-link, .page-item.disabled .page-link {
-                border: none !important;
-                background-color: transparent !important;
-            }
-
-            .tt-product:not(.tt-view) .tt-description, .tt-footer-col {
-                background-color: black !important;
-            }
-        </style>
-    @else
-        <style type="text/css">
-            body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tfoot, button, span, .btn, .btn-del, ul, li, .page-content, .portlet, .light, .profile-sidebar-portlet {
-                font-family: 'GE SS Unique', 'sans-serif' !important;
-                text-transform: uppercase !important;
-            }
-
-            .tt-desctop-menu nav > ul > li.dropdown > a {
-                font-size: large !important;
-            }
-
-            .alert-danger i {
-                color: red !important;
-            }
-
-            .alert-danger {
-                color: #000000;
-                background-color: #ffffff;
-                border-color: #000000;
-            }
-
-            .page-link, .page-item.disabled .page-link {
-                border: none !important;
-                background-color: transparent !important;
-            }
-
-            .tt-product:not(.tt-view) .tt-description, .tt-footer-col {
-                background-color: black !important;
-            }
-        </style>
-    @endif
-@endif
-<style>
     .tt-login-form .tt-item {
         border: none;
     }

@@ -1,7 +1,7 @@
 <div class="container-indent">
     {{--<div class="row">--}}
     {{--<div class="col-lg-2 text-block">--}}
-    {{--<img src="http://placehold.it/300x580?text=ads" alt="" class="img-responsive text-center">--}}
+    {{--<img src="https://placehold.it/300x580?text=ads" alt="" class="img-responsive text-center">--}}
     {{--</div>--}}
     {{--<div class="col-lg-8">--}}
     <div class="container container-fluid-custom-mobile-padding">
@@ -21,7 +21,7 @@
     </div>
     {{--</div>--}}
     {{--<div class="col-lg-2 text-block">--}}
-    {{--<img src="http://placehold.it/320x580?text=ads" alt="" class="img-responsive text-center">--}}
+    {{--<img src="https://placehold.it/320x580?text=ads" alt="" class="img-responsive text-center">--}}
     {{--</div>--}}
     {{--</div>--}}
 </div>

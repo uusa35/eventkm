@@ -173,7 +173,7 @@
                                                        data-original-title="{{ trans('message.path') }}" name="path"
                                                        placeholder="{{ trans('general.path') }}">
                                                 <div class="help-block text-left">
-                                                    files shall not exceed 50 MB
+                                                    {{ trans('message.max_upload') }} {{ env('MAX_IMAGE_SIZE') > 1000 ? str_limit(env('MAX_IMAGE_SIZE'),1,'') : env('MAX_IMAGE_SIZE') }} {{ env('MAX_IMAGE_SIZE') > 1000 ? trans('general.mb') : trans('general.kb') }}
                                                 </div>
                                             </div>
                                         </div>

@@ -13,7 +13,7 @@
                     <div class="tt-post-single">
                         {{--                        <div class="tt-tag"><a href="#">FASHION</a></div>--}}
                         <h1 class="tt-title">
-                            {{ trans('general.our_policies') }}
+                            {{ trans('general.company_policy') }}
                         </h1>
                         <div class="tt-post-content">
                             <!-- slider -->

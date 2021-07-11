@@ -1,6 +1,5 @@
 <?php
-
-namespace Usama\Tap;
+namespace Usama\Tap\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\OrderSuccessProcessJob;

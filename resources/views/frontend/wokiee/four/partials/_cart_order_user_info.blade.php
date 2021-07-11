@@ -180,7 +180,8 @@
                                                                 <div class="form-group">
                                                                     <label
                                                                         for="cash_on_delivery">
-                                                                        <i class="fa fa-fw fa-whatsapp fa-lg" style="color: #25D366 "></i>
+                                                                        <i class="fa fa-fw fa-whatsapp fa-lg"
+                                                                           style="color: #25D366 "></i>
                                                                         {{ trans('general.order_by_whatsapp') }}
                                                                     </label>
                                                                     <div class="form-check">
@@ -199,37 +200,93 @@
                                                                 </br>
                                                             </div>
                                                         @endif
-                                                        <div class="col-md-4 col-sm-12">
-                                                            <div class="form-group">
-                                                                <label
-                                                                    for="cash_on_delivery">{{ trans('general.online_payment') }}
-                                                                    <sup>*</sup></label>
-                                                                <div class="form-check">
-                                                                    <input type="radio"
-                                                                           value="0"
-                                                                           checked
-                                                                           class="form-check-input form-check-input form-control-lg"
-                                                                           style="width : 20px; height: 20px; padding-top: 20px;"
-                                                                           name="cash_on_delivery">
-                                                                    <label class="form-check-label"
-                                                                           for="cash_on_delivery"
-                                                                           style="padding-right: 25px;">
-                                                                        <img
-                                                                            src="{{ asset('images/knet-visa.png') }}"
-                                                                            style="width : 100px;">
-                                                                        {{ trans('general.by') }} -
-                                                                        ({{ strtoupper($settings->payment_method) }})
-                                                                    </label>
+                                                        @if($settings->payment_method === 'ibooky')
+                                                            <div class="col-md-4 col-sm-12">
+                                                                <div class="form-group">
+                                                                    <label
+                                                                        for="cash_on_delivery">{{ trans('general.online_payment') }}
+                                                                        <sup>*</sup></label>
+                                                                    <div class="form-check">
+                                                                        <input type="radio"
+                                                                               value="knet"
+                                                                               checked
+                                                                               class="form-check-input form-check-input form-control-lg"
+                                                                               style="width : 20px; height: 20px; padding-top: 20px;"
+                                                                               name="payment_method">
+                                                                        <label class="form-check-label"
+                                                                               for="payment_method"
+                                                                               style="padding-right: 25px;">
+                                                                            <img
+                                                                                src="{{ asset('images/knet.png') }}"
+                                                                                style="width : 40px;">
+                                                                            {{ trans('general.by') }}
+                                                                            - {{ trans('general.knet') }}
+                                                                            ({{ strtoupper($settings->payment_method) }}
+                                                                            )
+                                                                        </label>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                            <div class="col-md-4 col-sm-12">
+                                                                <div class="form-group">
+                                                                    <label
+                                                                        for="cash_on_delivery">{{ trans('general.online_payment') }}
+                                                                        <sup>*</sup></label>
+                                                                    <div class="form-check">
+                                                                        <input type="radio"
+                                                                               value="credit"
+                                                                               class="form-check-input form-check-input form-control-lg"
+                                                                               style="width : 20px; height: 20px; padding-top: 20px;"
+                                                                               name="payment_method">
+                                                                        <label class="form-check-label"
+                                                                               for="payment_method"
+                                                                               style="padding-right: 25px;">
+                                                                            <img
+                                                                                src="{{ asset('images/credit.png') }}"
+                                                                                style="width : 80px;">
+                                                                            {{ trans('general.by') }}
+                                                                            - {{ trans('general.credit') }}
+                                                                            ({{ strtoupper($settings->payment_method) }}
+                                                                            )
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <input type="hidden" name="cash_on_delivery" value="0"/>
+                                                        @else
+                                                            <div class="col-md-4 col-sm-12">
+                                                                <div class="form-group">
+                                                                    <label
+                                                                        for="cash_on_delivery">{{ trans('general.online_payment') }}
+                                                                        <sup>*</sup></label>
+                                                                    <div class="form-check">
+                                                                        <input type="radio"
+                                                                               value="0"
+                                                                               checked
+                                                                               class="form-check-input form-check-input form-control-lg"
+                                                                               style="width : 20px; height: 20px; padding-top: 20px;"
+                                                                               name="cash_on_delivery">
+                                                                        <label class="form-check-label"
+                                                                               for="cash_on_delivery"
+                                                                               style="padding-right: 25px;">
+                                                                            <img
+                                                                                src="{{ asset('images/knet-visa.png') }}"
+                                                                                style="width : 100px;">
+                                                                            {{ trans('general.by') }} -
+                                                                            ({{ strtoupper($settings->payment_method) }}
+                                                                            )
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        @endif
                                                         @if(session()->get('country')->is_local && $settings->cash_on_delivery)
                                                             <div class="col-12">
                                                                 <div class="alert alert-secondary">
                                                                     <ul style="list-style: none">
                                                                         <li>
-                                                                                <i class="fa fa-fw fa-info-circle fa-lg"></i>
-                                                                                {{ trans('message.order_cash_on_delivery') }}
+                                                                            <i class="fa fa-fw fa-info-circle fa-lg"></i>
+                                                                            {{ trans('message.order_cash_on_delivery') }}
                                                                         </li>
                                                                     </ul>
                                                                 </div>
@@ -325,7 +382,7 @@
                                                                             <label class="form-check-label"
                                                                                    for="exampleCheck1"
                                                                                    style="padding-right: 25px; margin-left: 25px; padding-top: 5px;">
-                                                                                        <small>{{ trans('message.cash_on_delivery_instruction') }}</small>
+                                                                                <small>{{ trans('message.cash_on_delivery_instruction') }}</small>
                                                                             </label>
                                                                         </div>
                                                                     </div>
@@ -335,7 +392,8 @@
                                                                     <div class="form-group">
                                                                         <label
                                                                             for="cash_on_delivery">
-                                                                            <i class="fa fa-fw fa-whatsapp fa-lg" style="color: #25D366 "></i>
+                                                                            <i class="fa fa-fw fa-whatsapp fa-lg"
+                                                                               style="color: #25D366 "></i>
                                                                             {{ trans('general.order_by_whatsapp') }}
                                                                         </label>
                                                                         <div class="form-check">
@@ -464,75 +522,75 @@
                                  aria-labelledby="skeletabsTab02" style="display: none;">
                                 <div class="tt-login-form">
 
-                                        <div class="col-12">
-                                            <div class="tt-item">
-                                                <h2 class="tt-title">{{ trans('general.login') }}</h2>
-                                                {{ trans('general.already_have_account') }}
-                                                <div class="form-default form-top">
-                                                    <form id="customer_login" method="post" novalidate="novalidate"
-                                                          action="{{ route('login') }}">
-                                                        @csrf
-                                                        <div class="form-group">
-                                                            <label for="loginName">{{ trans('general.email') }}
-                                                                *</label>
-                                                            <div class="tt-required">
-                                                                * {{ trans('general.required_fields') }}</div>
-                                                            <input type="text" name="email"
-                                                                   class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                                                   id="loginName"
-                                                                   value="{{ old('email') }}"
-                                                                   placeholder="{{ trans('general.enter_your_email') }}"
-                                                                   required
-                                                                   autofocus>
-                                                            @if ($errors->has('email'))
-                                                                <span class="invalid-feedback" role="alert">
+                                    <div class="col-12">
+                                        <div class="tt-item">
+                                            <h2 class="tt-title">{{ trans('general.login') }}</h2>
+                                            {{ trans('general.already_have_account') }}
+                                            <div class="form-default form-top">
+                                                <form id="customer_login" method="post" novalidate="novalidate"
+                                                      action="{{ route('login') }}">
+                                                    @csrf
+                                                    <div class="form-group">
+                                                        <label for="loginName">{{ trans('general.email') }}
+                                                            *</label>
+                                                        <div class="tt-required">
+                                                            * {{ trans('general.required_fields') }}</div>
+                                                        <input type="text" name="email"
+                                                               class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                                               id="loginName"
+                                                               value="{{ old('email') }}"
+                                                               placeholder="{{ trans('general.enter_your_email') }}"
+                                                               required
+                                                               autofocus>
+                                                        @if ($errors->has('email'))
+                                                            <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                                                            @endif
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="password">{{ trans('general.password') }}
-                                                                *</label>
-                                                            <input type="password" name="password" class="form-control"
-                                                                   id="password"
-                                                                   placeholder="{{ trans('general.enter_your_password') }}">
-                                                            @if ($errors->has('password'))
-                                                                <span class="invalid-feedback"
-                                                                      role="alert"><strong>{{ $errors->first('password') }}</strong></span>
-                                                            @endif
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                   name="remember"
-                                                                   id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                                            <label class="" for="remember"
-                                                                   style="padding-left : 20px; padding-right: 20px;">
-                                                                {{ trans('general.remember_me')}}
-                                                            </label>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-auto mr-auto">
-                                                                <div class="form-group">
-                                                                    <button class="btn btn-border"
-                                                                            type="submit">{{ trans('general.login') }}</button>
-                                                                    {{--                                                <a class="btn btn-border"--}}
-                                                                    {{--                                                   href="auth/google">{{ trans('general.login_with_google') }}</a>--}}
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-auto align-self-end">
-                                                                <div class="form-group">
-                                                                    <ul class="additional-links">
-                                                                        <li>
-                                                                            <a href="{{ route('password.request') }}">{{ trans('general.forgot_your_password') }}</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
+                                                        @endif
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="password">{{ trans('general.password') }}
+                                                            *</label>
+                                                        <input type="password" name="password" class="form-control"
+                                                               id="password"
+                                                               placeholder="{{ trans('general.enter_your_password') }}">
+                                                        @if ($errors->has('password'))
+                                                            <span class="invalid-feedback"
+                                                                  role="alert"><strong>{{ $errors->first('password') }}</strong></span>
+                                                        @endif
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input class="form-check-input" type="checkbox"
+                                                               name="remember"
+                                                               id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                                        <label class="" for="remember"
+                                                               style="padding-left : 20px; padding-right: 20px;">
+                                                            {{ trans('general.remember_me')}}
+                                                        </label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-auto mr-auto">
+                                                            <div class="form-group">
+                                                                <button class="btn btn-border"
+                                                                        type="submit">{{ trans('general.login') }}</button>
+                                                                {{--                                                <a class="btn btn-border"--}}
+                                                                {{--                                                   href="auth/google">{{ trans('general.login_with_google') }}</a>--}}
                                                             </div>
                                                         </div>
-                                                    </form>
-                                                </div>
+                                                        <div class="col-auto align-self-end">
+                                                            <div class="form-group">
+                                                                <ul class="additional-links">
+                                                                    <li>
+                                                                        <a href="{{ route('password.request') }}">{{ trans('general.forgot_your_password') }}</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
+                                    </div>
 
                                 </div>
                             </div>

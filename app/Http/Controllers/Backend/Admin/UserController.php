@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend\Admin;
 
 use App\Http\Requests\Backend\UserStore;
 use App\Http\Requests\Backend\UserUpdate;
+use App\Models\Area;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Survey;
@@ -78,7 +79,8 @@ class UserController extends Controller
         }])->get();
         $products = Product::active()->available()->hasImage()->serveCountries()->hasStock()->get();
         $surveys = Survey::active()->hasQuestions()->get();
-        return view('backend.modules.user.create', compact('countries', 'roles', 'categories', 'products', 'surveys'));
+        $areas = Area::active()->get();
+        return view('backend.modules.user.create', compact('countries', 'roles', 'categories', 'products', 'surveys','areas'));
     }
 
     /**
@@ -147,7 +149,8 @@ class UserController extends Controller
             }]);
         }])->get();
         $products = Product::active()->available()->hasImage()->serveCountries()->hasStock()->get();
-        return view('backend.modules.user.edit', compact('element', 'roles', 'countries', 'categories', 'products'));
+        $areas = Area::active()->get();
+        return view('backend.modules.user.edit', compact('element', 'roles', 'countries', 'categories', 'products','areas'));
     }
 
     /**

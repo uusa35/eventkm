@@ -255,7 +255,7 @@
                                                                 {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440']) }}
                                                             </div>
                                                             <div class="help-block text-left">
-                                                                <a href="{{ url('http://photopea.com') }}" target="_blank">
+                                                                <a href="{{ url('https://photopea.com') }}" target="_blank">
                                                                     {{ trans('general.image_url') }}
                                                                 </a>
                                                             </div>
@@ -286,7 +286,7 @@
                                                                 {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440']) }}
                                                             </div>
                                                             <div class="help-block text-left">
-                                                                <a href="{{ url('http://photopea.com') }}" target="_blank">
+                                                                <a href="{{ url('https://photopea.com') }}" target="_blank">
                                                                     {{ trans('general.image_url') }}
                                                                 </a>
                                                             </div>
@@ -350,7 +350,7 @@
                                                 <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label for="size_id"
-                                                               class="control-label">{{ trans('general.size') }}</label>
+                                                               class="control-label">{{ trans('general.size_or_weight') }}</label>
                                                         <select id="size_id" name="size_id"
                                                                 class="form-control tooltips" data-container="body"
                                                                 data-placement="top"

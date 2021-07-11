@@ -48,7 +48,7 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 - [CodeBrisk](https://codebrisk.com)
 - [1Forge](https://1forge.com)
 - [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
+- [Runtime Converter](https://runtimeconverter.com/)
 - [WebL'Agence](https://weblagence.com/)
 - [Invoice Ninja](https://www.invoiceninja.com)
 - [iMi digital](https://www.imi-digital.de/)
@@ -60,7 +60,7 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 - [Hyper Host](https://hyper.host)
 - [Appoly](https://www.appoly.co.uk)
 - [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+- [云软科技](https://www.yunruan.ltd/)
 
 ## Contributing
 

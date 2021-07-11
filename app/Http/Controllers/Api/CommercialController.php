@@ -17,9 +17,9 @@ class CommercialController extends Controller
     public function index()
     {
         if (request()->has('on_home')) {
-            $elements = Commercial::active()->onHome()->orderby('order','desc')->get();
+            $elements = Commercial::active()->onHome()->orderby('order','desc')->paginate(SELF::TAKE_LESS);
         } else {
-            $elements = Commercial::active()->get();
+            $elements = Commercial::active()->paginate(SELF::TAKE_MID);
         }
         if ($elements->isNotEmpty()) {
             return response()->json(CommercialLightResource::collection($elements), 200);

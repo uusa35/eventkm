@@ -174,4 +174,5 @@ class OrderController extends Controller
         }
         return redirect()->route('frontend.home')->with('error', 'Order is not complete');
     }
+
 }

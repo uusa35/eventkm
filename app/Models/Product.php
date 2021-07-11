@@ -33,7 +33,6 @@ class Product extends PrimaryModel
         'show_size_chart' => 'boolean'
     ];
 
-
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
@@ -44,7 +43,6 @@ class Product extends PrimaryModel
         // prodct A
         // has Small / Red / 3
         // has X-Lage / Green / 10
-
         // Product B has Only One Single Attribute == 10
         return $this->hasMany(ProductAttribute::class);
     }

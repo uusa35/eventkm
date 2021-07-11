@@ -143,9 +143,19 @@ class Filters extends QueryFilters
         return $this->builder->where('on_sale', true)->whereDate('end_sale', '>', Carbon::now());
     }
 
+    public function hot_deal()
+    {
+        return $this->builder->where('is_hot_deal', true)->whereDate('end_sale', '>', Carbon::now());
+    }
+
     public function on_home()
     {
         return $this->builder->where('on_home', true);
+    }
+
+    public function on_new()
+    {
+        return $this->builder->where('on_new', true);
     }
 
     public function min()
@@ -153,10 +163,6 @@ class Filters extends QueryFilters
         return $this->builder->where('price', '>=' ,(double)request()->min);
     }
 
-    public function max()
-    {
-        return $this->builder->where('price', '<=', (double)request()->max);
-    }
 
     public function page()
     {
