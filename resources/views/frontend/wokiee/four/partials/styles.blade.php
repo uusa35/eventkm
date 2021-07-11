@@ -368,9 +368,9 @@
     }
 
     /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-    .active, .accordionCustome:hover {
-        background-color: #f8f9fa;
-    }
+    /*.active, .accordionCustome:hover {*/
+    /*    background-color: #f8f9fa;*/
+    /*}*/
 
     /* Style the accordion panel. Note: hidden by default */
     .panel {
