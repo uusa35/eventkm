@@ -166,7 +166,7 @@
             .tt-product:not(.tt-view) .tt-description, .tt-footer-col {
                 background-color: black !important;
             }
-            .dropdown .active > a {
+            .dropdown .active > a, .active, .accordionCustome:hover {
             background-color:  black !important;
             }
         </style>
