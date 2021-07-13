@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/home/expo.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ProductHelpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ProductHelpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Traits/HomePageTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Traits/HomePageTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget_description.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget_description.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/home/expo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/home/expo.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1030,7 +1026,7 @@
       <workItem from="1625935724413" duration="1371000" />
       <workItem from="1626002842784" duration="2317000" />
       <workItem from="1626063004019" duration="1239000" />
-      <workItem from="1626073119984" duration="5208000" />
+      <workItem from="1626073119984" duration="5313000" />
     </task>
     <servers />
   </component>
