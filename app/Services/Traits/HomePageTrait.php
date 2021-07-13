@@ -274,4 +274,46 @@ trait HomePageTrait
             'companies'
         ));
     }
+
+    public function getExpoHome()
+    {
+        $sliders = Slide::active()->onHome()->limit(SELF::TAKE_LESS)->get();
+        $brands = Brand::active()->onHome()->orderBy('order', 'asc')->take(10)->get();
+        $newProducts = $this->product->active()->available()->onHome()->onNew()->hasImage()->serveCountries()->hasStock()->hasAtLeastOneCategory()->with('brand', 'product_attributes.color', 'product_attributes.size', 'color', 'size', 'images', 'user.country', 'favorites')->orderBy('created_at', 'desc')->limit(self::TAKE_LESS)->get();
+        $onSaleProducts = $this->product->active()->available()->onSaleOnHome()->hasImage()->serveCountries()->hasStock()->hasAtLeastOneCategory()->with('brand', 'product_attributes.color', 'product_attributes.size', 'color', 'size', 'images', 'user', 'favorites')->orderby('end_sale', 'desc')->limit(self::TAKE_LESS)->get();
+        $bestSalesProducts = $this->product->whereIn('id', $this->product->active()->available()->hasImage()->serveCountries()->hasStock()->bestSalesProducts())->hasAtLeastOneCategory()->with('brand', 'product_attributes.color', 'product_attributes.size', 'color', 'size', 'images', 'user', 'favorites', 'user.country')->limit(self::TAKE_LESS)->get();;
+        $productHotDeals = $this->product->active()->available()->onSale()->hotDeals()->hasImage()->serveCountries()->hasAtLeastOneCategory()->with('brand', 'product_attributes.color', 'product_attributes.size', 'color', 'size', 'images', 'user.country', 'user', 'favorites')->orderby('end_sale', 'desc')->limit(self::TAKE_LESS)->get();
+        $bestSaleCollections = OrderMeta::bestSaleCollections();
+        $designers = User::active()->onHome()->designers()->with('role')->notAdmins()->hasProducts()->get();
+        $companies = User::active()->onHome()->companies()->notAdmins()->hasProducts()->with('role')->get();
+        $homeCategoriesUser = Category::where(['is_user' => true])->active()->onlyParent()->onHome()->isFeatured()->with(['children' => function ($q) {
+            return $q->where(['is_user' => true])->active()->with(['children' => function ($q) {
+                return $q->where(['is_user' => true])->active();
+            }]);
+        }])->orderBy('order', 'desc')->get();
+        $homeCategoriesMarket = Category::where(['is_user' => true, 'is_product' => false])->active()->onlyParent()->onHome()->with(['children' => function ($q) {
+            return $q->where(['is_user' => true, 'is_product' => false])->active()->with(['children' => function ($q) {
+                return $q->where(['is_user' => true, 'is_product' => false])->active();
+            }]);
+        }])->orderBy('order', 'desc')->get();
+        $homeCategoriesProduct = Category::where(['is_product' => true])->active()->onlyParent()->onHome()->isFeatured()->with(['children' => function ($q) {
+            return $q->active()->with(['children' => function ($q) {
+                return $q->where(['is_user' => true])->active();
+            }]);
+        }])->orderBy('order', 'desc')->get();
+        return view('frontend.wokiee.four.home.expo', compact(
+            'sliders',
+            'brands',
+            'newProducts',
+            'onSaleProducts',
+            'bestSalesProducts',
+            'productHotDeals',
+            'homeCategoriesUser',
+            'homeCategoriesMarket',
+            'homeCategoriesProduct',
+            'bestSaleCollections',
+            'designers',
+            'companies'
+        ));
+    }
 }
