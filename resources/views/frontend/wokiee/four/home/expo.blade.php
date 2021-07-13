@@ -24,7 +24,7 @@
     {{--        @if(isset($tripleCommercials) && $tripleCommercials->isNotEmpty())--}}
     {{--            @include('frontend.wokiee.four.partials._horizontal_three_categories',['elements' => $tripleCommercials])--}}
     {{--        @endif--}}
-{{--    @include('frontend.wokiee.four.partials._products_slider_hot_deal', ['elements' => $productHotDeals,'items' => 3])--}}
+    @include('frontend.wokiee.four.partials._products_slider_hot_deal', ['elements' => $productHotDeals,'items' => 3])
     @include('frontend.wokiee.four.partials._btn_info', ['isGray' => true])
     @include('frontend.wokiee.four.partials._country_modal')
 @endsection
