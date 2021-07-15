@@ -44,7 +44,7 @@
                 </div>
             @endif
             <div class="row">
-                @foreach($categories->where('is_product',true)->where('on_home', true)->take(4) as $cat)
+                @foreach($categories->where('is_product',true)->where('on_home', true)->where('is_featured',true)->take(4) as $cat)
                     @if($cat->image)
                         <div class="col-6 col-sm-6 col-md-3 col-12-575width">
                             <a href="{!! isset($type) && $type === 'user' ? route('frontend.user.search', ['user_category_id' => $cat->id]) : route('frontend.product.search',['product_category_id' => $cat->id]) !!}"
