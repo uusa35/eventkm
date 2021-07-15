@@ -308,6 +308,29 @@
                                                     <div class="md-radio-inline">
                                                         <div class="md-radio tooltips" data-container="body"
                                                              data-placement="top"
+                                                             data-original-title="{{ trans('message.is_video') }}">
+                                                            <input type="radio" id="radio51" name="is_video" value="1"
+                                                                   class="md-radiobtn" {{ $element->is_video ? 'checked' : null }}>
+                                                            <label for="radio51">
+                                                                <span></span>
+                                                                <span class="check"></span>
+                                                                <span class="box"></span> {{ trans('general.is_video') }}
+                                                            </label>
+                                                        </div>
+                                                        <div class="md-radio">
+                                                            <input type="radio" id="radio52" name="is_video" value="0"
+                                                                   class="md-radiobtn" {{ !$element->is_video ? 'checked' : null }}>
+                                                            <label for="radio52">
+                                                                <span></span>
+                                                                <span class="check"></span>
+                                                                <span class="box"></span> {{ trans('general.no') }}</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="md-radio-inline">
+                                                        <div class="md-radio tooltips" data-container="body"
+                                                             data-placement="top"
                                                              data-original-title="{{ trans('message.on_home') }}">
                                                             <input type="radio" id="radio53" name="on_home" value="1"
                                                                    class="md-radiobtn" {{ $element->on_home ? 'checked' : null }}>
