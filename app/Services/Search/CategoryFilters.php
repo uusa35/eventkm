@@ -64,6 +64,11 @@ class CategoryFilters extends QueryFilters
         return $this->builder->where('on_new', request()->on_new);
     }
 
+    public function is_classified()
+    {
+        return $this->builder->where('is_classified', request()->is_classified);
+    }
+
     public function is_parent()
     {
         return $this->builder->where('is_parent', request()->is_parent);
