@@ -56,7 +56,7 @@ class CategoryFilters extends QueryFilters
 
     public function is_market()
     {
-        return $this->builder->where(['is_user' => request()->is_user, 'is_product' => request()->is_product , 'is_service' => request()->is_service]);
+        return $this->builder->where(['is_market' => request()->is_market]);
     }
 
     public function on_new()
