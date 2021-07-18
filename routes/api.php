@@ -47,6 +47,7 @@ Route::group(['namespace' => 'Api'], function () {
     Route::get('cart/items', 'ProductController@getProductForCart');
     Route::get('search/service', 'ServiceController@search');
     Route::get('search/product', 'ProductController@search');
+    Route::get('search/category', 'CategoryController@search');
     Route::get('search/classified', 'ClassifiedController@search');
     Route::get('search/user', 'UserController@search');
     Route::resource('branch', 'BranchController')->only(['index']);

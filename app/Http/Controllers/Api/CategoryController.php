@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Resources\CategoryLightResource;
+use App\Http\Resources\CategoryResource;
 use App\Http\Resources\UserLightResource;
 use App\Models\Category;
+use App\Services\Search\CategoryFilters;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -62,6 +64,21 @@ class CategoryController extends Controller
         }
         return response()->json(CategoryLightResource::collection($elements), 200);
     }
+
+    public function search(CategoryFilters $filters)
+    {
+        $validator = validator(request()->all(), ['search' => 'nullable']);
+        if ($validator->fails()) {
+            return response()->json(['message' => $validator->errors()->first()], 400);
+        }
+        $elements = Category::active()->filters($filters)->orderBy('id', 'desc')->paginate(Self::TAKE_MIN);
+        if (!$elements->isEmpty()) {
+            return response()->json(CategoryLightResource::collection($elements), 200);
+        } else {
+            return response()->json(['message' => trans('general.no_elements')], 400);
+        }
+    }
+
 
     /**
      * Show the form for creating a new resource.
