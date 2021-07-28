@@ -215,8 +215,6 @@ mix.scripts([
 
     ],
     'public/js/backend.js').version();
-
-
 mix.scripts([
     '../metronic_v4.5.6/theme/assets/pages/scripts/components-date-time-pickers.min.js',
     '../metronic_v4.5.6/theme/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js',

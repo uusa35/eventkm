@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Search/CategoryFilters.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Search/CategoryFilters.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Traits/HomePageTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Traits/HomePageTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1036,7 +1038,13 @@
       <workItem from="1626369848462" duration="6670000" />
       <workItem from="1626514719558" duration="1600000" />
       <workItem from="1626537316286" duration="879000" />
-      <workItem from="1626618499881" duration="1225000" />
+      <workItem from="1626618499881" duration="3781000" />
+      <workItem from="1626957776506" duration="890000" />
+      <workItem from="1626985531515" duration="2088000" />
+      <workItem from="1627047115145" duration="683000" />
+      <workItem from="1627205637173" duration="583000" />
+      <workItem from="1627281277337" duration="1351000" />
+      <workItem from="1627479771399" duration="179000" />
     </task>
     <servers />
   </component>

@@ -249,16 +249,18 @@ trait HomePageTrait
                 return $q->where(['is_user' => true])->active();
             }]);
         }])->orderBy('order', 'desc')->get();
-        $homeCategoriesMarket = Category::where(['is_user' => true, 'is_product' => false])->active()->onlyParent()->onHome()->with(['children' => function ($q) {
-            return $q->where(['is_user' => true, 'is_product' => false])->active()->with(['children' => function ($q) {
-                return $q->where(['is_user' => true, 'is_product' => false])->active();
+        $homeCategoriesMarket = Category::where(['is_market' => true])->active()->onlyParent()->onHome()->with(['children' => function ($q) {
+            return $q->where(['is_market' => true])->active()->with(['children' => function ($q) {
+                return $q->where(['is_market' => true])->active();
             }]);
         }])->orderBy('order', 'desc')->get();
-        $homeCategoriesProduct = Category::where(['is_product' => true])->active()->onlyParent()->onHome()->isFeatured()->with(['children' => function ($q) {
-            return $q->active()->with(['children' => function ($q) {
-                return $q->where(['is_user' => true])->active();
+
+        $homeCategoriesProduct = Category::where(['is_product' => true])->active()->onlyParent()->onHome()->with(['children' => function ($q) {
+            return $q->where(['is_product' => true])->active()->with(['children' => function ($q) {
+                return $q->where(['is_product' => true])->active();
             }]);
         }])->orderBy('order', 'desc')->get();
+
         return view('frontend.wokiee.four.home.istores', compact(
             'sliders',
             'brands',
