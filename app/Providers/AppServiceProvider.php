@@ -50,7 +50,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Carbon::setLocale(app()->getLocale());
         Schema::defaultStringLength(191);
-        User::observe(UserObserver::class);
-        Product::observe(ProductObserver::class);
+//        User::observe(UserObserver::class);
+//        Product::observe(ProductObserver::class);
     }
 }

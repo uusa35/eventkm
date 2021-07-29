@@ -42,9 +42,7 @@ class Kernel extends HttpKernel
 
         'api' => [
             'throttle:260,1',
-            \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \App\Http\Middleware\ApiLocalization::class,
-            \App\Http\Middleware\ApiCurrency::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class
         ],
     ];
 

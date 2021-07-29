@@ -1,9 +1,8 @@
 @if(isset($element))
     <div class="container-fluid">
         <div class="row">
-            <div class="tt-promo-fullwidth-02">
-                    <img src="{{ $element->banner ? $element->bannerLargeLink : $element->imageThumbLink }}" alt="{{ $element->description }}"
-                         style="max-height : 500px; opacity: 0.5;">
+            <div class="tt-promo-fullwidth-02" style="height : 500px;">
+                    <img src="{{ $element->banner ? $element->bannerLargeLink : $element->imageThumbLink }}" style="max-height : 500px; opacity: 0.5;"/>
                 <div class="tt-description">
                     <div class="tt-description-wrapper">
                         @if($element->slug)

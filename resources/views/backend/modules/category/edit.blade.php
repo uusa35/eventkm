@@ -413,6 +413,19 @@
                                                                value="0"> {{ trans('general.no') }}</label>
                                                 </div>
                                             </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold">{{ trans('general.is_market') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="is_market" id="optionsRadios4"
+                                                               {{ $element->is_market ? 'checked' : null  }}
+                                                               value="1"> {{ trans('general.yes') }}</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="is_market" id="optionsRadios4"
+                                                               {{ !$element->is_market ? 'checked' : null }}
+                                                               value="0"> {{ trans('general.no') }}</label>
+                                                </div>
+                                            </div>
                                         @endcan
                                     </div>
                                 </div>

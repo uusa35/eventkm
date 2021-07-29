@@ -3,7 +3,7 @@
         <div class="tt-row">
             <ul class="tt-add-info">
                 <li>
-                    <a href="{{ route('frontend.product.search',['user_id' => $element->user_id]) }}">{{ str_limit($element->user->slug,15,'..') }}</a>
+{{--                    <a href="{{ route('frontend.product.search',['user_id' => $element->user_id]) }}">{{ str_limit($element->user->slug,15,'..') }}</a>--}}
                 </li>
                 {{--            @if($element->brand)--}}
                 {{--                <li>--}}
