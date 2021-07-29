@@ -10,7 +10,7 @@ use App\Models\User;
 use App\Services\Traits\OrderTrait;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Usama\Tap\TapTrait;
+use Usama\Tap\Controllers\TapTrait;
 
 class SurveyController extends Controller
 {
