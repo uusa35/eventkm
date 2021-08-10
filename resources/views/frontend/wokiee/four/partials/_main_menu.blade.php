@@ -27,6 +27,9 @@
                                         <a href="{{ route('frontend.post.index') }}">{{ trans('general.blog') }}</a>
                                     </li>
                                 @endif
+                                <li class="dropdown tt-megamenu-col-02 selected">
+                                    <a href="{{ route('frontend.contactus') }}">{{ trans('general.contactus') }}</a>
+                                </li>
                                 @if(env('ENABLE_LANG_SWITCH'))
                                     <li class="dropdown">
                                         @if(app()->getLocale() === 'ar')

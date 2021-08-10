@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\CheckCartItems;
+use App\Mail\SendContactus;
 use App\Models\Category;
 use App\Models\Country;
 use App\Models\Currency;
@@ -17,6 +18,7 @@ use App\Services\Traits\HomePageTrait;
 use Gloudemans\Shoppingcart\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use \Illuminate\Support\Str;
 
 class HomeController extends Controller
@@ -88,7 +90,7 @@ class HomeController extends Controller
 
     public function getContact()
     {
-        return view('frontend.pages.contact');
+        return view('frontend.wokiee.four.contactus');
     }
 
     /**
@@ -97,9 +99,9 @@ class HomeController extends Controller
      */
     public function postContact(Request $request)
     {
-        $email = Contactus::first()->email;
+        $email = Setting::first()->email;
         try {
-            Mail::to($email)->cc($request->email)->queue(new SendContactus($request->request->all()));
+            Mail::to($email)->cc($request->email)->send(new SendContactus($request->request->all()));
         } catch (\Exception $e) {
             return redirect()->back()->with('info', $e->getMessage());
         }
