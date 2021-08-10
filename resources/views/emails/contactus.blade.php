@@ -6,6 +6,6 @@
 # {{ $title }}
 # {{ $body }}
 
-@lang('general.thank_u'),<br>
+@lang('general.thank_you'),<br>
 {{ config('app.name') }}
 @endcomponent
