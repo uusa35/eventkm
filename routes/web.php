@@ -185,6 +185,8 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
     Route::resource('faq', 'FaqController')->only(['index']);
     Route::get('terms', 'HomeController@getWebTerms')->name('terms');
     Route::get('policy', 'HomeController@getWebPolicy')->name('policy');
+    Route::get('contactus', 'HomeController@getContact')->name('contactus');
+    Route::post('contactus', 'HomeController@postContact')->name('contactus');
 });
 
 Auth::routes();

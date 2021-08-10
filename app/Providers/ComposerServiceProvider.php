@@ -102,6 +102,7 @@ class ComposerServiceProvider extends ServiceProvider
             'frontend.wokiee.four.home.mobile',
             'frontend.wokiee.four.modules.product.show',
             'frontend.wokiee.four.modules.service.show',
+            'frontend.wokiee.four.contactus',
             'backend.modules.user.create',
             'backend.modules.user.edit',
             'frontend.*.*.partials._search_side_bar',
