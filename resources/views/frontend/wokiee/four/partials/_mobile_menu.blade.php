@@ -95,6 +95,9 @@
         <li>
             <a href="{{ route('frontend.cart.index') }}">{{ trans('general.cart') }}</a>
         </li>
+        <li>
+            <a href="{{ route('frontend.contactus') }}">{{ trans('general.contactus') }}</a>
+        </li>
         @if($pages->isNotEmpty())
             <li>
                 @foreach($pages as $page)
