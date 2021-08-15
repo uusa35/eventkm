@@ -102,10 +102,10 @@ class HomeController extends Controller
         $email = Setting::first()->email;
         try {
             Mail::to($email)->cc($request->email)->send(new SendContactus($request->request->all()));
+            return redirect('home')->with('success', trans('general.mail_sent'));
         } catch (\Exception $e) {
             return redirect()->back()->with('info', $e->getMessage());
         }
-        return redirect('home')->with('success', trans('general.mail_sent'));
     }
 
 
