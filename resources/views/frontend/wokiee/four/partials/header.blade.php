@@ -1,5 +1,7 @@
 <header>
-@include('frontend.wokiee.four.partials._top_bar')
+    @desktop
+    @include('frontend.wokiee.four.partials._top_bar')
+    @enddesktop
 
 {{--    @include('frontend.wokiee.four.partials._mobile_categories_menu')--}}
 
