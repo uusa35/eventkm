@@ -4,7 +4,7 @@
             <div class="tt-col-left">
                 <div class="tt-box-info">
                     <ul>
-                        @guest
+                        @if(auth()->user() && !env('EVENTKM'))
                             <li><a href="{{ route('register') }}">
                                     <i class="fa fa-fw fa-user"></i>
                                     {{ trans('general.register') }}</a></li>
