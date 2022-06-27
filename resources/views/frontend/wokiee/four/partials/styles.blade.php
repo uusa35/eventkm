@@ -50,10 +50,12 @@
     .form-default .form-group, label, label:not(.error), .tt-cart-total-title, .tt-cart-total-price, .tt-title-large, .tt-title {
         /*font-family: 'fb', 'sans-serif' !important;*/
         @if(app()->isLocale('ar'))
-         font-family: 'skynews', 'sans-serif' !important;
+           font-family: 'skynews', 'sans-serif' !important;
         @else
-         font-family: 'Tajawal-Medium', 'sans-serif' !important;
+           font-family: 'Tajawal-Medium', 'sans-serif' !important;
     @endif
+
+
 
 
     }
@@ -67,10 +69,12 @@
     .tt-collapse-content, .tt-title-options, .form-group, .form, .tt-table-03, select, option, .form-default select.form-control:not([size]):not([multiple])
     .form-default .form-group, label, label:not(.error), .tt-cart-total-title, .tt-cart-total-price, .tt-title-large, .tt-title {
         @if(app()->isLocale('ar'))
-         font-family: 'GE SS Unique', 'sans-serif' !important;
+           font-family: 'GE SS Unique', 'sans-serif' !important;
         @else
-         font-family: 'Tajawal-Medium', 'sans-serif' !important;
+           font-family: 'Tajawal-Medium', 'sans-serif' !important;
     @endif
+
+
 
 
 
@@ -86,10 +90,12 @@
     .tt-collapse-content, .tt-title-options, .form-group, .form, .tt-table-03, select, option, .form-default select.form-control:not([size]):not([multiple])
     .form-default .form-group, label, label:not(.error), .tt-cart-total-title, .tt-cart-total-price, .tt-title-large, .tt-title {
         @if(app()->isLocale('ar'))
-         font-family: 'Tajawal-Medium', 'sans-serif' !important;
+           font-family: 'Tajawal-Medium', 'sans-serif' !important;
         @else
-         font-family: 'Tajawal-Medium', 'sans-serif' !important;
+           font-family: 'Tajawal-Medium', 'sans-serif' !important;
     @endif
+
+
 
 
 
@@ -104,9 +110,9 @@
     .tt-collapse-content, .tt-title-options, .form-group, .form, .tt-table-03, select, option, .form-default select.form-control:not([size]):not([multiple])
     .form-default .form-group, label, label:not(.error), .tt-cart-total-title, .tt-cart-total-price, .tt-title-large, .tt-title {
         @if(app()->isLocale('ar'))
-         font-family: 'GE SS Unique', 'sans-serif' !important;
+           font-family: 'GE SS Unique', 'sans-serif' !important;
         @else
-         font-family: 'Tajawal-Medium', 'sans-serif' !important;
+           font-family: 'Tajawal-Medium', 'sans-serif' !important;
     @endif
     @endif
 </style>
@@ -178,7 +184,7 @@
             }
         </style>
     @endif
-    <style>
+    <style type="text/css">
         .tt-product:not(.tt-view) .tt-description {
             background: none !important;
         }
@@ -186,8 +192,6 @@
         .tt-logo img {
             margin: 0;
             max-height: 250px !important;
-        }
-
         }
     </style>
 @endif
@@ -199,30 +203,30 @@
 
     /*p, .tt-collapse-content p, .tt-shopcart-table01 td, .tt-shopcart-table01 th {*/
     {{--        color: {{ $settings->main_theme_color ? $settings->main_theme_color : 'white' }}                 !important;--}}
-  /*    }*/
+    /*    }*/
 
     header, .tt-color-scheme-01, .tt-footer-center, footer .tt-footer-custom:last-child
     .tt-color-scheme-02,
     .tt-search-type2-rtl, .tt-background, .dot,
     .headerunderline, .stuck.tt-stuck-nav {
-        background-color: {{ $settings->header_theme_bg }}                      !important;
+        background-color: {{ $settings->header_theme_bg }}                        !important;
     }
 
     footer .tt-color-scheme-02, footer, .tt-footer-center, footer .tt-footer-custom:last-child, footer p, footer .tt-collapse-title, footer .tt-title, footer .tt-list,
     footer li a, footer a, footer div, footer span, footer .tt-collapse-content a, footer .tt-collapse-content, footer address, footer p, footer i, .tt-footer-col {
-        color: {{ $settings->footer_theme_color }}                      !important;
-        background-color: {{ $settings->footer_bg_theme_color }}                      !important;
+        color: {{ $settings->footer_theme_color }}                        !important;
+        background-color: {{ $settings->footer_bg_theme_color }}                        !important;
     }
 
 
     footer .tt-color-scheme-01 .tt-collapse-content a, footer .tt-color-scheme-01 {
-        color: {{ $settings->footer_theme_color }}                      !important;
+        color: {{ $settings->footer_theme_color }}                        !important;
     }
 
 
     .btn {
-        color: {{ $settings->btn_text_theme_color }}   !important;
-        background-color: {{ $settings->btn_bg_theme_color }}    !important;
+        color: {{ $settings->btn_text_theme_color }}     !important;
+        background-color: {{ $settings->btn_bg_theme_color }}      !important;
     }
 
     .btn, .tt-btn-search-rtl, .tt-btn-search,
@@ -236,8 +240,8 @@
     ul.tt-options-swatch li.active a:not(.options-color):not(.options-color-img), ul.tt-options-swatch li:hover a:not(.options-color):not(.options-color-img),
     .btn > .fa .fa-fw, .tt-badge-cart,
     .tt-product:not(.tt-view):hover .tt-image-box .tt-btn-quickview, .tt-product:not(.tt-view):hover .tt-image-box .tt-btn-quickview:hover, .skltbs-theme-light .skltbs-tab.skltbs-active, .slick-arrow:hover {
-        color: {{ $settings->btn_text_theme_color }}   !important;
-        background-color: {{ $settings->btn_bg_theme_color }}    !important;
+        color: {{ $settings->btn_text_theme_color }}     !important;
+        background-color: {{ $settings->btn_bg_theme_color }}      !important;
     }
 
     .btn, .btn-border, .tt-cart-btn {
@@ -249,11 +253,11 @@
     .tt-desctop-menu:not(.tt-hover-02) li.dropdown > a,
     .tt-desctop-menu:not(.tt-hover-02) li.dropdown.active > a,
     .tt-desctop-menu:not(.tt-hover-02), .tt-btn-quickview {
-        color: {{ $settings->main_theme_color }}              !important;
+        color: {{ $settings->main_theme_color }}                !important;
     }
 
     .tt-mobile-header .tt-top-line {
-        border-top: 1px solid {{ $settings->btn_bg_theme_color }}                    !important;
+        border-top: 1px solid {{ $settings->btn_bg_theme_color }}                      !important;
     }
 
     li.dropdown.selected > a,
@@ -263,16 +267,16 @@
     .datepicker-panel > ul > li, .tt-menu-categories .tt-dropdown-menu nav > ul > li > a span,
     .tt-social-icon li a, .tt-social-icon li a:hover,
     .tt-desctop-menu:not(.tt-hover-02) li.dropdown > a, header .tt-dropdown-obj .tt-dropdown-toggle, .tt-dropdown-toggle {
-        color: {{ $settings->menu_theme_color }}                    !important;
+        color: {{ $settings->menu_theme_color }}                      !important;
     }
 
     .tt-desktop-header, .headerunderline {
-        border-bottom-color: {{ $settings->menu_theme_bg }}       !important;
+        border-bottom-color: {{ $settings->menu_theme_bg }}         !important;
         border-bottom-width: 5px;
     }
 
     footer .tt-color-scheme-02 {
-        border-top: 5px solid {{ $settings->menu_theme_bg }}      !important;
+        border-top: 5px solid {{ $settings->menu_theme_bg }}        !important;
     }
 
     header .tt-color-scheme-01 {
@@ -281,7 +285,7 @@
     }
 
     header .tt-color-scheme-01 .tt-box-info ul li a, header .tt-social-icon li a {
-        color: {{ $settings->normal_text_theme_color }}                    !important;
+        color: {{ $settings->normal_text_theme_color }}                      !important;
     }
 
     .tt-desctop-menu img {
@@ -306,31 +310,31 @@
     .tt-desctop-menu:not(.tt-hover-02) li.dropdown > a:hover, .tt-block-title,
     .tt-promo-box.hover-type-2:hover, .tt-product:not(.tt-view):hover, .tt-collapse-content a {
 
-        color: {{ $settings->normal_text_theme_color }}                      !important;
+        color: {{ $settings->normal_text_theme_color }}                        !important;
     }
 
     h1, h2, h3, .tt-dropdown-toggle, .countdown-selection .theme-color, .tt-countdown, .tt-countdown_box, .tt-product-single-info > a, .tt-price, .old-price,
     .form-check-label, .card-header, label, label:not(.error), .card-text,
     .money, header .tt-multi-obj ul li.active a, .product-information-buttons a, .tt-services-block .tt-col-icon,
     .tt-title, h1 .tt-title, .tt-collapse-title, .tt-block-title, .tt-block-title .tt-title a, .tt-title-small, .tt-base-color {
-        color: {{ $settings->header_one_theme_color }}                !important;
+        color: {{ $settings->header_one_theme_color }}                  !important;
     }
 
     .tt-product:not(.tt-view) .tt-description .tt-title a, .tt-shopcart-table-02 .tt-title a,
     .tt-table-shop-01 tbody td a {
-        color: {{ $settings->header_tow_theme_color }}                !important;
+        color: {{ $settings->header_tow_theme_color }}                  !important;
     }
 
     @media (max-width: 1024px) {
         .tt-mobile-header {
-            background-color: {{ $settings->header_theme_bg }}                      !important;
+            background-color: {{ $settings->header_theme_bg }}                        !important;
             padding-bottom: 10px;
         }
     }
 
     a .url-normal {
         text-decoration: none !important;
-        color: {{ $settings->main_text_theme_color }}                      !important;
+        color: {{ $settings->main_text_theme_color }}                        !important;
         text-underline: none !important;
     }
 
@@ -348,7 +352,7 @@
     }
 
     .tt-col-icon, .tt-services-block .tt-col-icon {
-        color: {{ $settings->icon_theme_color }}                 !important;
+        color: {{ $settings->icon_theme_color }}                   !important;
     }
 
     .tt-menu-categories .tt-dropdown-menu nav > ul > li.tt-submenu > a:after {

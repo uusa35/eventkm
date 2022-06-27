@@ -1,8 +1,9 @@
 <div class="tt-desctop-parent-multi tt-parent-box">
+    <h1>testing</h1>
     <div class="tt-multi-obj tt-dropdown-obj">
         <button class="tt-dropdown-toggle" data-tooltip="{{ trans("general.settings") }}" data-tposition="bottom"><i class="icon-f-79"></i>
         </button>
-        <div class="tt-dropdown-menu" style="background-color: black !important; color: white;">
+        <div class="tt-dropdown-menu" style="background-color: black !important; color: white !important;">
             <div class="tt-mobile-add">
                 <button class="tt-close">{{ trans('general.close') }}</button>
             </div>
