@@ -1,5 +1,4 @@
 <div class="tt-desctop-parent-multi tt-parent-box">
-    <h1>testing</h1>
     <div class="tt-multi-obj tt-dropdown-obj">
         <button class="tt-dropdown-toggle" data-tooltip="{{ trans("general.settings") }}" data-tposition="bottom"><i
                 class="icon-f-79"></i>
